@@ -1,0 +1,44 @@
+Pseudocode will be needed for:
+
+> Kitchen
+> Restaurant
+> Player
+> Customer
+> Mini-Game 1
+> Mini-Game 3
+> Mini-Game 5
+
+Kitchen
+-------
+
+pseudocode here
+
+Restaurant
+----------
+
+pseudocode here
+
+Player
+------
+
+pseudocode here
+
+Customer
+--------
+
+pseudocode here
+
+Mini-Game 1
+-----------
+
+pseudocode here
+
+Mini-Game 3
+-----------
+
+pseudocode here
+
+Mini-Game 5
+-----------
+
+pseudocode here
