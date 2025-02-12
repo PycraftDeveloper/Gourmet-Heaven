@@ -1,0 +1,27 @@
+JEBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBO
+-------------------------------------------------
+
+Great start on Pseudocode, do:
+    1. Customer (Done?)
+    2. Kitchen (Done?)
+    3. Rest. (Done?)
+    4. MG1 (Done?)
+    5. MG2 (Done?)
+    6. Table (Done?)
+    7. Player (Done?)
+    8. Appliances (Done?)
+    9. Constants (extend as required)
+    extends existing
+
+Game has 1 restaurant.
+The restaurant has tables
+The table has n seats.
+A seat can be either empty (null), or contain a customer
+The position of the customer in the table seating array effects its depth relative to the table.
+If the player is in collision with the table or the customers in the table, the player should be moved up/down to suit the perspective.
+
+TOP - customer higher than player
+SIDES / TABLE - customer on same level as player
+BOTTOM - player higher than customer
+
+BE CAREFUL OF DEPTH WHEN WORKING WITH COLLISIONS!!!!

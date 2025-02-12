@@ -1,0 +1,30 @@
+DEFINE CLASS Table EXTENDS MonoBehaviour
+    DECLARE PRIVATE BOOLEAN Loaded
+    DECLARE PUBLIC GAMEOBJECT TableTexture
+    DECLARE PUBLIC GAMEOBJECT GameManager
+
+    DECLARE PRIVATE ARRAY OF GAMEOBJECTS TableSeats[4] // 4 customers max per table
+    // index - 0: TOP
+    // index - 1: LEFT
+    // index - 2: RIGHT
+    // index - 3: BOTTOM
+
+    DECLARE PUBLIC VOID OnLoad() DO
+        INSTANTIATE(TableTexture, transform.position, transform.rotation)
+        Loaded <- TRUE
+    END FUNCTION
+
+    DECLARE PUBLIC VOID OnGarbageCollection() DO
+        Loaded <- FALSE
+        DESTROY(TableTexture)
+    END FUNCTION
+
+    DECLARE PRIVATE VOID Start() DO
+        GameManager <- GET_GAME_OBJECT_WITH_TAG("GameManager")
+        Loaded <- FALSE
+        TableSeats <- { NULL, NULL, NULL, NULL }
+    END FUNCTION
+
+    DECLARE PRIVATE VOID Update() DO
+    END FUNCTION
+END CLASS

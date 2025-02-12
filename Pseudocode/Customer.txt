@@ -1,0 +1,79 @@
+DEFINE CLASS Player EXTENDS MonoBehaviour
+    DECLARE PUBLIC GAMEOBJECT CustomerTexture
+    DECLARE PRIVATE BOOLEAN Loaded
+    DECLARE PRIVATE STRING Meal
+    DECLARE PUBLIC GAMEOBJECT GameManager
+    DECLARE PRIVATE BOOLEAN Destroy_On_Player_Exit
+    DECLARE PRIVATE STRING Location
+    DECLARE PRIVATE FLOAT Patience
+    DECLARE PRIVATE FLOAT Depth
+
+    DECLARE PRIVATE VOID ServedInKitchen() DO // meal placed
+        Location <- GameConstants.RESTAURANT
+        Patience <- RANDOM_RANGE(GameConstants.CUSTOMER_PATIENCE_MIN, GameConstants.CUSTOMER_PATIENCE_MAX)
+        GameManager.CustomerServedInKitchen <- TRUE
+        MOVE INTO RESTAURANT
+        AddCustomerToRestaurant(THIS GAMEOBJECT)
+    END FUNCTION
+
+    DECLARE PRIVATE VOID ServedInRestaurant() DO // meal placed
+        Patience <- RANDOM_RANGE(GameConstants.CUSTOMER_PATIENCE_MIN, GameConstants.CUSTOMER_PATIENCE_MAX)
+        WAIT TO BE SERVED
+    END FUNCTION
+
+    DECLARE PRIVATE VOID AfterReceptOfMeal() DO // meal received
+        IF (GameManager.CurrentScene == GameConstants.LEVEL_ONE_PART_ONE) THEN // median = 1
+            Meal <- ""
+        ELSE IF (GameManager.CurrentScene == GameConstants.LEVEL_ONE_PART_TWO) THEN // median = 1.5
+            IF RANDOM_RANGE(0, 1) IS 1 THEN
+                Meal <- MEALS[RANDOM_RANGE(0, GameConstants.NUMBER_OF_MEAL_OPTIONS)]
+            ELSE
+                Meal <- ""
+            END IF
+        ELSE IF (GameManager.CurrentScene == GameConstants.LEVEL_TWO_PART_ONE) THEN // median = 2
+            IF RANDOM_RANGE(0, 2) IS 1 THEN
+                Meal <- MEALS[RANDOM_RANGE(0, GameConstants.NUMBER_OF_MEAL_OPTIONS)]
+            ELSE
+                Meal <- ""
+            END IF
+        ELSE IF (GameManager.CurrentScene == GameConstants.LEVEL_TWO_PART_TWO) THEN // median = 2.5
+            IF RANDOM_RANGE(0, 3) IS 1 THEN
+                Meal <- MEALS[RANDOM_RANGE(0, GameConstants.NUMBER_OF_MEAL_OPTIONS)]
+            ELSE
+                Meal <- ""
+            END IF
+        ...
+        END IF
+
+        IF Meal == "" THEN
+            Destroy_On_Player_Exit <- TRUE
+        END IF
+    END FUNCTION
+
+    DECLARE PUBLIC VOID OnLoad() DO
+        INSTANTIATE(CustomerTexture, transform.position, transform.rotation)
+        Loaded <- TRUE
+    END FUNCTION
+
+    DECLARE PUBLIC VOID OnGarbageCollection() DO
+        DESTROY(CustomerTexture)
+        Loaded <- FALSE
+    END FUNCTION
+
+    DECLARE PRIVATE VOID Start() DO
+        Destroy_On_Player_Exit <- FALSE
+        GameManager <- GET_GAME_OBJECT_WITH_TAG("GameManager")
+        Location <- KITCHEN
+        Depth <- 0
+        Meal <- MEALS[RANDOM_RANGE(0, GameConstants.NUMBER_OF_MEAL_OPTIONS)]
+    END FUNCTION
+
+    DECLARE PRIVATE VOID Update() DO
+        Patience <- Patience - DELTATIME
+        IF Location == GameConstants.KITCHEN THEN
+            Depth <- 1 // appears before counters
+        END IF
+        transform.position <- NEW VECTOR3(transform.position.x, transform.position.y, Depth)
+    END FUNCTION
+
+END CLASS

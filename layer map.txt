@@ -1,0 +1,9 @@
+Layer - Purpose
+
+-1 - reserved for scene background
+0 - reserved exclusively for the player
+1 - reserved for top level of scene (eg kitchen counters in foreground)
+2 - reserved for inputs (joystick)
+3 - reserved for HUD
+
+Each layer can be split into sub-layers depending on count as continuous. THESE VALUES EFFECT THE 'Z' POSITION OF CONTENT IN THE 2D GAME :)

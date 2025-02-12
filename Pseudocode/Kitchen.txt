@@ -1,0 +1,64 @@
+DEFINE CLASS Kitchen EXTENDS MonoBehaviour
+    DECLARE PUBLIC GAMEOBJECT Kitchen_Background
+    DECLARE PUBLIC GAMEOBJECT Kitchen_Foreground
+    DECLARE PRIVATE BOOLEAN Loaded
+    DECLARE PUBLIC GAMEOBJECT GameManager
+    DECLARE PUBLIC GAMEOBJECT Player
+
+    DECLARE PUBLIC GAMEOBJECT SushiAppliance
+    DECLARE PUBLIC GAMEOBJECT RamenAppliance
+    ...
+    DECLARE PUBLIC GAMEOBJECT TrashAppliance
+
+    DECLARE PUBLIC VOID OnLoad() DO
+        INSTANTIATE(Kitchen_Background, transform.position, transform.rotation)
+        INSTANTIATE(Kitchen_Foreground, transform.position, transform.rotation)
+        INSTANTIATE(SushiAppliance, NEW VECTOR3(SUSHI_APPLIANCE_LOCATION.x, SUSHI_APPLIANCE_LOCATION.y, transform.position.z), transform.rotation)
+        INSTANTIATE(RamenAppliance, NEW VECTOR3(RAMEN_APPLIANCE_LOCATION.x, RAMEN_APPLIANCE_LOCATION.y, transform.position.z), transform.rotation)
+        ...
+        INSTANTIATE(TrashAppliance, NEW VECTOR3(TRASH_APPLIANCE_LOCATION.x, TRASH_APPLIANCE_LOCATION.y, transform.position.z), transform.rotation)
+        Loaded <- TRUE
+    END FUNCTION
+
+    DECLARE PUBLIC VOID OnGarbageCollection() DO
+        DESTROY(Kitchen_Background)
+        DESTROY(Kitchen_Foreground)
+        DESTROY(SushiAppliance)
+        DESTROY(RamenAppliance)
+        ...
+        DESTROY(TrashAppliance)
+        Loaded <- FALSE
+    END FUNCTION
+
+    DECLARE PRIVATE VOID OnStart() DO
+        GameManager <- GET_GAME_OBJECT_WITH_TAG("GameManager")
+        Player <- GET_GAME_OBJECT_WITH_TAG("Player)
+        Loaded <- FALSE
+    END FUNCTION
+
+    DECLARE PRIVATE VOID Update() DO
+        BOOLEAN MealRequires_Sushi <- FALSE
+        BOOLEAN MealRequires_Ramen <- FALSE
+        ...
+
+        FOR Customer IN GameManager DO
+            IF Customer.Meal == GameConstants.SUSHI THEN
+                MealRequires_Sushi <- TRUE
+            ELSE IF Customer.Meal == GameConstants.RAMEN THEN
+                MealRequires_Ramen <- TRUE
+            ...
+            END IF
+        END FOR
+
+        SushiAppliance.SetGlowing(MealRequires_Sushi)
+        RamenAppliance.SetGlowing(MealRequires_Ramen)
+        ...
+
+        IF Player.MadeMeal IS NOT NULL THEN
+            TrashAppliance.SetGlowing(TRUE)
+        ELSE
+            TrashAppliance.SetGlowing(FALSE)
+        END IF
+    END FUNCTION
+
+END CLASS
