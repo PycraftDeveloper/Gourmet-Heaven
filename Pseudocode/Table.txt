@@ -1,5 +1,6 @@
 DEFINE CLASS Table EXTENDS MonoBehaviour
     DECLARE PRIVATE BOOLEAN Loaded
+
     DECLARE PUBLIC GAMEOBJECT TableTexture
     DECLARE PUBLIC GAMEOBJECT GameManager
 
@@ -10,7 +11,7 @@ DEFINE CLASS Table EXTENDS MonoBehaviour
     // index - 3: BOTTOM
 
     DECLARE PUBLIC VOID OnLoad() DO
-        INSTANTIATE(TableTexture, transform.position, transform.rotation)
+        INSTANTIATE(TableTexture, CURRENT_POSITION, CURRENT_ROTATION)
         Loaded <- TRUE
     END FUNCTION
 
@@ -23,8 +24,5 @@ DEFINE CLASS Table EXTENDS MonoBehaviour
         GameManager <- GET_GAME_OBJECT_WITH_TAG("GameManager")
         Loaded <- FALSE
         TableSeats <- { NULL, NULL, NULL, NULL }
-    END FUNCTION
-
-    DECLARE PRIVATE VOID Update() DO
     END FUNCTION
 END CLASS

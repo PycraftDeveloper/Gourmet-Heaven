@@ -1,10 +1,13 @@
 DEFINE CLASS Player EXTENDS MonoBehaviour
     DECLARE PUBLIC GAMEOBJECT CustomerTexture
-    DECLARE PRIVATE BOOLEAN Loaded
-    DECLARE PRIVATE STRING Meal
     DECLARE PUBLIC GAMEOBJECT GameManager
+
+    DECLARE PRIVATE BOOLEAN Loaded
     DECLARE PRIVATE BOOLEAN Destroy_On_Player_Exit
+
+    DECLARE PRIVATE STRING Meal
     DECLARE PRIVATE STRING Location
+
     DECLARE PRIVATE FLOAT Patience
     DECLARE PRIVATE FLOAT Depth
 
@@ -42,7 +45,6 @@ DEFINE CLASS Player EXTENDS MonoBehaviour
             ELSE
                 Meal <- ""
             END IF
-        ...
         END IF
 
         IF Meal == "" THEN
@@ -51,7 +53,7 @@ DEFINE CLASS Player EXTENDS MonoBehaviour
     END FUNCTION
 
     DECLARE PUBLIC VOID OnLoad() DO
-        INSTANTIATE(CustomerTexture, transform.position, transform.rotation)
+        INSTANTIATE(CustomerTexture, CURRENT_POSITION, CURRENT_ROTATION)
         Loaded <- TRUE
     END FUNCTION
 
@@ -73,7 +75,6 @@ DEFINE CLASS Player EXTENDS MonoBehaviour
         IF Location == GameConstants.KITCHEN THEN
             Depth <- 1 // appears before counters
         END IF
-        transform.position <- NEW VECTOR3(transform.position.x, transform.position.y, Depth)
+        CHANGE Z AXIS POSITION TO <- Depth
     END FUNCTION
-
 END CLASS

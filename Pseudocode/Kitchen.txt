@@ -1,22 +1,22 @@
 DEFINE CLASS Kitchen EXTENDS MonoBehaviour
     DECLARE PUBLIC GAMEOBJECT Kitchen_Background
     DECLARE PUBLIC GAMEOBJECT Kitchen_Foreground
-    DECLARE PRIVATE BOOLEAN Loaded
     DECLARE PUBLIC GAMEOBJECT GameManager
     DECLARE PUBLIC GAMEOBJECT Player
-
     DECLARE PUBLIC GAMEOBJECT SushiAppliance
     DECLARE PUBLIC GAMEOBJECT RamenAppliance
-    ...
+    ... // extend for other appliances
     DECLARE PUBLIC GAMEOBJECT TrashAppliance
 
+    DECLARE PRIVATE BOOLEAN Loaded
+
     DECLARE PUBLIC VOID OnLoad() DO
-        INSTANTIATE(Kitchen_Background, transform.position, transform.rotation)
-        INSTANTIATE(Kitchen_Foreground, transform.position, transform.rotation)
-        INSTANTIATE(SushiAppliance, NEW VECTOR3(SUSHI_APPLIANCE_LOCATION.x, SUSHI_APPLIANCE_LOCATION.y, transform.position.z), transform.rotation)
-        INSTANTIATE(RamenAppliance, NEW VECTOR3(RAMEN_APPLIANCE_LOCATION.x, RAMEN_APPLIANCE_LOCATION.y, transform.position.z), transform.rotation)
-        ...
-        INSTANTIATE(TrashAppliance, NEW VECTOR3(TRASH_APPLIANCE_LOCATION.x, TRASH_APPLIANCE_LOCATION.y, transform.position.z), transform.rotation)
+        INSTANTIATE(Kitchen_Background, CURRENT_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(Kitchen_Foreground, CURRENT_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(SushiAppliance, NEW VECTOR3(SUSHI_APPLIANCE_LOCATION.x, SUSHI_APPLIANCE_LOCATION.y, CURRENT_DEPTH_POSITION), CURRENT_ROTATION)
+        INSTANTIATE(RamenAppliance, NEW VECTOR3(RAMEN_APPLIANCE_LOCATION.x, RAMEN_APPLIANCE_LOCATION.y, CURRENT_DEPTH_POSITION), CURRENT_ROTATION)
+        ... // extend for other appliances
+        INSTANTIATE(TrashAppliance, NEW VECTOR3(TRASH_APPLIANCE_LOCATION.x, TRASH_APPLIANCE_LOCATION.y, CURRENT_DEPTH_POSITION), CURRENT_ROTATION)
         Loaded <- TRUE
     END FUNCTION
 
@@ -25,7 +25,7 @@ DEFINE CLASS Kitchen EXTENDS MonoBehaviour
         DESTROY(Kitchen_Foreground)
         DESTROY(SushiAppliance)
         DESTROY(RamenAppliance)
-        ...
+        ... // extend for other appliances
         DESTROY(TrashAppliance)
         Loaded <- FALSE
     END FUNCTION
@@ -39,20 +39,20 @@ DEFINE CLASS Kitchen EXTENDS MonoBehaviour
     DECLARE PRIVATE VOID Update() DO
         BOOLEAN MealRequires_Sushi <- FALSE
         BOOLEAN MealRequires_Ramen <- FALSE
-        ...
+        ... // extend for other appliances
 
         FOR Customer IN GameManager DO
             IF Customer.Meal == GameConstants.SUSHI THEN
                 MealRequires_Sushi <- TRUE
             ELSE IF Customer.Meal == GameConstants.RAMEN THEN
                 MealRequires_Ramen <- TRUE
-            ...
+            ... // extend for other appliances
             END IF
         END FOR
 
         SushiAppliance.SetGlowing(MealRequires_Sushi)
         RamenAppliance.SetGlowing(MealRequires_Ramen)
-        ...
+        ... // extend for other appliances
 
         IF Player.MadeMeal IS NOT NULL THEN
             TrashAppliance.SetGlowing(TRUE)
@@ -60,5 +60,4 @@ DEFINE CLASS Kitchen EXTENDS MonoBehaviour
             TrashAppliance.SetGlowing(FALSE)
         END IF
     END FUNCTION
-
 END CLASS

@@ -2,21 +2,23 @@
 
 DEFINE CLASS RamenMG EXTENDS MonoBehaviour
     DECLARE PRIVATE BOOLEAN Loaded
-    DECLARE PUBLIC GAMEOBJECT GameManager
+    DECLARE PUBLIC BOOLEAN MGcomplete
 
+    DECLARE PUBLIC GAMEOBJECT GameManager
     DECLARE PUBLIC GAMEOBJECT MGbackgroundTexture
     DECLARE PUBLIC GAMEOBJECT RawRamenTexture
-    DECLARE PRIVATE FLOAT Timer
-    DECLARE PUBLIC BOOLEAN MGcomplete
-    DECLARE PUBLIC STRING MGstate
     DECLARE PUBLIC GAMEOBJECT Player
 
-    DECLARE PRIVATE VECTOR3 Bowl_Target
+    DECLARE PRIVATE FLOAT Timer
     DECLARE PRIVATE FLOAT Bowl_Radius
 
+    DECLARE PUBLIC STRING MGstate
+
+    DECLARE PRIVATE VECTOR3 Bowl_Target
+
     DECLARE PUBLIC VOID OnLoad() DO
-        INSTANTIATE(MGbackgroundTexture, transform.position, transform.rotation)
-        INSTANTIATE(RawRamenTexture, transform.position, transform.rotation)
+        INSTANTIATE(MGbackgroundTexture, CURRENT_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(RawRamenTexture, CURRENT_POSITION, CURRENT_ROTATION)
         Loaded <- TRUE
     END FUNCTION
 
@@ -39,10 +41,10 @@ DEFINE CLASS RamenMG EXTENDS MonoBehaviour
 
     DECLARE PRIVATE VOID Update() DO
         Timer <- timer + DELTATIME
-        RawRamenTexture.transform.position <- NEW VECTOR3(SIN(timer) * VIEWPORT.x, CENTERED IN Y, 1) // moves in a sine motion across screen.
+        RawRamenTexture.CURRENT_POSITION <- NEW VECTOR3(SIN(timer) * VIEWPORT.x, CENTERED IN Y, 1) // moves in a sine motion across screen.
 
         IF USER_INPUT THEN // tap screen or clicked mouse
-            IF RawRamenTexture.transform.position - Bowl_Target < Bowl_Radius THEN
+            IF RawRamenTexture.CURRENT_POSITION - Bowl_Target < Bowl_Radius THEN
                 MGstate <- GameConstants.SUCCESS
             ELSE
                 MGstate <- GameConstants.FAIL

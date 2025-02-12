@@ -1,12 +1,13 @@
 DEFINE CLASS Restaurant EXTENDS MonoBehaviour
     DECLARE PRIVATE BOOLEAN Loaded
+
     DECLARE PUBLIC GAMEOBJECT RestaurantBackground
     DECLARE PUBLIC GAMEOBJECT Table
 
     DECLARE PRIVATE ARRAY OF GAMEOBJECTS Tables[4]
 
     DECLARE PUBLIC VOID OnLoad() DO
-        INSTANTIATE(RestaurantBackground, transform.position, transform.rotation)
+        INSTANTIATE(RestaurantBackground, CURRENT_POSITION, CURRENT_ROTATION)
         Loaded <- TRUE
     END FUNCTION
 
@@ -26,19 +27,19 @@ DEFINE CLASS Restaurant EXTENDS MonoBehaviour
                     IF i == 0 THEN
                         Customer.Depth <- -1
                         Customer.tag <- "sitting_customer_TOP"
-                        Customer.transform.position <- VECTOR3(Tables[Table_Index].transform.position.x, Tables[Table_Index].transform.position.y - Customer.SIZE.y, 0) // position relative to the table
+                        Customer.CURRENT_POSITION <- VECTOR3(Tables[Table_Index].CURRENT_X_POSITION, Tables[Table_Index].CURRENT_Y_POSITION - Customer.CURRENT_Y_SIZE, 0) // position relative to the table
                     ELSE IF i == 1 OR i == 2 THEN
                         Customer.Depth <- 0
                         Customer.tag <- "sitting_customer_MIDDLE"
                         IF i == 1 THEN
-                            Customer.transform.position <- VECTOR3(Tables[Table_Index].transform.position.x - Customer.SIZE.x, Tables[Table_Index].transform.position.y, 0) // position relative to the table
+                            Customer.CURRENT_POSITION <- VECTOR3(Tables[Table_Index].CURRENT_X_POSITION - Customer.SIZE.x, Tables[Table_Index].CURRENT_Y_POSITION, 0) // position relative to the table
                         ELSE
-                            Customer.transform.position <- VECTOR3(Tables[Table_Index].transform.position.x + Customer.SIZE.x, Tables[Table_Index].transform.position.y, 0) // position relative to the table
+                            Customer.CURRENT_POSITION <- VECTOR3(Tables[Table_Index].CURRENT_X_POSITION + Customer.SIZE.x, Tables[Table_Index].CURRENT_Y_POSITION, 0) // position relative to the table
                         END IF
                     ELSE
                         Customer.Depth <- 1
                         Customer.tag <- "sitting_customer_BOTTOM"
-                        Customer.transform.position <- VECTOR3(Tables[Table_Index].transform.position.x, Tables[Table_Index].transform.position.y + Customer.SIZE.y, 0) // position relative to the table
+                        Customer.CURRENT_POSITION <- VECTOR3(Tables[Table_Index].CURRENT_X_POSITION, Tables[Table_Index].CURRENT_Y_POSITION + Customer.CURRENT_Y_SIZE, 0) // position relative to the table
                     END IF
                     Tables[Table_Index][i] <- Customer
                     BREAK
@@ -54,11 +55,8 @@ DEFINE CLASS Restaurant EXTENDS MonoBehaviour
         INT Table_X_Position <- 0
         INT Table_Y_Position <- 0
         FOR i <- 0 TO GameConstants.NUMBER_OF_TABLES DO
-            NewTable <- INSTANTIATE(TABLE, VECTOR3(Table_X_Position, Table_Y_Position, 1), transform.rotation)
+            NewTable <- INSTANTIATE(TABLE, VECTOR3(Table_X_Position, Table_Y_Position, 1), CURRENT_ROTATION)
             Tables[i].ADD(NewTable)
         END FOR
-    END FUNCTION
-
-    DECLARE PRIVATE VOID Update() DO
     END FUNCTION
 END CLASS

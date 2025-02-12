@@ -1,9 +1,0 @@
-Pseudocode will be needed for:
-
-> Kitchen
-> Restaurant
-> Player
-> Customer
-> Mini-Game 1
-> Mini-Game 3
-> GameManager

@@ -5,8 +5,10 @@ DECLARE PRIVATE CONSTANT FLOAT MAX_VELOCITY = 20.0f // should be a large range
 
 DEFINE CLASS SushiMG EXTENDS MonoBehaviour
     DECLARE PRIVATE BOOLEAN Loaded
-    DECLARE PUBLIC GAMEOBJECT GameManager
+    DECLARE PUBLIC BOOLEAN Tapped
+    DECLARE PUBLIC BOOLEAN MGcomplete
 
+    DECLARE PUBLIC GAMEOBJECT GameManager
     DECLARE PUBLIC GAMEOBJECT MGbackgroundTexture
     DECLARE PUBLIC GAMEOBJECT RawSushiTexture
     DECLARE PUBLIC GAMEOBJECT Player
@@ -15,14 +17,11 @@ DEFINE CLASS SushiMG EXTENDS MonoBehaviour
     DECLARE PUBLIC FLOAT InputEndPosition
     DECLARE PUBLIC FLOAT InputDuration
 
-    DECLARE PUBLIC BOOLEAN Tapped
-
-    DECLARE PUBLIC BOOLEAN MGcomplete
     DECLARE PUBLIC STRING MGstate
 
     DECLARE PUBLIC VOID OnLoad() DO
-        INSTANTIATE(MGbackgroundTexture, transform.position, transform.rotation)
-        INSTANTIATE(RawSushiTexture, transform.position, transform.rotation)
+        INSTANTIATE(MGbackgroundTexture, CURRENT_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(RawSushiTexture, CURRENT_POSITION, CURRENT_ROTATION)
         Loaded <- TRUE
     END FUNCTION
 

@@ -8,7 +8,9 @@ DEFINE CLASS Player EXTENDS MonoBehaviour
     DECLARE PUBLIC GAMEOBJECT GameManager
     DECLARE PUBLIC GAMEOBJECT Kitchen
     DECLARE PUBLIC GAMEOBJECT Restaurant
+
     DECLARE PUBLIC FLOAT Depth
+
     DECLARE PUBLIC STRING MadeMeal
 
     DECLARE PRIVATE VOID OnCollisionEnter(Collision collision) DO
@@ -71,17 +73,17 @@ DEFINE CLASS Player EXTENDS MonoBehaviour
 
             Restaurant.OnGarbageCollection()
         ELSE IF (collision.GameObject.tag == "sitting_customer_TOP") THEN
-            Depth <- collision.GameObject.transform.position.z - 1 // player appears behind
+            Depth <- collision.GameObject.CURRENT_DEPTH_POSITION - 1 // player appears behind
         ELSE IF (collision.GameObject.tag == "sitting_customer_MIDDLE") THEN
             Depth <- 0 // player on same level as these customers
         ELSE IF (collision.GameObject.tag == "sitting_customer_BOTTOM") THEN
-            Depth <- collision.GameObject.transform.position.z + 1 // player appears on-top
+            Depth <- collision.GameObject.CURRENT_DEPTH_POSITION + 1 // player appears on-top
         END IF
     END FUNCTION
 
     DECLARE PUBLIC VOID OnLoad() DO
-        INSTANTIATE(PlayerTexture, transform.position, transform.rotation)
-        INSTANTIATE(PlayerJoystickInput, GameManager.PlayerJoystickPosition, transform.rotation)
+        INSTANTIATE(PlayerTexture, CURRENT_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(PlayerJoystickInput, GameManager.PlayerJoystickPosition, CURRENT_ROTATION)
         Loaded <- TRUE
     END FUNCTION
 
@@ -94,27 +96,26 @@ DEFINE CLASS Player EXTENDS MonoBehaviour
     DECLARE PRIVATE VOID Start() DO
         GameManager <- GET_GAME_OBJECT_WITH_TAG("GameManager")
         Loaded <- FALSE
-        transform.position <- NEW VECTOR3(0.0f, 0.0f, 0.0f) // player is on layer 0
+        CURRENT_POSITION <- NEW VECTOR3(0.0f, 0.0f, 0.0f) // player is on layer 0
         Depth <- 0
         MadeMeal <- NULL
     END FUNCTION
 
     DECLARE PRIVATE VOID Update() DO
         VECTOR2 PlayerJoystickInputPosition <- PlayerJoystickInput.GetMagnitude()
-        FLOAT x_position <- transform.position.x + PlayerJoystickInputPosition.x * GameConstants.PLAYER_MOVEMENT_SPEED * DELTATIME
-        FLOAT y_position <- transform.position.y + PlayerJoystickInputPosition.y * GameConstants.PLAYER_MOVEMENT_SPEED * DELTATIME
-        transform.position <- NEW VECTOR3(x_position, y_position, Depth)
-        ...
-        PlayerTexture.transform.position <- transform.position;
-        PlayerTexture.transform.rotation <- transform.rotation; // likely shouldn't be necessary in this game, but could be useful later
+        FLOAT x_position <- CURRENT_X_POSITION + PlayerJoystickInputPosition.x * GameConstants.PLAYER_MOVEMENT_SPEED * DELTATIME
+        FLOAT y_position <- CURRENT_Y_POSITION + PlayerJoystickInputPosition.y * GameConstants.PLAYER_MOVEMENT_SPEED * DELTATIME
+        CURRENT_POSITION <- NEW VECTOR3(x_position, y_position, Depth)
+
+        PlayerTexture.CURRENT_POSITION <- CURRENT_POSITION;
+        PlayerTexture.CURRENT_ROTATION <- CURRENT_ROTATION; // likely shouldn't be necessary in this game, but could be useful later
 
         IF CustomerServedInKitchen THEN
             FOR Customer IN Customers DO
                 IF Customer.Location == GameConstants.KITCHEN THEN
-                    Customer.transform.position.x <- Customer.transform.position.x + Customer.MODEL.GETSIZE() // shuffle down in queue
+                    Customer.CURRENT_X_POSITION <- Customer.CURRENT_X_POSITION + Customer.MODEL.GETSIZE() // shuffle down in queue
                 END IF
             END FOR
         END IF
     END FUNCTION
-
 END CLASS

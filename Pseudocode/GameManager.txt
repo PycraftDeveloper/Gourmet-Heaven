@@ -2,19 +2,23 @@
 
 DEFINE CLASS GameManager EXTENDS MonoBehaviour
     DECLARE PUBLIC STRING CurrentScene
+    DECLARE PRIVATE STRING CurrentLocation
+
     DECLARE PUBLIC INT Currency
     DECLARE PUBLIC INT NumberOfSeatsInRestaurant
-    DECLARE PUBLIC LIST OF GAMEOBJECTS Customers
-    DECLARE PRIVATE FLOAT CustomerSpawnTimer
-    DECLARE PRIVATE STRING CurrentLocation
     DECLARE PRIVATE INT CustomerNextSpawnTime
+
+    DECLARE PUBLIC LIST OF GAMEOBJECTS Customers
+
+    DECLARE PRIVATE FLOAT CustomerSpawnTimer
+
+    DECLARE PUBLIC BOOLEAN PlayerShouldExist
     DECLARE PRIVATE BOOLEAN CustomerServedInKitchen
 
     DECLARE PUBLIC GAMEOBJECT MainMenuObject
     DECLARE PUBLIC GAMEOBJECT Player
     DECLARE PUBLIC GAMEOBJECT Customer
 
-    DECLARE PUBLIC BOOLEAN PlayerShouldExist
     DECLARE PUBLIC VECTOR3 PlayerJoystickPosition
 
     DECLARE PRIVATE VOID Start() DO
@@ -24,7 +28,7 @@ DEFINE CLASS GameManager EXTENDS MonoBehaviour
         PlayerShouldExist <- FALSE
         Currency <- 0
         CurrentScene <- MainMenu
-        INSTANTIATE(MainMenuObject, transform.position, transform.rotation)
+        INSTANTIATE(MainMenuObject, CURRENT_POSITION, CURRENT_ROTATION)
         CurrentLocation <- GameConstants.KITCHEN
         CustomerNextSpawnTime <- 0
     END FUNCTION
@@ -34,7 +38,7 @@ DEFINE CLASS GameManager EXTENDS MonoBehaviour
             PlayerShouldExist <- TRUE
             IF (PlayerShouldExist AND Player.loaded == FALSE) THEN
                 Player.OnLoad()
-                Player.transform.position = NEW VECTOR2(0.0f, 0.0f, Player.transform.position.z) // maintain depth
+                SET PLAYER CURRENT_POSITION TO CENTRE OF KITCHEN BUT MAINTAIN CURRENT DEPTH
             END IF
 
             IF (CurrentLocation == GameConstants.KITCHEN) THEN
@@ -44,7 +48,7 @@ DEFINE CLASS GameManager EXTENDS MonoBehaviour
                     CustomerNextSpawnTime <- RANDOM_RANGE(GameConstants.CUSTOMER_SPAWN_RATE_MIN, GameConstants.CUSTOMER_SPAWN_RATE_MAX)
 
                     IF (Customers.LENGTH < NumberOfSeatsInRestaurant) THEN
-                        GAMEOBJECT New_Customer <- INSTANTIATE(Customer, GameConstants.CUSTOMER_SPAWNING_LOCATION, transform.rotation)
+                        GAMEOBJECT New_Customer <- INSTANTIATE(Customer, GameConstants.CUSTOMER_SPAWNING_LOCATION, CURRENT_ROTATION)
                         Customers.ADD(New_Customer)
                     END IF
                 END IF
@@ -56,5 +60,4 @@ DEFINE CLASS GameManager EXTENDS MonoBehaviour
             END IF
         END IF
     END FUNCTION
-
 END CLASS

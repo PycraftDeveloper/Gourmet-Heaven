@@ -2,15 +2,16 @@
 
 DEFINE CLASS SushiAppliance EXTENDS MonoBehaviour
     DECLARE PRIVATE BOOLEAN Loaded
+    DECLARE PRIVATE BOOLEAN IsGlowing
+
     DECLARE PRIVATE GAMEOBJECT NormalApplianceTexture
     DECLARE PRIVATE GAMEOBJECT GlowingApplianceTexture
-    DECLARE PRIVATE BOOLEAN IsGlowing
 
     DECLARE PUBLIC VOID OnLoad() DO
         IF IsGlowing THEN
-            INSTANTIATE(GlowingApplianceTexture, transform.position, transform.rotation)
+            INSTANTIATE(GlowingApplianceTexture, CURRENT_POSITION, CURRENT_ROTATION)
         ELSE
-            INSTANTIATE(NormalApplianceTexture, transform.position, transform.rotation)
+            INSTANTIATE(NormalApplianceTexture, CURRENT_POSITION, CURRENT_ROTATION)
         END IF
         Loaded <- TRUE
     END FUNCTION
@@ -34,8 +35,5 @@ DEFINE CLASS SushiAppliance EXTENDS MonoBehaviour
     DECLARE PRIVATE VOID Start() DO
         GameManager <- GET_GAME_OBJECT_WITH_TAG("GameManager")
         Loaded <- FALSE
-    END FUNCTION
-
-    DECLARE PRIVATE VOID Update() DO
     END FUNCTION
 END CLASS
