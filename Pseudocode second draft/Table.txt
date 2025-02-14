@@ -1,0 +1,35 @@
+DECLARE CLASS Table EXTENDS MonoBehaviour
+    DECLARE PUBLIC GAMEOBJECT TableTexture
+]
+    DECLARE PUBLIC LIST OF GAMEOBJECTs Seats
+
+    DECLARE PRIVATE BOOLEAN Loaded
+
+    DECLARE PUBLIC VOID Load() DO
+        IF Loaded THEN
+            RETURN
+        END IF
+
+        INSTANTIATE(TableTexture, CURRENT_POSITION, CURRENT_ROTATION)
+        Loaded <- TRUE
+    END METHOD
+
+    DECLARE PUBLIC VOID GarbageCollect() DO
+        IF Loaded IS FALSE THEN
+            RETURN
+        END IF
+
+        Loaded <- FALSE
+        DESTROY(TableTexture)
+    END METHOD
+
+    DECLARE PRIVATE VOID OnStart() DO
+        Loaded <- FALSE
+        FOR i <- 0 TO 4 DO
+            Seats.ADD(NULL)
+        END FOR
+    END METHOD
+
+    DECLARE PRIVATE VOID Update() DO
+    END METHOD
+END CLASS

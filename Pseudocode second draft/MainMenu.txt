@@ -1,0 +1,52 @@
+// This game object acts as a coordinator for the main menu. It does NOT actually
+// appear, but handles the creation, interaction and destruction of the menu.
+
+DECLARE CLASS MainMenu EXTENDS MonoBehaviour
+    DECLARE PUBLIC GAMEOBJECT MenuBackground
+    DECLARE PUBLIC GAMEOBJECT GameLogo
+
+    DECLARE PUBLIC GAMEOBJECT PlayButton
+    DECLARE PUBLIC GAMEOBJECT OptionsButton
+    DECLARE PUBLIC GAMEOBJECT ShopButton
+    DECLARE PUBLIC GAMEOBJECT CreditsButton
+
+    DECLARE PUBLIC GAMEOBJECT LevelSelectionMenu
+    DECLARE PUBLIC GAMEOBJECT OptionsMenu // not prototyped
+    DECLARE PUBLIC GAMEOBJECT ShopMenu
+    DECLARE PUBLIC GAMEOBJECT CreditsMenu // not prototyped
+
+    DECLARE PRIVATE VOID OnMenuChange() DO
+        DESTROY(MenuBackground)
+        DESTROY(GameLogo)
+        DESTROY(PlayButton)
+        DESTROY(OptionsButton)
+        DESTROY(ShopButton)
+        DESTROY(CreditsButton)
+        DESTROY(THIS GAMEOBJECT)
+    END METHOD
+
+    DECLARE PRIVATE VOID OnStart() DO
+        DISPLAY UON_GAMES LOGO
+        INSTANTIATE(MenuBackground, CURRENT_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(GameLogo, LOGO_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(PlayButton, PLAY_BUTTON_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(OptionsButton, OPTIONS_BUTTON_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(ShopButton, SHOP_BUTTON_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(CreditsButton, CREDITS_BUTTON_POSITION, CURRENT_ROTATION)
+    END METHOD
+
+    DECLARE PRIVATE VOID Update() DO
+        IF PlayButton PRESSED THEN
+            INSTANTIATE(LevelSelectionMenu, CURRENT_POSITION, CURRENT_ROTATION)
+            OnMenuChange()
+        ELSE IF OptionsButton PRESSED THEN
+            INSTANTIATE(OptionsMenu, CURRENT_POSITION, CURRENT_ROTATION)
+            OnMenuChange()
+        ELSE IF ShopButton PRESSED THEN
+            INSTANTIATE(ShopMenu, CURRENT_POSITION, CURRENT_ROTATION)
+            OnMenuChange()
+        ELSE IF CreditsButton PRESSED THEN
+            INSTANTIATE(CreditsMenu, CURRENT_POSITION, CURRENT_ROTATION)
+            OnMenuChange()
+    END METHOD
+END CLASS

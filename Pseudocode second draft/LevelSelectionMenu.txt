@@ -1,0 +1,37 @@
+// This game object acts as a coordinator for the level selection menu. It does NOT actually
+// appear, but handles the creation, interaction and destruction of the menu.
+
+DECLARE CLASS LevelSelectionMenu EXTENDS MonoBehaviour
+    DECLARE PUBLIC GAMEOBJECT MenuBackground
+    DECLARE PUBLIC GAMEOBJECT GameLogo
+
+    DECLARE PUBLIC GAMEOBJECT LevelOneButton // loads and handles previous progress score internally
+    DECLARE PUBLIC GAMEOBJECT LevelTwoButton // ``
+
+    DECLARE PUBLIC GAMEOBJECT LevelOne
+    DECLARE PUBLIC GAMEOBJECT LevelTwo
+
+    DECLARE PRIVATE VOID OnMenuChange() DO
+        DESTROY(MenuBackground)
+        DESTROY(GameLogo)
+        DESTROY(LevelOneButton)
+        DESTROY(LevelTwoButton)
+        DESTROY(THIS GAMEOBJECT)
+    END METHOD
+
+    DECLARE PRIVATE VOID OnStart() DO
+        INSTANTIATE(MenuBackground, CURRENT_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(GameLogo, LOGO_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(LevelOneButton, LEVEL_ONE_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(LevelTwoButton, LEVEL_TWO_POSITION, CURRENT_ROTATION)
+    END METHOD
+
+    DECLARE PRIVATE VOID Update() DO
+        IF LevelOneButton PRESSED THEN
+            INSTANTIATE(LevelOne, CURRENT_POSITION, CURRENT_ROTATION)
+            OnMenuChange()
+        ELSE IF LevelTwoButton PRESSED THEN
+            INSTANTIATE(LevelTwo, CURRENT_POSITION, CURRENT_ROTATION)
+            OnMenuChange()
+    END METHOD
+END CLASS

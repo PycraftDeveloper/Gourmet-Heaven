@@ -1,0 +1,93 @@
+DECLARE CLASS Kitchen EXTENDS MonoBehaviour
+    DECLARE PUBLIC GAMEOBJECT KitchenBackgroundTexture
+    DECLARE PUBLIC GAMEOBJECT KitchenForegroundTexture
+
+    DECLARE PUBLIC GAMEOBJECT SushiAppliance
+    DECLARE PUBLIC GAMEOBJECT PhoAppliance
+
+    DECLARE PUBLIC GAMEOBJECT Player
+
+    DECLARE PUBLIC GAMEOBJECT Sushi_MG
+    DECLARE PUBLIC GAMEOBJECT Pho_MG
+
+    DECLARE PUBLIC GAMEOBJECT CurrentLevel
+
+    DECLARE PRIVATE BOOLEAN Loaded
+
+    DECLARE PRIVATE VOID ServeCustomer() DO
+        LIST OF GAMEOBJECTs Customers_In_Kitchen
+
+        FOR Customer IN CurrentLevel.Customers DO
+            IF Customer.Location IS KITCHEN THEN
+                Customers_In_Kitchen.ADD(Customer)
+            END IF
+        END FOR
+
+        FOR Customer IN Customers_In_Kitchen DO
+            IF Customer.POSITION IS KITCHEN_SERVICE_POSITION THEN
+                Customer.Served()
+                Customer.Location <- RESTAURANT
+                MOVE CUSTOMER OUT THE BOTTOM OF SCENE (INTO RESTAURANT)
+                Customers_In_Kitchen.REMOVE(Customer)
+            END IF
+        END FOR
+
+        FOR Customer IN Customers_In_Kitchen DO
+            SHUFFLE FORWARDS
+        END FOR
+    END METHOD
+
+    DECLARE PUBLIC VOID Load() DO
+        IF Loaded THEN
+            RETURN
+        END IF
+
+        INSTANTIATE(KitchenBackgroundTexture, CURRENT_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(KitchenForegroundTexture, KITCHEN_FOREGROUND_POSITION, CURRENT_ROTATION)
+        SushiAppliance.Load()
+        PhoAppliance.Load()
+        Loaded <- TRUE
+    END METHOD
+
+    DECLARE PUBLIC VOID GarbageCollect() DO
+        IF Loaded IS FALSE THEN
+            RETURN
+        END IF
+
+        Loaded <- FALSE
+        DESTROY(KitchenBackgroundTexture)
+        DESTROY(KitchenForegroundTexture)
+        SushiAppliance.GarbageCollect()
+        PhoAppliance.GarbageCollect()
+    END METHOD
+
+    DECLARE PRIVATE VOID OnStart() DO
+        Loaded <- FALSE
+        Player <- GET_GAME_OBJECT_WITH_TAG("Player")
+        CurrentLevel <- GET_GAME_OBJECT_WITH_TAG("CurrentLevel)
+        INSTANTIATE(SushiAppliance, CURRENT_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(PhoAppliance, CURRENT_POSITION, CURRENT_ROTATION)
+    END METHOD
+
+    DECLARE PRIVATE VOID Update() DO
+        IF Player IN COLLISION WITH KITCHEN_SCENE THEN
+            MOVE PLAYER BACK INTO SCENE
+        END IF
+
+        IF SUSHI IN Player.Meals THEN
+            SushiAppliance.SetGlowing(TRUE)
+            IF Player IN COLLISION WITH SushiAppliance THEN
+                INSTANTIATE(Sushi_MG, CURRENT_POSITION, CURRENT_ROTATION)
+        ELSE
+            SushiAppliance.SetGlowing(FALSE)
+        END IF
+
+        IF PHO IN Player.Meals THEN
+            PhoAppliance.SetGlowing(TRUE)
+            IF Player IN COLLISION WITH PhoAppliance THEN
+                INSTANTIATE(Pho_MG, CURRENT_POSITION, CURRENT_ROTATION)
+        ELSE
+            PhoAppliance.SetGlowing(FALSE)
+        END IF
+    END METHOD
+END CLASS

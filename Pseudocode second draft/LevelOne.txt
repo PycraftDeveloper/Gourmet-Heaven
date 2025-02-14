@@ -1,0 +1,80 @@
+// This object has tag "CurrentLevel"
+
+ECLARE CLASS LevelOne EXTENDS MonoBehaviour
+    DECLARE PUBLIC GAMEOBJECT Kitchen // only unload resources between scenes
+    DECLARE PUBLIC GAMEOBJECT Restaurant // only unload resources between scenes
+    DECLARE PUBLIC GAMEOBJECT Player
+    DECLARE PUBLIC GAMEOBJECT Customer
+    DECLARE PUBLIC GAMEOBJECT LevelOver
+
+    DECLARE PUBLIC LIST OF GAMEOBJECTs Customers
+
+    DECLARE PRIVATE FLOAT Customer_Spawn_Timer
+    DECLARE PRIVATE INT Customer_Next_Spawn_Time
+
+    DECLARE PUBLIC INT Customers_In_Scene
+
+    DECLARE PUBLIC INT Level
+    DECLARE PUBLIC INT Sub_Level
+    DECLARE PUBLIC FLOAT Level_Run_Time
+
+    DECLARE PRIVATE VOID OnLevelEnd() DO
+        DESTROY(Kitchen)
+        DESTROY(Restaurant)
+        DESTROY(Player)
+        DESTROY(Customers)
+        DESTROY(THIS GAMEOBJECT)
+    END METHOD
+
+    DECLARE PRIVATE VOID OnStart() DO
+        INSTANTIATE(Kitchen, CURRENT_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(Restaurant, CURRENT_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(Player, NEW VECTOR3(0, 0, 0), CURRENT_ROTATION) // centred
+        Kitchen.Load()
+        Location <- KITCHEN
+        Customer_Spawn_Timer <- 0
+        Customer_Spawn_Time <- RANDOM_RANGE(CUSTOMER_SPAWN_TIME_MINIMUM, CUSTOMER_SPAWN_TIME_MAXIMUM)
+        Sub_Level <- PART_ONE
+        Level <- LEVEL_ONE
+    END METHOD
+
+    DECLARE PRIVATE VOID Update() DO
+        Level_Run_Time <- Level_Run_Time + DELTATIME
+
+        IF Level_Run_Time > LEVEL_DURATION / 2 THEN
+            IF Level_Run_Time >= LEVEL_DURATION THEN
+                INSTANTIATE(LevelOver, CURRENT_POSITION, CURRENT_ROTATION)
+                OnLevelEnd()
+            ELSE
+                Sub_Level <- PART_TWO
+            END IF
+        END IF
+
+        IF Player IN COLLISION WITH RESTAURANT PORTAL THEN
+            Kitchen.GarbageCollect()
+            Restaurant.Load()
+            MOVE PLAYER TO TOP OF FRAME
+        ELSE IF Player IN COLLISION WITH KITCHEN PORTAL THEN
+            Restaurant.GarbageCollect()
+            Kitchen.Load()
+            MOVE PLAYER TO BOTTOM OF FRAME
+
+            FOR Existing_Customer IN Customers DO
+                IF Existing_Customer.Meal == "" THEN
+                    DESTROY(Existing_Customer) // I promise this isn't as bad as it sounds...
+                    Customers.REMOVE(Existing_Customer)
+                    Customers_In_Scene <- Customers_In_Scene - 1
+                END IF
+            END FOR
+        END IF
+
+        IF Customer_Spawn_Timer > Customer_Next_Spawn_Time THEN
+            Customer_Next_Spawn_Timer <- 0
+            Customer_Spawn_Time <- RANDOM_RANGE(CUSTOMER_SPAWN_TIME_MINIMUM, CUSTOMER_SPAWN_TIME_MAXIMUM)
+            IF Customers_In_Scene < MAX_CUSTOMERS THEN
+                INSTANTIATE(Customer, CUSTOMER_INITIAL_POSITION, CURRENT_ROTATION)
+            END IF
+        END IF
+
+    END METHOD
+END CLASS

@@ -1,0 +1,63 @@
+DECLARE CLASS Customer EXTENDS MonoBehaviour
+    DECLARE PUBLIC GAMEOBJECT CustomerTexture
+    DECLARE PUBLIC GAMEOBJECT CurrentLevel
+
+    DECLARE PUBLIC STRING Meal
+    DECLARE PUBLIC INT Number_Of_Meals_To_Order
+
+    DECLARE PRIVATE BOOLEAN Loaded
+
+    DECLARE PUBLIC STRING Location
+
+    DECLARE PUBLIC VOID Served() DO
+        IF Number_Of_Meals_To_Order IS 0 THEN
+            Meal <- ""
+            RETURN
+        ELSE
+            Meal <- RANDOM_CHOICE_FROM(MEALS)
+        Number_Of_Meals_To_Order <- Number_Of_Meals_To_Order - 1
+    END METHOD
+
+    DECLARE PUBLIC VOID Load() DO
+        IF Loaded THEN
+            RETURN
+        END IF
+
+        INSTANTIATE(CustomerTexture, CURRENT_POSITION, CURRENT_ROTATION)
+        Loaded <- TRUE
+    END METHOD
+
+    DECLARE PUBLIC VOID GarbageCollect() DO
+        IF Loaded IS FALSE THEN
+            RETURN
+        END IF
+
+        Loaded <- FALSE
+        DESTROY(CustomerTexture)
+    END METHOD
+
+    DECLARE PRIVATE VOID OnStart() DO
+        Loaded <- FALSE
+        CurrentLevel <- GET_GAME_OBJECT_WITH_TAG("CurrentLevel)
+        Meal <- RANDOM_CHOICE_FROM(MEALS)
+        CurrentLevel.Customers_In_Scene <- CurrentLevel.Customers_In_Scene + 1
+        Location <- KITCHEN
+
+        IF CurrentLevel.Level IS LEVEL_ONE THEN
+            IF CurrentLevel.Sub_Level IS PART_ONE THEN
+                Number_Of_Meals_To_Order <- 0
+            ELSE
+                Number_Of_Meals_To_Order <- RANDOM_RANGE(0, 1)
+            END IF
+        ELSE
+            IF CurrentLevel.Sub_Level IS PART_ONE THEN
+                Number_Of_Meals_To_Order <- RANDOM_RANGE(0, 2)
+            ELSE
+                Number_Of_Meals_To_Order <- RANDOM_RANGE(0, 3)
+            END IF
+        END IF
+    END METHOD
+
+    DECLARE PRIVATE VOID Update() DO
+    END METHOD
+END CLASS

@@ -1,0 +1,49 @@
+DECLARE CLASS Restaurant EXTENDS MonoBehaviour
+    DECLARE PUBLIC GAMEOBJECT RestaurantBackgroundTexture
+    DECLARE PUBLIC GAMEOBJECT Table
+
+    DECLARE PUBLIC LIST OF GAMEOBJECTs Tables
+
+    DECLARE PUBLIC GAMEOBJECT Player
+
+    DECLARE PRIVATE BOOLEAN Loaded
+
+    DECLARE PUBLIC VOID Load() DO
+        IF Loaded THEN
+            RETURN
+        END IF
+
+        INSTANTIATE(RestaurantBackgroundTexture, CURRENT_POSITION, CURRENT_ROTATION)
+        FOR i <- 0 TO 4 DO
+            Tables[i].Load()
+        END FOR
+        Loaded <- TRUE
+    END METHOD
+
+    DECLARE PUBLIC VOID GarbageCollect() DO
+        IF Loaded IS FALSE THEN
+            RETURN
+        END IF
+
+        Loaded <- FALSE
+        DESTROY(RestaurantBackgroundTexture)
+        FOR i <- 0 TO 4 DO
+            Tables[i].GarbageCollect()
+        END FOR
+    END METHOD
+
+    DECLARE PRIVATE VOID OnStart() DO
+        Player <- GET_GAME_OBJECT_WITH_TAG("Player")
+        Loaded <- FALSE
+        FOR i <- 0 TO 4 DO // load 4 tables into the Tables array
+            NEW GAMEOBJECT New_Table <- INSTANTIATE(Table, CURRENT_POSITION, CURRENT_ROTATION)
+            Tables.ADD(New_Table)
+        END FOR
+    END METHOD
+
+    DECLARE PRIVATE VOID Update() DO
+        IF Player IN COLLISION WITH RESTAURANT_SCENE THEN
+            MOVE PLAYER BACK INTO SCENE
+        END IF
+    END METHOD
+END CLASS

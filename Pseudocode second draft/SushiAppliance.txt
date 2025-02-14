@@ -1,0 +1,53 @@
+DECLARE CLASS SushiAppliance EXTENDS MonoBehaviour
+    DECLARE PUBLIC GAMEOBJECT NormalSushiApplianceTexture
+    DECLARE PUBLIC GAMEOBJECT GlowSushiApplianceTexture
+
+    DECLARE PRIVATE BOOLEAN Loaded
+    DECLARE PRIVATE BOOLEAN Glowing
+
+    DECLARE PUBLIC VOID SetGlowing(BOOLEAN Value) DO
+        IF Value EQUALS Glowing THEN
+            RETURN
+        END IF
+
+        IF Loaded THEN
+            GarbageCollect()
+            Glowing <- Value
+            Load()
+        END IF
+    END METHOD
+
+    DECLARE PUBLIC VOID Load() DO
+        IF Loaded THEN
+            RETURN
+        END IF
+
+        IF Glowing THEN
+            INSTANTIATE(GlowSushiApplianceTexture, SUSHI_APPLIANCE_POSITION, CURRENT_ROTATION)
+        ELSE
+            INSTANTIATE(NormalSushiApplianceTexture, SUSHI_APPLIANCE_POSITION, CURRENT_ROTATION)
+        END IF
+        Loaded <- TRUE
+    END METHOD
+
+    DECLARE PUBLIC VOID GarbageCollect() DO
+        IF Loaded IS FALSE THEN
+            RETURN
+        END IF
+
+        Loaded <- FALSE
+
+        IF Glowing THEN
+            DESTROY(GlowSushiApplianceTexture)
+        ELSE
+            DESTROY(NormalSushiApplianceTexture)
+        END IF
+    END METHOD
+
+    DECLARE PRIVATE VOID OnStart() DO
+        Loaded <- FALSE
+    END METHOD
+
+    DECLARE PRIVATE VOID Update() DO
+    END METHOD
+END CLASS
