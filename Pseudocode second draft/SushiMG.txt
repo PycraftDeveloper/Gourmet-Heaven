@@ -1,14 +1,13 @@
 DECLARE CLASS Sushi_MG EXTENDS MonoBehaviour
     DECLARE PUBLIC GAMEOBJECT BackgroundTexture
     DECLARE PUBLIC GAMEOBJECT ForegroundTexture
-
     DECLARE PUBLIC GAMEOBJECT RawFoodItemTexture
     DECLARE PUBLIC GAMEOBJECT FinishedFoodItem
-
     DECLARE PRIVATE GAMEOBJECT Player
 
     DECLARE PRIVATE INT Start_X_Pos
     DECLARE PRIVATE INT End_X_Pos
+
     DECLARE PRIVATE FLOAT Press_Duration
 
     DECLARE PRIVATE VOID OnExit() DO
@@ -41,10 +40,10 @@ DECLARE CLASS Sushi_MG EXTENDS MonoBehaviour
         ELSE
             IF Start_X_Pos IS NOT NULL THEN
                 FLOAT Velocity <- (End_X_Pos - Start_X_Pos) / Press_Duration
-                IF Velocity IN RANGE(SUSHI_MG_VELOCITY_MIN, SUSHI_MG_VELOCITY_MAX) THEN
-                    Player.Meals.ADD(SUSHI)
+                IF Velocity IN RANGE(GameConstants.SUSHI_MG_VELOCITY_MIN, GameConstants.SUSHI_MG_VELOCITY_MAX) THEN
+                    Player.Meals.ADD(GameConstants.SUSHI)
                 ELSE
-                    Player.Meals.ADD(RUINED_FOOD)
+                    Player.Meals.ADD(GameConstants.RUINED_FOOD)
                 END IF
                 OnExit()
             END IF

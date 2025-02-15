@@ -23,9 +23,9 @@ DECLARE CLASS PhoAppliance EXTENDS MonoBehaviour
         END IF
 
         IF Glowing THEN
-            INSTANTIATE(GlowPhoApplianceTexture, PHO_APPLIANCE_POSITION, CURRENT_ROTATION)
+            INSTANTIATE(GlowPhoApplianceTexture, GameConstants.PHO_APPLIANCE_POSITION, CURRENT_ROTATION)
         ELSE
-            INSTANTIATE(NormalPhoApplianceTexture, PHO_APPLIANCE_POSITION, CURRENT_ROTATION)
+            INSTANTIATE(NormalPhoApplianceTexture, GameConstants.PHO_APPLIANCE_POSITION, CURRENT_ROTATION)
         END IF
         Loaded <- TRUE
     END METHOD

@@ -1,17 +1,13 @@
 DECLARE CLASS Kitchen EXTENDS MonoBehaviour
     DECLARE PUBLIC GAMEOBJECT KitchenBackgroundTexture
     DECLARE PUBLIC GAMEOBJECT KitchenForegroundTexture
-
     DECLARE PUBLIC GAMEOBJECT SushiAppliance
     DECLARE PUBLIC GAMEOBJECT PhoAppliance
     DECLARE PUBLIC GAMEOBJECT TrashAppliance
-    DECLARE PUBLIC GAMEOBJECT ServiceAppliance // exists purely for collisions, no texture
-
+    DECLARE PUBLIC GAMEOBJECT ServiceAppliance
     DECLARE PUBLIC GAMEOBJECT Player
-
     DECLARE PUBLIC GAMEOBJECT Sushi_MG
     DECLARE PUBLIC GAMEOBJECT Pho_MG
-
     DECLARE PUBLIC GAMEOBJECT CurrentLevel
 
     DECLARE PRIVATE BOOLEAN Loaded
@@ -20,14 +16,14 @@ DECLARE CLASS Kitchen EXTENDS MonoBehaviour
         LIST OF GAMEOBJECTs Customers_In_Kitchen
 
         FOR Customer IN CurrentLevel.Customers DO
-            IF Customer.Location IS KITCHEN THEN
+            IF Customer.Location IS GameConstants.KITCHEN THEN
                 Customers_In_Kitchen.ADD(Customer)
             END IF
         END FOR
 
         FOR Customer IN Customers_In_Kitchen DO
-            IF Customer.POSITION IS KITCHEN_SERVICE_POSITION THEN
-                Customer.Location <- RESTAURANT
+            IF Customer.POSITION IS GameConstants.KITCHEN_SERVICE_POSITION THEN
+                Customer.Location <- GameConstants.RESTAURANT
                 MOVE CUSTOMER OUT THE BOTTOM OF SCENE (INTO RESTAURANT)
                 Customers_In_Kitchen.REMOVE(Customer)
                 Restaurant.AddCustomerToRestaurant(Customer)
@@ -45,10 +41,11 @@ DECLARE CLASS Kitchen EXTENDS MonoBehaviour
         END IF
 
         INSTANTIATE(KitchenBackgroundTexture, CURRENT_POSITION, CURRENT_ROTATION)
-        INSTANTIATE(KitchenForegroundTexture, KITCHEN_FOREGROUND_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(KitchenForegroundTexture, GameConstants.KITCHEN_FOREGROUND_POSITION, CURRENT_ROTATION)
         SushiAppliance.Load()
         PhoAppliance.Load()
         TrashAppliance.Load()
+        ServiceAppliance.Load()
         Loaded <- TRUE
     END METHOD
 
@@ -63,6 +60,7 @@ DECLARE CLASS Kitchen EXTENDS MonoBehaviour
         SushiAppliance.GarbageCollect()
         PhoAppliance.GarbageCollect()
         TrashAppliance.GarbageCollect()
+        ServiceAppliance.GarbageCollect()
     END METHOD
 
     DECLARE PRIVATE VOID OnStart() DO
@@ -72,6 +70,7 @@ DECLARE CLASS Kitchen EXTENDS MonoBehaviour
         INSTANTIATE(SushiAppliance, CURRENT_POSITION, CURRENT_ROTATION)
         INSTANTIATE(PhoAppliance, CURRENT_POSITION, CURRENT_ROTATION)
         INSTANTIATE(TrashAppliance, CURRENT_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(ServiceAppliance, CURRENT_POSITION, CURRENT_ROTATION)
     END METHOD
 
     DECLARE PRIVATE VOID Update() DO
@@ -82,7 +81,7 @@ DECLARE CLASS Kitchen EXTENDS MonoBehaviour
         IF Player IN COLLISION WITH ServiceAppliance THEN
             BOOLEAN Customer_To_Serve <- FALSE
             FOR Customer IN CurrentLevel.Customers DO
-                IF Customer.Location IS KITCHEN THEN
+                IF Customer.Location IS GameConstants.KITCHEN THEN
                     Customer_To_Serve <- TRUE
                     BREAK
                 END IF
@@ -90,6 +89,7 @@ DECLARE CLASS Kitchen EXTENDS MonoBehaviour
 
             IF Customer_To_Serve THEN
                 ServeCustomer()
+            END IF
         END IF
 
         LIST OF STRINGs Customer_Orders
@@ -111,6 +111,7 @@ DECLARE CLASS Kitchen EXTENDS MonoBehaviour
             SushiAppliance.SetGlowing(TRUE)
             IF Player IN COLLISION WITH SushiAppliance THEN
                 INSTANTIATE(Sushi_MG, CURRENT_POSITION, CURRENT_ROTATION)
+            END IF
         ELSE
             SushiAppliance.SetGlowing(FALSE)
         END IF
@@ -119,6 +120,7 @@ DECLARE CLASS Kitchen EXTENDS MonoBehaviour
             PhoAppliance.SetGlowing(TRUE)
             IF Player IN COLLISION WITH PhoAppliance THEN
                 INSTANTIATE(Pho_MG, CURRENT_POSITION, CURRENT_ROTATION)
+            END IF
         ELSE
             PhoAppliance.SetGlowing(FALSE)
         END IF

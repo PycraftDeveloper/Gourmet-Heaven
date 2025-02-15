@@ -1,10 +1,8 @@
 DECLARE CLASS Pho_MG EXTENDS MonoBehaviour
     DECLARE PUBLIC GAMEOBJECT BackgroundTexture
     DECLARE PUBLIC GAMEOBJECT ForegroundTexture
-
     DECLARE PUBLIC GAMEOBJECT RawFoodItemTexture
     DECLARE PUBLIC GAMEOBJECT FinishedFoodItem
-
     DECLARE PRIVATE GAMEOBJECT Player
 
     DECLARE PRIVATE FLOAT MiniGameTimer
@@ -35,9 +33,9 @@ DECLARE CLASS Pho_MG EXTENDS MonoBehaviour
 
         IF USER_INTERACTS_WITH_GAME THEN
             IF RawFoodItemTexture IN COLLISION WITH ForegroundTexture THEN
-                Player.Meals.ADD(PHO)
+                Player.Meals.ADD(GameConstants.PHO)
             ELSE
-                Player.Meals.ADD(RUINED_FOOD)
+                Player.Meals.ADD(GameConstants.RUINED_FOOD)
             END IF
             OnExit() // return to creator
         END IF

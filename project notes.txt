@@ -1,5 +1,5 @@
 JEBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBO
--------------------------------------------------
+=================================================
 
 Great start on Pseudocode, do:
     1. Customer (Done?)

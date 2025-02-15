@@ -10,15 +10,13 @@ ECLARE CLASS LevelOne EXTENDS MonoBehaviour
     DECLARE PUBLIC LIST OF GAMEOBJECTs Customers
 
     DECLARE PRIVATE FLOAT Customer_Spawn_Timer
+    DECLARE PUBLIC FLOAT Level_Run_Time
+    DECLARE PUBLIC FLOAT Level_Score
+
     DECLARE PRIVATE INT Customer_Next_Spawn_Time
-
     DECLARE PUBLIC INT Customers_In_Scene
-
     DECLARE PUBLIC INT Level
     DECLARE PUBLIC INT Sub_Level
-    DECLARE PUBLIC FLOAT Level_Run_Time
-
-    DECLARE PUBLIC FLOAT Level_Score
 
     DECLARE PRIVATE VOID OnLevelEnd() DO
         DESTROY(Kitchen)
@@ -33,24 +31,24 @@ ECLARE CLASS LevelOne EXTENDS MonoBehaviour
         INSTANTIATE(Restaurant, CURRENT_POSITION, CURRENT_ROTATION)
         INSTANTIATE(Player, NEW VECTOR3(0, 0, 0), CURRENT_ROTATION) // centred
         Kitchen.Load()
-        Location <- KITCHEN
+        Location <- GameConstants.KITCHEN
         Customer_Spawn_Timer <- 0
-        Customer_Spawn_Time <- RANDOM_RANGE(CUSTOMER_SPAWN_TIME_MINIMUM, CUSTOMER_SPAWN_TIME_MAXIMUM)
-        Sub_Level <- PART_ONE
-        Level <- LEVEL_ONE
+        Customer_Spawn_Time <- RANDOM_RANGE(GameConstants.CUSTOMER_SPAWN_TIME_MINIMUM, GameConstants.CUSTOMER_SPAWN_TIME_MAXIMUM)
+        Sub_Level <- GameConstants.PART_ONE
+        Level <- GameConstants.LEVEL_ONE
         Level_Score <- 0
     END METHOD
 
     DECLARE PRIVATE VOID Update() DO
         Level_Run_Time <- Level_Run_Time + DELTATIME
 
-        IF Level_Run_Time > LEVEL_DURATION / 2 THEN
-            IF Level_Run_Time >= LEVEL_DURATION THEN
+        IF Level_Run_Time > GameConstants.LEVEL_DURATION / 2 THEN
+            IF Level_Run_Time >= GameConstants.LEVEL_DURATION THEN
                 NEW GAMEOBJECT LevelOverMenu <- INSTANTIATE(LevelOver, CURRENT_POSITION, CURRENT_ROTATION)
                 LevelOverMenu.Score <- Level_Score
                 OnLevelEnd()
             ELSE
-                Sub_Level <- PART_TWO
+                Sub_Level <- GameConstants.PART_TWO
             END IF
         END IF
 
@@ -60,7 +58,7 @@ ECLARE CLASS LevelOne EXTENDS MonoBehaviour
             MOVE PLAYER TO TOP OF FRAME
 
             FOR Existing_Customer IN Customers DO
-                IF Existing_Customer.Location IS KITCHEN THEN
+                IF Existing_Customer.Location IS GameConstants.KITCHEN THEN
                     Existing_Customer.GarbageCollect() // unload customers resources when in different scene
                 END IF
             END FOR
@@ -85,11 +83,10 @@ ECLARE CLASS LevelOne EXTENDS MonoBehaviour
 
         IF Customer_Spawn_Timer > Customer_Next_Spawn_Time THEN
             Customer_Next_Spawn_Timer <- 0
-            Customer_Spawn_Time <- RANDOM_RANGE(CUSTOMER_SPAWN_TIME_MINIMUM, CUSTOMER_SPAWN_TIME_MAXIMUM)
-            IF Customers_In_Scene < MAX_CUSTOMERS THEN
-                INSTANTIATE(Customer, CUSTOMER_INITIAL_POSITION, CURRENT_ROTATION)
+            Customer_Spawn_Time <- RANDOM_RANGE(GameConstants.CUSTOMER_SPAWN_TIME_MINIMUM, GameConstants.CUSTOMER_SPAWN_TIME_MAXIMUM)
+            IF Customers_In_Scene < GameConstants.MAX_CUSTOMERS THEN
+                INSTANTIATE(Customer, GameConstants.CUSTOMER_INITIAL_POSITION, CURRENT_ROTATION)
             END IF
         END IF
-
     END METHOD
 END CLASS

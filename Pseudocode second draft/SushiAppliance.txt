@@ -23,9 +23,9 @@ DECLARE CLASS SushiAppliance EXTENDS MonoBehaviour
         END IF
 
         IF Glowing THEN
-            INSTANTIATE(GlowSushiApplianceTexture, SUSHI_APPLIANCE_POSITION, CURRENT_ROTATION)
+            INSTANTIATE(GlowSushiApplianceTexture, GameConstants.SUSHI_APPLIANCE_POSITION, CURRENT_ROTATION)
         ELSE
-            INSTANTIATE(NormalSushiApplianceTexture, SUSHI_APPLIANCE_POSITION, CURRENT_ROTATION)
+            INSTANTIATE(NormalSushiApplianceTexture, GameConstants.SUSHI_APPLIANCE_POSITION, CURRENT_ROTATION)
         END IF
         Loaded <- TRUE
     END METHOD

@@ -8,4 +8,4 @@ Additionally, the pseudocode is intended to act as an overview, and the 5 differ
 the pseudocode as each mini-game is largely very similar. This is also true for the different appliances.
 
 Additionally, some of the constants, particularly around positioning have yet to be discussed with the design team, and have been deliberately left as undetermined to illustrate
-that these components can be easily moved at any point in the development and design process.
+that these components can be easily moved at any point in the development and design process. This also applies to all 'constants' defined.
