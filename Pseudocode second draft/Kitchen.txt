@@ -27,7 +27,6 @@ DECLARE CLASS Kitchen EXTENDS MonoBehaviour
 
         FOR Customer IN Customers_In_Kitchen DO
             IF Customer.POSITION IS KITCHEN_SERVICE_POSITION THEN
-                Customer.Served()
                 Customer.Location <- RESTAURANT
                 MOVE CUSTOMER OUT THE BOTTOM OF SCENE (INTO RESTAURANT)
                 Customers_In_Kitchen.REMOVE(Customer)

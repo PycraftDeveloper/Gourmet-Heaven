@@ -2,10 +2,12 @@ DECLARE CLASS LevelOverMenu EXTENDS MonoBehaviour
     DECLARE PUBLIC GAMEOBJECT BackgroundTexture
     DECLARE PUBLIC GAMEOBJECT GameLogo
 
-    DECLARE PUBLIC MainMenuButton
-    DECLARE PUBLIC QuitButton
+    DECLARE PUBLIC GAMEOBJECT MainMenuButton
+    DECLARE PUBLIC GAMEOBJECT QuitButton
 
-    DECLARE PUBLIC MainMenu
+    DECLARE PUBLIC GAMEOBJECT MainMenu
+
+    DECLARE PUBLIC FLOAT Score
 
     DECLARE PRIVATE VOID OnMenuChange() DO
         DESTROY(BackgroundTexture)
@@ -23,6 +25,8 @@ DECLARE CLASS LevelOverMenu EXTENDS MonoBehaviour
     END METHOD
 
     DECLARE PRIVATE VOID Update() DO
+        DISPLAY SCORE
+
         IF LevelOneButton PRESSED THEN
             INSTANTIATE(MainMenu, CURRENT_POSITION, CURRENT_ROTATION)
             OnMenuChange()

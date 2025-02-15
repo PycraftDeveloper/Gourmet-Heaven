@@ -28,11 +28,10 @@ BE CAREFUL OF DEPTH WHEN WORKING WITH COLLISIONS!!!!
 
 Meeting refinements
 -------------------
-Transition between 1 and 1.5
-Add level selection to switch between levels 1 and 2
-Shop?
-Score?
-Tables sideways – not like I have now (see ‘this’)
-Fake customers on side
-Player holds 2 meals, one for each hand – one player wants is given to customer.
+* Transition between 1 and 1.5
+* Add level selection to switch between levels 1 and 2
+* Score?
+* Tables sideways – not like I have now (see ‘this’)
+* Fake customers on side
+* Player holds 2 meals, one for each hand – one player wants is given to customer.
 32x32 tiles

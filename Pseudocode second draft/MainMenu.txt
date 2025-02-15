@@ -12,7 +12,7 @@ DECLARE CLASS MainMenu EXTENDS MonoBehaviour
 
     DECLARE PUBLIC GAMEOBJECT LevelSelectionMenu
     DECLARE PUBLIC GAMEOBJECT OptionsMenu // not prototyped
-    DECLARE PUBLIC GAMEOBJECT ShopMenu
+    DECLARE PUBLIC GAMEOBJECT ShopMenu // not prototyped
     DECLARE PUBLIC GAMEOBJECT CreditsMenu // not prototyped
 
     DECLARE PRIVATE VOID OnMenuChange() DO

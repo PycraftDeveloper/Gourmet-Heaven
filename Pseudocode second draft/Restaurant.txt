@@ -58,7 +58,7 @@ DECLARE CLASS Restaurant EXTENDS MonoBehaviour
         END FOR
     END METHOD
 
-    DECLARE PRIVATE VOID Update() DO // serve customers (also consider ruined food. Then consider score when deleting customers.)
+    DECLARE PRIVATE VOID Update() DO
         IF Player IN COLLISION WITH RESTAURANT_SCENE THEN
             MOVE PLAYER BACK INTO SCENE
         END IF

@@ -3,6 +3,15 @@ DECLARE CLASS Table EXTENDS MonoBehaviour
     DECLARE PUBLIC GAMEOBJECT TableBackgroundTexture
 
     DECLARE PUBLIC LIST OF GAMEOBJECTs Seats
+    // Seats consists of 4 elements:
+    // 0 - top left
+    // 1 - bottom left
+    // 2 - bottom right
+    // 3 - top right
+
+    // Like this:
+    // c|--|c
+    // c|--|c
 
     DECLARE PRIVATE BOOLEAN Loaded
 

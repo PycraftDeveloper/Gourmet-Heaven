@@ -77,10 +77,11 @@ DECLARE CLASS Customer EXTENDS MonoBehaviour
     DECLARE PRIVATE VOID Update() DO
         CURRENT_POSITION.z <- Depth
 
-        IF Location IS RESTAURANT THEN
+        IF Location IS RESTAURANT AND Meal IS NOT "" THEN
             Patience <- Patience - DELTATIME
             IF Patience <= 0 THEN
-                DESTROY(THIS GAMEOBJECT) // Customer leaves if served too slowly
+                Customer_Satisfaction <- Customer_Satisfaction - 1
+                Meal = ""
             END IF
         END IF
     END METHOD

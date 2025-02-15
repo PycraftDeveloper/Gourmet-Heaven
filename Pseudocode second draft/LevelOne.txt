@@ -18,6 +18,8 @@ ECLARE CLASS LevelOne EXTENDS MonoBehaviour
     DECLARE PUBLIC INT Sub_Level
     DECLARE PUBLIC FLOAT Level_Run_Time
 
+    DECLARE PUBLIC FLOAT Level_Score
+
     DECLARE PRIVATE VOID OnLevelEnd() DO
         DESTROY(Kitchen)
         DESTROY(Restaurant)
@@ -36,6 +38,7 @@ ECLARE CLASS LevelOne EXTENDS MonoBehaviour
         Customer_Spawn_Time <- RANDOM_RANGE(CUSTOMER_SPAWN_TIME_MINIMUM, CUSTOMER_SPAWN_TIME_MAXIMUM)
         Sub_Level <- PART_ONE
         Level <- LEVEL_ONE
+        Level_Score <- 0
     END METHOD
 
     DECLARE PRIVATE VOID Update() DO
@@ -43,7 +46,8 @@ ECLARE CLASS LevelOne EXTENDS MonoBehaviour
 
         IF Level_Run_Time > LEVEL_DURATION / 2 THEN
             IF Level_Run_Time >= LEVEL_DURATION THEN
-                INSTANTIATE(LevelOver, CURRENT_POSITION, CURRENT_ROTATION)
+                NEW GAMEOBJECT LevelOverMenu <- INSTANTIATE(LevelOver, CURRENT_POSITION, CURRENT_ROTATION)
+                LevelOverMenu.Score <- Level_Score
                 OnLevelEnd()
             ELSE
                 Sub_Level <- PART_TWO
@@ -54,6 +58,12 @@ ECLARE CLASS LevelOne EXTENDS MonoBehaviour
             Kitchen.GarbageCollect()
             Restaurant.Load()
             MOVE PLAYER TO TOP OF FRAME
+
+            FOR Existing_Customer IN Customers DO
+                IF Existing_Customer.Location IS KITCHEN THEN
+                    Existing_Customer.GarbageCollect() // unload customers resources when in different scene
+                END IF
+            END FOR
         ELSE IF Player IN COLLISION WITH KITCHEN PORTAL THEN
             Restaurant.GarbageCollect()
             Kitchen.Load()
@@ -61,9 +71,14 @@ ECLARE CLASS LevelOne EXTENDS MonoBehaviour
 
             FOR Existing_Customer IN Customers DO
                 IF Existing_Customer.Meal == "" THEN
+                    Level_Score <- Level_Score + Existing_Customer.Customer_Satisfaction
                     DESTROY(Existing_Customer) // I promise this isn't as bad as it sounds...
                     Customers.REMOVE(Existing_Customer)
                     Customers_In_Scene <- Customers_In_Scene - 1
+                ELSE
+                    IF Existing_Customer.Location IS RESTAURANT THEN
+                        Existing_Customer.GarbageCollect() // unload customers resources when in different scene
+                    END IF
                 END IF
             END FOR
         END IF
