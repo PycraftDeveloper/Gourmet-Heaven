@@ -1,7 +1,45 @@
 DECLARE CLASS Pho_MG EXTENDS MonoBehaviour
+    DECLARE PUBLIC GAMEOBJECT BackgroundTexture
+    DECLARE PUBLIC GAMEOBJECT ForegroundTexture
+
+    DECLARE PUBLIC GAMEOBJECT RawFoodItemTexture
+    DECLARE PUBLIC GAMEOBJECT FinishedFoodItem
+
+    DECLARE PRIVATE GAMEOBJECT Player
+
+    DECLARE PRIVATE FLOAT MiniGameTimer
+
+    DECLARE PRIVATE VOID OnExit() DO
+        DESTROY(BackgroundTexture)
+        DESTROY(ForegroundTexture)
+        DESTROY(RawFoodItemTexture)
+        DESTROY(FinishedFoodItem)
+        DESTROY(THIS GAMEOBJECT)
+    END METHOD
+
     DECLARE PRIVATE VOID OnStart() DO
+        Player <- GET_GAME_OBJECT_WITH_TAG("Player")
+        INSTANTIATE(BackgroundTexture, CURRENT_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(ForegroundTexture, CURRENT_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(RawFoodItemTexture, NEW VECTOR3(0, 0, 0), CURRENT_ROTATION) // spawn centred
     END METHOD
 
     DECLARE PRIVATE VOID Update() DO
+        MiniGameTimer <- MiniGameTimer + DELTATIME
+
+        INT Window_X_Size <- GET_WINDOW_WIDTH()
+
+        INT X_Position <- ((SIN(MiniGameTimer) + 1) / 2.0) * Window_X_Size
+
+        RawFoodItemTexture.POSITION.x <- X_Position
+
+        IF USER_INTERACTS_WITH_GAME THEN
+            IF RawFoodItemTexture IN COLLISION WITH ForegroundTexture THEN
+                Player.Meals.ADD(PHO)
+            ELSE
+                Player.Meals.ADD(RUINED_FOOD)
+            END IF
+            OnExit() // return to creator
+        END IF
     END METHOD
 END CLASS

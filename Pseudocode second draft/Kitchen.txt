@@ -4,6 +4,8 @@ DECLARE CLASS Kitchen EXTENDS MonoBehaviour
 
     DECLARE PUBLIC GAMEOBJECT SushiAppliance
     DECLARE PUBLIC GAMEOBJECT PhoAppliance
+    DECLARE PUBLIC GAMEOBJECT TrashAppliance
+    DECLARE PUBLIC GAMEOBJECT ServiceAppliance // exists purely for collisions, no texture
 
     DECLARE PUBLIC GAMEOBJECT Player
 
@@ -29,6 +31,7 @@ DECLARE CLASS Kitchen EXTENDS MonoBehaviour
                 Customer.Location <- RESTAURANT
                 MOVE CUSTOMER OUT THE BOTTOM OF SCENE (INTO RESTAURANT)
                 Customers_In_Kitchen.REMOVE(Customer)
+                Restaurant.AddCustomerToRestaurant(Customer)
             END IF
         END FOR
 
@@ -46,6 +49,7 @@ DECLARE CLASS Kitchen EXTENDS MonoBehaviour
         INSTANTIATE(KitchenForegroundTexture, KITCHEN_FOREGROUND_POSITION, CURRENT_ROTATION)
         SushiAppliance.Load()
         PhoAppliance.Load()
+        TrashAppliance.Load()
         Loaded <- TRUE
     END METHOD
 
@@ -59,14 +63,16 @@ DECLARE CLASS Kitchen EXTENDS MonoBehaviour
         DESTROY(KitchenForegroundTexture)
         SushiAppliance.GarbageCollect()
         PhoAppliance.GarbageCollect()
+        TrashAppliance.GarbageCollect()
     END METHOD
 
     DECLARE PRIVATE VOID OnStart() DO
         Loaded <- FALSE
         Player <- GET_GAME_OBJECT_WITH_TAG("Player")
-        CurrentLevel <- GET_GAME_OBJECT_WITH_TAG("CurrentLevel)
+        CurrentLevel <- GET_GAME_OBJECT_WITH_TAG("CurrentLevel")
         INSTANTIATE(SushiAppliance, CURRENT_POSITION, CURRENT_ROTATION)
         INSTANTIATE(PhoAppliance, CURRENT_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(TrashAppliance, CURRENT_POSITION, CURRENT_ROTATION)
     END METHOD
 
     DECLARE PRIVATE VOID Update() DO
@@ -74,7 +80,35 @@ DECLARE CLASS Kitchen EXTENDS MonoBehaviour
             MOVE PLAYER BACK INTO SCENE
         END IF
 
-        IF SUSHI IN Player.Meals THEN
+        IF Player IN COLLISION WITH ServiceAppliance THEN
+            BOOLEAN Customer_To_Serve <- FALSE
+            FOR Customer IN CurrentLevel.Customers DO
+                IF Customer.Location IS KITCHEN THEN
+                    Customer_To_Serve <- TRUE
+                    BREAK
+                END IF
+            END FOR
+
+            IF Customer_To_Serve THEN
+                ServeCustomer()
+        END IF
+
+        LIST OF STRINGs Customer_Orders
+        FOR Customer IN CurrentLevel DO
+            Customer_Orders.ADD(Customer.Meal)
+        END FOR
+
+        IF Player.Meals.LENGTH > 0 THEN
+            TrashAppliance.SetGlowing(TRUE)
+            IF Player IN COLLISION WITH TrashAppliance THEN
+                STRING Meal_to_remove <- Player.Meals[0]
+                Player.Meals.REMOVE(Meal_to_remove) // remove oldest meal
+            END IF
+        ELSE
+            TrashAppliance.SetGlowing(FALSE)
+        END IF
+
+        IF SUSHI IN Customer_Orders THEN
             SushiAppliance.SetGlowing(TRUE)
             IF Player IN COLLISION WITH SushiAppliance THEN
                 INSTANTIATE(Sushi_MG, CURRENT_POSITION, CURRENT_ROTATION)
@@ -82,7 +116,7 @@ DECLARE CLASS Kitchen EXTENDS MonoBehaviour
             SushiAppliance.SetGlowing(FALSE)
         END IF
 
-        IF PHO IN Player.Meals THEN
+        IF PHO IN Customer_Orders THEN
             PhoAppliance.SetGlowing(TRUE)
             IF Player IN COLLISION WITH PhoAppliance THEN
                 INSTANTIATE(Pho_MG, CURRENT_POSITION, CURRENT_ROTATION)

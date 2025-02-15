@@ -1,6 +1,7 @@
 DECLARE CLASS Table EXTENDS MonoBehaviour
-    DECLARE PUBLIC GAMEOBJECT TableTexture
-]
+    DECLARE PUBLIC GAMEOBJECT TableForegroundTexture
+    DECLARE PUBLIC GAMEOBJECT TableBackgroundTexture
+
     DECLARE PUBLIC LIST OF GAMEOBJECTs Seats
 
     DECLARE PRIVATE BOOLEAN Loaded
@@ -10,7 +11,8 @@ DECLARE CLASS Table EXTENDS MonoBehaviour
             RETURN
         END IF
 
-        INSTANTIATE(TableTexture, CURRENT_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(TableForegroundTexture, CURRENT_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(TableBackgroundTexture, CURRENT_POSITION, CURRENT_ROTATION)
         Loaded <- TRUE
     END METHOD
 
@@ -20,7 +22,8 @@ DECLARE CLASS Table EXTENDS MonoBehaviour
         END IF
 
         Loaded <- FALSE
-        DESTROY(TableTexture)
+        DESTROY(TableForegroundTexture)
+        DESTROY(TableBackgroundTexture)
     END METHOD
 
     DECLARE PRIVATE VOID OnStart() DO

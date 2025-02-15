@@ -8,6 +8,23 @@ DECLARE CLASS Restaurant EXTENDS MonoBehaviour
 
     DECLARE PRIVATE BOOLEAN Loaded
 
+    DECLARE PUBLIC VOID AddCustomerToRestaurant(GAMEOBJECT Customer) DO
+        BOOLEAN Seated <- FALSE
+        WHILE Seated IS FALSE DO
+            GAMEOBJECT Target_Table <- RANDOM_CHOICE_FROM(Tables)
+            FOR i <- 0 TO Target_Table.Seats.LENGTH DO
+                IF Target_Table.Seats[i] IS NULL THEN
+                    IF i IS 0 OR i IS 3 THEN
+                        Customer.Depth <- Customer.Depth - 1
+                    END IF
+                    Target_Table.Seats[i] <- Customer
+                    Seated <- TRUE
+                    BREAK
+                END IF
+            END FOR
+        END WHILE
+    END METHOD
+
     DECLARE PUBLIC VOID Load() DO
         IF Loaded THEN
             RETURN
@@ -41,9 +58,35 @@ DECLARE CLASS Restaurant EXTENDS MonoBehaviour
         END FOR
     END METHOD
 
-    DECLARE PRIVATE VOID Update() DO
+    DECLARE PRIVATE VOID Update() DO // serve customers (also consider ruined food. Then consider score when deleting customers.)
         IF Player IN COLLISION WITH RESTAURANT_SCENE THEN
             MOVE PLAYER BACK INTO SCENE
         END IF
+
+        FOR Scene_Table IN Tables DO
+            IF Player IN COLLISION WITH Scene_Table THEN
+                INT index <- 0
+                FOR Seated_Customer IN Scene_Table.Seats DO
+                    IF Player IN COLLISION WITH Seated_Customer THEN
+                        IF index IS 0 OR index IS 1 THEN
+                            Player.POSITION.z <- Customer.POSITION.z - 1
+                        ELSE
+                            Player.POSITION.z <- Customer.POSITION.z + 1
+                        END IF
+                    END IF
+
+                    IF USER INTERACTS WITH TABLE THEN
+                        IF Seated_Customer.Meal IN Player.Meals THEN
+                            Player.Meals.REMOVE(Served_Customer.Meal)
+                            Seated_Customer.Served()
+                        ELSE
+                            Player.Meals.REMOVE(Player.Meals[0])
+                            Seated_Customer.ServedWrong()
+                        END IF
+                    END IF
+                    index <- index + 1
+                END FOR
+            END IF
+        END FOR
     END METHOD
 END CLASS

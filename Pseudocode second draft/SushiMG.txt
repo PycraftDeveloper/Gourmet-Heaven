@@ -1,7 +1,55 @@
 DECLARE CLASS Sushi_MG EXTENDS MonoBehaviour
+    DECLARE PUBLIC GAMEOBJECT BackgroundTexture
+    DECLARE PUBLIC GAMEOBJECT ForegroundTexture
+
+    DECLARE PUBLIC GAMEOBJECT RawFoodItemTexture
+    DECLARE PUBLIC GAMEOBJECT FinishedFoodItem
+
+    DECLARE PRIVATE GAMEOBJECT Player
+
+    DECLARE PRIVATE INT Start_X_Pos
+    DECLARE PRIVATE INT End_X_Pos
+    DECLARE PRIVATE FLOAT Press_Duration
+
+    DECLARE PRIVATE VOID OnExit() DO
+        DESTROY(BackgroundTexture)
+        DESTROY(ForegroundTexture)
+        DESTROY(RawFoodItemTexture)
+        DESTROY(FinishedFoodItem)
+        DESTROY(THIS GAMEOBJECT)
+    END METHOD
+
     DECLARE PRIVATE VOID OnStart() DO
+        Player <- GET_GAME_OBJECT_WITH_TAG("Player")
+        Press_Duration <- 0
+        INSTANTIATE(BackgroundTexture, CURRENT_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(ForegroundTexture, CURRENT_POSITION, CURRENT_ROTATION)
+        INSTANTIATE(RawFoodItemTexture, NEW VECTOR3(0, 0, 0), CURRENT_ROTATION) // spawn centred
     END METHOD
 
     DECLARE PRIVATE VOID Update() DO
+        IF USER_INTERACTS_WITH_GAME THEN
+            Press_Duration <- Press_Duration + DELTATIME
+            IF Start_X_Pos IS NULL THEN
+                Start_X_Pos <- USER_INTERACTION.POSITION.x
+                End_X_Pos <- Start_X_Pos
+            ELSE
+                IF USER_INTERACTION.POSITION.x > End_X_Pos THEN
+                    End_X_Pos <- USER_INTERACTION.POSITION.x
+                END IF
+            END IF
+        ELSE
+            IF Start_X_Pos IS NOT NULL THEN
+                FLOAT Velocity <- (End_X_Pos - Start_X_Pos) / Press_Duration
+                IF Velocity IN RANGE(SUSHI_MG_VELOCITY_MIN, SUSHI_MG_VELOCITY_MAX) THEN
+                    Player.Meals.ADD(SUSHI)
+                ELSE
+                    Player.Meals.ADD(RUINED_FOOD)
+                END IF
+                OnExit()
+            END IF
+        END IF
+
+        INT X_Position <- End_X_Pos
     END METHOD
 END CLASS

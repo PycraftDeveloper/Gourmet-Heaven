@@ -1,3 +1,5 @@
+// it is assumed that when customers are destroyed, they are automatically removed from any associated data structures
+
 DECLARE CLASS Customer EXTENDS MonoBehaviour
     DECLARE PUBLIC GAMEOBJECT CustomerTexture
     DECLARE PUBLIC GAMEOBJECT CurrentLevel
@@ -9,13 +11,26 @@ DECLARE CLASS Customer EXTENDS MonoBehaviour
 
     DECLARE PUBLIC STRING Location
 
+    DECLARE PUBLIC FLOAT Depth
+
+    DECLARE PRIVATE FLOAT Patience
+
+    DECLARE PRIVATE INT Customer_Satisfaction
+
     DECLARE PUBLIC VOID Served() DO
+        Patience <- RANDOM_RANGE(CUSTOMER_PATIENCE_MIN, CUSTOMER_PATIENCE_MAX)
         IF Number_Of_Meals_To_Order IS 0 THEN
             Meal <- ""
             RETURN
         ELSE
             Meal <- RANDOM_CHOICE_FROM(MEALS)
         Number_Of_Meals_To_Order <- Number_Of_Meals_To_Order - 1
+        Customer_Satisfaction <- Customer_Satisfaction + 1
+    END METHOD
+
+    DECLARE PUBLIC VOID ServedWrong() DO
+        Customer_Satisfaction <- Customer_Satisfaction - 2
+        Served()
     END METHOD
 
     DECLARE PUBLIC VOID Load() DO
@@ -38,6 +53,7 @@ DECLARE CLASS Customer EXTENDS MonoBehaviour
 
     DECLARE PRIVATE VOID OnStart() DO
         Loaded <- FALSE
+        Customer_Satisfaction <- 0
         CurrentLevel <- GET_GAME_OBJECT_WITH_TAG("CurrentLevel)
         Meal <- RANDOM_CHOICE_FROM(MEALS)
         CurrentLevel.Customers_In_Scene <- CurrentLevel.Customers_In_Scene + 1
@@ -59,5 +75,13 @@ DECLARE CLASS Customer EXTENDS MonoBehaviour
     END METHOD
 
     DECLARE PRIVATE VOID Update() DO
+        CURRENT_POSITION.z <- Depth
+
+        IF Location IS RESTAURANT THEN
+            Patience <- Patience - DELTATIME
+            IF Patience <= 0 THEN
+                DESTROY(THIS GAMEOBJECT) // Customer leaves if served too slowly
+            END IF
+        END IF
     END METHOD
 END CLASS
