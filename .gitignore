@@ -73,3 +73,7 @@ GameProject/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 # Temporary auto-generated Android Assets
 GameProject/[Aa]ssets/[Ss]treamingAssets/aa.meta
 GameProject/[Aa]ssets/[Ss]treamingAssets/aa/*
+GameProject/Assets/Resources/PerformanceTestRunSettings.json.meta
+GameProject/Assets/Resources/PerformanceTestRunSettings.json
+GameProject/Assets/Resources/PerformanceTestRunInfo.json.meta
+GameProject/Assets/Resources/PerformanceTestRunInfo.json
