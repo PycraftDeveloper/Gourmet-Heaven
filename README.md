@@ -18,7 +18,7 @@ Welcome to our game.
 ## Project Resources Guide
 
 If you open the Unity project and it says in the black bar at the bottom in red: "**File could not be read.**" Then this guide is for you!
-The resources for this project are **NOT** included in the GitHub repository and instead can be found [here](https://mynorthamptonac-my.sharepoint.com/:f:/r/personal/josh_cossar24_my_northampton_ac_uk/Documents/GroupProjectY1/GameAssets/Resources?csf=1&web=1&e=GqYElZ).
+The resources for this project are **NOT** included in the GitHub repository and instead can be found [here](https://mynorthamptonac-my.sharepoint.com/:f:/r/personal/josh_cossar24_my_northampton_ac_uk/Documents/GroupProjectY1/GameAssets?csf=1&web=1&e=jlcNXG).
 
 1. Click the link to access the OneDrive location.
 2. From here, download the folder called "**Resources**".
