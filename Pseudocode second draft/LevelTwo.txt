@@ -70,7 +70,7 @@ ECLARE CLASS LevelTwo EXTENDS MonoBehaviour
             FOR Existing_Customer IN Customers DO
                 IF Existing_Customer.Meal == "" THEN
                     Level_Score <- Level_Score + Existing_Customer.Customer_Satisfaction
-                    DESTROY(Existing_Customer) // I promise this isn't as bad as it sounds...
+                    DESTROY(Existing_Customer)
                     Customers.REMOVE(Existing_Customer)
                     Customers_In_Scene <- Customers_In_Scene - 1
                 ELSE
