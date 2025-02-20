@@ -39,7 +39,7 @@ public class PlayerInputCircle : MonoBehaviour // This class defines behaviour f
         {
             touch_position = parent_position; // reset position
         }
-        JoystickOffsetMagnitude = (touch_position - parent_position).normalized;
+        JoystickOffsetMagnitude = (touch_position - parent_position) / radius;
         transform.position = new Vector3(touch_position.x, touch_position.y, transform.position.z); // set the position of the object, using sprites original depth.
     }
 
