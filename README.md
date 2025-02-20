@@ -1,4 +1,9 @@
-# Gourmet Heaven *INSERT LOGO HERE*
+<div align="center">
+
+  ![Gourmet Heaven logo](https://github.com/user-attachments/assets/3c4d1d82-a489-4f87-bffe-0e74491ac19d)
+</div>
+
+# Gourmet Heaven
 
 Welcome to our game.
 
