@@ -19,8 +19,6 @@ MonoBehaviour:
     rid: 3979409280957415598
   m_Scenes:
   - m_enabled: 1
-    m_path: Assets/Scenes/MainMenu.unity
-  - m_enabled: 1
     m_path: Assets/Scenes/LevelSelectionMenu.unity
   - m_enabled: 1
     m_path: Assets/Scenes/CreditsMenu.unity
@@ -28,10 +26,6 @@ MonoBehaviour:
     m_path: Assets/Scenes/OptionsMenu.unity
   - m_enabled: 1
     m_path: Assets/Scenes/ShopMenu.unity
-  - m_enabled: 1
-    m_path: Assets/Scenes/LevelOne.unity
-  - m_enabled: 1
-    m_path: Assets/Scenes/LevelTwo.unity
   - m_enabled: 1
     m_path: Assets/Scenes/BunsMG.unity
   - m_enabled: 1

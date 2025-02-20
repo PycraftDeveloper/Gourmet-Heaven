@@ -8,6 +8,7 @@ public class PlayerInputCircle : MonoBehaviour // This class defines behaviour f
     public GameObject background; // The background for the joystick.
     public Camera mainCamera; // The camera used for the scene
     private bool interacted = false; // used to determine if the user has interacted with the widget.
+    public Vector2 JoystickOffsetMagnitude = new Vector2(0.0f, 0.0f);
 
     private float Pythagoreas_Theorum(Vector2 position_one, Vector2 position_two) // Finds the magnitude of the difference between two vectors.
     {
@@ -38,7 +39,7 @@ public class PlayerInputCircle : MonoBehaviour // This class defines behaviour f
         {
             touch_position = parent_position; // reset position
         }
-
+        JoystickOffsetMagnitude = (touch_position - parent_position).normalized;
         transform.position = new Vector3(touch_position.x, touch_position.y, transform.position.z); // set the position of the object, using sprites original depth.
     }
 
@@ -49,6 +50,8 @@ public class PlayerInputCircle : MonoBehaviour // This class defines behaviour f
 
     private void Update()
     {
+        JoystickOffsetMagnitude = new Vector2(0.0f, 0.0f);
+
         if (Input.touchCount > 0) // if touch input is used
         {
             UnityEngine.Touch touch = Input.GetTouch(0); // get the first finger (only guaranteed input)
