@@ -44,9 +44,8 @@ ECLARE CLASS LevelOne EXTENDS MonoBehaviour
 
         IF Level_Run_Time > GameConstants.LEVEL_DURATION / 2 THEN
             IF Level_Run_Time >= GameConstants.LEVEL_DURATION THEN
-                NEW GAMEOBJECT LevelOverMenu <- INSTANTIATE(LevelOver, CURRENT_POSITION, CURRENT_ROTATION)
+                SWITCH TO SCENE "LevelOverMenu"
                 LevelOverMenu.Score <- Level_Score
-                OnLevelEnd()
             ELSE
                 Sub_Level <- GameConstants.PART_TWO
             END IF
@@ -70,7 +69,7 @@ ECLARE CLASS LevelOne EXTENDS MonoBehaviour
             FOR Existing_Customer IN Customers DO
                 IF Existing_Customer.Meal == "" THEN
                     Level_Score <- Level_Score + Existing_Customer.Customer_Satisfaction
-                    DESTROY(Existing_Customer)
+                    DESTROY(Existing_Customer) // I promise this isn't as bad as it sounds...
                     Customers.REMOVE(Existing_Customer)
                     Customers_In_Scene <- Customers_In_Scene - 1
                 ELSE

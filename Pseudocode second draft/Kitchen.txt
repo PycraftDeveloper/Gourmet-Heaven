@@ -110,7 +110,7 @@ DECLARE CLASS Kitchen EXTENDS MonoBehaviour
         IF SUSHI IN Customer_Orders THEN
             SushiAppliance.SetGlowing(TRUE)
             IF Player IN COLLISION WITH SushiAppliance THEN
-                INSTANTIATE(Sushi_MG, CURRENT_POSITION, CURRENT_ROTATION)
+                SWITCH TO SCENE "SushiMG"
             END IF
         ELSE
             SushiAppliance.SetGlowing(FALSE)
@@ -119,7 +119,7 @@ DECLARE CLASS Kitchen EXTENDS MonoBehaviour
         IF PHO IN Customer_Orders THEN
             PhoAppliance.SetGlowing(TRUE)
             IF Player IN COLLISION WITH PhoAppliance THEN
-                INSTANTIATE(Pho_MG, CURRENT_POSITION, CURRENT_ROTATION)
+                SWITCH TO SCENE "PhoMG"
             END IF
         ELSE
             PhoAppliance.SetGlowing(FALSE)
