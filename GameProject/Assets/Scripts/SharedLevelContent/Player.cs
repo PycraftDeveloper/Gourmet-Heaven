@@ -14,13 +14,19 @@ public class texture_exchanger : MonoBehaviour
 
     private PlayerInputCircle JoystickInput;
 
-    public float PlayerDepth = 0;
+    public float Depth = 0;
+
+    private Vector2 ScreenDimensions;
+    private Vector2 SpriteSize;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
         MySprite = GetComponent<SpriteRenderer>();
+        MySprite.sprite = down_texture;
         JoystickInput = JoystickInputObject.GetComponent<PlayerInputCircle>();
+        ScreenDimensions = new Vector2(Camera.main.aspect * Camera.main.orthographicSize, Camera.main.orthographicSize);
+        SpriteSize = new Vector2(MySprite.bounds.size.x / 2.0f, MySprite.bounds.size.y / 2.0f);
     }
 
     // Update is called once per frame
@@ -31,7 +37,12 @@ public class texture_exchanger : MonoBehaviour
         float modified_x_position = JoystickInputMagnitude.x * Constants.PLAYER_MOVEMENT_SPEED * Time.deltaTime;
         float modified_y_position = JoystickInputMagnitude.y * Constants.PLAYER_MOVEMENT_SPEED * Time.deltaTime;
 
-        transform.position = new Vector3(transform.position.x + modified_x_position, transform.position.y + modified_y_position, PlayerDepth);
+        Vector3 proposed_position = new Vector3(transform.position.x + modified_x_position, transform.position.y + modified_y_position, Depth);
+
+        proposed_position.x = Mathf.Clamp(proposed_position.x, -ScreenDimensions.x + SpriteSize.x, ScreenDimensions.x - SpriteSize.x);
+        proposed_position.y = Mathf.Clamp(proposed_position.y, -ScreenDimensions.y + SpriteSize.y, ScreenDimensions.y - SpriteSize.y);
+
+        transform.position = proposed_position;
 
         if (Mathf.Abs(JoystickInputMagnitude.x) > Mathf.Abs(JoystickInputMagnitude.y))
         {
