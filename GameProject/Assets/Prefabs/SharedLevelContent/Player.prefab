@@ -108,7 +108,7 @@ MonoBehaviour:
   right_texture: {fileID: 21300000, guid: 9a2d04c55417deb43a75bfe8af692a67, type: 3}
   JoystickInputObject: {fileID: 0}
   LocationManager: {fileID: 0}
-  Depth: 0
+  RenderPriority: 1
 --- !u!50 &4050285127077892886
 Rigidbody2D:
   serializedVersion: 4
@@ -123,7 +123,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -135,7 +135,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &3498933127725492244
 BoxCollider2D:
   m_ObjectHideFlags: 0
