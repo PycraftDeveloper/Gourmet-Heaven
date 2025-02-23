@@ -1,9 +1,16 @@
-Layer - Purpose
+New
+-=-
 
--1 - reserved for scene background
-0 - reserved exclusively for the player
-1 - reserved for top level of scene (eg kitchen counters in foreground)
-2 - reserved for inputs (joystick)
-3 - reserved for HUD
+Don't use 'z' axis at all, ever - really, I mean that.
+Instead, adjust the rendering priority.
 
-Each layer can be split into sub-layers depending on count as continuous. THESE VALUES EFFECT THE 'Z' POSITION OF CONTENT IN THE 2D GAME :)
+`
+...GetComponent<SpriteRenderer>().sortingOrder = n
+`
+
+larger n = higher priority.
+lower n = lower priority.
+
+Joystick: 100
+KitchenForeground: 10
+Player: 1
