@@ -20,8 +20,9 @@ public class texture_exchanger : MonoBehaviour
 
     private Vector2 ScreenDimensions;
     private Vector2 SpriteSize;
+    private Rigidbody2D PlayerRigidBody;
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    /*private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.tag == "RestaurantPortal")
         {
@@ -36,7 +37,7 @@ public class texture_exchanger : MonoBehaviour
             transform.position = new Vector3(transform.position.x, -3.9f, transform.position.z);
         }
         Debug.Log(collider.tag);
-    }
+    }*/
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -46,23 +47,46 @@ public class texture_exchanger : MonoBehaviour
         LevelLocationManager = LocationManager.GetComponent<LocationManager>();
         ScreenDimensions = new Vector2(Camera.main.aspect * Camera.main.orthographicSize, Camera.main.orthographicSize);
         SpriteSize = new Vector2(MySprite.bounds.size.x / 2.0f, MySprite.bounds.size.y / 2.0f);
+        PlayerRigidBody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    private void Update()
+    private void FixedUpdate()
     {
         Vector2 JoystickInputMagnitude = JoystickInput.JoystickOffsetMagnitude;
 
         float modified_x_position = JoystickInputMagnitude.x * Constants.PLAYER_MOVEMENT_SPEED * Time.deltaTime;
         float modified_y_position = JoystickInputMagnitude.y * Constants.PLAYER_MOVEMENT_SPEED * Time.deltaTime;
 
-        Vector3 proposed_position = new Vector3(transform.position.x + modified_x_position, transform.position.y + modified_y_position, 0);
+        Vector3 proposed_position = new Vector3(PlayerRigidBody.position.x + modified_x_position, PlayerRigidBody.position.y + modified_y_position, 0);
+
+        float minimum_y = -ScreenDimensions.y + SpriteSize.y;
+        float maximum_y = ScreenDimensions.y - SpriteSize.y;
 
         proposed_position.x = Mathf.Clamp(proposed_position.x, -ScreenDimensions.x + SpriteSize.x, ScreenDimensions.x - SpriteSize.x);
-        proposed_position.y = Mathf.Clamp(proposed_position.y, -ScreenDimensions.y + SpriteSize.y, ScreenDimensions.y - SpriteSize.y);
+        proposed_position.y = Mathf.Clamp(proposed_position.y, minimum_y, maximum_y);
 
-        transform.position = proposed_position;
+        if (proposed_position.y == minimum_y && LevelLocationManager.CurrentLocation == Constants.KITCHEN)
+        {
+            LevelLocationManager.CurrentLocation = Constants.RESTAURANT;
+            LevelLocationManager.LocationChanged = true;
+            proposed_position.y = maximum_y - 0.01f;
+        }
+        else if (proposed_position.y == maximum_y && LevelLocationManager.CurrentLocation == Constants.RESTAURANT)
+        {
+            LevelLocationManager.CurrentLocation = Constants.KITCHEN;
+            LevelLocationManager.LocationChanged = true;
+            proposed_position.y = minimum_y + 0.01f;
+        }
+
+        PlayerRigidBody.MovePosition(proposed_position);
+        //transform.position = proposed_position;
         MySprite.sortingOrder = RenderPriority;
+    }
+
+    // Update is called once per frame
+    private void Update()
+    {
+        Vector2 JoystickInputMagnitude = JoystickInput.JoystickOffsetMagnitude;
 
         if (Mathf.Abs(JoystickInputMagnitude.x) > Mathf.Abs(JoystickInputMagnitude.y))
         {
