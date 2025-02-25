@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - RestaurantPortal
+  - KitchenPortal
   layers:
   - Default
   - TransparentFX
@@ -44,7 +46,7 @@ TagManager:
   - name: Background
     uniqueID: 14254799
     locked: 0
-  - name: Collsion
+  - name: Collision
     uniqueID: 1188025595
     locked: 0
   - name: Tops
