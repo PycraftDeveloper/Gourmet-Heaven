@@ -52,5 +52,11 @@ TagManager:
   - name: Tops
     uniqueID: 2520447053
     locked: 0
+  - name: Player & NPCs
+    uniqueID: 1010043357
+    locked: 0
+  - name: UI
+    uniqueID: 1603600049
+    locked: 0
   m_RenderingLayers:
   - Default
