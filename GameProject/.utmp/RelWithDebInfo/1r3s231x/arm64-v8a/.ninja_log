@@ -1,0 +1,11 @@
+# ninja log v5
+41	689	7621944408400117	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	102ba4b8e250b9b3
+692	985	7621944411350942	D:/University/Assignments/Simester 2/CSY1077 - Group Game Project Fundamentals/GroupProjectY1/GameProject/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1r3s231x/obj/arm64-v8a/libswappywrapper.so	acd97668c76d0b2d
+17	2688	7621944428381160	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	189dcb0e50458be9
+27	2774	7621944429236386	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	bd22d63aa6c0b98c
+22	2805	7621944429497494	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	6256d570ff1dbf0f
+33	2915	7621944430517237	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	30e7cf0da70c7652
+1	3181	7621944433121738	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	c7f1b644a7521be1
+10	3594	7621944437435541	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	6ea99a68b8b59898
+5	3889	7621944440221020	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	3b642cb09e2a7d82
+3890	4304	7621944444283433	D:/University/Assignments/Simester 2/CSY1077 - Group Game Project Fundamentals/GroupProjectY1/GameProject/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1r3s231x/obj/arm64-v8a/libgame.so	292eb710c4fae901
