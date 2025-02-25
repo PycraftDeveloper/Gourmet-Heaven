@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class texture_exchanger : MonoBehaviour
 {
@@ -11,16 +12,29 @@ public class texture_exchanger : MonoBehaviour
     private SpriteRenderer MySprite;
 
     public GameObject JoystickInputObject;
-    public GameObject LocationManager;
 
     private PlayerInputCircle JoystickInput;
-    private LocationManager LevelLocationManager;
 
     public int RenderPriority = 1;
 
     private Vector2 ScreenDimensions;
     private Vector2 SpriteSize;
     private Rigidbody2D PlayerRigidBody;
+
+    private string CurrentLocation = Constants.KITCHEN;
+
+    private void Awake()
+    {
+        if (Registry.PlayerExists == false)
+        {
+            DontDestroyOnLoad(gameObject);
+            Registry.PlayerExists = true;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     /*private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -44,7 +58,6 @@ public class texture_exchanger : MonoBehaviour
     {
         MySprite = GetComponent<SpriteRenderer>();
         JoystickInput = JoystickInputObject.GetComponent<PlayerInputCircle>();
-        LevelLocationManager = LocationManager.GetComponent<LocationManager>();
         ScreenDimensions = new Vector2(Camera.main.aspect * Camera.main.orthographicSize, Camera.main.orthographicSize);
         SpriteSize = new Vector2(MySprite.bounds.size.x / 2.0f, MySprite.bounds.size.y / 2.0f);
         PlayerRigidBody = GetComponent<Rigidbody2D>();
@@ -65,16 +78,20 @@ public class texture_exchanger : MonoBehaviour
         proposed_position.x = Mathf.Clamp(proposed_position.x, -ScreenDimensions.x + SpriteSize.x, ScreenDimensions.x - SpriteSize.x);
         proposed_position.y = Mathf.Clamp(proposed_position.y, minimum_y, maximum_y);
 
-        if (proposed_position.y == minimum_y && LevelLocationManager.CurrentLocation == Constants.KITCHEN)
+        if (proposed_position.y == minimum_y && CurrentLocation == Constants.KITCHEN)
         {
-            LevelLocationManager.CurrentLocation = Constants.RESTAURANT;
-            LevelLocationManager.LocationChanged = true;
+            SceneManager.LoadScene("Restaurant");
+
+            CurrentLocation = Constants.RESTAURANT;
+
             proposed_position.y = maximum_y - 0.01f;
         }
-        else if (proposed_position.y == maximum_y && LevelLocationManager.CurrentLocation == Constants.RESTAURANT)
+        else if (proposed_position.y == maximum_y && CurrentLocation == Constants.RESTAURANT)
         {
-            LevelLocationManager.CurrentLocation = Constants.KITCHEN;
-            LevelLocationManager.LocationChanged = true;
+            SceneManager.LoadScene("Kitchen");
+
+            CurrentLocation = Constants.KITCHEN;
+
             proposed_position.y = minimum_y + 0.01f;
         }
 

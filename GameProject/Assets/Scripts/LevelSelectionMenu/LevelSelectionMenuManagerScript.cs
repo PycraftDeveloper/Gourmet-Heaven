@@ -5,11 +5,13 @@ public class LevelSelectionMenuManagerScript : MonoBehaviour
 {
     public void OnLevelOneButtonClick()
     {
-        SceneManager.LoadScene("LevelOne");
+        // change things specific to level here :)
+        SceneManager.LoadScene("Kitchen");
     }
 
     public void OnLevelTwoButtonClick()
     {
-        SceneManager.LoadScene("LevelTwo");
+        // change things specific to level here :)
+        SceneManager.LoadScene("Kitchen");
     }
 }
