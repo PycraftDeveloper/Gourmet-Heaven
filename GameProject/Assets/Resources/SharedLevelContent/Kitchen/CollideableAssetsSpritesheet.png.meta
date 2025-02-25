@@ -1,0 +1,512 @@
+fileFormatVersion: 2
+guid: 387d40772b78b914eb73c63ea2f6f482
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8796712600536256464
+    second: CollideableAssetsSpritesheet_0
+  - first:
+      213: 570821409953401053
+    second: CollideableAssetsSpritesheet_1
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CounterTEMP_001
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03075dd2f7ccbe580800000000000000
+      internalID: -8796712600536256464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CounterTEMP_002
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd8c57a4c07fbe700800000000000000
+      internalID: 570821409953401053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CounterCornerTopTEMP_001
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc5b1a7a972fdbf4997facfc838ed32e
+      internalID: 1337563040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CounterTEMP_003
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea1c1d05de779fa4b8ffbad977c04a00
+      internalID: -647359213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CounterSideTEMP_001
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 604eee9b58019e04b82c9834c4678905
+      internalID: -119283656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CounterTEMP_004
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a04bc282c95f54fba616c8df960911
+      internalID: 264834899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CounterTEMP_006
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 997a05baf66461446ad288bc3226f211
+      internalID: 1549458583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CounterTEMP_007
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1d519e65c49fb6498a96a36f2a2c834
+      internalID: -646150205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CounterCornerBottomTEMP_001
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c32e0903a21595f4f9d4f4acf8fa134f
+      internalID: -1445060686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CounterTEMP_005
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13dd879b40f1a1c4e8bbbad7717db010
+      internalID: -1282028488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CounterTEMP_00
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 899aeb6c3b5b0784f992cbf51a20a589
+      internalID: 1428966641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CounterTEMP_008
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a4c5c71cb81bb143ad5adad414639e4
+      internalID: 1899187398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CollideableAssetsSpritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85c06081676810b4381d0ca78dc8de78
+      internalID: -1271278359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CollideableAssetsSpritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2615fe6e1b3f50f478cb808ccec9be03
+      internalID: -314027580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CollideableAssetsSpritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f96dade9219a99147a73845c93852d88
+      internalID: 564723099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4e3dbe705c9224e4eb9bfbde75fb0576
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      CollideableAssetsSpritesheet_10: -246154133
+      CollideableAssetsSpritesheet_11: -135607007
+      CollideableAssetsSpritesheet_12: -458478215
+      CollideableAssetsSpritesheet_13: 1341444757
+      CollideableAssetsSpritesheet_20: -1064094215
+      CollideableAssetsSpritesheet_21: -1426792707
+      CollideableAssetsSpritesheet_22: -266770045
+      CollideableAssetsSpritesheet_23: 239539219
+      CollideableAssetsSpritesheet_24: -1271278359
+      CollideableAssetsSpritesheet_25: -1050061071
+      CollideableAssetsSpritesheet_26: -1130597519
+      CollideableAssetsSpritesheet_27: -1878244177
+      CollideableAssetsSpritesheet_28: 1311432633
+      CollideableAssetsSpritesheet_29: 110768147
+      CollideableAssetsSpritesheet_30: -314027580
+      CollideableAssetsSpritesheet_31: 597930694
+      CollideableAssetsSpritesheet_32: -1417607450
+      CollideableAssetsSpritesheet_33: -922016281
+      CollideableAssetsSpritesheet_34: 169940193
+      CollideableAssetsSpritesheet_35: -86182959
+      CollideableAssetsSpritesheet_36: -201957798
+      CollideableAssetsSpritesheet_37: 564723099
+      CollideableAssetsSpritesheet_38: -553398493
+      CollideableAssetsSpritesheet_39: -2018562400
+      CollideableAssetsSpritesheet_4: 423266589
+      CollideableAssetsSpritesheet_40: 802372184
+      CollideableAssetsSpritesheet_41: 1789663876
+      CollideableAssetsSpritesheet_42: -116682244
+      CollideableAssetsSpritesheet_43: -1752048413
+      CollideableAssetsSpritesheet_44: -1286405062
+      CollideableAssetsSpritesheet_45: 818115824
+      CollideableAssetsSpritesheet_46: -1988021141
+      CollideableAssetsSpritesheet_47: -1907485640
+      CollideableAssetsSpritesheet_48: -1715231954
+      CollideableAssetsSpritesheet_49: 112075536
+      CollideableAssetsSpritesheet_5: -1148243629
+      CollideableAssetsSpritesheet_50: -1058120416
+      CollideableAssetsSpritesheet_51: 502722885
+      CollideableAssetsSpritesheet_52: -1279076139
+      CollideableAssetsSpritesheet_53: -598701026
+      CollideableAssetsSpritesheet_54: 1130131308
+      CollideableAssetsSpritesheet_55: 1463355993
+      CollideableAssetsSpritesheet_56: 1457761951
+      CollideableAssetsSpritesheet_57: 847051630
+      CollideableAssetsSpritesheet_58: -1074350472
+      CollideableAssetsSpritesheet_59: 442185236
+      CollideableAssetsSpritesheet_6: 2110517654
+      CollideableAssetsSpritesheet_60: 366603837
+      CollideableAssetsSpritesheet_7: -479677731
+      CounterCornerBottomTEMP_001: -1445060686
+      CounterCornerTopTEMP_001: 1337563040
+      CounterSideTEMP_001: -119283656
+      CounterTEMP_00: 1428966641
+      CounterTEMP_001: -8796712600536256464
+      CounterTEMP_002: 570821409953401053
+      CounterTEMP_003: -647359213
+      CounterTEMP_004: 264834899
+      CounterTEMP_005: -1282028488
+      CounterTEMP_006: 1549458583
+      CounterTEMP_007: -646150205
+      CounterTEMP_008: 1899187398
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

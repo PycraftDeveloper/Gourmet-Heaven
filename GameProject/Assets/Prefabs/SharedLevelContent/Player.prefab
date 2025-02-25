@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9a6182c09e90be449a9bccf0963dae15, type: 3}
+  m_Sprite: {fileID: -5653878121705019575, guid: 90f15ec1532ea4f43ab68c505e00989d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,10 +102,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438417d537430f94db25dab29c946eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  down_texture: {fileID: 21300000, guid: 9a6182c09e90be449a9bccf0963dae15, type: 3}
-  up_texture: {fileID: 21300000, guid: ff583ae6aa7234548b9a50dbb56f60eb, type: 3}
-  left_texture: {fileID: 21300000, guid: 890c573593a64cd4f95c0bddc2e46337, type: 3}
-  right_texture: {fileID: 21300000, guid: 9a2d04c55417deb43a75bfe8af692a67, type: 3}
+  down_texture: {fileID: 8570058877390158369, guid: 90f15ec1532ea4f43ab68c505e00989d, type: 3}
+  up_texture: {fileID: -8422180100218658531, guid: 90f15ec1532ea4f43ab68c505e00989d, type: 3}
+  left_texture: {fileID: -6666380717595194736, guid: 90f15ec1532ea4f43ab68c505e00989d, type: 3}
+  right_texture: {fileID: -6666380717595194736, guid: 90f15ec1532ea4f43ab68c505e00989d, type: 3}
   JoystickInputObject: {fileID: 0}
   LocationManager: {fileID: 0}
   RenderPriority: 1
@@ -174,7 +174,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 1, y: 2}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
