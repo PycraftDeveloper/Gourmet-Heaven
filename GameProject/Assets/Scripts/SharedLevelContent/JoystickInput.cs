@@ -9,6 +9,7 @@ public class PlayerInputCircle : MonoBehaviour // This class defines behaviour f
     public Camera mainCamera; // The camera used for the scene
     private bool interacted = false; // used to determine if the user has interacted with the widget.
     public Vector2 JoystickOffsetMagnitude = new Vector2(0.0f, 0.0f);
+    private SpriteRenderer JoystickRenderer;
 
     private float Pythagoreas_Theorum(Vector2 position_one, Vector2 position_two) // Finds the magnitude of the difference between two vectors.
     {
@@ -20,7 +21,7 @@ public class PlayerInputCircle : MonoBehaviour // This class defines behaviour f
     {
         Vector2 touch_position = mainCamera.ScreenToWorldPoint(new Vector2(input_position.x, input_position.y)); // converts the screen position to world positions.
         Vector2 parent_position = new Vector2(parent.transform.position.x, parent.transform.position.y); // gets centre of joystick object.
-        float radius = background.transform.localScale.x / 2; // gets the radius of the background.
+        float radius = JoystickRenderer.bounds.size.x / 2; // gets the radius of the background.
         float distance_from_centre = Pythagoreas_Theorum(touch_position, parent_position); // gets current distance from centre position.
 
         if (distance_from_centre < radius)
@@ -46,6 +47,7 @@ public class PlayerInputCircle : MonoBehaviour // This class defines behaviour f
     private void Start()
     {
         transform.position = parent.transform.position; // set the position to the centre of the background.
+        JoystickRenderer = background.GetComponent<SpriteRenderer>();
     }
 
     private void Update()
