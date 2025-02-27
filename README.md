@@ -23,7 +23,7 @@ Welcome to our game.
 ## Project Resources Guide
 
 If you open the Unity project and it says in the black bar at the bottom in red: "**File could not be read.**" Then this guide is for you!
-The resources for this project are **NOT** included in the GitHub repository and instead can be found [here](https://mynorthamptonac-my.sharepoint.com/:f:/r/personal/josh_cossar24_my_northampton_ac_uk/Documents/GroupProjectY1/GameAssets?csf=1&web=1&e=jlcNXG).
+Some of the resources for this project are **MAY NOT** be included in the GitHub repository and instead can be found [here](https://mynorthamptonac-my.sharepoint.com/:f:/r/personal/josh_cossar24_my_northampton_ac_uk/Documents/GroupProjectY1/GameAssets?csf=1&web=1&e=jlcNXG).
 
 1. Click the link to access the OneDrive location.
 2. From here, download the folder called "**Resources**".
@@ -33,3 +33,22 @@ The resources for this project are **NOT** included in the GitHub repository and
 5. Drag the whole "**Resources**" folder into the "**Assets**" folder.
 
 From here, you should be good to go.
+
+## Upgrading your version of Unity
+
+You likely started working on the project using Unity version 6000.0.5f1. However, because this version apparently has problems with Android compilation, we have switched to Unity version 6000.0.39f1. If you already have installed the old version, this is how you can update your unity version!
+
+1. Go [here](unityhub://6000.0.39f1/15ea7ed0b100) to download the right version of Unity. Alternatively go [here](https://unity.com/releases/editor/archive) and find the right version manually.
+2. You should see Unity Hub prompt you to go through the installation process.
+3. In the menu that allows you to pick what platforms you want, make sure to select: **Android Build Support**,all it's sub-options, as well as **iOS Build Support**.
+4. Wait for Unity Hub to install this version.
+5. On the **Projects** page on Unity Hub, click the editor version, and change it to the version you just installed.
+6. Open the Unity project and let it do its thing.
+7. Once open, double check on GitHub that you don't have a massive number of files changed (>100).
+8. If done correctly, you should be good to go!
+
+> **CAUTION**: DO NOT continue using Unity version 6000.0.5f1 when working on the project. You **MUST** update before continuing with development.
+
+_Note: The additional platforms (Android Build Support and iOS Build Support) may be optional, but I'd recommend installing them because we will be using these components when building the project for these platforms._
+
+_Note: If you want to build the project to an APK file (android build) and get errors with the Android SDK, you might need to completely uninstall and reinstall the editor and do everything again (sometimes many, many times). Before trying that, double check with Jebbo!_
