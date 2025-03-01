@@ -427,6 +427,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: KitchenOven
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 223
+        width: 64
+        height: 88
+      alignment: 9
+      pivot: {x: 0.24, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ea317479090354d9b5223218a672ae
+      internalID: 564029664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -438,6 +460,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
       CollideableAssetsSpritesheet_10: -246154133
       CollideableAssetsSpritesheet_11: -135607007
@@ -500,6 +524,7 @@ TextureImporter:
       CounterTEMP_006: 1549458583
       CounterTEMP_007: -646150205
       CounterTEMP_008: 1899187398
+      KitchenOven: 564029664
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
