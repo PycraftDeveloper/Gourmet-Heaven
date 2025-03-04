@@ -49,17 +49,11 @@ TagManager:
   - name: Appears behind player
     uniqueID: 1188025595
     locked: 0
-  - name: Appears behind player 2
-    uniqueID: 154461907
-    locked: 0
   - name: Player & NPCs
     uniqueID: 1010043357
     locked: 0
   - name: Appears above player
     uniqueID: 2520447053
-    locked: 0
-  - name: Appears above player 2
-    uniqueID: 1943973615
     locked: 0
   - name: UI
     uniqueID: 1603600049
