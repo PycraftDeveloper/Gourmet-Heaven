@@ -1,8 +1,14 @@
 using UnityEngine;
+using UnityEngine.AdaptivePerformance;
 using UnityEngine.SceneManagement;
 
 public class MainMenuManagerScript : MonoBehaviour
 {
+    public void Start()
+    {
+        Application.targetFrameRate = 120;
+    }
+
     public void OnPlayButtonClick()
     {
         SceneManager.LoadScene("LevelSelectionMenu");
