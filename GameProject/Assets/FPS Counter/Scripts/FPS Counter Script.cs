@@ -1,17 +1,11 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.AdaptivePerformance;
 
 public class FPSCounterScript : MonoBehaviour
 {
     public TextMeshProUGUI FPS_Counter;
     private float timer = 0;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
-    {
-        Application.targetFrameRate = -1;
-    }
+    private int update = 0;
 
     // Update is called once per frame
     private void Update()
@@ -29,8 +23,9 @@ public class FPSCounterScript : MonoBehaviour
         timer += Time.deltaTime;
         if (timer > 0.5)
         {
-            FPS_Counter.text = " FPS: " + (Mathf.Round(1 / Time.deltaTime)).ToString() + ", Target FPS: " + target_fps;
+            FPS_Counter.text = " FPS: " + (Mathf.Round(1 / Time.deltaTime)).ToString() + ", Target FPS: " + target_fps + ", Update No.: " + update.ToString();
             timer = 0;
+            update++;
         }
     }
 }

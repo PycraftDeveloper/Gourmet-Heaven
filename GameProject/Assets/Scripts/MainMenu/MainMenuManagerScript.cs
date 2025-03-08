@@ -1,12 +1,11 @@
 using UnityEngine;
-using UnityEngine.AdaptivePerformance;
 using UnityEngine.SceneManagement;
 
 public class MainMenuManagerScript : MonoBehaviour
 {
     public void Start()
     {
-        Application.targetFrameRate = 120;
+        Application.targetFrameRate = Mathf.Min(60, (int)Screen.currentResolution.refreshRateRatio.value);
     }
 
     public void OnPlayButtonClick()
