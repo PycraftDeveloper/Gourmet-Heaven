@@ -1,10 +1,46 @@
 fileFormatVersion: 2
-guid: 9a6182c09e90be449a9bccf0963dae15
+guid: a55ae536ed2a97a40851828216e27a87
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8802429529356864402
-    second: PlayerDOWN_temp_0
+      213: -5653878121705019575
+    second: PlayerSpritesheet_0
+  - first:
+      213: 1335251186984836748
+    second: PlayerSpritesheet_1
+  - first:
+      213: 3843040423100834259
+    second: PlayerSpritesheet_2
+  - first:
+      213: 385077577419708428
+    second: PlayerSpritesheet_3
+  - first:
+      213: 8570058877390158369
+    second: PlayerSpritesheet_4
+  - first:
+      213: 5776891531103278535
+    second: PlayerSpritesheet_5
+  - first:
+      213: -8744608848720091140
+    second: PlayerSpritesheet_6
+  - first:
+      213: -3512167338147644310
+    second: PlayerSpritesheet_7
+  - first:
+      213: -8422180100218658531
+    second: PlayerSpritesheet_8
+  - first:
+      213: -6666380717595194736
+    second: PlayerSpritesheet_9
+  - first:
+      213: -5902153548733592073
+    second: PlayerSpritesheet_10
+  - first:
+      213: 1121384912988773229
+    second: PlayerSpritesheet_11
+  - first:
+      213: -8664067101934967524
+    second: PlayerSpritesheet_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +82,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +111,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,7 +137,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -114,7 +150,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,23 +162,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerDOWN_temp_0
+      name: CustomerIdle
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 256
         width: 32
-        height: 32
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e647646fafc77d580800000000000000
-      internalID: -8802429529356864402
+      spriteID: 9476b68cdc36981b0800000000000000
+      internalID: -5653878121705019575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CustomerFrontWalk
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12af5039427fee670800000000000000
+      internalID: 8570058877390158369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CustomerBackWalk
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d116a1c42d76e1b80800000000000000
+      internalID: -8422180100218658531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CustomerSideWalk
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09a893eae024c73a0800000000000000
+      internalID: -6666380717595194736
       vertices: []
       indices: 
       edges: []
@@ -151,15 +253,27 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 9e6e8bdb46221734dbbbf151ede94a29
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
-      PlayerDOWN_temp_0: -8802429529356864402
+      CustomerBackWalk: -8422180100218658531
+      CustomerFrontWalk: 8570058877390158369
+      CustomerIdle: -5653878121705019575
+      CustomerSideWalk: -6666380717595194736
+      PlayerHoldingDish: -5902153548733592073
+      PlayerSpritesheet_1: 1335251186984836748
+      PlayerSpritesheet_2: 3843040423100834259
+      PlayerSpritesheet_3: 385077577419708428
+      PlayerSpritesheet_5: 5776891531103278535
+      PlayerSpritesheet_6: -8744608848720091140
+      PlayerSpritesheet_7: -3512167338147644310
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -2,14 +2,13 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
-public class texture_exchanger : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public Sprite down_texture;
     public Sprite up_texture;
-    public Sprite left_texture;
-    public Sprite right_texture;
+    public Sprite side_texture;
 
-    private SpriteRenderer MySprite;
+    private SpriteRenderer PlayerSprite;
 
     public GameObject JoystickInputObject;
 
@@ -20,8 +19,6 @@ public class texture_exchanger : MonoBehaviour
     private Vector2 ScreenDimensions;
     private Vector2 SpriteSize;
     private Rigidbody2D PlayerRigidBody;
-
-    private string CurrentLocation = Constants.KITCHEN;
 
     private void Awake()
     {
@@ -56,10 +53,10 @@ public class texture_exchanger : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        MySprite = GetComponent<SpriteRenderer>();
+        PlayerSprite = GetComponent<SpriteRenderer>();
         JoystickInput = JoystickInputObject.GetComponent<PlayerInputCircle>();
         ScreenDimensions = new Vector2(Camera.main.aspect * Camera.main.orthographicSize, Camera.main.orthographicSize);
-        SpriteSize = new Vector2(MySprite.bounds.size.x / 2.0f, MySprite.bounds.size.y / 2.0f);
+        SpriteSize = new Vector2(PlayerSprite.bounds.size.x / 2.0f, PlayerSprite.bounds.size.y / 2.0f);
         PlayerRigidBody = GetComponent<Rigidbody2D>();
     }
 
@@ -78,26 +75,26 @@ public class texture_exchanger : MonoBehaviour
         proposed_position.x = Mathf.Clamp(proposed_position.x, -ScreenDimensions.x + SpriteSize.x, ScreenDimensions.x - SpriteSize.x);
         proposed_position.y = Mathf.Clamp(proposed_position.y, minimum_y, maximum_y);
 
-        if (proposed_position.y == minimum_y && CurrentLocation == Constants.KITCHEN)
+        if (proposed_position.y == minimum_y && Registry.CurrentLocation == Constants.KITCHEN)
         {
             SceneManager.LoadScene("Restaurant");
 
-            CurrentLocation = Constants.RESTAURANT;
+            Registry.CurrentLocation = Constants.RESTAURANT;
 
             proposed_position.y = maximum_y - 0.01f;
         }
-        else if (proposed_position.y == maximum_y && CurrentLocation == Constants.RESTAURANT)
+        else if (proposed_position.y == maximum_y && Registry.CurrentLocation == Constants.RESTAURANT)
         {
             SceneManager.LoadScene("Kitchen");
 
-            CurrentLocation = Constants.KITCHEN;
+            Registry.CurrentLocation = Constants.KITCHEN;
 
             proposed_position.y = minimum_y + 0.01f;
         }
 
         PlayerRigidBody.MovePosition(proposed_position);
         //transform.position = proposed_position;
-        MySprite.sortingOrder = RenderPriority;
+        PlayerSprite.sortingOrder = RenderPriority;
     }
 
     // Update is called once per frame
@@ -107,24 +104,20 @@ public class texture_exchanger : MonoBehaviour
 
         if (Mathf.Abs(JoystickInputMagnitude.x) > Mathf.Abs(JoystickInputMagnitude.y))
         {
-            if (JoystickInputMagnitude.x > 0)
+            if (JoystickInputMagnitude.x != 0)
             {
-                MySprite.sprite = right_texture;
-            }
-            else if (JoystickInputMagnitude.x < 0)
-            {
-                MySprite.sprite = left_texture;
+                PlayerSprite.sprite = side_texture;
             }
         }
         else
         {
             if (JoystickInputMagnitude.y > 0)
             {
-                MySprite.sprite = up_texture;
+                PlayerSprite.sprite = up_texture;
             }
             else if (JoystickInputMagnitude.y < 0)
             {
-                MySprite.sprite = down_texture;
+                PlayerSprite.sprite = down_texture;
             }
         }
     }
