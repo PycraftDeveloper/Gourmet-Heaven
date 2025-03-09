@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class Customer : MonoBehaviour
 {
-    public Sprite down_texture;
-    public Sprite up_texture;
-    public Sprite side_texture;
+    public Sprite[] down_texture = new Sprite[6];
+    public Sprite[] up_texture = new Sprite[6];
+    public Sprite[] side_texture = new Sprite[6];
 
     public SpriteRenderer CustomerSprite;
 
@@ -23,6 +23,8 @@ public class Customer : MonoBehaviour
 
     public bool WaitingToBeServed = false;
 
+    private int model_index;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -35,6 +37,7 @@ public class Customer : MonoBehaviour
         CustomerRigidBody = GetComponent<Rigidbody2D>();
 
         CurrentPosition = transform.position;
+        model_index = Random.Range(0, 6);
     }
 
     private void FixedUpdate()
@@ -47,15 +50,15 @@ public class Customer : MonoBehaviour
     {
         if (Facing == Constants.FACE_SIDE)
         {
-            CustomerSprite.sprite = side_texture;
+            CustomerSprite.sprite = side_texture[model_index];
         }
         else if (Facing == Constants.FACE_UP)
         {
-            CustomerSprite.sprite = up_texture;
+            CustomerSprite.sprite = up_texture[model_index];
         }
         else if (Facing == Constants.FACE_DOWN)
         {
-            CustomerSprite.sprite = down_texture;
+            CustomerSprite.sprite = down_texture[model_index];
         }
     }
 }

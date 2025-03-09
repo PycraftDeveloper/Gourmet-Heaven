@@ -87,7 +87,7 @@ SpriteRenderer:
   m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &2655385498033699617
@@ -129,9 +129,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e5151887191a34a9b2f39eeec02375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  down_texture: {fileID: 8570058877390158369, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
-  up_texture: {fileID: -8422180100218658531, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
-  side_texture: {fileID: -6666380717595194736, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
+  down_texture:
+  - {fileID: 1599118600686732097, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
+  - {fileID: -7280766081397178319, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
+  - {fileID: -7128399603458528833, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
+  - {fileID: -194791223, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
+  - {fileID: 924831248, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
+  - {fileID: -535734676, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
+  up_texture:
+  - {fileID: -1539490360, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
+  - {fileID: 1574781462, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
+  - {fileID: -1809881049, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
+  - {fileID: -344306196, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
+  - {fileID: -327130820, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
+  - {fileID: 1871299050, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
+  side_texture:
+  - {fileID: 2107392808, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
+  - {fileID: -1184415375, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
+  - {fileID: 1309852454, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
+  - {fileID: 1586166131, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
+  - {fileID: 736948180, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
+  - {fileID: 390598486, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
   CustomerSprite: {fileID: 0}
   RenderPriority: 1
   CustomerRigidBody: {fileID: 0}
