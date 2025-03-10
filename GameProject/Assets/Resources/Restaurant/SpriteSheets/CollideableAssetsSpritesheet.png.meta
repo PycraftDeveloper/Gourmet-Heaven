@@ -1,0 +1,452 @@
+fileFormatVersion: 2
+guid: 6368041d696d7384b88bc9d30808a525
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8796712600536256464
+    second: CollideableAssetsSpritesheet_0
+  - first:
+      213: 570821409953401053
+    second: CollideableAssetsSpritesheet_1
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: QuePole
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 256
+        width: 56
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 843561570fb2021499965f99a723aa02
+      internalID: 1156605591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlowerbedTopLeft
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9083e8ccd891a142aa6eda1c0e8586a
+      internalID: 922289148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlowerbedSide
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51f0a84986b34d64bb48c423afa607cf
+      internalID: -459656708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlowerbedBottomLeft
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 796a6582ec7501f4b94de63277700345
+      internalID: -751833851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TableBottom
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 71
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b76632ab8ddf4e2419ce3df507617853
+      internalID: 175769426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChairBottom
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c19ea5743a8ac1243859ff9827f4c3b5
+      internalID: -559235598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StatueBase
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d574183ac7a0414eb087dd8891d1b78
+      internalID: 1658082980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuBoard
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc4941d61613fe3499f01869edd374eb
+      internalID: 581398621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CondimentsTable
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d98235f9acf944f4bb62db5c0e9d091c
+      internalID: -235184420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TableTop
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 71
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e083087dec8ff774489e5f87d16586fb
+      internalID: -1005879823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChairTop
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a30c721c644bcb845b8e34eedc78dfb4
+      internalID: -817017072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 61005d5127d75eb4d90f6d17f780d95a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ChairBottom: -559235598
+      ChairTop: 2029102550
+      CollideableAssetsSpritesheet_0: -8796712600536256464
+      CollideableAssetsSpritesheet_1: 570821409953401053
+      CollideableAssetsSpritesheet_10: 1175320739
+      CollideableAssetsSpritesheet_11: -562062060
+      CollideableAssetsSpritesheet_13: 1618977760
+      CollideableAssetsSpritesheet_14: 1368955730
+      CollideableAssetsSpritesheet_15: 898562192
+      CollideableAssetsSpritesheet_16: -1322364976
+      CollideableAssetsSpritesheet_17: -471448585
+      CollideableAssetsSpritesheet_18: 781996157
+      CollideableAssetsSpritesheet_19: -858789033
+      CollideableAssetsSpritesheet_2: -2079645478
+      CollideableAssetsSpritesheet_20: -1801310052
+      CollideableAssetsSpritesheet_21: -1405299565
+      CollideableAssetsSpritesheet_22: -81448783
+      CollideableAssetsSpritesheet_23: -904186376
+      CollideableAssetsSpritesheet_25: -1001397226
+      CollideableAssetsSpritesheet_26: -1860376202
+      CollideableAssetsSpritesheet_27: -200505348
+      CollideableAssetsSpritesheet_28: -957494637
+      CollideableAssetsSpritesheet_29: -118323983
+      CollideableAssetsSpritesheet_31: -728904075
+      CollideableAssetsSpritesheet_32: -965150418
+      CollideableAssetsSpritesheet_33: -1023849161
+      CollideableAssetsSpritesheet_34: 257947867
+      CollideableAssetsSpritesheet_35: -947321062
+      CollideableAssetsSpritesheet_36: 1990573453
+      CollideableAssetsSpritesheet_39: 2019699406
+      CollideableAssetsSpritesheet_40: -1817700632
+      CollideableAssetsSpritesheet_42: 2139726563
+      CollideableAssetsSpritesheet_43: 549868470
+      CollideableAssetsSpritesheet_44: -1217471329
+      CollideableAssetsSpritesheet_45: -167422513
+      CollideableAssetsSpritesheet_46: -1741107358
+      CollideableAssetsSpritesheet_47: -1294112394
+      CollideableAssetsSpritesheet_48: -606611169
+      CollideableAssetsSpritesheet_49: 1117205693
+      CollideableAssetsSpritesheet_5: -61598542
+      CollideableAssetsSpritesheet_50: 99782889
+      CollideableAssetsSpritesheet_51: -1215399453
+      CollideableAssetsSpritesheet_52: 1285630155
+      CollideableAssetsSpritesheet_53: 614951818
+      CollideableAssetsSpritesheet_54: -960044183
+      CollideableAssetsSpritesheet_56: -1017625773
+      CollideableAssetsSpritesheet_57: -627579402
+      CollideableAssetsSpritesheet_6: -294674419
+      CollideableAssetsSpritesheet_60: 1488173547
+      CollideableAssetsSpritesheet_7: 1538017669
+      CollideableAssetsSpritesheet_8: 1709092773
+      CollideableAssetsSpritesheet_9: 601434035
+      CondimentsTable: -235184420
+      FlowerbedBottomLeft: -751833851
+      FlowerbedSide: -459656708
+      FlowerbedTopLeft: 922289148
+      MenuBoard: 581398621
+      QuePole: 1156605591
+      StatueBase: 1658082980
+      TableBottom: 175769426
+      TableTop: 1998308641
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
