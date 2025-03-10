@@ -4,6 +4,9 @@ public class Joystick : MonoBehaviour
 {
     public PlayerInputCircle JoystickInput;
 
+    public Vector2 LeftPosition;
+    public Vector2 RightPosition;
+
     private void Awake()
     {
         if (Registry.JoystickExists == false)
@@ -14,6 +17,18 @@ public class Joystick : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void Start()
+    {
+        if (Registry.JoystickScreenPosition == Constants.LEFT)
+        {
+            transform.position = LeftPosition;
+        }
+        else
+        {
+            transform.position = RightPosition;
         }
     }
 }
