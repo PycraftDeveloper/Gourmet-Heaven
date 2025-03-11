@@ -3,6 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManagerScript : MonoBehaviour
 {
+    public void Start()
+    {
+        Application.targetFrameRate = Mathf.Min(60, (int)Screen.currentResolution.refreshRateRatio.value);
+    }
+
     public void OnPlayButtonClick()
     {
         SceneManager.LoadScene("LevelSelectionMenu");

@@ -1,0 +1,26 @@
+{
+    "friendlyName": "Lenovo Tab P12",
+    "version": 1,
+    "screens": [
+        {
+            "width": 2944,
+            "height": 1840,
+            "dpi": 273,
+            "orientations": [
+                {
+                    "orientation": 1,
+                    "safeArea": {
+                        "serializedVersion": "1",
+                        "x": 0.0,
+                        "y": 0.0,
+                        "width": 2944.0,
+                        "height": 1840.0
+                    }
+                }
+            ]
+        }
+    ],
+    "systemInfo": {
+        "operatingSystem": "Android 14"
+    }
+}

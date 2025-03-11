@@ -4,8 +4,7 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - RestaurantPortal
-  - KitchenPortal
+  - Customer
   layers:
   - Default
   - TransparentFX

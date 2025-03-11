@@ -373,7 +373,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -8, y: 1, z: 0}
+  - first: {x: -8, y: 0, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -383,7 +383,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 7, y: 1, z: 0}
+  - first: {x: 7, y: 0, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 1
@@ -454,6 +454,51 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1288183221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1288183222}
+  - component: {fileID: 1288183223}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1288183222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288183221}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1288183223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288183221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e41b6711748f214d91dc0507936a571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CustomerPrefab: {fileID: 6224659579819199165, guid: 428d18fef4a6efb49a540ebdd579bb02, type: 3}
 --- !u!1 &1465327078
 GameObject:
   m_ObjectHideFlags: 0
@@ -3808,8 +3853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   down_texture: {fileID: 8570058877390158369, guid: 90f15ec1532ea4f43ab68c505e00989d, type: 3}
   up_texture: {fileID: -8422180100218658531, guid: 90f15ec1532ea4f43ab68c505e00989d, type: 3}
-  left_texture: {fileID: -6666380717595194736, guid: 90f15ec1532ea4f43ab68c505e00989d, type: 3}
-  right_texture: {fileID: -6666380717595194736, guid: 90f15ec1532ea4f43ab68c505e00989d, type: 3}
+  side_texture: {fileID: -6666380717595194736, guid: 90f15ec1532ea4f43ab68c505e00989d, type: 3}
   JoystickInputObject: {fileID: 6213745052493878434}
   RenderPriority: 1
 --- !u!483693784 &6677918588879897308
@@ -3938,7 +3982,7 @@ Transform:
   m_GameObject: {fileID: 3837774345272719546}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.28, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4015,3 +4059,4 @@ SceneRoots:
   - {fileID: 4548488036365748442}
   - {fileID: 6698488768189558919}
   - {fileID: 7328136110366525890}
+  - {fileID: 1288183222}
