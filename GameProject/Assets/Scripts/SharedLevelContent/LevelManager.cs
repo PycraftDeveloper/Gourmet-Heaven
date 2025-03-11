@@ -53,7 +53,7 @@ public class LevelManager : MonoBehaviour
         while (elapsed < duration)
         {
             CustomerRigidBody.position = Vector2.Lerp(start, DestinationPosition, elapsed / duration);
-            elapsed += Time.deltaTime;
+            elapsed += Registry.GameTimeDelta;
             yield return null;
         }
 
@@ -63,7 +63,12 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        CustomerSpawnTimer += Time.deltaTime;
+        if (Registry.InGameLevel)
+        {
+            Registry.GameTimeDelta = Time.deltaTime;
+        }
+
+        CustomerSpawnTimer += Registry.GameTimeDelta;
 
         GameObject[] Customers = GameObject.FindGameObjectsWithTag("Customer");
 

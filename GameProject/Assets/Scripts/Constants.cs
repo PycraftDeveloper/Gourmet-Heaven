@@ -9,4 +9,7 @@ public static class Constants
     public const string FACE_SIDE = "side";
     public const string FACE_UP = "up";
     public const string FACE_DOWN = "down";
+
+    public const string LEFT = "Left";
+    public const string RIGHT = "Right";
 }
