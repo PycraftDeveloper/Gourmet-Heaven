@@ -5,7 +5,7 @@ public class MainMenuManagerScript : MonoBehaviour
 {
     public void Start()
     {
-        Application.targetFrameRate = Mathf.Min(60, (int)Screen.currentResolution.refreshRateRatio.value);
+        Application.targetFrameRate = Mathf.Max(60, (int)Screen.currentResolution.refreshRateRatio.value);
     }
 
     public void OnPlayButtonClick()

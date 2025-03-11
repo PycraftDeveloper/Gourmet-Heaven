@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FlattJadeStudios_0: 601118956538574274
+      FlattJadeStudios_1: 5732722793302437986
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
