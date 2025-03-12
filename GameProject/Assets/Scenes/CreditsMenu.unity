@@ -790,7 +790,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Project manager: Josh Cossar
+  m_text: 'Project manager: Joshua Cossar
 
 
     Lead programmer: Thomas Jebson
@@ -805,7 +805,7 @@ MonoBehaviour:
     Lead
     artist: Alice Haydon-Grime
 
-    Art team: Finlay Thompson, Lina Lin Gao, Theo
+    Art team: Finlay Thompson, Luna Lin Gao, Theo
     Carre'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

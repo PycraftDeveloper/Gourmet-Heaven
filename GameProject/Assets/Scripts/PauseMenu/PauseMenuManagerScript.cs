@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuManagerScript : MonoBehaviour
 {
-    public void OnReturnToGameButtonClick()
+    public void OnResumeButtonClick()
     {
         if (Registry.CurrentLocation == Constants.RESTAURANT)
         {
