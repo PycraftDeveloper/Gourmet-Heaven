@@ -13,7 +13,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip audioClip3;
     public AudioClip audioClip4;
 
-    private void Awake()
+    private void Awake()     /*check if audiomanager is already in the scene to avoid duplication*/
     {
         if (Registry.AudioManager == false)
         {
