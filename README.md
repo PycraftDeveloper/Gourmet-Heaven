@@ -20,20 +20,6 @@ Welcome to our game.
 
 > **CAUTION**: If you open GitHub and it says that the number of files to commit is large (>1000 files) then double check you got the location right. If you are unsure, please consult Jebbo.
 
-## Project Resources Guide
-
-If you open the Unity project and it says in the black bar at the bottom in red: "**File could not be read.**" Then this guide is for you!
-Some of the resources for this project are **MAY NOT** be included in the GitHub repository and instead can be found [here](https://mynorthamptonac-my.sharepoint.com/:f:/r/personal/josh_cossar24_my_northampton_ac_uk/Documents/GroupProjectY1/GameAssets?csf=1&web=1&e=jlcNXG).
-
-1. Click the link to access the OneDrive location.
-2. From here, download the folder called "**Resources**".
-3. Over in Unity, **DELETE** the 'Resources' folder **ONLY**.
-4. Extract the ".zip" file you downloaded from OneDrive.
-5. In Unity, open the "**Assets**" folder in the "**Project**" tab on the bottom menu.
-5. Drag the whole "**Resources**" folder into the "**Assets**" folder.
-
-From here, you should be good to go.
-
 ## Upgrading your version of Unity
 
 You likely started working on the project using Unity version 6000.0.5f1. However, because this version apparently has problems with Android compilation, we have switched to Unity version 6000.0.39f1. If you already have installed the old version, this is how you can update your unity version!
