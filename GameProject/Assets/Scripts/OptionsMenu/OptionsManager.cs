@@ -6,12 +6,16 @@ using TMPro;
 public class OptionsMenuManagerScript : MonoBehaviour
 {
     public Button PlayerControlsSwitchButton;
+    public Slider SFXSlider;
+    public Slider MusicSlider;
 
     private TextMeshProUGUI PlayerControlsSwitchButtonText;
 
     public void Start()
     {
         PlayerControlsSwitchButtonText = PlayerControlsSwitchButton.GetComponentInChildren<TextMeshProUGUI>();
+        SFXSlider.value = Registry.SFXVolume;
+        MusicSlider.value = Registry.MusicVolume;
     }
 
     public void OnSwitchControllerPositionButtonClicked()
@@ -34,5 +38,7 @@ public class OptionsMenuManagerScript : MonoBehaviour
     public void Update()
     {
         PlayerControlsSwitchButtonText.text = Registry.JoystickScreenPosition;
+        Registry.SFXVolume = SFXSlider.value;
+        Registry.MusicVolume = MusicSlider.value;
     }
 }

@@ -12,4 +12,7 @@ public static class Registry
     public static string CurrentLocation = Constants.KITCHEN;
 
     public static string JoystickScreenPosition = Constants.LEFT;
+
+    public static float MusicVolume = 0.8f;
+    public static float SFXVolume = 0.8f;
 }

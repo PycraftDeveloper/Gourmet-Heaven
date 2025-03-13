@@ -3,11 +3,13 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [Header("AudioSources")]
-    [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource SFXSource;
+    [SerializeField] private AudioSource musicSource;
+
+    [SerializeField] private AudioSource SFXSource;
 
     [Header("AudioClips")]
     public AudioClip bgm;
+
     public AudioClip footsteps;
     public AudioClip audioClip2;
     public AudioClip audioClip3;
@@ -29,7 +31,12 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         musicSource.clip = bgm;
+        musicSource.volume = Registry.MusicVolume;
         musicSource.Play();
     }
 
+    private void Update()
+    {
+        musicSource.volume = Registry.MusicVolume;
+    }
 }
