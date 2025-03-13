@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -122,6 +123,12 @@ public class LevelManager : MonoBehaviour
                     UpdateQueuePositions();
                 }
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Registry.PreviousMenu = Constants.IN_GAME;
+            SceneManager.LoadScene("PauseMenu");
         }
     }
 }

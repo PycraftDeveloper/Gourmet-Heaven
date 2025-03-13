@@ -32,7 +32,14 @@ public class OptionsMenuManagerScript : MonoBehaviour
 
     public void OnBackButtonClicked()
     {
-        SceneManager.LoadScene("MainMenu");
+        if (Registry.GamePaused)
+        {
+            SceneManager.LoadScene("PauseMenu");
+        }
+        else
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 
     public void Update()

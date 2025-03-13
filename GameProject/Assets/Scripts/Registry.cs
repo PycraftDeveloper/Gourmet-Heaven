@@ -15,4 +15,8 @@ public static class Registry
 
     public static float MusicVolume = 0.8f;
     public static float SFXVolume = 0.8f;
+
+    public static string PreviousMenu = Constants.MAIN_MENU;
+
+    public static bool GamePaused = false;
 }
