@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d2c672408441a2a4196d28142c08ad42
+guid: 35fbc642ccdb8f341ac0e70d2a446ad3
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -307,7 +307,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CashRegister
+      name: CashRegister_Active
       rect:
         serializedVersion: 2
         x: 3
@@ -342,7 +342,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CashRegister: -1106750763081631315
+      CashRegister_Active: -1106750763081631315
       ChoppingBoard: 4339927257284481467
       CookingPot: -4498347764037804711
       MiscKitchenSpritesheet_10: -2425311752939813426

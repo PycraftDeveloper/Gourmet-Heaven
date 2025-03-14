@@ -15,6 +15,7 @@ public class PauseMenuManagerScript : MonoBehaviour
         switch (Registry.PreviousMenu)
         {
             case Constants.IN_GAME:
+                Registry.InGameLevel = true;
                 if (Registry.CurrentLocation == Constants.RESTAURANT)
                 {
                     SceneManager.LoadScene("Restaurant");
@@ -61,5 +62,13 @@ public class PauseMenuManagerScript : MonoBehaviour
     public void OnQuitButtonClick()
     {
         Application.Quit();
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OnResumeButtonClick();
+        }
     }
 }

@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.ComponentModel.Design;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 public class LevelManager : MonoBehaviour
 {
     public GameObject CustomerPrefab;
+
+    public Tile IdleCashRegisterTile;
+    public Tile ActivatedCashRegisterTile;
+    public bool CashRegisterState;
+
+    public Tilemap ApplianceTileMap;
 
     private Vector2 CustomerSpawningLocation = new Vector2(9.47f, -3.61f);
 
@@ -14,6 +21,8 @@ public class LevelManager : MonoBehaviour
     private float NextCustomerSpawnTime = 0;
 
     private Queue<GameObject> CustomerKitchenQueue = new Queue<GameObject>();
+
+    private bool ReturnToGameToggle = true;
 
     private void Awake()
     {
@@ -33,10 +42,26 @@ public class LevelManager : MonoBehaviour
     {
     }
 
+    private void AssociateApplianceTilemap()
+    {
+        Tilemap[] tilemaps = FindObjectsByType<Tilemap>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+
+        foreach (Tilemap tilemap in tilemaps)
+        {
+            if (tilemap.gameObject.name == "MiscAboveTilemap")
+            {
+                ApplianceTileMap = tilemap.GetComponent<Tilemap>();
+                break;
+            }
+        }
+        UpdateQueuePositions();
+    }
+
     private void UpdateQueuePositions()
     {
         float spacing = 1.5f;
         int index = 0;
+
         foreach (GameObject obj in CustomerKitchenQueue)
         {
             Vector2 DestinationPosition = new Vector2(0.5f + spacing * index, -3.61f);
@@ -53,6 +78,11 @@ public class LevelManager : MonoBehaviour
 
         while (elapsed < duration)
         {
+            if (Registry.InGameLevel == false)
+            {
+                yield break;
+            }
+
             CustomerRigidBody.position = Vector2.Lerp(start, DestinationPosition, elapsed / duration);
             elapsed += Registry.GameTimeDelta;
             yield return null;
@@ -64,9 +94,20 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        CashRegisterState = false;
         if (Registry.InGameLevel)
         {
+            if (ReturnToGameToggle)
+            {
+                AssociateApplianceTilemap();
+            }
             Registry.GameTimeDelta = Time.deltaTime;
+            ReturnToGameToggle = false;
+        }
+        else
+        {
+            Registry.GameTimeDelta = 0;
+            ReturnToGameToggle = true;
         }
 
         CustomerSpawnTimer += Registry.GameTimeDelta;
@@ -94,6 +135,7 @@ public class LevelManager : MonoBehaviour
                     {
                         thisCustomer.Facing = Constants.FACE_UP;
                         thisCustomer.WaitingToBeServed = true;
+                        CashRegisterState = true;
                     }
                 }
             }
@@ -128,7 +170,27 @@ public class LevelManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Registry.PreviousMenu = Constants.IN_GAME;
+            Registry.InGameLevel = false;
             SceneManager.LoadScene("PauseMenu");
+        }
+
+        if (Registry.InGameLevel)
+        {
+            if (ApplianceTileMap == null)
+            {
+                AssociateApplianceTilemap();
+            }
+            else
+            {
+                if (CashRegisterState)
+                {
+                    ApplianceTileMap.SwapTile(IdleCashRegisterTile, ActivatedCashRegisterTile);
+                }
+                else
+                {
+                    ApplianceTileMap.SwapTile(ActivatedCashRegisterTile, IdleCashRegisterTile);
+                }
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
@@ -7,6 +7,12 @@ public class Player : MonoBehaviour
     public Sprite down_texture;
     public Sprite up_texture;
     public Sprite side_texture;
+
+    public Sprite[] IdleApplianceSprites = new Sprite[4];
+    public Sprite[] ActivatedApplianceSprites = new Sprite[4];
+    public bool[] SpriteStates = new bool[4];
+
+    private List<string> PlacedMeals = new List<string>();
 
     private SpriteRenderer PlayerSprite;
 

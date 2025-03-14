@@ -6,14 +6,14 @@
   ],
   "cleanCommandsComponents": [
     [
-      "A:\\GameDev Apps\\Unity\\6000.0.39f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+      "A:\\Unity\\6000.0.39f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
       "-C",
       "D:\\University\\Assignments\\Simester 2\\CSY1077 - Group Game Project Fundamentals\\GroupProjectY1\\GameProject\\.utmp\\Debug\\6p5t4l60\\arm64-v8a",
       "clean"
     ]
   ],
   "buildTargetsCommandComponents": [
-    "A:\\GameDev Apps\\Unity\\6000.0.39f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+    "A:\\Unity\\6000.0.39f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
     "-C",
     "D:\\University\\Assignments\\Simester 2\\CSY1077 - Group Game Project Fundamentals\\GroupProjectY1\\GameProject\\.utmp\\Debug\\6p5t4l60\\arm64-v8a",
     "{LIST_OF_TARGETS_TO_BUILD}"
