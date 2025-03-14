@@ -33,22 +33,22 @@ public class Player : MonoBehaviour
         }
     }
 
-    /*private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerStay2D(Collider2D collider)
     {
-        if (collider.tag == "RestaurantPortal")
+        /*if (collider.tag == "RestaurantPortal")
         {
-            LevelLocationManager.CurrentLocation = Constants.RESTAURANT;
-            LevelLocationManager.LocationChanged = true;
-            transform.position = new Vector3(transform.position.x, 4.0f, transform.position.z);
+            Registry.CurrentLocation = Constants.RESTAURANT;
+            PlayerRigidBody.MovePosition(new Vector3(transform.position.x, 4.0f, transform.position.z));
+            SceneManager.LoadScene("Restaurant");
         }
         else if (collider.tag == "KitchenPortal")
         {
-            LevelLocationManager.CurrentLocation = Constants.KITCHEN;
-            LevelLocationManager.LocationChanged = true;
-            transform.position = new Vector3(transform.position.x, -3.9f, transform.position.z);
-        }
-        Debug.Log(collider.tag);
-    }*/
+            Registry.CurrentLocation = Constants.KITCHEN;
+            PlayerRigidBody.MovePosition(new Vector3(transform.position.x, -3.9f, transform.position.z));
+            SceneManager.LoadScene("Kitchen");
+        }*/
+        Debug.Log(collider.name);
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
