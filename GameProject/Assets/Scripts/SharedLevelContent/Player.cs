@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     private Vector2 SpriteSize;
     private Rigidbody2D PlayerRigidBody;
 
+    public Animator PlayerAnimator;
+
     private void Awake()
     {
         if (Registry.PlayerExists == false)
@@ -108,10 +110,34 @@ public class Player : MonoBehaviour
     {
         Vector2 JoystickInputMagnitude = JoystickInput.JoystickOffsetMagnitude;
 
+        if (Mathf.Min(JoystickInputMagnitude.x, JoystickInputMagnitude.y) == 0)
+        {
+            PlayerAnimator.SetInteger("playerState", 0);
+        }
+
         if (Mathf.Abs(JoystickInputMagnitude.x) > Mathf.Abs(JoystickInputMagnitude.y))
         {
             if (JoystickInputMagnitude.x != 0)
             {
+                PlayerAnimator.SetInteger("playerState", 3);
+                if (JoystickInputMagnitude.x > 0)
+                {
+                    Vector3 scale = PlayerSprite.transform.localScale;
+                    if (scale.x > 0)
+                    {
+                        scale.x *= -1;
+                        PlayerSprite.transform.localScale = scale;
+                    }
+                }
+                else
+                {
+                    Vector3 scale = PlayerSprite.transform.localScale;
+                    if (scale.x < 0)
+                    {
+                        scale.x *= -1;
+                        PlayerSprite.transform.localScale = scale;
+                    }
+                }
                 PlayerSprite.sprite = side_texture;
             }
         }
@@ -119,10 +145,12 @@ public class Player : MonoBehaviour
         {
             if (JoystickInputMagnitude.y > 0)
             {
+                PlayerAnimator.SetInteger("playerState", 1);
                 PlayerSprite.sprite = up_texture;
             }
             else if (JoystickInputMagnitude.y < 0)
             {
+                PlayerAnimator.SetInteger("playerState", 2);
                 PlayerSprite.sprite = down_texture;
             }
         }
