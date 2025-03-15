@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SlicedObject : MonoBehaviour
 {
@@ -13,10 +14,16 @@ public class SlicedObject : MonoBehaviour
     private GameObject currentArrow; // shows where the player needs to cut 
     public Vector3 spriteScale = new Vector3(1.5f, 1.5f, 1); // setting the sizes cut peices (will be changed to create another object, the fully sliced asset) 
     public Color pieceColor = Color.red; // setting the colour of the pieces (will be deleted once i have the fully sliced asset) 
+    public GameObject SlicedRice;
+   
+    [SerializeField] private CountdownTimer countdowntimer; 
 
     void Start()
     {
-     // creates the random direction the player needs to slice and hides the feedback text until the player trys to do a swipe
+     
+       CountdownTimer countdownTimer = Object.FindFirstObjectByType<CountdownTimer>();
+
+        // creates the random direction the player needs to slice and hides the feedback text until the player trys to do a swipe
         pointsSliced = new bool[slicePoints.Length];
         randomDirections = new Vector2[slicePoints.Length];
 
@@ -120,7 +127,14 @@ public class SlicedObject : MonoBehaviour
         if (currentSliceIndex >= slicePoints.Length - 1)
         {
             isSliced = true;
+            ShowMessage("Amazing!", Color.green);
             Debug.Log("Meat Fully Sliced!");
+            
+               if (countdowntimer != null)
+            {
+                countdowntimer.StopTimer();
+            }
+
             CreateSlicedPieces();
         }
         else
@@ -130,6 +144,11 @@ public class SlicedObject : MonoBehaviour
         }
     }
 
+    void ReturnToKitchen()
+    {
+        SceneManager.LoadScene("Kitchen");
+    }
+    
     // creates the sliced pieces (might be deleted after) 
     void CreateSlicedPieces()
     {
@@ -162,7 +181,7 @@ public class SlicedObject : MonoBehaviour
             rb.gravityScale = 1f; 
             rb.AddForce(new Vector2(Random.Range(-2f, 2f), Random.Range(2f, 5f)), ForceMode2D.Impulse);
         }
-
+        
         // removes the arrow after slicing
         if (currentArrow != null)
         {
@@ -170,7 +189,7 @@ public class SlicedObject : MonoBehaviour
         }
 
         // destroys the original object after creating the pieces
-        Destroy(gameObject);
-        Destroy(feedbackText);
+        Destroy(SlicedRice);
+        Invoke("ReturnToKitchen", 2.0f);
     }
 }
