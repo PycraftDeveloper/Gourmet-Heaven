@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class SlicedObject : MonoBehaviour
 {
@@ -14,13 +13,10 @@ public class SlicedObject : MonoBehaviour
     private GameObject currentArrow; // shows where the player needs to cut 
     public Vector3 spriteScale = new Vector3(1.5f, 1.5f, 1); // setting the sizes cut peices (will be changed to create another object, the fully sliced asset) 
     public Color pieceColor = Color.red; // setting the colour of the pieces (will be deleted once i have the fully sliced asset) 
-    public GameObject slicedObject;
-    
-    [SerializeField] private CountdownTimer countdownTimer;
 
     void Start()
     {
-        // creates the random direction the player needs to slice and hides the feedback text until the player trys to do a swipe
+     // creates the random direction the player needs to slice and hides the feedback text until the player trys to do a swipe
         pointsSliced = new bool[slicePoints.Length];
         randomDirections = new Vector2[slicePoints.Length];
 
@@ -30,18 +26,8 @@ public class SlicedObject : MonoBehaviour
         ShuffleSlicePoints();
         RandomizeSliceDirections();
         CreateArrow(slicePoints[0]);
-        
-        if (countdownTimer == null)
-         {
-           CountdownTimer countdownTimer = Object.FindFirstObjectByType<CountdownTimer>();
-            if (countdownTimer == null)
-            {
-                Debug.LogError("CountdownTimer not found! Assign it in the Inspector.");
-            }
-        }
     }
 
-    
     // shuffles the slice points every time the game is played 
     void ShuffleSlicePoints()
     {
@@ -134,13 +120,8 @@ public class SlicedObject : MonoBehaviour
         if (currentSliceIndex >= slicePoints.Length - 1)
         {
             isSliced = true;
-            ShowMessage("Amazing", Color.green);
-            Debug.Log("Meat Fully Sliced!"); 
-            {
-              countdownTimer.StopTimer();
-            }
-            
-             CreateSlicedPieces();
+            Debug.Log("Meat Fully Sliced!");
+            CreateSlicedPieces();
         }
         else
         {
@@ -149,7 +130,7 @@ public class SlicedObject : MonoBehaviour
         }
     }
 
-   // creates the sliced pieces (might be deleted after) 
+    // creates the sliced pieces (might be deleted after) 
     void CreateSlicedPieces()
     {
         for (int i = 0; i < 6; i++)
@@ -189,12 +170,7 @@ public class SlicedObject : MonoBehaviour
         }
 
         // destroys the original object after creating the pieces
-        Destroy(slicedObject);
-        Invoke("ReturnToKitchen", 5f);
+        Destroy(gameObject);
+        Destroy(feedbackText);
     }
-    void ReturnToKitchen()
-   {
-        
-     SceneManager.LoadScene("Kitchen");
-   }  
 }

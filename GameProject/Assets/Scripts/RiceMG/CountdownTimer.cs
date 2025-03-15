@@ -8,38 +8,30 @@ public class CountdownTimer : MonoBehaviour
     [SerializeField] float remainingTime;
     public TextMeshProUGUI minigamefailedText;
     public float delayTime = 2f;
-    private bool IsTimerRunning = true;
-  
 
-    void ReturnToKitchen()
+    void ReturnToResturant()
     {
- 
-        SceneManager.LoadScene("Kitchen");
+        SceneManager.LoadScene("Restaurant"); // can be modified later, need to add a delay before opening the restaurant scene
     }
 
-    private void Update()
+    void Update()
     {
-        if (!IsTimerRunning) return;
         if (remainingTime > 0)
         {
             remainingTime -= Time.deltaTime;
             minigamefailedText.gameObject.SetActive(false);
         } 
-        else if (remainingTime == 0) // mini game failed condition 
+        else if (remainingTime < 0) // mini game failed condition 
         {
             remainingTime = 0;
             timerText.color = Color.red;
             minigamefailedText.gameObject.SetActive(true);
-            Invoke("ReturnToKitchen", 2.0f);
+            Invoke("ReturnToResturant", 2.0f);
         }
 
         int minutes = Mathf.FloorToInt(remainingTime / 60);
         int seconds = Mathf.FloorToInt(remainingTime % 60);
         timerText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }
-    public void StopTimer() 
-    {
-       remainingTime = 0;
-       enabled = false; 
-    }
+
 }
