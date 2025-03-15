@@ -154,5 +154,7 @@ public class Player : MonoBehaviour
                 PlayerSprite.sprite = down_texture;
             }
         }
+
     }
+
 }

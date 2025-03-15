@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Customer
+  - CashRegisterPopUp
+  - ChoppingBoardPopUp
+  - CookingPotPopUp
+  - PhoBowlPopUp
+  - RollingMatPopUp
   layers:
   - Default
   - TransparentFX
