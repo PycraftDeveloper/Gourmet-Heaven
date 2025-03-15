@@ -119,6 +119,64 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &85477809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 85477811}
+  - component: {fileID: 85477810}
+  m_Layer: 0
+  m_Name: MGManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &85477810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85477809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98c45ebec2332f478fe745bd7f102bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feedbackText: {fileID: 1572467685}
+  slicePoints:
+  - {fileID: 6975946490443016908}
+  - {fileID: 3612638419900135493}
+  - {fileID: 6059381665183743370}
+  - {fileID: 8619679964695540101}
+  - {fileID: 1157224279749444325}
+  - {fileID: 5544747065619084231}
+  arrowPrefab: {fileID: 3449853850600514551, guid: 9c1864dd64ccc494fb62212b133c401e, type: 3}
+  spriteScale: {x: 1.5, y: 1.5, z: 1}
+  pieceColor: {r: 0.9490197, g: 0.5647059, b: 0, a: 1}
+  slicedObject: {fileID: 4447783732622282182}
+  countdownTimer: {fileID: 550893567}
+--- !u!4 &85477811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85477809}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.058245663, y: 0.47913906, z: -0.018901426}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7053543807518158330}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &235042219
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,9 +433,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 2097150751983968130}
-  remainingTime: 20
+  remainingTime: 15
   minigamefailedText: {fileID: 1218499002706968723}
-  delayTime: 2
+  delayTime: 1
 --- !u!114 &550893568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1066,7 +1124,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00:19
+  m_text: 00:10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1154,29 +1212,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2274744228049878113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4447783732622282182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f98c45ebec2332f478fe745bd7f102bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  feedbackText: {fileID: 1572467685}
-  slicePoints:
-  - {fileID: 6975946490443016908}
-  - {fileID: 3612638419900135493}
-  - {fileID: 6059381665183743370}
-  - {fileID: 8619679964695540101}
-  - {fileID: 1157224279749444325}
-  - {fileID: 5544747065619084231}
-  arrowPrefab: {fileID: 3449853850600514551, guid: 9c1864dd64ccc494fb62212b133c401e, type: 3}
-  spriteScale: {x: 0.5, y: 0.5, z: 0.5}
-  pieceColor: {r: 1, g: 0.4901961, b: 0, a: 1}
 --- !u!222 &2561569350813311107
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1316,7 +1351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minSwipeDistance: 50
-  SlicedObject: {fileID: 2274744228049878113}
+  SlicedObject: {fileID: 85477810}
 --- !u!4 &3612638419900135493
 Transform:
   m_ObjectHideFlags: 0
@@ -1326,7 +1361,7 @@ Transform:
   m_GameObject: {fileID: 5774897257915305265}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.020999998, y: 0.441, z: 0}
+  m_LocalPosition: {x: -0.020999998, y: 0.44099998, z: 0}
   m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1342,7 +1377,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7053543807518158330}
   - component: {fileID: 7355674059621341994}
-  - component: {fileID: 2274744228049878113}
   - component: {fileID: 2975975479856607072}
   - component: {fileID: 4808406054350789712}
   m_Layer: 0
@@ -1701,7 +1735,7 @@ Transform:
   m_GameObject: {fileID: 6796550564432543907}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.45499998, y: 0.441, z: 0}
+  m_LocalPosition: {x: 0.45499998, y: 0.44099998, z: 0}
   m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1815,7 +1849,7 @@ Transform:
   m_GameObject: {fileID: 8223691649075128630}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.454, y: 0.441, z: 0}
+  m_LocalPosition: {x: -0.454, y: 0.44099998, z: 0}
   m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1829,8 +1863,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4447783732622282182}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 0.59, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.24175435, y: 0.110860914, z: 0.018901426}
   m_LocalScale: {x: 4, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1840,7 +1874,7 @@ Transform:
   - {fileID: 8619679964695540101}
   - {fileID: 1157224279749444325}
   - {fileID: 5544747065619084231}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 85477811}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7355674059621341994
 SpriteRenderer:
@@ -2063,6 +2097,6 @@ SceneRoots:
   - {fileID: 970617701}
   - {fileID: 550893566}
   - {fileID: 644124853}
-  - {fileID: 7053543807518158330}
+  - {fileID: 85477811}
   - {fileID: 1539608022511745548}
   - {fileID: 4928643725374374297}
