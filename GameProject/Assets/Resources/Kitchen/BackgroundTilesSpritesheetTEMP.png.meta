@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9792cb9080fd711488f2be97c5ff5f75
+guid: db36c3e93b2dfb74bb39e456d6a9d275
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3597102008287881352
-    second: BackgroundTilesSpritesheet_0
+      213: -3969637068868898776
+    second: BackgroundTilesSpritesheet 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,7 +84,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Standalone
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -101,7 +101,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,11 +110,37 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -134,15 +160,15 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 877182f18c6841ec0800000000000000
-      internalID: -3597102008287881352
+      spriteID: 820b8de2e1409e8c0800000000000000
+      internalID: -3969637068868898776
       vertices: []
       indices: 
       edges: []
@@ -156,21 +182,21 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ea644751c996cb4fa976bd1a955d077
-      internalID: 236299373
+      spriteID: 10376ccba88724847b9467924dfef6d2
+      internalID: 1377190312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarpetTEMP_002
+      name: CarpetTEMP_004
       rect:
         serializedVersion: 2
         x: 64
@@ -178,15 +204,37 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcbccf9215660a94d98fb5656a2666c3
-      internalID: -155783641
+      spriteID: fbeff27427788014ba9c646fbcad00f9
+      internalID: 898479333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WallTEMP
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 752d9b7f9d448ac49b8d419bb32b06b7
+      internalID: -1911810516
       vertices: []
       indices: 
       edges: []
@@ -200,21 +248,21 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2afe261d368db52458ac92276fef6902
-      internalID: 1727434358
+      spriteID: c561d3ed8de3d2a4d9f761f12df1f45f
+      internalID: -1081300361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarpetTEMP_003
+      name: CarpetTEMP_002
       rect:
         serializedVersion: 2
         x: 32
@@ -222,21 +270,21 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 526aad6213eab7c408a7399fc37840f4
-      internalID: 127297900
+      spriteID: 7da2f837d75961647aa3985caff403d0
+      internalID: -1359381729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarpetTEMP_004
+      name: CarpetTEMP_005
       rect:
         serializedVersion: 2
         x: 64
@@ -244,15 +292,15 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf8aeb0df311b8d48ad51963df46fdf0
-      internalID: 1111975285
+      spriteID: 785c8ecbad778514b968b0a9cb216aef
+      internalID: 2057656610
       vertices: []
       indices: 
       edges: []
@@ -266,21 +314,21 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8463257f2291e7946828e49f2617a44c
-      internalID: -203549226
+      spriteID: c1e10d9d32103b54da38ec086526f3dc
+      internalID: -1812791808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WallTEMP
+      name: CarpetTEMP_003
       rect:
         serializedVersion: 2
         x: 32
@@ -288,15 +336,37 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e54c35bf871040b4097974f7836cf947
-      internalID: 1089567366
+      spriteID: 34cc528d5b424f14db623d8b67856844
+      internalID: 188517981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarpetTEMP_006
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7a66c73e3c5628469c6091d1e49919f
+      internalID: -1920554249
       vertices: []
       indices: 
       edges: []
@@ -305,22 +375,26 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fa88286445e86f04e8b71a52bbc21615
+    spriteID: d0db997fcb20f084f9eaf55c9a2e4bfe
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
-      CarpetTEMP_001: 236299373
-      CarpetTEMP_002: -155783641
-      CarpetTEMP_003: 127297900
-      CarpetTEMP_004: 1111975285
-      KitToRestTEMP: 1727434358
-      KitchenFloorTEMP: -3597102008287881352
-      RestaurantFloorTEMP: -203549226
-      WallTEMP: 1089567366
+      CarpetTEMP_001: 1377190312
+      CarpetTEMP_002: -1359381729
+      CarpetTEMP_003: 188517981
+      CarpetTEMP_004: 898479333
+      CarpetTEMP_005: 2057656610
+      CarpetTEMP_006: -1920554249
+      KitToRestTEMP: -1081300361
+      KitchenFloorTEMP: -3969637068868898776
+      RestaurantFloorTEMP: -1812791808
+      WallTEMP: -1911810516
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
