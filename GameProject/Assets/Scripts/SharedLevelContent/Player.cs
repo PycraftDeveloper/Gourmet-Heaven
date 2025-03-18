@@ -30,10 +30,10 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        if (Registry.PlayerExists == false)
+        if (Registry.PlayerObject == null)
         {
             DontDestroyOnLoad(gameObject);
-            Registry.PlayerExists = true;
+            Registry.PlayerObject = this;
         }
         else
         {
@@ -83,19 +83,15 @@ public class Player : MonoBehaviour
         proposed_position.x = Mathf.Clamp(proposed_position.x, -ScreenDimensions.x + SpriteSize.x, ScreenDimensions.x - SpriteSize.x);
         proposed_position.y = Mathf.Clamp(proposed_position.y, minimum_y, maximum_y);
 
-        if (proposed_position.y == minimum_y && Registry.CurrentLocation == Constants.KITCHEN)
+        if (proposed_position.y == minimum_y && Registry.CurrentSceneName == Constants.KITCHEN)
         {
-            SceneManager.LoadScene("Restaurant");
-
-            Registry.CurrentLocation = Constants.RESTAURANT;
+            Registry.GameManagerObject.ChangeScene(Constants.RESTAURANT);
 
             proposed_position.y = maximum_y - 0.01f;
         }
-        else if (proposed_position.y == maximum_y && Registry.CurrentLocation == Constants.RESTAURANT)
+        else if (proposed_position.y == maximum_y && Registry.CurrentSceneName == Constants.RESTAURANT)
         {
-            SceneManager.LoadScene("Kitchen");
-
-            Registry.CurrentLocation = Constants.KITCHEN;
+            Registry.GameManagerObject.ChangeScene(Constants.KITCHEN);
 
             proposed_position.y = minimum_y + 0.01f;
         }
@@ -154,7 +150,5 @@ public class Player : MonoBehaviour
                 PlayerSprite.sprite = down_texture;
             }
         }
-
     }
-
 }

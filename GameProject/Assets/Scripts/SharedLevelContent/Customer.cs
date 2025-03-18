@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.SceneManagement;
 
 public class Customer : MonoBehaviour
 {
@@ -14,7 +12,7 @@ public class Customer : MonoBehaviour
 
     public Rigidbody2D CustomerRigidBody;
 
-    public string CurrentLocation = Constants.KITCHEN;
+    public string CurrentLocation;
 
     public string Facing = Constants.FACE_SIDE;
 
@@ -38,6 +36,7 @@ public class Customer : MonoBehaviour
 
         CurrentPosition = transform.position;
         model_index = Random.Range(0, 6);
+        CurrentLocation = Constants.KITCHEN;
     }
 
     private void FixedUpdate()

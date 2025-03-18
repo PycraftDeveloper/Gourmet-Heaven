@@ -9,10 +9,10 @@ public class Joystick : MonoBehaviour
 
     private void Awake()
     {
-        if (Registry.JoystickExists == false)
+        if (Registry.JoystickObject == null)
         {
             DontDestroyOnLoad(gameObject);
-            Registry.JoystickExists = true;
+            Registry.JoystickObject = this;
         }
         else
         {

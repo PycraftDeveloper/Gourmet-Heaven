@@ -1,18 +1,17 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class CountdownTimer : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] float remainingTime;
+    [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private float remainingTime;
     public TextMeshProUGUI minigamefailedText;
     public float delayTime = 2f;
     private bool isRunning = true;
 
-    void ReturnToKitchen()
+    private void ReturnToKitchen()
     {
-        SceneManager.LoadScene("Kitchen");
+        Registry.GameManagerObject.ChangeScene();
     }
 
     private void Update()
@@ -24,7 +23,7 @@ public class CountdownTimer : MonoBehaviour
             remainingTime -= Time.deltaTime;
             minigamefailedText.gameObject.SetActive(false);
         }
-        else if (remainingTime <= 0) // Mini-game failed condition 
+        else if (remainingTime <= 0) // Mini-game failed condition
         {
             remainingTime = 0;
             timerText.color = Color.red;
@@ -37,10 +36,9 @@ public class CountdownTimer : MonoBehaviour
         timerText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }
 
-    
     public void StopTimer()
     {
-        isRunning = false; 
+        isRunning = false;
         enabled = false;
     }
 }

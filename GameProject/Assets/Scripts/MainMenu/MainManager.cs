@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MainMenuManagerScript : MonoBehaviour
 {
@@ -10,22 +9,22 @@ public class MainMenuManagerScript : MonoBehaviour
 
     public void OnPlayButtonClick()
     {
-        SceneManager.LoadScene("LevelSelectionMenu");
+        Registry.GameManagerObject.ChangeScene(Constants.LEVEL_SELECTION_MENU);
     }
 
     public void OnShopButtonClick()
     {
-        SceneManager.LoadScene("ShopMenu");
+        Registry.GameManagerObject.ChangeScene(Constants.SHOP_MENU);
     }
 
     public void OnOptionsButtonClick()
     {
-        SceneManager.LoadScene("OptionsMenu");
+        Registry.GameManagerObject.ChangeScene(Constants.OPTIONS_MENU);
     }
 
     public void OnCreditsButtonClick()
     {
-        SceneManager.LoadScene("CreditsMenu");
+        Registry.GameManagerObject.ChangeScene(Constants.CREDITS_MENU);
     }
 
     public void OnQuitButtonClick()

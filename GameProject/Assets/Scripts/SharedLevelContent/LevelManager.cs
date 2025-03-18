@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 public class LevelManager : MonoBehaviour
@@ -26,20 +24,15 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Registry.LevelManagerExists == false)
+        if (Registry.LevelManagerObject == null)
         {
             DontDestroyOnLoad(gameObject);
-            Registry.LevelManagerExists = true;
+            Registry.LevelManagerObject = this;
         }
         else
         {
             Destroy(gameObject);
         }
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
-    {
     }
 
     private void AssociateApplianceTilemap()
@@ -94,32 +87,30 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        CashRegisterState = false;
-        if (Registry.InGameLevel)
-        {
-            if (ReturnToGameToggle)
-            {
-                AssociateApplianceTilemap();
-            }
-            Registry.GameTimeDelta = Time.deltaTime;
-            ReturnToGameToggle = false;
-        }
-        else
+        if (Registry.InGameLevel == false)
         {
             Registry.GameTimeDelta = 0;
             ReturnToGameToggle = true;
+            return;
         }
+
+        CashRegisterState = false;
+
+        if (ReturnToGameToggle)
+        {
+            AssociateApplianceTilemap();
+        }
+        Registry.GameTimeDelta = Time.deltaTime;
+        ReturnToGameToggle = false;
 
         CustomerSpawnTimer += Registry.GameTimeDelta;
 
-        GameObject[] Customers = GameObject.FindGameObjectsWithTag("Customer");
-
         int number_of_customers_in_kitchen = 0;
 
-        for (int i = 0; i < Customers.Length; i++)
+        for (int i = 0; i < Registry.Customers.Count; i++)
         {
-            Customer thisCustomer = Customers[i].GetComponent<Customer>();
-            if (Registry.CurrentLocation == Constants.KITCHEN)
+            Customer thisCustomer = Registry.Customers[i].GetComponent<Customer>();
+            if (Registry.CurrentSceneName == Constants.KITCHEN)
             {
                 if (thisCustomer.CurrentLocation == Constants.RESTAURANT)
                 {
@@ -152,7 +143,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if (Registry.CurrentLocation == Constants.KITCHEN)
+        if (Registry.CurrentSceneName == Constants.KITCHEN)
         {
             if (number_of_customers_in_kitchen == 0 || CustomerSpawnTimer > NextCustomerSpawnTime)
             {
@@ -162,6 +153,7 @@ public class LevelManager : MonoBehaviour
                 {
                     GameObject new_customer = Instantiate(CustomerPrefab, CustomerSpawningLocation, transform.rotation);
                     CustomerKitchenQueue.Enqueue(new_customer);
+                    Registry.Customers.Add(new_customer);
                     UpdateQueuePositions();
                 }
             }
@@ -169,27 +161,22 @@ public class LevelManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Registry.PreviousMenu = Constants.IN_GAME;
-            Registry.InGameLevel = false;
-            SceneManager.LoadScene("PauseMenu");
+            Registry.GameManagerObject.ChangeScene(Constants.PAUSE_MENU);
         }
 
-        if (Registry.InGameLevel)
+        if (ApplianceTileMap == null)
         {
-            if (ApplianceTileMap == null)
+            AssociateApplianceTilemap();
+        }
+        else
+        {
+            if (CashRegisterState)
             {
-                AssociateApplianceTilemap();
+                ApplianceTileMap.SwapTile(IdleCashRegisterTile, ActivatedCashRegisterTile);
             }
             else
             {
-                if (CashRegisterState)
-                {
-                    ApplianceTileMap.SwapTile(IdleCashRegisterTile, ActivatedCashRegisterTile);
-                }
-                else
-                {
-                    ApplianceTileMap.SwapTile(ActivatedCashRegisterTile, IdleCashRegisterTile);
-                }
+                ApplianceTileMap.SwapTile(ActivatedCashRegisterTile, IdleCashRegisterTile);
             }
         }
     }

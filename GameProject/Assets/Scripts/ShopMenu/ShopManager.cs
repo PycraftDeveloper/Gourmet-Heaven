@@ -5,6 +5,6 @@ public class ShopMenuManagerScript : MonoBehaviour
 {
     public void OnBackButtonClick()
     {
-        SceneManager.LoadScene("MainMenu");
+        Registry.GameManagerObject.ChangeScene();
     }
 }

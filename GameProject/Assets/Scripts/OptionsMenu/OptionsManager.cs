@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class OptionsMenuManagerScript : MonoBehaviour
@@ -32,14 +31,7 @@ public class OptionsMenuManagerScript : MonoBehaviour
 
     public void OnBackButtonClicked()
     {
-        if (Registry.GamePaused)
-        {
-            SceneManager.LoadScene("PauseMenu");
-        }
-        else
-        {
-            SceneManager.LoadScene("MainMenu");
-        }
+        Registry.GameManagerObject.ChangeScene();
     }
 
     public void Update()

@@ -1,16 +1,14 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class TEMP_MG_buttons : MonoBehaviour
 {
     public void OnRiceMiniGameButtonClick()
     {
-        SceneManager.LoadScene("RiceMG");
+        Registry.GameManagerObject.ChangeScene(Constants.RICE_MG);
     }
 
     public void OnPauseButtonClick()
     {
-        Registry.PreviousMenu = Constants.IN_GAME;
-        SceneManager.LoadScene("PauseMenu");
+        Registry.GameManagerObject.ChangeScene(Constants.PAUSE_MENU);
     }
 }
