@@ -158,7 +158,6 @@ public class LevelManager : MonoBehaviour
                 }
             }
         }
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Registry.GameManagerObject.ChangeScene(Constants.PAUSE_MENU);

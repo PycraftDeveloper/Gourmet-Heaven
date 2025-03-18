@@ -1745,11 +1745,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 705537654}
   SFXSource: {fileID: 210222199}
-  bgm: {fileID: 8300000, guid: b4aaf243787df794cbd07072f3420b75, type: 3}
+  bgm_InGame: {fileID: 0}
+  bgm_MainMenu: {fileID: 0}
+  bgm_MiniGame: {fileID: 0}
   footsteps: {fileID: 0}
   audioClip2: {fileID: 0}
   audioClip3: {fileID: 0}
   audioClip4: {fileID: 0}
+  FrameTexture: {fileID: 0}
+  BlurredFrameTexture: {fileID: 0}
+  BlurredMaterial: {fileID: 2100000, guid: 92f2222756e8e534c8b66d92176d225b, type: 2}
 --- !u!4 &1336106223
 Transform:
   m_ObjectHideFlags: 0

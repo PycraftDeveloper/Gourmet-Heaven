@@ -22,6 +22,11 @@ public class GameManager : MonoBehaviour
 
     private Stack<string> MenuStack = new Stack<string>();
 
+    public Texture2D FrameTexture;
+    public Texture2D BlurredFrameTexture;
+
+    public Material BlurredMaterial;
+
     private void Awake()
     {
         if (Registry.GameManagerObject == null)
@@ -98,6 +103,27 @@ public class GameManager : MonoBehaviour
 
         if (sceneName != Constants.KITCHEN || sceneName != Constants.RESTAURANT)
         {
+            if (Registry.InGameLevel)
+            {
+                FrameTexture = new Texture2D(Screen.width, Screen.height);
+                BlurredFrameTexture = new Texture2D(Screen.width, Screen.height);
+
+                RenderTexture SceneContents = new RenderTexture(Screen.width, Screen.height, 24);
+                RenderTexture BlurredSceneContents = new RenderTexture(Screen.width, Screen.height, 24);
+
+                Camera camera = Camera.main;
+                camera.targetTexture = SceneContents;
+                camera.Render();
+
+                Graphics.SetRenderTarget(SceneContents);
+                FrameTexture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+                FrameTexture.Apply();
+
+                Graphics.Blit(SceneContents, BlurredSceneContents, BlurredMaterial);
+                Graphics.SetRenderTarget(BlurredSceneContents);
+                BlurredFrameTexture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+                BlurredFrameTexture.Apply();
+            }
             Registry.InGameLevel = false;
             DisableLevelObjects();
         }
@@ -110,8 +136,6 @@ public class GameManager : MonoBehaviour
         }
         else if (sceneName == Constants.KITCHEN)
         {
-            Registry.InGameLevel = true;
-            EnableLevelObjects(sceneName);
         }
         else if (sceneName == Constants.LEVEL_SELECTION_MENU)
         {
@@ -130,8 +154,6 @@ public class GameManager : MonoBehaviour
         }
         else if (sceneName == Constants.RESTAURANT)
         {
-            Registry.InGameLevel = true;
-            EnableLevelObjects(sceneName);
         }
         else if (sceneName == Constants.RICE_MG)
         {
@@ -146,6 +168,12 @@ public class GameManager : MonoBehaviour
         Registry.CurrentSceneName = sceneName;
 
         SceneManager.LoadScene(sceneName);
+
+        if (sceneName == Constants.KITCHEN || sceneName == Constants.RESTAURANT)
+        {
+            Registry.InGameLevel = true;
+            EnableLevelObjects(sceneName);
+        }
     }
 
     private void Update()
