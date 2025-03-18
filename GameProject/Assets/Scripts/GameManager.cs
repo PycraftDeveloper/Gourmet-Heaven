@@ -10,7 +10,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioSource SFXSource;
 
     [Header("AudioClips")]
-    public AudioClip bgm;
+    public AudioClip bgm_InGame;
+
+    public AudioClip bgm_MainMenu;
+    public AudioClip bgm_MiniGame;
 
     public AudioClip footsteps;
     public AudioClip audioClip2;
@@ -36,7 +39,7 @@ public class GameManager : MonoBehaviour
     {
         MenuStack.Push(Constants.MAIN_MENU);
 
-        musicSource.clip = bgm;
+        musicSource.clip = bgm_MainMenu;
         musicSource.volume = Registry.MusicVolume;
         musicSource.Play();
     }
