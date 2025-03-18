@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -8,12 +9,14 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource SFXSource;
 
     [Header("AudioClips")]
-    public AudioClip bgm;
-
+    public AudioClip bgm_InGame;
+    public AudioClip bgm_MainMenu;
+    public AudioClip bgm_MiniGame;
     public AudioClip footsteps;
     public AudioClip audioClip2;
     public AudioClip audioClip3;
     public AudioClip audioClip4;
+
 
     private void Awake()     /*check if audiomanager is already in the scene to avoid duplication*/
     {
@@ -30,7 +33,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        musicSource.clip = bgm;
+        musicSource.clip = bgm_MainMenu;
         musicSource.volume = Registry.MusicVolume;
         musicSource.Play();
     }
