@@ -1609,9 +1609,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 705537654}
   SFXSource: {fileID: 210222199}
-  bgm_InGame: {fileID: 0}
-  bgm_MainMenu: {fileID: 0}
-  bgm_MiniGame: {fileID: 0}
+  bgm_InGame: {fileID: 8300000, guid: ea31f5bef3f7e2343a28677840e2b5ee, type: 3}
+  bgm_MainMenu: {fileID: 8300000, guid: 117bfb7ebd310fb40bab4164eac3ecc3, type: 3}
+  bgm_MiniGame: {fileID: 8300000, guid: c31feeb70328ca4409ba72fc3dfdc06d, type: 3}
   footsteps: {fileID: 0}
   audioClip2: {fileID: 0}
   audioClip3: {fileID: 0}

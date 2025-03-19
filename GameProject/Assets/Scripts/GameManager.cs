@@ -185,6 +185,26 @@ public class GameManager : MonoBehaviour
             Registry.InGameLevel = true;
             EnableLevelObjects(sceneName);
         }
+
+
+        if (sceneName == Constants.KITCHEN)
+        {
+            musicSource.clip = bgm_InGame;
+            musicSource.volume = Registry.MusicVolume;
+            musicSource.Play();
+        }
+            if (sceneName == Constants.MAIN_MENU)
+        {
+            musicSource.clip = bgm_MainMenu;
+            musicSource.volume = Registry.MusicVolume;
+            musicSource.Play();
+        }
+        if (sceneName == Constants.BUNS_MG || sceneName == Constants.PHO_MG || sceneName == Constants.RICE_MG || sceneName == Constants.SUSHI_MG)
+        {
+            musicSource.clip = bgm_MiniGame;
+            musicSource.volume = Registry.MusicVolume;
+            musicSource.Play();
+        }
     }
 
     private void Update()
