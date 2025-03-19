@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using UnityEngine.Rendering;
 
 public class GameManager : MonoBehaviour
 {
@@ -105,24 +106,34 @@ public class GameManager : MonoBehaviour
         {
             if (Registry.InGameLevel)
             {
-                FrameTexture = new Texture2D(Screen.width, Screen.height);
-                BlurredFrameTexture = new Texture2D(Screen.width, Screen.height);
+                Camera camera = Camera.main;
+
+                int width = (int)(Camera.main.rect.width * Screen.width);
+                int height = (int)(Camera.main.rect.height * Screen.height);
+                float x_offset = (Screen.width - width) / 2;
+                float y_offset = (Screen.height - height) / 2;
+
+                FrameTexture = new Texture2D(width, height);
+                BlurredFrameTexture = new Texture2D(width, height);
 
                 RenderTexture SceneContents = new RenderTexture(Screen.width, Screen.height, 24);
                 RenderTexture BlurredSceneContents = new RenderTexture(Screen.width, Screen.height, 24);
 
-                Camera camera = Camera.main;
                 camera.targetTexture = SceneContents;
                 camera.Render();
 
                 Graphics.SetRenderTarget(SceneContents);
-                FrameTexture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+                FrameTexture.ReadPixels(new Rect(x_offset, y_offset, Screen.width, Screen.height), 0, 0);
                 FrameTexture.Apply();
 
                 Graphics.Blit(SceneContents, BlurredSceneContents, BlurredMaterial);
                 Graphics.SetRenderTarget(BlurredSceneContents);
-                BlurredFrameTexture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+                BlurredFrameTexture.ReadPixels(new Rect(x_offset, y_offset, Screen.width, Screen.height), 0, 0);
                 BlurredFrameTexture.Apply();
+
+                camera.targetTexture = null;
+                Graphics.SetRenderTarget(null);
+                camera.Render();
             }
             Registry.InGameLevel = false;
             DisableLevelObjects();
