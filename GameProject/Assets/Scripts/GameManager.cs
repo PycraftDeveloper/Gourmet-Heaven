@@ -44,7 +44,6 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         MenuStack.Push(Constants.MAIN_MENU);
-
         musicSource.clip = bgm_MainMenu;
         musicSource.volume = Registry.MusicVolume;
         musicSource.Play();
@@ -189,15 +188,21 @@ public class GameManager : MonoBehaviour
 
         if (sceneName == Constants.KITCHEN)
         {
-            musicSource.clip = bgm_InGame;
-            musicSource.volume = Registry.MusicVolume;
-            musicSource.Play();
+            if (musicSource.clip != bgm_InGame)
+            {
+                musicSource.clip = bgm_InGame;
+                musicSource.volume = Registry.MusicVolume;
+                musicSource.Play();
+            }
         }
-            if (sceneName == Constants.MAIN_MENU)
+        if (sceneName == Constants.MAIN_MENU)
         {
-            musicSource.clip = bgm_MainMenu;
-            musicSource.volume = Registry.MusicVolume;
-            musicSource.Play();
+            if (musicSource.clip != bgm_MainMenu)
+            {
+                musicSource.clip = bgm_MainMenu;
+                musicSource.volume = Registry.MusicVolume;
+                musicSource.Play();
+            }
         }
         if (sceneName == Constants.BUNS_MG || sceneName == Constants.PHO_MG || sceneName == Constants.RICE_MG || sceneName == Constants.SUSHI_MG)
         {
