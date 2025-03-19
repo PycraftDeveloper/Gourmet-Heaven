@@ -28,7 +28,7 @@ public class CountdownTimer : MonoBehaviour
             remainingTime = 0;
             timerText.color = Color.red;
             minigamefailedText.gameObject.SetActive(true);
-            Invoke("ReturnToKitchen", 2.0f);
+            Invoke("ReturnToKitchen", 4f);
         }
 
         int minutes = Mathf.FloorToInt(remainingTime / 60);

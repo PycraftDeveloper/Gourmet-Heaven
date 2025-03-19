@@ -150,7 +150,7 @@ public class SlicedObject : MonoBehaviour
         Registry.GameManagerObject.ChangeScene();
     }
 
-    // creates the sliced pieces (might be deleted after)
+    // creates the sliced pieces (will be deleted after)
     private void CreateSlicedPieces()
     {
         for (int i = 0; i < 6; i++)
@@ -170,12 +170,12 @@ public class SlicedObject : MonoBehaviour
             texture.Apply();
 
             spriteRenderer.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-            spriteRenderer.sortingOrder = 5; // makes sure that the pieces renders on top of everything else
+            spriteRenderer.sortingOrder = 5; // makes sure that the pieces renders on top of everything else(will be deleted)
 
             piece.transform.position = transform.position + new Vector3(i * 0.3f - 0.8f, Random.Range(-0.2f, 0.2f), 0);
             piece.transform.localScale = spriteScale;
 
-            // adds gravity to the pieces
+            // adds gravity to the pieces (will be deleted)
             Rigidbody2D rb = piece.AddComponent<Rigidbody2D>();
             BoxCollider2D boxCollider = piece.AddComponent<BoxCollider2D>();
 
@@ -189,8 +189,8 @@ public class SlicedObject : MonoBehaviour
             Destroy(currentArrow);
         }
 
-        // destroys the original object after creating the pieces
+        // destroys the original object after creating the sliced asset
         Destroy(SlicedRice);
-        Invoke("ReturnToKitchen", 2.0f);
+        Invoke("ReturnToKitchen", 4f);
     }
 }
