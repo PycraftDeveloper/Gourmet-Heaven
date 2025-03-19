@@ -132,7 +132,6 @@ public class GameManager : MonoBehaviour
 
                 camera.targetTexture = null;
                 Graphics.SetRenderTarget(null);
-                camera.Render();
             }
             Registry.InGameLevel = false;
             DisableLevelObjects();
@@ -184,7 +183,6 @@ public class GameManager : MonoBehaviour
             Registry.InGameLevel = true;
             EnableLevelObjects(sceneName);
         }
-
 
         if (sceneName == Constants.KITCHEN)
         {
