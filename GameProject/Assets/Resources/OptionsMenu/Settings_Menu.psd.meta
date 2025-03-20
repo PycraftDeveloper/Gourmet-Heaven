@@ -1,31 +1,22 @@
 fileFormatVersion: 2
-guid: 4eff348222606bf44905770ce43b5c7f
+guid: ea2192757c02b7b4db08de2f8e8900c7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8883138894469151437
-    second: Main_Menu (1)_0
+      213: 5518243672133581579
+    second: Settings_Menu (1)_0
   - first:
-      213: 5660196231847131511
-    second: Main_Menu (1)_1
+      213: -6755630349225172937
+    second: Settings_Menu (1)_1
   - first:
-      213: -1577628271081403712
-    second: Main_Menu (1)_2
+      213: -4168382261883835296
+    second: Settings_Menu (1)_2
   - first:
-      213: 5517813419041502717
-    second: Main_Menu (1)_3
+      213: -6563115337046605766
+    second: Settings_Menu (1)_3
   - first:
-      213: 1341568212715145604
-    second: Main_Menu (1)_4
-  - first:
-      213: -4992623773066105957
-    second: Main_Menu (1)_5
-  - first:
-      213: -2663161294671650001
-    second: Main_Menu (1)_6
-  - first:
-      213: -8497029534471209123
-    second: Main_Menu (1)_7
+      213: 3688700094916492777
+    second: Settings_Menu (1)_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -67,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -199,12 +190,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Main_Menu (1)_5
+      name: Settings_Menu (1)_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 638
+        width: 634
         height: 360
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -214,8 +205,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b9b69356123a6bab0800000000000000
-      internalID: -4992623773066105957
+      spriteID: 730e5908dfd2f32a0800000000000000
+      internalID: -6755630349225172937
       vertices: []
       indices: 
       edges: []
@@ -224,7 +215,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9993ade1151fb3c4bb2bbe63283a25bb
+    spriteID: ad85d403631040f41ab899a8c79138c4
     internalID: 0
     vertices: []
     indices: 
@@ -234,14 +225,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Main_Menu (1)_0: -8883138894469151437
-      Main_Menu (1)_1: 5660196231847131511
-      Main_Menu (1)_2: -1577628271081403712
-      Main_Menu (1)_3: 5517813419041502717
-      Main_Menu (1)_4: 1341568212715145604
-      Main_Menu (1)_5: -4992623773066105957
-      Main_Menu (1)_6: -2663161294671650001
-      Main_Menu (1)_7: -8497029534471209123
+      Settings_Menu (1)_1: -6755630349225172937
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
