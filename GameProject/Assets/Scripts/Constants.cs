@@ -1,3 +1,6 @@
+using Unity.Collections;
+using UnityEngine;
+
 public static class Constants
 {
     public const int PLAYER_MOVEMENT_SPEED = 7;
@@ -22,4 +25,13 @@ public static class Constants
     public const string RESTAURANT = "Restaurant";
     public const string RICE_MG = "RiceMG";
     public const string SUSHI_MG = "SushiMG";
+
+    public const string PHO = "pho";
+    public const string SUSHI = "sushi";
+    public const string BAO_BUNS = "bao buns";
+    public const string MANGO_STICKY_RICE = "mango sticky rice";
+
+    public const string NO_COROUTINE = "no coroutine";
+    public const string MOVE_IN_QUEUE = "move in queue";
+    public const string MOVE_INTO_RESTAURANT = "move into restaurant";
 }

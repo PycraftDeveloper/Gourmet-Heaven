@@ -219,7 +219,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ChoppingBoard
+      name: ChoppingBoard_Idle
       rect:
         serializedVersion: 2
         x: 0
@@ -241,7 +241,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PhoBowl
+      name: PhoBowl_Idle
       rect:
         serializedVersion: 2
         x: 33
@@ -263,7 +263,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SushiRollingMat
+      name: SushiRollingMat_Idle
       rect:
         serializedVersion: 2
         x: 67
@@ -285,7 +285,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CookingPot
+      name: CookingPot_Idle
       rect:
         serializedVersion: 2
         x: 31
@@ -343,8 +343,8 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       CashRegister_Idle: -1106750763081631315
-      ChoppingBoard: 4339927257284481467
-      CookingPot: -4498347764037804711
+      ChoppingBoard_Idle: 4339927257284481467
+      CookingPot_Idle: -4498347764037804711
       MiscKitchenSpritesheet_10: -2425311752939813426
       MiscKitchenSpritesheet_11: -1891574030856159066
       MiscKitchenSpritesheet_12: 1733368989672515461
@@ -373,8 +373,8 @@ TextureImporter:
       MiscKitchenSpritesheet_7: 2645378966856908863
       MiscKitchenSpritesheet_8: -4366924548833904928
       MiscKitchenSpritesheet_9: -5154785728545402331
-      PhoBowl: -458908243759473993
-      SushiRollingMat: -9099348332221669281
+      PhoBowl_Idle: -458908243759473993
+      SushiRollingMat_Idle: -9099348332221669281
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

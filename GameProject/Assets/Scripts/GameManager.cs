@@ -208,6 +208,11 @@ public class GameManager : MonoBehaviour
             musicSource.volume = Registry.MusicVolume;
             musicSource.Play();
         }
+
+        if (Registry.PlayerObject != null)
+        {
+            Registry.PlayerObject.SceneChanged = true;
+        }
     }
 
     private void Update()

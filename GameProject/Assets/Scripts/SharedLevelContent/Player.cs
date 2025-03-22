@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -10,13 +11,13 @@ public class Player : MonoBehaviour
 
     public Sprite[] IdleApplianceSprites = new Sprite[4];
     public Sprite[] ActivatedApplianceSprites = new Sprite[4];
-    public bool[] SpriteStates = new bool[4];
 
     private List<string> PlacedMeals = new List<string>();
 
     private SpriteRenderer PlayerSprite;
 
     public GameObject JoystickInputObject;
+    public GameObject[] AppliancePopUpMessages = new GameObject[5];
 
     private PlayerInputCircle JoystickInput;
 
@@ -27,6 +28,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D PlayerRigidBody;
 
     public Animator PlayerAnimator;
+
+    public bool SceneChanged = false;
 
     private void Awake()
     {
@@ -41,7 +44,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collider)
+    private void OnTriggerStay2D(Collider2D Collider)
     {
         /*if (collider.tag == "RestaurantPortal")
         {
@@ -55,7 +58,94 @@ public class Player : MonoBehaviour
             PlayerRigidBody.MovePosition(new Vector3(transform.position.x, -3.9f, transform.position.z));
             SceneManager.LoadScene("Kitchen");
         }*/
-        Debug.Log(collider.name);
+        //Debug.Log(collider.name);
+        if (Collider.name == "CashRegister_AreaDetector")
+        {
+            if (Registry.LevelManagerObject.CacheRegister.GetState())
+            {
+                AppliancePopUpMessages[0].SetActive(true);
+            }
+            else
+            {
+                AppliancePopUpMessages[0].SetActive(false);
+            }
+        }
+        else if (Collider.name == "ChoppingBoard_AreaDetector")
+        {
+            if (Registry.LevelManagerObject.ChoppingBoard.GetState())
+            {
+                AppliancePopUpMessages[1].SetActive(true);
+            }
+            else
+            {
+                AppliancePopUpMessages[1].SetActive(false);
+            }
+        }
+        else if (Collider.name == "CookingPot_AreaDetector")
+        {
+            if (Registry.LevelManagerObject.CookingPot.GetState())
+            {
+                AppliancePopUpMessages[2].SetActive(true);
+            }
+            else
+            {
+                AppliancePopUpMessages[2].SetActive(false);
+            }
+        }
+        else if (Collider.name == "PhoBowl_AreaDetector")
+        {
+            if (Registry.LevelManagerObject.PhoBowl.GetState())
+            {
+                AppliancePopUpMessages[3].SetActive(true);
+            }
+            else
+            {
+                AppliancePopUpMessages[3].SetActive(false);
+            }
+        }
+        else if (Collider.name == "SushiRollingMat_AreaDetector")
+        {
+            if (Registry.LevelManagerObject.SushiRollingMat.GetState())
+            {
+                AppliancePopUpMessages[4].SetActive(true);
+            }
+            else
+            {
+                AppliancePopUpMessages[4].SetActive(false);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Appliance area detector not found, please ensure the names are correct!");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D Collider)
+    {
+        if (Collider.name == "CashRegister_AreaDetector")
+        {
+            AppliancePopUpMessages[0].SetActive(false);
+        }
+        else if (Collider.name == "ChoppingBoard_AreaDetector")
+        {
+            AppliancePopUpMessages[1].SetActive(false);
+        }
+        else if (Collider.name == "CookingPot_AreaDetector")
+        {
+            AppliancePopUpMessages[2].SetActive(false);
+        }
+        else if (Collider.name == "PhoBowl_AreaDetector")
+        {
+            AppliancePopUpMessages[3].SetActive(false);
+        }
+        else if (Collider.name == "SushiRollingMat_AreaDetector")
+        {
+            AppliancePopUpMessages[4].SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("Appliance area detector not found, please ensure the names are correct!");
+        }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -70,6 +160,36 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (SceneChanged)
+        {
+            SceneChanged = false;
+            Button[] SceneButtons = FindObjectsByType<Button>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+            AppliancePopUpMessages = new GameObject[5];
+
+            foreach (Button SceneButton in SceneButtons)
+            {
+                if (SceneButton.name == "CachierPopUp")
+                {
+                    AppliancePopUpMessages[0] = SceneButton.gameObject;
+                }
+                else if (SceneButton.name == "ChoppingBoardPopUp")
+                {
+                    AppliancePopUpMessages[1] = SceneButton.gameObject;
+                }
+                else if (SceneButton.name == "CookingPotPopUp")
+                {
+                    AppliancePopUpMessages[2] = SceneButton.gameObject;
+                }
+                else if (SceneButton.name == "PhoBowlPopUp")
+                {
+                    AppliancePopUpMessages[3] = SceneButton.gameObject;
+                }
+                else if (SceneButton.name == "RollingMatPopUp")
+                {
+                    AppliancePopUpMessages[4] = SceneButton.gameObject;
+                }
+            }
+        }
         Vector2 JoystickInputMagnitude = JoystickInput.JoystickOffsetMagnitude;
 
         float modified_x_position = JoystickInputMagnitude.x * Constants.PLAYER_MOVEMENT_SPEED * Time.deltaTime;

@@ -1,17 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+
+[System.Serializable]
+public class Appliance
+{
+    public Tile Idle;
+    public Tile Active;
+    private bool State;
+
+    public void SetState(bool state)
+    {
+        State = state;
+    }
+
+    public void ManageState(Tilemap ApplianceTileMap)
+    {
+        if (State)
+        {
+            ApplianceTileMap.SwapTile(Idle, Active);
+        }
+        else
+        {
+            ApplianceTileMap.SwapTile(Active, Idle);
+        }
+    }
+
+    public bool GetState()
+    {
+        return State;
+    }
+}
 
 public class LevelManager : MonoBehaviour
 {
     public GameObject CustomerPrefab;
 
-    public Tile IdleCashRegisterTile;
-    public Tile ActivatedCashRegisterTile;
-    public bool CashRegisterState;
+    public Appliance CacheRegister;
+    public Appliance ChoppingBoard;
+    public Appliance PhoBowl;
+    public Appliance CookingPot;
+    public Appliance SushiRollingMat;
 
-    public Tilemap ApplianceTileMap;
+    public Tilemap AboveApplianceTileMap;
+    public Tilemap BehindApplianceTileMap;
 
     private Vector2 CustomerSpawningLocation = new Vector2(9.47f, -3.61f);
 
@@ -21,6 +55,10 @@ public class LevelManager : MonoBehaviour
     private Queue<GameObject> CustomerKitchenQueue = new Queue<GameObject>();
 
     private bool ReturnToGameToggle = true;
+
+    private void Start()
+    {
+    }
 
     private void Awake()
     {
@@ -35,6 +73,58 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    private IEnumerator MoveIntoRestaurant(Customer customer)
+    {
+        Rigidbody2D CustomerRigidBody = customer.GetComponent<Rigidbody2D>();
+        customer.Facing = Constants.FACE_DOWN;
+        while (true)
+        {
+            customer.Facing = Constants.FACE_DOWN;
+            CustomerRigidBody.position = new Vector2(CustomerRigidBody.position.x, CustomerRigidBody.position.y - 0.1f);
+
+            if (CustomerRigidBody.position.y < -6.31 || Registry.CurrentSceneName != Constants.KITCHEN)
+            {
+                customer.CurrentLocation = Constants.RESTAURANT;
+                yield break;
+            }
+            yield return null;
+        }
+    }
+
+    public void HandleOrderCollection()
+    {
+        for (int i = 0; i < Registry.Customers.Count; i++)
+        {
+            Customer customer = Registry.Customers[i].GetComponent<Customer>();
+            if (customer.CurrentLocation == Constants.KITCHEN)
+            {
+                if (customer.CustomerRigidBody.position.x == 0.5f)
+                {
+                    CustomerKitchenQueue.Dequeue();
+                    customer.MealPlaced = true;
+                    customer.SetCoroutine(MoveIntoRestaurant(customer), Constants.MOVE_INTO_RESTAURANT);
+                    Invoke("UpdateQueuePositions", 1.5f);
+                    return;
+                }
+            }
+        }
+    }
+
+    private void HandleApplianceState()
+    {
+        if (AboveApplianceTileMap == null)
+        {
+            AssociateApplianceTilemap();
+            return;
+        }
+
+        CacheRegister.ManageState(AboveApplianceTileMap);
+        ChoppingBoard.ManageState(AboveApplianceTileMap);
+        CookingPot.ManageState(BehindApplianceTileMap);
+        PhoBowl.ManageState(BehindApplianceTileMap);
+        SushiRollingMat.ManageState(AboveApplianceTileMap);
+    }
+
     private void AssociateApplianceTilemap()
     {
         Tilemap[] tilemaps = FindObjectsByType<Tilemap>(FindObjectsInactive.Include, FindObjectsSortMode.None);
@@ -43,7 +133,15 @@ public class LevelManager : MonoBehaviour
         {
             if (tilemap.gameObject.name == "MiscAboveTilemap")
             {
-                ApplianceTileMap = tilemap.GetComponent<Tilemap>();
+                AboveApplianceTileMap = tilemap.GetComponent<Tilemap>();
+            }
+            else if (tilemap.gameObject.name == "MiscBehindTilemap")
+            {
+                BehindApplianceTileMap = tilemap.GetComponent<Tilemap>();
+            }
+
+            if (AboveApplianceTileMap != null && BehindApplianceTileMap != null)
+            {
                 break;
             }
         }
@@ -57,13 +155,14 @@ public class LevelManager : MonoBehaviour
 
         foreach (GameObject obj in CustomerKitchenQueue)
         {
+            Customer customer = obj.GetComponent<Customer>();
             Vector2 DestinationPosition = new Vector2(0.5f + spacing * index, -3.61f);
-            StartCoroutine(MoveToPosition(obj.GetComponent<Rigidbody2D>(), DestinationPosition));
+            customer.SetCoroutine(MoveInQueue(obj.GetComponent<Rigidbody2D>(), DestinationPosition), Constants.MOVE_IN_QUEUE);
             index++;
         }
     }
 
-    private IEnumerator MoveToPosition(Rigidbody2D CustomerRigidBody, Vector2 DestinationPosition)
+    private IEnumerator MoveInQueue(Rigidbody2D CustomerRigidBody, Vector2 DestinationPosition)
     {
         float duration = 2.0f;
         Vector2 start = CustomerRigidBody.position;
@@ -71,7 +170,7 @@ public class LevelManager : MonoBehaviour
 
         while (elapsed < duration)
         {
-            if (Registry.InGameLevel == false)
+            if (Registry.CurrentSceneName != Constants.KITCHEN)
             {
                 yield break;
             }
@@ -94,7 +193,11 @@ public class LevelManager : MonoBehaviour
             return;
         }
 
-        CashRegisterState = false;
+        CacheRegister.SetState(false);
+        ChoppingBoard.SetState(false);
+        CookingPot.SetState(false);
+        PhoBowl.SetState(false);
+        SushiRollingMat.SetState(false);
 
         if (ReturnToGameToggle)
         {
@@ -110,6 +213,29 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < Registry.Customers.Count; i++)
         {
             Customer thisCustomer = Registry.Customers[i].GetComponent<Customer>();
+
+            if (thisCustomer.MealPlaced)
+            {
+                switch (thisCustomer.Meal)
+                {
+                    case Constants.PHO:
+                        PhoBowl.SetState(true);
+                        break;
+
+                    case Constants.SUSHI:
+                        SushiRollingMat.SetState(true);
+                        break;
+
+                    case Constants.BAO_BUNS:
+                        CookingPot.SetState(true);
+                        break;
+
+                    case Constants.MANGO_STICKY_RICE:
+                        ChoppingBoard.SetState(true);
+                        break;
+                }
+            }
+
             if (Registry.CurrentSceneName == Constants.KITCHEN)
             {
                 if (thisCustomer.CurrentLocation == Constants.RESTAURANT)
@@ -122,11 +248,10 @@ public class LevelManager : MonoBehaviour
 
                     number_of_customers_in_kitchen++;
 
-                    if (thisCustomer.CustomerRigidBody.position.x == 0.5f)
+                    if (thisCustomer.CustomerRigidBody.position.x == 0.5f && thisCustomer.CustomerRigidBody.position.y == -3.61f)
                     {
                         thisCustomer.Facing = Constants.FACE_UP;
-                        thisCustomer.WaitingToBeServed = true;
-                        CashRegisterState = true;
+                        CacheRegister.SetState(true);
                     }
                 }
             }
@@ -163,20 +288,6 @@ public class LevelManager : MonoBehaviour
             Registry.GameManagerObject.ChangeScene(Constants.PAUSE_MENU);
         }
 
-        if (ApplianceTileMap == null)
-        {
-            AssociateApplianceTilemap();
-        }
-        else
-        {
-            if (CashRegisterState)
-            {
-                ApplianceTileMap.SwapTile(IdleCashRegisterTile, ActivatedCashRegisterTile);
-            }
-            else
-            {
-                ApplianceTileMap.SwapTile(ActivatedCashRegisterTile, IdleCashRegisterTile);
-            }
-        }
+        HandleApplianceState();
     }
 }
