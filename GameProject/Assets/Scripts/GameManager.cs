@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
-using UnityEngine.Rendering;
 
 public class GameManager : MonoBehaviour
 {
