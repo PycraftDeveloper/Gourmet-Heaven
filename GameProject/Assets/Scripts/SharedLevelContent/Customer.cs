@@ -11,7 +11,6 @@ public class Customer : MonoBehaviour
 
     public SpriteRenderer CustomerSprite;
 
-    public int RenderPriority = 1;
     private int model_index;
 
     public Rigidbody2D CustomerRigidBody;
@@ -28,11 +27,13 @@ public class Customer : MonoBehaviour
     public IEnumerator CustomerCoroutine = null;
     public string CustomerCoroutineDescription = Constants.NO_COROUTINE;
 
+    private MonoBehaviour GameManagerMono;
+
     public void SetCoroutine(string description)
     {
         if (description == Constants.NO_COROUTINE)
         {
-            StopCoroutine(CustomerCoroutine);
+            GameManagerMono.StopCoroutine(CustomerCoroutine);
             CustomerCoroutine = null;
             CustomerCoroutineDescription = Constants.NO_COROUTINE;
         }
@@ -47,23 +48,20 @@ public class Customer : MonoBehaviour
         }
         else if (description == Constants.MOVE_INTO_RESTAURANT && CustomerCoroutineDescription == Constants.MOVE_IN_QUEUE)
         {
-            StopCoroutine(CustomerCoroutine);
+            GameManagerMono.StopCoroutine(CustomerCoroutine);
             CustomerCoroutine = coroutine;
             CustomerCoroutineDescription = description;
         }
         else if (description == Constants.MOVE_IN_QUEUE && CustomerCoroutineDescription == Constants.MOVE_IN_QUEUE)
         {
-            StopCoroutine(CustomerCoroutine);
+            GameManagerMono.StopCoroutine(CustomerCoroutine);
             CustomerCoroutine = coroutine;
         }
         if (CustomerSprite == null)
         {
             CustomerSprite = GetComponent<SpriteRenderer>();
         }
-        if (CustomerSprite.enabled)
-        {
-            StartCoroutine(CustomerCoroutine);
-        }
+        GameManagerMono.StartCoroutine(CustomerCoroutine);
     }
 
     private void GenerateMeal()
@@ -92,13 +90,11 @@ public class Customer : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-    }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
-    {
         CustomerSprite = GetComponent<SpriteRenderer>();
         CustomerRigidBody = GetComponent<Rigidbody2D>();
+
+        GameManagerMono = Registry.GameManagerObject.GetComponent<MonoBehaviour>();
 
         CurrentPosition = transform.position;
         model_index = Random.Range(0, 6);
@@ -106,9 +102,14 @@ public class Customer : MonoBehaviour
         GenerateMeal();
     }
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void Start()
+    {
+    }
+
     private void FixedUpdate()
     {
-        CustomerSprite.sortingOrder = RenderPriority;
+        CustomerRigidBody.position = CurrentPosition;
     }
 
     // Update is called once per frame

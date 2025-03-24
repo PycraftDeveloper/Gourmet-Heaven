@@ -46,19 +46,6 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D Collider)
     {
-        /*if (collider.tag == "RestaurantPortal")
-        {
-            Registry.CurrentLocation = Constants.RESTAURANT;
-            PlayerRigidBody.MovePosition(new Vector3(transform.position.x, 4.0f, transform.position.z));
-            SceneManager.LoadScene("Restaurant");
-        }
-        else if (collider.tag == "KitchenPortal")
-        {
-            Registry.CurrentLocation = Constants.KITCHEN;
-            PlayerRigidBody.MovePosition(new Vector3(transform.position.x, -3.9f, transform.position.z));
-            SceneManager.LoadScene("Kitchen");
-        }*/
-        //Debug.Log(collider.name);
         if (Registry.CurrentSceneName == Constants.KITCHEN)
         {
             if (Collider.name == "CashRegister_AreaDetector")
@@ -116,10 +103,6 @@ public class Player : MonoBehaviour
                     AppliancePopUpMessages[4].SetActive(false);
                 }
             }
-            else
-            {
-                Debug.LogWarning("Appliance area detector not found, please ensure the names are correct!");
-            }
         }
     }
 
@@ -146,10 +129,6 @@ public class Player : MonoBehaviour
             else if (Collider.name == "SushiRollingMat_AreaDetector")
             {
                 AppliancePopUpMessages[4].SetActive(false);
-            }
-            else
-            {
-                Debug.LogWarning("Appliance area detector not found, please ensure the names are correct!");
             }
         }
     }
@@ -209,17 +188,20 @@ public class Player : MonoBehaviour
         proposed_position.x = Mathf.Clamp(proposed_position.x, -ScreenDimensions.x + SpriteSize.x, ScreenDimensions.x - SpriteSize.x);
         proposed_position.y = Mathf.Clamp(proposed_position.y, minimum_y, maximum_y);
 
-        if (proposed_position.y == minimum_y && Registry.CurrentSceneName == Constants.KITCHEN)
+        if (proposed_position.x > -4.46 && proposed_position.x < -2.56)
         {
-            Registry.GameManagerObject.ChangeScene(Constants.RESTAURANT);
+            if (proposed_position.y == minimum_y && Registry.CurrentSceneName == Constants.KITCHEN)
+            {
+                Registry.GameManagerObject.ChangeScene(Constants.RESTAURANT);
 
-            proposed_position.y = maximum_y - 0.01f;
-        }
-        else if (proposed_position.y == maximum_y && Registry.CurrentSceneName == Constants.RESTAURANT)
-        {
-            Registry.GameManagerObject.ChangeScene(Constants.KITCHEN);
+                proposed_position.y = maximum_y - 0.01f;
+            }
+            else if (proposed_position.y == maximum_y && Registry.CurrentSceneName == Constants.RESTAURANT)
+            {
+                Registry.GameManagerObject.ChangeScene(Constants.KITCHEN);
 
-            proposed_position.y = minimum_y + 0.01f;
+                proposed_position.y = minimum_y + 0.01f;
+            }
         }
 
         PlayerRigidBody.MovePosition(proposed_position);

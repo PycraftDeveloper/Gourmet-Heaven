@@ -76,13 +76,18 @@ public class LevelManager : MonoBehaviour
 
     private void PlaceIntoRestaurant(GameObject CustomerGameObject)
     {
+        if (Registry.CurrentSceneName != Constants.RESTAURANT)
+        {
+            CustomerGameObject.SetActive(false);
+        }
         bool Seated = false;
         while (!Seated)
         {
             int PositionIndex = Random.Range(0, 8);
             if (CustomerTableArrangement[PositionIndex] == null)
             {
-                CustomerGameObject.transform.position = new Vector2(Constants.CUSTOMER_SEATS_IN_RESTAURANT[PositionIndex, 0], Constants.CUSTOMER_SEATS_IN_RESTAURANT[PositionIndex, 1]);
+                Customer _Customer = CustomerGameObject.GetComponent<Customer>();
+                _Customer.CurrentPosition = new Vector2(Constants.CUSTOMER_SEATS_IN_RESTAURANT[PositionIndex, 0], Constants.CUSTOMER_SEATS_IN_RESTAURANT[PositionIndex, 1]);
                 Renderer CustomerRenderer = CustomerGameObject.GetComponent<Renderer>();
                 CustomerRenderer.sortingLayerName = "Appears above player";
                 CustomerRenderer.sortingOrder = 1;
@@ -92,18 +97,17 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private IEnumerator MoveIntoRestaurant(Customer customer, GameObject CustomerGameObject)
+    private IEnumerator MoveIntoRestaurant(Customer _Customer, GameObject CustomerGameObject)
     {
-        Rigidbody2D CustomerRigidBody = customer.GetComponent<Rigidbody2D>();
-        customer.Facing = Constants.FACE_DOWN;
-        while (customer.CurrentLocation == Constants.KITCHEN)
+        _Customer.Facing = Constants.FACE_DOWN;
+        while (_Customer.CurrentLocation == Constants.KITCHEN)
         {
-            customer.Facing = Constants.FACE_DOWN;
-            CustomerRigidBody.position = new Vector2(CustomerRigidBody.position.x, CustomerRigidBody.position.y - 0.1f);
+            _Customer.Facing = Constants.FACE_DOWN;
+            _Customer.CurrentPosition = new Vector2(_Customer.CurrentPosition.x, _Customer.CurrentPosition.y - 0.1f);
 
-            if (CustomerRigidBody.position.y < -6.31 || Registry.CurrentSceneName != Constants.KITCHEN)
+            if (_Customer.CurrentPosition.y < -6.31 || Registry.InGameLevel == false)
             {
-                customer.CurrentLocation = Constants.RESTAURANT;
+                _Customer.CurrentLocation = Constants.RESTAURANT;
             }
             yield return null;
         }
@@ -117,7 +121,7 @@ public class LevelManager : MonoBehaviour
             Customer customer = Registry.Customers[i].GetComponent<Customer>();
             if (customer.CurrentLocation == Constants.KITCHEN)
             {
-                if (customer.CustomerRigidBody.position.x == 0.5f)
+                if (customer.CurrentPosition.x == 0.5f)
                 {
                     CustomerKitchenQueue.Dequeue();
                     customer.MealPlaced = true;
@@ -176,30 +180,30 @@ public class LevelManager : MonoBehaviour
         {
             Customer customer = obj.GetComponent<Customer>();
             Vector2 DestinationPosition = new Vector2(0.5f + spacing * index, -3.61f);
-            customer.SetCoroutine(MoveInQueue(obj.GetComponent<Rigidbody2D>(), DestinationPosition), Constants.MOVE_IN_QUEUE);
+            customer.SetCoroutine(MoveInQueue(customer, DestinationPosition), Constants.MOVE_IN_QUEUE);
             index++;
         }
     }
 
-    private IEnumerator MoveInQueue(Rigidbody2D CustomerRigidBody, Vector2 DestinationPosition)
+    private IEnumerator MoveInQueue(Customer _Customer, Vector2 DestinationPosition)
     {
         float duration = 2.0f;
-        Vector2 start = CustomerRigidBody.position;
+        Vector2 start = _Customer.CurrentPosition;
         float elapsed = 0f;
 
         while (elapsed < duration)
         {
-            if (Registry.CurrentSceneName != Constants.KITCHEN)
+            if (Registry.InGameLevel == false)
             {
                 yield break;
             }
 
-            CustomerRigidBody.position = Vector2.Lerp(start, DestinationPosition, elapsed / duration);
+            _Customer.CurrentPosition = Vector2.Lerp(start, DestinationPosition, elapsed / duration);
             elapsed += Registry.GameTimeDelta;
             yield return null;
         }
 
-        CustomerRigidBody.position = DestinationPosition;
+        _Customer.CurrentPosition = DestinationPosition;
     }
 
     // Update is called once per frame
@@ -226,8 +230,6 @@ public class LevelManager : MonoBehaviour
         ReturnToGameToggle = false;
 
         CustomerSpawnTimer += Registry.GameTimeDelta;
-
-        int number_of_customers_in_kitchen = 0;
 
         for (int i = 0; i < Registry.Customers.Count; i++)
         {
@@ -257,49 +259,28 @@ public class LevelManager : MonoBehaviour
 
             if (Registry.CurrentSceneName == Constants.KITCHEN)
             {
-                if (thisCustomer.CurrentLocation == Constants.RESTAURANT)
+                if (thisCustomer.CurrentPosition.x == 0.5f && thisCustomer.CurrentPosition.y == -3.61f && Registry.Customers.Count - CustomerKitchenQueue.Count < 8)
                 {
-                    thisCustomer.CustomerSprite.enabled = false;
-                }
-                else
-                {
-                    thisCustomer.CustomerSprite.enabled = true;
-
-                    number_of_customers_in_kitchen++;
-
-                    if (thisCustomer.CustomerRigidBody.position.x == 0.5f && thisCustomer.CustomerRigidBody.position.y == -3.61f)
-                    {
-                        thisCustomer.Facing = Constants.FACE_UP;
-                        CacheRegister.SetState(true);
-                    }
-                }
-            }
-            else
-            {
-                if (thisCustomer.CurrentLocation == Constants.KITCHEN)
-                {
-                    thisCustomer.CustomerSprite.enabled = false;
-                }
-                else
-                {
-                    thisCustomer.CustomerSprite.enabled = true;
+                    thisCustomer.Facing = Constants.FACE_UP;
+                    CacheRegister.SetState(true);
                 }
             }
         }
 
-        if (Registry.CurrentSceneName == Constants.KITCHEN)
+        if (CustomerKitchenQueue.Count == 0 || CustomerSpawnTimer > NextCustomerSpawnTime)
         {
-            if (number_of_customers_in_kitchen == 0 || CustomerSpawnTimer > NextCustomerSpawnTime)
+            NextCustomerSpawnTime = Random.Range(5, 15);
+            CustomerSpawnTimer = 0;
+            if (CustomerKitchenQueue.Count < 6 && Registry.Customers.Count < 14)
             {
-                NextCustomerSpawnTime = Random.Range(5, 15);
-                CustomerSpawnTimer = 0;
-                if (number_of_customers_in_kitchen < 6)
+                GameObject new_customer = Instantiate(CustomerPrefab, CustomerSpawningLocation, transform.rotation);
+                if (Registry.CurrentSceneName != Constants.KITCHEN)
                 {
-                    GameObject new_customer = Instantiate(CustomerPrefab, CustomerSpawningLocation, transform.rotation);
-                    CustomerKitchenQueue.Enqueue(new_customer);
-                    Registry.Customers.Add(new_customer);
-                    UpdateQueuePositions();
+                    new_customer.SetActive(false);
                 }
+                CustomerKitchenQueue.Enqueue(new_customer);
+                Registry.Customers.Add(new_customer);
+                UpdateQueuePositions();
             }
         }
         if (Input.GetKeyDown(KeyCode.Escape))

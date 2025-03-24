@@ -5753,7 +5753,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.68, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &3732787660420000320
 GameObject:
@@ -6078,6 +6078,7 @@ MonoBehaviour:
   - {fileID: 384915290}
   RenderPriority: 1
   PlayerAnimator: {fileID: 7328136110366525892}
+  SceneChanged: 0
 --- !u!483693784 &6677918588879897308
 TilemapRenderer:
   m_ObjectHideFlags: 0
