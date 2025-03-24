@@ -90,6 +90,11 @@ public class LevelManager : MonoBehaviour
                 Renderer CustomerRenderer = CustomerGameObject.GetComponent<Renderer>();
                 CustomerRenderer.sortingLayerName = "NPC Upper";
                 CustomerRenderer.sortingOrder = 1;
+                _Customer.Facing = Constants.FACE_SIDE;
+                if (PositionIndex % 2 == 1)
+                {
+                    _Customer.CustomerSprite.flipX = true;
+                }
                 CustomerTableArrangement[PositionIndex] = CustomerGameObject;
                 Seated = true;
             }
