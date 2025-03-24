@@ -59,6 +59,12 @@ TagManager:
   - name: Appears above player
     uniqueID: 2520447053
     locked: 0
+  - name: NPC Upper
+    uniqueID: 1091027323
+    locked: 0
+  - name: Player Upper
+    uniqueID: 3989680823
+    locked: 0
   - name: UI
     uniqueID: 1603600049
     locked: 0

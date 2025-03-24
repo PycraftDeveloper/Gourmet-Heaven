@@ -88,7 +88,7 @@ public class LevelManager : MonoBehaviour
                 Customer _Customer = CustomerGameObject.GetComponent<Customer>();
                 _Customer.CurrentPosition = new Vector2(Constants.CUSTOMER_SEATS_IN_RESTAURANT[PositionIndex, 0], Constants.CUSTOMER_SEATS_IN_RESTAURANT[PositionIndex, 1]);
                 Renderer CustomerRenderer = CustomerGameObject.GetComponent<Renderer>();
-                CustomerRenderer.sortingLayerName = "Appears above player";
+                CustomerRenderer.sortingLayerName = "NPC Upper";
                 CustomerRenderer.sortingOrder = 1;
                 CustomerTableArrangement[PositionIndex] = CustomerGameObject;
                 Seated = true;

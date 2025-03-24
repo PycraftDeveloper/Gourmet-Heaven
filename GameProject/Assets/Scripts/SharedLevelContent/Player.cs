@@ -103,6 +103,23 @@ public class Player : MonoBehaviour
                 }
             }
         }
+        else if (Collider.CompareTag("Customer") && Registry.CurrentSceneName == Constants.RESTAURANT)
+        {
+            Customer customer = Collider.gameObject.GetComponent<Customer>();
+            float playerY = PlayerRigidBody.position.y;
+            float playerHeight = PlayerSprite.bounds.size.y;
+            float customerY = customer.CurrentPosition.y;
+            float customerHeight = Collider.bounds.size.y;
+
+            if (customerY + customerHeight > playerY && customerY > playerY) // top
+            {
+                PlayerSprite.sortingLayerName = "Player Upper";
+            }
+            else if (customerY < playerY + playerHeight) // bottom
+            {
+                PlayerSprite.sortingLayerName = "Player & NPCs";
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D Collider)
@@ -129,6 +146,10 @@ public class Player : MonoBehaviour
             {
                 AppliancePopUpMessages[4].SetActive(false);
             }
+        }
+        else if (Collider.CompareTag("Customer") && Registry.CurrentSceneName == Constants.RESTAURANT)
+        {
+            PlayerSprite.sortingLayerName = "Player & NPCs";
         }
     }
 
