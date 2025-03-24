@@ -59,92 +59,98 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene("Kitchen");
         }*/
         //Debug.Log(collider.name);
-        if (Collider.name == "CashRegister_AreaDetector")
+        if (Registry.CurrentSceneName == Constants.KITCHEN)
         {
-            if (Registry.LevelManagerObject.CacheRegister.GetState())
+            if (Collider.name == "CashRegister_AreaDetector")
             {
-                AppliancePopUpMessages[0].SetActive(true);
+                if (Registry.LevelManagerObject.CacheRegister.GetState())
+                {
+                    AppliancePopUpMessages[0].SetActive(true);
+                }
+                else
+                {
+                    AppliancePopUpMessages[0].SetActive(false);
+                }
+            }
+            else if (Collider.name == "ChoppingBoard_AreaDetector")
+            {
+                if (Registry.LevelManagerObject.ChoppingBoard.GetState())
+                {
+                    AppliancePopUpMessages[1].SetActive(true);
+                }
+                else
+                {
+                    AppliancePopUpMessages[1].SetActive(false);
+                }
+            }
+            else if (Collider.name == "CookingPot_AreaDetector")
+            {
+                if (Registry.LevelManagerObject.CookingPot.GetState())
+                {
+                    AppliancePopUpMessages[2].SetActive(true);
+                }
+                else
+                {
+                    AppliancePopUpMessages[2].SetActive(false);
+                }
+            }
+            else if (Collider.name == "PhoBowl_AreaDetector")
+            {
+                if (Registry.LevelManagerObject.PhoBowl.GetState())
+                {
+                    AppliancePopUpMessages[3].SetActive(true);
+                }
+                else
+                {
+                    AppliancePopUpMessages[3].SetActive(false);
+                }
+            }
+            else if (Collider.name == "SushiRollingMat_AreaDetector")
+            {
+                if (Registry.LevelManagerObject.SushiRollingMat.GetState())
+                {
+                    AppliancePopUpMessages[4].SetActive(true);
+                }
+                else
+                {
+                    AppliancePopUpMessages[4].SetActive(false);
+                }
             }
             else
             {
-                AppliancePopUpMessages[0].SetActive(false);
+                Debug.LogWarning("Appliance area detector not found, please ensure the names are correct!");
             }
-        }
-        else if (Collider.name == "ChoppingBoard_AreaDetector")
-        {
-            if (Registry.LevelManagerObject.ChoppingBoard.GetState())
-            {
-                AppliancePopUpMessages[1].SetActive(true);
-            }
-            else
-            {
-                AppliancePopUpMessages[1].SetActive(false);
-            }
-        }
-        else if (Collider.name == "CookingPot_AreaDetector")
-        {
-            if (Registry.LevelManagerObject.CookingPot.GetState())
-            {
-                AppliancePopUpMessages[2].SetActive(true);
-            }
-            else
-            {
-                AppliancePopUpMessages[2].SetActive(false);
-            }
-        }
-        else if (Collider.name == "PhoBowl_AreaDetector")
-        {
-            if (Registry.LevelManagerObject.PhoBowl.GetState())
-            {
-                AppliancePopUpMessages[3].SetActive(true);
-            }
-            else
-            {
-                AppliancePopUpMessages[3].SetActive(false);
-            }
-        }
-        else if (Collider.name == "SushiRollingMat_AreaDetector")
-        {
-            if (Registry.LevelManagerObject.SushiRollingMat.GetState())
-            {
-                AppliancePopUpMessages[4].SetActive(true);
-            }
-            else
-            {
-                AppliancePopUpMessages[4].SetActive(false);
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Appliance area detector not found, please ensure the names are correct!");
         }
     }
 
     private void OnTriggerExit2D(Collider2D Collider)
     {
-        if (Collider.name == "CashRegister_AreaDetector")
+        if (Registry.CurrentSceneName == Constants.KITCHEN)
         {
-            AppliancePopUpMessages[0].SetActive(false);
-        }
-        else if (Collider.name == "ChoppingBoard_AreaDetector")
-        {
-            AppliancePopUpMessages[1].SetActive(false);
-        }
-        else if (Collider.name == "CookingPot_AreaDetector")
-        {
-            AppliancePopUpMessages[2].SetActive(false);
-        }
-        else if (Collider.name == "PhoBowl_AreaDetector")
-        {
-            AppliancePopUpMessages[3].SetActive(false);
-        }
-        else if (Collider.name == "SushiRollingMat_AreaDetector")
-        {
-            AppliancePopUpMessages[4].SetActive(false);
-        }
-        else
-        {
-            Debug.LogWarning("Appliance area detector not found, please ensure the names are correct!");
+            if (Collider.name == "CashRegister_AreaDetector")
+            {
+                AppliancePopUpMessages[0].SetActive(false);
+            }
+            else if (Collider.name == "ChoppingBoard_AreaDetector")
+            {
+                AppliancePopUpMessages[1].SetActive(false);
+            }
+            else if (Collider.name == "CookingPot_AreaDetector")
+            {
+                AppliancePopUpMessages[2].SetActive(false);
+            }
+            else if (Collider.name == "PhoBowl_AreaDetector")
+            {
+                AppliancePopUpMessages[3].SetActive(false);
+            }
+            else if (Collider.name == "SushiRollingMat_AreaDetector")
+            {
+                AppliancePopUpMessages[4].SetActive(false);
+            }
+            else
+            {
+                Debug.LogWarning("Appliance area detector not found, please ensure the names are correct!");
+            }
         }
     }
 

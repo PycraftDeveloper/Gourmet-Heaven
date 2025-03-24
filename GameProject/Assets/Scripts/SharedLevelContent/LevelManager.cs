@@ -53,6 +53,7 @@ public class LevelManager : MonoBehaviour
     private float NextCustomerSpawnTime = 0;
 
     private Queue<GameObject> CustomerKitchenQueue = new Queue<GameObject>();
+    private GameObject[] CustomerTableArrangement = new GameObject[8];
 
     private bool ReturnToGameToggle = true;
 
@@ -73,11 +74,29 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private IEnumerator MoveIntoRestaurant(Customer customer)
+    private void PlaceIntoRestaurant(GameObject CustomerGameObject)
+    {
+        bool Seated = false;
+        while (!Seated)
+        {
+            int PositionIndex = Random.Range(0, 8);
+            if (CustomerTableArrangement[PositionIndex] == null)
+            {
+                CustomerGameObject.transform.position = new Vector2(Constants.CUSTOMER_SEATS_IN_RESTAURANT[PositionIndex, 0], Constants.CUSTOMER_SEATS_IN_RESTAURANT[PositionIndex, 1]);
+                Renderer CustomerRenderer = CustomerGameObject.GetComponent<Renderer>();
+                CustomerRenderer.sortingLayerName = "Appears above player";
+                CustomerRenderer.sortingOrder = 1;
+                CustomerTableArrangement[PositionIndex] = CustomerGameObject;
+                Seated = true;
+            }
+        }
+    }
+
+    private IEnumerator MoveIntoRestaurant(Customer customer, GameObject CustomerGameObject)
     {
         Rigidbody2D CustomerRigidBody = customer.GetComponent<Rigidbody2D>();
         customer.Facing = Constants.FACE_DOWN;
-        while (true)
+        while (customer.CurrentLocation == Constants.KITCHEN)
         {
             customer.Facing = Constants.FACE_DOWN;
             CustomerRigidBody.position = new Vector2(CustomerRigidBody.position.x, CustomerRigidBody.position.y - 0.1f);
@@ -85,10 +104,10 @@ public class LevelManager : MonoBehaviour
             if (CustomerRigidBody.position.y < -6.31 || Registry.CurrentSceneName != Constants.KITCHEN)
             {
                 customer.CurrentLocation = Constants.RESTAURANT;
-                yield break;
             }
             yield return null;
         }
+        PlaceIntoRestaurant(CustomerGameObject);
     }
 
     public void HandleOrderCollection()
@@ -102,7 +121,7 @@ public class LevelManager : MonoBehaviour
                 {
                     CustomerKitchenQueue.Dequeue();
                     customer.MealPlaced = true;
-                    customer.SetCoroutine(MoveIntoRestaurant(customer), Constants.MOVE_INTO_RESTAURANT);
+                    customer.SetCoroutine(MoveIntoRestaurant(customer, Registry.Customers[i]), Constants.MOVE_INTO_RESTAURANT);
                     Invoke("UpdateQueuePositions", 1.5f);
                     return;
                 }
