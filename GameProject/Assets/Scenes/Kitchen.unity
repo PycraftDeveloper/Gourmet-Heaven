@@ -5030,7 +5030,7 @@ GameObject:
   - component: {fileID: 2108088932573894898}
   - component: {fileID: 132652353625809765}
   - component: {fileID: 8565432875618770683}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5766,7 +5766,7 @@ GameObject:
   - component: {fileID: 7460475294304994309}
   - component: {fileID: 2746411637204110310}
   - component: {fileID: 6439099568975016571}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BackgroundCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5783,7 +5783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6698488768189558919}
   - component: {fileID: 6698488768189558920}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Joystick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5918,7 +5918,7 @@ GameObject:
   - component: {fileID: 6560170257252890058}
   - component: {fileID: 1655942960544634162}
   - component: {fileID: 468057452221238576}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PlayerInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}

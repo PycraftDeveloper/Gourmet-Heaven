@@ -117,6 +117,17 @@ public class GameManager : MonoBehaviour
                 RenderTexture SceneContents = new RenderTexture(Screen.width, Screen.height, 24);
                 RenderTexture BlurredSceneContents = new RenderTexture(Screen.width, Screen.height, 24);
 
+                GameObject[] AllGameObjects = FindObjectsByType<GameObject>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+                List<GameObject> UI_GameObjects = new List<GameObject>();
+                foreach (GameObject gameObject in AllGameObjects)
+                {
+                    if (gameObject.layer == LayerMask.NameToLayer("UI"))
+                    {
+                        UI_GameObjects.Add(gameObject);
+                        gameObject.SetActive(false);
+                    }
+                }
+
                 camera.targetTexture = SceneContents;
                 camera.Render();
 
@@ -128,6 +139,11 @@ public class GameManager : MonoBehaviour
                 Graphics.SetRenderTarget(BlurredSceneContents);
                 BlurredFrameTexture.ReadPixels(new Rect(x_offset, y_offset, Screen.width, Screen.height), 0, 0);
                 BlurredFrameTexture.Apply();
+
+                foreach (GameObject gameObject in UI_GameObjects)
+                {
+                    gameObject.SetActive(true);
+                }
 
                 camera.targetTexture = null;
                 Graphics.SetRenderTarget(null);
@@ -211,6 +227,11 @@ public class GameManager : MonoBehaviour
         if (Registry.PlayerObject != null)
         {
             Registry.PlayerObject.SceneChanged = true;
+        }
+
+        if (Registry.JoystickObject != null)
+        {
+            Registry.JoystickObject.OnSceneChanged();
         }
     }
 
