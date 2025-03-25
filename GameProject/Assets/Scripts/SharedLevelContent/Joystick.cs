@@ -22,6 +22,11 @@ public class Joystick : MonoBehaviour
 
     private void Start()
     {
+        OnSceneChanged();
+    }
+
+    public void OnSceneChanged()
+    {
         if (Registry.JoystickScreenPosition == Constants.LEFT)
         {
             transform.position = LeftPosition;
