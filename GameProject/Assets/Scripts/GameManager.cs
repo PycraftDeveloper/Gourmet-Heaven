@@ -219,6 +219,29 @@ public class GameManager : MonoBehaviour
         }
         else if (sceneName == Constants.MAIN_MENU)
         {
+            foreach (GameObject _Customer in Registry.Customers)
+            {
+                Destroy(_Customer);
+            }
+            Registry.Customers.Clear();
+
+            if (Registry.PlayerObject != null)
+            {
+                Destroy(Registry.PlayerObject);
+                Registry.PlayerObject = null;
+            }
+
+            if (Registry.LevelManagerObject != null)
+            {
+                Destroy(Registry.LevelManagerObject);
+                Registry.LevelManagerObject = null;
+            }
+
+            if (Registry.JoystickObject != null)
+            {
+                Destroy(Registry.JoystickObject);
+                Registry.JoystickObject = null;
+            }
         }
         else if (sceneName == Constants.OPTIONS_MENU)
         {
