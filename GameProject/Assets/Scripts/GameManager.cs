@@ -96,6 +96,61 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void AfterSceneChange()
+    {
+        string sceneName = Registry.CurrentSceneName;
+
+        if (sceneName != Constants.KITCHEN || sceneName != Constants.RESTAURANT)
+        {
+            if (Registry.InGameLevel)
+            {
+                Registry.InGameLevel = false;
+                DisableLevelObjects();
+            }
+        }
+
+        if (sceneName == Constants.KITCHEN || sceneName == Constants.RESTAURANT)
+        {
+            Registry.InGameLevel = true;
+            EnableLevelObjects(sceneName);
+        }
+
+        if (sceneName == Constants.KITCHEN)
+        {
+            if (musicSource.clip != bgm_InGame)
+            {
+                musicSource.clip = bgm_InGame;
+                musicSource.volume = Registry.MusicVolume;
+                musicSource.Play();
+            }
+        }
+        if (sceneName == Constants.MAIN_MENU)
+        {
+            if (musicSource.clip != bgm_MainMenu)
+            {
+                musicSource.clip = bgm_MainMenu;
+                musicSource.volume = Registry.MusicVolume;
+                musicSource.Play();
+            }
+        }
+        if (sceneName == Constants.BUNS_MG || sceneName == Constants.PHO_MG || sceneName == Constants.RICE_MG || sceneName == Constants.SUSHI_MG)
+        {
+            musicSource.clip = bgm_MiniGame;
+            musicSource.volume = Registry.MusicVolume;
+            musicSource.Play();
+        }
+
+        if (Registry.PlayerObject != null)
+        {
+            Registry.PlayerObject.SceneChanged = true;
+        }
+
+        if (Registry.JoystickObject != null)
+        {
+            Registry.JoystickObject.OnSceneChanged();
+        }
+    }
+
     public void ChangeScene(string sceneName = "")
     {
         sceneName = HandleSceneStack(sceneName);
@@ -148,8 +203,6 @@ public class GameManager : MonoBehaviour
                 camera.targetTexture = null;
                 Graphics.SetRenderTarget(null);
             }
-            Registry.InGameLevel = false;
-            DisableLevelObjects();
         }
 
         if (sceneName == Constants.BUNS_MG)
@@ -192,47 +245,6 @@ public class GameManager : MonoBehaviour
         Registry.CurrentSceneName = sceneName;
 
         SceneManager.LoadScene(sceneName);
-
-        if (sceneName == Constants.KITCHEN || sceneName == Constants.RESTAURANT)
-        {
-            Registry.InGameLevel = true;
-            EnableLevelObjects(sceneName);
-        }
-
-        if (sceneName == Constants.KITCHEN)
-        {
-            if (musicSource.clip != bgm_InGame)
-            {
-                musicSource.clip = bgm_InGame;
-                musicSource.volume = Registry.MusicVolume;
-                musicSource.Play();
-            }
-        }
-        if (sceneName == Constants.MAIN_MENU)
-        {
-            if (musicSource.clip != bgm_MainMenu)
-            {
-                musicSource.clip = bgm_MainMenu;
-                musicSource.volume = Registry.MusicVolume;
-                musicSource.Play();
-            }
-        }
-        if (sceneName == Constants.BUNS_MG || sceneName == Constants.PHO_MG || sceneName == Constants.RICE_MG || sceneName == Constants.SUSHI_MG)
-        {
-            musicSource.clip = bgm_MiniGame;
-            musicSource.volume = Registry.MusicVolume;
-            musicSource.Play();
-        }
-
-        if (Registry.PlayerObject != null)
-        {
-            Registry.PlayerObject.SceneChanged = true;
-        }
-
-        if (Registry.JoystickObject != null)
-        {
-            Registry.JoystickObject.OnSceneChanged();
-        }
     }
 
     private void Update()

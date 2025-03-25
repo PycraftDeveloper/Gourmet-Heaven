@@ -3,15 +3,18 @@ using UnityEngine;
 public class camera_adjust : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         Adjust();
+        if (Registry.GameManagerObject != null)
+        {
+            Registry.GameManagerObject.AfterSceneChange();
+        }
     }
 
     // Update is called once per frame
     public void Adjust()
     {
-
         float targetaspect = 16.0f / 9.0f;
 
         float windowaspect = (float)Screen.width / (float)Screen.height;
@@ -44,6 +47,5 @@ public class camera_adjust : MonoBehaviour
 
             camera.rect = rect;
         }
-
     }
 }
