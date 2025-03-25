@@ -19,7 +19,7 @@ public class PauseMenuManagerScript : MonoBehaviour
 
     public void OnQuitButtonClick()
     {
-        Application.Quit();
+        Registry.GameManagerObject.QuitGame();
     }
 
     public void Update()

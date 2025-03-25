@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
 
     public Material BlurredMaterial;
 
+    private SavedDataManager savedDataManager;
+
     private void Awake()
     {
         if (Registry.GameManagerObject == null)
@@ -42,6 +44,9 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
+        savedDataManager = new SavedDataManager();
+        savedDataManager.Load();
+
         MenuStack.Push(Constants.MAIN_MENU);
         musicSource.clip = bgm_MainMenu;
         musicSource.volume = Registry.MusicVolume;
@@ -149,6 +154,12 @@ public class GameManager : MonoBehaviour
         {
             Registry.JoystickObject.OnSceneChanged();
         }
+    }
+
+    public void QuitGame()
+    {
+        savedDataManager.Save();
+        Application.Quit();
     }
 
     public void ChangeScene(string sceneName = "")

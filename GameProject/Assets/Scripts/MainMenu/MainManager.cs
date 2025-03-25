@@ -29,6 +29,6 @@ public class MainMenuManagerScript : MonoBehaviour
 
     public void OnQuitButtonClick()
     {
-        Application.Quit();
+        Registry.GameManagerObject.QuitGame();
     }
 }
