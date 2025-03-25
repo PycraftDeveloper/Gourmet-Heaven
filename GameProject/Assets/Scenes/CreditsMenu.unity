@@ -799,13 +799,13 @@ MonoBehaviour:
     Lead
     designer: Dawid Galka-Wozniak
 
-    Design team: Josh Cossa, Emmie Heane
+    Design team: Josh Cossar, Emmie Heane
 
 
     Lead
     artist: Alice Haydon-Grime
 
-    Art team: Finlay Thompson, Luna Lin Gao, Theo
+    Art team: Finlay Thomson, Luna Lin Gao, Theo
     Carre'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -871,7 +871,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -45.149536}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
