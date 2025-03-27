@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -97,7 +98,6 @@ public class LevelManager : MonoBehaviour
                 }
                 CustomerTableArrangement[PositionIndex] = CustomerGameObject;
                 Seated = true;
-                // _Customer.SetState("customerState", ); missing animation
             }
         }
     }
@@ -119,6 +119,7 @@ public class LevelManager : MonoBehaviour
             }
             yield return null;
         }
+        // _Customer.SetState("customerState", ); missing animation
         PlaceIntoRestaurant(CustomerGameObject);
     }
 
@@ -205,6 +206,7 @@ public class LevelManager : MonoBehaviour
         {
             if (Registry.InGameLevel == false)
             {
+                _Customer.SetState("customerState", 3);
                 yield break;
             }
 
