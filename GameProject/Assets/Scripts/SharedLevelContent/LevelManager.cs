@@ -97,7 +97,7 @@ public class LevelManager : MonoBehaviour
                 }
                 CustomerTableArrangement[PositionIndex] = CustomerGameObject;
                 Seated = true;
-                _Customer.SetState("customerState", 3);
+                _Customer.SetState("customerState", );
             }
         }
     }
@@ -105,6 +105,9 @@ public class LevelManager : MonoBehaviour
     private IEnumerator MoveIntoRestaurant(Customer _Customer, GameObject CustomerGameObject)
     {
         _Customer.Facing = Constants.FACE_DOWN;
+
+        _Customer.SetState("customerState", 2);
+
         while (_Customer.CurrentLocation == Constants.KITCHEN)
         {
             _Customer.Facing = Constants.FACE_DOWN;
@@ -130,7 +133,6 @@ public class LevelManager : MonoBehaviour
                 {
                     CustomerKitchenQueue.Dequeue();
                     customer.MealPlaced = true;
-                    customer.SetState("customerState", 2);
                     customer.SetCoroutine(MoveIntoRestaurant(customer, Registry.Customers[i]), Constants.MOVE_INTO_RESTAURANT);
                     Invoke("UpdateQueuePositions", 1.5f);
                     return;
@@ -197,7 +199,7 @@ public class LevelManager : MonoBehaviour
         Vector2 start = _Customer.CurrentPosition;
         float elapsed = 0f;
 
-        _Customer.SetState("customerState", 1);
+        _Customer.SetState("customerState", 0);
 
         while (elapsed < duration)
         {
@@ -212,6 +214,7 @@ public class LevelManager : MonoBehaviour
         }
 
         _Customer.CurrentPosition = DestinationPosition;
+        _Customer.SetState("customerState", 3);
     }
 
     // Update is called once per frame
@@ -270,7 +273,7 @@ public class LevelManager : MonoBehaviour
                 if (thisCustomer.CurrentPosition.x == 0.5f && thisCustomer.CurrentPosition.y == -3.61f && Registry.Customers.Count - CustomerKitchenQueue.Count < 8)
                 {
                     thisCustomer.Facing = Constants.FACE_UP;
-                    thisCustomer.SetState("customerState", 0);
+                    thisCustomer.SetState("customerState", 1);
                     CacheRegister.SetState(true);
                 }
             }
