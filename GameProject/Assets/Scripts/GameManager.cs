@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
     {
         string sceneName = Registry.CurrentSceneName;
 
-        if (sceneName != Constants.KITCHEN || sceneName != Constants.RESTAURANT)
+        if (sceneName != Constants.KITCHEN && sceneName != Constants.RESTAURANT)
         {
             if (Registry.InGameLevel)
             {
