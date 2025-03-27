@@ -200,23 +200,26 @@ public class LevelManager : MonoBehaviour
         Vector2 start = _Customer.CurrentPosition;
         float elapsed = 0f;
 
-        _Customer.SetState("customerState", 0);
-
-        while (elapsed < duration)
+        if (start.x != DestinationPosition.x)
         {
-            if (Registry.InGameLevel == false)
+            _Customer.SetState("customerState", 0);
+
+            while (elapsed < duration)
             {
-                _Customer.SetState("customerState", 3);
-                yield break;
+                if (Registry.InGameLevel == false)
+                {
+                    _Customer.SetState("customerState", 3);
+                    yield break;
+                }
+
+                _Customer.CurrentPosition = Vector2.Lerp(start, DestinationPosition, elapsed / duration);
+                elapsed += Registry.GameTimeDelta;
+                yield return null;
             }
 
-            _Customer.CurrentPosition = Vector2.Lerp(start, DestinationPosition, elapsed / duration);
-            elapsed += Registry.GameTimeDelta;
-            yield return null;
+            _Customer.CurrentPosition = DestinationPosition;
+            _Customer.SetState("customerState", 3);
         }
-
-        _Customer.CurrentPosition = DestinationPosition;
-        _Customer.SetState("customerState", 3);
     }
 
     // Update is called once per frame

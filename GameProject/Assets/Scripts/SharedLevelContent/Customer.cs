@@ -27,7 +27,7 @@ public class Customer : MonoBehaviour
 
     private MonoBehaviour GameManagerMono;
 
-    private Animator _Animator;
+    public Animator _Animator;
 
     public void SetState(string StateName, int StateNumber)
     {
@@ -102,7 +102,7 @@ public class Customer : MonoBehaviour
         GameManagerMono = Registry.GameManagerObject.GetComponent<MonoBehaviour>();
 
         CurrentPosition = transform.position;
-        model_index = Random.Range(0, 6);
+        model_index = Random.Range(0, 9);
         CurrentLocation = Constants.KITCHEN;
         GenerateMeal();
     }
@@ -116,22 +116,5 @@ public class Customer : MonoBehaviour
     private void FixedUpdate()
     {
         CustomerRigidBody.position = CurrentPosition;
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        if (Facing == Constants.FACE_SIDE)
-        {
-            CustomerSprite.sprite = side_texture[model_index];
-        }
-        else if (Facing == Constants.FACE_UP)
-        {
-            CustomerSprite.sprite = up_texture[model_index];
-        }
-        else if (Facing == Constants.FACE_DOWN)
-        {
-            CustomerSprite.sprite = down_texture[model_index];
-        }
     }
 }
