@@ -429,7 +429,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_3
+      name: NPCPinkWalkDown1
       rect:
         serializedVersion: 2
         x: 132
@@ -451,7 +451,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_4
+      name: NPCPinkWalkDown2
       rect:
         serializedVersion: 2
         x: 164
@@ -473,7 +473,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_5
+      name: NPCPinkWalkDown3
       rect:
         serializedVersion: 2
         x: 196
@@ -495,7 +495,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_6
+      name: NPCYellowWalkDown1
       rect:
         serializedVersion: 2
         x: 260
@@ -517,7 +517,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_7
+      name: NPCYellowWalkDown2
       rect:
         serializedVersion: 2
         x: 292
@@ -539,7 +539,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_8
+      name: NPCYellowWalkDown3
       rect:
         serializedVersion: 2
         x: 324
@@ -561,7 +561,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_9
+      name: NPCBlueWalkDown1
       rect:
         serializedVersion: 2
         x: 388
@@ -583,7 +583,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_10
+      name: NPCBlueWalkDown2
       rect:
         serializedVersion: 2
         x: 420
@@ -605,7 +605,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_11
+      name: NPCBlueWalkDown3
       rect:
         serializedVersion: 2
         x: 452
@@ -693,7 +693,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_15
+      name: NPCPinkWalkSide1
       rect:
         serializedVersion: 2
         x: 132
@@ -715,7 +715,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_16
+      name: NPCPinkWalkSide2
       rect:
         serializedVersion: 2
         x: 164
@@ -737,7 +737,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_17
+      name: NPCPinkWalkSide3
       rect:
         serializedVersion: 2
         x: 196
@@ -759,7 +759,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_18
+      name: NPCYellowWalkSide1
       rect:
         serializedVersion: 2
         x: 260
@@ -781,7 +781,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_19
+      name: NPCYellowWalkSide2
       rect:
         serializedVersion: 2
         x: 292
@@ -803,7 +803,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_20
+      name: NPCYellowWalkSide3
       rect:
         serializedVersion: 2
         x: 324
@@ -825,7 +825,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_21
+      name: NPCBlueWalkSide1
       rect:
         serializedVersion: 2
         x: 388
@@ -847,7 +847,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_22
+      name: NPCBlueWalkSide2
       rect:
         serializedVersion: 2
         x: 420
@@ -869,7 +869,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_23
+      name: NPCBlueWalkSide3
       rect:
         serializedVersion: 2
         x: 452
@@ -979,7 +979,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_28
+      name: NPCPinkIdleUp1
       rect:
         serializedVersion: 2
         x: 132
@@ -1001,7 +1001,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_29
+      name: NPCPinkIdleUp2
       rect:
         serializedVersion: 2
         x: 164
@@ -1023,12 +1023,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_30
+      name: NPCPinkIdleSide1
       rect:
         serializedVersion: 2
-        x: 197
+        x: 196
         y: 192
-        width: 21
+        width: 24
         height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1045,12 +1045,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_31
+      name: NPCPinkIdleSide2
       rect:
         serializedVersion: 2
-        x: 229
+        x: 228
         y: 192
-        width: 21
+        width: 24
         height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1067,7 +1067,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_32
+      name: NPCYellowIdleUp1
       rect:
         serializedVersion: 2
         x: 260
@@ -1089,7 +1089,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_33
+      name: NPCYellowIdleUp2
       rect:
         serializedVersion: 2
         x: 292
@@ -1111,7 +1111,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_34
+      name: NPCYellowIdleSide1
       rect:
         serializedVersion: 2
         x: 324
@@ -1133,7 +1133,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_35
+      name: NPCYellowIdleSide2
       rect:
         serializedVersion: 2
         x: 356
@@ -1155,7 +1155,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_36
+      name: NPCBlueIdleUp1
       rect:
         serializedVersion: 2
         x: 388
@@ -1177,7 +1177,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_37
+      name: NPCBlueIdleUp2
       rect:
         serializedVersion: 2
         x: 420
@@ -1199,7 +1199,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_38
+      name: NPCBlueIdleSide1
       rect:
         serializedVersion: 2
         x: 452
@@ -1221,7 +1221,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_39
+      name: NPCBlueIdleSide2
       rect:
         serializedVersion: 2
         x: 484
@@ -1243,7 +1243,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_40
+      name: NPCGreenWalkDown1
       rect:
         serializedVersion: 2
         x: 4
@@ -1265,7 +1265,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_41
+      name: NPCGreenWalkDown2
       rect:
         serializedVersion: 2
         x: 36
@@ -1287,7 +1287,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_42
+      name: NPCGreenWalkDown3
       rect:
         serializedVersion: 2
         x: 68
@@ -1309,7 +1309,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_43
+      name: NPCLightBlueWalkDown1
       rect:
         serializedVersion: 2
         x: 132
@@ -1331,7 +1331,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_44
+      name: NPCLightBlueWalkDown2
       rect:
         serializedVersion: 2
         x: 164
@@ -1353,7 +1353,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_45
+      name: NPCLightBlueWalkDown3
       rect:
         serializedVersion: 2
         x: 196
@@ -1375,7 +1375,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_46
+      name: NPCOrangeWalkDown1
       rect:
         serializedVersion: 2
         x: 260
@@ -1397,7 +1397,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_47
+      name: NPCOrangeWalkDown2
       rect:
         serializedVersion: 2
         x: 292
@@ -1419,7 +1419,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_48
+      name: NPCOrangeWalkDown3
       rect:
         serializedVersion: 2
         x: 324
@@ -1441,7 +1441,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_49
+      name: NPCPurpleWalkDown1
       rect:
         serializedVersion: 2
         x: 388
@@ -1463,7 +1463,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_50
+      name: NPCPurpleWalkDown2
       rect:
         serializedVersion: 2
         x: 420
@@ -1485,7 +1485,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_51
+      name: NPCPurpleWalkDown3
       rect:
         serializedVersion: 2
         x: 452
@@ -1507,7 +1507,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_52
+      name: NPCGreenWalkSide1
       rect:
         serializedVersion: 2
         x: 4
@@ -1529,7 +1529,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_53
+      name: NPCGreenWalkSide2
       rect:
         serializedVersion: 2
         x: 36
@@ -1551,7 +1551,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_54
+      name: NPCGreenWalkSide3
       rect:
         serializedVersion: 2
         x: 68
@@ -1573,7 +1573,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_55
+      name: NPCLightBlueWalkSide1
       rect:
         serializedVersion: 2
         x: 132
@@ -1595,7 +1595,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_56
+      name: NPCLightBlueWalkSide2
       rect:
         serializedVersion: 2
         x: 164
@@ -1617,7 +1617,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_57
+      name: NPCLightBlueWalkSide3
       rect:
         serializedVersion: 2
         x: 196
@@ -1639,7 +1639,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_58
+      name: NPCOrangeWalkSide1
       rect:
         serializedVersion: 2
         x: 260
@@ -1661,7 +1661,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_59
+      name: NPCOrangeWalkSide2
       rect:
         serializedVersion: 2
         x: 292
@@ -1683,7 +1683,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_60
+      name: NPCOrangeWalkSide3
       rect:
         serializedVersion: 2
         x: 324
@@ -1705,7 +1705,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_61
+      name: NPCPurpleWalkSide1
       rect:
         serializedVersion: 2
         x: 388
@@ -1727,7 +1727,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_62
+      name: NPCPurpleWalkSide2
       rect:
         serializedVersion: 2
         x: 420
@@ -1749,7 +1749,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_63
+      name: NPCPurpleWalkSide3
       rect:
         serializedVersion: 2
         x: 452
@@ -1771,7 +1771,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_64
+      name: NPCGreenIdleUp1
       rect:
         serializedVersion: 2
         x: 4
@@ -1793,7 +1793,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_65
+      name: NPCGreenIdleUp2
       rect:
         serializedVersion: 2
         x: 36
@@ -1815,7 +1815,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_66
+      name: NPCGreenIdleSide1
       rect:
         serializedVersion: 2
         x: 68
@@ -1837,7 +1837,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_67
+      name: NPCGreenIdleSide2
       rect:
         serializedVersion: 2
         x: 100
@@ -1859,7 +1859,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_68
+      name: NPCLightBlueIdleUp1
       rect:
         serializedVersion: 2
         x: 132
@@ -1881,7 +1881,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_69
+      name: NPCLightBlueIdleUp2
       rect:
         serializedVersion: 2
         x: 164
@@ -1903,7 +1903,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_70
+      name: NPCLightBlueIdleSide1
       rect:
         serializedVersion: 2
         x: 196
@@ -1925,7 +1925,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_71
+      name: NPCLightBlueIdleSide2
       rect:
         serializedVersion: 2
         x: 228
@@ -1947,7 +1947,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_72
+      name: NPCOrangeIdleUp1
       rect:
         serializedVersion: 2
         x: 260
@@ -1969,7 +1969,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_73
+      name: NPCOrangeIdleUp2
       rect:
         serializedVersion: 2
         x: 292
@@ -1991,7 +1991,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_74
+      name: NPCOrangeIdleSide1
       rect:
         serializedVersion: 2
         x: 324
@@ -2013,7 +2013,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_75
+      name: NPCOrangeIdleSide2
       rect:
         serializedVersion: 2
         x: 356
@@ -2035,7 +2035,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_76
+      name: NPCPurpleIdleUp1
       rect:
         serializedVersion: 2
         x: 388
@@ -2057,7 +2057,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_77
+      name: NPCPurpleIdleUp2
       rect:
         serializedVersion: 2
         x: 420
@@ -2079,7 +2079,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_78
+      name: NPCPurpleIdleSide1
       rect:
         serializedVersion: 2
         x: 452
@@ -2101,7 +2101,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCCustomerSpritesheet_FINAL_79
+      name: NPCPurpleIdleSide2
       rect:
         serializedVersion: 2
         x: 484
@@ -2136,76 +2136,66 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      NPCCustomerSpritesheet_FINAL_10: -5289889910096562785
-      NPCCustomerSpritesheet_FINAL_11: 3655689847502022700
-      NPCCustomerSpritesheet_FINAL_15: -6334326286226398519
-      NPCCustomerSpritesheet_FINAL_16: 5310796858836814879
-      NPCCustomerSpritesheet_FINAL_17: -4066120775507460632
-      NPCCustomerSpritesheet_FINAL_18: -4511357343025071485
-      NPCCustomerSpritesheet_FINAL_19: 6960138658533780489
-      NPCCustomerSpritesheet_FINAL_20: 712030898977198830
-      NPCCustomerSpritesheet_FINAL_21: 4856912948895858529
-      NPCCustomerSpritesheet_FINAL_22: -6400149244086389226
-      NPCCustomerSpritesheet_FINAL_23: -7519733337977741887
-      NPCCustomerSpritesheet_FINAL_28: -189342786083650304
-      NPCCustomerSpritesheet_FINAL_29: -5426264194069664530
-      NPCCustomerSpritesheet_FINAL_3: -2179542905215761079
-      NPCCustomerSpritesheet_FINAL_30: -365073628716854185
-      NPCCustomerSpritesheet_FINAL_31: -8409142790251348942
-      NPCCustomerSpritesheet_FINAL_32: 4737876990962401478
-      NPCCustomerSpritesheet_FINAL_33: -8804384221636924994
-      NPCCustomerSpritesheet_FINAL_34: 512645846892241940
-      NPCCustomerSpritesheet_FINAL_35: 2396415976331040277
-      NPCCustomerSpritesheet_FINAL_36: 5159410388284132838
-      NPCCustomerSpritesheet_FINAL_37: -256912026220140226
-      NPCCustomerSpritesheet_FINAL_38: -8558688088662129003
-      NPCCustomerSpritesheet_FINAL_39: -3584157588859389760
-      NPCCustomerSpritesheet_FINAL_4: -4531377197360305583
-      NPCCustomerSpritesheet_FINAL_40: -6647777187704238582
-      NPCCustomerSpritesheet_FINAL_41: 6929028756519567679
-      NPCCustomerSpritesheet_FINAL_42: 7812403305279205382
-      NPCCustomerSpritesheet_FINAL_43: 6279707146845918485
-      NPCCustomerSpritesheet_FINAL_44: -5122813049912873902
-      NPCCustomerSpritesheet_FINAL_45: -4549533216441387474
-      NPCCustomerSpritesheet_FINAL_46: -7362177002264408271
-      NPCCustomerSpritesheet_FINAL_47: 27856202401511674
-      NPCCustomerSpritesheet_FINAL_48: -1212934855102773200
-      NPCCustomerSpritesheet_FINAL_49: -462901133704369489
-      NPCCustomerSpritesheet_FINAL_5: 4950499818497059236
-      NPCCustomerSpritesheet_FINAL_50: 8518789936292548031
-      NPCCustomerSpritesheet_FINAL_51: 1888288354778965856
-      NPCCustomerSpritesheet_FINAL_52: 1438593159877812742
-      NPCCustomerSpritesheet_FINAL_53: -6645280088058574141
-      NPCCustomerSpritesheet_FINAL_54: -736410158557323591
-      NPCCustomerSpritesheet_FINAL_55: 4848657105942130791
-      NPCCustomerSpritesheet_FINAL_56: 6895235852080058986
-      NPCCustomerSpritesheet_FINAL_57: -4054473364630966880
-      NPCCustomerSpritesheet_FINAL_58: -6648403291116568289
-      NPCCustomerSpritesheet_FINAL_59: -3921848125105795066
-      NPCCustomerSpritesheet_FINAL_6: 8831905631662448588
-      NPCCustomerSpritesheet_FINAL_60: 819138554523980434
-      NPCCustomerSpritesheet_FINAL_61: 2588627608970386194
-      NPCCustomerSpritesheet_FINAL_62: 7195006637219827842
-      NPCCustomerSpritesheet_FINAL_63: -7872714832282344458
-      NPCCustomerSpritesheet_FINAL_64: -191370644803246427
-      NPCCustomerSpritesheet_FINAL_65: -709610018150593270
-      NPCCustomerSpritesheet_FINAL_66: -6921037241371164973
-      NPCCustomerSpritesheet_FINAL_67: -8056710107051239785
-      NPCCustomerSpritesheet_FINAL_68: -3238883345589107520
-      NPCCustomerSpritesheet_FINAL_69: -4527034978853766461
-      NPCCustomerSpritesheet_FINAL_7: -8891671514381292923
-      NPCCustomerSpritesheet_FINAL_70: 6524609008459223282
-      NPCCustomerSpritesheet_FINAL_71: -3519525626017723033
-      NPCCustomerSpritesheet_FINAL_72: -2024364132344788330
-      NPCCustomerSpritesheet_FINAL_73: 3925379937485867953
-      NPCCustomerSpritesheet_FINAL_74: 8451709750116429179
-      NPCCustomerSpritesheet_FINAL_75: 7993567228919810647
-      NPCCustomerSpritesheet_FINAL_76: 5722342196892536752
-      NPCCustomerSpritesheet_FINAL_77: -7056460972809241832
-      NPCCustomerSpritesheet_FINAL_78: 2402411739660669980
-      NPCCustomerSpritesheet_FINAL_79: -7811287616806491620
-      NPCCustomerSpritesheet_FINAL_8: -4891097221715635082
-      NPCCustomerSpritesheet_FINAL_9: -5471626234078156884
+      NPCBlueIdleSide1: -8558688088662129003
+      NPCBlueIdleSide2: -3584157588859389760
+      NPCBlueIdleUp1: 5159410388284132838
+      NPCBlueIdleUp2: -256912026220140226
+      NPCBlueWalkDown1: -5471626234078156884
+      NPCBlueWalkDown2: -5289889910096562785
+      NPCBlueWalkDown3: 3655689847502022700
+      NPCBlueWalkSide1: 4856912948895858529
+      NPCBlueWalkSide2: -6400149244086389226
+      NPCBlueWalkSide3: -7519733337977741887
+      NPCGreenIdleSide1: -6921037241371164973
+      NPCGreenIdleSide2: -8056710107051239785
+      NPCGreenIdleUp1: -191370644803246427
+      NPCGreenIdleUp2: -709610018150593270
+      NPCGreenWalkDown1: -6647777187704238582
+      NPCGreenWalkDown2: 6929028756519567679
+      NPCGreenWalkDown3: 7812403305279205382
+      NPCGreenWalkSide1: 1438593159877812742
+      NPCGreenWalkSide2: -6645280088058574141
+      NPCGreenWalkSide3: -736410158557323591
+      NPCIdleSide1: -365073628716854185
+      NPCLightBlueIdleSide1: 6524609008459223282
+      NPCLightBlueIdleSide2: -3519525626017723033
+      NPCLightBlueIdleUp1: -3238883345589107520
+      NPCLightBlueIdleUp2: -4527034978853766461
+      NPCLightBlueWalkDown1: 6279707146845918485
+      NPCLightBlueWalkDown2: -5122813049912873902
+      NPCLightBlueWalkDown3: -4549533216441387474
+      NPCLightBlueWalkSide1: 4848657105942130791
+      NPCLightBlueWalkSide2: 6895235852080058986
+      NPCLightBlueWalkSide3: -4054473364630966880
+      NPCOrangeIdleSide1: 8451709750116429179
+      NPCOrangeIdleSide2: 7993567228919810647
+      NPCOrangeIdleUp1: -2024364132344788330
+      NPCOrangeIdleUp2: 3925379937485867953
+      NPCOrangeWalkDown1: -7362177002264408271
+      NPCOrangeWalkDown2: 27856202401511674
+      NPCOrangeWalkDown3: -1212934855102773200
+      NPCOrangeWalkSide1: -6648403291116568289
+      NPCOrangeWalkSide2: -3921848125105795066
+      NPCOrangeWalkSide3: 819138554523980434
+      NPCPinkIdleSide2: -8409142790251348942
+      NPCPinkIdleUp1: -189342786083650304
+      NPCPinkIdleUp2: -5426264194069664530
+      NPCPinkWalkDown1: -2179542905215761079
+      NPCPinkWalkDown2: -4531377197360305583
+      NPCPinkWalkDown3: 4950499818497059236
+      NPCPinkWalkSide1: -6334326286226398519
+      NPCPinkWalkSide2: 5310796858836814879
+      NPCPinkWalkSide3: -4066120775507460632
+      NPCPurpleIdleSide1: 2402411739660669980
+      NPCPurpleIdleSide2: -7811287616806491620
+      NPCPurpleIdleUp1: 5722342196892536752
+      NPCPurpleIdleUp2: -7056460972809241832
+      NPCPurpleWalkDown1: -462901133704369489
+      NPCPurpleWalkDown2: 8518789936292548031
+      NPCPurpleWalkDown3: 1888288354778965856
+      NPCPurpleWalkSide1: 2588627608970386194
+      NPCPurpleWalkSide2: 7195006637219827842
+      NPCPurpleWalkSide3: -7872714832282344458
       NPCRedIdleSide1: 2442819708624718977
       NPCRedIdleSide2: 2286491878285599565
       NPCRedIdleUp1: 7050372986675201589
@@ -2216,6 +2206,16 @@ TextureImporter:
       NPCRedWalkSide1: -8600977967224490825
       NPCRedWalkSide2: 8003367634067874843
       NPCRedWalkSide3: 4771424201291589843
+      NPCYellowIdleSide1: 512645846892241940
+      NPCYellowIdleSide2: 2396415976331040277
+      NPCYellowIdleUp1: 4737876990962401478
+      NPCYellowIdleUp2: -8804384221636924994
+      NPCYellowWalkDown1: 8831905631662448588
+      NPCYellowWalkDown2: -8891671514381292923
+      NPCYellowWalkDown3: -4891097221715635082
+      NPCYellowWalkSide1: -4511357343025071485
+      NPCYellowWalkSide2: 6960138658533780489
+      NPCYellowWalkSide3: 712030898977198830
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
