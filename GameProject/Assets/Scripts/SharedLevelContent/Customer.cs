@@ -27,7 +27,7 @@ public class Customer : MonoBehaviour
 
     private MonoBehaviour GameManagerMono;
 
-    public Animator CustomAnimator;
+    public Animator _Animator;
 
     public void SetCoroutine(string description)
     {
@@ -103,9 +103,9 @@ public class Customer : MonoBehaviour
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
+    public void Initialise()
     {
-        CustomAnimator = GetComponent<Animator>();
+        _Animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()

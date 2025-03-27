@@ -97,6 +97,7 @@ public class LevelManager : MonoBehaviour
                 }
                 CustomerTableArrangement[PositionIndex] = CustomerGameObject;
                 Seated = true;
+                _Customer._Animator.SetInteger("customerState", 3);
             }
         }
     }
@@ -129,6 +130,7 @@ public class LevelManager : MonoBehaviour
                 {
                     CustomerKitchenQueue.Dequeue();
                     customer.MealPlaced = true;
+                    customer._Animator.SetInteger("customerState", 2);
                     customer.SetCoroutine(MoveIntoRestaurant(customer, Registry.Customers[i]), Constants.MOVE_INTO_RESTAURANT);
                     Invoke("UpdateQueuePositions", 1.5f);
                     return;
@@ -194,6 +196,8 @@ public class LevelManager : MonoBehaviour
         float duration = 2.0f;
         Vector2 start = _Customer.CurrentPosition;
         float elapsed = 0f;
+
+        _Customer._Animator.SetInteger("customerState", 1);
 
         while (elapsed < duration)
         {
@@ -266,6 +270,7 @@ public class LevelManager : MonoBehaviour
                 if (thisCustomer.CurrentPosition.x == 0.5f && thisCustomer.CurrentPosition.y == -3.61f && Registry.Customers.Count - CustomerKitchenQueue.Count < 8)
                 {
                     thisCustomer.Facing = Constants.FACE_UP;
+                    thisCustomer._Animator.SetInteger("customerState", 0);
                     CacheRegister.SetState(true);
                 }
             }
@@ -277,13 +282,14 @@ public class LevelManager : MonoBehaviour
             CustomerSpawnTimer = 0;
             if (CustomerKitchenQueue.Count < 6 && Registry.Customers.Count < 14)
             {
-                GameObject new_customer = Instantiate(CustomerPrefab, CustomerSpawningLocation, transform.rotation);
+                GameObject NewCustomer = Instantiate(CustomerPrefab, CustomerSpawningLocation, transform.rotation);
+                NewCustomer.GetComponent<Customer>().Initialise();
                 if (Registry.CurrentSceneName != Constants.KITCHEN)
                 {
-                    new_customer.SetActive(false);
+                    NewCustomer.SetActive(false);
                 }
-                CustomerKitchenQueue.Enqueue(new_customer);
-                Registry.Customers.Add(new_customer);
+                CustomerKitchenQueue.Enqueue(NewCustomer);
+                Registry.Customers.Add(NewCustomer);
                 UpdateQueuePositions();
             }
         }
