@@ -97,7 +97,7 @@ public class LevelManager : MonoBehaviour
                 }
                 CustomerTableArrangement[PositionIndex] = CustomerGameObject;
                 Seated = true;
-                _Customer.SetState("customerState", );
+                // _Customer.SetState("customerState", ); missing animation
             }
         }
     }
