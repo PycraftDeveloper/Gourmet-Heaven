@@ -4,9 +4,9 @@ using System.IO;
 [System.Serializable]
 public class GameData
 {
-    public string JoystickScreenPosition;
-    public float MusicVolume;
-    public float SFXVolume;
+    public string JoystickScreenPosition = Constants.LEFT;
+    public float MusicVolume = 0.8f;
+    public float SFXVolume = 0.8f;
 }
 
 public class SavedDataManager
