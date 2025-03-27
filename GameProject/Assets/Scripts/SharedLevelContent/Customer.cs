@@ -27,6 +27,8 @@ public class Customer : MonoBehaviour
 
     private MonoBehaviour GameManagerMono;
 
+    public Animator CustomAnimator;
+
     public void SetCoroutine(string description)
     {
         if (description == Constants.NO_COROUTINE)
@@ -103,6 +105,7 @@ public class Customer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
+        CustomAnimator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()

@@ -1,0 +1,2223 @@
+fileFormatVersion: 2
+guid: 4743ef32eeff0c6458e050daebeb5617
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4267850478286424576
+    second: NPCCustomerSpritesheet_FINAL_0
+  - first:
+      213: -21302903033258906
+    second: NPCCustomerSpritesheet_FINAL_1
+  - first:
+      213: -3938732402252217475
+    second: NPCCustomerSpritesheet_FINAL_2
+  - first:
+      213: -2179542905215761079
+    second: NPCCustomerSpritesheet_FINAL_3
+  - first:
+      213: -4531377197360305583
+    second: NPCCustomerSpritesheet_FINAL_4
+  - first:
+      213: 4950499818497059236
+    second: NPCCustomerSpritesheet_FINAL_5
+  - first:
+      213: 8831905631662448588
+    second: NPCCustomerSpritesheet_FINAL_6
+  - first:
+      213: -8891671514381292923
+    second: NPCCustomerSpritesheet_FINAL_7
+  - first:
+      213: -4891097221715635082
+    second: NPCCustomerSpritesheet_FINAL_8
+  - first:
+      213: -5471626234078156884
+    second: NPCCustomerSpritesheet_FINAL_9
+  - first:
+      213: -5289889910096562785
+    second: NPCCustomerSpritesheet_FINAL_10
+  - first:
+      213: 3655689847502022700
+    second: NPCCustomerSpritesheet_FINAL_11
+  - first:
+      213: -8600977967224490825
+    second: NPCCustomerSpritesheet_FINAL_12
+  - first:
+      213: 8003367634067874843
+    second: NPCCustomerSpritesheet_FINAL_13
+  - first:
+      213: 4771424201291589843
+    second: NPCCustomerSpritesheet_FINAL_14
+  - first:
+      213: -6334326286226398519
+    second: NPCCustomerSpritesheet_FINAL_15
+  - first:
+      213: 5310796858836814879
+    second: NPCCustomerSpritesheet_FINAL_16
+  - first:
+      213: -4066120775507460632
+    second: NPCCustomerSpritesheet_FINAL_17
+  - first:
+      213: -4511357343025071485
+    second: NPCCustomerSpritesheet_FINAL_18
+  - first:
+      213: 6960138658533780489
+    second: NPCCustomerSpritesheet_FINAL_19
+  - first:
+      213: 712030898977198830
+    second: NPCCustomerSpritesheet_FINAL_20
+  - first:
+      213: 4856912948895858529
+    second: NPCCustomerSpritesheet_FINAL_21
+  - first:
+      213: -6400149244086389226
+    second: NPCCustomerSpritesheet_FINAL_22
+  - first:
+      213: -7519733337977741887
+    second: NPCCustomerSpritesheet_FINAL_23
+  - first:
+      213: 7050372986675201589
+    second: NPCCustomerSpritesheet_FINAL_24
+  - first:
+      213: 6520803315509578713
+    second: NPCCustomerSpritesheet_FINAL_25
+  - first:
+      213: 2442819708624718977
+    second: NPCCustomerSpritesheet_FINAL_26
+  - first:
+      213: 2286491878285599565
+    second: NPCCustomerSpritesheet_FINAL_27
+  - first:
+      213: -189342786083650304
+    second: NPCCustomerSpritesheet_FINAL_28
+  - first:
+      213: -5426264194069664530
+    second: NPCCustomerSpritesheet_FINAL_29
+  - first:
+      213: -365073628716854185
+    second: NPCCustomerSpritesheet_FINAL_30
+  - first:
+      213: -8409142790251348942
+    second: NPCCustomerSpritesheet_FINAL_31
+  - first:
+      213: 4737876990962401478
+    second: NPCCustomerSpritesheet_FINAL_32
+  - first:
+      213: -8804384221636924994
+    second: NPCCustomerSpritesheet_FINAL_33
+  - first:
+      213: 512645846892241940
+    second: NPCCustomerSpritesheet_FINAL_34
+  - first:
+      213: 2396415976331040277
+    second: NPCCustomerSpritesheet_FINAL_35
+  - first:
+      213: 5159410388284132838
+    second: NPCCustomerSpritesheet_FINAL_36
+  - first:
+      213: -256912026220140226
+    second: NPCCustomerSpritesheet_FINAL_37
+  - first:
+      213: -8558688088662129003
+    second: NPCCustomerSpritesheet_FINAL_38
+  - first:
+      213: -3584157588859389760
+    second: NPCCustomerSpritesheet_FINAL_39
+  - first:
+      213: -6647777187704238582
+    second: NPCCustomerSpritesheet_FINAL_40
+  - first:
+      213: 6929028756519567679
+    second: NPCCustomerSpritesheet_FINAL_41
+  - first:
+      213: 7812403305279205382
+    second: NPCCustomerSpritesheet_FINAL_42
+  - first:
+      213: 6279707146845918485
+    second: NPCCustomerSpritesheet_FINAL_43
+  - first:
+      213: -5122813049912873902
+    second: NPCCustomerSpritesheet_FINAL_44
+  - first:
+      213: -4549533216441387474
+    second: NPCCustomerSpritesheet_FINAL_45
+  - first:
+      213: -7362177002264408271
+    second: NPCCustomerSpritesheet_FINAL_46
+  - first:
+      213: 27856202401511674
+    second: NPCCustomerSpritesheet_FINAL_47
+  - first:
+      213: -1212934855102773200
+    second: NPCCustomerSpritesheet_FINAL_48
+  - first:
+      213: -462901133704369489
+    second: NPCCustomerSpritesheet_FINAL_49
+  - first:
+      213: 8518789936292548031
+    second: NPCCustomerSpritesheet_FINAL_50
+  - first:
+      213: 1888288354778965856
+    second: NPCCustomerSpritesheet_FINAL_51
+  - first:
+      213: 1438593159877812742
+    second: NPCCustomerSpritesheet_FINAL_52
+  - first:
+      213: -6645280088058574141
+    second: NPCCustomerSpritesheet_FINAL_53
+  - first:
+      213: -736410158557323591
+    second: NPCCustomerSpritesheet_FINAL_54
+  - first:
+      213: 4848657105942130791
+    second: NPCCustomerSpritesheet_FINAL_55
+  - first:
+      213: 6895235852080058986
+    second: NPCCustomerSpritesheet_FINAL_56
+  - first:
+      213: -4054473364630966880
+    second: NPCCustomerSpritesheet_FINAL_57
+  - first:
+      213: -6648403291116568289
+    second: NPCCustomerSpritesheet_FINAL_58
+  - first:
+      213: -3921848125105795066
+    second: NPCCustomerSpritesheet_FINAL_59
+  - first:
+      213: 819138554523980434
+    second: NPCCustomerSpritesheet_FINAL_60
+  - first:
+      213: 2588627608970386194
+    second: NPCCustomerSpritesheet_FINAL_61
+  - first:
+      213: 7195006637219827842
+    second: NPCCustomerSpritesheet_FINAL_62
+  - first:
+      213: -7872714832282344458
+    second: NPCCustomerSpritesheet_FINAL_63
+  - first:
+      213: -191370644803246427
+    second: NPCCustomerSpritesheet_FINAL_64
+  - first:
+      213: -709610018150593270
+    second: NPCCustomerSpritesheet_FINAL_65
+  - first:
+      213: -6921037241371164973
+    second: NPCCustomerSpritesheet_FINAL_66
+  - first:
+      213: -8056710107051239785
+    second: NPCCustomerSpritesheet_FINAL_67
+  - first:
+      213: -3238883345589107520
+    second: NPCCustomerSpritesheet_FINAL_68
+  - first:
+      213: -4527034978853766461
+    second: NPCCustomerSpritesheet_FINAL_69
+  - first:
+      213: 6524609008459223282
+    second: NPCCustomerSpritesheet_FINAL_70
+  - first:
+      213: -3519525626017723033
+    second: NPCCustomerSpritesheet_FINAL_71
+  - first:
+      213: -2024364132344788330
+    second: NPCCustomerSpritesheet_FINAL_72
+  - first:
+      213: 3925379937485867953
+    second: NPCCustomerSpritesheet_FINAL_73
+  - first:
+      213: 8451709750116429179
+    second: NPCCustomerSpritesheet_FINAL_74
+  - first:
+      213: 7993567228919810647
+    second: NPCCustomerSpritesheet_FINAL_75
+  - first:
+      213: 5722342196892536752
+    second: NPCCustomerSpritesheet_FINAL_76
+  - first:
+      213: -7056460972809241832
+    second: NPCCustomerSpritesheet_FINAL_77
+  - first:
+      213: 2402411739660669980
+    second: NPCCustomerSpritesheet_FINAL_78
+  - first:
+      213: -7811287616806491620
+    second: NPCCustomerSpritesheet_FINAL_79
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NPCRedWalkDown1
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 320
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00a4eb0e5637a3b30800000000000000
+      internalID: 4267850478286424576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCRedWalkDown2
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 320
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66c94006f1154bff0800000000000000
+      internalID: -21302903033258906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCRedWalkDown3
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 320
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d738f6a9fbfc659c0800000000000000
+      internalID: -3938732402252217475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_3
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 320
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94544e18645b0c1e0800000000000000
+      internalID: -2179542905215761079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_4
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 320
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15aa80082705d11c0800000000000000
+      internalID: -4531377197360305583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_5
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 320
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a927262b55b3b440800000000000000
+      internalID: 4950499818497059236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_6
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 320
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccf1309e06b319a70800000000000000
+      internalID: 8831905631662448588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_7
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 320
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58ae7d52edf6a9480800000000000000
+      internalID: -8891671514381292923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_8
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 320
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6745db1bdf45f1cb0800000000000000
+      internalID: -4891097221715635082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_9
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 320
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca720161ee0e014b0800000000000000
+      internalID: -5471626234078156884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_10
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 320
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9575cf57298696b0800000000000000
+      internalID: -5289889910096562785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_11
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 320
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c282c513c8e9bb230800000000000000
+      internalID: 3655689847502022700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCRedWalkSide1
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 256
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b47f96db1033a880800000000000000
+      internalID: -8600977967224490825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCRedWalkSide2
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 256
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b146973a57ca11f60800000000000000
+      internalID: 8003367634067874843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCRedWalkSide3
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 256
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d8efaee701873240800000000000000
+      internalID: 4771424201291589843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_15
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 256
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c26e0aadc3f718a0800000000000000
+      internalID: -6334326286226398519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_16
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 256
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1c8a35fa9db3b940800000000000000
+      internalID: 5310796858836814879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_17
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 256
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8edba0aa2bc3297c0800000000000000
+      internalID: -4066120775507460632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_18
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 256
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38af32216607461c0800000000000000
+      internalID: -4511357343025071485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_19
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 256
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90cae59cb31679060800000000000000
+      internalID: 6960138658533780489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_20
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 256
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee253a28454a1e900800000000000000
+      internalID: 712030898977198830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_21
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 256
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16fbeef0898376340800000000000000
+      internalID: 4856912948895858529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_22
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 256
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 616feb40c2a1e27a0800000000000000
+      internalID: -6400149244086389226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_23
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 256
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cd9c20de5a84a790800000000000000
+      internalID: -7519733337977741887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCRedIdleUp1
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 192
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53609cc70e4f7d160800000000000000
+      internalID: 7050372986675201589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCRedIdleUp2
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 192
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9db4327111c8e7a50800000000000000
+      internalID: 6520803315509578713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCRedIdleSide1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 192
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18c46e61593a6e120800000000000000
+      internalID: 2442819708624718977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCRedIdleSide2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 192
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d43670bbf304bbf10800000000000000
+      internalID: 2286491878285599565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_28
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 192
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00583be3db15f5df0800000000000000
+      internalID: -189342786083650304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_29
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 192
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eec6e0f077902b4b0800000000000000
+      internalID: -5426264194069664530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_30
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 192
+        width: 21
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 754187b087ffeeaf0800000000000000
+      internalID: -365073628716854185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_31
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 192
+        width: 21
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23cf7819f29bc4b80800000000000000
+      internalID: -8409142790251348942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_32
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 192
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c08fcb550250c140800000000000000
+      internalID: 4737876990962401478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_33
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 192
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb9e643b23b80d580800000000000000
+      internalID: -8804384221636924994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_34
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 192
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 414679f7ea84d1700800000000000000
+      internalID: 512645846892241940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_35
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 192
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 516584b32a7c14120800000000000000
+      internalID: 2396415976331040277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_36
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 192
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6edc2249968e99740800000000000000
+      internalID: 5159410388284132838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_37
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 192
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e396f929fd34f6cf0800000000000000
+      internalID: -256912026220140226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_38
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 192
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5964deb778e693980800000000000000
+      internalID: -8558688088662129003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_39
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 192
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c8f301a9a3824ec0800000000000000
+      internalID: -3584157588859389760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_40
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 128
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0e81f48ed95eb3a0800000000000000
+      internalID: -6647777187704238582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_41
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 128
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f31c0d641fad82060800000000000000
+      internalID: 6929028756519567679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_42
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 128
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 600314d0a6b3b6c60800000000000000
+      internalID: 7812403305279205382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_43
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 128
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5159b35f060062750800000000000000
+      internalID: 6279707146845918485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_44
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 128
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25c25354cac18e8b0800000000000000
+      internalID: -5122813049912873902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_45
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 128
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e26bb24e4afccd0c0800000000000000
+      internalID: -4549533216441387474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_46
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 128
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13fca7ed50b44d990800000000000000
+      internalID: -7362177002264408271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_47
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 128
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af8fee88117f26000800000000000000
+      internalID: 27856202401511674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_48
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 128
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 038c8e9fc2aca2fe0800000000000000
+      internalID: -1212934855102773200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_49
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 128
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faaec671fd17399f0800000000000000
+      internalID: -462901133704369489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_50
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 128
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbdc3e40052d83670800000000000000
+      internalID: 8518789936292548031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_51
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 128
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0676b1c014c843a10800000000000000
+      internalID: 1888288354778965856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_52
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 64
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 602e2de5bd8e6f310800000000000000
+      internalID: 1438593159877812742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_53
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 64
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3caca46d7f837c3a0800000000000000
+      internalID: -6645280088058574141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_54
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 64
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9be933accdeb7c5f0800000000000000
+      internalID: -736410158557323591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_55
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 64
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 760ba55d2f3e94340800000000000000
+      internalID: 4848657105942130791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_56
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 64
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6215c5997cc0bf50800000000000000
+      internalID: 6895235852080058986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_57
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 64
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ad63e5d4fd9bb7c0800000000000000
+      internalID: -4054473364630966880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_58
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 64
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1185757e602cb3a0800000000000000
+      internalID: -6648403291116568289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_59
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 64
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6009908b8ebc299c0800000000000000
+      internalID: -3921848125105795066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_60
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 64
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2929a34ec2a2e5b00800000000000000
+      internalID: 819138554523980434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_61
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 64
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21bd2706817ace320800000000000000
+      internalID: 2588627608970386194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_62
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 64
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 280d0107a6cc9d360800000000000000
+      internalID: 7195006637219827842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_63
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 64
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f3acdb429f7eb290800000000000000
+      internalID: -7872714832282344458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_64
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 0
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a6a018996d185df0800000000000000
+      internalID: -191370644803246427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_65
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0d431bb275f626f0800000000000000
+      internalID: -709610018150593270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_66
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3de72d65c4983ff90800000000000000
+      internalID: -6921037241371164973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_67
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79659ea08d0d03090800000000000000
+      internalID: -8056710107051239785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_68
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 0
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c48b3de1cc2d03d0800000000000000
+      internalID: -3238883345589107520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_69
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 0
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ca37a70cadbc21c0800000000000000
+      internalID: -4527034978853766461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_70
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f0968703511c8a50800000000000000
+      internalID: 6524609008459223282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_71
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 0
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76d44532712282fc0800000000000000
+      internalID: -3519525626017723033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_72
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69a0c831c8308e3e0800000000000000
+      internalID: -2024364132344788330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_73
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 0
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bb4a4e6140c97630800000000000000
+      internalID: 3925379937485867953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_74
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 0
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7d25681d318a4570800000000000000
+      internalID: 8451709750116429179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_75
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 0
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75a08fffa0bdeee60800000000000000
+      internalID: 7993567228919810647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_76
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 0
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bf0209e8e7d96f40800000000000000
+      internalID: 5722342196892536752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_77
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81b3c48c12a621e90800000000000000
+      internalID: -7056460972809241832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_78
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 0
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c14d3baafb4175120800000000000000
+      internalID: 2402411739660669980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCCustomerSpritesheet_FINAL_79
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 0
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1a67d96c4bb89390800000000000000
+      internalID: -7811287616806491620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 06ca72726a3f3e94fbe5a9536f5b2208
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      NPCCustomerSpritesheet_FINAL_10: -5289889910096562785
+      NPCCustomerSpritesheet_FINAL_11: 3655689847502022700
+      NPCCustomerSpritesheet_FINAL_15: -6334326286226398519
+      NPCCustomerSpritesheet_FINAL_16: 5310796858836814879
+      NPCCustomerSpritesheet_FINAL_17: -4066120775507460632
+      NPCCustomerSpritesheet_FINAL_18: -4511357343025071485
+      NPCCustomerSpritesheet_FINAL_19: 6960138658533780489
+      NPCCustomerSpritesheet_FINAL_20: 712030898977198830
+      NPCCustomerSpritesheet_FINAL_21: 4856912948895858529
+      NPCCustomerSpritesheet_FINAL_22: -6400149244086389226
+      NPCCustomerSpritesheet_FINAL_23: -7519733337977741887
+      NPCCustomerSpritesheet_FINAL_28: -189342786083650304
+      NPCCustomerSpritesheet_FINAL_29: -5426264194069664530
+      NPCCustomerSpritesheet_FINAL_3: -2179542905215761079
+      NPCCustomerSpritesheet_FINAL_30: -365073628716854185
+      NPCCustomerSpritesheet_FINAL_31: -8409142790251348942
+      NPCCustomerSpritesheet_FINAL_32: 4737876990962401478
+      NPCCustomerSpritesheet_FINAL_33: -8804384221636924994
+      NPCCustomerSpritesheet_FINAL_34: 512645846892241940
+      NPCCustomerSpritesheet_FINAL_35: 2396415976331040277
+      NPCCustomerSpritesheet_FINAL_36: 5159410388284132838
+      NPCCustomerSpritesheet_FINAL_37: -256912026220140226
+      NPCCustomerSpritesheet_FINAL_38: -8558688088662129003
+      NPCCustomerSpritesheet_FINAL_39: -3584157588859389760
+      NPCCustomerSpritesheet_FINAL_4: -4531377197360305583
+      NPCCustomerSpritesheet_FINAL_40: -6647777187704238582
+      NPCCustomerSpritesheet_FINAL_41: 6929028756519567679
+      NPCCustomerSpritesheet_FINAL_42: 7812403305279205382
+      NPCCustomerSpritesheet_FINAL_43: 6279707146845918485
+      NPCCustomerSpritesheet_FINAL_44: -5122813049912873902
+      NPCCustomerSpritesheet_FINAL_45: -4549533216441387474
+      NPCCustomerSpritesheet_FINAL_46: -7362177002264408271
+      NPCCustomerSpritesheet_FINAL_47: 27856202401511674
+      NPCCustomerSpritesheet_FINAL_48: -1212934855102773200
+      NPCCustomerSpritesheet_FINAL_49: -462901133704369489
+      NPCCustomerSpritesheet_FINAL_5: 4950499818497059236
+      NPCCustomerSpritesheet_FINAL_50: 8518789936292548031
+      NPCCustomerSpritesheet_FINAL_51: 1888288354778965856
+      NPCCustomerSpritesheet_FINAL_52: 1438593159877812742
+      NPCCustomerSpritesheet_FINAL_53: -6645280088058574141
+      NPCCustomerSpritesheet_FINAL_54: -736410158557323591
+      NPCCustomerSpritesheet_FINAL_55: 4848657105942130791
+      NPCCustomerSpritesheet_FINAL_56: 6895235852080058986
+      NPCCustomerSpritesheet_FINAL_57: -4054473364630966880
+      NPCCustomerSpritesheet_FINAL_58: -6648403291116568289
+      NPCCustomerSpritesheet_FINAL_59: -3921848125105795066
+      NPCCustomerSpritesheet_FINAL_6: 8831905631662448588
+      NPCCustomerSpritesheet_FINAL_60: 819138554523980434
+      NPCCustomerSpritesheet_FINAL_61: 2588627608970386194
+      NPCCustomerSpritesheet_FINAL_62: 7195006637219827842
+      NPCCustomerSpritesheet_FINAL_63: -7872714832282344458
+      NPCCustomerSpritesheet_FINAL_64: -191370644803246427
+      NPCCustomerSpritesheet_FINAL_65: -709610018150593270
+      NPCCustomerSpritesheet_FINAL_66: -6921037241371164973
+      NPCCustomerSpritesheet_FINAL_67: -8056710107051239785
+      NPCCustomerSpritesheet_FINAL_68: -3238883345589107520
+      NPCCustomerSpritesheet_FINAL_69: -4527034978853766461
+      NPCCustomerSpritesheet_FINAL_7: -8891671514381292923
+      NPCCustomerSpritesheet_FINAL_70: 6524609008459223282
+      NPCCustomerSpritesheet_FINAL_71: -3519525626017723033
+      NPCCustomerSpritesheet_FINAL_72: -2024364132344788330
+      NPCCustomerSpritesheet_FINAL_73: 3925379937485867953
+      NPCCustomerSpritesheet_FINAL_74: 8451709750116429179
+      NPCCustomerSpritesheet_FINAL_75: 7993567228919810647
+      NPCCustomerSpritesheet_FINAL_76: 5722342196892536752
+      NPCCustomerSpritesheet_FINAL_77: -7056460972809241832
+      NPCCustomerSpritesheet_FINAL_78: 2402411739660669980
+      NPCCustomerSpritesheet_FINAL_79: -7811287616806491620
+      NPCCustomerSpritesheet_FINAL_8: -4891097221715635082
+      NPCCustomerSpritesheet_FINAL_9: -5471626234078156884
+      NPCRedIdleSide1: 2442819708624718977
+      NPCRedIdleSide2: 2286491878285599565
+      NPCRedIdleUp1: 7050372986675201589
+      NPCRedIdleUp2: 6520803315509578713
+      NPCRedWalkDown1: 4267850478286424576
+      NPCRedWalkDown2: -21302903033258906
+      NPCRedWalkDown3: -3938732402252217475
+      NPCRedWalkSide1: -8600977967224490825
+      NPCRedWalkSide2: 8003367634067874843
+      NPCRedWalkSide3: 4771424201291589843
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
