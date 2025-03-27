@@ -27,7 +27,12 @@ public class Customer : MonoBehaviour
 
     private MonoBehaviour GameManagerMono;
 
-    public Animator _Animator;
+    private Animator _Animator;
+
+    public void SetState(string StateName, int StateNumber)
+    {
+        _Animator.SetInteger(StateName, (4 * model_index) + StateNumber);
+    }
 
     public void SetCoroutine(string description)
     {
