@@ -3,7 +3,7 @@ using UnityEngine;
 
 public static class Registry
 {
-    public static string CurrentSceneName = Constants.MAIN_MENU;
+    public static string CurrentSceneName;
     public static string JoystickScreenPosition = Constants.LEFT;
 
     public static bool InGameLevel = false;

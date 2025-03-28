@@ -35,7 +35,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 1
+    m_EventTreshold: 25
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1500549804927596293}
   m_Solo: 0
@@ -110,7 +110,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 26
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6975915231339564656}
   m_Solo: 0
@@ -674,7 +674,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 24
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2576181440721910656}
   m_Solo: 0
@@ -699,7 +699,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 0
+    m_EventTreshold: 24
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6434747173859599225}
   m_Solo: 0
@@ -799,7 +799,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 24
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2576181440721910656}
   m_Solo: 0
@@ -849,7 +849,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 26
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6975915231339564656}
   m_Solo: 0
@@ -1244,7 +1244,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 3
+    m_EventTreshold: 27
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4376767978235634101}
   m_Solo: 0
@@ -1369,7 +1369,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 0
+    m_EventTreshold: 24
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6434747173859599225}
   m_Solo: 0
@@ -1498,7 +1498,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 0
+    m_EventTreshold: 24
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6434747173859599225}
   m_Solo: 0
@@ -1656,7 +1656,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 2
+    m_EventTreshold: 26
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2039049207719673599}
   m_Solo: 0
@@ -1681,7 +1681,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 2
+    m_EventTreshold: 26
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2039049207719673599}
   m_Solo: 0
@@ -1756,7 +1756,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 24
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2576181440721910656}
   m_Solo: 0
@@ -1810,7 +1810,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 1
+    m_EventTreshold: 25
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1500549804927596293}
   m_Solo: 0
@@ -1835,7 +1835,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 24
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2576181440721910656}
   m_Solo: 0
@@ -1888,7 +1888,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 2
+    m_EventTreshold: 26
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2039049207719673599}
   m_Solo: 0
@@ -2017,7 +2017,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 25
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1231888831354796344}
   m_Solo: 0
@@ -2171,7 +2171,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 3
+    m_EventTreshold: 27
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4376767978235634101}
   m_Solo: 0
@@ -2387,7 +2387,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 0
+    m_EventTreshold: 24
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6434747173859599225}
   m_Solo: 0
@@ -2603,7 +2603,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 1
+    m_EventTreshold: 25
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1500549804927596293}
   m_Solo: 0
@@ -2886,7 +2886,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 25
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1231888831354796344}
   m_Solo: 0
@@ -3036,7 +3036,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 27
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2937032702025019151}
   m_Solo: 0
@@ -3219,7 +3219,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 26
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6975915231339564656}
   m_Solo: 0
@@ -3643,7 +3643,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 3
+    m_EventTreshold: 27
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4376767978235634101}
   m_Solo: 0
@@ -3668,7 +3668,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 27
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2937032702025019151}
   m_Solo: 0

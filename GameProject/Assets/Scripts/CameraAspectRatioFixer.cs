@@ -10,6 +10,13 @@ public class camera_adjust : MonoBehaviour
         {
             Registry.GameManagerObject.AfterSceneChange();
         }
+        else
+        {
+            if (Registry.CurrentSceneName != Constants.MAIN_MENU)
+            {
+                Debug.LogWarning("You are not running the game from the main menu! This means the game hasn't been properly initialised and the game will not behave as expected.\nPlease stop running the game and start playing from the 'main menu' scene.");
+            }
+        }
     }
 
     // Update is called once per frame
