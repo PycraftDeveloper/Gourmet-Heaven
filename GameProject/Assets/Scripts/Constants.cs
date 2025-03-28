@@ -32,6 +32,11 @@ public static class Constants
     public const string MOVE_IN_QUEUE = "move in queue";
     public const string MOVE_INTO_RESTAURANT = "move into restaurant";
 
+    public const int CUSTOMER_WALK_SIDE_ANIMATION = 0;
+    public const int CUSTOMER_IDLE_UP_ANIMATION = 1;
+    public const int CUSTOMER_WALK_DOWN_ANIMATION = 2;
+    public const int CUSTOMER_IDLE_SIDE_ANIMATION = 3;
+
     public static readonly float[,] CUSTOMER_SEATS_IN_RESTAURANT = new float[,] {
         { -4.15f,  1.68f }, { -1.87f,  1.68f }, { 0.86f,  1.68f }, { 3.14f,  1.68f }, // top row
         { -4.15f, -2.34f }, { -1.87f, -2.34f }, { 0.86f, -2.34f }, { 3.14f, -2.34f } }; // bottom row

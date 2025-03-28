@@ -6,23 +6,20 @@ public class Player : MonoBehaviour
 {
     public Sprite[] IdleApplianceSprites = new Sprite[4];
     public Sprite[] ActivatedApplianceSprites = new Sprite[4];
-
-    private List<string> PlacedMeals = new List<string>();
-
-    private Renderer PlayerSprite;
-
-    public GameObject JoystickInputObject;
     public GameObject[] AppliancePopUpMessages = new GameObject[5];
 
+    private Renderer PlayerSprite;
+    public GameObject JoystickInputObject;
     private PlayerInputCircle JoystickInput;
+    private Rigidbody2D PlayerRigidBody;
+    public Animator PlayerAnimator;
+
+    private List<string> PlacedMeals = new List<string>();
 
     public int RenderPriority = 1;
 
     private Vector2 ScreenDimensions;
     private Vector2 SpriteSize;
-    private Rigidbody2D PlayerRigidBody;
-
-    public Animator PlayerAnimator;
 
     public bool SceneChanged = false;
 

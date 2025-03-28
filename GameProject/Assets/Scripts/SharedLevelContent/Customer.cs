@@ -4,30 +4,28 @@ using UnityEngine;
 public class Customer : MonoBehaviour
 {
     public Renderer CustomerSprite;
-
-    private int model_index;
-
     public Rigidbody2D CustomerRigidBody;
+    public IEnumerator CustomerCoroutine = null;
+    private MonoBehaviour GameManagerMono;
+    public Animator _Animator;
 
     public string CurrentLocation;
     public string Facing = Constants.FACE_SIDE;
     public string Meal;
+    public string CustomerCoroutineDescription = Constants.NO_COROUTINE;
 
     public Vector2 CurrentPosition = Vector2.zero;
     public Vector2 CurrentVelocity = Vector2.zero;
 
+    private int model_index;
+    private int CustomerAnimationState;
+
     public bool MealPlaced = false;
 
-    public IEnumerator CustomerCoroutine = null;
-    public string CustomerCoroutineDescription = Constants.NO_COROUTINE;
-
-    private MonoBehaviour GameManagerMono;
-
-    public Animator _Animator;
-
-    public void SetState(string StateName, int StateNumber)
+    public void SetState(int StateNumber)
     {
-        _Animator.SetInteger(StateName, (4 * model_index) + StateNumber);
+        CustomerAnimationState = (4 * model_index) + StateNumber;
+        _Animator.SetInteger("customerState", CustomerAnimationState);
     }
 
     public void SetCoroutine(string description)
@@ -94,6 +92,7 @@ public class Customer : MonoBehaviour
 
         CustomerSprite = GetComponent<Renderer>();
         CustomerRigidBody = GetComponent<Rigidbody2D>();
+        _Animator = GetComponent<Animator>();
 
         GameManagerMono = Registry.GameManagerObject.GetComponent<MonoBehaviour>();
 
@@ -101,12 +100,12 @@ public class Customer : MonoBehaviour
         model_index = Random.Range(0, 9);
         CurrentLocation = Constants.KITCHEN;
         GenerateMeal();
+        SetState(0);
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void Initialise()
+    public void OnEnable()
     {
-        _Animator = GetComponent<Animator>();
+        SetState(CustomerAnimationState);
     }
 
     private void FixedUpdate()

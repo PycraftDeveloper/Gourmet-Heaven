@@ -108,7 +108,7 @@ public class LevelManager : MonoBehaviour
     {
         _Customer.Facing = Constants.FACE_DOWN;
 
-        _Customer.SetState("customerState", 2);
+        _Customer.SetState(2);
 
         while (_Customer.CurrentLocation == Constants.KITCHEN)
         {
@@ -121,7 +121,7 @@ public class LevelManager : MonoBehaviour
             }
             yield return null;
         }
-        _Customer.SetState("customerState", 3); // update with restaurant animation later
+        _Customer.SetState(Constants.CUSTOMER_IDLE_SIDE_ANIMATION); // update with restaurant animation later
         PlaceIntoRestaurant(CustomerGameObject);
     }
 
@@ -204,13 +204,13 @@ public class LevelManager : MonoBehaviour
 
         if (start.x != DestinationPosition.x)
         {
-            _Customer.SetState("customerState", 0);
+            _Customer.SetState(Constants.CUSTOMER_WALK_SIDE_ANIMATION);
 
             while (elapsed < duration)
             {
                 if (Registry.InGameLevel == false)
                 {
-                    _Customer.SetState("customerState", 3);
+                    _Customer.SetState(Constants.CUSTOMER_IDLE_SIDE_ANIMATION);
                     yield break;
                 }
 
@@ -220,7 +220,7 @@ public class LevelManager : MonoBehaviour
             }
 
             _Customer.CurrentPosition = DestinationPosition;
-            _Customer.SetState("customerState", 3);
+            _Customer.SetState(Constants.CUSTOMER_IDLE_SIDE_ANIMATION);
         }
     }
 
@@ -280,9 +280,14 @@ public class LevelManager : MonoBehaviour
                 if (thisCustomer.CurrentPosition.x == 0.5f && thisCustomer.CurrentPosition.y == -3.61f && Registry.Customers.Count - CustomerKitchenQueue.Count < 8)
                 {
                     thisCustomer.Facing = Constants.FACE_UP;
-                    thisCustomer.SetState("customerState", 1);
+                    thisCustomer.SetState(Constants.CUSTOMER_IDLE_UP_ANIMATION);
                     CacheRegister.SetState(true);
                 }
+            }
+
+            if (Registry.CurrentSceneName != thisCustomer.CurrentLocation)
+            {
+                Registry.Customers[i].SetActive(false);
             }
         }
 
@@ -293,7 +298,6 @@ public class LevelManager : MonoBehaviour
             if (CustomerKitchenQueue.Count < 6 && Registry.Customers.Count < 14)
             {
                 GameObject NewCustomer = Instantiate(CustomerPrefab, CustomerSpawningLocation, transform.rotation);
-                NewCustomer.GetComponent<Customer>().Initialise();
                 if (Registry.CurrentSceneName != Constants.KITCHEN)
                 {
                     NewCustomer.SetActive(false);
