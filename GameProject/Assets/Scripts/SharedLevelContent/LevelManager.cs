@@ -92,9 +92,11 @@ public class LevelManager : MonoBehaviour
                 CustomerRenderer.sortingLayerName = "NPC Upper";
                 CustomerRenderer.sortingOrder = 1;
                 _Customer.Facing = Constants.FACE_SIDE;
-                if (PositionIndex % 2 == 1)
+                if (PositionIndex % 2 == 0)
                 {
-                    _Customer.CustomerSprite.flipX = true;
+                    Vector3 CustomerScale = _Customer.transform.localScale;
+                    CustomerScale.x *= -1;
+                    _Customer.transform.localScale = CustomerScale;
                 }
                 CustomerTableArrangement[PositionIndex] = CustomerGameObject;
                 Seated = true;
@@ -119,7 +121,7 @@ public class LevelManager : MonoBehaviour
             }
             yield return null;
         }
-        // _Customer.SetState("customerState", ); missing animation
+        _Customer.SetState("customerState", 3); // update with restaurant animation later
         PlaceIntoRestaurant(CustomerGameObject);
     }
 

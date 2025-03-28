@@ -3,11 +3,7 @@ using UnityEngine;
 
 public class Customer : MonoBehaviour
 {
-    public Sprite[] down_texture = new Sprite[6];
-    public Sprite[] up_texture = new Sprite[6];
-    public Sprite[] side_texture = new Sprite[6];
-
-    public SpriteRenderer CustomerSprite;
+    public Renderer CustomerSprite;
 
     private int model_index;
 
@@ -64,7 +60,7 @@ public class Customer : MonoBehaviour
         }
         if (CustomerSprite == null)
         {
-            CustomerSprite = GetComponent<SpriteRenderer>();
+            CustomerSprite = GetComponent<Renderer>();
         }
         GameManagerMono.StartCoroutine(CustomerCoroutine);
     }
@@ -96,7 +92,7 @@ public class Customer : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
 
-        CustomerSprite = GetComponent<SpriteRenderer>();
+        CustomerSprite = GetComponent<Renderer>();
         CustomerRigidBody = GetComponent<Rigidbody2D>();
 
         GameManagerMono = Registry.GameManagerObject.GetComponent<MonoBehaviour>();

@@ -4,16 +4,12 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public Sprite down_texture;
-    public Sprite up_texture;
-    public Sprite side_texture;
-
     public Sprite[] IdleApplianceSprites = new Sprite[4];
     public Sprite[] ActivatedApplianceSprites = new Sprite[4];
 
     private List<string> PlacedMeals = new List<string>();
 
-    private SpriteRenderer PlayerSprite;
+    private Renderer PlayerSprite;
 
     public GameObject JoystickInputObject;
     public GameObject[] AppliancePopUpMessages = new GameObject[5];
@@ -156,7 +152,7 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        PlayerSprite = GetComponent<SpriteRenderer>();
+        PlayerSprite = GetComponent<Renderer>();
         JoystickInput = JoystickInputObject.GetComponent<PlayerInputCircle>();
         ScreenDimensions = new Vector2(Camera.main.aspect * Camera.main.orthographicSize, Camera.main.orthographicSize);
         SpriteSize = new Vector2(PlayerSprite.bounds.size.x / 2.0f, PlayerSprite.bounds.size.y / 2.0f);
@@ -262,7 +258,6 @@ public class Player : MonoBehaviour
                         PlayerSprite.transform.localScale = scale;
                     }
                 }
-                PlayerSprite.sprite = side_texture;
             }
         }
         else
@@ -270,12 +265,10 @@ public class Player : MonoBehaviour
             if (JoystickInputMagnitude.y > 0)
             {
                 PlayerAnimator.SetInteger("playerState", 1);
-                PlayerSprite.sprite = up_texture;
             }
             else if (JoystickInputMagnitude.y < 0)
             {
                 PlayerAnimator.SetInteger("playerState", 2);
-                PlayerSprite.sprite = down_texture;
             }
         }
     }
