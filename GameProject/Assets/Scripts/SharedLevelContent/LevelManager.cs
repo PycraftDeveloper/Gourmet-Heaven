@@ -291,7 +291,24 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if (CustomerKitchenQueue.Count == 0 || CustomerSpawnTimer > NextCustomerSpawnTime)
+        //if (CustomerKitchenQueue.Count == 0 || CustomerSpawnTimer > NextCustomerSpawnTime)
+        //{
+        //    NextCustomerSpawnTime = Random.Range(5, 15);
+        //    CustomerSpawnTimer = 0;
+        //    if (CustomerKitchenQueue.Count < 6 && Registry.Customers.Count < 14)
+        //    {
+        //        GameObject NewCustomer = Instantiate(CustomerPrefab, CustomerSpawningLocation, transform.rotation);
+        //        if (Registry.CurrentSceneName != Constants.KITCHEN)
+        //        {
+        //            NewCustomer.SetActive(false);
+        //        }
+        //        CustomerKitchenQueue.Enqueue(NewCustomer);
+        //        Registry.Customers.Add(NewCustomer);
+        //        UpdateQueuePositions();
+        //    }
+        //}
+
+        if (CustomerKitchenQueue.Count == 0)
         {
             NextCustomerSpawnTime = Random.Range(5, 15);
             CustomerSpawnTimer = 0;
@@ -307,6 +324,7 @@ public class LevelManager : MonoBehaviour
                 UpdateQueuePositions();
             }
         }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Registry.GameManagerObject.ChangeScene(Constants.PAUSE_MENU);

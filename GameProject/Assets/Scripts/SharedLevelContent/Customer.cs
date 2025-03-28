@@ -25,6 +25,7 @@ public class Customer : MonoBehaviour
     public void SetState(int StateNumber)
     {
         CustomerAnimationState = (4 * model_index) + StateNumber;
+        Debug.Log(CustomerAnimationState);
         _Animator.SetInteger("customerState", CustomerAnimationState);
     }
 

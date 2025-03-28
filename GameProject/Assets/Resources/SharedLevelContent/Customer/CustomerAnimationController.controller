@@ -3693,7 +3693,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 16
+    m_EventTreshold: 12
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6291146646368576153}
   m_Solo: 0
