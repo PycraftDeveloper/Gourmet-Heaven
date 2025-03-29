@@ -131,36 +131,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e5151887191a34a9b2f39eeec02375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  down_texture:
-  - {fileID: 1599118600686732097, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
-  - {fileID: -7280766081397178319, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
-  - {fileID: -7128399603458528833, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
-  - {fileID: -194791223, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
-  - {fileID: 924831248, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
-  - {fileID: -535734676, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
-  up_texture:
-  - {fileID: -1539490360, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
-  - {fileID: 1574781462, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
-  - {fileID: -1809881049, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
-  - {fileID: -344306196, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
-  - {fileID: -327130820, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
-  - {fileID: 1871299050, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
-  side_texture:
-  - {fileID: 2107392808, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
-  - {fileID: -1184415375, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
-  - {fileID: 1309852454, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
-  - {fileID: 1586166131, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
-  - {fileID: 736948180, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
-  - {fileID: 390598486, guid: a55ae536ed2a97a40851828216e27a87, type: 3}
   CustomerSprite: {fileID: 0}
   CustomerRigidBody: {fileID: 0}
+  _Animator: {fileID: 0}
   CurrentLocation: kitchen
   Facing: side
   Meal: 
+  CustomerCoroutineDescription: no coroutine
   CurrentPosition: {x: 0, y: 0}
   CurrentVelocity: {x: 0, y: 0}
   MealPlaced: 0
-  CustomerCoroutineDescription: no coroutine
 --- !u!61 &1798378255749124243
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -195,7 +175,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.54}
+  m_Offset: {x: 0, y: -0.38}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -205,7 +185,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.77, y: 1}
   m_EdgeRadius: 0
 --- !u!61 &5546443346089533644
 BoxCollider2D:
@@ -241,7 +221,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.01}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -251,7 +231,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.75, y: 1.75}
   m_EdgeRadius: 0
 --- !u!95 &-7780032635774803439
 Animator:

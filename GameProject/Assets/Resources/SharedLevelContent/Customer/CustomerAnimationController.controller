@@ -240,7 +240,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New State
+  m_Name: CustomerAnimatorStartState
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -634,7 +634,7 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 140, y: 150, z: 0}
+  m_AnyStatePosition: {x: -140, y: 150, z: 0}
   m_EntryPosition: {x: -90, y: 480, z: 0}
   m_ExitPosition: {x: 500, y: -100, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -978,7 +978,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 27
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2937032702025019151}
   m_Solo: 0
@@ -3593,7 +3593,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: customerState
-    m_EventTreshold: 25
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1231888831354796344}
   m_Solo: 0

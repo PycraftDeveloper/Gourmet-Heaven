@@ -25,7 +25,6 @@ public class Customer : MonoBehaviour
     public void SetState(int StateNumber)
     {
         CustomerAnimationState = (4 * model_index) + StateNumber;
-        Debug.Log(CustomerAnimationState);
         _Animator.SetInteger("customerState", CustomerAnimationState);
     }
 
@@ -95,10 +94,12 @@ public class Customer : MonoBehaviour
         CustomerRigidBody = GetComponent<Rigidbody2D>();
         _Animator = GetComponent<Animator>();
 
+        _Animator.keepAnimatorStateOnDisable = true;
+
         GameManagerMono = Registry.GameManagerObject.GetComponent<MonoBehaviour>();
 
         CurrentPosition = transform.position;
-        model_index = Random.Range(0, 9);
+        model_index = Random.Range(0, 8);
         CurrentLocation = Constants.KITCHEN;
         GenerateMeal();
         SetState(0);
