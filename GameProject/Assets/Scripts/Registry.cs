@@ -8,6 +8,8 @@ public static class Registry
 
     public static bool InGameLevel = false;
 
+    public static int LevelNumber = Constants.LEVEL_ONE;
+
     public static float GameTimeDelta = 0;
     public static float MusicVolume = 0.8f;
     public static float SFXVolume = 0.8f;

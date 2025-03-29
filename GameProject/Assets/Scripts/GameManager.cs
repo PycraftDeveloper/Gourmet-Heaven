@@ -76,11 +76,13 @@ public class GameManager : MonoBehaviour
         {
             Registry.PlayerObject.gameObject.SetActive(true);
         }
-        foreach (GameObject Customer in Registry.Customers)
+        foreach (GameObject CustomerGameObject in Registry.Customers)
         {
-            if (Customer.GetComponent<Customer>().CurrentLocation == sceneName)
+            Customer _Customer = CustomerGameObject.GetComponent<Customer>();
+            if (_Customer.CurrentLocation == sceneName)
             {
-                Customer.SetActive(true);
+                CustomerGameObject.SetActive(true);
+                _Customer.ReAssociateAnimations();
             }
         }
     }
@@ -95,9 +97,9 @@ public class GameManager : MonoBehaviour
         {
             Registry.PlayerObject.gameObject.SetActive(false);
         }
-        foreach (GameObject Customer in Registry.Customers)
+        foreach (GameObject CustomerGameObject in Registry.Customers)
         {
-            Customer.SetActive(false);
+            CustomerGameObject.SetActive(false);
         }
     }
 
@@ -153,6 +155,22 @@ public class GameManager : MonoBehaviour
         if (Registry.JoystickObject != null)
         {
             Registry.JoystickObject.OnSceneChanged();
+        }
+
+        for (int i = Registry.Customers.Count - 1; i >= 0; i--)
+        {
+            Customer thisCustomer = Registry.Customers[i].GetComponent<Customer>();
+
+            if (thisCustomer.DeSpawn)
+            {
+                Registry.LevelManagerObject.CustomerTableArrangement[thisCustomer.CustomerTablePosition] = null;
+                Registry.Customers.Remove(thisCustomer.gameObject);
+                Destroy(thisCustomer.gameObject);
+            }
+            else if (Registry.CurrentSceneName != thisCustomer.CurrentLocation)
+            {
+                Registry.Customers[i].SetActive(false);
+            }
         }
     }
 

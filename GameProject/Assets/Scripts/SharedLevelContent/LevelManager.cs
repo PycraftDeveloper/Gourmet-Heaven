@@ -53,7 +53,7 @@ public class LevelManager : MonoBehaviour
     private float NextCustomerSpawnTime = 0;
 
     private Queue<GameObject> CustomerKitchenQueue = new Queue<GameObject>();
-    private GameObject[] CustomerTableArrangement = new GameObject[8];
+    public GameObject[] CustomerTableArrangement = new GameObject[8];
 
     private bool ReturnToGameToggle = true;
 
@@ -87,7 +87,6 @@ public class LevelManager : MonoBehaviour
                 Renderer CustomerRenderer = CustomerGameObject.GetComponent<Renderer>();
                 CustomerRenderer.sortingLayerName = "NPC Upper";
                 CustomerRenderer.sortingOrder = 1;
-                _Customer.Facing = Constants.FACE_SIDE;
                 if (PositionIndex % 2 == 0)
                 {
                     Vector3 CustomerScale = _Customer.transform.localScale;
@@ -96,7 +95,9 @@ public class LevelManager : MonoBehaviour
                 }
                 CustomerTableArrangement[PositionIndex] = CustomerGameObject;
                 Seated = true;
-                _Customer.SetState(Constants.CUSTOMER_IDLE_SIDE_ANIMATION); // update with restaurant animation later
+                _Customer.SetAnimationState(Constants.CUSTOMER_IDLE_SIDE_ANIMATION); // update with restaurant animation later
+                _Customer.Patience = Random.Range(Constants.CUSTOMER_MIN_PATIENCE[Registry.LevelNumber], Constants.CUSTOMER_MAX_PATIENCE[Registry.LevelNumber]);
+                _Customer.CustomerTablePosition = PositionIndex;
             }
         }
         if (Registry.CurrentSceneName != Constants.RESTAURANT)
@@ -107,13 +108,10 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator MoveIntoRestaurant(Customer _Customer, GameObject CustomerGameObject)
     {
-        _Customer.Facing = Constants.FACE_DOWN;
+        _Customer.SetAnimationState(Constants.CUSTOMER_WALK_DOWN_ANIMATION);
 
-        _Customer.SetState(Constants.CUSTOMER_WALK_DOWN_ANIMATION);
-
-        while (_Customer.CurrentLocation == Constants.KITCHEN)
+        while (_Customer.CurrentLocation == Constants.KITCHEN && _Customer.gameObject != null)
         {
-            _Customer.Facing = Constants.FACE_DOWN;
             _Customer.CurrentPosition = new Vector2(_Customer.CurrentPosition.x, _Customer.CurrentPosition.y - 0.1f);
 
             if (_Customer.CurrentPosition.y < -6.31 || Registry.InGameLevel == false)
@@ -204,23 +202,17 @@ public class LevelManager : MonoBehaviour
 
         if (start.x != DestinationPosition.x)
         {
-            _Customer.SetState(Constants.CUSTOMER_WALK_SIDE_ANIMATION);
+            _Customer.SetAnimationState(Constants.CUSTOMER_WALK_SIDE_ANIMATION);
 
-            while (elapsed < duration)
+            while (elapsed < duration && Registry.InGameLevel == true && _Customer.gameObject != null)
             {
-                if (Registry.InGameLevel == false)
-                {
-                    _Customer.SetState(Constants.CUSTOMER_IDLE_SIDE_ANIMATION);
-                    yield break;
-                }
-
                 _Customer.CurrentPosition = Vector2.Lerp(start, DestinationPosition, elapsed / duration);
                 elapsed += Registry.GameTimeDelta;
                 yield return null;
             }
 
             _Customer.CurrentPosition = DestinationPosition;
-            _Customer.SetState(Constants.CUSTOMER_IDLE_SIDE_ANIMATION);
+            _Customer.SetAnimationState(Constants.CUSTOMER_IDLE_SIDE_ANIMATION);
         }
     }
 
@@ -279,25 +271,19 @@ public class LevelManager : MonoBehaviour
             {
                 if (thisCustomer.CurrentPosition.x == 0.5f && thisCustomer.CurrentPosition.y == -3.61f && Registry.Customers.Count - CustomerKitchenQueue.Count < 8)
                 {
-                    thisCustomer.Facing = Constants.FACE_UP;
-                    thisCustomer.SetState(Constants.CUSTOMER_IDLE_UP_ANIMATION);
+                    thisCustomer.SetAnimationState(Constants.CUSTOMER_IDLE_UP_ANIMATION);
                     CacheRegister.SetState(true);
                 }
             }
             else if (Registry.CurrentSceneName == Constants.RESTAURANT)
             {
-                thisCustomer.SetState(Constants.CUSTOMER_IDLE_SIDE_ANIMATION); // update with restaurant animation later
-            }
-
-            if (Registry.CurrentSceneName != thisCustomer.CurrentLocation)
-            {
-                Registry.Customers[i].SetActive(false);
+                thisCustomer.SetAnimationState(Constants.CUSTOMER_IDLE_SIDE_ANIMATION); // update with restaurant animation later
             }
         }
 
         if (CustomerKitchenQueue.Count == 0 || CustomerSpawnTimer > NextCustomerSpawnTime)
         {
-            NextCustomerSpawnTime = Random.Range(5, 15);
+            NextCustomerSpawnTime = Random.Range(Constants.CUSTOMER_MIN_SPAWN_RATE[Registry.LevelNumber], Constants.CUSTOMER_MAX_SPAWN_RATE[Registry.LevelNumber]);
             CustomerSpawnTimer = 0;
             if (CustomerKitchenQueue.Count < 6 && Registry.Customers.Count < 14)
             {

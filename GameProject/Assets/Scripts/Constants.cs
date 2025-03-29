@@ -2,6 +2,14 @@ public static class Constants
 {
     public const int PLAYER_MOVEMENT_SPEED = 7;
     public const int CUSTOMER_MOVEMENT_SPEED = 1;
+    public const int LEVEL_ONE = 0;
+    public const int LEVEL_TWO = 1;
+
+    public static readonly float[] CUSTOMER_MIN_SPAWN_RATE = new float[] { 5, 4 }; // first = level one, second = level two, third = ...
+    public static readonly float[] CUSTOMER_MAX_SPAWN_RATE = new float[] { 15, 13 };
+
+    public static readonly float[] CUSTOMER_MIN_PATIENCE = new float[] { 17, 15 };
+    public static readonly float[] CUSTOMER_MAX_PATIENCE = new float[] { 25, 22 };
 
     public const string FACE_SIDE = "side";
     public const string FACE_UP = "up";

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Customer : MonoBehaviour
 {
@@ -10,7 +11,6 @@ public class Customer : MonoBehaviour
     public Animator _Animator;
 
     public string CurrentLocation;
-    public string Facing = Constants.FACE_SIDE;
     public string Meal;
     public string CustomerCoroutineDescription = Constants.NO_COROUTINE;
 
@@ -19,11 +19,17 @@ public class Customer : MonoBehaviour
 
     private int model_index;
     private int CustomerAnimationState;
+    private int CustomerAnimationSubCat;
+    public int CustomerTablePosition;
 
     public bool MealPlaced = false;
+    public bool DeSpawn = false;
 
-    public void SetState(int StateNumber)
+    public float Patience;
+
+    public void SetAnimationState(int StateNumber)
     {
+        CustomerAnimationSubCat = StateNumber;
         CustomerAnimationState = (4 * model_index) + StateNumber;
         _Animator.SetInteger("customerState", CustomerAnimationState);
     }
@@ -94,7 +100,7 @@ public class Customer : MonoBehaviour
         CustomerRigidBody = GetComponent<Rigidbody2D>();
         _Animator = GetComponent<Animator>();
 
-        _Animator.keepAnimatorStateOnDisable = true;
+        _Animator.keepAnimatorStateOnDisable = true; // should be OK.
 
         GameManagerMono = Registry.GameManagerObject.GetComponent<MonoBehaviour>();
 
@@ -102,16 +108,48 @@ public class Customer : MonoBehaviour
         model_index = Random.Range(0, 8);
         CurrentLocation = Constants.KITCHEN;
         GenerateMeal();
-        SetState(0);
+        SetAnimationState(Constants.CUSTOMER_WALK_SIDE_ANIMATION);
     }
 
     public void OnEnable()
     {
-        SetState(CustomerAnimationState);
+        //Debug.Log("====");
+        //Debug.Log(model_index);
+        //Debug.Log(CustomerAnimationSubCat);
+        //SetAnimationState(CustomerAnimationSubCat);
+
+        //_Animator.Rebind();  // Resets the Animator to its default state
+        //_Animator.Update(0f); // Forces an immediate frame update
+        //_Animator.Play("CustomerAnimatorStartState", -1, 0f); // Restart animation
+        _Animator.enabled = false;
+        _Animator.enabled = true;
+        SetAnimationState(CustomerAnimationSubCat); // none of this is the issue
+    }
+
+    public void ReAssociateAnimations() // called when 'SetActive(true)'
+    {
+        //_Animator.enabled = true;
+        //_Animator.Rebind();
+        //_Animator.Play("CustomerAnimatorStartState", -1, 0f);
+        //SetAnimationState(CustomerAnimationSubCat);
+        ////_Animator.Update(0f);
+        ///
     }
 
     private void FixedUpdate()
     {
         CustomerRigidBody.position = CurrentPosition;
+    }
+
+    private void Update()
+    {
+        if (Patience != 0)
+        {
+            Patience -= Time.deltaTime;
+            if (Patience <= 0)
+            {
+                DeSpawn = true;
+            }
+        }
     }
 }

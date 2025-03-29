@@ -4,13 +4,13 @@ public class LevelSelectionMenuManagerScript : MonoBehaviour
 {
     public void OnLevelOneButtonClick()
     {
-        // change things specific to level here :)
+        Registry.LevelNumber = Constants.LEVEL_ONE;
         Registry.GameManagerObject.ChangeScene(Constants.KITCHEN);
     }
 
     public void OnLevelTwoButtonClick()
     {
-        // change things specific to level here :)
+        Registry.LevelNumber = Constants.LEVEL_TWO;
         Registry.GameManagerObject.ChangeScene(Constants.KITCHEN);
     }
 
