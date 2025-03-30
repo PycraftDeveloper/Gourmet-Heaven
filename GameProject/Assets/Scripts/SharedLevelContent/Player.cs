@@ -23,6 +23,17 @@ public class Player : MonoBehaviour
 
     public bool SceneChanged = false;
 
+    public string HoldingMeal = Constants.NOT_HOLDING_MEAL;
+
+    public void SetAnimationState(int state)
+    {
+        if (HoldingMeal != Constants.NOT_HOLDING_MEAL)
+        {
+            state += 4;
+        }
+        PlayerAnimator.SetInteger("playerState", state);
+    }
+
     private void Awake()
     {
         if (Registry.PlayerObject == null)
@@ -229,14 +240,14 @@ public class Player : MonoBehaviour
 
         if (Mathf.Min(JoystickInputMagnitude.x, JoystickInputMagnitude.y) == 0)
         {
-            PlayerAnimator.SetInteger("playerState", 0);
+            SetAnimationState(Constants.PLAYER_IDLE_ANIMATION);
         }
 
         if (Mathf.Abs(JoystickInputMagnitude.x) > Mathf.Abs(JoystickInputMagnitude.y))
         {
             if (JoystickInputMagnitude.x != 0)
             {
-                PlayerAnimator.SetInteger("playerState", 3);
+                SetAnimationState(Constants.PLAYER_WALK_SIDE_ANIMATION);
                 if (JoystickInputMagnitude.x > 0)
                 {
                     Vector3 scale = PlayerSprite.transform.localScale;
@@ -261,11 +272,11 @@ public class Player : MonoBehaviour
         {
             if (JoystickInputMagnitude.y > 0)
             {
-                PlayerAnimator.SetInteger("playerState", 1);
+                SetAnimationState(Constants.PLAYER_WALK_UP_ANIMATION);
             }
             else if (JoystickInputMagnitude.y < 0)
             {
-                PlayerAnimator.SetInteger("playerState", 2);
+                SetAnimationState(Constants.PLAYER_WALK_DOWN_ANIMATION);
             }
         }
     }

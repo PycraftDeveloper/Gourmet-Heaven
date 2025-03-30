@@ -56,7 +56,7 @@ public class SlicedObject : MonoBehaviour
         }
     }
 
-    // creates and destroys the arrow prefab when the player does a succesfull slice
+    // creates and destroys the arrow prefab when the player does a successful slice
     private void CreateArrow(Transform slicePoint)
     {
         if (currentArrow != null)
@@ -101,7 +101,7 @@ public class SlicedObject : MonoBehaviour
         return angle < angleTolerance || dotProduct > 0.7f;
     }
 
-    // sets the feedback text message, colour and visibilty
+    // sets the feedback text message, colour and visibility
     private void ShowMessage(string message, Color color)
     {
         if (feedbackText != null)
@@ -130,6 +130,7 @@ public class SlicedObject : MonoBehaviour
             isSliced = true;
             ShowMessage("Amazing!", Color.green);
             Debug.Log("Meat Fully Sliced!");
+            Registry.PlayerObject.GetComponent<Player>().HoldingMeal = Constants.MANGO_STICKY_RICE;
 
             if (countdowntimer != null)
             {
