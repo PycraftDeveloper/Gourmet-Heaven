@@ -1,3 +1,5 @@
+// The following program was written by Emmie Heane.
+
 using UnityEngine;
 
 public class RiceMGMenuManagerScript : MonoBehaviour

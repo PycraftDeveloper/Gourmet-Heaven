@@ -1,6 +1,9 @@
+// Please note that the 'Adjust' method in the CameraAdjust class was sourced by Paddy Costelloe and therefore
+// NOT written by any member in the group game project. All other code in this program remains our own work.
+
 using UnityEngine;
 
-public class camera_adjust : MonoBehaviour
+public class CameraAdjust : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
