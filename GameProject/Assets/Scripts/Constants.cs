@@ -37,6 +37,10 @@ public static class Constants
     public const string MANGO_STICKY_RICE = "mango sticky rice";
     public const string NOT_HOLDING_MEAL = "not holding meal";
 
+    public const string RICE = "Rice";
+    public const string SEAWEED = "Seaweed";
+    public const string SOMETHING_ELSE = "SomethingElse";
+
     public const string NO_COROUTINE = "no coroutine";
     public const string MOVE_IN_QUEUE = "move in queue";
     public const string MOVE_INTO_RESTAURANT = "move into restaurant";
