@@ -134,13 +134,24 @@ MonoBehaviour:
   CustomerSprite: {fileID: 0}
   CustomerRigidBody: {fileID: 0}
   _Animator: {fileID: 0}
+  AnimationControllers:
+  - {fileID: 9100000, guid: e160397fb5efc7940b0c4253988bc2d4, type: 2}
+  - {fileID: 9100000, guid: 24dab2338d43d284489ad76d166e3ff5, type: 2}
+  - {fileID: 9100000, guid: e506890220112394f8c430b31aadbe2e, type: 2}
+  - {fileID: 9100000, guid: 90a9526f1ddcff54cbb5c65081505115, type: 2}
+  - {fileID: 9100000, guid: b9a001354c6b9a24eb582ee46ba63158, type: 2}
+  - {fileID: 9100000, guid: d5978eeb42eaadc409259d037286f7e0, type: 2}
+  - {fileID: 9100000, guid: 8629191d7e63f114b9d112d188687341, type: 2}
+  - {fileID: 9100000, guid: e0a6a39d4f20f424c94abfbf0d9e5948, type: 2}
   CurrentLocation: kitchen
-  Facing: side
   Meal: 
   CustomerCoroutineDescription: no coroutine
   CurrentPosition: {x: 0, y: 0}
   CurrentVelocity: {x: 0, y: 0}
+  CustomerTablePosition: 0
   MealPlaced: 0
+  DeSpawn: 0
+  Patience: 0
 --- !u!61 &1798378255749124243
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -10,6 +10,8 @@ public class Customer : MonoBehaviour
     private MonoBehaviour GameManagerMono;
     public Animator _Animator;
 
+    public RuntimeAnimatorController[] AnimationControllers = new RuntimeAnimatorController[8];
+
     public string CurrentLocation;
     public string Meal;
     public string CustomerCoroutineDescription = Constants.NO_COROUTINE;
@@ -30,7 +32,7 @@ public class Customer : MonoBehaviour
     public void SetAnimationState(int StateNumber)
     {
         CustomerAnimationSubCat = StateNumber;
-        CustomerAnimationState = (4 * model_index) + StateNumber;
+        CustomerAnimationState = StateNumber;
         _Animator.SetInteger("customerState", CustomerAnimationState);
     }
 
@@ -99,13 +101,14 @@ public class Customer : MonoBehaviour
         CustomerSprite = GetComponent<Renderer>();
         CustomerRigidBody = GetComponent<Rigidbody2D>();
         _Animator = GetComponent<Animator>();
+        model_index = Random.Range(0, 8);
+        _Animator.runtimeAnimatorController = AnimationControllers[model_index];
 
-        _Animator.keepAnimatorStateOnDisable = true; // should be OK.
+        //_Animator.keepAnimatorStateOnDisable = true; // should be OK.
 
         GameManagerMono = Registry.GameManagerObject.GetComponent<MonoBehaviour>();
 
         CurrentPosition = transform.position;
-        model_index = Random.Range(0, 8);
         CurrentLocation = Constants.KITCHEN;
         GenerateMeal();
         SetAnimationState(Constants.CUSTOMER_WALK_SIDE_ANIMATION);
@@ -121,8 +124,8 @@ public class Customer : MonoBehaviour
         //_Animator.Rebind();  // Resets the Animator to its default state
         //_Animator.Update(0f); // Forces an immediate frame update
         //_Animator.Play("CustomerAnimatorStartState", -1, 0f); // Restart animation
-        _Animator.enabled = false;
-        _Animator.enabled = true;
+        //_Animator.enabled = false;
+        //_Animator.enabled = true;
         SetAnimationState(CustomerAnimationSubCat); // none of this is the issue
     }
 
