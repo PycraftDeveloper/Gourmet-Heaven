@@ -21,7 +21,6 @@ public class Customer : MonoBehaviour
 
     private int model_index;
     private int CustomerAnimationState;
-    private int CustomerAnimationSubCat;
     public int CustomerTablePosition;
 
     public bool MealPlaced = false;
@@ -31,7 +30,6 @@ public class Customer : MonoBehaviour
 
     public void SetAnimationState(int StateNumber)
     {
-        CustomerAnimationSubCat = StateNumber;
         CustomerAnimationState = StateNumber;
         _Animator.SetInteger("customerState", CustomerAnimationState);
     }
@@ -104,8 +102,6 @@ public class Customer : MonoBehaviour
         model_index = Random.Range(0, 8);
         _Animator.runtimeAnimatorController = AnimationControllers[model_index];
 
-        //_Animator.keepAnimatorStateOnDisable = true; // should be OK.
-
         GameManagerMono = Registry.GameManagerObject.GetComponent<MonoBehaviour>();
 
         CurrentPosition = transform.position;
@@ -116,27 +112,7 @@ public class Customer : MonoBehaviour
 
     public void OnEnable()
     {
-        //Debug.Log("====");
-        //Debug.Log(model_index);
-        //Debug.Log(CustomerAnimationSubCat);
-        //SetAnimationState(CustomerAnimationSubCat);
-
-        //_Animator.Rebind();  // Resets the Animator to its default state
-        //_Animator.Update(0f); // Forces an immediate frame update
-        //_Animator.Play("CustomerAnimatorStartState", -1, 0f); // Restart animation
-        //_Animator.enabled = false;
-        //_Animator.enabled = true;
-        SetAnimationState(CustomerAnimationSubCat); // none of this is the issue
-    }
-
-    public void ReAssociateAnimations() // called when 'SetActive(true)'
-    {
-        //_Animator.enabled = true;
-        //_Animator.Rebind();
-        //_Animator.Play("CustomerAnimatorStartState", -1, 0f);
-        //SetAnimationState(CustomerAnimationSubCat);
-        ////_Animator.Update(0f);
-        ///
+        SetAnimationState(CustomerAnimationState);
     }
 
     private void FixedUpdate()

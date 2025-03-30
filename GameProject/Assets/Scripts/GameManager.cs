@@ -82,7 +82,6 @@ public class GameManager : MonoBehaviour
             if (_Customer.CurrentLocation == sceneName)
             {
                 CustomerGameObject.SetActive(true);
-                _Customer.ReAssociateAnimations();
             }
         }
     }
