@@ -13,7 +13,7 @@ public class Appliance
 
     public void SetState(bool state)
     {
-        State = state;
+        State = state && Registry.PlayerObject.HoldingMeal == Constants.NOT_HOLDING_MEAL;
     }
 
     public void ManageState(Tilemap ApplianceTileMap)
