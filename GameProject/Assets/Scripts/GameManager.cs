@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
         }
         foreach (GameObject CustomerGameObject in Registry.Customers)
         {
-            Customer _Customer = CustomerGameObject.GetComponent<Customer>();
+            CustomerCore _Customer = CustomerGameObject.GetComponent<CustomerCore>();
             if (_Customer.CurrentLocation == sceneName)
             {
                 CustomerGameObject.SetActive(true);
@@ -158,7 +158,7 @@ public class GameManager : MonoBehaviour
 
         for (int i = Registry.Customers.Count - 1; i >= 0; i--)
         {
-            Customer thisCustomer = Registry.Customers[i].GetComponent<Customer>();
+            CustomerCore thisCustomer = Registry.Customers[i].GetComponent<CustomerCore>();
 
             if (thisCustomer.DeSpawn)
             {

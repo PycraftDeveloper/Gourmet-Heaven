@@ -109,7 +109,8 @@ public class Player : MonoBehaviour
         }
         else if (Collider.CompareTag("Customer") && Registry.CurrentSceneName == Constants.RESTAURANT)
         {
-            Customer customer = Collider.gameObject.GetComponent<Customer>();
+            CustomerCore customer = Collider.gameObject.GetComponent<CustomerCore>();
+
             float playerY = PlayerRigidBody.position.y;
             float playerHeight = PlayerSprite.bounds.size.y;
             float customerY = customer.CurrentPosition.y;

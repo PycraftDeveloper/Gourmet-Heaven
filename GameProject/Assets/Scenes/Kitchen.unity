@@ -2659,6 +2659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CustomerPrefab: {fileID: 1435824458389161264, guid: 428d18fef4a6efb49a540ebdd579bb02, type: 3}
+  BackgroundCustomerPrefab: {fileID: 3524380843795122092, guid: e983c7a12afa68847aa69ca1772312c3, type: 3}
   CacheRegister:
     Idle: {fileID: 11400000, guid: c52ed72775b61e44c995a385e605340c, type: 2}
     Active: {fileID: 11400000, guid: 7897fdf70d87d5b49a4a2e3422a7d7a4, type: 2}
@@ -2676,6 +2677,15 @@ MonoBehaviour:
     Active: {fileID: 11400000, guid: fa475746bc0f9cd47afe26668a43220d, type: 2}
   AboveApplianceTileMap: {fileID: 135725507}
   BehindApplianceTileMap: {fileID: 1465327081}
+  CustomerTableArrangement:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1454163778
 GameObject:
   m_ObjectHideFlags: 0
@@ -6057,9 +6067,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438417d537430f94db25dab29c946eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  down_texture: {fileID: -3289698779552233394, guid: 7986c401bb9384a429b1d081df06abc4, type: 3}
-  up_texture: {fileID: -4086814692815116348, guid: 7986c401bb9384a429b1d081df06abc4, type: 3}
-  side_texture: {fileID: 2180697263096624480, guid: 7986c401bb9384a429b1d081df06abc4, type: 3}
   IdleApplianceSprites:
   - {fileID: 0}
   - {fileID: 0}
@@ -6070,16 +6077,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  JoystickInputObject: {fileID: 6213745052493878434}
   AppliancePopUpMessages:
   - {fileID: 45535377}
   - {fileID: 548114176}
   - {fileID: 310604071}
   - {fileID: 1056107115}
   - {fileID: 384915290}
-  RenderPriority: 1
+  JoystickInputObject: {fileID: 6213745052493878434}
   PlayerAnimator: {fileID: 7328136110366525892}
+  RenderPriority: 1
   SceneChanged: 0
+  HoldingMeal: not holding meal
 --- !u!483693784 &6677918588879897308
 TilemapRenderer:
   m_ObjectHideFlags: 0
