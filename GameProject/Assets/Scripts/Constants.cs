@@ -39,7 +39,8 @@ public static class Constants
 
     public const string RICE = "Rice";
     public const string SEAWEED = "Seaweed";
-    public const string SOMETHING_ELSE = "SomethingElse";
+    public const string TUNA = "Tuna";
+    public const string WASABI = "Wasabi";
 
     public const string NO_COROUTINE = "no coroutine";
     public const string MOVE_IN_QUEUE = "move in queue";

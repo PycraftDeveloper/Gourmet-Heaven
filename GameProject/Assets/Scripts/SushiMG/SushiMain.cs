@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class SushiMain : MonoBehaviour
 {
-    private string[] IngredientOrder = new string[3];
-    private string[] TargetOrder = new string[3] { Constants.SEAWEED, Constants.RICE, Constants.SOMETHING_ELSE };
+    private string[] IngredientOrder = new string[4];
+    private string[] TargetOrder = new string[4] { Constants.SEAWEED, Constants.RICE, Constants.TUNA, Constants.WASABI };
 
     private int IngredientIndex = 0;
 

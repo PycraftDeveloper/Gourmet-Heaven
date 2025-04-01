@@ -80,7 +80,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        int NumberOfBackgroundCustomers = 8;// Random.Range(0, Mathf.Min(MaxQuantity, FreeSpaces));
+        int NumberOfBackgroundCustomers = Random.Range(0, Mathf.Min(MaxQuantity, FreeSpaces));
         for (int i = 0; i < NumberOfBackgroundCustomers; i++)
         {
             GameObject NewBackgroundCustomer = Instantiate(BackgroundCustomerPrefab, transform.position, transform.rotation);
@@ -127,7 +127,6 @@ public class LevelManager : MonoBehaviour
         while (!Seated)
         {
             int PositionIndex = Random.Range(0, 8);
-            Debug.Log(PositionIndex + " " + CustomerTableArrangement[PositionIndex] + " " + CustomerTableArrangement[PositionIndex].GetComponent<BackgroundCustomer>());
             if (CustomerTableArrangement[PositionIndex] == null || CustomerTableArrangement[PositionIndex].GetComponent<BackgroundCustomer>())
             {
                 if (CustomerTableArrangement[PositionIndex] != null && CustomerTableArrangement[PositionIndex].GetComponent<BackgroundCustomer>())
