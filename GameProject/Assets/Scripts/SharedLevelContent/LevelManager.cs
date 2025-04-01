@@ -149,15 +149,15 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator MoveIntoRestaurant(Customer _Customer, GameObject CustomerGameObject)
     {
+        CustomerCore _CustomerCore = CustomerGameObject.GetComponent<CustomerCore>();
         _Customer.SetAnimationState(Constants.CUSTOMER_WALK_DOWN_ANIMATION);
-
-        while (_Customer._CustomerCore.CurrentLocation == Constants.KITCHEN && _Customer.gameObject != null)
+        while (_CustomerCore.CurrentLocation == Constants.KITCHEN && _Customer.gameObject != null)
         {
             _Customer._CustomerCore.CurrentPosition = new Vector2(_Customer._CustomerCore.CurrentPosition.x, _Customer._CustomerCore.CurrentPosition.y - 0.1f);
 
-            if (_Customer._CustomerCore.CurrentPosition.y < -6.31 || Registry.InGameLevel == false)
+            if (_CustomerCore.CurrentPosition.y < -6.31 || Registry.InGameLevel == false)
             {
-                _Customer._CustomerCore.CurrentLocation = Constants.RESTAURANT;
+                _CustomerCore.CurrentLocation = Constants.RESTAURANT;
             }
             yield return null;
         }
@@ -168,16 +168,19 @@ public class LevelManager : MonoBehaviour
     {
         for (int i = 0; i < Registry.Customers.Count; i++)
         {
-            Customer customer = Registry.Customers[i].GetComponent<Customer>();
-            if (customer._CustomerCore.CurrentLocation == Constants.KITCHEN)
+            Customer _Customer = Registry.Customers[i].GetComponent<Customer>();
+            if (_Customer != null)
             {
-                if (customer._CustomerCore.CurrentPosition.x == 0.5f)
+                if (_Customer._CustomerCore.CurrentLocation == Constants.KITCHEN)
                 {
-                    CustomerKitchenQueue.Dequeue();
-                    customer.MealPlaced = true;
-                    customer.SetCoroutine(MoveIntoRestaurant(customer, Registry.Customers[i]), Constants.MOVE_INTO_RESTAURANT);
-                    Invoke("UpdateQueuePositions", 1.5f);
-                    return;
+                    if (_Customer._CustomerCore.CurrentPosition.x == 0.5f)
+                    {
+                        CustomerKitchenQueue.Dequeue();
+                        _Customer.MealPlaced = true;
+                        _Customer.SetCoroutine(MoveIntoRestaurant(_Customer, Registry.Customers[i]), Constants.MOVE_INTO_RESTAURANT);
+                        Invoke("UpdateQueuePositions", 1.5f);
+                        return;
+                    }
                 }
             }
         }
