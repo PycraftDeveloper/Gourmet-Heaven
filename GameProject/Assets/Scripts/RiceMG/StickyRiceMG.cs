@@ -130,8 +130,11 @@ public class SlicedObject : MonoBehaviour
         if (currentSliceIndex >= slicePoints.Length - 1)
         {
             isSliced = true;
+            Registry.GameManagerObject.SFXSource.Stop();
+            Registry.GameManagerObject.SFXSource.clip = Registry.GameManagerObject.audioClip2;
+            Registry.GameManagerObject.SFXSource.Play();
             ShowMessage("Amazing!", Color.green);
-            Debug.Log("Meat Fully Sliced!");
+            Debug.Log("Mango Fully Sliced!");
             Registry.PlayerObject.GetComponent<Player>().HoldingMeal = Constants.MANGO_STICKY_RICE;
 
             if (countdowntimer != null)

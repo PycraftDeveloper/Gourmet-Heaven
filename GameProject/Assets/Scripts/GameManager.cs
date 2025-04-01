@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [Header("AudioSources")]
     [SerializeField] private AudioSource musicSource;
 
-    [SerializeField] private AudioSource SFXSource;
+    [SerializeField] public AudioSource SFXSource;
 
     [Header("AudioClips")]
     public AudioClip bgm_InGame;
@@ -312,5 +312,6 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         musicSource.volume = Registry.MusicVolume;
+        SFXSource.volume = Registry.SFXVolume;
     }
 }
