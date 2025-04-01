@@ -3,6 +3,7 @@ using UnityEngine;
 
 public static class Registry
 {
+    // This class stores a shared collection of variables under a global namespace "Registry".
     public static string CurrentSceneName;
     public static string JoystickScreenPosition = Constants.LEFT;
 

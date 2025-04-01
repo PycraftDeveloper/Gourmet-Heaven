@@ -95,4 +95,9 @@ public class Customer : MonoBehaviour
     {
         SetAnimationState(CustomerAnimationState);
     }
+
+    public void OnDestroy()
+    {
+        Registry.LevelManagerObject.CustomersInScene--;
+    }
 }

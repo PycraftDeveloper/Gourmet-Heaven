@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
+    // This class handles scene changes and the changes to the game state that results from this process.
+
+    // start - this section of code was worked on by Joshua Cossar (v)
     [Header("AudioSources")]
     [SerializeField] private AudioSource musicSource;
 
@@ -19,18 +22,23 @@ public class GameManager : MonoBehaviour
     public AudioClip audioClip2;
     public AudioClip audioClip3;
     public AudioClip audioClip4;
+    // end - this section of code was worked on by Joshua Cossar (^)
 
-    private Stack<string> MenuStack = new Stack<string>();
+    private Stack<string> MenuStack = new Stack<string>(); // stores a stack containing all the menus previously visited
 
+    // start - blurred background setup
     public Texture2D FrameTexture;
     public Texture2D BlurredFrameTexture;
 
     public Material BlurredMaterial;
+    // end - blurred background setup
 
-    private SavedDataManager savedDataManager;
+    private SavedDataManager savedDataManager; // used to save/load the game state.
 
     private void Awake()
     {
+        // Used to ensure that only one instance of the game manager can ever exist, and allows other scripts
+        // to reference it through the registry.
         if (Registry.GameManagerObject == null)
         {
             DontDestroyOnLoad(gameObject);
@@ -45,12 +53,15 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         savedDataManager = new SavedDataManager();
-        savedDataManager.Load();
+        savedDataManager.Load(); // setup the data manager, and load any previous saved data.
 
-        MenuStack.Push(Constants.MAIN_MENU);
+        MenuStack.Push(Constants.MAIN_MENU); // Pre-fill the menu stack with the initial game setup.
+
+        // start - this section of code was worked on by Joshua Cossar (v)
         musicSource.clip = bgm_MainMenu;
         musicSource.volume = Registry.MusicVolume;
         musicSource.Play();
+        // end - this section of code was worked on by Joshua Cossar (^)
     }
 
     private string HandleSceneStack(string sceneName)

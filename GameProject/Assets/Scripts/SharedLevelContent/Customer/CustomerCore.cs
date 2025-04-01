@@ -20,6 +20,8 @@ public class CustomerCore : MonoBehaviour
 
     public Vector2 CurrentPosition;
 
+    public Coroutine PatienceCoroutine;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -40,10 +42,22 @@ public class CustomerCore : MonoBehaviour
         _RigidBody2D.position = CurrentPosition;
     }
 
+    private void OnDestroy()
+    {
+        if (PatienceCoroutine != null)
+        {
+            Registry.GameManagerObject.StopCoroutine(PatienceCoroutine);
+        }
+    }
+
     public IEnumerator ManagePatience()
     {
-        while (!DeSpawn)
+        while (gameObject != null)
         {
+            if (DeSpawn)
+            {
+                yield break;
+            }
             Patience -= Time.deltaTime;
             if (Patience <= 0)
             {

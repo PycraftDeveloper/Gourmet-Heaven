@@ -51,6 +51,7 @@ public class LevelManager : MonoBehaviour
 
     private float CustomerSpawnTimer = 0;
     private float NextCustomerSpawnTime = 0;
+    public int CustomersInScene = 0;
 
     private Queue<GameObject> CustomerKitchenQueue = new Queue<GameObject>();
     public GameObject[] CustomerTableArrangement = new GameObject[8];
@@ -64,7 +65,7 @@ public class LevelManager : MonoBehaviour
         _CustomerCore._Renderer.sortingOrder = 1;
         CustomerTableArrangement[PositionIndex] = _Customer;
         _CustomerCore.Patience = Random.Range(Constants.CUSTOMER_MIN_PATIENCE[Registry.LevelNumber], Constants.CUSTOMER_MAX_PATIENCE[Registry.LevelNumber]);
-        Registry.GameManagerObject.StartCoroutine(_CustomerCore.ManagePatience());
+        _CustomerCore.PatienceCoroutine = Registry.GameManagerObject.StartCoroutine(_CustomerCore.ManagePatience());
         _CustomerCore.CustomerTablePosition = PositionIndex;
     }
 
@@ -79,7 +80,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        int NumberOfBackgroundCustomers = Random.Range(0, Mathf.Min(MaxQuantity, FreeSpaces));
+        int NumberOfBackgroundCustomers = 8;// Random.Range(0, Mathf.Min(MaxQuantity, FreeSpaces));
         for (int i = 0; i < NumberOfBackgroundCustomers; i++)
         {
             GameObject NewBackgroundCustomer = Instantiate(BackgroundCustomerPrefab, transform.position, transform.rotation);
@@ -126,8 +127,15 @@ public class LevelManager : MonoBehaviour
         while (!Seated)
         {
             int PositionIndex = Random.Range(0, 8);
+            Debug.Log(PositionIndex + " " + CustomerTableArrangement[PositionIndex] + " " + CustomerTableArrangement[PositionIndex].GetComponent<BackgroundCustomer>());
             if (CustomerTableArrangement[PositionIndex] == null || CustomerTableArrangement[PositionIndex].GetComponent<BackgroundCustomer>())
             {
+                if (CustomerTableArrangement[PositionIndex] != null && CustomerTableArrangement[PositionIndex].GetComponent<BackgroundCustomer>())
+                {
+                    Registry.Customers.Remove(CustomerTableArrangement[PositionIndex]);
+                    Destroy(CustomerTableArrangement[PositionIndex]);
+                    CustomerTableArrangement[PositionIndex] = null;
+                }
                 Customer _Customer = CustomerGameObject.GetComponent<Customer>();
                 CustomerCore _CustomerCore = CustomerGameObject.GetComponent<CustomerCore>();
                 if (PositionIndex % 2 == 0)
@@ -318,7 +326,7 @@ public class LevelManager : MonoBehaviour
 
             if (Registry.CurrentSceneName == Constants.KITCHEN)
             {
-                if (thisCustomer._CustomerCore.CurrentPosition.x == 0.5f && thisCustomer._CustomerCore.CurrentPosition.y == -3.61f && Registry.Customers.Count - CustomerKitchenQueue.Count < 8)
+                if (thisCustomer._CustomerCore.CurrentPosition.x == 0.5f && thisCustomer._CustomerCore.CurrentPosition.y == -3.61f && CustomersInScene - CustomerKitchenQueue.Count < 8)
                 {
                     thisCustomer.SetAnimationState(Constants.CUSTOMER_IDLE_UP_ANIMATION);
                     CacheRegister.SetState(true);
@@ -343,7 +351,7 @@ public class LevelManager : MonoBehaviour
 
             NextCustomerSpawnTime = Random.Range(Constants.CUSTOMER_MIN_SPAWN_RATE[Registry.LevelNumber], Constants.CUSTOMER_MAX_SPAWN_RATE[Registry.LevelNumber]);
             CustomerSpawnTimer = 0;
-            if (CustomerKitchenQueue.Count < 6 && Registry.Customers.Count < 14)
+            if (CustomerKitchenQueue.Count < 6 && CustomersInScene < 14)
             {
                 GameObject NewCustomer = Instantiate(CustomerPrefab, CustomerSpawningLocation, transform.rotation);
                 if (Registry.CurrentSceneName != Constants.KITCHEN)
@@ -353,6 +361,7 @@ public class LevelManager : MonoBehaviour
                 CustomerKitchenQueue.Enqueue(NewCustomer);
                 Registry.Customers.Add(NewCustomer);
                 UpdateQueuePositions();
+                CustomersInScene++;
             }
         }
 
