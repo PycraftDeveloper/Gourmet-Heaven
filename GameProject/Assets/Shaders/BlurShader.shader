@@ -8,7 +8,7 @@ Shader "Custom/BlurShader"
     }
     SubShader
     {
-        Tags { "RenderType"="Transparent" "Queue"="Overlay" }
+        Tags { "RenderType"="Transparent" "Queue"="Transparent" }
         Pass
         {
             CGPROGRAM
@@ -43,12 +43,12 @@ Shader "Custom/BlurShader"
                 return o;
             }
 
-            float4 frag (v2f i) : SV_Target
+            half4 frag (v2f i) : SV_Target
             {
                 // 1.77777... = 16:9 aspect ratio
-                float2 texel = _MainTex_TexelSize.xy; // float2(1.777778, 1.0);
+                float2 texel = float2(1.0 / _ScreenParams.x, 1.0 / _ScreenParams.y); // float2(1.777778, 1.0);
 
-                float4 color = tex2D(_MainTex, i.uv); 
+                half4 color = tex2D(_MainTex, i.uv); 
                 int samples = 1;
 
                 for (int x = -floor(_BlurSize * 0.5); x <= floor(_BlurSize * 0.5); x++) {

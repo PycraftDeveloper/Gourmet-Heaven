@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
 
     // start - blurred background setup
     public Texture2D FrameTexture;
+
     public Texture2D BlurredFrameTexture;
 
     public Material BlurredMaterial;
