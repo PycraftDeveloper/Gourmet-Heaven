@@ -44,6 +44,8 @@ MonoBehaviour:
     m_path: Assets/Scenes/Restaurant.unity
   - m_enabled: 1
     m_path: Assets/Scenes/PauseMenu.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/EndMenu.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings: []

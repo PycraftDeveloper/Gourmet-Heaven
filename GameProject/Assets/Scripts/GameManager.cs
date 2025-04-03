@@ -78,6 +78,35 @@ public class GameManager : MonoBehaviour
         return sceneName;
     }
 
+    private void ResetGameLevel()
+    {
+        foreach (GameObject _Customer in Registry.Customers)
+        {
+            Destroy(_Customer);
+        }
+        Registry.Customers.Clear();
+
+        if (Registry.PlayerObject != null)
+        {
+            Destroy(Registry.PlayerObject.gameObject);
+            Registry.PlayerObject = null;
+        }
+
+        if (Registry.LevelManagerObject != null)
+        {
+            Destroy(Registry.LevelManagerObject.gameObject);
+            Registry.LevelManagerObject = null;
+        }
+
+        if (Registry.JoystickObject != null)
+        {
+            Destroy(Registry.JoystickObject.gameObject);
+            Registry.JoystickObject = null;
+        }
+
+        Registry.LevelRunTime = 0;
+    }
+
     private void EnableLevelObjects(string sceneName)
     {
         if (Registry.JoystickObject != null)
@@ -259,29 +288,7 @@ public class GameManager : MonoBehaviour
         }
         else if (sceneName == Constants.MAIN_MENU)
         {
-            foreach (GameObject _Customer in Registry.Customers)
-            {
-                Destroy(_Customer);
-            }
-            Registry.Customers.Clear();
-
-            if (Registry.PlayerObject != null)
-            {
-                Destroy(Registry.PlayerObject);
-                Registry.PlayerObject = null;
-            }
-
-            if (Registry.LevelManagerObject != null)
-            {
-                Destroy(Registry.LevelManagerObject);
-                Registry.LevelManagerObject = null;
-            }
-
-            if (Registry.JoystickObject != null)
-            {
-                Destroy(Registry.JoystickObject);
-                Registry.JoystickObject = null;
-            }
+            ResetGameLevel();
         }
         else if (sceneName == Constants.OPTIONS_MENU)
         {
@@ -304,6 +311,10 @@ public class GameManager : MonoBehaviour
         else if (sceneName == Constants.SUSHI_MG)
         {
         }
+        else if (sceneName == Constants.END_MENU)
+        {
+            ResetGameLevel();
+        }
 
         Registry.CurrentSceneName = sceneName;
 
@@ -314,5 +325,14 @@ public class GameManager : MonoBehaviour
     {
         musicSource.volume = Registry.MusicVolume;
         SFXSource.volume = Registry.SFXVolume;
+
+        if (Registry.LevelRunTime > 0)
+        {
+            Registry.LevelRunTime -= Time.deltaTime;
+            if (Registry.LevelRunTime <= 0)
+            {
+                ChangeScene(Constants.END_MENU);
+            }
+        }
     }
 }

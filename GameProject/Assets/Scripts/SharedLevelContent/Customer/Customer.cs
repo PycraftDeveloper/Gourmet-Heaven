@@ -98,6 +98,9 @@ public class Customer : MonoBehaviour
 
     public void OnDestroy()
     {
-        Registry.LevelManagerObject.CustomersInScene--;
+        if (Registry.LevelManagerObject != null)
+        {
+            Registry.LevelManagerObject.CustomersInScene--;
+        }
     }
 }

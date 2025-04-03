@@ -44,7 +44,7 @@ public class CustomerCore : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (PatienceCoroutine != null)
+        if (PatienceCoroutine != null && Registry.GameManagerObject != null)
         {
             Registry.GameManagerObject.StopCoroutine(PatienceCoroutine);
         }
