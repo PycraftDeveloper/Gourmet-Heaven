@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: f850e992a8042c942ac77cfe46278e23
+guid: 690e3c3b19af69746855707502f48a18
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5739019003810691614
-    second: Level select_0
+      213: -991862319971309416
+    second: Day completed - Front_0
+  - first:
+      213: -5557444599949113359
+    second: Day completed - Front_1
+  - first:
+      213: -6859065848419901683
+    second: Day completed - Front_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,7 +90,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -97,7 +103,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -123,20 +129,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -174,27 +167,40 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Level select_0
+      name: Day completed - Front_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 640
-        height: 360
+        height: 359
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e1a3a59906715af40800000000000000
-      internalID: 5739019003810691614
+      spriteID: 1f7ce19b49dffd2b0800000000000000
+      internalID: -5557444599949113359
       vertices: []
       indices: 
       edges: []
@@ -203,7 +209,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 56856ad9064b3ce48a5d40478239e566
     internalID: 0
     vertices: []
     indices: 
@@ -213,7 +219,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Level select_0: 5739019003810691614
+      Day completed - Front_1: -5557444599949113359
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
