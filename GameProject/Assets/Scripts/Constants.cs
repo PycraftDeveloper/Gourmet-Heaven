@@ -1,7 +1,7 @@
 public static class Constants
 {
     public const int PLAYER_MOVEMENT_SPEED = 7;
-    public const int CUSTOMER_MOVEMENT_SPEED = 1;
+    public const int CUSTOMER_MOVEMENT_SPEED = 4;
     public const int LEVEL_ONE = 0;
     public const int LEVEL_TWO = 1;
 

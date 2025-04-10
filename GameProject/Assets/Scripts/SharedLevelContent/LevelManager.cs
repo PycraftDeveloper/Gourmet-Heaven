@@ -247,18 +247,18 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator MoveInQueue(Customer _Customer, Vector2 DestinationPosition)
     {
-        float duration = 2.0f;
-        Vector2 start = _Customer._CustomerCore.CurrentPosition;
-        float elapsed = 0f;
+        Vector2 TargetPosition = _Customer._CustomerCore.CurrentPosition;
 
-        if (start.x != DestinationPosition.x)
+        if (TargetPosition.x != DestinationPosition.x)
         {
             _Customer.SetAnimationState(Constants.CUSTOMER_WALK_SIDE_ANIMATION);
 
-            while (elapsed < duration && Registry.InGameLevel == true && _Customer.gameObject != null)
+            Vector2 CurrentPosition = _Customer._CustomerCore.CurrentPosition;
+
+            while (CurrentPosition.x - (Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime) > DestinationPosition.x && Registry.InGameLevel == true && _Customer.gameObject != null)
             {
-                _Customer._CustomerCore.CurrentPosition = Vector2.Lerp(start, DestinationPosition, elapsed / duration);
-                elapsed += Registry.GameTimeDelta;
+                CurrentPosition.x -= Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime;
+                _Customer._CustomerCore.CurrentPosition = CurrentPosition;
                 yield return null;
             }
 
