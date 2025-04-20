@@ -29,6 +29,10 @@ public class Customer : MonoBehaviour
 
     public void SetAnimationState(int StateNumber)
     {
+        if (_CustomerCore == null)
+        {
+            return;
+        }
         CustomerAnimationState = StateNumber;
         _CustomerCore._Animator.SetInteger("customerState", CustomerAnimationState);
     }

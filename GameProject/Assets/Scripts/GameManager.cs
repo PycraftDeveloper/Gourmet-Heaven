@@ -105,6 +105,7 @@ public class GameManager : MonoBehaviour
         }
 
         Registry.LevelRunTime = 0;
+        Registry.PlayerScore = 0;
     }
 
     private void EnableLevelObjects(string sceneName)
@@ -185,6 +186,11 @@ public class GameManager : MonoBehaviour
             musicSource.clip = bgm_MiniGame;
             musicSource.volume = Registry.MusicVolume;
             musicSource.Play();
+        }
+
+        if (sceneName == Constants.END_MENU)
+        {
+            ResetGameLevel();
         }
 
         if (Registry.PlayerObject != null)
@@ -313,7 +319,6 @@ public class GameManager : MonoBehaviour
         }
         else if (sceneName == Constants.END_MENU)
         {
-            ResetGameLevel();
         }
 
         Registry.CurrentSceneName = sceneName;
