@@ -8,13 +8,13 @@ public class BackgroundCustomer : MonoBehaviour
     {
         _CustomerCore = GetComponent<CustomerCore>();
 
-        _CustomerCore._Animator.SetInteger("customerState", Constants.CUSTOMER_IDLE_SIDE_ANIMATION);
+        _CustomerCore._Animator.SetInteger("customerState", Constants.CUSTOMER_IDLE_SIT_ANIMATION);
 
         _CustomerCore.CurrentLocation = Constants.RESTAURANT;
     }
 
     private void Update()
     {
-        _CustomerCore._Animator.SetInteger("customerState", Constants.CUSTOMER_IDLE_SIDE_ANIMATION);
+        _CustomerCore._Animator.SetInteger("customerState", Constants.CUSTOMER_IDLE_SIT_ANIMATION);
     }
 }

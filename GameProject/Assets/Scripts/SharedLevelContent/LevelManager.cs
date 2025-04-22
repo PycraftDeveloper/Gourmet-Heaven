@@ -143,7 +143,7 @@ public class LevelManager : MonoBehaviour
                     CustomerScale.x *= -1;
                     _Customer.transform.localScale = CustomerScale;
                 }
-                _Customer.SetAnimationState(Constants.CUSTOMER_IDLE_SIDE_ANIMATION); // update with restaurant animation later
+                _Customer.SetAnimationState(Constants.CUSTOMER_IDLE_SIT_ANIMATION); // update with restaurant animation later
                 SetupCustomerCoreForRestaurant(_CustomerCore, CustomerGameObject, PositionIndex);
                 Seated = true;
             }

@@ -5,7 +5,7 @@ public static class Constants
     public const int LEVEL_ONE = 0;
     public const int LEVEL_TWO = 1;
 
-    public const int LEVEL_ONE_DURATION = 1; // 5 minutes in seconds
+    public const int LEVEL_ONE_DURATION = 5 * 60; // 5 minutes in seconds
     public const int LEVEL_TWO_DURATION = 6 * 60; // 6 minutes in seconds
 
     public static readonly float[] CUSTOMER_MIN_SPAWN_RATE = new float[] { 5, 4 }; // first = level one, second = level two, third = ...
@@ -54,6 +54,7 @@ public static class Constants
     public const int CUSTOMER_IDLE_UP_ANIMATION = 1;
     public const int CUSTOMER_WALK_DOWN_ANIMATION = 2;
     public const int CUSTOMER_IDLE_SIDE_ANIMATION = 3;
+    public const int CUSTOMER_IDLE_SIT_ANIMATION = 4;
 
     public const int PLAYER_IDLE_ANIMATION = 0;
     public const int PLAYER_WALK_UP_ANIMATION = 1;
