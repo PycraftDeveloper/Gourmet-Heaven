@@ -1610,7 +1610,7 @@ MonoBehaviour:
   musicSource: {fileID: 705537654}
   SFXSource: {fileID: 210222199}
   bgm_InGame: {fileID: 8300000, guid: ea31f5bef3f7e2343a28677840e2b5ee, type: 3}
-  bgm_MainMenu: {fileID: 8300000, guid: 117bfb7ebd310fb40bab4164eac3ecc3, type: 3}
+  bgm_MainMenu: {fileID: 8300000, guid: 76d4d504df08d9a42b568b3487d975bc, type: 3}
   bgm_MiniGame: {fileID: 8300000, guid: c31feeb70328ca4409ba72fc3dfdc06d, type: 3}
   footsteps: {fileID: 8300000, guid: 228d5cfead2eb22428cab4e62a6546ba, type: 3}
   audioClip2: {fileID: 8300000, guid: 5c88ef67abf676347a17ff9c2db1ddf3, type: 3}
