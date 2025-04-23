@@ -1,0 +1,879 @@
+fileFormatVersion: 2
+guid: ce32609e2c94cd4418555ba6a2c578a8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7747330885489791001
+    second: NPCCustomerSpritesheet_FINAL 1_0
+  - first:
+      213: 7796010226152795835
+    second: NPCCustomerSpritesheet_FINAL 1_1
+  - first:
+      213: 5847406343853562246
+    second: NPCCustomerSpritesheet_FINAL 1_2
+  - first:
+      213: 6382927299870218240
+    second: NPCCustomerSpritesheet_FINAL 1_3
+  - first:
+      213: -4534343589699928989
+    second: NPCCustomerSpritesheet_FINAL 1_4
+  - first:
+      213: -4014763176991402688
+    second: NPCCustomerSpritesheet_FINAL 1_5
+  - first:
+      213: 488451709714188417
+    second: NPCCustomerSpritesheet_FINAL 1_6
+  - first:
+      213: -3150549057251249298
+    second: NPCCustomerSpritesheet_FINAL 1_7
+  - first:
+      213: 7436908504820746531
+    second: NPCCustomerSpritesheet_FINAL 1_8
+  - first:
+      213: -1441199120943705764
+    second: NPCCustomerSpritesheet_FINAL 1_9
+  - first:
+      213: 7452234510082027927
+    second: NPCCustomerSpritesheet_FINAL 1_10
+  - first:
+      213: 8206830796397292517
+    second: NPCCustomerSpritesheet_FINAL 1_11
+  - first:
+      213: -7220837458043071388
+    second: NPCCustomerSpritesheet_FINAL 1_12
+  - first:
+      213: 4566896717265949375
+    second: NPCCustomerSpritesheet_FINAL 1_13
+  - first:
+      213: 7219783513585037393
+    second: NPCCustomerSpritesheet_FINAL 1_14
+  - first:
+      213: 5198195218126916412
+    second: NPCCustomerSpritesheet_FINAL 1_15
+  - first:
+      213: -2085196954933254244
+    second: NPCCustomerSpritesheet_FINAL 1_16
+  - first:
+      213: 6095548596610067820
+    second: NPCCustomerSpritesheet_FINAL 1_17
+  - first:
+      213: -211106595731031002
+    second: NPCCustomerSpritesheet_FINAL 1_18
+  - first:
+      213: 6220444133614358534
+    second: NPCCustomerSpritesheet_FINAL 1_19
+  - first:
+      213: -1815400846669284585
+    second: NPCCustomerSpritesheet_FINAL 1_20
+  - first:
+      213: -1970771760017625543
+    second: NPCCustomerSpritesheet_FINAL 1_21
+  - first:
+      213: -1387375783033102837
+    second: NPCCustomerSpritesheet_FINAL 1_22
+  - first:
+      213: 4389857557536644451
+    second: NPCCustomerSpritesheet_FINAL 1_23
+  - first:
+      213: -3927885802035680234
+    second: NPCCustomerSpritesheet_FINAL 1_24
+  - first:
+      213: -696980340617460412
+    second: NPCCustomerSpritesheet_FINAL 1_25
+  - first:
+      213: 7809705424596869129
+    second: NPCCustomerSpritesheet_FINAL 1_26
+  - first:
+      213: -1157283439340690263
+    second: NPCCustomerSpritesheet_FINAL 1_27
+  - first:
+      213: -8892481429680305727
+    second: NPCCustomerSpritesheet_FINAL 1_28
+  - first:
+      213: -6000042689637864372
+    second: NPCCustomerSpritesheet_FINAL 1_29
+  - first:
+      213: -3324069147901356617
+    second: NPCCustomerSpritesheet_FINAL 1_30
+  - first:
+      213: -2156566372565818840
+    second: NPCCustomerSpritesheet_FINAL 1_31
+  - first:
+      213: -2948006829581617325
+    second: NPCCustomerSpritesheet_FINAL 1_32
+  - first:
+      213: -259070793960552278
+    second: NPCCustomerSpritesheet_FINAL 1_33
+  - first:
+      213: 5582203713041837125
+    second: NPCCustomerSpritesheet_FINAL 1_34
+  - first:
+      213: -8390463084306609274
+    second: NPCCustomerSpritesheet_FINAL 1_35
+  - first:
+      213: 6346650823502961400
+    second: NPCCustomerSpritesheet_FINAL 1_36
+  - first:
+      213: -3884325900262961467
+    second: NPCCustomerSpritesheet_FINAL 1_37
+  - first:
+      213: 7036318142807317029
+    second: NPCCustomerSpritesheet_FINAL 1_38
+  - first:
+      213: 2702319320182547623
+    second: NPCCustomerSpritesheet_FINAL 1_39
+  - first:
+      213: -4257297595035498728
+    second: NPCCustomerSpritesheet_FINAL 1_40
+  - first:
+      213: 8710662187667905579
+    second: NPCCustomerSpritesheet_FINAL 1_41
+  - first:
+      213: -4225345852996264853
+    second: NPCCustomerSpritesheet_FINAL 1_42
+  - first:
+      213: -526754544120260878
+    second: NPCCustomerSpritesheet_FINAL 1_43
+  - first:
+      213: -7631869814716111827
+    second: NPCCustomerSpritesheet_FINAL 1_44
+  - first:
+      213: 4996752585561696233
+    second: NPCCustomerSpritesheet_FINAL 1_45
+  - first:
+      213: 5261499866751340905
+    second: NPCCustomerSpritesheet_FINAL 1_46
+  - first:
+      213: 4806811868756007328
+    second: NPCCustomerSpritesheet_FINAL 1_47
+  - first:
+      213: -5358820270836956585
+    second: NPCCustomerSpritesheet_FINAL 1_48
+  - first:
+      213: -1328503536119897524
+    second: NPCCustomerSpritesheet_FINAL 1_49
+  - first:
+      213: 242895891770391175
+    second: NPCCustomerSpritesheet_FINAL 1_50
+  - first:
+      213: -3643250249644321115
+    second: NPCCustomerSpritesheet_FINAL 1_51
+  - first:
+      213: -482148776633865259
+    second: NPCCustomerSpritesheet_FINAL 1_52
+  - first:
+      213: 2778212298751267182
+    second: NPCCustomerSpritesheet_FINAL 1_53
+  - first:
+      213: -1608657491385269379
+    second: NPCCustomerSpritesheet_FINAL 1_54
+  - first:
+      213: 2810048119424697698
+    second: NPCCustomerSpritesheet_FINAL 1_55
+  - first:
+      213: -4350174854198704101
+    second: NPCCustomerSpritesheet_FINAL 1_56
+  - first:
+      213: -597833307444699915
+    second: NPCCustomerSpritesheet_FINAL 1_57
+  - first:
+      213: 6948735193904413146
+    second: NPCCustomerSpritesheet_FINAL 1_58
+  - first:
+      213: 1044572280149592113
+    second: NPCCustomerSpritesheet_FINAL 1_59
+  - first:
+      213: 7672651685592511018
+    second: NPCCustomerSpritesheet_FINAL 1_60
+  - first:
+      213: 977271302380345748
+    second: NPCCustomerSpritesheet_FINAL 1_61
+  - first:
+      213: 1450370060561054747
+    second: NPCCustomerSpritesheet_FINAL 1_62
+  - first:
+      213: -2453932756937341173
+    second: NPCCustomerSpritesheet_FINAL 1_63
+  - first:
+      213: 1934132094983858978
+    second: NPCCustomerSpritesheet_FINAL 1_64
+  - first:
+      213: 4710373680053530246
+    second: NPCCustomerSpritesheet_FINAL 1_65
+  - first:
+      213: 8999515175251062366
+    second: NPCCustomerSpritesheet_FINAL 1_66
+  - first:
+      213: 904426998765650767
+    second: NPCCustomerSpritesheet_FINAL 1_67
+  - first:
+      213: 6114476399756357768
+    second: NPCCustomerSpritesheet_FINAL 1_68
+  - first:
+      213: -7579571414762857081
+    second: NPCCustomerSpritesheet_FINAL 1_69
+  - first:
+      213: -951006261376959865
+    second: NPCCustomerSpritesheet_FINAL 1_70
+  - first:
+      213: 1074021498036796457
+    second: NPCCustomerSpritesheet_FINAL 1_71
+  - first:
+      213: 8919194233191423194
+    second: NPCCustomerSpritesheet_FINAL 1_72
+  - first:
+      213: 5189990312107568533
+    second: NPCCustomerSpritesheet_FINAL 1_73
+  - first:
+      213: -8677749129465693571
+    second: NPCCustomerSpritesheet_FINAL 1_74
+  - first:
+      213: 4230367085042280353
+    second: NPCCustomerSpritesheet_FINAL 1_75
+  - first:
+      213: 3256126243625889363
+    second: NPCCustomerSpritesheet_FINAL 1_76
+  - first:
+      213: -6372855723569182125
+    second: NPCCustomerSpritesheet_FINAL 1_77
+  - first:
+      213: -1674745566997765450
+    second: NPCCustomerSpritesheet_FINAL 1_78
+  - first:
+      213: 6713064614610119293
+    second: NPCCustomerSpritesheet_FINAL 1_79
+  - first:
+      213: 7577533623048121427
+    second: NPCCustomerSpritesheet_FINAL 1_80
+  - first:
+      213: -5163631896158127994
+    second: NPCCustomerSpritesheet_FINAL 1_81
+  - first:
+      213: -7541176062681059757
+    second: NPCCustomerSpritesheet_FINAL 1_82
+  - first:
+      213: -8767352696204894856
+    second: NPCCustomerSpritesheet_FINAL 1_83
+  - first:
+      213: -2136201044744108395
+    second: NPCCustomerSpritesheet_FINAL 1_84
+  - first:
+      213: -3236439174317514229
+    second: NPCCustomerSpritesheet_FINAL 1_85
+  - first:
+      213: 802033603450881821
+    second: NPCCustomerSpritesheet_FINAL 1_86
+  - first:
+      213: -1117927819277311340
+    second: NPCCustomerSpritesheet_FINAL 1_87
+  - first:
+      213: 3998133007422075652
+    second: NPCCustomerSpritesheet_FINAL 1_88
+  - first:
+      213: 7657030906753132938
+    second: NPCCustomerSpritesheet_FINAL 1_89
+  - first:
+      213: 6317610387664083896
+    second: NPCCustomerSpritesheet_FINAL 1_90
+  - first:
+      213: -8969080859674402937
+    second: NPCCustomerSpritesheet_FINAL 1_91
+  - first:
+      213: -8822138347217683370
+    second: NPCCustomerSpritesheet_FINAL 1_92
+  - first:
+      213: 331512213999008770
+    second: NPCCustomerSpritesheet_FINAL 1_93
+  - first:
+      213: -4042463893308128174
+    second: NPCCustomerSpritesheet_FINAL 1_94
+  - first:
+      213: -6427124502562308643
+    second: NPCCustomerSpritesheet_FINAL 1_95
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NPCRedSit1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 7
+        width: 20
+        height: 53
+      alignment: 9
+      pivot: {x: 0.19, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35cac53ceaec82960800000000000000
+      internalID: 7577533623048121427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCRedSit2
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 7
+        width: 20
+        height: 53
+      alignment: 9
+      pivot: {x: 0.19, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6883e9606281758b0800000000000000
+      internalID: -5163631896158127994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCGreenSit1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 7
+        width: 20
+        height: 53
+      alignment: 9
+      pivot: {x: 0.19, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35e673b635c585790800000000000000
+      internalID: -7541176062681059757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCGreenSit2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 7
+        width: 20
+        height: 53
+      alignment: 9
+      pivot: {x: 0.19, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87dd42a9c2b145680800000000000000
+      internalID: -8767352696204894856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCPinkSit1
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 7
+        width: 20
+        height: 53
+      alignment: 9
+      pivot: {x: 0.19, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5968537c770ba52e0800000000000000
+      internalID: -2136201044744108395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCPinkSit2
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 7
+        width: 20
+        height: 53
+      alignment: 9
+      pivot: {x: 0.19, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0265a5e7bbd513d0800000000000000
+      internalID: -3236439174317514229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCLightBlueSit1
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 7
+        width: 20
+        height: 53
+      alignment: 9
+      pivot: {x: 0.19, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d17cd9f1055612b00800000000000000
+      internalID: 802033603450881821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCLightBlueSit2
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 7
+        width: 20
+        height: 53
+      alignment: 9
+      pivot: {x: 0.19, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 492e27742925c70f0800000000000000
+      internalID: -1117927819277311340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCYellowSit1
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 7
+        width: 20
+        height: 53
+      alignment: 9
+      pivot: {x: 0.19, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 403382889c83c7730800000000000000
+      internalID: 3998133007422075652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCYellowSit2
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 7
+        width: 20
+        height: 53
+      alignment: 9
+      pivot: {x: 0.19, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a89253f7a0d334a60800000000000000
+      internalID: 7657030906753132938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCOrangeSit1
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 7
+        width: 20
+        height: 53
+      alignment: 9
+      pivot: {x: 0.19, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bb190aec29aca750800000000000000
+      internalID: 6317610387664083896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCOrangeSit2
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 7
+        width: 20
+        height: 53
+      alignment: 9
+      pivot: {x: 0.19, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78f1a557a7c678380800000000000000
+      internalID: -8969080859674402937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCBlueSit1
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 7
+        width: 20
+        height: 53
+      alignment: 9
+      pivot: {x: 0.19, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65cfcb63ae7719580800000000000000
+      internalID: -8822138347217683370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCBlueSit2
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 7
+        width: 20
+        height: 53
+      alignment: 9
+      pivot: {x: 0.19, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20c3d1a2a94c99400800000000000000
+      internalID: 331512213999008770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCPurpleSit1
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 7
+        width: 20
+        height: 53
+      alignment: 9
+      pivot: {x: 0.19, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 254c606c18846e7c0800000000000000
+      internalID: -4042463893308128174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPCPurpleSit2
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 7
+        width: 20
+        height: 53
+      alignment: 9
+      pivot: {x: 0.19, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddd709931544ec6a0800000000000000
+      internalID: -6427124502562308643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 151a754206a32e24596bf10c2f8cb8aa
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      NPCBlueSit1: -8822138347217683370
+      NPCBlueSit2: 331512213999008770
+      NPCCustomerSpritesheet_FINAL 1_0: 7747330885489791001
+      NPCCustomerSpritesheet_FINAL 1_1: 7796010226152795835
+      NPCCustomerSpritesheet_FINAL 1_10: 7452234510082027927
+      NPCCustomerSpritesheet_FINAL 1_11: 8206830796397292517
+      NPCCustomerSpritesheet_FINAL 1_12: -7220837458043071388
+      NPCCustomerSpritesheet_FINAL 1_13: 4566896717265949375
+      NPCCustomerSpritesheet_FINAL 1_14: 7219783513585037393
+      NPCCustomerSpritesheet_FINAL 1_15: 5198195218126916412
+      NPCCustomerSpritesheet_FINAL 1_16: -2085196954933254244
+      NPCCustomerSpritesheet_FINAL 1_17: 6095548596610067820
+      NPCCustomerSpritesheet_FINAL 1_18: -211106595731031002
+      NPCCustomerSpritesheet_FINAL 1_19: 6220444133614358534
+      NPCCustomerSpritesheet_FINAL 1_2: 5847406343853562246
+      NPCCustomerSpritesheet_FINAL 1_20: -1815400846669284585
+      NPCCustomerSpritesheet_FINAL 1_21: -1970771760017625543
+      NPCCustomerSpritesheet_FINAL 1_22: -1387375783033102837
+      NPCCustomerSpritesheet_FINAL 1_23: 4389857557536644451
+      NPCCustomerSpritesheet_FINAL 1_24: -3927885802035680234
+      NPCCustomerSpritesheet_FINAL 1_25: -696980340617460412
+      NPCCustomerSpritesheet_FINAL 1_26: 7809705424596869129
+      NPCCustomerSpritesheet_FINAL 1_27: -1157283439340690263
+      NPCCustomerSpritesheet_FINAL 1_28: -8892481429680305727
+      NPCCustomerSpritesheet_FINAL 1_29: -6000042689637864372
+      NPCCustomerSpritesheet_FINAL 1_3: 6382927299870218240
+      NPCCustomerSpritesheet_FINAL 1_30: -3324069147901356617
+      NPCCustomerSpritesheet_FINAL 1_31: -2156566372565818840
+      NPCCustomerSpritesheet_FINAL 1_32: -2948006829581617325
+      NPCCustomerSpritesheet_FINAL 1_33: -259070793960552278
+      NPCCustomerSpritesheet_FINAL 1_34: 5582203713041837125
+      NPCCustomerSpritesheet_FINAL 1_35: -8390463084306609274
+      NPCCustomerSpritesheet_FINAL 1_36: 6346650823502961400
+      NPCCustomerSpritesheet_FINAL 1_37: -3884325900262961467
+      NPCCustomerSpritesheet_FINAL 1_38: 7036318142807317029
+      NPCCustomerSpritesheet_FINAL 1_39: 2702319320182547623
+      NPCCustomerSpritesheet_FINAL 1_4: -4534343589699928989
+      NPCCustomerSpritesheet_FINAL 1_40: -4257297595035498728
+      NPCCustomerSpritesheet_FINAL 1_41: 8710662187667905579
+      NPCCustomerSpritesheet_FINAL 1_42: -4225345852996264853
+      NPCCustomerSpritesheet_FINAL 1_43: -526754544120260878
+      NPCCustomerSpritesheet_FINAL 1_44: -7631869814716111827
+      NPCCustomerSpritesheet_FINAL 1_45: 4996752585561696233
+      NPCCustomerSpritesheet_FINAL 1_46: 5261499866751340905
+      NPCCustomerSpritesheet_FINAL 1_47: 4806811868756007328
+      NPCCustomerSpritesheet_FINAL 1_48: -5358820270836956585
+      NPCCustomerSpritesheet_FINAL 1_49: -1328503536119897524
+      NPCCustomerSpritesheet_FINAL 1_5: -4014763176991402688
+      NPCCustomerSpritesheet_FINAL 1_50: 242895891770391175
+      NPCCustomerSpritesheet_FINAL 1_51: -3643250249644321115
+      NPCCustomerSpritesheet_FINAL 1_52: -482148776633865259
+      NPCCustomerSpritesheet_FINAL 1_53: 2778212298751267182
+      NPCCustomerSpritesheet_FINAL 1_54: -1608657491385269379
+      NPCCustomerSpritesheet_FINAL 1_55: 2810048119424697698
+      NPCCustomerSpritesheet_FINAL 1_56: -4350174854198704101
+      NPCCustomerSpritesheet_FINAL 1_57: -597833307444699915
+      NPCCustomerSpritesheet_FINAL 1_58: 6948735193904413146
+      NPCCustomerSpritesheet_FINAL 1_59: 1044572280149592113
+      NPCCustomerSpritesheet_FINAL 1_6: 488451709714188417
+      NPCCustomerSpritesheet_FINAL 1_60: 7672651685592511018
+      NPCCustomerSpritesheet_FINAL 1_61: 977271302380345748
+      NPCCustomerSpritesheet_FINAL 1_62: 1450370060561054747
+      NPCCustomerSpritesheet_FINAL 1_63: -2453932756937341173
+      NPCCustomerSpritesheet_FINAL 1_64: 1934132094983858978
+      NPCCustomerSpritesheet_FINAL 1_65: 4710373680053530246
+      NPCCustomerSpritesheet_FINAL 1_66: 8999515175251062366
+      NPCCustomerSpritesheet_FINAL 1_67: 904426998765650767
+      NPCCustomerSpritesheet_FINAL 1_68: 6114476399756357768
+      NPCCustomerSpritesheet_FINAL 1_69: -7579571414762857081
+      NPCCustomerSpritesheet_FINAL 1_7: -3150549057251249298
+      NPCCustomerSpritesheet_FINAL 1_70: -951006261376959865
+      NPCCustomerSpritesheet_FINAL 1_71: 1074021498036796457
+      NPCCustomerSpritesheet_FINAL 1_72: 8919194233191423194
+      NPCCustomerSpritesheet_FINAL 1_73: 5189990312107568533
+      NPCCustomerSpritesheet_FINAL 1_74: -8677749129465693571
+      NPCCustomerSpritesheet_FINAL 1_75: 4230367085042280353
+      NPCCustomerSpritesheet_FINAL 1_76: 3256126243625889363
+      NPCCustomerSpritesheet_FINAL 1_77: -6372855723569182125
+      NPCCustomerSpritesheet_FINAL 1_78: -1674745566997765450
+      NPCCustomerSpritesheet_FINAL 1_79: 6713064614610119293
+      NPCCustomerSpritesheet_FINAL 1_8: 7436908504820746531
+      NPCCustomerSpritesheet_FINAL 1_9: -1441199120943705764
+      NPCGreenSit1: -7541176062681059757
+      NPCGreenSit2: -8767352696204894856
+      NPCLightBlueSit1: 802033603450881821
+      NPCLightBlueSit2: -1117927819277311340
+      NPCOrangeSit1: 6317610387664083896
+      NPCOrangeSit2: -8969080859674402937
+      NPCPinkSit1: -2136201044744108395
+      NPCPinkSit2: -3236439174317514229
+      NPCPurpleSit1: -4042463893308128174
+      NPCPurpleSit2: -6427124502562308643
+      NPCRedSit1: 7577533623048121427
+      NPCRedSit2: -5163631896158127994
+      NPCYellowSit1: 3998133007422075652
+      NPCYellowSit2: 7657030906753132938
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

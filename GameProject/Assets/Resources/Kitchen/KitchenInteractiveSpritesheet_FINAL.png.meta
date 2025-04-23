@@ -1,0 +1,438 @@
+fileFormatVersion: 2
+guid: 33622caebe74b0540af4862c06e9909d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6454056672252060862
+    second: KitchenInteractiveSpritesheet_FINAL_0
+  - first:
+      213: 6225706421484582047
+    second: KitchenInteractiveSpritesheet_FINAL_1
+  - first:
+      213: 6549644106551439007
+    second: KitchenInteractiveSpritesheet_FINAL_2
+  - first:
+      213: -4415492358203066821
+    second: KitchenInteractiveSpritesheet_FINAL_3
+  - first:
+      213: -3138019937568719188
+    second: KitchenInteractiveSpritesheet_FINAL_4
+  - first:
+      213: -4758001655995770546
+    second: KitchenInteractiveSpritesheet_FINAL_5
+  - first:
+      213: 6692808716407576128
+    second: KitchenInteractiveSpritesheet_FINAL_6
+  - first:
+      213: -8685729274359952258
+    second: KitchenInteractiveSpritesheet_FINAL_7
+  - first:
+      213: -6091700292850079921
+    second: KitchenInteractiveSpritesheet_FINAL_8
+  - first:
+      213: -44062165348598966
+    second: KitchenInteractiveSpritesheet_FINAL_9
+  - first:
+      213: 8626025269090621413
+    second: KitchenInteractiveSpritesheet_FINAL_10
+  - first:
+      213: 6163926057465241686
+    second: KitchenInteractiveSpritesheet_FINAL_11
+  - first:
+      213: 3222780125413779688
+    second: KitchenInteractiveSpritesheet_FINAL_12
+  - first:
+      213: -4311251595677199265
+    second: KitchenInteractiveSpritesheet_FINAL_13
+  - first:
+      213: -5421073401478447597
+    second: KitchenInteractiveSpritesheet_FINAL_14
+  - first:
+      213: 5524581035742581066
+    second: KitchenInteractiveSpritesheet_FINAL_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ChoppingBoard_Idle
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 323
+        width: 32
+        height: 57
+      alignment: 9
+      pivot: {x: 0.6, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91106af5b98eedb4295923e260c69cf4
+      internalID: -254243006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoBowl_Idle
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 356
+        width: 31
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dbf6476bc5c6d746a05a15db0d9c515
+      internalID: -823685002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SushiRollingMat_Idle
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 299
+        width: 45
+        height: 68
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bf72b45ae5f22e4e88133ea2cce35d8
+      internalID: -1011849516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CookingPot_Idle
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 300
+        width: 35
+        height: 36
+      alignment: 9
+      pivot: {x: 0.45, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1864077e3b7a19340a9dfe1c25b37d91
+      internalID: -1025130468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChoppingBoard_Active
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 227
+        width: 32
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc10453697d53a044aa0a5f24d922510
+      internalID: -752310454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoBowl_Active
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 260
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8777ead819839b34db58f3928303830a
+      internalID: -1521873392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SushiRollingMat_Active
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 203
+        width: 45
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411e430b597045c4b9b87c8759d1c943
+      internalID: 845192475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KitchenInteractiveSpritesheet_FINAL_19
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 64
+        width: 64
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 225cc943f82a3ef479217d7b3bcc1604
+      internalID: -891787043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CookingPot_Active
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 204
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 259d39e9e5bd04448aed00201a796956
+      internalID: -1829471619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KitchenInteractiveSpritesheet_FINAL_24
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 39
+        width: 73
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a905ea8bb50e21943b25670c42529a19
+      internalID: 1702608426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 36e4189514fb20c4c8f2f3111c956580
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ChoppingBoard_Active: -752310454
+      ChoppingBoard_Idle: -254243006
+      CookingPot_Active: -1829471619
+      CookingPot_Idle: -1025130468
+      KitchenInteractiveSpritesheet_FINAL_10: -1231477938
+      KitchenInteractiveSpritesheet_FINAL_11: 535801781
+      KitchenInteractiveSpritesheet_FINAL_12: 405833256
+      KitchenInteractiveSpritesheet_FINAL_13: 1982862044
+      KitchenInteractiveSpritesheet_FINAL_14: 584421369
+      KitchenInteractiveSpritesheet_FINAL_18: -1627365907
+      KitchenInteractiveSpritesheet_FINAL_19: -891787043
+      KitchenInteractiveSpritesheet_FINAL_2: -1400115110
+      KitchenInteractiveSpritesheet_FINAL_21: 1139629822
+      KitchenInteractiveSpritesheet_FINAL_22: 1595386505
+      KitchenInteractiveSpritesheet_FINAL_23: 290343695
+      KitchenInteractiveSpritesheet_FINAL_24: 1702608426
+      KitchenInteractiveSpritesheet_FINAL_25: -1908846461
+      KitchenInteractiveSpritesheet_FINAL_26: -1783025852
+      KitchenInteractiveSpritesheet_FINAL_5: 1086701190
+      KitchenInteractiveSpritesheet_FINAL_6: -294052984
+      KitchenInteractiveSpritesheet_FINAL_7: -1386286407
+      KitchenInteractiveSpritesheet_FINAL_8: -1220468914
+      KitchenInteractiveSpritesheet_FINAL_9: 2134882096
+      PhoBowl_Active: -1521873392
+      PhoBowl_Idle: -823685002
+      SushiRollingMat_Active: 845192475
+      SushiRollingMat_Idle: -1011849516
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

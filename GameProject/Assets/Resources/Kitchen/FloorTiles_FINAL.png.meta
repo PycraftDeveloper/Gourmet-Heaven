@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 7f9c8763c3021db4286ba4db953ff126
+guid: 2f88625e94b90284b86da2dff6f6f119
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5185320819565850612
-    second: kitchen bottom_0
-  - first:
-      213: -6492126351585302233
-    second: kitchen bottom_1
+      213: -5741723583289086226
+    second: FloorTiles_FINAL_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,45 +126,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kitchen bottom_0
+      name: KitchenFloor
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 240
-        height: 253
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c001757003a0a08b0800000000000000
-      internalID: -5185320819565850612
+      spriteID: eee229b62dc4150b0800000000000000
+      internalID: -5741723583289086226
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kitchen bottom_1
+      name: TransitionFloor
       rect:
         serializedVersion: 2
-        x: 363
-        y: 0
-        width: 874
-        height: 253
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7292ec0ea7557e5a0800000000000000
-      internalID: -6492126351585302233
+      spriteID: 1372e18f0e527234594a89ac0ff47bd2
+      internalID: 1729666444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RestaurantFloor
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b256aff255721e04f8d505169b422b5f
+      internalID: -410541024
       vertices: []
       indices: 
       edges: []
@@ -176,7 +195,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: b2fa9e419eadc984880ef14c1b84d3e6
     internalID: 0
     vertices: []
     indices: 
@@ -186,8 +205,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      kitchen bottom_0: -5185320819565850612
-      kitchen bottom_1: -6492126351585302233
+      FloorTiles_FINAL_1: 1643268751
+      FloorTiles_FINAL_10: 654969235
+      FloorTiles_FINAL_11: 1530566144
+      FloorTiles_FINAL_2: 201198194
+      FloorTiles_FINAL_4: 1241444930
+      FloorTiles_FINAL_5: 46682256
+      FloorTiles_FINAL_7: 1155613474
+      FloorTiles_FINAL_8: -1988189817
+      FloorTiles_FINAL_9: 1362069104
+      KitchenFloor: -5741723583289086226
+      RestaurantFloor: -410541024
+      TransitionFloor: 1729666444
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

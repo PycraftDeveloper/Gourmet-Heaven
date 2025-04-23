@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: db36c3e93b2dfb74bb39e456d6a9d275
+guid: 5238e074bf8a1554d838ea3ab888f3f3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3969637068868898776
-    second: BackgroundTilesSpritesheet 1_0
+      213: -4759106915873724239
+    second: KitchenEnvironmentSpritesheet_FINAL_0
+  - first:
+      213: -7379999160280671779
+    second: KitchenEnvironmentSpritesheet_FINAL_1
+  - first:
+      213: -1857005741941137157
+    second: KitchenEnvironmentSpritesheet_FINAL_2
+  - first:
+      213: -2411919903032613570
+    second: KitchenEnvironmentSpritesheet_FINAL_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,7 +93,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,33 +119,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -152,7 +135,95 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KitchenFloorTEMP
+      name: KitchenEnvironmentSpritesheet_FINAL_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b8ed3f897144fdb0800000000000000
+      internalID: -4759106915873724239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KitchenEnvironmentSpritesheet_FINAL_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd91ac85dd9f49990800000000000000
+      internalID: -7379999160280671779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KitchenEnvironmentSpritesheet_FINAL_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf0ecb5dd179a36e0800000000000000
+      internalID: -1857005741941137157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KitchenEnvironmentSpritesheet_FINAL_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e35eb0980a3278ed0800000000000000
+      internalID: -2411919903032613570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KitchenEnvironmentSpritesheet_FINAL_4
       rect:
         serializedVersion: 2
         x: 0
@@ -165,16 +236,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 820b8de2e1409e8c0800000000000000
-      internalID: -3969637068868898776
+      spriteID: 1d1603c4e867d164a93b89bf9078b02a
+      internalID: -1738926848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarpetTEMP_001
+      name: KitchenEnvironmentSpritesheet_FINAL_5
       rect:
         serializedVersion: 2
         x: 32
@@ -189,14 +260,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10376ccba88724847b9467924dfef6d2
-      internalID: 1377190312
+      spriteID: c92020fe05ea301409432d9303c7c4d1
+      internalID: -971053220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarpetTEMP_004
+      name: KitchenEnvironmentSpritesheet_FINAL_6
       rect:
         serializedVersion: 2
         x: 64
@@ -211,14 +282,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbeff27427788014ba9c646fbcad00f9
-      internalID: 898479333
+      spriteID: 65e2c5ffe632f944e8c59d1d6e2c4011
+      internalID: 1133374720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WallTEMP
+      name: KitchenEnvironmentSpritesheet_FINAL_7
       rect:
         serializedVersion: 2
         x: 96
@@ -233,14 +304,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 752d9b7f9d448ac49b8d419bb32b06b7
-      internalID: -1911810516
+      spriteID: 2b3dc52c9bcdac44b859a8bee5619638
+      internalID: -1111463374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KitToRestTEMP
+      name: KitchenEnvironmentSpritesheet_FINAL_8
       rect:
         serializedVersion: 2
         x: 0
@@ -255,18 +326,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c561d3ed8de3d2a4d9f761f12df1f45f
-      internalID: -1081300361
+      spriteID: a2fdb4b6ad578e24280b3f26945f5075
+      internalID: -1329687525
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarpetTEMP_002
+      name: KitchenCarpet_005
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
+        x: 96
+        y: 16
         width: 32
         height: 32
       alignment: 0
@@ -277,14 +348,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7da2f837d75961647aa3985caff403d0
-      internalID: -1359381729
+      spriteID: bd1e1dfd89305f644a162db373b94674
+      internalID: -2029547580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarpetTEMP_005
+      name: KitchenCarpet_001
       rect:
         serializedVersion: 2
         x: 64
@@ -299,14 +370,36 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 785c8ecbad778514b968b0a9cb216aef
-      internalID: 2057656610
+      spriteID: 4cce021307192204badedf31521f670b
+      internalID: -175860170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RestaurantFloorTEMP
+      name: KitchenCarpet_003
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 768908dc0630f4e478889dbabb324ed0
+      internalID: -448586877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KitchenWall
       rect:
         serializedVersion: 2
         x: 0
@@ -321,36 +414,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1e10d9d32103b54da38ec086526f3dc
-      internalID: -1812791808
+      spriteID: ba788c6d1e132e24e8a7742394a0a161
+      internalID: 390981841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarpetTEMP_003
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34cc528d5b424f14db623d8b67856844
-      internalID: 188517981
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CarpetTEMP_006
+      name: KitchenCarpet_002
       rect:
         serializedVersion: 2
         x: 64
@@ -365,8 +436,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7a66c73e3c5628469c6091d1e49919f
-      internalID: -1920554249
+      spriteID: 571f00bf9906d2f42902227729577d1b
+      internalID: -1679639296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KitchenCarpet_004
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f9605f7695ce44d8ac1f5b71dfe164
+      internalID: -1545000678
       vertices: []
       indices: 
       edges: []
@@ -375,7 +468,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d0db997fcb20f084f9eaf55c9a2e4bfe
+    spriteID: 9a33ae6480882364e945871bc46023aa
     internalID: 0
     vertices: []
     indices: 
@@ -385,16 +478,21 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CarpetTEMP_001: 1377190312
-      CarpetTEMP_002: -1359381729
-      CarpetTEMP_003: 188517981
-      CarpetTEMP_004: 898479333
-      CarpetTEMP_005: 2057656610
-      CarpetTEMP_006: -1920554249
-      KitToRestTEMP: -1081300361
-      KitchenFloorTEMP: -3969637068868898776
-      RestaurantFloorTEMP: -1812791808
-      WallTEMP: -1911810516
+      KitchenCarpet_001: -175860170
+      KitchenCarpet_002: -1679639296
+      KitchenCarpet_003: -448586877
+      KitchenCarpet_004: -1545000678
+      KitchenCarpet_005: -2029547580
+      KitchenEnvironmentSpritesheet_FINAL_0: -4759106915873724239
+      KitchenEnvironmentSpritesheet_FINAL_1: -7379999160280671779
+      KitchenEnvironmentSpritesheet_FINAL_2: -1857005741941137157
+      KitchenEnvironmentSpritesheet_FINAL_3: -2411919903032613570
+      KitchenEnvironmentSpritesheet_FINAL_4: -1738926848
+      KitchenEnvironmentSpritesheet_FINAL_5: -971053220
+      KitchenEnvironmentSpritesheet_FINAL_6: 1133374720
+      KitchenEnvironmentSpritesheet_FINAL_7: -1111463374
+      KitchenEnvironmentSpritesheet_FINAL_8: -1329687525
+      KitchenWall: 390981841
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
