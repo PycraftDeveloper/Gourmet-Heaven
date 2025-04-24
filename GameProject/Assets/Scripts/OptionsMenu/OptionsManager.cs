@@ -39,5 +39,10 @@ public class OptionsMenuManagerScript : MonoBehaviour
         PlayerControlsSwitchButtonText.text = Registry.JoystickScreenPosition;
         Registry.SFXVolume = SFXSlider.value;
         Registry.MusicVolume = MusicSlider.value;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OnBackButtonClicked();
+        }
     }
 }

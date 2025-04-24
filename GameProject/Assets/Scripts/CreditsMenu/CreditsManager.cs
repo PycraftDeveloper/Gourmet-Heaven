@@ -6,4 +6,12 @@ public class CreditsMenuManagerScript : MonoBehaviour
     {
         Registry.GameManagerObject.ChangeScene();
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OnBackButtonClicked();
+        }
+    }
 }
