@@ -297,7 +297,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CashRegister
+      name: CashRegister_Idle
       rect:
         serializedVersion: 2
         x: 4
@@ -486,7 +486,6 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CashRegister: 1847779970919403258
       KitchenCertificate: -1823325720734320574
       KitchenEggTimer: -3495836535525076721
       KitchenKnives_001: -1845192244715470570
@@ -500,6 +499,7 @@ TextureImporter:
       KitchenSushi_002: -4306874123500572018
       KitchenSushi_003: 8050858872600026963
       KitchenTray: -4277595060825346742
+      _Idle: 1847779970919403258
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

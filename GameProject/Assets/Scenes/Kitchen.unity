@@ -700,7 +700,7 @@ TilemapRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.453125, y: 0.975, z: 0}
+  m_ChunkCullingBounds: {x: 0.453125, y: 1.075, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -739,7 +739,7 @@ Tilemap:
   - first: {x: 0, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 9
+      m_TileIndex: 13
       m_TileSpriteIndex: 13
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -796,16 +796,16 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 83215a71f51ee7149b74a9112c43ebab, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 8ae01d37ef29e12459f3a441a55469e3, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 9cf8da8539069a54c8739068db0ab3fc, type: 2}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: c52ed72775b61e44c995a385e605340c, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: ca3ddaa0ca82cbf428dad49c05d037bd, type: 2}
   - m_RefCount: 1
@@ -940,7 +940,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {r: 1.08093e-40, g: 1.08093e-40, b: 1.08093e-40, a: 1.08093e-40}
   - m_RefCount: 0
-    m_Data: {r: 1.15607e-40, g: 1.15607e-40, b: 1.15607e-40, a: 1.15607e-40}
+    m_Data: {r: 6.3821e-41, g: 6.3821e-41, b: 6.3821e-41, a: 6.3821e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2822,16 +2822,16 @@ MonoBehaviour:
     Idle: {fileID: 11400000, guid: c52ed72775b61e44c995a385e605340c, type: 2}
     Active: {fileID: 11400000, guid: 7897fdf70d87d5b49a4a2e3422a7d7a4, type: 2}
   ChoppingBoard:
-    Idle: {fileID: 0}
+    Idle: {fileID: 11400000, guid: e84183ecbd2a2bc42b351852f3a7a3a6, type: 2}
     Active: {fileID: 11400000, guid: 18ab45c8859574b47a045238ac284b11, type: 2}
   PhoBowl:
-    Idle: {fileID: 0}
+    Idle: {fileID: 11400000, guid: 6fd26e1769e27e04896e48d1aab0ce40, type: 2}
     Active: {fileID: 11400000, guid: 8e0e84242379e5f49a5633eedbfb8ca3, type: 2}
   CookingPot:
-    Idle: {fileID: 0}
+    Idle: {fileID: 11400000, guid: 1310e49f89955dc45b223b9215e20e5c, type: 2}
     Active: {fileID: 11400000, guid: 16b2392aa6081e740a9bdcaec9960620, type: 2}
   SushiRollingMat:
-    Idle: {fileID: 0}
+    Idle: {fileID: 11400000, guid: e67f37d25af85a54f8906bd8c7673094, type: 2}
     Active: {fileID: 11400000, guid: fa475746bc0f9cd47afe26668a43220d, type: 2}
   AboveApplianceTileMap: {fileID: 135725507}
   BehindApplianceTileMap: {fileID: 1465327081}

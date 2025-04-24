@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: CashRegister_Idle
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1106750763081631315, guid: d2c672408441a2a4196d28142c08ad42, type: 3}
+  m_Sprite: {fileID: 1847779970919403258, guid: 6d816cd9645af874d9510c6a2e791ebd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
