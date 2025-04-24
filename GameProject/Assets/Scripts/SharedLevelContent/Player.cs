@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public Sprite[] IdleApplianceSprites = new Sprite[4];
-    public Sprite[] ActivatedApplianceSprites = new Sprite[4];
     public GameObject[] AppliancePopUpMessages = new GameObject[5];
 
     private Renderer PlayerSprite;
@@ -170,6 +168,42 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Vector2 JoystickInputMagnitude = JoystickInput.JoystickOffsetMagnitude;
+
+        float modified_x_position = JoystickInputMagnitude.x * Constants.PLAYER_MOVEMENT_SPEED * Time.deltaTime;
+        float modified_y_position = JoystickInputMagnitude.y * Constants.PLAYER_MOVEMENT_SPEED * Time.deltaTime;
+
+        Vector3 proposed_position = new Vector3(PlayerRigidBody.position.x + modified_x_position, PlayerRigidBody.position.y + modified_y_position, 0);
+
+        float minimum_y = -ScreenDimensions.y + SpriteSize.y;
+        float maximum_y = ScreenDimensions.y - SpriteSize.y;
+
+        proposed_position.x = Mathf.Clamp(proposed_position.x, -ScreenDimensions.x + SpriteSize.x, ScreenDimensions.x - SpriteSize.x);
+        proposed_position.y = Mathf.Clamp(proposed_position.y, minimum_y, maximum_y);
+
+        if (proposed_position.x > -4.46 && proposed_position.x < -2.56)
+        {
+            if (proposed_position.y == minimum_y && Registry.CurrentSceneName == Constants.KITCHEN)
+            {
+                Registry.GameManagerObject.ChangeScene(Constants.RESTAURANT);
+
+                proposed_position.y = maximum_y - 0.01f;
+            }
+            else if (proposed_position.y == maximum_y && Registry.CurrentSceneName == Constants.RESTAURANT)
+            {
+                Registry.GameManagerObject.ChangeScene(Constants.KITCHEN);
+
+                proposed_position.y = minimum_y + 0.01f;
+            }
+        }
+        PlayerRigidBody.MovePosition(proposed_position);
+        //transform.position = proposed_position;
+        PlayerSprite.sortingOrder = RenderPriority;
+    }
+
+    // Update is called once per frame
+    private void Update()
+    {
         if (SceneChanged)
         {
             SceneChanged = false;
@@ -200,43 +234,7 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        Vector2 JoystickInputMagnitude = JoystickInput.JoystickOffsetMagnitude;
 
-        float modified_x_position = JoystickInputMagnitude.x * Constants.PLAYER_MOVEMENT_SPEED * Time.deltaTime;
-        float modified_y_position = JoystickInputMagnitude.y * Constants.PLAYER_MOVEMENT_SPEED * Time.deltaTime;
-
-        Vector3 proposed_position = new Vector3(PlayerRigidBody.position.x + modified_x_position, PlayerRigidBody.position.y + modified_y_position, 0);
-
-        float minimum_y = -ScreenDimensions.y + SpriteSize.y;
-        float maximum_y = ScreenDimensions.y - SpriteSize.y;
-
-        proposed_position.x = Mathf.Clamp(proposed_position.x, -ScreenDimensions.x + SpriteSize.x, ScreenDimensions.x - SpriteSize.x);
-        proposed_position.y = Mathf.Clamp(proposed_position.y, minimum_y, maximum_y);
-
-        if (proposed_position.x > -4.46 && proposed_position.x < -2.56)
-        {
-            if (proposed_position.y == minimum_y && Registry.CurrentSceneName == Constants.KITCHEN)
-            {
-                Registry.GameManagerObject.ChangeScene(Constants.RESTAURANT);
-
-                proposed_position.y = maximum_y - 0.01f;
-            }
-            else if (proposed_position.y == maximum_y && Registry.CurrentSceneName == Constants.RESTAURANT)
-            {
-                Registry.GameManagerObject.ChangeScene(Constants.KITCHEN);
-
-                proposed_position.y = minimum_y + 0.01f;
-            }
-        }
-
-        PlayerRigidBody.MovePosition(proposed_position);
-        //transform.position = proposed_position;
-        PlayerSprite.sortingOrder = RenderPriority;
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
         Vector2 JoystickInputMagnitude = JoystickInput.JoystickOffsetMagnitude;
 
         if (Mathf.Min(JoystickInputMagnitude.x, JoystickInputMagnitude.y) == 0)

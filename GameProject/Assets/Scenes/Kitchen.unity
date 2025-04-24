@@ -1168,7 +1168,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -3698,6 +3698,16 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
+      m_TileSpriteIndex: 11
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -6, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 11
       m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -3708,7 +3718,17 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 8
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -4, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 10
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3718,7 +3738,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 8
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 10
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3734,37 +3754,17 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 3, y: 3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 11
-      m_TileSpriteIndex: 11
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 4, y: 3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 10
-      m_TileSpriteIndex: 10
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: -7, y: 4, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 14
-      m_TileSpriteIndex: 14
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -4, y: 4, z: 0}
+  - first: {x: -3, y: 4, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 15
@@ -3815,22 +3815,22 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: e84183ecbd2a2bc42b351852f3a7a3a6, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: e20fa5ec02068724f9ccf49fe4603c35, type: 2}
+    m_Data: {fileID: 11400000, guid: 43a2e9162879c4a4388c7644a418e8df, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 29bb9dc2af00aa046be6f9cfb91b6323, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 43a2e9162879c4a4388c7644a418e8df, type: 2}
+    m_Data: {fileID: 11400000, guid: e20fa5ec02068724f9ccf49fe4603c35, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: e2a17d4704453464981c39d7da8aa3b5, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
-    m_Data: {fileID: -823685002, guid: 33622caebe74b0540af4862c06e9909d, type: 3}
+    m_Data: {fileID: -496869649189437689, guid: 6d816cd9645af874d9510c6a2e791ebd, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1679639296, guid: 5238e074bf8a1554d838ea3ab888f3f3, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1011849516, guid: 33622caebe74b0540af4862c06e9909d, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -714311709, guid: 1d9cdb04ef55b1b49b246cfdf0c2e756, type: 3}
+    m_Data: {fileID: -6143187750995841318, guid: 6d816cd9645af874d9510c6a2e791ebd, type: 3}
   - m_RefCount: 12
     m_Data: {fileID: -448586877, guid: 5238e074bf8a1554d838ea3ab888f3f3, type: 3}
   - m_RefCount: 2
@@ -3840,23 +3840,23 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -1545000678, guid: 5238e074bf8a1554d838ea3ab888f3f3, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -3495836535525076721, guid: 6d816cd9645af874d9510c6a2e791ebd, type: 3}
+    m_Data: {fileID: -823685002, guid: 33622caebe74b0540af4862c06e9909d, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1025130468, guid: 33622caebe74b0540af4862c06e9909d, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -5684485987781702972, guid: 6d816cd9645af874d9510c6a2e791ebd, type: 3}
+    m_Data: {fileID: -3495836535525076721, guid: 6d816cd9645af874d9510c6a2e791ebd, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -6143187750995841318, guid: 6d816cd9645af874d9510c6a2e791ebd, type: 3}
+    m_Data: {fileID: -714311709, guid: 1d9cdb04ef55b1b49b246cfdf0c2e756, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 8050858872600026963, guid: 6d816cd9645af874d9510c6a2e791ebd, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -254243006, guid: 33622caebe74b0540af4862c06e9909d, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -1823325720734320574, guid: 6d816cd9645af874d9510c6a2e791ebd, type: 3}
+    m_Data: {fileID: -5684485987781702972, guid: 6d816cd9645af874d9510c6a2e791ebd, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1845192244715470570, guid: 6d816cd9645af874d9510c6a2e791ebd, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -496869649189437689, guid: 6d816cd9645af874d9510c6a2e791ebd, type: 3}
+    m_Data: {fileID: -1823325720734320574, guid: 6d816cd9645af874d9510c6a2e791ebd, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -4306874123500572018, guid: 6d816cd9645af874d9510c6a2e791ebd, type: 3}
   m_TileMatrixArray:
@@ -6847,7 +6847,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.68, y: 1}
+  m_Size: {x: 0.875, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &3732787660420000320
 GameObject:
@@ -7151,16 +7151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438417d537430f94db25dab29c946eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IdleApplianceSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  ActivatedApplianceSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   AppliancePopUpMessages:
   - {fileID: 45535377}
   - {fileID: 548114176}
@@ -7372,7 +7362,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8125, y: 1.78125}
+  m_Size: {x: 0.875, y: 1.78125}
   m_EdgeRadius: 0
 --- !u!4 &7448093599110531793
 Transform:

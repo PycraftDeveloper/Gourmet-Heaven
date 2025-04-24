@@ -5,6 +5,7 @@ public class DragDrop : MonoBehaviour
     private Vector3 OriginalPosition;
 
     private Camera mainCamera;
+
     private Collider2D Hitbox;
 
     public bool IsMovable = false;

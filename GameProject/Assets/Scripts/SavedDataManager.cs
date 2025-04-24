@@ -6,6 +6,7 @@ public class GameData
 {
     // This class stores a copy of registry entries to be saved/loaded from disk.
     public string JoystickScreenPosition = Constants.LEFT;
+
     public float MusicVolume = 0.8f;
     public float SFXVolume = 0.8f;
 }
@@ -14,6 +15,7 @@ public class SavedDataManager
 {
     // Used to save/load content from a save location - expand to save game progress.
     private string SaveFileLocation = Application.persistentDataPath;
+
     private string SaveFileName = "GameData.json";
     private string SavePath = "";
 
