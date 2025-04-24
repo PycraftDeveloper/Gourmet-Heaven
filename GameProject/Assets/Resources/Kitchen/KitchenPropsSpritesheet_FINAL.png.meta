@@ -165,7 +165,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KitchenPropsSpritesheet_FINAL_0
+      name: KitchenTray
       rect:
         serializedVersion: 2
         x: 2
@@ -495,11 +495,11 @@ TextureImporter:
       KitchenPepper: -4081433432241732548
       KitchenPhoBowls_001: -6143187750995841318
       KitchenPhoBowls_002: -5684485987781702972
-      KitchenPropsSpritesheet_FINAL_0: -4277595060825346742
       KitchenSalt: 7932617721208455897
       KitchenSushi_001: 5940719574352990656
       KitchenSushi_002: -4306874123500572018
       KitchenSushi_003: 8050858872600026963
+      KitchenTray: -4277595060825346742
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
