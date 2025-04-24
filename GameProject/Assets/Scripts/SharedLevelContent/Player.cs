@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public Sprite[] IdleApplianceSprites = new Sprite[4];
-    public Sprite[] ActivatedApplianceSprites = new Sprite[4];
     public GameObject[] AppliancePopUpMessages = new GameObject[5];
 
     private Renderer PlayerSprite;
