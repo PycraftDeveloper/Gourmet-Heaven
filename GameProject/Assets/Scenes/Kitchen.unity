@@ -3152,6 +3152,8 @@ MonoBehaviour:
   SushiRollingMat:
     Idle: {fileID: 11400000, guid: e67f37d25af85a54f8906bd8c7673094, type: 2}
     Active: {fileID: 11400000, guid: fa475746bc0f9cd47afe26668a43220d, type: 2}
+  UIScoreText: {fileID: 195314799}
+  UIDayText: {fileID: 49056236}
   AboveApplianceTileMap: {fileID: 135725507}
   BehindApplianceTileMap: {fileID: 1465327081}
   CustomersInScene: 0
