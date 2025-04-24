@@ -286,7 +286,6 @@ public class LevelManager : MonoBehaviour
                 yield return null;
             }
 
-            _Customer._CustomerCore.CurrentPosition = DestinationPosition;
             _Customer.SetAnimationState(Constants.CUSTOMER_IDLE_SIDE_ANIMATION);
         }
     }
