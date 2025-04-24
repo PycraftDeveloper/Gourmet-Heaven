@@ -203,6 +203,11 @@ public class GameManager : MonoBehaviour
             Registry.JoystickObject.OnSceneChanged();
         }
 
+        if (Registry.UIManagerObject != null)
+        {
+            Registry.UIManagerObject.OnSceneChanged();
+        }
+
         for (int i = Registry.Customers.Count - 1; i >= 0; i--)
         {
             CustomerCore thisCustomer = Registry.Customers[i].GetComponent<CustomerCore>();

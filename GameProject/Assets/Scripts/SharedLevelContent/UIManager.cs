@@ -12,12 +12,16 @@ public class UIManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            Registry.UIManagerObject.GetComponent<Canvas>().worldCamera = Camera.main;
         }
     }
 
     public void OnPauseButtonClick()
     {
         Registry.GameManagerObject.ChangeScene(Constants.PAUSE_MENU);
+    }
+
+    public void OnSceneChanged()
+    {
+        Registry.UIManagerObject.GetComponent<Canvas>().worldCamera = Camera.main;
     }
 }
