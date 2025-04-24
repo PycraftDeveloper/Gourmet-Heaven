@@ -6532,7 +6532,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.68, y: 1}
+  m_Size: {x: 0.875, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &3732787660420000320
 GameObject:
@@ -6836,16 +6836,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438417d537430f94db25dab29c946eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IdleApplianceSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  ActivatedApplianceSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   AppliancePopUpMessages:
   - {fileID: 45535377}
   - {fileID: 548114176}
@@ -7057,7 +7047,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8125, y: 1.78125}
+  m_Size: {x: 0.875, y: 1.78125}
   m_EdgeRadius: 0
 --- !u!4 &7448093599110531793
 Transform:

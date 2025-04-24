@@ -319,7 +319,7 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < Registry.Customers.Count; i++)
         {
             Customer thisCustomer = Registry.Customers[i].GetComponent<Customer>();
-            CustomerCore thisCustomerCore = thisCustomer._CustomerCore;
+            CustomerCore thisCustomerCore = Registry.Customers[i].GetComponent<CustomerCore>();
 
             if (thisCustomer == null)
             {
