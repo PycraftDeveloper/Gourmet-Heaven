@@ -202,10 +202,10 @@ public class LevelManager : MonoBehaviour
         }
 
         CacheRegister.ManageState(AboveApplianceTileMap);
-        ChoppingBoard.ManageState(AboveApplianceTileMap);
+        ChoppingBoard.ManageState(BehindApplianceTileMap);
         CookingPot.ManageState(BehindApplianceTileMap);
         PhoBowl.ManageState(BehindApplianceTileMap);
-        SushiRollingMat.ManageState(AboveApplianceTileMap);
+        SushiRollingMat.ManageState(BehindApplianceTileMap);
     }
 
     private void AssociateApplianceTilemap()
@@ -333,7 +333,7 @@ public class LevelManager : MonoBehaviour
             }
             else if (Registry.CurrentSceneName == Constants.RESTAURANT)
             {
-                thisCustomer.SetAnimationState(Constants.CUSTOMER_IDLE_SIDE_ANIMATION); // update with restaurant animation later
+                thisCustomer.SetAnimationState(Constants.CUSTOMER_IDLE_SIT_ANIMATION); // update with restaurant animation later
             }
         }
 
