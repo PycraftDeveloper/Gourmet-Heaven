@@ -6,4 +6,12 @@ public class ShopMenuManagerScript : MonoBehaviour
     {
         Registry.GameManagerObject.ChangeScene();
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OnBackButtonClick();
+        }
+    }
 }
