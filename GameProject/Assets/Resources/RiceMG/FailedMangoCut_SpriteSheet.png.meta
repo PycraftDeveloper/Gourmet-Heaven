@@ -1,13 +1,25 @@
 fileFormatVersion: 2
-guid: 02e32ca5b22bf4a4aaf2f955b721a697
+guid: f42dac13243c626448d543eb76d1f3d1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1129333277962703073
-    second: UI_Popups_0
+      213: -2269367515557829997
+    second: FailedMangoCut_SpriteSheet_0
   - first:
-      213: 2194631106867667508
-    second: UI_Popups_1
+      213: -4752474789741888157
+    second: FailedMangoCut_SpriteSheet_1
+  - first:
+      213: 3365085896308595045
+    second: FailedMangoCut_SpriteSheet_2
+  - first:
+      213: 6831212135104163186
+    second: FailedMangoCut_SpriteSheet_3
+  - first:
+      213: -3813436147944248572
+    second: FailedMangoCut_SpriteSheet_4
+  - first:
+      213: 6337386303098678430
+    second: FailedMangoCut_SpriteSheet_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -76,9 +88,9 @@ TextureImporter:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -87,7 +99,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -100,7 +112,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,7 +138,33 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -155,13 +193,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Popups_0
+      name: FailedMangoCut_SpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 74
-        y: 175
-        width: 470
-        height: 168
+        x: 11
+        y: 126
+        width: 79
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f1f610efd5dc350f0800000000000000
-      internalID: -1129333277962703073
+      spriteID: 3926d5aa4469180e0800000000000000
+      internalID: -2269367515557829997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_Popups_1
+      name: FailedMangoCut_SpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 76
-        y: 4
-        width: 470
-        height: 168
+        x: 99
+        y: 126
+        width: 79
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,8 +230,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 432aed13d55e47e10800000000000000
-      internalID: 2194631106867667508
+      spriteID: 36d7f61cb51db0eb0800000000000000
+      internalID: -4752474789741888157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FailedMangoCut_SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 126
+        width: 79
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56996203bcf23be20800000000000000
+      internalID: 3365085896308595045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FailedMangoCut_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 69
+        width: 79
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27da83a5e375dce50800000000000000
+      internalID: 6831212135104163186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FailedMangoCut_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 69
+        width: 79
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40b26242704f31bc0800000000000000
+      internalID: -3813436147944248572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FailedMangoCut_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 65
+        width: 80
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9c6f98044be2f750800000000000000
+      internalID: 6337386303098678430
       vertices: []
       indices: 
       edges: []
@@ -212,8 +338,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_Popups_0: -1129333277962703073
-      UI_Popups_1: 2194631106867667508
+      FailedMangoCut_SpriteSheet_0: -2269367515557829997
+      FailedMangoCut_SpriteSheet_1: -4752474789741888157
+      FailedMangoCut_SpriteSheet_2: 3365085896308595045
+      FailedMangoCut_SpriteSheet_3: 6831212135104163186
+      FailedMangoCut_SpriteSheet_4: -3813436147944248572
+      FailedMangoCut_SpriteSheet_5: 6337386303098678430
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

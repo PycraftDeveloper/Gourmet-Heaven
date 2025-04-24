@@ -18,10 +18,9 @@ public class SlicedObject : MonoBehaviour
     public GameObject arrowPrefab; // allows the arrow prefab to work and shows where the player needs to cut
     private GameObject currentArrow; // shows where the player needs to cut
     public GameObject SlicedRice;
-
-    public Vector3 spriteScale = new Vector3(1.5f, 1.5f, 1); // setting the sizes cut peices (will be changed to create another object, the fully sliced asset)
-
-    public Color pieceColor = Color.red; // setting the colour of the pieces (will be deleted once i have the fully sliced asset)
+    public GameObject WholeRice;
+    public GameObject CutRice;
+    
 
     [SerializeField] private CountdownTimer countdowntimer;
 
@@ -65,15 +64,32 @@ public class SlicedObject : MonoBehaviour
     }
 
     // creates and destroys the arrow prefab when the player does a successful slice
-    private void CreateArrow(Transform slicePoint)
+    private void CreateArrow(Transform currentPoint)
+{
+    if (currentArrow != null)
     {
-        if (currentArrow != null)
-        {
-            Destroy(currentArrow);
-        }
-        currentArrow = Instantiate(arrowPrefab, slicePoint.position, Quaternion.identity);
-        currentArrow.transform.up = randomDirections[currentSliceIndex];
+        Destroy(currentArrow);
     }
+
+    if (currentSliceIndex >= slicePoints.Length - 1) return;
+
+    Vector3 start = slicePoints[currentSliceIndex].position;
+    Vector3 end = slicePoints[currentSliceIndex + 1].position;
+    Vector3 direction = end - start;
+
+    // Instantiate arrow at the middle between the two points
+    Vector3 midPoint = (start + end) / 2f;
+    currentArrow = Instantiate(arrowPrefab, midPoint, Quaternion.identity);
+
+    // Rotate arrow to match direction
+    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    currentArrow.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+    // Scale arrow based on distance (make sure arrow prefab's default length is 1 unit wide)
+    float distance = direction.magnitude;
+    currentArrow.transform.localScale = new Vector3(distance, currentArrow.transform.localScale.y, 1f);
+}
+
 
     // checking to see if the direction of the slice is correct and if the player hits both of the slice points, shows the feedback text to indicate if they failed or successed
     public void TrySlice(Vector2 swipeStart, Vector2 swipeEnd)
@@ -88,12 +104,12 @@ public class SlicedObject : MonoBehaviour
 
         if (IsCorrectSliceDirection(swipeStart, swipeEnd))
         {
-            ShowMessage("Well Done!", Color.green);
+            ShowMessage("Well Done!");
             SliceObject();
         }
         else
         {
-            ShowMessage("Try Again!", Color.red);
+            ShowMessage("Try Again!");
         }
     }
 
@@ -110,12 +126,11 @@ public class SlicedObject : MonoBehaviour
     }
 
     // sets the feedback text message, colour and visibility
-    private void ShowMessage(string message, Color color)
+    private void ShowMessage(string message)
     {
         if (feedbackText != null)
         {
             feedbackText.text = message;
-            feedbackText.color = color;
             feedbackText.gameObject.SetActive(true);
             Invoke("HideMessage", 1.5f);
         }
@@ -137,7 +152,7 @@ public class SlicedObject : MonoBehaviour
         {
             isSliced = true;
             Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.audioClip3);
-            ShowMessage("Amazing!", Color.green);
+            ShowMessage("Amazing!");
             Debug.Log("Mango Fully Sliced!");
             Registry.PlayerObject.GetComponent<Player>().HoldingMeal = Constants.MANGO_STICKY_RICE;
 
@@ -146,7 +161,7 @@ public class SlicedObject : MonoBehaviour
                 countdowntimer.StopTimer();
             }
 
-            CreateSlicedPieces();
+           SwapToSliceAsset();
         }
         else
         {
@@ -160,47 +175,27 @@ public class SlicedObject : MonoBehaviour
         Registry.GameManagerObject.ChangeScene();
     }
 
-    // creates the sliced pieces (will be deleted after)
-    private void CreateSlicedPieces()
+    // swaps to the sliced asset
+       private void SwapToSliceAsset()
     {
-        for (int i = 0; i < 6; i++)
-        {
-            GameObject piece = new GameObject("SlicedPiece_" + i);
-            SpriteRenderer spriteRenderer = piece.AddComponent<SpriteRenderer>();
-
-            // create a simple object when the object is fully sliced (placeholder)
-            Texture2D texture = new Texture2D(100, 100);
-            for (int y = 0; y < 100; y++)
-            {
-                for (int x = 0; x < 100; x++)
-                {
-                    texture.SetPixel(x, y, pieceColor);
-                }
-            }
-            texture.Apply();
-
-            spriteRenderer.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-            spriteRenderer.sortingOrder = 5; // makes sure that the pieces renders on top of everything else(will be deleted)
-
-            piece.transform.position = transform.position + new Vector3(i * 0.3f - 0.8f, Random.Range(-0.2f, 0.2f), 0);
-            piece.transform.localScale = spriteScale;
-
-            // adds gravity to the pieces (will be deleted)
-            Rigidbody2D rb = piece.AddComponent<Rigidbody2D>();
-            BoxCollider2D boxCollider = piece.AddComponent<BoxCollider2D>();
-
-            rb.gravityScale = 1f;
-            rb.AddForce(new Vector2(Random.Range(-2f, 2f), Random.Range(2f, 5f)), ForceMode2D.Impulse);
-        }
-
-        // removes the arrow after slicing
         if (currentArrow != null)
         {
             Destroy(currentArrow);
         }
 
-        // destroys the original object after creating the sliced asset
-        Destroy(SlicedRice);
+        // Disable the whole rice asset
+        if (WholeRice != null)
+        {
+            WholeRice.SetActive(false);
+        }
+
+        // enable the cut asset
+        if (CutRice != null)
+        {
+            CutRice.SetActive(true);
+        }
+
+        // Return to kitchen after short delay
         Invoke("ReturnToKitchen", 4f);
     }
 }

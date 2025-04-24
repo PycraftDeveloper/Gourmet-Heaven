@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -46,6 +47,9 @@ public class LevelManager : MonoBehaviour
     public Appliance CookingPot;
     public Appliance SushiRollingMat;
 
+    public TextMeshProUGUI UIScoreText;
+    public TextMeshProUGUI UIDayText;
+
     // Below are the two tilemaps that create the illusion of depth. ONLY the CacheRegister is in the 'AboveApplianceTileMap'.
     public Tilemap AboveApplianceTileMap;
 
@@ -62,6 +66,11 @@ public class LevelManager : MonoBehaviour
     public GameObject[] CustomerTableArrangement = new GameObject[8]; // Stores the seating positions and where customers are currently seated in the restaurant scene.
 
     private bool ReturnToGameToggle = true; // Used to trigger a unique event when the player returns to the game scenes (Kitchen/Restaurant) from another menu, like the pause menu.
+
+    private void Start()
+    {
+        UIDayText.text = (Registry.LevelNumber + 1).ToString();
+    }
 
     private void SetupCustomerCoreForRestaurant(CustomerCore _CustomerCore, GameObject _Customer, int PositionIndex) // Used to set up the customer (both types) for the restaurant scene.
     {
@@ -286,7 +295,11 @@ public class LevelManager : MonoBehaviour
                 yield return null;
             }
 
-            _Customer._CustomerCore.CurrentPosition = DestinationPosition;
+            if (CurrentPosition.x - (Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime) < DestinationPosition.x)
+            {
+                _Customer._CustomerCore.CurrentPosition = DestinationPosition;
+            }
+
             _Customer.SetAnimationState(Constants.CUSTOMER_IDLE_SIDE_ANIMATION);
         }
     }
@@ -300,6 +313,8 @@ public class LevelManager : MonoBehaviour
             ReturnToGameToggle = true;
             return;
         }
+
+        UIScoreText.text = Registry.PlayerScore.ToString();
 
         CacheRegister.SetState(false);
         ChoppingBoard.SetState(false);
