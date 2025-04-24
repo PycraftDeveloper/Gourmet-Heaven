@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 732f4604197d2e54ea82a937d3e6e9b8
+guid: 890486c7d6463d2418f96e8fb5682676
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 601118956538574274
-    second: FlattJadeStudios_0
-  - first:
-      213: 5732722793302437986
-    second: FlattJadeStudios_1
+      213: -8657928073135384300
+    second: KitchenBin_001_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -49,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.2}
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,45 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FlattJadeStudios_0
+      name: KitchenBin_001_0
       rect:
         serializedVersion: 2
-        x: 239
-        y: 682
-        width: 31
-        height: 76
+        x: 22
+        y: 15
+        width: 20
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c53c30918a975800800000000000000
-      internalID: 601118956538574274
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FlattJadeStudios_1
-      rect:
-        serializedVersion: 2
-        x: 243
-        y: 424
-        width: 1805
-        height: 1165
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 260b39ad109be8f40800000000000000
-      internalID: 5732722793302437986
+      spriteID: 41912e50a4cd8d780800000000000000
+      internalID: -8657928073135384300
       vertices: []
       indices: 
       edges: []
@@ -176,8 +151,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -186,8 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FlattJadeStudios_0: 601118956538574274
-      FlattJadeStudios_1: 5732722793302437986
+      KitchenBin_001_0: -8657928073135384300
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
