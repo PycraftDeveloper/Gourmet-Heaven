@@ -429,13 +429,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_001 _4
+      name: PatienceMeter1
       rect:
         serializedVersion: 2
         x: 301
         y: 307
         width: 38
-        height: 25
+        height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -451,57 +451,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_001 _5
-      rect:
-        serializedVersion: 2
-        x: 307
-        y: 329
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eef85715972d5a640800000000000000
-      internalID: 5090706372311748590
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _6
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 329
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a22bcc08edb650dd0800000000000000
-      internalID: -2520489813056114134
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _7
+      name: PatienceMeter2
       rect:
         serializedVersion: 2
         x: 340
-        y: 308
+        y: 307
         width: 38
-        height: 25
+        height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -517,57 +473,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_001 _8
-      rect:
-        serializedVersion: 2
-        x: 346
-        y: 330
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8ae61816647f5bbe0800000000000000
-      internalID: -1461990622356214104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _9
-      rect:
-        serializedVersion: 2
-        x: 359
-        y: 330
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d3ae3f19722d474d0800000000000000
-      internalID: -3137651972976154051
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _10
+      name: PatienceMeter3
       rect:
         serializedVersion: 2
         x: 378
         y: 307
         width: 38
-        height: 25
+        height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -583,57 +495,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_001 _11
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 329
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8a6fcc6b2b5642bb0800000000000000
-      internalID: -4961729071209974104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _12
-      rect:
-        serializedVersion: 2
-        x: 397
-        y: 329
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f07da11410201c9f0800000000000000
-      internalID: -450076283349838065
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _13
+      name: PatienceMeter4
       rect:
         serializedVersion: 2
         x: 416
         y: 307
         width: 38
-        height: 25
+        height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -649,57 +517,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_001 _14
-      rect:
-        serializedVersion: 2
-        x: 422
-        y: 329
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 58d12726928264900800000000000000
-      internalID: 668265752921513349
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _15
-      rect:
-        serializedVersion: 2
-        x: 435
-        y: 329
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 95669dbfb1e5989d0800000000000000
-      internalID: -2771580621387372967
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _16
+      name: PatienceMeter5
       rect:
         serializedVersion: 2
         x: 455
         y: 307
         width: 38
-        height: 25
+        height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -715,57 +539,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_001 _17
-      rect:
-        serializedVersion: 2
-        x: 461
-        y: 329
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 575074506e82158e0800000000000000
-      internalID: -1706537815400577675
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _18
-      rect:
-        serializedVersion: 2
-        x: 474
-        y: 329
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7631d8df37c80e8c0800000000000000
-      internalID: -3972020441537768601
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _19
+      name: PatienceMeter6
       rect:
         serializedVersion: 2
         x: 494
         y: 307
         width: 38
-        height: 25
+        height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -776,50 +556,6 @@ TextureImporter:
       bones: []
       spriteID: 3b74312b69f60fb60800000000000000
       internalID: 7777839249492232115
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _20
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 329
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9c8a5eef6952fc0c0800000000000000
-      internalID: -4553379367796496183
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _21
-      rect:
-        serializedVersion: 2
-        x: 513
-        y: 329
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fbbdc2605986dec90800000000000000
-      internalID: -7138934845049349185
       vertices: []
       indices: 
       edges: []
@@ -869,13 +605,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_001 _24
+      name: PatienceMeter7
       rect:
         serializedVersion: 2
         x: 301
         y: 269
         width: 38
-        height: 25
+        height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -891,57 +627,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_001 _25
-      rect:
-        serializedVersion: 2
-        x: 307
-        y: 291
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ede06aac29a072d0800000000000000
-      internalID: -3282938119050957342
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _26
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 291
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ccf0a82c6cb442ff0800000000000000
-      internalID: -61841177836908596
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _27
+      name: PatienceMeter8
       rect:
         serializedVersion: 2
         x: 339
         y: 269
         width: 38
-        height: 25
+        height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -957,57 +649,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_001 _28
-      rect:
-        serializedVersion: 2
-        x: 345
-        y: 291
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 05a481437eaaec100800000000000000
-      internalID: 130229349228497488
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _29
-      rect:
-        serializedVersion: 2
-        x: 358
-        y: 291
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6cea632c167e1c690800000000000000
-      internalID: -7583525890458997050
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _30
+      name: PatienceMeter9
       rect:
         serializedVersion: 2
         x: 378
         y: 269
         width: 38
-        height: 25
+        height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1023,57 +671,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_001 _31
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 291
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 496fdbcf38ceb9480800000000000000
-      internalID: -8891252987687733612
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _32
-      rect:
-        serializedVersion: 2
-        x: 397
-        y: 291
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 367b36b4498d5cf20800000000000000
-      internalID: 3442395621626197859
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _33
+      name: PatienceMeter10
       rect:
         serializedVersion: 2
         x: 417
         y: 269
         width: 38
-        height: 25
+        height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1089,57 +693,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_001 _34
-      rect:
-        serializedVersion: 2
-        x: 423
-        y: 291
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8d01c3745b97d05c0800000000000000
-      internalID: -4247605054049349416
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _35
-      rect:
-        serializedVersion: 2
-        x: 436
-        y: 291
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d013e1dc1978842c0800000000000000
-      internalID: -4447155571747049203
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _36
+      name: PatienceMeter11
       rect:
         serializedVersion: 2
         x: 455
         y: 269
         width: 38
-        height: 25
+        height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1155,57 +715,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_001 _37
-      rect:
-        serializedVersion: 2
-        x: 461
-        y: 291
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a6bd637549bd4800800000000000000
-      internalID: 598338033450596007
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _38
-      rect:
-        serializedVersion: 2
-        x: 474
-        y: 291
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 40b61eeb59d05d4c0800000000000000
-      internalID: -4263486535432574204
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _39
+      name: PatienceMeter12
       rect:
         serializedVersion: 2
         x: 493
         y: 269
         width: 38
-        height: 25
+        height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1216,50 +732,6 @@ TextureImporter:
       bones: []
       spriteID: 1c0703d6f1fd67000800000000000000
       internalID: 33459373320728769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _40
-      rect:
-        serializedVersion: 2
-        x: 499
-        y: 291
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b65a2168e50cbe550800000000000000
-      internalID: 6191253624959706475
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _41
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 291
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8578f0ff07c0dfb70800000000000000
-      internalID: 8934310915228010328
       vertices: []
       indices: 
       edges: []
@@ -1353,13 +825,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_001 _46
+      name: PopUp_Mango
       rect:
         serializedVersion: 2
         x: 308
-        y: 211
+        y: 193
         width: 50
-        height: 48
+        height: 66
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1375,13 +847,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_001 _47
+      name: PopUp_Sushi
       rect:
         serializedVersion: 2
         x: 362
-        y: 214
+        y: 196
         width: 50
-        height: 48
+        height: 66
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1397,13 +869,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_001 _48
+      name: PopUp_BaoBuns
       rect:
         serializedVersion: 2
         x: 416
-        y: 215
+        y: 197
         width: 50
-        height: 48
+        height: 66
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1419,13 +891,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_001 _49
+      name: PopUp_Pho
       rect:
         serializedVersion: 2
         x: 470
-        y: 217
+        y: 199
         width: 50
-        height: 48
+        height: 66
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1463,270 +935,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_001 _51
-      rect:
-        serializedVersion: 2
-        x: 333
-        y: 201
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5d3c5e93859f0e7f0800000000000000
-      internalID: -585193794234367019
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _52
-      rect:
-        serializedVersion: 2
-        x: 382
-        y: 201
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d9b6bc654fb3c5d60800000000000000
-      internalID: 7880239368605756317
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _53
-      rect:
-        serializedVersion: 2
-        x: 387
-        y: 204
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 53bd5f9ba8d27b460800000000000000
-      internalID: 7257319398379477813
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _54
-      rect:
-        serializedVersion: 2
-        x: 436
-        y: 202
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9deb6eb78ba0c8270800000000000000
-      internalID: 8253984004532256473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _55
-      rect:
-        serializedVersion: 2
-        x: 441
-        y: 205
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 62d73df9c8abef610800000000000000
-      internalID: 1656966826058546470
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _56
-      rect:
-        serializedVersion: 2
-        x: 484
-        y: 199
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eb1ee3b714bc201b0800000000000000
-      internalID: -5691763496941854274
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _57
-      rect:
-        serializedVersion: 2
-        x: 490
-        y: 204
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 65df56c2dce3362c0800000000000000
-      internalID: -4439635756723077802
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _58
-      rect:
-        serializedVersion: 2
-        x: 495
-        y: 207
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dfa80d9111da25770800000000000000
-      internalID: 8598124927562844925
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _59
-      rect:
-        serializedVersion: 2
-        x: 322
-        y: 193
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 881ed936af2dfb8c0800000000000000
-      internalID: -3981231572717280888
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _60
-      rect:
-        serializedVersion: 2
-        x: 328
-        y: 198
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1559dd554c3a85360800000000000000
-      internalID: 7158651671354905937
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _61
-      rect:
-        serializedVersion: 2
-        x: 376
-        y: 196
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4f1f18a599d63e710800000000000000
-      internalID: 1721339988001550836
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_001 _62
-      rect:
-        serializedVersion: 2
-        x: 430
-        y: 197
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b9ac16888f96cf160800000000000000
-      internalID: 7060634831971011227
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: UI_001 _63
       rect:
         serializedVersion: 2
@@ -1748,28 +956,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: UI_001 _3
-      rect:
-        serializedVersion: 2
-        x: 293
-        y: 266
-        width: 243
-        height: 86
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ffcf16912cd5ff549baf2acb029cc9d2
-      internalID: -1098445612
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1786,9 +972,25 @@ TextureImporter:
     nameFileIdTable:
       Coin: 6332140142349395343
       DaySign: 7074652472848859445
+      PatienceMeter1: 6132273597890454778
+      PatienceMeter10: -8146599503339430338
+      PatienceMeter11: 868110853812921624
+      PatienceMeter12: 33459373320728769
+      PatienceMeter2: -620183830346597125
+      PatienceMeter3: 1609652407148663335
+      PatienceMeter4: 3370937641889961180
+      PatienceMeter5: -5839558733709536751
+      PatienceMeter6: 7777839249492232115
+      PatienceMeter7: -5244452712625600289
+      PatienceMeter8: -4399488935483398502
+      PatienceMeter9: -8304205327452604780
       Pause: -5774481130017856074
       PauseHighlighted: -3354344516539385609
       PausePressed: 6020623162303466775
+      PopUp_BaoBuns: -8595386451580591141
+      PopUp_Mango: -9010797769087207977
+      PopUp_Pho: -2266062759897836473
+      PopUp_Sushi: -7476332465184386974
       UI_001 _3: -1098445612
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
