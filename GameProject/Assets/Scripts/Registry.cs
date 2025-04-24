@@ -23,6 +23,7 @@ public static class Registry
     public static Player PlayerObject = null;
     public static Joystick JoystickObject = null;
     public static List<GameObject> Customers = new List<GameObject>();
+    public static UIManager UIManagerObject = null;
 
     public static LevelCustomiser LevelCustomerObject = new LevelCustomiser();
 }

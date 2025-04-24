@@ -232,6 +232,11 @@ public class GameManager : MonoBehaviour
 
         if (sceneName != Constants.KITCHEN || sceneName != Constants.RESTAURANT)
         {
+            if (Registry.UIManagerObject != null)
+            {
+                Registry.UIManagerObject.gameObject.SetActive(false);
+            }
+
             if (Registry.InGameLevel)
             {
                 Camera camera = Camera.main;
@@ -277,6 +282,14 @@ public class GameManager : MonoBehaviour
 
                 camera.targetTexture = null;
                 Graphics.SetRenderTarget(null);
+            }
+        }
+
+        if (sceneName == Constants.KITCHEN || sceneName == Constants.RESTAURANT)
+        {
+            if (Registry.UIManagerObject != null)
+            {
+                Registry.UIManagerObject.gameObject.SetActive(true);
             }
         }
 

@@ -131,23 +131,38 @@ public class Player : MonoBehaviour
         {
             if (Collider.name == "CashRegister_AreaDetector")
             {
-                AppliancePopUpMessages[0].SetActive(false);
+                if (AppliancePopUpMessages[0] != null)
+                {
+                    AppliancePopUpMessages[0].SetActive(false);
+                }
             }
             else if (Collider.name == "ChoppingBoard_AreaDetector")
             {
-                AppliancePopUpMessages[1].SetActive(false);
+                if (AppliancePopUpMessages[1] != null)
+                {
+                    AppliancePopUpMessages[1].SetActive(false);
+                }
             }
             else if (Collider.name == "CookingPot_AreaDetector")
             {
-                AppliancePopUpMessages[2].SetActive(false);
+                if (AppliancePopUpMessages[2] != null)
+                {
+                    AppliancePopUpMessages[2].SetActive(false);
+                }
             }
             else if (Collider.name == "PhoBowl_AreaDetector")
             {
-                AppliancePopUpMessages[3].SetActive(false);
+                if (AppliancePopUpMessages[3] != null)
+                {
+                    AppliancePopUpMessages[3].SetActive(false);
+                }
             }
             else if (Collider.name == "SushiRollingMat_AreaDetector")
             {
-                AppliancePopUpMessages[4].SetActive(false);
+                if (AppliancePopUpMessages[4] != null)
+                {
+                    AppliancePopUpMessages[4].SetActive(false);
+                }
             }
         }
         else if (Collider.CompareTag("Customer") && Registry.CurrentSceneName == Constants.RESTAURANT)
