@@ -20,7 +20,6 @@ public class SlicedObject : MonoBehaviour
     public GameObject SlicedRice;
     public GameObject WholeRice;
     public GameObject CutRice;
-    
 
     [SerializeField] private CountdownTimer countdowntimer;
 
@@ -57,39 +56,37 @@ public class SlicedObject : MonoBehaviour
     {
         for (int i = 0; i < slicePoints.Length - 1; i++)
         {
-            int randomIndex = Random.Range(i + 1, slicePoints.Length);
-            Vector2 direction = slicePoints[randomIndex].position - slicePoints[i].position;
+            Vector2 direction = slicePoints[i + 1].position - slicePoints[i].position;
             randomDirections[i] = direction.normalized;
         }
     }
 
     // creates and destroys the arrow prefab when the player does a successful slice
     private void CreateArrow(Transform currentPoint)
-{
-    if (currentArrow != null)
     {
-        Destroy(currentArrow);
+        if (currentArrow != null)
+        {
+            Destroy(currentArrow);
+        }
+
+        if (currentSliceIndex >= slicePoints.Length - 1) return;
+
+        Vector3 start = slicePoints[currentSliceIndex].position;
+        Vector3 end = slicePoints[currentSliceIndex + 1].position;
+        Vector3 direction = end - start;
+
+        // Instantiate arrow at the middle between the two points
+        Vector3 midPoint = (start + end) / 2f;
+        currentArrow = Instantiate(arrowPrefab, midPoint, Quaternion.identity);
+
+        // Rotate arrow to match direction
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        currentArrow.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        // Scale arrow based on distance (make sure arrow prefab's default length is 1 unit wide)
+        float distance = direction.magnitude;
+        currentArrow.transform.localScale = new Vector3(distance, currentArrow.transform.localScale.y, 1f);
     }
-
-    if (currentSliceIndex >= slicePoints.Length - 1) return;
-
-    Vector3 start = slicePoints[currentSliceIndex].position;
-    Vector3 end = slicePoints[currentSliceIndex + 1].position;
-    Vector3 direction = end - start;
-
-    // Instantiate arrow at the middle between the two points
-    Vector3 midPoint = (start + end) / 2f;
-    currentArrow = Instantiate(arrowPrefab, midPoint, Quaternion.identity);
-
-    // Rotate arrow to match direction
-    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-    currentArrow.transform.rotation = Quaternion.Euler(0, 0, angle);
-
-    // Scale arrow based on distance (make sure arrow prefab's default length is 1 unit wide)
-    float distance = direction.magnitude;
-    currentArrow.transform.localScale = new Vector3(distance, currentArrow.transform.localScale.y, 1f);
-}
-
 
     // checking to see if the direction of the slice is correct and if the player hits both of the slice points, shows the feedback text to indicate if they failed or successed
     public void TrySlice(Vector2 swipeStart, Vector2 swipeEnd)
@@ -148,7 +145,7 @@ public class SlicedObject : MonoBehaviour
     {
         pointsSliced[currentSliceIndex] = true;
 
-        if (currentSliceIndex >= slicePoints.Length - 1)
+        if (currentSliceIndex >= slicePoints.Length - 2)
         {
             isSliced = true;
             Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.audioClip3);
@@ -161,7 +158,7 @@ public class SlicedObject : MonoBehaviour
                 countdowntimer.StopTimer();
             }
 
-           SwapToSliceAsset();
+            SwapToSliceAsset();
         }
         else
         {
@@ -176,7 +173,7 @@ public class SlicedObject : MonoBehaviour
     }
 
     // swaps to the sliced asset
-       private void SwapToSliceAsset()
+    private void SwapToSliceAsset()
     {
         if (currentArrow != null)
         {

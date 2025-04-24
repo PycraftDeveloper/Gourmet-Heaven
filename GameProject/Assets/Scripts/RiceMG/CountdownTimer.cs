@@ -33,6 +33,7 @@ public class CountdownTimer : MonoBehaviour
             timerText.color = Color.red;
             minigamefailedText.gameObject.SetActive(true);
             Invoke("ReturnToKitchen", 4f);
+            StopTimer(); // Force the timer to stop this from being called multiple times.
         }
 
         int minutes = Mathf.FloorToInt(remainingTime / 60);
