@@ -6,9 +6,11 @@ using TMPro;
 public class CountdownTimer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI timerText;
-    [SerializeField] private float remainingTime;
     public TextMeshProUGUI minigamefailedText;
+
+    [SerializeField] private float remainingTime;
     public float delayTime = 2f;
+
     private bool isRunning = true;
 
     private void ReturnToKitchen()

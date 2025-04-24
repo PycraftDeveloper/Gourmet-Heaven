@@ -6,16 +6,22 @@ using TMPro;
 public class SlicedObject : MonoBehaviour
 {
     public TextMeshProUGUI feedbackText; // feedback text to tell the player if they are doing the swipe right or wrong
+
     public Transform[] slicePoints; // the slice points to indicate where the player needs to cut
-    private bool[] pointsSliced; // to keep track of how many cuts the player has done
     private Vector2[] randomDirections;// to make the cut direction random every time the game is played
-    private int currentSliceIndex = 0; // to keep track of how many cuts needs to be done
+
+    private bool[] pointsSliced; // to keep track of how many cuts the player has done
     private bool isSliced = false; // so the object doesnt slice when playing the game until all cuts have been done
+
+    private int currentSliceIndex = 0; // to keep track of how many cuts needs to be done
+
     public GameObject arrowPrefab; // allows the arrow prefab to work and shows where the player needs to cut
     private GameObject currentArrow; // shows where the player needs to cut
-    public Vector3 spriteScale = new Vector3(1.5f, 1.5f, 1); // setting the sizes cut peices (will be changed to create another object, the fully sliced asset)
-    public Color pieceColor = Color.red; // setting the colour of the pieces (will be deleted once i have the fully sliced asset)
     public GameObject SlicedRice;
+
+    public Vector3 spriteScale = new Vector3(1.5f, 1.5f, 1); // setting the sizes cut peices (will be changed to create another object, the fully sliced asset)
+
+    public Color pieceColor = Color.red; // setting the colour of the pieces (will be deleted once i have the fully sliced asset)
 
     [SerializeField] private CountdownTimer countdowntimer;
 
