@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
         return sceneName;
     }
 
-    private void ResetGameLevel()
+    public void ResetGameLevel()
     {
         foreach (GameObject _Customer in Registry.Customers)
         {

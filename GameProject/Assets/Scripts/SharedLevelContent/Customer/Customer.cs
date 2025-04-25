@@ -22,11 +22,18 @@ public class Customer : MonoBehaviour
 
     private void HandleCustomerTouched(Vector2 TouchPosition)
     {
+        bool CorrectMealServed = false;
         Vector2 WorldPosition = Camera.main.ScreenToWorldPoint(TouchPosition);
         Collider2D RaycastHit = Physics2D.OverlapPoint(WorldPosition);
 
         if (RaycastHit != null && RaycastHit.transform == transform)
         {
+            if (Registry.PlayerObject.HoldingMeal == Meal)
+            {
+                CorrectMealServed = true;
+                Registry.PlayerScore += 100;
+            }
+
             Registry.PlayerObject.HoldingMeal = Constants.NOT_HOLDING_MEAL;
             int[] CustomerSecondMealRange;
             if (Registry.LevelNumber == Constants.LEVEL_ONE)
@@ -39,9 +46,8 @@ public class Customer : MonoBehaviour
             }
             Destroy(InstantiatedOrderPopUpMessages);
             bool DoSecondMeal = Random.Range(CustomerSecondMealRange[0], CustomerSecondMealRange[1]) == 0;
-            Registry.PlayerScore += 100;
 
-            if (DoSecondMeal)
+            if (DoSecondMeal && CorrectMealServed)
             {
                 GenerateMeal();
                 _CustomerCore.Patience = Random.Range(
@@ -109,7 +115,7 @@ public class Customer : MonoBehaviour
                     InstantiatedOrderPopUpMessages = Instantiate(OrderPopUpMessages[3], PopUpPosition, transform.rotation);
                 }
 
-                if (_CustomerCore.CustomerTablePosition % 2 == 1)
+                if (_CustomerCore.CustomerTablePosition % 2 == 1 && InstantiatedOrderPopUpMessages != null)
                 {
                     Vector2 PopUpScale = InstantiatedOrderPopUpMessages.transform.localScale;
                     PopUpScale.x *= -1;

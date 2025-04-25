@@ -12,6 +12,7 @@ public class SlicedObject : MonoBehaviour
 
     private bool[] pointsSliced; // to keep track of how many cuts the player has done
     private bool isSliced = false; // so the object doesnt slice when playing the game until all cuts have been done
+    private bool MiniGameOverLock = false;
 
     private int currentSliceIndex = 0; // to keep track of how many cuts needs to be done
 
@@ -193,6 +194,10 @@ public class SlicedObject : MonoBehaviour
         }
 
         // Return to kitchen after short delay
-        Invoke("ReturnToKitchen", 4f);
+        if (MiniGameOverLock == false)
+        {
+            MiniGameOverLock = true;
+            Invoke("ReturnToKitchen", 4f);
+        }
     }
 }

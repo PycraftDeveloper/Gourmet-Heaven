@@ -35,6 +35,7 @@ public class EndMenuManagerScript : MonoBehaviour
 
     public void OnPlayAgainButtonClick()
     {
+        Registry.GameManagerObject.ResetGameLevel();
         if (Registry.LevelNumber == Constants.LEVEL_ONE)
         {
             Registry.LevelCustomerObject.SetupLevelOne();
