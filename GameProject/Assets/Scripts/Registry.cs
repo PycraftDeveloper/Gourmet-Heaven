@@ -12,6 +12,7 @@ public static class Registry
 
     public static int LevelNumber = Constants.LEVEL_ONE;
     public static int PlayerScore = 0;
+    public static int MaxScore = 0;
 
     public static float GameTimeDelta = 0;
     public static float MusicVolume = 0.8f;

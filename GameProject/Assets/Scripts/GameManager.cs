@@ -80,6 +80,9 @@ public class GameManager : MonoBehaviour
 
     public void ResetGameLevel()
     {
+        Registry.PlayerScore = 0;
+        Registry.MaxScore = 0;
+
         foreach (GameObject _Customer in Registry.Customers)
         {
             Destroy(_Customer);
@@ -102,6 +105,12 @@ public class GameManager : MonoBehaviour
         {
             Destroy(Registry.JoystickObject.gameObject);
             Registry.JoystickObject = null;
+        }
+
+        if (Registry.UIManagerObject != null)
+        {
+            Destroy(Registry.UIManagerObject.gameObject);
+            Registry.UIManagerObject = null;
         }
 
         Registry.LevelRunTime = 0;

@@ -68,6 +68,7 @@ public class CustomerCore : MonoBehaviour
                     Registry.LevelManagerObject.CustomerTableArrangement[CustomerTablePosition] = null;
                     Registry.Customers.Remove(gameObject);
                     Destroy(gameObject);
+                    Registry.MaxScore += 100;
                 }
             }
             yield return null;

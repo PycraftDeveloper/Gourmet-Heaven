@@ -28,6 +28,7 @@ public class Customer : MonoBehaviour
 
         if (RaycastHit != null && RaycastHit.transform == transform)
         {
+            Registry.MaxScore += 100;
             if (Registry.PlayerObject.HoldingMeal == Meal)
             {
                 CorrectMealServed = true;
