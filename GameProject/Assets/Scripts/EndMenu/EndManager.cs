@@ -56,11 +56,11 @@ public class EndMenuManagerScript : MonoBehaviour
         Registry.GameManagerObject.ResetGameLevel();
         if (Registry.LevelNumber == Constants.LEVEL_ONE)
         {
-            Registry.LevelCustomerObject.SetupLevelOne();
+            Registry.LevelCustomiserObject.SetupLevelOne();
         }
         else
         {
-            Registry.LevelCustomerObject.SetupLevelTwo();
+            Registry.LevelCustomiserObject.SetupLevelTwo();
         }
         Registry.GameManagerObject.ChangeScene(Constants.KITCHEN);
     }

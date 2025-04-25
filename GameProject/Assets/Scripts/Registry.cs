@@ -27,5 +27,5 @@ public static class Registry
     public static List<GameObject> Customers = new List<GameObject>();
     public static UIManager UIManagerObject = null;
 
-    public static LevelCustomiser LevelCustomerObject = new LevelCustomiser();
+    public static LevelCustomiser LevelCustomiserObject = new LevelCustomiser();
 }
