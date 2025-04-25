@@ -428,6 +428,7 @@ public class LevelManager : MonoBehaviour
     {
         if (!focus && !Application.isEditor) // if NOT in focus
         {
+            Registry.GameManagerObject.RenderGameSceneToFrameBuffer(); // needs to be called immediately
             Registry.GameManagerObject.ChangeScene(Constants.PAUSE_MENU); // Go to the Pause Menu scene.
         }
     }

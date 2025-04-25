@@ -9,6 +9,7 @@ public static class Registry
     public static string JoystickScreenPosition = Constants.LEFT;
 
     public static bool InGameLevel = false;
+    public static bool GameInBackground = false;
 
     public static int LevelNumber = Constants.LEVEL_ONE;
     public static int PlayerScore = 0;

@@ -240,6 +240,63 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        Registry.GameInBackground = !hasFocus;
+    }
+
+    public void RenderGameSceneToFrameBuffer()
+    {
+        if (Registry.GameInBackground)
+        {
+            return;
+        }
+
+        Camera camera = Camera.main;
+
+        int width = (int)(Camera.main.rect.width * Screen.width);
+        int height = (int)(Camera.main.rect.height * Screen.height);
+        float x_offset = (Screen.width - width) / 2;
+        float y_offset = (Screen.height - height) / 2;
+
+        FrameTexture = new Texture2D(width, height);
+        BlurredFrameTexture = new Texture2D(width, height);
+
+        RenderTexture SceneContents = new RenderTexture(Screen.width, Screen.height, 24);
+        RenderTexture BlurredSceneContents = new RenderTexture(Screen.width, Screen.height, 24);
+
+        GameObject[] AllGameObjects = FindObjectsByType<GameObject>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+        List<GameObject> UI_GameObjects = new List<GameObject>();
+        foreach (GameObject gameObject in AllGameObjects)
+        {
+            if (gameObject.layer == LayerMask.NameToLayer("UI"))
+            {
+                UI_GameObjects.Add(gameObject);
+                gameObject.SetActive(false);
+            }
+        }
+
+        camera.targetTexture = SceneContents;
+        camera.Render();
+
+        Graphics.SetRenderTarget(SceneContents);
+        FrameTexture.ReadPixels(new Rect(x_offset, y_offset, Screen.width, Screen.height), 0, 0);
+        FrameTexture.Apply();
+
+        Graphics.Blit(SceneContents, BlurredSceneContents, BlurredMaterial);
+        Graphics.SetRenderTarget(BlurredSceneContents);
+        BlurredFrameTexture.ReadPixels(new Rect(x_offset, y_offset, Screen.width, Screen.height), 0, 0);
+        BlurredFrameTexture.Apply();
+
+        foreach (GameObject gameObject in UI_GameObjects)
+        {
+            gameObject.SetActive(true);
+        }
+
+        camera.targetTexture = null;
+        Graphics.SetRenderTarget(null);
+    }
+
     public void ChangeScene(string sceneName = "")
     {
         sceneName = HandleSceneStack(sceneName);
@@ -253,49 +310,7 @@ public class GameManager : MonoBehaviour
 
             if (Registry.InGameLevel)
             {
-                Camera camera = Camera.main;
-
-                int width = (int)(Camera.main.rect.width * Screen.width);
-                int height = (int)(Camera.main.rect.height * Screen.height);
-                float x_offset = (Screen.width - width) / 2;
-                float y_offset = (Screen.height - height) / 2;
-
-                FrameTexture = new Texture2D(width, height);
-                BlurredFrameTexture = new Texture2D(width, height);
-
-                RenderTexture SceneContents = new RenderTexture(Screen.width, Screen.height, 24);
-                RenderTexture BlurredSceneContents = new RenderTexture(Screen.width, Screen.height, 24);
-
-                GameObject[] AllGameObjects = FindObjectsByType<GameObject>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
-                List<GameObject> UI_GameObjects = new List<GameObject>();
-                foreach (GameObject gameObject in AllGameObjects)
-                {
-                    if (gameObject.layer == LayerMask.NameToLayer("UI"))
-                    {
-                        UI_GameObjects.Add(gameObject);
-                        gameObject.SetActive(false);
-                    }
-                }
-
-                camera.targetTexture = SceneContents;
-                camera.Render();
-
-                Graphics.SetRenderTarget(SceneContents);
-                FrameTexture.ReadPixels(new Rect(x_offset, y_offset, Screen.width, Screen.height), 0, 0);
-                FrameTexture.Apply();
-
-                Graphics.Blit(SceneContents, BlurredSceneContents, BlurredMaterial);
-                Graphics.SetRenderTarget(BlurredSceneContents);
-                BlurredFrameTexture.ReadPixels(new Rect(x_offset, y_offset, Screen.width, Screen.height), 0, 0);
-                BlurredFrameTexture.Apply();
-
-                foreach (GameObject gameObject in UI_GameObjects)
-                {
-                    gameObject.SetActive(true);
-                }
-
-                camera.targetTexture = null;
-                Graphics.SetRenderTarget(null);
+                RenderGameSceneToFrameBuffer();
             }
         }
 
