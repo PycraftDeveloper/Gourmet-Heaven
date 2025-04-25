@@ -64,4 +64,7 @@ public static class Constants
     public static readonly float[,] CUSTOMER_SEATS_IN_RESTAURANT = new float[,] {
         { -4.15f,  1.68f }, { -1.87f,  1.68f }, { 0.86f,  1.68f }, { 3.14f,  1.68f }, // top row
         { -4.15f, -2.34f }, { -1.87f, -2.34f }, { 0.86f, -2.34f }, { 3.14f, -2.34f } }; // bottom row
+
+    public static readonly int[] CUSTOMER_LEVEL_ONE_SECOND_MEAL_RANGE = new int[] { 0, 2 };
+    public static readonly int[] CUSTOMER_LEVEL_TWO_SECOND_MEAL_RANGE = new int[] { 0, 1 };
 }

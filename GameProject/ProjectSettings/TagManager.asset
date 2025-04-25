@@ -10,6 +10,7 @@ TagManager:
   - CookingPotPopUp
   - PhoBowlPopUp
   - RollingMatPopUp
+  - BinPopUp
   layers:
   - Default
   - TransparentFX

@@ -11,9 +11,15 @@ public class Appliance // This class is used to switch the icons for the mini-ga
     public Tile Active;
     private bool State; // False - IDLE state. True - ACTIVE state.
 
-    public void SetState(bool state)
+    public void SetState(bool state, bool ConsiderHoldingMeal = true)
     {
-        State = state && Registry.PlayerObject.HoldingMeal == Constants.NOT_HOLDING_MEAL; // Block access to mini-games when player is already holding a meal.
+        bool InternalState = true;
+
+        if (ConsiderHoldingMeal)
+        {
+            InternalState = Registry.PlayerObject.HoldingMeal == Constants.NOT_HOLDING_MEAL;
+        }
+        State = state && InternalState; // Block access to mini-games when player is already holding a meal.
     }
 
     public void ManageState(Tilemap ApplianceTileMap) // Swaps the tiles around by switching between IDLE/ACTIVE states.
@@ -41,6 +47,8 @@ public class LevelManager : MonoBehaviour
 
     // Below are the tiles that can be switched between IDLE and ACTIVE states.
     public Appliance CacheRegister;
+
+    public Appliance Bin;
 
     public Appliance ChoppingBoard;
     public Appliance PhoBowl;
@@ -239,6 +247,7 @@ public class LevelManager : MonoBehaviour
         CookingPot.ManageState(BehindApplianceTileMap);
         PhoBowl.ManageState(BehindApplianceTileMap);
         SushiRollingMat.ManageState(BehindApplianceTileMap);
+        Bin.ManageState(BehindApplianceTileMap);
     }
 
     private void AssociateApplianceTilemap()
@@ -321,6 +330,9 @@ public class LevelManager : MonoBehaviour
         CookingPot.SetState(false);
         PhoBowl.SetState(false);
         SushiRollingMat.SetState(false);
+        Bin.SetState(false);
+
+        Bin.SetState(Registry.PlayerObject.HoldingMeal != Constants.NOT_HOLDING_MEAL, false);
 
         if (ReturnToGameToggle)
         {

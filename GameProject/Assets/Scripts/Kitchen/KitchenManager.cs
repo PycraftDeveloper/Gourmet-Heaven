@@ -26,4 +26,9 @@ public class KitchenManager : MonoBehaviour
     {
         Registry.GameManagerObject.ChangeScene(Constants.SUSHI_MG);
     }
+
+    public void OnBinPopUpButtonClick()
+    {
+        Registry.PlayerObject.HoldingMeal = Constants.NOT_HOLDING_MEAL;
+    }
 }

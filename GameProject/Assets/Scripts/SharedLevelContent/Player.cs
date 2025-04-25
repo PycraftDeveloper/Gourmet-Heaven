@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public GameObject[] AppliancePopUpMessages = new GameObject[5];
+    public GameObject[] AppliancePopUpMessages = new GameObject[6];
 
     private Renderer PlayerSprite;
     public GameObject JoystickInputObject;
@@ -104,6 +104,17 @@ public class Player : MonoBehaviour
                     AppliancePopUpMessages[4].SetActive(false);
                 }
             }
+            else if (Collider.name == "Bin_AreaDetector")
+            {
+                if (Registry.LevelManagerObject.Bin.GetState())
+                {
+                    AppliancePopUpMessages[5].SetActive(true);
+                }
+                else
+                {
+                    AppliancePopUpMessages[5].SetActive(false);
+                }
+            }
         }
         else if (Collider.CompareTag("Customer") && Registry.CurrentSceneName == Constants.RESTAURANT)
         {
@@ -162,6 +173,13 @@ public class Player : MonoBehaviour
                 if (AppliancePopUpMessages[4] != null)
                 {
                     AppliancePopUpMessages[4].SetActive(false);
+                }
+            }
+            else if (Collider.name == "Bin_AreaDetector")
+            {
+                if (AppliancePopUpMessages[5] != null)
+                {
+                    AppliancePopUpMessages[5].SetActive(false);
                 }
             }
         }
@@ -223,7 +241,7 @@ public class Player : MonoBehaviour
         {
             SceneChanged = false;
             Button[] SceneButtons = FindObjectsByType<Button>(FindObjectsInactive.Include, FindObjectsSortMode.None);
-            AppliancePopUpMessages = new GameObject[5];
+            AppliancePopUpMessages = new GameObject[6];
 
             foreach (Button SceneButton in SceneButtons)
             {
@@ -246,6 +264,10 @@ public class Player : MonoBehaviour
                 else if (SceneButton.name == "RollingMatPopUp")
                 {
                     AppliancePopUpMessages[4] = SceneButton.gameObject;
+                }
+                else if (SceneButton.name == "BinPopUp")
+                {
+                    AppliancePopUpMessages[5] = SceneButton.gameObject;
                 }
             }
         }

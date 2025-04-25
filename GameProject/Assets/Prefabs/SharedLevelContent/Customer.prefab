@@ -133,11 +133,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _CustomerCore: {fileID: 0}
-  CustomerSprite: {fileID: 0}
   Meal: 
   CustomerCoroutineDescription: no coroutine
   CurrentVelocity: {x: 0, y: 0}
   MealPlaced: 0
+  OrderPopUpMessages:
+  - {fileID: 515919920473364501, guid: 7a40711a7d239c440aad7d0c099d9a8f, type: 3}
+  - {fileID: 7039608974421349168, guid: 1824852ea48a2074093c8994633372ed, type: 3}
+  - {fileID: 2361841914185397145, guid: bfb41b3291b96584b958b2f4f1fd71ed, type: 3}
+  - {fileID: 7120538908375451996, guid: 59263200d6e880f4fb8e1c6354528083, type: 3}
 --- !u!61 &1798378255749124243
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -266,6 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Animator: {fileID: 0}
   _RigidBody2D: {fileID: 0}
+  _Renderer: {fileID: 0}
   AnimationControllers:
   - {fileID: 9100000, guid: e160397fb5efc7940b0c4253988bc2d4, type: 2}
   - {fileID: 9100000, guid: 24dab2338d43d284489ad76d166e3ff5, type: 2}
