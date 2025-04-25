@@ -1,11 +1,21 @@
 using UnityEngine;
 
+
 public class LevelSelectionMenuManagerScript : MonoBehaviour
 {
+    public Canvas TutorialCanvas;
+    public Canvas LevelSelectCanvas;
+
+    private void Start() 
+    {
+      LevelSelectCanvas.gameObject.SetActive(true);
+    }
+    
+
     public void OnLevelOneButtonClick()
     {
-        Registry.LevelCustomerObject.SetupLevelOne();
-        Registry.GameManagerObject.ChangeScene(Constants.KITCHEN);
+        LevelSelectCanvas.gameObject.SetActive(false);
+        TutorialCanvas.gameObject.SetActive(true);
     }
 
     public void OnLevelTwoButtonClick()
@@ -14,6 +24,13 @@ public class LevelSelectionMenuManagerScript : MonoBehaviour
         Registry.GameManagerObject.ChangeScene(Constants.KITCHEN);
     }
 
+   public void OnContinueButtonClick()
+   {
+     TutorialCanvas.gameObject.SetActive(false);
+     Registry.LevelCustomerObject.SetupLevelOne();
+     Registry.GameManagerObject.ChangeScene(Constants.KITCHEN);
+   }
+    
     public void OnBackButtonClick()
     {
         Registry.GameManagerObject.ChangeScene();
