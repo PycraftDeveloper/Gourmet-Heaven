@@ -426,7 +426,7 @@ public class LevelManager : MonoBehaviour
 
     private void OnApplicationFocus(bool focus) // Pause the game when the user puts the game in the background. ONLY when in built version of the game
     {
-        if (!focus && !Application.isEditor) // if NOT in focus
+        if (!focus && !Application.isEditor && Registry.InGameLevel) // if NOT in focus
         {
             Registry.GameManagerObject.RenderGameSceneToFrameBuffer(); // needs to be called immediately
             Registry.GameManagerObject.ChangeScene(Constants.PAUSE_MENU); // Go to the Pause Menu scene.
