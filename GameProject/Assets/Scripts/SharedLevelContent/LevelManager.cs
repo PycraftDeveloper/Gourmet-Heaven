@@ -126,7 +126,7 @@ public class LevelManager : MonoBehaviour
                 if (CustomerTableArrangement[PositionIndex] == null) // When a free seat is found.
                 {
                     BackgroundCustomer _BackgroundCustomer = NewBackgroundCustomer.GetComponent<BackgroundCustomer>();
-                    CustomerCore _CustomerCore = NewBackgroundCustomer.GetComponent<CustomerCore>();
+                    CustomerCore _CustomerCore = _BackgroundCustomer._CustomerCore;
                     if (PositionIndex % 2 == 0) // If the seat is facing the other way, flip the sprite!
                     {
                         Vector3 CustomerScale = _BackgroundCustomer.transform.localScale;
@@ -193,7 +193,7 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator MoveIntoRestaurant(Customer _Customer, GameObject CustomerGameObject) // Used to give the illusion of customers walking out the bottom of the Kitchen, into the restaurant.
     {
-        CustomerCore _CustomerCore = CustomerGameObject.GetComponent<CustomerCore>();
+        CustomerCore _CustomerCore = _Customer._CustomerCore;
         _Customer.SetAnimationState(Constants.CUSTOMER_WALK_DOWN_ANIMATION); // Set the animation to walking.
         while (_CustomerCore.CurrentLocation == Constants.KITCHEN && _Customer.gameObject != null) // Whilst the player is in the same scene, and the customer hasn't been deleted
                                                                                                    // which is mainly used for stopping execution through the editor and handling errors there.
@@ -346,7 +346,7 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < Registry.Customers.Count; i++)
         {
             Customer thisCustomer = Registry.Customers[i].GetComponent<Customer>();
-            CustomerCore thisCustomerCore = Registry.Customers[i].GetComponent<CustomerCore>();
+            CustomerCore thisCustomerCore = thisCustomer._CustomerCore;
 
             if (thisCustomer == null)
             {

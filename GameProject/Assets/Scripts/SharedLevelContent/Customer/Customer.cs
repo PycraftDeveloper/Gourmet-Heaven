@@ -213,5 +213,10 @@ public class Customer : MonoBehaviour
         {
             Registry.LevelManagerObject.CustomersInScene--;
         }
+
+        if (_CustomerCore.CurrentLocation == Constants.RESTAURANT && Meal != "")
+        {
+            Registry.MaxScore += 100;
+        }
     }
 }
