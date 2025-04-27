@@ -22,7 +22,7 @@ public class CustomerCore : MonoBehaviour
 
     public Coroutine PatienceCoroutine;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         DontDestroyOnLoad(gameObject);
 
@@ -37,17 +37,38 @@ public class CustomerCore : MonoBehaviour
         CurrentPosition = transform.position;
     }
 
-    private void FixedUpdate()
+    protected void FixedUpdate()
     {
         _RigidBody2D.position = CurrentPosition;
     }
 
-    private void OnDestroy()
+    protected virtual void OnDestroy()
     {
         if (PatienceCoroutine != null && Registry.GameManagerObject != null)
         {
             Registry.GameManagerObject.StopCoroutine(PatienceCoroutine);
         }
+    }
+
+    public void SetupCustomerCoreForRestaurant<T>(T _Customer, int PositionIndex) where T : CustomerCore// Used to set up the customer (both types) for the restaurant scene.
+    {
+        _Customer.CurrentPosition = new Vector2(
+            Constants.CUSTOMER_SEATS_IN_RESTAURANT[PositionIndex, 0],
+            Constants.CUSTOMER_SEATS_IN_RESTAURANT[PositionIndex, 1]); // sit the customer in the right position for that empty space in the restaurant.
+
+        // Change the rendering configuration for the customers so that the player can appear both above/behind them.
+        _Customer._Renderer.sortingLayerName = "NPC Upper";
+        _Customer._Renderer.sortingOrder = 1;
+
+        Registry.LevelManagerObject.CustomerTableArrangement[PositionIndex] = _Customer.gameObject;
+
+        _Customer.Patience = Random.Range(
+            Constants.CUSTOMER_MIN_PATIENCE[Registry.LevelNumber],
+            Constants.CUSTOMER_MAX_PATIENCE[Registry.LevelNumber]); // Controls how long the customer will exist in the restaurant before it leaves (when not served)
+
+        _Customer.PatienceCoroutine = Registry.GameManagerObject.StartCoroutine(_Customer.ManagePatience()); // Used to keep track of the lifetime of the customer in the restaurant.
+
+        _Customer.CustomerTablePosition = PositionIndex; // Stores the seating position for the customer in the restaurant.
     }
 
     public IEnumerator ManagePatience()
@@ -58,16 +79,25 @@ public class CustomerCore : MonoBehaviour
             {
                 yield break;
             }
-            Patience -= Time.deltaTime;
-            if (Patience <= 0)
+            if (Registry.CurrentSceneName == Constants.KITCHEN ||
+                    Registry.CurrentSceneName == Constants.RESTAURANT ||
+                    Registry.CurrentSceneName == Constants.PHO_MG ||
+                    Registry.CurrentSceneName == Constants.RICE_MG ||
+                    Registry.CurrentSceneName == Constants.SUSHI_MG ||
+                    Registry.CurrentSceneName == Constants.BUNS_MG) // Ensures that customers dont despawn in the scenes where the game
+                                                                    // is supposed to be paused.
             {
-                DeSpawn = true;
-
-                if (!gameObject.activeSelf)
+                Patience -= Time.deltaTime;
+                if (Patience <= 0)
                 {
-                    Registry.LevelManagerObject.CustomerTableArrangement[CustomerTablePosition] = null;
-                    Registry.Customers.Remove(gameObject);
-                    Destroy(gameObject);
+                    DeSpawn = true;
+
+                    if (!gameObject.activeSelf)
+                    {
+                        Registry.LevelManagerObject.CustomerTableArrangement[CustomerTablePosition] = null;
+                        Registry.Customers.Remove(gameObject);
+                        Destroy(gameObject);
+                    }
                 }
             }
             yield return null;
