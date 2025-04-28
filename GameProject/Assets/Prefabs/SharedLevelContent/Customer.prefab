@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 6431283086640580882}
   - component: {fileID: 7976739132196399641}
   - component: {fileID: 3860932109438660341}
-  - component: {fileID: 5924299842577267180}
   - component: {fileID: 1798378255749124243}
   - component: {fileID: 5546443346089533644}
   - component: {fileID: -7780032635774803439}
-  - component: {fileID: 2597019793352947458}
+  - component: {fileID: 2260770632968368265}
   m_Layer: 0
   m_Name: Customer
   m_TagString: Customer
@@ -120,28 +119,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5924299842577267180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1435824458389161264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48e5151887191a34a9b2f39eeec02375, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _CustomerCore: {fileID: 0}
-  Meal: 
-  CustomerCoroutineDescription: no coroutine
-  CurrentVelocity: {x: 0, y: 0}
-  MealPlaced: 0
-  OrderPopUpMessages:
-  - {fileID: 515919920473364501, guid: 7a40711a7d239c440aad7d0c099d9a8f, type: 3}
-  - {fileID: 7039608974421349168, guid: 1824852ea48a2074093c8994633372ed, type: 3}
-  - {fileID: 2361841914185397145, guid: bfb41b3291b96584b958b2f4f1fd71ed, type: 3}
-  - {fileID: 7120538908375451996, guid: 59263200d6e880f4fb8e1c6354528083, type: 3}
 --- !u!61 &1798378255749124243
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -256,7 +233,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2597019793352947458
+--- !u!114 &2260770632968368265
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -265,7 +242,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1435824458389161264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cf0c9f0ec9d4be4db85bda1204ccf77, type: 3}
+  m_Script: {fileID: 11500000, guid: 48e5151887191a34a9b2f39eeec02375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _Animator: {fileID: 0}
@@ -286,3 +263,14 @@ MonoBehaviour:
   DeSpawn: 0
   Patience: 0
   CurrentPosition: {x: 0, y: 0}
+  Meal: 
+  CustomerCoroutineDescription: no coroutine
+  CurrentVelocity: {x: 0, y: 0}
+  MealPlaced: 0
+  OrderPopUpMessages:
+  - {fileID: 515919920473364501, guid: 7a40711a7d239c440aad7d0c099d9a8f, type: 3}
+  - {fileID: 7039608974421349168, guid: 1824852ea48a2074093c8994633372ed, type: 3}
+  - {fileID: 2361841914185397145, guid: bfb41b3291b96584b958b2f4f1fd71ed, type: 3}
+  - {fileID: 7120538908375451996, guid: 59263200d6e880f4fb8e1c6354528083, type: 3}
+  - {fileID: 0}
+  InstantiatedOrderPopUpMessages: {fileID: 0}

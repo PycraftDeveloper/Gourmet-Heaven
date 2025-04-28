@@ -41,10 +41,14 @@ public static class Constants
     public const string MANGO_STICKY_RICE = "mango sticky rice";
     public const string NOT_HOLDING_MEAL = "not holding meal";
 
-    public const string RICE = "Rice";
+    public const string RICE = "Rice"; // Sushi MiniGame materials
     public const string SEAWEED = "Seaweed";
     public const string TUNA = "Tuna";
     public const string WASABI = "Wasabi";
+
+    public const int PHO_ONION_ID = 0; // Pho MiniGame materials
+    public const int PHO_BEEF_ID = 1;
+    public const int PHO_GARLIC_ID = 2;
 
     public const string NO_COROUTINE = "no coroutine";
     public const string MOVE_IN_QUEUE = "move in queue";
@@ -64,6 +68,8 @@ public static class Constants
     public static readonly float[,] CUSTOMER_SEATS_IN_RESTAURANT = new float[,] {
         { -4.15f,  1.68f }, { -1.87f,  1.68f }, { 0.86f,  1.68f }, { 3.14f,  1.68f }, // top row
         { -4.15f, -2.34f }, { -1.87f, -2.34f }, { 0.86f, -2.34f }, { 3.14f, -2.34f } }; // bottom row
+
+    public static readonly float[] PHO_FOOD_ITEMS_SPEED = new float[] { 3.0f, 10.0f };
 
     public static readonly int[] CUSTOMER_LEVEL_ONE_SECOND_MEAL_RANGE = new int[] { 0, 2 };
     public static readonly int[] CUSTOMER_LEVEL_TWO_SECOND_MEAL_RANGE = new int[] { 0, 1 };

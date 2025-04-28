@@ -1,20 +1,16 @@
-using UnityEngine;
-
-public class BackgroundCustomer : MonoBehaviour
+public class BackgroundCustomer : CustomerCore
 {
-    public CustomerCore _CustomerCore;
-
-    private void Awake()
+    protected override void Awake()
     {
-        _CustomerCore = GetComponent<CustomerCore>();
+        base.Awake();
 
-        _CustomerCore._Animator.SetInteger("customerState", Constants.CUSTOMER_IDLE_SIT_ANIMATION);
+        _Animator.SetInteger("customerState", Constants.CUSTOMER_IDLE_SIT_ANIMATION);
 
-        _CustomerCore.CurrentLocation = Constants.RESTAURANT;
+        CurrentLocation = Constants.RESTAURANT;
     }
 
     private void Update()
     {
-        _CustomerCore._Animator.SetInteger("customerState", Constants.CUSTOMER_IDLE_SIT_ANIMATION);
+        _Animator.SetInteger("customerState", Constants.CUSTOMER_IDLE_SIT_ANIMATION);
     }
 }

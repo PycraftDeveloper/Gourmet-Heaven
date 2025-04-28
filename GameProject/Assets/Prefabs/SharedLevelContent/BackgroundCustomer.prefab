@@ -14,8 +14,7 @@ GameObject:
   - component: {fileID: 1553787489906229311}
   - component: {fileID: 3610706440993604350}
   - component: {fileID: 2840801830550089116}
-  - component: {fileID: 6859858905911574590}
-  - component: {fileID: 287889851386528956}
+  - component: {fileID: -3103120538977837062}
   m_Layer: 0
   m_Name: BackgroundCustomer
   m_TagString: Customer
@@ -234,7 +233,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6859858905911574590
+--- !u!114 &-3103120538977837062
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -246,21 +245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d545582c819c54ba6b08e5893dcd55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _CustomerCore: {fileID: 0}
---- !u!114 &287889851386528956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3524380843795122092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cf0c9f0ec9d4be4db85bda1204ccf77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   _Animator: {fileID: 0}
   _RigidBody2D: {fileID: 0}
+  _Renderer: {fileID: 0}
   AnimationControllers:
   - {fileID: 9100000, guid: e160397fb5efc7940b0c4253988bc2d4, type: 2}
   - {fileID: 9100000, guid: 24dab2338d43d284489ad76d166e3ff5, type: 2}

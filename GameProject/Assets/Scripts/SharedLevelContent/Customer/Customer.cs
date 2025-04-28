@@ -1,10 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
-public class Customer : MonoBehaviour
+public class Customer : CustomerCore
 {
-    public CustomerCore _CustomerCore;
-
     public IEnumerator CustomerCoroutine = null;
     private MonoBehaviour GameManagerMono;
 
@@ -17,8 +15,85 @@ public class Customer : MonoBehaviour
 
     public bool MealPlaced = false;
 
-    public GameObject[] OrderPopUpMessages = new GameObject[5];
+    public GameObject[] OrderPopUpMessages = new GameObject[4];
     public GameObject InstantiatedOrderPopUpMessages;
+
+    public IEnumerator MoveInQueue(Vector2 DestinationPosition)
+    {
+        Vector2 TargetPosition = CurrentPosition;
+
+        if (TargetPosition.x != DestinationPosition.x)
+        {
+            SetAnimationState(Constants.CUSTOMER_WALK_SIDE_ANIMATION);
+
+            while (CurrentPosition.x - (Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime) > DestinationPosition.x && Registry.InGameLevel == true && gameObject != null)
+            {
+                CurrentPosition.x -= Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime;
+                yield return null;
+            }
+
+            if (CurrentPosition.x - (Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime) < DestinationPosition.x)
+            {
+                CurrentPosition = DestinationPosition;
+            }
+
+            SetAnimationState(Constants.CUSTOMER_IDLE_SIDE_ANIMATION);
+        }
+    }
+
+    public IEnumerator MoveIntoRestaurant() // Used to give the illusion of customers walking out the bottom of the Kitchen, into the restaurant.
+    {
+        SetAnimationState(Constants.CUSTOMER_WALK_DOWN_ANIMATION); // Set the animation to walking.
+        while (CurrentLocation == Constants.KITCHEN && gameObject != null) // Whilst the player is in the same scene, and the customer hasn't been deleted
+                                                                           // which is mainly used for stopping execution through the editor and handling errors there.
+        {
+            CurrentPosition = new Vector2(
+                CurrentPosition.x,
+                CurrentPosition.y - Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime); // move the customer down the scene.
+
+            if (CurrentPosition.y < -6.31 || Registry.InGameLevel == false) // When the customer is no longer visible in the
+                                                                            // kitchen, break out the while loop s it can be set up in the restaurant.
+            {
+                CurrentLocation = Constants.RESTAURANT;
+            }
+            yield return null;
+        }
+        PlaceIntoRestaurant(); // Set the customer up in the restaurant.
+    }
+
+    private void PlaceIntoRestaurant() // Similar to before, this is used to place customers in the restaurant scene.
+                                       // HOWEVER, this is for customers the player can interact with, NOT for background customers.
+    {
+        bool Seated = false;
+        while (!Seated)
+        {
+            int PositionIndex = Random.Range(0, 8);
+            GameObject[] CustomerTableArrangement = Registry.LevelManagerObject.CustomerTableArrangement;
+            if (CustomerTableArrangement[PositionIndex] == null || CustomerTableArrangement[PositionIndex].GetComponent<BackgroundCustomer>())
+            {
+                if (CustomerTableArrangement[PositionIndex] != null && CustomerTableArrangement[PositionIndex].GetComponent<BackgroundCustomer>())
+                {
+                    Registry.Customers.Remove(CustomerTableArrangement[PositionIndex]);
+                    Destroy(CustomerTableArrangement[PositionIndex]);
+                    CustomerTableArrangement[PositionIndex] = null;
+                }
+                if (PositionIndex % 2 == 0)
+                {
+                    Vector3 CustomerScale = transform.localScale;
+                    CustomerScale.x *= -1;
+                    transform.localScale = CustomerScale;
+                }
+                SetAnimationState(Constants.CUSTOMER_IDLE_SIT_ANIMATION); // Ensure that when placed into the restaurant, the customer is in the sitting animation
+                SetupCustomerCoreForRestaurant(this, PositionIndex);
+                Seated = true;
+            }
+        }
+        if (Registry.CurrentSceneName != Constants.RESTAURANT) // In this situation, we want to hide the customer from the kitchen scene (where the player is) until
+                                                               // the player goes into the restaurant scene.
+        {
+            gameObject.SetActive(false);
+        }
+    }
 
     private void HandleCustomerTouched(Vector2 TouchPosition)
     {
@@ -51,21 +126,21 @@ public class Customer : MonoBehaviour
             if (DoSecondMeal && CorrectMealServed)
             {
                 GenerateMeal();
-                _CustomerCore.Patience = Random.Range(
+                Patience = Random.Range(
             Constants.CUSTOMER_MIN_PATIENCE[Registry.LevelNumber],
             Constants.CUSTOMER_MAX_PATIENCE[Registry.LevelNumber]);
             }
             else
             {
                 Meal = "";
-                _CustomerCore.Patience = 0;
+                Patience = 0;
             }
         }
     }
 
     private void Update()
     {
-        if (_CustomerCore.CurrentLocation == Constants.RESTAURANT && InstantiatedOrderPopUpMessages != null && Registry.PlayerObject.HoldingMeal != Constants.NOT_HOLDING_MEAL)
+        if (CurrentLocation == Constants.RESTAURANT && InstantiatedOrderPopUpMessages != null && Registry.PlayerObject.HoldingMeal != Constants.NOT_HOLDING_MEAL)
         {
             if (Input.touchCount > 0) // if touch input is used
             {
@@ -77,13 +152,17 @@ public class Customer : MonoBehaviour
             {
                 HandleCustomerTouched(Input.mousePosition); // handle position adjustments, using mouse position.
             }
+
+            if (DeSpawn)
+            {
+                Destroy(InstantiatedOrderPopUpMessages);
+            }
         }
     }
 
-    private void Awake()
+    protected override void Awake()
     {
-        _CustomerCore = GetComponent<CustomerCore>();
-
+        base.Awake();
         GameManagerMono = Registry.GameManagerObject.GetComponent<MonoBehaviour>();
 
         GenerateMeal();
@@ -94,10 +173,10 @@ public class Customer : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            if (_CustomerCore.CurrentLocation == Constants.RESTAURANT && InstantiatedOrderPopUpMessages == null)
+            if (CurrentLocation == Constants.RESTAURANT && InstantiatedOrderPopUpMessages == null && DeSpawn == false)
             {
-                Vector2 PopUpPosition = _CustomerCore.CurrentPosition;
-                PopUpPosition.y += 0.3f + _CustomerCore._Renderer.bounds.size.y / 2.0f;
+                Vector2 PopUpPosition = CurrentPosition;
+                PopUpPosition.y += 0.3f + _Renderer.bounds.size.y / 2.0f;
 
                 if (Meal == Constants.BAO_BUNS)
                 {
@@ -116,7 +195,7 @@ public class Customer : MonoBehaviour
                     InstantiatedOrderPopUpMessages = Instantiate(OrderPopUpMessages[3], PopUpPosition, transform.rotation);
                 }
 
-                if (_CustomerCore.CustomerTablePosition % 2 == 1 && InstantiatedOrderPopUpMessages != null)
+                if (CustomerTablePosition % 2 == 1 && InstantiatedOrderPopUpMessages != null)
                 {
                     Vector2 PopUpScale = InstantiatedOrderPopUpMessages.transform.localScale;
                     PopUpScale.x *= -1;
@@ -128,7 +207,7 @@ public class Customer : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (_CustomerCore.CurrentLocation == Constants.RESTAURANT && InstantiatedOrderPopUpMessages != null)
+        if (InstantiatedOrderPopUpMessages != null)
         {
             Destroy(InstantiatedOrderPopUpMessages);
         }
@@ -136,12 +215,11 @@ public class Customer : MonoBehaviour
 
     public void SetAnimationState(int StateNumber)
     {
-        if (_CustomerCore == null)
+        if (_Animator != null)
         {
-            return;
+            CustomerAnimationState = StateNumber;
+            _Animator.SetInteger("customerState", CustomerAnimationState);
         }
-        CustomerAnimationState = StateNumber;
-        _CustomerCore._Animator.SetInteger("customerState", CustomerAnimationState);
     }
 
     public void SetCoroutine(string description)
@@ -172,9 +250,9 @@ public class Customer : MonoBehaviour
             GameManagerMono.StopCoroutine(CustomerCoroutine);
             CustomerCoroutine = coroutine;
         }
-        if (_CustomerCore._Renderer == null)
+        if (_Renderer == null)
         {
-            _CustomerCore._Renderer = GetComponent<Renderer>();
+            _Renderer = GetComponent<Renderer>();
         }
         GameManagerMono.StartCoroutine(CustomerCoroutine);
     }
@@ -207,11 +285,18 @@ public class Customer : MonoBehaviour
         SetAnimationState(CustomerAnimationState);
     }
 
-    public void OnDestroy()
+    protected override void OnDestroy()
     {
+        base.OnDestroy();
+
         if (Registry.LevelManagerObject != null)
         {
             Registry.LevelManagerObject.CustomersInScene--;
+        }
+
+        if (CurrentLocation == Constants.RESTAURANT && Meal != "")
+        {
+            Registry.MaxScore += 100;
         }
     }
 }

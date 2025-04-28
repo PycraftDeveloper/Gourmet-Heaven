@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -80,27 +79,6 @@ public class LevelManager : MonoBehaviour
         UIDayText.text = (Registry.LevelNumber + 1).ToString();
     }
 
-    private void SetupCustomerCoreForRestaurant(CustomerCore _CustomerCore, GameObject _Customer, int PositionIndex) // Used to set up the customer (both types) for the restaurant scene.
-    {
-        _CustomerCore.CurrentPosition = new Vector2(
-            Constants.CUSTOMER_SEATS_IN_RESTAURANT[PositionIndex, 0],
-            Constants.CUSTOMER_SEATS_IN_RESTAURANT[PositionIndex, 1]); // sit the customer in the right position for that empty space in the restaurant.
-
-        // Change the rendering configuration for the customers so that the player can appear both above/behind them.
-        _CustomerCore._Renderer.sortingLayerName = "NPC Upper";
-        _CustomerCore._Renderer.sortingOrder = 1;
-
-        CustomerTableArrangement[PositionIndex] = _Customer;
-
-        _CustomerCore.Patience = Random.Range(
-            Constants.CUSTOMER_MIN_PATIENCE[Registry.LevelNumber],
-            Constants.CUSTOMER_MAX_PATIENCE[Registry.LevelNumber]); // Controls how long the customer will exist in the restaurant before it leaves (when not served)
-
-        _CustomerCore.PatienceCoroutine = Registry.GameManagerObject.StartCoroutine(_CustomerCore.ManagePatience()); // Used to keep track of the lifetime of the customer in the restaurant.
-
-        _CustomerCore.CustomerTablePosition = PositionIndex; // Stores the seating position for the customer in the restaurant.
-    }
-
     private void GenerateBackgroundCustomers(int MaxQuantity) // Used to generate random numbers of background customers for the restaurant scene.
     {
         int FreeSpaces = 1; // There will always be a minimum of one free space in the restaurant as this is called on start-up, and when another background customer is removed.
@@ -126,7 +104,6 @@ public class LevelManager : MonoBehaviour
                 if (CustomerTableArrangement[PositionIndex] == null) // When a free seat is found.
                 {
                     BackgroundCustomer _BackgroundCustomer = NewBackgroundCustomer.GetComponent<BackgroundCustomer>();
-                    CustomerCore _CustomerCore = NewBackgroundCustomer.GetComponent<CustomerCore>();
                     if (PositionIndex % 2 == 0) // If the seat is facing the other way, flip the sprite!
                     {
                         Vector3 CustomerScale = _BackgroundCustomer.transform.localScale;
@@ -135,7 +112,7 @@ public class LevelManager : MonoBehaviour
                     }
 
                     Registry.Customers.Add(NewBackgroundCustomer); // Add the background customer to the centralised tracking system.
-                    SetupCustomerCoreForRestaurant(_CustomerCore, NewBackgroundCustomer, PositionIndex); // Set-up the background customer for the restaurant.
+                    _BackgroundCustomer.SetupCustomerCoreForRestaurant(_BackgroundCustomer, PositionIndex); // Set-up the background customer for the restaurant.
                     NewBackgroundCustomer.SetActive(false); // By default, don't show the new customer until the scene is changed (so the customers don't pop in when player is in scene)
                     Seated = true;
                 }
@@ -156,62 +133,6 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void PlaceIntoRestaurant(GameObject CustomerGameObject) // Similar to before, this is used to place customers in the restaurant scene.
-                                                                    // HOWEVER, this is for customers the player can interact with, NOT for background customers.
-    {
-        bool Seated = false;
-        while (!Seated)
-        {
-            int PositionIndex = Random.Range(0, 8);
-            if (CustomerTableArrangement[PositionIndex] == null || CustomerTableArrangement[PositionIndex].GetComponent<BackgroundCustomer>())
-            {
-                if (CustomerTableArrangement[PositionIndex] != null && CustomerTableArrangement[PositionIndex].GetComponent<BackgroundCustomer>())
-                {
-                    Registry.Customers.Remove(CustomerTableArrangement[PositionIndex]);
-                    Destroy(CustomerTableArrangement[PositionIndex]);
-                    CustomerTableArrangement[PositionIndex] = null;
-                }
-                Customer _Customer = CustomerGameObject.GetComponent<Customer>();
-                CustomerCore _CustomerCore = CustomerGameObject.GetComponent<CustomerCore>();
-                if (PositionIndex % 2 == 0)
-                {
-                    Vector3 CustomerScale = _Customer.transform.localScale;
-                    CustomerScale.x *= -1;
-                    _Customer.transform.localScale = CustomerScale;
-                }
-                _Customer.SetAnimationState(Constants.CUSTOMER_IDLE_SIT_ANIMATION); // Ensure that when placed into the restaurant, the customer is in the sitting animation
-                SetupCustomerCoreForRestaurant(_CustomerCore, CustomerGameObject, PositionIndex);
-                Seated = true;
-            }
-        }
-        if (Registry.CurrentSceneName != Constants.RESTAURANT) // In this situation, we want to hide the customer from the kitchen scene (where the player is) until
-                                                               // the player goes into the restaurant scene.
-        {
-            CustomerGameObject.SetActive(false);
-        }
-    }
-
-    private IEnumerator MoveIntoRestaurant(Customer _Customer, GameObject CustomerGameObject) // Used to give the illusion of customers walking out the bottom of the Kitchen, into the restaurant.
-    {
-        CustomerCore _CustomerCore = CustomerGameObject.GetComponent<CustomerCore>();
-        _Customer.SetAnimationState(Constants.CUSTOMER_WALK_DOWN_ANIMATION); // Set the animation to walking.
-        while (_CustomerCore.CurrentLocation == Constants.KITCHEN && _Customer.gameObject != null) // Whilst the player is in the same scene, and the customer hasn't been deleted
-                                                                                                   // which is mainly used for stopping execution through the editor and handling errors there.
-        {
-            _CustomerCore.CurrentPosition = new Vector2(
-                _CustomerCore.CurrentPosition.x,
-                _CustomerCore.CurrentPosition.y - Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime); // move the customer down the scene.
-
-            if (_CustomerCore.CurrentPosition.y < -6.31 || Registry.InGameLevel == false) // When the customer is no longer visible in the
-                                                                                          // kitchen, break out the while loop s it can be set up in the restaurant.
-            {
-                _CustomerCore.CurrentLocation = Constants.RESTAURANT;
-            }
-            yield return null;
-        }
-        PlaceIntoRestaurant(CustomerGameObject); // Set the customer up in the restaurant.
-    }
-
     public void HandleOrderCollection()
     {
         for (int i = 0; i < Registry.Customers.Count; i++)
@@ -219,13 +140,13 @@ public class LevelManager : MonoBehaviour
             Customer _Customer = Registry.Customers[i].GetComponent<Customer>();
             if (_Customer != null)
             {
-                if (_Customer._CustomerCore.CurrentLocation == Constants.KITCHEN)
+                if (_Customer.CurrentLocation == Constants.KITCHEN)
                 {
-                    if (_Customer._CustomerCore.CurrentPosition.x == 0.5f)
+                    if (_Customer.CurrentPosition.x == 0.5f)
                     {
                         CustomerKitchenQueue.Dequeue();
                         _Customer.MealPlaced = true;
-                        _Customer.SetCoroutine(MoveIntoRestaurant(_Customer, Registry.Customers[i]), Constants.MOVE_INTO_RESTAURANT);
+                        _Customer.SetCoroutine(_Customer.MoveIntoRestaurant(), Constants.MOVE_INTO_RESTAURANT);
                         Invoke("UpdateQueuePositions", 1.5f);
                         return;
                     }
@@ -282,34 +203,8 @@ public class LevelManager : MonoBehaviour
         {
             Customer customer = obj.GetComponent<Customer>();
             Vector2 DestinationPosition = new Vector2(0.5f + spacing * index, -3.61f);
-            customer.SetCoroutine(MoveInQueue(customer, DestinationPosition), Constants.MOVE_IN_QUEUE);
+            customer.SetCoroutine(customer.MoveInQueue(DestinationPosition), Constants.MOVE_IN_QUEUE);
             index++;
-        }
-    }
-
-    private IEnumerator MoveInQueue(Customer _Customer, Vector2 DestinationPosition)
-    {
-        Vector2 TargetPosition = _Customer._CustomerCore.CurrentPosition;
-
-        if (TargetPosition.x != DestinationPosition.x)
-        {
-            _Customer.SetAnimationState(Constants.CUSTOMER_WALK_SIDE_ANIMATION);
-
-            Vector2 CurrentPosition = _Customer._CustomerCore.CurrentPosition;
-
-            while (CurrentPosition.x - (Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime) > DestinationPosition.x && Registry.InGameLevel == true && _Customer.gameObject != null)
-            {
-                CurrentPosition.x -= Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime;
-                _Customer._CustomerCore.CurrentPosition = CurrentPosition;
-                yield return null;
-            }
-
-            if (CurrentPosition.x - (Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime) < DestinationPosition.x)
-            {
-                _Customer._CustomerCore.CurrentPosition = DestinationPosition;
-            }
-
-            _Customer.SetAnimationState(Constants.CUSTOMER_IDLE_SIDE_ANIMATION);
         }
     }
 
@@ -346,7 +241,6 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < Registry.Customers.Count; i++)
         {
             Customer thisCustomer = Registry.Customers[i].GetComponent<Customer>();
-            CustomerCore thisCustomerCore = Registry.Customers[i].GetComponent<CustomerCore>();
 
             if (thisCustomer == null)
             {
@@ -377,13 +271,13 @@ public class LevelManager : MonoBehaviour
 
             if (Registry.CurrentSceneName == Constants.KITCHEN)
             {
-                if (thisCustomer._CustomerCore.CurrentPosition.x == 0.5f && thisCustomer._CustomerCore.CurrentPosition.y == -3.61f && CustomersInScene - CustomerKitchenQueue.Count < 8)
+                if (thisCustomer.CurrentPosition.x == 0.5f && thisCustomer.CurrentPosition.y == -3.61f && CustomersInScene - CustomerKitchenQueue.Count < 8)
                 {
                     thisCustomer.SetAnimationState(Constants.CUSTOMER_IDLE_UP_ANIMATION);
                     CacheRegister.SetState(true);
                 }
             }
-            else if (thisCustomerCore.CurrentLocation == Constants.RESTAURANT)
+            else if (thisCustomer.CurrentLocation == Constants.RESTAURANT)
             {
                 thisCustomer.SetAnimationState(Constants.CUSTOMER_IDLE_SIT_ANIMATION);
             }
