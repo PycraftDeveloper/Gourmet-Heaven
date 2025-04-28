@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8a97e9c19a62ed9459b3dea2ef5f627b
+guid: 4c50f664eb620db429e36d879c86502a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2633686334285399007
-    second: UI Lines_SpriteSheet_0
+      213: 930222437859309030
+    second: Mango_Sticky_Rice_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -178,23 +178,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI Lines_SpriteSheet_0
+      name: Mango_Sticky_Rice_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 320
-        height: 180
+        x: 131
+        y: 59
+        width: 58
+        height: 62
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 132, y: 0, z: 178, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd3c1e464cbbc8420800000000000000
-      internalID: 2633686334285399007
+      spriteID: 6e5b3b2f060d8ec00800000000000000
+      internalID: 930222437859309030
       vertices: []
       indices: 
       edges: []
@@ -203,7 +203,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7da6e621f4ed48244bcfbc4ab06cd7ff
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -213,7 +213,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI Lines_SpriteSheet_0: 2633686334285399007
+      Mango_Sticky_Rice_0: 930222437859309030
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
