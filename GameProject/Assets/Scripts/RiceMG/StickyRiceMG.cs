@@ -21,6 +21,7 @@ public class SlicedObject : MonoBehaviour
     public GameObject SlicedRice;
     public GameObject WholeRice;
     public GameObject CutRice;
+    public GameObject SuccessSplashArt;
 
     [SerializeField] private CountdownTimer countdowntimer;
 
@@ -168,36 +169,45 @@ public class SlicedObject : MonoBehaviour
         }
     }
 
-    private void ReturnToKitchen()
-    {
-        Registry.GameManagerObject.ChangeScene();
-    }
-
     // swaps to the sliced asset
-    private void SwapToSliceAsset()
+   private void SwapToSliceAsset()
     {
         if (currentArrow != null)
         {
             Destroy(currentArrow);
         }
 
-        // Disable the whole rice asset
+        // disable the whole rice asset
         if (WholeRice != null)
         {
             WholeRice.SetActive(false);
         }
 
-        // enable the cut asset
+        //  enable the cut asset
         if (CutRice != null)
         {
-            CutRice.SetActive(true);
+            CutRice.SetActive(true); 
         }
 
-        // Return to kitchen after short delay
         if (MiniGameOverLock == false)
         {
             MiniGameOverLock = true;
-            Invoke("ReturnToKitchen", 4f);
+            Invoke("ShowSplashArt", 2f); // show splash art after displaying cut rice asset
         }
+    }
+
+    private void ShowSplashArt()
+    {
+        if (SuccessSplashArt != null)
+        {
+            SuccessSplashArt.gameObject.SetActive(true);
+        }
+
+        Invoke("ReturnToKitchen", 2f); // return to kitchen 
+    }
+
+    private void ReturnToKitchen()
+    {
+        Registry.GameManagerObject.ChangeScene();
     }
 }

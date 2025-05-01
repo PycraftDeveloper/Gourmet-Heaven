@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: a57965eed042e604f9a41e9fa9a951d1
+guid: 5921ea597378c454999ebf2d22cf3120
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2262078261324373847
-    second: Level Select front_0
+      213: -83177388536164067
+    second: Mango_Sticky_Rice_SplashArt Asset GOOD_0
+  - first:
+      213: -2746006952941557861
+    second: Mango_Sticky_Rice_SplashArt Asset GOOD_1
+  - first:
+      213: -8147042858235531160
+    second: Mango_Sticky_Rice_SplashArt Asset GOOD_2
+  - first:
+      213: -5441469353334702611
+    second: Mango_Sticky_Rice_SplashArt Asset GOOD_3
+  - first:
+      213: -3799105971793317103
+    second: Mango_Sticky_Rice_SplashArt Asset GOOD_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,7 +96,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -97,7 +109,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -123,20 +135,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -174,17 +173,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Level Select front_0
+      name: Mango_Sticky_Rice_SplashArt Asset GOOD_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 0
-        width: 625
-        height: 360
+        x: 122
+        y: 59
+        width: 77
+        height: 74
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,8 +205,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 75f5f549134846f10800000000000000
-      internalID: 2262078261324373847
+      spriteID: d1115f61b9e78def0800000000000000
+      internalID: -83177388536164067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Sticky_Rice_SplashArt Asset GOOD_1
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 104
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b976a2ba93934e9d0800000000000000
+      internalID: -2746006952941557861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Sticky_Rice_SplashArt Asset GOOD_2
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 97
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 860fcf07fa3efee80800000000000000
+      internalID: -8147042858235531160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Sticky_Rice_SplashArt Asset GOOD_3
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 86
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ded7f4a04740c74b0800000000000000
+      internalID: -5441469353334702611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Sticky_Rice_SplashArt Asset GOOD_4
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 74
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 113b1374f3dd64bc0800000000000000
+      internalID: -3799105971793317103
       vertices: []
       indices: 
       edges: []
@@ -213,7 +313,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Level Select front_0: 2262078261324373847
+      Mango_Sticky_Rice_SplashArt Asset GOOD_0: -83177388536164067
+      Mango_Sticky_Rice_SplashArt Asset GOOD_1: -2746006952941557861
+      Mango_Sticky_Rice_SplashArt Asset GOOD_2: -8147042858235531160
+      Mango_Sticky_Rice_SplashArt Asset GOOD_3: -5441469353334702611
+      Mango_Sticky_Rice_SplashArt Asset GOOD_4: -3799105971793317103
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
