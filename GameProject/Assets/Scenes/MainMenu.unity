@@ -1689,9 +1689,11 @@ MonoBehaviour:
   bgm_MainMenu: {fileID: 8300000, guid: 76d4d504df08d9a42b568b3487d975bc, type: 3}
   bgm_MiniGame: {fileID: 8300000, guid: c31feeb70328ca4409ba72fc3dfdc06d, type: 3}
   footsteps: {fileID: 8300000, guid: 228d5cfead2eb22428cab4e62a6546ba, type: 3}
-  audioClip2: {fileID: 8300000, guid: 5c88ef67abf676347a17ff9c2db1ddf3, type: 3}
-  audioClip3: {fileID: 8300000, guid: f856476201d24d946b3116ee2b98f99c, type: 3}
-  audioClip4: {fileID: 0}
+  CuttingSound: {fileID: 8300000, guid: 5c88ef67abf676347a17ff9c2db1ddf3, type: 3}
+  MangoFinish: {fileID: 8300000, guid: f856476201d24d946b3116ee2b98f99c, type: 3}
+  CustomerFinish1: {fileID: 8300000, guid: 8159bb52a756d3b4d89ff456cbc197de, type: 3}
+  CustomerFinish2: {fileID: 8300000, guid: 8c70e66fe74b3d6458b31d9cb7ea0e7d, type: 3}
+  CustomerFinish3: {fileID: 8300000, guid: b08eb2764414142458cfea6868464f14, type: 3}
   FrameTexture: {fileID: 0}
   BlurredFrameTexture: {fileID: 0}
   BlurredMaterial: {fileID: 2100000, guid: 92f2222756e8e534c8b66d92176d225b, type: 2}

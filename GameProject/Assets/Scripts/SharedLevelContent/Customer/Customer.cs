@@ -107,6 +107,19 @@ public class Customer : CustomerCore
             if (Registry.PlayerObject.HoldingMeal == Meal)
             {
                 CorrectMealServed = true;
+                int CustomerSound = Random.Range(0, 3);
+                if (CustomerSound == 0)
+                {
+                    Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.CustomerFinish1);
+                }
+                if (CustomerSound == 1)
+                {
+                    Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.CustomerFinish2);
+                }
+                if (CustomerSound == 2)
+                {
+                    Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.CustomerFinish3);
+                }
                 Registry.PlayerScore += 100;
             }
 
