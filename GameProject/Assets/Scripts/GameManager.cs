@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
     public AudioClip CustomerFinish1;
     public AudioClip CustomerFinish2;
     public AudioClip CustomerFinish3;
-    public AudioClip KitchenAmbience;
     public AudioClip RestaurantAmbience;
     // end - this section of code was worked on by Joshua Cossar (^)
 
@@ -174,7 +173,18 @@ public class GameManager : MonoBehaviour
         {
             Registry.InGameLevel = true;
             EnableLevelObjects(sceneName);
+            if (SFXSource.clip != RestaurantAmbience)
+            {
+                SFXSource.clip = RestaurantAmbience;
+                SFXSource.Stop();
+            }
+            SFXSource.volume = Registry.SFXVolume;
+            if (!SFXSource.isPlaying)
+            {
+                SFXSource.Play();
+            }
         }
+        
         // start - this section of code was worked on by Joshua Cossar (v)
         if (sceneName == Constants.KITCHEN)
         {
@@ -316,6 +326,11 @@ public class GameManager : MonoBehaviour
             if (Registry.InGameLevel)
             {
                 RenderGameSceneToFrameBuffer();
+            }
+
+            if (SFXSource.clip == RestaurantAmbience)
+            {
+                SFXSource.Stop();
             }
         }
 

@@ -545,14 +545,14 @@ RectTransform:
   m_GameObject: {fileID: 340507949}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 3, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 4.285714, z: 1.4285715}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 680650251}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 432, y: -147}
+  m_AnchoredPosition: {x: 432, y: -155}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &340507951
@@ -1688,12 +1688,13 @@ MonoBehaviour:
   bgm_InGame: {fileID: 8300000, guid: ea31f5bef3f7e2343a28677840e2b5ee, type: 3}
   bgm_MainMenu: {fileID: 8300000, guid: 76d4d504df08d9a42b568b3487d975bc, type: 3}
   bgm_MiniGame: {fileID: 8300000, guid: c31feeb70328ca4409ba72fc3dfdc06d, type: 3}
-  footsteps: {fileID: 8300000, guid: 228d5cfead2eb22428cab4e62a6546ba, type: 3}
+  CashRegisterNoise: {fileID: 8300000, guid: 284483556436c7d4690f00723f1dae23, type: 3}
   CuttingSound: {fileID: 8300000, guid: 5c88ef67abf676347a17ff9c2db1ddf3, type: 3}
   MangoFinish: {fileID: 8300000, guid: f856476201d24d946b3116ee2b98f99c, type: 3}
   CustomerFinish1: {fileID: 8300000, guid: 8159bb52a756d3b4d89ff456cbc197de, type: 3}
   CustomerFinish2: {fileID: 8300000, guid: 8c70e66fe74b3d6458b31d9cb7ea0e7d, type: 3}
   CustomerFinish3: {fileID: 8300000, guid: b08eb2764414142458cfea6868464f14, type: 3}
+  RestaurantAmbience: {fileID: 8300000, guid: 1850f875278093646a0e8866e986da5d, type: 3}
   FrameTexture: {fileID: 0}
   BlurredFrameTexture: {fileID: 0}
   BlurredMaterial: {fileID: 2100000, guid: 92f2222756e8e534c8b66d92176d225b, type: 2}
