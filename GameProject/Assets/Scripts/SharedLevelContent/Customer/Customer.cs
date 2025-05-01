@@ -84,7 +84,7 @@ public class Customer : CustomerCore
                     transform.localScale = CustomerScale;
                 }
                 SetAnimationState(Constants.CUSTOMER_IDLE_SIT_ANIMATION); // Ensure that when placed into the restaurant, the customer is in the sitting animation
-                SetupCustomerCoreForRestaurant(this, PositionIndex);
+                SetupCustomerCoreForRestaurant(PositionIndex);
                 Seated = true;
             }
         }

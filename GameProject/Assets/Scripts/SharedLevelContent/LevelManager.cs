@@ -110,9 +110,9 @@ public class LevelManager : MonoBehaviour
                         CustomerScale.x *= -1;
                         _BackgroundCustomer.transform.localScale = CustomerScale;
                     }
-
+                    _BackgroundCustomer.CustomerTablePosition = PositionIndex;
                     Registry.Customers.Add(NewBackgroundCustomer); // Add the background customer to the centralised tracking system.
-                    _BackgroundCustomer.SetupCustomerCoreForRestaurant(_BackgroundCustomer, PositionIndex); // Set-up the background customer for the restaurant.
+                    _BackgroundCustomer.SetupCustomerCoreForRestaurant(PositionIndex); // Set-up the background customer for the restaurant.
                     NewBackgroundCustomer.SetActive(false); // By default, don't show the new customer until the scene is changed (so the customers don't pop in when player is in scene)
                     Seated = true;
                 }

@@ -50,25 +50,25 @@ public class CustomerCore : MonoBehaviour
         }
     }
 
-    public void SetupCustomerCoreForRestaurant<T>(T _Customer, int PositionIndex) where T : CustomerCore// Used to set up the customer (both types) for the restaurant scene.
+    public void SetupCustomerCoreForRestaurant(int PositionIndex)// Used to set up the customer (both types) for the restaurant scene.
     {
-        _Customer.CurrentPosition = new Vector2(
+        CurrentPosition = new Vector2(
             Constants.CUSTOMER_SEATS_IN_RESTAURANT[PositionIndex, 0],
             Constants.CUSTOMER_SEATS_IN_RESTAURANT[PositionIndex, 1]); // sit the customer in the right position for that empty space in the restaurant.
 
         // Change the rendering configuration for the customers so that the player can appear both above/behind them.
-        _Customer._Renderer.sortingLayerName = "NPC Upper";
-        _Customer._Renderer.sortingOrder = 1;
+        _Renderer.sortingLayerName = "NPC Upper";
+        _Renderer.sortingOrder = 1;
 
-        Registry.LevelManagerObject.CustomerTableArrangement[PositionIndex] = _Customer.gameObject;
+        Registry.LevelManagerObject.CustomerTableArrangement[PositionIndex] = gameObject;
 
-        _Customer.Patience = Random.Range(
+        Patience = Random.Range(
             Constants.CUSTOMER_MIN_PATIENCE[Registry.LevelNumber],
             Constants.CUSTOMER_MAX_PATIENCE[Registry.LevelNumber]); // Controls how long the customer will exist in the restaurant before it leaves (when not served)
 
-        _Customer.PatienceCoroutine = Registry.GameManagerObject.StartCoroutine(_Customer.ManagePatience()); // Used to keep track of the lifetime of the customer in the restaurant.
+        PatienceCoroutine = Registry.GameManagerObject.StartCoroutine(ManagePatience()); // Used to keep track of the lifetime of the customer in the restaurant.
 
-        _Customer.CustomerTablePosition = PositionIndex; // Stores the seating position for the customer in the restaurant.
+        CustomerTablePosition = PositionIndex; // Stores the seating position for the customer in the restaurant.
     }
 
     public IEnumerator ManagePatience()
