@@ -6,12 +6,14 @@ public class Player : MonoBehaviour
 {
     public GameObject[] AppliancePopUpMessages = new GameObject[6];
     public Sprite[] TillPointPopUpSprites = new Sprite[4];
+    public Sprite[] HoldingMealPopUpSprites = new Sprite[4];
 
     private Renderer PlayerSprite;
     public GameObject JoystickInputObject;
     private PlayerInputCircle JoystickInput;
     private Rigidbody2D PlayerRigidBody;
     public Animator PlayerAnimator;
+    public GameObject PlayerHoldingPopUp;
 
     private List<string> PlacedMeals = new List<string>();
 
@@ -327,6 +329,30 @@ public class Player : MonoBehaviour
             if (AppliancePopUpMessages[5] != null)
             {
                 AppliancePopUpMessages[5].SetActive(HoldingMeal != Constants.NOT_HOLDING_MEAL);
+            }
+        }
+
+        PlayerHoldingPopUp.SetActive(HoldingMeal != Constants.NOT_HOLDING_MEAL);
+
+        if (HoldingMeal != Constants.NOT_HOLDING_MEAL)
+        {
+            switch (HoldingMeal)
+            {
+                case Constants.PHO:
+                    PlayerHoldingPopUp.GetComponent<SpriteRenderer>().sprite = HoldingMealPopUpSprites[0];
+                    break;
+
+                case Constants.SUSHI:
+                    PlayerHoldingPopUp.GetComponent<SpriteRenderer>().sprite = HoldingMealPopUpSprites[1];
+                    break;
+
+                case Constants.BAO_BUNS:
+                    PlayerHoldingPopUp.GetComponent<SpriteRenderer>().sprite = HoldingMealPopUpSprites[2];
+                    break;
+
+                case Constants.MANGO_STICKY_RICE:
+                    PlayerHoldingPopUp.GetComponent<SpriteRenderer>().sprite = HoldingMealPopUpSprites[3];
+                    break;
             }
         }
     }
