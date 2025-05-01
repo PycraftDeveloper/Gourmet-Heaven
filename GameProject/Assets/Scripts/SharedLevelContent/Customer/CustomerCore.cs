@@ -6,6 +6,8 @@ public class CustomerCore : MonoBehaviour
     public Animator _Animator;
     public Rigidbody2D _RigidBody2D;
     public Renderer _Renderer;
+    public GameObject PatienceMeter;
+    private Animator PatienceMeterAnimator;
 
     public RuntimeAnimatorController[] AnimationControllers = new RuntimeAnimatorController[8];
 
@@ -17,6 +19,7 @@ public class CustomerCore : MonoBehaviour
     public bool DeSpawn = false;
 
     public float Patience;
+    public float InitialPatience;
 
     public Vector2 CurrentPosition;
 
@@ -24,11 +27,17 @@ public class CustomerCore : MonoBehaviour
 
     protected virtual void Awake()
     {
+        Initialise();
+    }
+
+    public virtual void Initialise()
+    {
         DontDestroyOnLoad(gameObject);
 
         _Animator = GetComponent<Animator>();
         _RigidBody2D = GetComponent<Rigidbody2D>();
         _Renderer = GetComponent<Renderer>();
+        PatienceMeterAnimator = PatienceMeter.GetComponent<Animator>();
 
         ModelIndex = Random.Range(0, 8);
 
@@ -66,14 +75,19 @@ public class CustomerCore : MonoBehaviour
             Constants.CUSTOMER_MIN_PATIENCE[Registry.LevelNumber],
             Constants.CUSTOMER_MAX_PATIENCE[Registry.LevelNumber]); // Controls how long the customer will exist in the restaurant before it leaves (when not served)
 
+        InitialPatience = Patience;
+
         PatienceCoroutine = Registry.GameManagerObject.StartCoroutine(ManagePatience()); // Used to keep track of the lifetime of the customer in the restaurant.
 
         CustomerTablePosition = PositionIndex; // Stores the seating position for the customer in the restaurant.
+
+        PatienceMeter.SetActive(true);
     }
 
     public IEnumerator ManagePatience()
     {
-        while (gameObject != null)
+        PatienceMeterAnimator.speed = 30.017f / InitialPatience;
+        while (this != null)
         {
             if (DeSpawn)
             {

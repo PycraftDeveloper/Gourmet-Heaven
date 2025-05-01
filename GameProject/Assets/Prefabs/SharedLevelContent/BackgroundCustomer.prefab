@@ -249,6 +249,7 @@ MonoBehaviour:
   _Animator: {fileID: 0}
   _RigidBody2D: {fileID: 0}
   _Renderer: {fileID: 0}
+  PatienceMeter: {fileID: 7092902689894341450}
   AnimationControllers:
   - {fileID: 9100000, guid: e160397fb5efc7940b0c4253988bc2d4, type: 2}
   - {fileID: 9100000, guid: 24dab2338d43d284489ad76d166e3ff5, type: 2}
@@ -263,6 +264,7 @@ MonoBehaviour:
   CustomerTablePosition: 0
   DeSpawn: 0
   Patience: 0
+  InitialPatience: 0
   CurrentPosition: {x: 0, y: 0}
 --- !u!1 &7092902689894341450
 GameObject:
