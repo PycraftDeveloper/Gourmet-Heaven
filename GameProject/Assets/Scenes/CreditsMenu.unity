@@ -5677,7 +5677,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 267, y: 49}
+  m_AnchoredPosition: {x: 267, y: 59}
   m_SizeDelta: {x: 1087.79, y: 624.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1806162447
@@ -5703,10 +5703,10 @@ MonoBehaviour:
   m_text: "Project manager: Joshua Cossar\n\nLead programmer: Thomas Jebson\n\nLead
     designer: Dawid Galka-Wozniak\n\nDesign team: Josh Cossar, Emmie Heane\n\nLead
     artist: Alice Haydon-Grime\n\nArt team: Finlay Thomson, Luna Lin Gao, \nTheo
-    Carre\n\nBackground music: rose skillett"
+    Carre\n\nBackground music: Rose Skillett"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d3a760a871bcca34b825b8d5b0e6ec18, type: 2}
-  m_sharedMaterial: {fileID: 6459628157223975976, guid: d3a760a871bcca34b825b8d5b0e6ec18, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 314a1e66930e8514a86b345e91071b4a, type: 2}
+  m_sharedMaterial: {fileID: -6766621083084359742, guid: 314a1e66930e8514a86b345e91071b4a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5768,7 +5768,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -284.91205, y: 0, z: 264.2198, w: -111.66168}
+  m_margin: {x: -284.91205, y: -5.7058716, z: 264.2198, w: -134.48517}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
