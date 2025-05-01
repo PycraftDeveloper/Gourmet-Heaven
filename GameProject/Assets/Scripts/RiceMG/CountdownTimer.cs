@@ -3,7 +3,6 @@
 using UnityEngine;
 using TMPro;
 
-
 public class CountdownTimer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI timerText;
@@ -13,7 +12,7 @@ public class CountdownTimer : MonoBehaviour
     public float delayTime = 2f;
 
     public GameObject SplashArtFail;
-    
+
     private bool isRunning = true;
 
     private void ReturnToKitchen()
@@ -32,7 +31,7 @@ public class CountdownTimer : MonoBehaviour
         }
         else if (remainingTime <= 0) // Mini-game failed condition
         {
-           SplashArtFail.gameObject.SetActive(true);
+            SplashArtFail.gameObject.SetActive(true);
             remainingTime = 0;
             timerText.color = Color.red;
             minigamefailedText.gameObject.SetActive(true);
