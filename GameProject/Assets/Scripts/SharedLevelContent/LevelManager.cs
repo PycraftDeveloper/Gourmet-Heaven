@@ -69,7 +69,7 @@ public class LevelManager : MonoBehaviour
     private float NextCustomerSpawnTime = 0; // Stores the values the 'CustomerSpawnTimer' needs to reach before a new customer is spawned (UNLESS there are no customers in the kitchen).
     public int CustomersInScene = 0; // Stores a running total of the number of customers currently in the game.
 
-    private Queue<GameObject> CustomerKitchenQueue = new Queue<GameObject>(); // Stores the order customers are arranged in the Kitchen queue.
+    public Queue<GameObject> CustomerKitchenQueue = new Queue<GameObject>(); // Stores the order customers are arranged in the Kitchen queue.
     public GameObject[] CustomerTableArrangement = new GameObject[8]; // Stores the seating positions and where customers are currently seated in the restaurant scene.
 
     private bool ReturnToGameToggle = true; // Used to trigger a unique event when the player returns to the game scenes (Kitchen/Restaurant) from another menu, like the pause menu.
