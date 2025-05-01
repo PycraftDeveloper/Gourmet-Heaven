@@ -148,6 +148,7 @@ public class LevelManager : MonoBehaviour
                         _Customer.MealPlaced = true;
                         _Customer.SetCoroutine(_Customer.MoveIntoRestaurant(), Constants.MOVE_INTO_RESTAURANT);
                         Invoke("UpdateQueuePositions", 1.5f);
+                        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.CashRegisterNoise); // added by Joshua Cossar
                         return;
                     }
                 }

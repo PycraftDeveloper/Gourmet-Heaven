@@ -18,12 +18,14 @@ public class GameManager : MonoBehaviour
     public AudioClip bgm_MainMenu;
     public AudioClip bgm_MiniGame;
 
-    public AudioClip footsteps;
+    public AudioClip CashRegisterNoise;
     public AudioClip CuttingSound;
     public AudioClip MangoFinish;
     public AudioClip CustomerFinish1;
     public AudioClip CustomerFinish2;
     public AudioClip CustomerFinish3;
+    public AudioClip KitchenAmbience;
+    public AudioClip RestaurantAmbience;
     // end - this section of code was worked on by Joshua Cossar (^)
 
     private Stack<string> MenuStack = new Stack<string>(); // stores a stack containing all the menus previously visited
@@ -173,7 +175,7 @@ public class GameManager : MonoBehaviour
             Registry.InGameLevel = true;
             EnableLevelObjects(sceneName);
         }
-
+        // start - this section of code was worked on by Joshua Cossar (v)
         if (sceneName == Constants.KITCHEN)
         {
             if (musicSource.clip != bgm_InGame)
@@ -198,6 +200,7 @@ public class GameManager : MonoBehaviour
             musicSource.volume = Registry.MusicVolume;
             musicSource.Play();
         }
+        // End - this section of code was worked on by Joshua Cossar
 
         if (sceneName == Constants.END_MENU)
         {
