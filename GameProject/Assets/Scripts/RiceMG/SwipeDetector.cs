@@ -26,7 +26,7 @@ public class SwipeDetector : MonoBehaviour
             if (swipeDistance >= minSwipeDistance)
             {
                 SlicedObject.TrySlice(swipeStart, swipeEnd);
-                Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.audioClip2);
+                Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.CuttingSound);
             }
             else
             {

@@ -6796,6 +6796,11 @@ MonoBehaviour:
   - {fileID: 1056107115}
   - {fileID: 384915290}
   - {fileID: 1945926958}
+  TillPointPopUpSprites:
+  - {fileID: -144054381797413889, guid: 9dba2fe9e4da2334db8bac06dbd5dc84, type: 3}
+  - {fileID: -3616226451524385686, guid: 9dba2fe9e4da2334db8bac06dbd5dc84, type: 3}
+  - {fileID: 1039038786971943429, guid: 9dba2fe9e4da2334db8bac06dbd5dc84, type: 3}
+  - {fileID: 6015601807735672744, guid: 9dba2fe9e4da2334db8bac06dbd5dc84, type: 3}
   JoystickInputObject: {fileID: 6213745052493878434}
   PlayerAnimator: {fileID: 7328136110366525892}
   RenderPriority: 1

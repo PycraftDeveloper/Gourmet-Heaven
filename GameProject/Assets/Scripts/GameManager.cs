@@ -19,9 +19,11 @@ public class GameManager : MonoBehaviour
     public AudioClip bgm_MiniGame;
 
     public AudioClip footsteps;
-    public AudioClip audioClip2;
-    public AudioClip audioClip3;
-    public AudioClip audioClip4;
+    public AudioClip CuttingSound;
+    public AudioClip MangoFinish;
+    public AudioClip CustomerFinish1;
+    public AudioClip CustomerFinish2;
+    public AudioClip CustomerFinish3;
     // end - this section of code was worked on by Joshua Cossar (^)
 
     private Stack<string> MenuStack = new Stack<string>(); // stores a stack containing all the menus previously visited

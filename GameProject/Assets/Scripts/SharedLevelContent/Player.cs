@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public GameObject[] AppliancePopUpMessages = new GameObject[6];
+    public Sprite[] TillPointPopUpSprites = new Sprite[4];
 
     private Renderer PlayerSprite;
     public GameObject JoystickInputObject;
@@ -53,6 +54,29 @@ public class Player : MonoBehaviour
             {
                 if (Registry.LevelManagerObject.CacheRegister.GetState())
                 {
+                    if (!AppliancePopUpMessages[0].activeSelf)
+                    {
+                        GameObject CustomerObjectAtTill = Registry.LevelManagerObject.CustomerKitchenQueue.Peek();
+                        Customer CustomerAtTill = CustomerObjectAtTill.GetComponent<Customer>();
+                        switch (CustomerAtTill.Meal)
+                        {
+                            case Constants.PHO:
+                                AppliancePopUpMessages[0].GetComponent<Image>().sprite = TillPointPopUpSprites[0];
+                                break;
+
+                            case Constants.SUSHI:
+                                AppliancePopUpMessages[0].GetComponent<Image>().sprite = TillPointPopUpSprites[1];
+                                break;
+
+                            case Constants.BAO_BUNS:
+                                AppliancePopUpMessages[0].GetComponent<Image>().sprite = TillPointPopUpSprites[2];
+                                break;
+
+                            case Constants.MANGO_STICKY_RICE:
+                                AppliancePopUpMessages[0].GetComponent<Image>().sprite = TillPointPopUpSprites[3];
+                                break;
+                        }
+                    }
                     AppliancePopUpMessages[0].SetActive(true);
                 }
                 else
