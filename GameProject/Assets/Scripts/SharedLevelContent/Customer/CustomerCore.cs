@@ -37,7 +37,11 @@ public class CustomerCore : MonoBehaviour
         _Animator = GetComponent<Animator>();
         _RigidBody2D = GetComponent<Rigidbody2D>();
         _Renderer = GetComponent<Renderer>();
-        PatienceMeterAnimator = PatienceMeter.GetComponent<Animator>();
+
+        if (PatienceMeter != null)
+        {
+            PatienceMeterAnimator = PatienceMeter.GetComponent<Animator>();
+        }
 
         ModelIndex = Random.Range(0, 8);
 
@@ -81,12 +85,18 @@ public class CustomerCore : MonoBehaviour
 
         CustomerTablePosition = PositionIndex; // Stores the seating position for the customer in the restaurant.
 
-        PatienceMeter.SetActive(true);
+        if (PatienceMeter != null)
+        {
+            PatienceMeter.SetActive(true);
+        }
     }
 
     public IEnumerator ManagePatience()
     {
-        PatienceMeterAnimator.speed = 30.017f / InitialPatience;
+        if (PatienceMeterAnimator != null)
+        {
+            PatienceMeterAnimator.speed = 30.017f / InitialPatience;
+        }
         while (this != null)
         {
             if (DeSpawn)
