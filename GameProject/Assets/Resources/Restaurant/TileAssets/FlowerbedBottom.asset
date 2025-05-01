@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: FlowerbedTopLeft
+  m_Name: FlowerbedBottom
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 1385511724, guid: 1ea224b6148ef044aa386abe287bd6a3, type: 3}
+  m_Sprite: {fileID: -1889577374, guid: b21c5d694b799c845b7a3bee9e0cc529, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
