@@ -1,0 +1,675 @@
+fileFormatVersion: 2
+guid: d6efc5762bb2bf14e84afae0f5807b6c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2678258581214257813
+    second: PhoMinigameAssets_0
+  - first:
+      213: 8843314011722578494
+    second: PhoMinigameAssets_1
+  - first:
+      213: 1626228374074890724
+    second: PhoMinigameAssets_2
+  - first:
+      213: -9133042418893430852
+    second: PhoMinigameAssets_3
+  - first:
+      213: 8673344239671360327
+    second: PhoMinigameAssets_4
+  - first:
+      213: -3617603835010804535
+    second: PhoMinigameAssets_5
+  - first:
+      213: 9137869920530412650
+    second: PhoMinigameAssets_6
+  - first:
+      213: 7736664604014297428
+    second: PhoMinigameAssets_7
+  - first:
+      213: -4802165778785310906
+    second: PhoMinigameAssets_8
+  - first:
+      213: -3370561651078774357
+    second: PhoMinigameAssets_9
+  - first:
+      213: 6032817935139035984
+    second: PhoMinigameAssets_10
+  - first:
+      213: 7397581235530796953
+    second: PhoMinigameAssets_11
+  - first:
+      213: -6148632218659430052
+    second: PhoMinigameAssets_12
+  - first:
+      213: -5362877362066917364
+    second: PhoMinigameAssets_13
+  - first:
+      213: -8657607763073689186
+    second: PhoMinigameAssets_14
+  - first:
+      213: -2297222953218454020
+    second: PhoMinigameAssets_15
+  - first:
+      213: 4646800218425110353
+    second: PhoMinigameAssets_16
+  - first:
+      213: -6904330676107491595
+    second: PhoMinigameAssets_17
+  - first:
+      213: 2948346397272462220
+    second: PhoMinigameAssets_18
+  - first:
+      213: -5616201689822385242
+    second: PhoMinigameAssets_19
+  - first:
+      213: -7489384312833919352
+    second: PhoMinigameAssets_20
+  - first:
+      213: -2430866936705086825
+    second: PhoMinigameAssets_21
+  - first:
+      213: 6356751928396754491
+    second: PhoMinigameAssets_22
+  - first:
+      213: -5100826428642761335
+    second: PhoMinigameAssets_23
+  - first:
+      213: -5340038762292063009
+    second: PhoMinigameAssets_24
+  - first:
+      213: 7993011557245185253
+    second: PhoMinigameAssets_25
+  - first:
+      213: 3513435296467949415
+    second: PhoMinigameAssets_26
+  - first:
+      213: -5116750573500619623
+    second: PhoMinigameAssets_27
+  - first:
+      213: 7956190359592547842
+    second: PhoMinigameAssets_28
+  - first:
+      213: -7392130935069453596
+    second: PhoMinigameAssets_29
+  - first:
+      213: 142703567347472611
+    second: PhoMinigameAssets_30
+  - first:
+      213: 28558240129562587
+    second: PhoMinigameAssets_31
+  - first:
+      213: -7434198097232386668
+    second: PhoMinigameAssets_32
+  - first:
+      213: -1586346066572062812
+    second: PhoMinigameAssets_33
+  - first:
+      213: -2674283718131327650
+    second: PhoMinigameAssets_34
+  - first:
+      213: 5393633133271617737
+    second: PhoMinigameAssets_35
+  - first:
+      213: -711797924871803446
+    second: PhoMinigameAssets_36
+  - first:
+      213: -7581056393232822123
+    second: PhoMinigameAssets_37
+  - first:
+      213: -3396923615351707879
+    second: PhoMinigameAssets_38
+  - first:
+      213: 2878300952985916664
+    second: PhoMinigameAssets_39
+  - first:
+      213: 7891542914493627691
+    second: PhoMinigameAssets_40
+  - first:
+      213: 3080258814803164287
+    second: PhoMinigameAssets_41
+  - first:
+      213: 2530391775997851154
+    second: PhoMinigameAssets_42
+  - first:
+      213: 2680458540171296293
+    second: PhoMinigameAssets_43
+  - first:
+      213: 3982937591362415344
+    second: PhoMinigameAssets_44
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pot_Noodles
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 229
+        width: 96
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 592eae55df51b2520800000000000000
+      internalID: 2678258581214257813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pot_Beef
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 229
+        width: 96
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3a75f16d33c9ba70800000000000000
+      internalID: 8843314011722578494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bowl_Cillantro
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 232
+        width: 84
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e915601716819610800000000000000
+      internalID: 1626228374074890724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bowl_Parsley
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 232
+        width: 84
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbf58471f4ae04180800000000000000
+      internalID: -9133042418893430852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pot_Flipped
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 169
+        width: 96
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74bba44f1a8ed5870800000000000000
+      internalID: 8673344239671360327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ingredient_Noodles
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 163
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c4171c9a70bbcdc0800000000000000
+      internalID: -3617603835010804535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ingredient_Beef
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 189
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6431f8374c30de70800000000000000
+      internalID: 9137869920530412650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ingredient_Cillantro
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 191
+        width: 63
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4514c9c77772e5b60800000000000000
+      internalID: 7736664604014297428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ingredient_Parsley
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 191
+        width: 64
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 647e6facaa74b5db0800000000000000
+      internalID: -4802165778785310906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bowl_Flipped
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 114
+        width: 84
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91763d138f3bbd0d0800000000000000
+      internalID: -3396923615351707879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIClick
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 109
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f4d4638777c1f720800000000000000
+      internalID: 2878300952985916664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pho1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 125
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2db4243874648d60800000000000000
+      internalID: 7891542914493627691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pho2
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 2
+        width: 125
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7cbb9872174fba20800000000000000
+      internalID: 3080258814803164287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pho3
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 2
+        width: 125
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 216fbe6e9e1cd1320800000000000000
+      internalID: 2530391775997851154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pho4
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 2
+        width: 125
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52e721237d6e23520800000000000000
+      internalID: 2680458540171296293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pho5
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 2
+        width: 125
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fae4b703ac364730800000000000000
+      internalID: 3982937591362415344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9bf450df2df8ab941aa81ea5596169e8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Bowl_Cillantro: 1626228374074890724
+      Bowl_Flipped: -3396923615351707879
+      Bowl_Parsley: -9133042418893430852
+      Ingredient_Beef: 9137869920530412650
+      Ingredient_Cillantro: 7736664604014297428
+      Ingredient_Noodles: -3617603835010804535
+      Ingredient_Parsley: -4802165778785310906
+      Pho1: 7891542914493627691
+      Pho2: 3080258814803164287
+      Pho3: 2530391775997851154
+      Pho4: 2680458540171296293
+      Pho5: 3982937591362415344
+      PhoMinigameAssets_10: 6032817935139035984
+      PhoMinigameAssets_11: 7397581235530796953
+      PhoMinigameAssets_12: -6148632218659430052
+      PhoMinigameAssets_13: -5362877362066917364
+      PhoMinigameAssets_14: -8657607763073689186
+      PhoMinigameAssets_15: -2297222953218454020
+      PhoMinigameAssets_16: 4646800218425110353
+      PhoMinigameAssets_17: -6904330676107491595
+      PhoMinigameAssets_18: 2948346397272462220
+      PhoMinigameAssets_19: -5616201689822385242
+      PhoMinigameAssets_20: -7489384312833919352
+      PhoMinigameAssets_21: -2430866936705086825
+      PhoMinigameAssets_22: 6356751928396754491
+      PhoMinigameAssets_23: -5100826428642761335
+      PhoMinigameAssets_24: -5340038762292063009
+      PhoMinigameAssets_25: 7993011557245185253
+      PhoMinigameAssets_26: 3513435296467949415
+      PhoMinigameAssets_27: -5116750573500619623
+      PhoMinigameAssets_28: 7956190359592547842
+      PhoMinigameAssets_29: -7392130935069453596
+      PhoMinigameAssets_30: 142703567347472611
+      PhoMinigameAssets_31: 28558240129562587
+      PhoMinigameAssets_32: -7434198097232386668
+      PhoMinigameAssets_33: -1586346066572062812
+      PhoMinigameAssets_34: -2674283718131327650
+      PhoMinigameAssets_35: 5393633133271617737
+      PhoMinigameAssets_36: -711797924871803446
+      PhoMinigameAssets_37: -7581056393232822123
+      PhoMinigameAssets_9: -3370561651078774357
+      Pot_Beef: 8843314011722578494
+      Pot_Flipped: 8673344239671360327
+      Pot_Noodles: 2678258581214257813
+      UIClick: 2878300952985916664
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
