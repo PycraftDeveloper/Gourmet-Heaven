@@ -150,7 +150,7 @@ public class SlicedObject : MonoBehaviour
         if (currentSliceIndex >= slicePoints.Length - 2)
         {
             isSliced = true;
-            Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.audioClip3);
+            Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.MangoFinish);
             ShowMessage("Amazing!");
             Debug.Log("Mango Fully Sliced!");
             Registry.PlayerObject.GetComponent<Player>().HoldingMeal = Constants.MANGO_STICKY_RICE;
