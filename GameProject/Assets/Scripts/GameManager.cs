@@ -247,7 +247,7 @@ public class GameManager : MonoBehaviour
 
     public void RenderGameSceneToFrameBuffer()
     {
-        if (Registry.GameInBackground)
+        if (Registry.GameInBackground || Application.platform == RuntimePlatform.IPhonePlayer)
         {
             return;
         }
