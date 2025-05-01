@@ -16,7 +16,7 @@ public class Customer : CustomerCore
     public bool MealPlaced = false;
 
     public GameObject[] OrderPopUpMessages = new GameObject[4];
-    public GameObject InstantiatedOrderPopUpMessages;
+    public GameObject InstantiatedOrderPopUpMessage;
 
     public IEnumerator MoveInQueue(Vector2 DestinationPosition)
     {
@@ -84,7 +84,7 @@ public class Customer : CustomerCore
                     transform.localScale = CustomerScale;
                 }
                 SetAnimationState(Constants.CUSTOMER_IDLE_SIT_ANIMATION); // Ensure that when placed into the restaurant, the customer is in the sitting animation
-                SetupCustomerCoreForRestaurant(this, PositionIndex);
+                SetupCustomerCoreForRestaurant(PositionIndex);
                 Seated = true;
             }
         }
@@ -127,7 +127,7 @@ public class Customer : CustomerCore
 
             Registry.PlayerObject.HoldingMeal = Constants.NOT_HOLDING_MEAL;
 
-            Destroy(InstantiatedOrderPopUpMessages);
+            Destroy(InstantiatedOrderPopUpMessage);
             if (Registry.LevelNumber != Constants.LEVEL_ONE)
             {
                 int[] CustomerSecondMealRange = Constants.CUSTOMER_LEVEL_TWO_SECOND_MEAL_RANGE;
@@ -139,24 +139,27 @@ public class Customer : CustomerCore
                     Patience = Random.Range(
                 Constants.CUSTOMER_MIN_PATIENCE[Registry.LevelNumber],
                 Constants.CUSTOMER_MAX_PATIENCE[Registry.LevelNumber]);
+                    InitialPatience = Patience;
                 }
                 else
                 {
                     Meal = "";
                     Patience = 0;
+                    InitialPatience = 0;
                 }
             }
             else
             {
                 Meal = "";
                 Patience = 0;
+                InitialPatience = 0;
             }
         }
     }
 
     private void Update()
     {
-        if (CurrentLocation == Constants.RESTAURANT && InstantiatedOrderPopUpMessages != null && Registry.PlayerObject.HoldingMeal != Constants.NOT_HOLDING_MEAL)
+        if (CurrentLocation == Constants.RESTAURANT && InstantiatedOrderPopUpMessage != null && Registry.PlayerObject.HoldingMeal != Constants.NOT_HOLDING_MEAL)
         {
             if (Input.touchCount > 0) // if touch input is used
             {
@@ -168,11 +171,11 @@ public class Customer : CustomerCore
             {
                 HandleCustomerTouched(Input.mousePosition); // handle position adjustments, using mouse position.
             }
+        }
 
-            if (DeSpawn)
-            {
-                Destroy(InstantiatedOrderPopUpMessages);
-            }
+        if (DeSpawn && InstantiatedOrderPopUpMessage != null)
+        {
+            Destroy(InstantiatedOrderPopUpMessage);
         }
     }
 
@@ -189,43 +192,48 @@ public class Customer : CustomerCore
     {
         if (collision.tag == "Player")
         {
-            if (CurrentLocation == Constants.RESTAURANT && InstantiatedOrderPopUpMessages == null && DeSpawn == false)
+            if (CurrentLocation == Constants.RESTAURANT && InstantiatedOrderPopUpMessage == null && DeSpawn == false)
             {
-                Vector2 PopUpPosition = CurrentPosition;
-                PopUpPosition.y += 0.3f + _Renderer.bounds.size.y / 2.0f;
+                //Vector2 PopUpPosition = CurrentPosition;
+                //PopUpPosition.y += 0.3f + _Renderer.bounds.size.y / 2.0f;
 
                 if (Meal == Constants.BAO_BUNS)
                 {
-                    InstantiatedOrderPopUpMessages = Instantiate(OrderPopUpMessages[0], PopUpPosition, transform.rotation);
+                    InstantiatedOrderPopUpMessage = Instantiate(OrderPopUpMessages[0]);
                 }
                 else if (Meal == Constants.MANGO_STICKY_RICE)
                 {
-                    InstantiatedOrderPopUpMessages = Instantiate(OrderPopUpMessages[1], PopUpPosition, transform.rotation);
+                    InstantiatedOrderPopUpMessage = Instantiate(OrderPopUpMessages[1]);
                 }
                 else if (Meal == Constants.PHO)
                 {
-                    InstantiatedOrderPopUpMessages = Instantiate(OrderPopUpMessages[2], PopUpPosition, transform.rotation);
+                    InstantiatedOrderPopUpMessage = Instantiate(OrderPopUpMessages[2]);
                 }
-                else if (Meal == Constants.SUSHI)
+                else
                 {
-                    InstantiatedOrderPopUpMessages = Instantiate(OrderPopUpMessages[3], PopUpPosition, transform.rotation);
+                    InstantiatedOrderPopUpMessage = Instantiate(OrderPopUpMessages[3]);
                 }
 
-                if (CustomerTablePosition % 2 == 1 && InstantiatedOrderPopUpMessages != null)
+                if (CustomerTablePosition % 2 == 1 && InstantiatedOrderPopUpMessage != null)
                 {
-                    Vector2 PopUpScale = InstantiatedOrderPopUpMessages.transform.localScale;
+                    Vector2 PopUpScale = InstantiatedOrderPopUpMessage.transform.localScale;
                     PopUpScale.x *= -1;
-                    InstantiatedOrderPopUpMessages.transform.localScale = PopUpScale;
+                    InstantiatedOrderPopUpMessage.transform.localScale = PopUpScale;
                 }
+
+                InstantiatedOrderPopUpMessage.transform.SetParent(transform, true);
+
+                Vector2 Position = new Vector2(-0.28f, 1.24f);
+                InstantiatedOrderPopUpMessage.transform.localPosition = Position;
             }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (InstantiatedOrderPopUpMessages != null)
+        if (InstantiatedOrderPopUpMessage != null)
         {
-            Destroy(InstantiatedOrderPopUpMessages);
+            Destroy(InstantiatedOrderPopUpMessage);
         }
     }
 

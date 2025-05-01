@@ -6,6 +6,8 @@ public class CustomerCore : MonoBehaviour
     public Animator _Animator;
     public Rigidbody2D _RigidBody2D;
     public Renderer _Renderer;
+    public GameObject PatienceMeter;
+    private Animator PatienceMeterAnimator;
 
     public RuntimeAnimatorController[] AnimationControllers = new RuntimeAnimatorController[8];
 
@@ -17,6 +19,7 @@ public class CustomerCore : MonoBehaviour
     public bool DeSpawn = false;
 
     public float Patience;
+    public float InitialPatience;
 
     public Vector2 CurrentPosition;
 
@@ -24,11 +27,21 @@ public class CustomerCore : MonoBehaviour
 
     protected virtual void Awake()
     {
+        Initialise();
+    }
+
+    public virtual void Initialise()
+    {
         DontDestroyOnLoad(gameObject);
 
         _Animator = GetComponent<Animator>();
         _RigidBody2D = GetComponent<Rigidbody2D>();
         _Renderer = GetComponent<Renderer>();
+
+        if (PatienceMeter != null)
+        {
+            PatienceMeterAnimator = PatienceMeter.GetComponent<Animator>();
+        }
 
         ModelIndex = Random.Range(0, 8);
 
@@ -50,30 +63,41 @@ public class CustomerCore : MonoBehaviour
         }
     }
 
-    public void SetupCustomerCoreForRestaurant<T>(T _Customer, int PositionIndex) where T : CustomerCore// Used to set up the customer (both types) for the restaurant scene.
+    public void SetupCustomerCoreForRestaurant(int PositionIndex)// Used to set up the customer (both types) for the restaurant scene.
     {
-        _Customer.CurrentPosition = new Vector2(
+        CurrentPosition = new Vector2(
             Constants.CUSTOMER_SEATS_IN_RESTAURANT[PositionIndex, 0],
             Constants.CUSTOMER_SEATS_IN_RESTAURANT[PositionIndex, 1]); // sit the customer in the right position for that empty space in the restaurant.
 
         // Change the rendering configuration for the customers so that the player can appear both above/behind them.
-        _Customer._Renderer.sortingLayerName = "NPC Upper";
-        _Customer._Renderer.sortingOrder = 1;
+        _Renderer.sortingLayerName = "NPC Upper";
+        _Renderer.sortingOrder = 1;
 
-        Registry.LevelManagerObject.CustomerTableArrangement[PositionIndex] = _Customer.gameObject;
+        Registry.LevelManagerObject.CustomerTableArrangement[PositionIndex] = gameObject;
 
-        _Customer.Patience = Random.Range(
+        Patience = Random.Range(
             Constants.CUSTOMER_MIN_PATIENCE[Registry.LevelNumber],
             Constants.CUSTOMER_MAX_PATIENCE[Registry.LevelNumber]); // Controls how long the customer will exist in the restaurant before it leaves (when not served)
 
-        _Customer.PatienceCoroutine = Registry.GameManagerObject.StartCoroutine(_Customer.ManagePatience()); // Used to keep track of the lifetime of the customer in the restaurant.
+        InitialPatience = Patience;
 
-        _Customer.CustomerTablePosition = PositionIndex; // Stores the seating position for the customer in the restaurant.
+        PatienceCoroutine = Registry.GameManagerObject.StartCoroutine(ManagePatience()); // Used to keep track of the lifetime of the customer in the restaurant.
+
+        CustomerTablePosition = PositionIndex; // Stores the seating position for the customer in the restaurant.
+
+        if (PatienceMeter != null)
+        {
+            PatienceMeter.SetActive(true);
+        }
     }
 
     public IEnumerator ManagePatience()
     {
-        while (gameObject != null)
+        if (PatienceMeterAnimator != null)
+        {
+            PatienceMeterAnimator.speed = 30.017f / InitialPatience;
+        }
+        while (this != null)
         {
             if (DeSpawn)
             {
