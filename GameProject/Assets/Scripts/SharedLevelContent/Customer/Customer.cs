@@ -107,6 +107,7 @@ public class Customer : CustomerCore
             if (Registry.PlayerObject.HoldingMeal == Meal)
             {
                 CorrectMealServed = true;
+                // start - this section of code was worked on by Joshua Cossar (v)
                 int CustomerSound = Random.Range(0, 3);
                 if (CustomerSound == 0)
                 {
@@ -120,28 +121,30 @@ public class Customer : CustomerCore
                 {
                     Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.CustomerFinish3);
                 }
+                // end - this section of code was worked on by Joshua Cossar
                 Registry.PlayerScore += 100;
             }
 
             Registry.PlayerObject.HoldingMeal = Constants.NOT_HOLDING_MEAL;
-            int[] CustomerSecondMealRange;
-            if (Registry.LevelNumber == Constants.LEVEL_ONE)
-            {
-                CustomerSecondMealRange = Constants.CUSTOMER_LEVEL_ONE_SECOND_MEAL_RANGE;
-            }
-            else
-            {
-                CustomerSecondMealRange = Constants.CUSTOMER_LEVEL_TWO_SECOND_MEAL_RANGE;
-            }
-            Destroy(InstantiatedOrderPopUpMessages);
-            bool DoSecondMeal = Random.Range(CustomerSecondMealRange[0], CustomerSecondMealRange[1]) == 0;
 
-            if (DoSecondMeal && CorrectMealServed)
+            Destroy(InstantiatedOrderPopUpMessages);
+            if (Registry.LevelNumber != Constants.LEVEL_ONE)
             {
-                GenerateMeal();
-                Patience = Random.Range(
-            Constants.CUSTOMER_MIN_PATIENCE[Registry.LevelNumber],
-            Constants.CUSTOMER_MAX_PATIENCE[Registry.LevelNumber]);
+                int[] CustomerSecondMealRange = Constants.CUSTOMER_LEVEL_TWO_SECOND_MEAL_RANGE;
+                bool DoSecondMeal = Random.Range(CustomerSecondMealRange[0], CustomerSecondMealRange[1]) == 0;
+
+                if (DoSecondMeal && CorrectMealServed)
+                {
+                    GenerateMeal();
+                    Patience = Random.Range(
+                Constants.CUSTOMER_MIN_PATIENCE[Registry.LevelNumber],
+                Constants.CUSTOMER_MAX_PATIENCE[Registry.LevelNumber]);
+                }
+                else
+                {
+                    Meal = "";
+                    Patience = 0;
+                }
             }
             else
             {

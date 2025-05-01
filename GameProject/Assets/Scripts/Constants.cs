@@ -71,6 +71,5 @@ public static class Constants
 
     public static readonly float[] PHO_FOOD_ITEMS_SPEED = new float[] { 3.0f, 10.0f };
 
-    public static readonly int[] CUSTOMER_LEVEL_ONE_SECOND_MEAL_RANGE = new int[] { 0, 2 };
     public static readonly int[] CUSTOMER_LEVEL_TWO_SECOND_MEAL_RANGE = new int[] { 0, 1 };
 }
