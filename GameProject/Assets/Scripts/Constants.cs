@@ -11,8 +11,8 @@ public static class Constants
     public static readonly float[] CUSTOMER_MIN_SPAWN_RATE = new float[] { 5, 4 }; // first = level one, second = level two, third = ...
     public static readonly float[] CUSTOMER_MAX_SPAWN_RATE = new float[] { 15, 13 };
 
-    public static readonly float[] CUSTOMER_MIN_PATIENCE = new float[] { 17, 15 };
-    public static readonly float[] CUSTOMER_MAX_PATIENCE = new float[] { 25, 22 };
+    public static readonly float[] CUSTOMER_MIN_PATIENCE = new float[] { 40, 35 };
+    public static readonly float[] CUSTOMER_MAX_PATIENCE = new float[] { 50, 50 };
 
     public const string FACE_SIDE = "side";
     public const string FACE_UP = "up";
