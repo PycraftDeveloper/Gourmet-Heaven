@@ -17,7 +17,9 @@ public class SlicedObject : MonoBehaviour
     private int currentSliceIndex = 0; // to keep track of how many cuts needs to be done
 
     public GameObject arrowPrefab; // allows the arrow prefab to work and shows where the player needs to cut
+    public GameObject arrowHeadPrefab; // Indicates the direction needed for the cut. (TJ)
     private GameObject currentArrow; // shows where the player needs to cut
+    private GameObject currentArrowHead; // stores the instance of the arrow head (TJ)
     public GameObject SlicedRice;
     public GameObject WholeRice;
     public GameObject CutRice;
@@ -69,6 +71,7 @@ public class SlicedObject : MonoBehaviour
         if (currentArrow != null)
         {
             Destroy(currentArrow);
+            Destroy(currentArrowHead); // (TJ)
         }
 
         if (currentSliceIndex >= slicePoints.Length - 1) return;
@@ -80,10 +83,12 @@ public class SlicedObject : MonoBehaviour
         // Instantiate arrow at the middle between the two points
         Vector3 midPoint = (start + end) / 2f;
         currentArrow = Instantiate(arrowPrefab, midPoint, Quaternion.identity);
+        currentArrowHead = Instantiate(arrowHeadPrefab, end, Quaternion.identity); // (TJ)
 
         // Rotate arrow to match direction
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         currentArrow.transform.rotation = Quaternion.Euler(0, 0, angle);
+        currentArrowHead.transform.rotation = Quaternion.Euler(0, 0, angle + 180); // (TJ)
 
         // Scale arrow based on distance (make sure arrow prefab's default length is 1 unit wide)
         float distance = direction.magnitude;
@@ -170,11 +175,12 @@ public class SlicedObject : MonoBehaviour
     }
 
     // swaps to the sliced asset
-   private void SwapToSliceAsset()
+    private void SwapToSliceAsset()
     {
         if (currentArrow != null)
         {
             Destroy(currentArrow);
+            Destroy(currentArrowHead); // (TJ)
         }
 
         // disable the whole rice asset
@@ -186,7 +192,7 @@ public class SlicedObject : MonoBehaviour
         //  enable the cut asset
         if (CutRice != null)
         {
-            CutRice.SetActive(true); 
+            CutRice.SetActive(true);
         }
 
         if (MiniGameOverLock == false)
@@ -203,7 +209,7 @@ public class SlicedObject : MonoBehaviour
             SuccessSplashArt.gameObject.SetActive(true);
         }
 
-        Invoke("ReturnToKitchen", 2f); // return to kitchen 
+        Invoke("ReturnToKitchen", 2f); // return to kitchen
     }
 
     private void ReturnToKitchen()

@@ -1222,6 +1222,7 @@ MonoBehaviour:
   - {fileID: 743083136}
   - {fileID: 2147376087}
   arrowPrefab: {fileID: 3449853850600514551, guid: 9c1864dd64ccc494fb62212b133c401e, type: 3}
+  arrowHeadPrefab: {fileID: 6212936951455998423, guid: 8fa341e2a51120d4c840b30d291e7483, type: 3}
   SlicedRice: {fileID: 4447783732622282182}
   WholeRice: {fileID: 223829915}
   CutRice: {fileID: 1310533235}

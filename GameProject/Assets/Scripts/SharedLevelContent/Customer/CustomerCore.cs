@@ -55,6 +55,14 @@ public class CustomerCore : MonoBehaviour
         _RigidBody2D.position = CurrentPosition;
     }
 
+    public virtual void OnEnable()
+    {
+        if (PatienceMeterAnimator != null && CurrentLocation == Constants.RESTAURANT)
+        {
+            PatienceMeterAnimator.Play("PatienceStart", 0, 1.0f - (Patience / InitialPatience));
+        }
+    }
+
     protected virtual void OnDestroy()
     {
         if (PatienceCoroutine != null && Registry.GameManagerObject != null)

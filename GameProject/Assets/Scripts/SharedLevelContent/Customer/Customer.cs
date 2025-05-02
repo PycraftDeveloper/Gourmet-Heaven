@@ -304,8 +304,10 @@ public class Customer : CustomerCore
         }
     }
 
-    public void OnEnable()
+    public override void OnEnable()
     {
+        base.OnEnable();
+
         SetAnimationState(CustomerAnimationState);
     }
 

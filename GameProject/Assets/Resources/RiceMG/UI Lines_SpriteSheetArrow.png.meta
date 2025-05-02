@@ -181,15 +181,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI Lines_SpriteSheetArrow_0
+      name: ArrowHead
       rect:
         serializedVersion: 2
-        x: 97
-        y: 89
-        width: 87
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 98
+        y: 90
+        width: 10
+        height: 12
+      alignment: 9
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -203,15 +203,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI Lines_SpriteSheetArrow_1
+      name: ArrowLine
       rect:
         serializedVersion: 2
-        x: 209
-        y: 55
-        width: 14
-        height: 61
+        x: 122
+        y: 95
+        width: 61
+        height: 2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -228,7 +228,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 079673f37151ec64eac79c4ac3b3c563
     internalID: 0
     vertices: []
     indices: 
@@ -238,8 +238,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI Lines_SpriteSheetArrow_0: -1991922038630465252
-      UI Lines_SpriteSheetArrow_1: 1408975038325128008
+      ArrowHead: -1991922038630465252
+      ArrowLine: 1408975038325128008
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
