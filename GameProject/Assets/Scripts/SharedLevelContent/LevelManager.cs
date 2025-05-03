@@ -234,7 +234,7 @@ public class LevelManager : MonoBehaviour
         {
             AssociateApplianceTilemap();
         }
-        Registry.GameTimeDelta = Time.deltaTime;
+        Registry.GameTimeDelta = Time.deltaTime * Registry.NotInTutorialScreenTimeModifier;
         ReturnToGameToggle = false;
 
         CustomerSpawnTimer += Registry.GameTimeDelta;

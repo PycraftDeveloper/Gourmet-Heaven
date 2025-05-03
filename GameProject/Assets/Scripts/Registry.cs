@@ -33,4 +33,6 @@ public static class Registry
     public static bool PhoMGTutorialShown = false;
     public static bool RiceMGTutorialShown = false;
     public static bool SushiMGTutorialShown = false;
+
+    public static int NotInTutorialScreenTimeModifier = 1;
 }

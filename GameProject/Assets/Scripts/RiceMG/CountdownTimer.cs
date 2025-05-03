@@ -13,7 +13,7 @@ public class CountdownTimer : MonoBehaviour
 
     public GameObject SplashArtFail;
 
-    private bool isRunning = true;
+    public bool isRunning = true;
 
     private void ReturnToKitchen()
     {

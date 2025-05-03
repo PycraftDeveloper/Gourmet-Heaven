@@ -1164,6 +1164,7 @@ MonoBehaviour:
   IngredientPrefab: {fileID: 6285024145975422140, guid: 4b10645ac4782994aa3f282ee9ddafec, type: 3}
   MiniGameManagerObject: {fileID: 1297586076}
   IngredientDraggedIntoTargetToggle: 0
+  MiniGameLocked: 0
 --- !u!58 &402512612
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1911,6 +1912,7 @@ MonoBehaviour:
   IngredientPrefab: {fileID: 6472241209777748413, guid: 60d100ca0b6329545928b89c63ba2929, type: 3}
   MiniGameManagerObject: {fileID: 1297586076}
   IngredientDraggedIntoTargetToggle: 0
+  MiniGameLocked: 0
 --- !u!58 &804981509
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2031,7 +2033,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 842718151}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1297586078}
+        m_TargetAssemblyTypeName: SushiMiniGameManager, Assembly-CSharp
+        m_MethodName: OnContinueButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &842718151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2552,6 +2566,8 @@ MonoBehaviour:
   DisplayedShinyTunaObject: {fileID: 1682288524}
   MiniGameFailedPopUp: {fileID: 463840014}
   MiniGameWinPopUp: {fileID: 679544999}
+  SushiMiniGameTutorial: {fileID: 910608496}
+  SushiRollingAnimation: {fileID: 675635733}
   IngredientSpawned: 0
 --- !u!1 &1366643480
 GameObject:
@@ -3514,6 +3530,7 @@ MonoBehaviour:
   IngredientPrefab: {fileID: 3058202908486990482, guid: 6e999736656be0944ad5e34c97f219bb, type: 3}
   MiniGameManagerObject: {fileID: 1297586076}
   IngredientDraggedIntoTargetToggle: 0
+  MiniGameLocked: 0
 --- !u!61 &1711957374
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3714,6 +3731,7 @@ MonoBehaviour:
   IngredientPrefab: {fileID: 1835033367870281131, guid: ab5b608edae9ce446ae1b9781a7edafd, type: 3}
   MiniGameManagerObject: {fileID: 1297586076}
   IngredientDraggedIntoTargetToggle: 0
+  MiniGameLocked: 0
 --- !u!61 &1776731190
 BoxCollider2D:
   m_ObjectHideFlags: 0

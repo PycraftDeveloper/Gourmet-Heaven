@@ -12,6 +12,8 @@ public class IngredientSpawn : MonoBehaviour
     private bool IngredientSpawned = false;
     public bool IngredientDraggedIntoTargetToggle = false;
 
+    public bool MiniGameLocked = false;
+
     private void Start()
     {
         SushiMiniGameManager = MiniGameManagerObject.GetComponent<SushiMiniGameManager>();
@@ -34,6 +36,21 @@ public class IngredientSpawn : MonoBehaviour
 
     private void Update()
     {
+        if (MiniGameLocked)
+        {
+            if (SpawnedIngredient != null)
+            {
+                SpawnedIngredient = null;
+                Destroy(SpawnedIngredientObject);
+
+                if (IngredientSpawned)
+                {
+                    SushiMiniGameManager.IngredientSpawned = false;
+                    IngredientSpawned = false;
+                }
+            }
+            return;
+        }
         if (SpawnedIngredient == null)
         {
             if (Input.touchCount > 0) // if touch input is used

@@ -1182,6 +1182,7 @@ MonoBehaviour:
   remainingTime: 15
   delayTime: 2
   SplashArtFail: {fileID: 568356598}
+  isRunning: 1
 --- !u!114 &550893568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1239,6 +1240,7 @@ MonoBehaviour:
   WholeRice: {fileID: 223829915}
   CutRice: {fileID: 1310533235}
   SuccessSplashArt: {fileID: 2137315219}
+  MiniGameTimerObject: {fileID: 550893562}
   TutorialCanvas: {fileID: 2110901053}
   countdowntimer: {fileID: 550893567}
 --- !u!4 &561442466

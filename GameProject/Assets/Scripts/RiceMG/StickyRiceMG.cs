@@ -24,6 +24,8 @@ public class SlicedObject : MonoBehaviour
     public GameObject WholeRice;
     public GameObject CutRice;
     public GameObject SuccessSplashArt;
+    public GameObject MiniGameTimerObject;
+    private CountdownTimer MiniGameTimer;
 
     public GameObject TutorialCanvas; // (TJ)
 
@@ -31,15 +33,25 @@ public class SlicedObject : MonoBehaviour
 
     private void Start()
     {
+        MiniGameTimer = MiniGameTimerObject.GetComponent<CountdownTimer>();
+
         if (!Registry.RiceMGTutorialShown) // (TJ)
         {
             TutorialCanvas.SetActive(true);
             Registry.RiceMGTutorialShown = true;
+            Registry.NotInTutorialScreenTimeModifier = 0;
+            MiniGameTimer.isRunning = false;
+        }
+        else
+        {
+            StartMinigame();
         }
     }
 
     public void StartMinigame()
     {
+        MiniGameTimer.isRunning = true;
+        Registry.NotInTutorialScreenTimeModifier = 1;
         TutorialCanvas.SetActive(false);
 
         CountdownTimer countdownTimer = Object.FindFirstObjectByType<CountdownTimer>();

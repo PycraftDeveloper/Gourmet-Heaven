@@ -24,6 +24,10 @@ public class SushiMiniGameManager : MonoBehaviour
     public GameObject MiniGameFailedPopUp;
     public GameObject MiniGameWinPopUp;
 
+    public GameObject SushiMiniGameTutorial;
+
+    public GameObject SushiRollingAnimation;
+
     public bool IngredientSpawned = false;
     private bool IngredientListChanged = false;
 
@@ -43,12 +47,35 @@ public class SushiMiniGameManager : MonoBehaviour
         Invoke("ReturnToKitchen", 2f);
     }
 
+    private void ShowMiniGameSucsess()
+    {
+        MiniGameWinPopUp.SetActive(true);
+        Registry.PlayerObject.GetComponent<Player>().HoldingMeal = Constants.SUSHI;
+        Invoke("ReturnToKitchen", 2.0f);
+    }
+
     private void OnMiniGameWin()
     {
         MiniGameLocked = true;
-        MiniGameWinPopUp.SetActive(true);
-        Registry.PlayerObject.GetComponent<Player>().HoldingMeal = Constants.SUSHI;
-        Invoke("ReturnToKitchen", 2f);
+
+        SushiRollingAnimation.SetActive(true);
+        Animator SushiRollingAnimator = SushiRollingAnimation.GetComponent<Animator>();
+        SushiRollingAnimator.Play("SushiRolling");
+
+        DisplayedRiceObject.SetActive(false);
+        DisplayedSeaweedObject.SetActive(false);
+        DisplayedWasabiObject.SetActive(false);
+        DisplayedTunaObject.SetActive(false);
+        DisplayedShinyTunaObject.SetActive(false);
+
+        Invoke("ShowMiniGameSucsess", 1.2f); // delay until animation finished  (1.017 seconds)
+    }
+
+    public void OnContinueButtonClicked()
+    {
+        SushiMiniGameTutorial.SetActive(false);
+        MiniGameLocked = false;
+        Registry.NotInTutorialScreenTimeModifier = 1;
     }
 
     private void Start()
@@ -57,10 +84,23 @@ public class SushiMiniGameManager : MonoBehaviour
         SeaweedIngredientSpawn = SeaweedHitbox.GetComponent<IngredientSpawn>();
         WasabiIngredientSpawn = WasabiHitbox.GetComponent<IngredientSpawn>();
         TunaIngredientSpawn = TunaHitbox.GetComponent<IngredientSpawn>();
+
+        if (!Registry.SushiMGTutorialShown)
+        {
+            SushiMiniGameTutorial.SetActive(true);
+            MiniGameLocked = true;
+            Registry.SushiMGTutorialShown = true;
+            Registry.NotInTutorialScreenTimeModifier = 0;
+        }
     }
 
     private void Update()
     {
+        RiceIngredientSpawn.MiniGameLocked = MiniGameLocked;
+        SeaweedIngredientSpawn.MiniGameLocked = MiniGameLocked;
+        WasabiIngredientSpawn.MiniGameLocked = MiniGameLocked;
+        TunaIngredientSpawn.MiniGameLocked = MiniGameLocked;
+
         if (!MiniGameLocked)
         {
             if (RiceIngredientSpawn.IngredientDraggedIntoTargetToggle)
@@ -118,7 +158,7 @@ public class SushiMiniGameManager : MonoBehaviour
                     }
                 }
 
-                if (IngredientIndex == 5)
+                if (IngredientIndex == 5 && !MiniGameLocked)
                 {
                     OnMiniGameWin();
                 }
