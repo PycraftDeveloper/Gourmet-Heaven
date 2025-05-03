@@ -119,7 +119,7 @@ public class CustomerCore : MonoBehaviour
                     Registry.CurrentSceneName == Constants.BUNS_MG) // Ensures that customers dont despawn in the scenes where the game
                                                                     // is supposed to be paused.
             {
-                Patience -= Time.deltaTime;
+                Patience -= Registry.GameTimeDelta;
                 if (Patience <= 0)
                 {
                     DeSpawn = true;

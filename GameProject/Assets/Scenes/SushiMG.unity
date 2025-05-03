@@ -1162,8 +1162,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IngredientPrefab: {fileID: 6285024145975422140, guid: 4b10645ac4782994aa3f282ee9ddafec, type: 3}
-  IngredientDraggedIntoTarget: 0
   MiniGameManagerObject: {fileID: 1297586076}
+  IngredientDraggedIntoTargetToggle: 0
 --- !u!58 &402512612
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1909,8 +1909,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IngredientPrefab: {fileID: 6472241209777748413, guid: 60d100ca0b6329545928b89c63ba2929, type: 3}
-  IngredientDraggedIntoTarget: 0
   MiniGameManagerObject: {fileID: 1297586076}
+  IngredientDraggedIntoTargetToggle: 0
 --- !u!58 &804981509
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2549,6 +2549,9 @@ MonoBehaviour:
   DisplayedSeaweedObject: {fileID: 1519335958}
   DisplayedWasabiObject: {fileID: 1729309873}
   DisplayedTunaObject: {fileID: 1568536110}
+  DisplayedShinyTunaObject: {fileID: 1682288524}
+  MiniGameFailedPopUp: {fileID: 463840014}
+  MiniGameWinPopUp: {fileID: 679544999}
   IngredientSpawned: 0
 --- !u!1 &1366643480
 GameObject:
@@ -3509,8 +3512,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IngredientPrefab: {fileID: 3058202908486990482, guid: 6e999736656be0944ad5e34c97f219bb, type: 3}
-  IngredientDraggedIntoTarget: 0
   MiniGameManagerObject: {fileID: 1297586076}
+  IngredientDraggedIntoTargetToggle: 0
 --- !u!61 &1711957374
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3709,8 +3712,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IngredientPrefab: {fileID: 1835033367870281131, guid: ab5b608edae9ce446ae1b9781a7edafd, type: 3}
-  IngredientDraggedIntoTarget: 0
   MiniGameManagerObject: {fileID: 1297586076}
+  IngredientDraggedIntoTargetToggle: 0
 --- !u!61 &1776731190
 BoxCollider2D:
   m_ObjectHideFlags: 0

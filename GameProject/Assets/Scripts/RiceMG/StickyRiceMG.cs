@@ -25,10 +25,23 @@ public class SlicedObject : MonoBehaviour
     public GameObject CutRice;
     public GameObject SuccessSplashArt;
 
+    public GameObject TutorialCanvas; // (TJ)
+
     [SerializeField] private CountdownTimer countdowntimer;
 
     private void Start()
     {
+        if (!Registry.RiceMGTutorialShown) // (TJ)
+        {
+            TutorialCanvas.SetActive(true);
+            Registry.RiceMGTutorialShown = true;
+        }
+    }
+
+    public void StartMinigame()
+    {
+        TutorialCanvas.SetActive(false);
+
         CountdownTimer countdownTimer = Object.FindFirstObjectByType<CountdownTimer>();
 
         // creates the random direction the player needs to slice and hides the feedback text until the player trys to do a swipe

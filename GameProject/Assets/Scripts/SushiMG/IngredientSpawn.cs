@@ -5,12 +5,12 @@ public class IngredientSpawn : MonoBehaviour
     public GameObject IngredientPrefab;
     private GameObject SpawnedIngredientObject;
     private Ingredient SpawnedIngredient;
-    public bool IngredientDraggedIntoTarget = false;
 
     public GameObject MiniGameManagerObject;
     private SushiMiniGameManager SushiMiniGameManager;
 
     private bool IngredientSpawned = false;
+    public bool IngredientDraggedIntoTargetToggle = false;
 
     private void Start()
     {
@@ -63,7 +63,7 @@ public class IngredientSpawn : MonoBehaviour
             {
                 if (SpawnedIngredient.InTarget)
                 {
-                    IngredientDraggedIntoTarget = true;
+                    IngredientDraggedIntoTargetToggle = true;
                 }
 
                 SpawnedIngredient = null;

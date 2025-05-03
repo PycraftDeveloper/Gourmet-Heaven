@@ -28,4 +28,9 @@ public static class Registry
     public static UIManager UIManagerObject = null;
 
     public static LevelCustomiser LevelCustomiserObject = new LevelCustomiser();
+
+    public static bool BunsMGTutorialShown = false;
+    public static bool PhoMGTutorialShown = false;
+    public static bool RiceMGTutorialShown = false;
+    public static bool SushiMGTutorialShown = false;
 }
