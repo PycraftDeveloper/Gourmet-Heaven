@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 4343158441c8a004a97dcea94b3b1486
+guid: f36ca170ee7ddbc47b10937619e5b29c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4326615866590947150
-    second: eggTimerGIF-3_0
+      213: 7185260786349696046
+    second: EggTimer_0
+  - first:
+      213: 280659511073414583
+    second: EggTimer_1
+  - first:
+      213: 2157626428438019194
+    second: EggTimer_2
+  - first:
+      213: 204650483019035138
+    second: EggTimer_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: eggTimerGIF-3_0
+      name: EggTimer_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 320
-        height: 180
+        y: 67
+        width: 60
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +150,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e47e8bf053a3b0c30800000000000000
-      internalID: 4326615866590947150
+      spriteID: e24eae4bd9c27b360800000000000000
+      internalID: 7185260786349696046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EggTimer_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 67
+        width: 60
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a75c57a271de7045bd670f1641e8eca
+      internalID: 280659511073414583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EggTimer_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 60
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d5a783f8cde025488cf3cbd25e25262
+      internalID: 2157626428438019194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EggTimer_3
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 60
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 398f467ee03304c488e91c8f9fb02ff3
+      internalID: 204650483019035138
       vertices: []
       indices: 
       edges: []
@@ -151,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f6640f640422c2a4a8ba1e403085e0b9
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      eggTimerGIF-3_0: 4326615866590947150
+      EggTimer_0: 7185260786349696046
+      EggTimer_1: 280659511073414583
+      EggTimer_2: 2157626428438019194
+      EggTimer_3: 204650483019035138
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

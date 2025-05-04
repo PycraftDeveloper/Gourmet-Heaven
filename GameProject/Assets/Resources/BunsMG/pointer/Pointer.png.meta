@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: 1351e1634f9cb2a41b5d13a8aa892630
+guid: 0bef9091a0d0c624293b5384f57dd4b4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7406442716585898625
-    second: eggTimerGIF-4_0
+      213: 1197703181795215433
+    second: Pointer_0
+  - first:
+      213: -5054134877896950757
+    second: Pointer_1
+  - first:
+      213: -385370020032193190
+    second: Pointer_2
+  - first:
+      213: 1450163603039847576
+    second: Pointer_3
+  - first:
+      213: -5803768303788270839
+    second: Pointer_4
+  - first:
+      213: -8251497176113011218
+    second: Pointer_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,23 +141,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: eggTimerGIF-4_0
+      name: Pointer_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 0
-        width: 310
-        height: 180
+        x: 0
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f7d4e9c1797073990800000000000000
-      internalID: -7406442716585898625
+      spriteID: 9484249b2b81f9010800000000000000
+      internalID: 1197703181795215433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pointer_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1c3a044b1b1cd9b0800000000000000
+      internalID: -5054134877896950757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pointer_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5d55e03204e6aaf0800000000000000
+      internalID: -385370020032193190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pointer_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89404691d14002410800000000000000
+      internalID: 1450163603039847576
       vertices: []
       indices: 
       edges: []
@@ -151,7 +232,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d600db33ff5b79249bd8e850f45055dd
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +242,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      eggTimerGIF-4_0: -7406442716585898625
+      Pointer_0: 1197703181795215433
+      Pointer_1: -5054134877896950757
+      Pointer_2: -385370020032193190
+      Pointer_3: 1450163603039847576
+      Pointer_4: -5803768303788270839
+      Pointer_5: -8251497176113011218
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
