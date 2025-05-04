@@ -11,10 +11,6 @@ TagManager:
   - PhoBowlPopUp
   - RollingMatPopUp
   - BinPopUp
-  - Seaweed
-  - Rice
-  - Tuna
-  - Wasabi
   layers:
   - Default
   - TransparentFX

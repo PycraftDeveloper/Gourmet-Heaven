@@ -3015,7 +3015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9847204c017d8aa4d95911711425f5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IngredientName: Seaweed
+  IngredientName: Ingredient_SeaWeed
   IngredientRenderer: {fileID: 0}
 --- !u!1 &1568536110
 GameObject:
@@ -3117,7 +3117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9847204c017d8aa4d95911711425f5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IngredientName: Tuna
+  IngredientName: Ingredient_Tuna
   IngredientRenderer: {fileID: 0}
 --- !u!1 &1594973554
 GameObject:
@@ -3677,7 +3677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9847204c017d8aa4d95911711425f5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IngredientName: Wasabi
+  IngredientName: Ingredient_Wasabi
   IngredientRenderer: {fileID: 0}
 --- !u!1 &1776731187
 GameObject:
@@ -3878,7 +3878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9847204c017d8aa4d95911711425f5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IngredientName: Rice
+  IngredientName: Ingredient_RiceBall
   IngredientRenderer: {fileID: 0}
 --- !u!1 &1889941852
 GameObject:

@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class SushiMiniGameManager : MonoBehaviour
 {
-    private string[] TargetIngredientOrder = new string[5] { Constants.SEAWEED, Constants.RICE, Constants.TUNA, Constants.TUNA, Constants.WASABI };
+    private string[] TargetIngredientOrder = new string[5] {
+        Constants.SUSHI_MG_SEAWEED,
+        Constants.SUSHI_MG_RICE,
+        Constants.SUSHI_MG_TUNA,
+        Constants.SUSHI_MG_TUNA,
+        Constants.SUSHI_MG_WASABI };
+
     private string[] CurrentIngredientOrder = new string[5];
 
     public GameObject RiceHitbox;
@@ -107,7 +113,7 @@ public class SushiMiniGameManager : MonoBehaviour
             {
                 DisplayedRiceObject.SetActive(true);
                 RiceIngredientSpawn.IngredientDraggedIntoTargetToggle = false;
-                CurrentIngredientOrder[IngredientIndex] = Constants.RICE;
+                CurrentIngredientOrder[IngredientIndex] = Constants.SUSHI_MG_RICE;
                 IngredientListChanged = true;
                 IngredientIndex++;
             }
@@ -116,7 +122,7 @@ public class SushiMiniGameManager : MonoBehaviour
             {
                 DisplayedSeaweedObject.SetActive(true);
                 SeaweedIngredientSpawn.IngredientDraggedIntoTargetToggle = false;
-                CurrentIngredientOrder[IngredientIndex] = Constants.SEAWEED;
+                CurrentIngredientOrder[IngredientIndex] = Constants.SUSHI_MG_SEAWEED;
                 IngredientListChanged = true;
                 IngredientIndex++;
             }
@@ -125,7 +131,7 @@ public class SushiMiniGameManager : MonoBehaviour
             {
                 DisplayedWasabiObject.SetActive(true);
                 WasabiIngredientSpawn.IngredientDraggedIntoTargetToggle = false;
-                CurrentIngredientOrder[IngredientIndex] = Constants.WASABI;
+                CurrentIngredientOrder[IngredientIndex] = Constants.SUSHI_MG_WASABI;
                 IngredientListChanged = true;
                 IngredientIndex++;
             }
@@ -141,7 +147,7 @@ public class SushiMiniGameManager : MonoBehaviour
                     DisplayedShinyTunaObject.SetActive(true);
                 }
                 TunaIngredientSpawn.IngredientDraggedIntoTargetToggle = false;
-                CurrentIngredientOrder[IngredientIndex] = Constants.TUNA;
+                CurrentIngredientOrder[IngredientIndex] = Constants.SUSHI_MG_TUNA;
                 IngredientListChanged = true;
                 IngredientIndex++;
             }

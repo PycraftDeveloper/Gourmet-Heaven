@@ -7,7 +7,7 @@ public class IngredientTarget : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D Collision)
     {
-        if (Collision.tag == IngredientName)
+        if (Collision.name == IngredientName)
         {
             IngredientRenderer.enabled = true;
         }

@@ -41,14 +41,15 @@ public static class Constants
     public const string MANGO_STICKY_RICE = "mango sticky rice";
     public const string NOT_HOLDING_MEAL = "not holding meal";
 
-    public const string RICE = "Rice"; // Sushi MiniGame materials
-    public const string SEAWEED = "Seaweed";
-    public const string TUNA = "Tuna";
-    public const string WASABI = "Wasabi";
+    public const string SUSHI_MG_RICE = "Ingredient_RiceBall"; // Sushi MiniGame materials
+    public const string SUSHI_MG_SEAWEED = "Ingredient_SeaWeed";
+    public const string SUSHI_MG_TUNA = "Ingredient_Tuna";
+    public const string SUSHI_MG_WASABI = "Ingredient_Wasabi";
 
-    public const int PHO_ONION_ID = 0; // Pho MiniGame materials
-    public const int PHO_BEEF_ID = 1;
-    public const int PHO_GARLIC_ID = 2;
+    public const string PHO_MG_POT_NOODLES = "Pot_Noodles"; // Pho MiniGame materials
+    public const string PHO_MG_POT_BEEF = "Pot_Beef";
+    public const string PHO_MG_BOWL_CILLANTRO = "Bowl_Cillantro";
+    public const string PHO_MG_BOWL_PARSLEY = "Bowl_Parsley";
 
     public const string NO_COROUTINE = "no coroutine";
     public const string MOVE_IN_QUEUE = "move in queue";
