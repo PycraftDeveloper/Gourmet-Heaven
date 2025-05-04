@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class IngredientSpawn : MonoBehaviour
+public class Sushi_IngredientSpawn : MonoBehaviour
 {
     public GameObject IngredientPrefab;
     private GameObject SpawnedIngredientObject;
-    private Ingredient SpawnedIngredient;
+    private Sushi_Ingredient SpawnedIngredient;
 
     public GameObject MiniGameManagerObject;
-    private SushiMiniGameManager SushiMiniGameManager;
+    private Sushi_MiniGameManager SushiMiniGameManager;
 
     private bool IngredientSpawned = false;
     public bool IngredientDraggedIntoTargetToggle = false;
@@ -16,7 +16,7 @@ public class IngredientSpawn : MonoBehaviour
 
     private void Start()
     {
-        SushiMiniGameManager = MiniGameManagerObject.GetComponent<SushiMiniGameManager>();
+        SushiMiniGameManager = MiniGameManagerObject.GetComponent<Sushi_MiniGameManager>();
     }
 
     private void HandleTouch(Vector2 TouchPosition)
@@ -27,7 +27,7 @@ public class IngredientSpawn : MonoBehaviour
         if (RaycastHit != null && RaycastHit.transform == transform && !SushiMiniGameManager.IngredientSpawned)
         {
             SpawnedIngredientObject = Instantiate(IngredientPrefab, WorldPosition, transform.rotation);
-            SpawnedIngredient = SpawnedIngredientObject.GetComponent<Ingredient>();
+            SpawnedIngredient = SpawnedIngredientObject.GetComponent<Sushi_Ingredient>();
             SpawnedIngredient.SetPosition(TouchPosition);
             SushiMiniGameManager.IngredientSpawned = true;
             IngredientSpawned = true;

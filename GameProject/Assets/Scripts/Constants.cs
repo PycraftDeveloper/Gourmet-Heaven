@@ -70,7 +70,7 @@ public static class Constants
         { -4.15f,  1.68f }, { -1.87f,  1.68f }, { 0.86f,  1.68f }, { 3.14f,  1.68f }, // top row
         { -4.15f, -2.34f }, { -1.87f, -2.34f }, { 0.86f, -2.34f }, { 3.14f, -2.34f } }; // bottom row
 
-    public static readonly float[] PHO_FOOD_ITEMS_SPEED = new float[] { 3.0f, 10.0f };
+    public static readonly float[] PHO_FOOD_ITEMS_SPEED = new float[] { 3.0f, 6.0f };
 
     public static readonly int[] CUSTOMER_LEVEL_TWO_SECOND_MEAL_RANGE = new int[] { 0, 1 };
 }

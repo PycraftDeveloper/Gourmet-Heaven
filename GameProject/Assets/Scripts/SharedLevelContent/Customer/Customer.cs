@@ -146,6 +146,7 @@ public class Customer : CustomerCore
                     Meal = "";
                     Patience = 0;
                     InitialPatience = 0;
+                    PatienceMeter.SetActive(false);
                 }
             }
             else
@@ -153,6 +154,7 @@ public class Customer : CustomerCore
                 Meal = "";
                 Patience = 0;
                 InitialPatience = 0;
+                PatienceMeter.SetActive(false);
             }
         }
     }

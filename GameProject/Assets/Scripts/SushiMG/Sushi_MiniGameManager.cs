@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SushiMiniGameManager : MonoBehaviour
+public class Sushi_MiniGameManager : MonoBehaviour
 {
     private string[] TargetIngredientOrder = new string[5] {
         Constants.SUSHI_MG_SEAWEED,
@@ -16,10 +16,10 @@ public class SushiMiniGameManager : MonoBehaviour
     public GameObject WasabiHitbox;
     public GameObject TunaHitbox;
 
-    private IngredientSpawn RiceIngredientSpawn;
-    private IngredientSpawn SeaweedIngredientSpawn;
-    private IngredientSpawn WasabiIngredientSpawn;
-    private IngredientSpawn TunaIngredientSpawn;
+    private Sushi_IngredientSpawn RiceIngredientSpawn;
+    private Sushi_IngredientSpawn SeaweedIngredientSpawn;
+    private Sushi_IngredientSpawn WasabiIngredientSpawn;
+    private Sushi_IngredientSpawn TunaIngredientSpawn;
 
     public GameObject DisplayedRiceObject;
     public GameObject DisplayedSeaweedObject;
@@ -86,10 +86,10 @@ public class SushiMiniGameManager : MonoBehaviour
 
     private void Start()
     {
-        RiceIngredientSpawn = RiceHitbox.GetComponent<IngredientSpawn>();
-        SeaweedIngredientSpawn = SeaweedHitbox.GetComponent<IngredientSpawn>();
-        WasabiIngredientSpawn = WasabiHitbox.GetComponent<IngredientSpawn>();
-        TunaIngredientSpawn = TunaHitbox.GetComponent<IngredientSpawn>();
+        RiceIngredientSpawn = RiceHitbox.GetComponent<Sushi_IngredientSpawn>();
+        SeaweedIngredientSpawn = SeaweedHitbox.GetComponent<Sushi_IngredientSpawn>();
+        WasabiIngredientSpawn = WasabiHitbox.GetComponent<Sushi_IngredientSpawn>();
+        TunaIngredientSpawn = TunaHitbox.GetComponent<Sushi_IngredientSpawn>();
 
         if (!Registry.SushiMGTutorialShown)
         {

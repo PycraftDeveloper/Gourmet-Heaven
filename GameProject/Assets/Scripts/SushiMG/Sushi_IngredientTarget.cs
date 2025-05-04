@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class IngredientTarget : MonoBehaviour
+public class Sushi_IngredientTarget : MonoBehaviour
 {
     public string IngredientName;
     public SpriteRenderer IngredientRenderer;

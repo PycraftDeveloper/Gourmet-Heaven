@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Ingredient : MonoBehaviour
+public class Sushi_Ingredient : MonoBehaviour
 {
     public bool InTarget = false;
     private Rigidbody2D IngredientRigidbody;
