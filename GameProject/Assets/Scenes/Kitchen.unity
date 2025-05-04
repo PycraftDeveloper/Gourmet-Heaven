@@ -2593,8 +2593,8 @@ MonoBehaviour:
     Idle: {fileID: 11400000, guid: c52ed72775b61e44c995a385e605340c, type: 2}
     Active: {fileID: 11400000, guid: 7897fdf70d87d5b49a4a2e3422a7d7a4, type: 2}
   Bin:
-    Idle: {fileID: 11400000, guid: ccab6d5afbf2b1444a5cd79029c763e2, type: 2}
-    Active: {fileID: 11400000, guid: b30e78d3edb1e3d479e987924825e8ea, type: 2}
+    Idle: {fileID: 11400000, guid: 808e24d31e2a5f148866856e10c3359e, type: 2}
+    Active: {fileID: 11400000, guid: 9528b0d2f9cd88a49bcf8f349c8385df, type: 2}
   ChoppingBoard:
     Idle: {fileID: 11400000, guid: e84183ecbd2a2bc42b351852f3a7a3a6, type: 2}
     Active: {fileID: 11400000, guid: 18ab45c8859574b47a045238ac284b11, type: 2}
@@ -3154,7 +3154,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: e2a17d4704453464981c39d7da8aa3b5, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: ccab6d5afbf2b1444a5cd79029c763e2, type: 2}
+    m_Data: {fileID: 11400000, guid: 808e24d31e2a5f148866856e10c3359e, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: -496869649189437689, guid: 6d816cd9645af874d9510c6a2e791ebd, type: 3}
@@ -3193,7 +3193,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -4306874123500572018, guid: 6d816cd9645af874d9510c6a2e791ebd, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 890486c7d6463d2418f96e8fb5682676, type: 3}
+    m_Data: {fileID: -3102592443275307149, guid: b3f08d59aa5a66647bd506ddba259d6e, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 35
     m_Data:
@@ -3448,7 +3448,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 34616982cc0556f49963088a7b6a4234, type: 3}
+  m_Sprite: {fileID: 4240075438833105466, guid: d041ede154f4a10448e2af36429666e6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
