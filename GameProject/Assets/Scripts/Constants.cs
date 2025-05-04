@@ -72,5 +72,9 @@ public static class Constants
 
     public static readonly float[] PHO_FOOD_ITEMS_SPEED = new float[] { 3.0f, 6.0f };
 
+    public static readonly float[] BUNS_TIME_DELAY = new float[] { 5.0f, 15.0f };
+    public static readonly float BUNS_REACTION_THRESHOLD = 1.2f;
+    public static readonly float ACTIVE_EGG_TIMER_DISPLACEMENT = 0.5f;
+
     public static readonly int[] CUSTOMER_LEVEL_TWO_SECOND_MEAL_RANGE = new int[] { 0, 1 };
 }

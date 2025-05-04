@@ -62,7 +62,7 @@ public class Sushi_MiniGameManager : MonoBehaviour
     {
         MiniGameWinPopUp.SetActive(true);
         Registry.PlayerObject.GetComponent<Player>().HoldingMeal = Constants.SUSHI;
-        Invoke("ReturnToKitchen", 2.0f);
+        Invoke("ReturnToKitchen", 2);
     }
 
     private void OnMiniGameWin()
