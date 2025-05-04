@@ -176,7 +176,6 @@ public class GameManager : MonoBehaviour
             if (SFXSource.clip != RestaurantAmbience)
             {
                 SFXSource.clip = RestaurantAmbience;
-                SFXSource.Stop();
             }
             SFXSource.volume = Registry.SFXVolume;
             if (!SFXSource.isPlaying)
@@ -184,7 +183,7 @@ public class GameManager : MonoBehaviour
                 SFXSource.Play();
             }
         }
-        
+
         // start - this section of code was worked on by Joshua Cossar (v)
         if (sceneName == Constants.KITCHEN)
         {
@@ -316,8 +315,20 @@ public class GameManager : MonoBehaviour
     {
         sceneName = HandleSceneStack(sceneName);
 
-        if (sceneName != Constants.KITCHEN || sceneName != Constants.RESTAURANT)
+        if (sceneName == Constants.KITCHEN || sceneName == Constants.RESTAURANT)
         {
+            if (Registry.UIManagerObject != null)
+            {
+                Registry.UIManagerObject.gameObject.SetActive(true);
+            }
+        }
+        else
+        {
+            if (SFXSource.clip == RestaurantAmbience)
+            {
+                SFXSource.Stop();
+            }
+
             if (Registry.UIManagerObject != null)
             {
                 Registry.UIManagerObject.gameObject.SetActive(false);
@@ -326,19 +337,6 @@ public class GameManager : MonoBehaviour
             if (Registry.InGameLevel)
             {
                 RenderGameSceneToFrameBuffer();
-            }
-
-            if (SFXSource.clip == RestaurantAmbience)
-            {
-                SFXSource.Stop();
-            }
-        }
-
-        if (sceneName == Constants.KITCHEN || sceneName == Constants.RESTAURANT)
-        {
-            if (Registry.UIManagerObject != null)
-            {
-                Registry.UIManagerObject.gameObject.SetActive(true);
             }
         }
 
