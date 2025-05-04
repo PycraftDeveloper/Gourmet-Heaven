@@ -2705,6 +2705,7 @@ MonoBehaviour:
   MiniGameWinPopUp: {fileID: 679544999}
   SushiMiniGameTutorial: {fileID: 910608496}
   SushiRollingAnimation: {fileID: 675635733}
+  TimerText: {fileID: 432652734}
   IngredientSpawned: 0
 --- !u!1 &1366643480
 GameObject:

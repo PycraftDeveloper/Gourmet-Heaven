@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Sushi_MiniGameManager : MonoBehaviour
@@ -34,12 +35,16 @@ public class Sushi_MiniGameManager : MonoBehaviour
 
     public GameObject SushiRollingAnimation;
 
+    public TextMeshProUGUI TimerText;
+
     public bool IngredientSpawned = false;
     private bool IngredientListChanged = false;
 
     private int IngredientIndex = 0;
 
     private bool MiniGameLocked = false;
+
+    private float MiniGameTimer = 15;
 
     private void ReturnToKitchen()
     {
@@ -109,6 +114,16 @@ public class Sushi_MiniGameManager : MonoBehaviour
 
         if (!MiniGameLocked)
         {
+            if (MiniGameTimer < 10)
+            {
+                TimerText.text = "00:0" + (int)MiniGameTimer;
+            }
+            else
+            {
+                TimerText.text = "00:" + (int)MiniGameTimer;
+            }
+            MiniGameTimer -= Time.deltaTime;
+
             if (RiceIngredientSpawn.IngredientDraggedIntoTargetToggle)
             {
                 DisplayedRiceObject.SetActive(true);
@@ -168,6 +183,11 @@ public class Sushi_MiniGameManager : MonoBehaviour
                 {
                     OnMiniGameWin();
                 }
+            }
+
+            if (MiniGameTimer <= 0)
+            {
+                OnMiniGameFailed();
             }
         }
     }

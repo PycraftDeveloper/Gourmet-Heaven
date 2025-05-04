@@ -1,6 +1,5 @@
 // This script uses Vector2, and considers the depth of the objects separately as this is NOT a 3D object.
 
-using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 
 public class PlayerInputCircle : MonoBehaviour // This class defines behaviour for mouse/touch interaction

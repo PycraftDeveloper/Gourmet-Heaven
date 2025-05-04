@@ -1,16 +1,26 @@
+using TMPro;
 using UnityEngine;
 
 public class Pho_MiniGameManager : MonoBehaviour
 {
-    public GameObject DisplayedPotNoodlesObject;
-    public GameObject DisplayedPotBeefObject;
-    public GameObject DisplayedBowlCillantroObject;
-    public GameObject DisplayedBowlParsleyObject;
+    public GameObject NoodleIngredientPrefab;
+    public GameObject BeefIngredientPrefab;
+    public GameObject CillantroIngredientPrefab;
+    public GameObject ParsleyIngredientPrefab;
+
+    public GameObject NoodleContainerObject;
+    public GameObject BeefContainerObject;
+    public GameObject CillantroContainerObject;
+    public GameObject ParsleyContainerObject;
 
     public Sprite[] TargetBowlSprites = new Sprite[5];
+    public Sprite[] TippedBowlSprites = new Sprite[2];
 
-    private GameObject CurrentDisplayedIngredient;
+    private GameObject CurrentIngredientObject;
     private Pho_Ingredient CurrentIngredient;
+
+    private GameObject CurrentContainerObject;
+    private SpriteRenderer CurrentContainerSpriteRenderer;
 
     public GameObject TargetBowlObject;
     private Pho_IngredientTarget IngredientTarget;
@@ -18,12 +28,16 @@ public class Pho_MiniGameManager : MonoBehaviour
 
     public GameObject MiniGameFailedPopUp;
     public GameObject MiniGameWinPopUp;
-
     public GameObject PhoMiniGameTutorial;
 
+    public TextMeshProUGUI TimerText;
+
     private bool MiniGameLocked = false;
+    private bool UserInput = false;
 
     private int CurrentIngredientIndex = 0;
+
+    private float MiniGameTimer = 15;
 
     private string[] Ingredients = new string[] {
         Constants.PHO_MG_POT_NOODLES,
@@ -78,47 +92,109 @@ public class Pho_MiniGameManager : MonoBehaviour
         }
     }
 
+    private void SetupIngredientSource()
+    {
+        if (Ingredients[CurrentIngredientIndex] == Constants.PHO_MG_POT_NOODLES)
+        {
+            CurrentContainerObject = NoodleContainerObject;
+        }
+        else if (Ingredients[CurrentIngredientIndex] == Constants.PHO_MG_POT_BEEF)
+        {
+            CurrentContainerObject = BeefContainerObject;
+        }
+        else if (Ingredients[CurrentIngredientIndex] == Constants.PHO_MG_BOWL_CILLANTRO)
+        {
+            CurrentContainerObject = CillantroContainerObject;
+        }
+        else if (Ingredients[CurrentIngredientIndex] == Constants.PHO_MG_BOWL_PARSLEY)
+        {
+            CurrentContainerObject = ParsleyContainerObject;
+        }
+        CurrentContainerSpriteRenderer = CurrentContainerObject.GetComponent<SpriteRenderer>();
+
+        CurrentContainerObject.SetActive(true);
+    }
+
+    private void SetupIngredientDrop()
+    {
+        if (Ingredients[CurrentIngredientIndex] == Constants.PHO_MG_POT_NOODLES)
+        {
+            CurrentIngredientObject = Instantiate(NoodleIngredientPrefab);
+        }
+        else if (Ingredients[CurrentIngredientIndex] == Constants.PHO_MG_POT_BEEF)
+        {
+            CurrentIngredientObject = Instantiate(BeefIngredientPrefab);
+        }
+        else if (Ingredients[CurrentIngredientIndex] == Constants.PHO_MG_BOWL_CILLANTRO)
+        {
+            CurrentIngredientObject = Instantiate(CillantroIngredientPrefab);
+        }
+        else if (Ingredients[CurrentIngredientIndex] == Constants.PHO_MG_BOWL_PARSLEY)
+        {
+            CurrentIngredientObject = Instantiate(ParsleyIngredientPrefab);
+        }
+        CurrentIngredient = CurrentIngredientObject.GetComponent<Pho_Ingredient>();
+        Rigidbody2D CurrentDisplayedIngredientObjectRigidBody = CurrentContainerObject.GetComponent<Rigidbody2D>();
+        CurrentIngredient.transform.position = CurrentDisplayedIngredientObjectRigidBody.position;
+
+        CurrentContainerSpriteRenderer.sprite = TippedBowlSprites[1];
+        if (CurrentIngredientIndex < 2)
+        {
+            CurrentContainerSpriteRenderer.sprite = TippedBowlSprites[0];
+        }
+    }
+
     private void Update()
     {
         if (!MiniGameLocked)
         {
-            if (CurrentDisplayedIngredient == null)
+            if (MiniGameTimer < 10)
             {
-                if (Ingredients[CurrentIngredientIndex] == Constants.PHO_MG_POT_NOODLES)
-                {
-                    CurrentDisplayedIngredient = DisplayedPotNoodlesObject;
-                }
-                else if (Ingredients[CurrentIngredientIndex] == Constants.PHO_MG_POT_BEEF)
-                {
-                    CurrentDisplayedIngredient = DisplayedPotBeefObject;
-                }
-                else if (Ingredients[CurrentIngredientIndex] == Constants.PHO_MG_BOWL_CILLANTRO)
-                {
-                    CurrentDisplayedIngredient = DisplayedBowlCillantroObject;
-                }
-                else if (Ingredients[CurrentIngredientIndex] == Constants.PHO_MG_BOWL_PARSLEY)
-                {
-                    CurrentDisplayedIngredient = DisplayedBowlParsleyObject;
-                }
-                CurrentDisplayedIngredient.SetActive(true);
-                CurrentIngredient = CurrentDisplayedIngredient.GetComponent<Pho_Ingredient>();
+                TimerText.text = "00:0" + (int)MiniGameTimer;
+            }
+            else
+            {
+                TimerText.text = "00:" + (int)MiniGameTimer;
+            }
+            MiniGameTimer -= Time.deltaTime;
+
+            if (CurrentContainerObject == null)
+            {
+                SetupIngredientSource();
             }
 
-            if (Input.touchCount > 0) // if touch input is used
+            if (CurrentIngredientObject == null)
             {
-                CurrentIngredient.DropIngredient = true;
-            }
-            else if (Input.GetMouseButton(0)) // if mouse click is used
-            {
-                CurrentIngredient.DropIngredient = true;
+                if (Input.touchCount > 0) // if touch input is used
+                {
+                    if (!UserInput)
+                    {
+                        UserInput = true;
+                        SetupIngredientDrop();
+                    }
+                }
+                else if (Input.GetMouseButton(0)) // if mouse click is used
+                {
+                    if (!UserInput)
+                    {
+                        UserInput = true;
+                        SetupIngredientDrop();
+                    }
+                }
+                else
+                {
+                    UserInput = false;
+                }
             }
 
             if (IngredientTarget.IngredientInTargetToggle)
             {
-                CurrentDisplayedIngredient.SetActive(false);
-                CurrentDisplayedIngredient = null;
+                Destroy(CurrentIngredientObject);
+                CurrentIngredientObject = null;
                 CurrentIngredientIndex++;
                 IngredientTarget.IngredientInTargetToggle = false;
+                CurrentContainerObject.SetActive(false);
+                CurrentContainerObject = null;
 
                 if (CurrentIngredientIndex >= Ingredients.Length)
                 {
@@ -129,7 +205,7 @@ public class Pho_MiniGameManager : MonoBehaviour
                     IngredientTargetRenderer.sprite = TargetBowlSprites[CurrentIngredientIndex];
                 }
             }
-            else if (CurrentIngredient.MissedTarget)
+            else if ((CurrentIngredientObject != null && CurrentIngredient.MissedTarget) || MiniGameTimer <= 0)
             {
                 OnMiniGameFailed();
             }
