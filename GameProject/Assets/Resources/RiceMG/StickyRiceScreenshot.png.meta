@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      StickyRiceScreenshot_0: 2696636745943051725
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -131,6 +131,7 @@ public class Sushi_MiniGameManager : MonoBehaviour
                 CurrentIngredientOrder[IngredientIndex] = Constants.SUSHI_MG_RICE;
                 IngredientListChanged = true;
                 IngredientIndex++;
+                Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.SushiSound); // Added by Joshua Cossar
             }
 
             if (SeaweedIngredientSpawn.IngredientDraggedIntoTargetToggle)
@@ -140,6 +141,7 @@ public class Sushi_MiniGameManager : MonoBehaviour
                 CurrentIngredientOrder[IngredientIndex] = Constants.SUSHI_MG_SEAWEED;
                 IngredientListChanged = true;
                 IngredientIndex++;
+                Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.SushiSound); // Added by Joshua Cossar
             }
 
             if (WasabiIngredientSpawn.IngredientDraggedIntoTargetToggle)
@@ -149,6 +151,7 @@ public class Sushi_MiniGameManager : MonoBehaviour
                 CurrentIngredientOrder[IngredientIndex] = Constants.SUSHI_MG_WASABI;
                 IngredientListChanged = true;
                 IngredientIndex++;
+                Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.SushiSound); // Added by Joshua Cossar
             }
 
             if (TunaIngredientSpawn.IngredientDraggedIntoTargetToggle)
@@ -165,6 +168,7 @@ public class Sushi_MiniGameManager : MonoBehaviour
                 CurrentIngredientOrder[IngredientIndex] = Constants.SUSHI_MG_TUNA;
                 IngredientListChanged = true;
                 IngredientIndex++;
+                Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.SushiSound); // Added by Joshua Cossar
             }
 
             if (IngredientListChanged)

@@ -1696,10 +1696,11 @@ MonoBehaviour:
   EggtimerAlarm: {fileID: 8300000, guid: 3175e67feefd8064d91b934f19e3e838, type: 3}
   SoupSplash1: {fileID: 8300000, guid: 672a304ecfd0a95498ad64cfccd99ebc, type: 3}
   SoupSplash2: {fileID: 8300000, guid: f7adc806b27cdca4ebcd4dbf3b304bcc, type: 3}
+  SushiSound: {fileID: 8300000, guid: bd2b9160a31209b4f8a44b5573970c27, type: 3}
   CustomerFinish1: {fileID: 8300000, guid: 8159bb52a756d3b4d89ff456cbc197de, type: 3}
   CustomerFinish2: {fileID: 8300000, guid: 8c70e66fe74b3d6458b31d9cb7ea0e7d, type: 3}
   CustomerFinish3: {fileID: 8300000, guid: b08eb2764414142458cfea6868464f14, type: 3}
-  RestaurantAmbience: {fileID: 8300000, guid: 1850f875278093646a0e8866e986da5d, type: 3}
+  RestaurantAmbience: {fileID: 8300000, guid: ad78b4a184b0b464b8fa54a5538fee71, type: 3}
   FrameTexture: {fileID: 0}
   BlurredFrameTexture: {fileID: 0}
   BlurredMaterial: {fileID: 2100000, guid: 92f2222756e8e534c8b66d92176d225b, type: 2}

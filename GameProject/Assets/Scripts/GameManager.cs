@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public AudioClip EggtimerAlarm;
     public AudioClip SoupSplash1;
     public AudioClip SoupSplash2;
+    public AudioClip SushiSound;
     public AudioClip CustomerFinish1;
     public AudioClip CustomerFinish2;
     public AudioClip CustomerFinish3;

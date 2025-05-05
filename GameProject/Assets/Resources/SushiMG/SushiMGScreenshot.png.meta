@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SushiMGScreenshot_0: 8937810633404257124
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
