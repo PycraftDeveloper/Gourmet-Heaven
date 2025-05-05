@@ -114,7 +114,6 @@ public class Buns_MiniGameManager : MonoBehaviour
             yield return null;
         }
     }
-
     private void Update()
     {
         if (!MiniGameLocked)
@@ -130,6 +129,7 @@ public class Buns_MiniGameManager : MonoBehaviour
                     EggTimerPosition.y += Constants.ACTIVE_EGG_TIMER_DISPLACEMENT;
 
                     Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.EggtimerAlarm); // Added by Joshua Cossar
+                    EggTimerAnimator.SetBool("Alarm", true);
                 }
 
                 if (CurrentMiniGameDuration > TargetMiniGameDuration + Constants.BUNS_REACTION_THRESHOLD)

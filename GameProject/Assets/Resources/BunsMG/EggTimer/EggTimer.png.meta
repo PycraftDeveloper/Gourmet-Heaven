@@ -138,12 +138,12 @@ TextureImporter:
       name: EggTimer_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 67
-        width: 60
-        height: 67
+        x: 10
+        y: 76
+        width: 39
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -160,12 +160,12 @@ TextureImporter:
       name: EggTimer_1
       rect:
         serializedVersion: 2
-        x: 60
-        y: 67
-        width: 60
-        height: 67
+        x: 70
+        y: 76
+        width: 40
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -182,12 +182,12 @@ TextureImporter:
       name: EggTimer_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 60
-        height: 67
+        x: 9
+        y: 9
+        width: 42
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -204,12 +204,12 @@ TextureImporter:
       name: EggTimer_3
       rect:
         serializedVersion: 2
-        x: 60
-        y: 0
-        width: 60
-        height: 67
+        x: 70
+        y: 9
+        width: 40
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
