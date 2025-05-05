@@ -55,6 +55,14 @@ public class Buns_MiniGameManager : MonoBehaviour
         BunsMiniGameTutorial.SetActive(false);
         MiniGameLocked = false;
         Registry.NotInTutorialScreenTimeModifier = 1;
+
+        // Start of Joshua Cossar's Added Code
+        Registry.GameManagerObject.SFXSource.clip = Registry.GameManagerObject.BoilingWater;
+        Registry.GameManagerObject.SFXSource.volume = Registry.SFXVolume;
+        Registry.GameManagerObject.SFXSource.Play();
+        Registry.GameManagerObject.SFXSource.loop = true;
+        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.EggtimerTicking);
+        // End of Joshua Cossar's Added Code
     }
 
     private void Start()
@@ -70,6 +78,7 @@ public class Buns_MiniGameManager : MonoBehaviour
             Registry.BunsMGTutorialShown = true;
             Registry.NotInTutorialScreenTimeModifier = 0;
         }
+
     }
 
     private void HandleTouch(Vector2 TouchPosition)
@@ -80,6 +89,7 @@ public class Buns_MiniGameManager : MonoBehaviour
         if (RaycastHit != null && RaycastHit.transform == HobKnobObject.transform)
         {
             IsHobOn = false;
+            Registry.GameManagerObject.SFXSource.Stop();
         }
     }
 
@@ -111,6 +121,8 @@ public class Buns_MiniGameManager : MonoBehaviour
                     HandPointerObject.SetActive(true);
 
                     EggTimerPosition.y += Constants.ACTIVE_EGG_TIMER_DISPLACEMENT;
+
+                    Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.EggtimerAlarm); // Added by Joshua Cossar
                 }
 
                 if (CurrentMiniGameDuration > TargetMiniGameDuration + Constants.BUNS_REACTION_THRESHOLD)
