@@ -56,13 +56,11 @@ public class Buns_MiniGameManager : MonoBehaviour
         MiniGameLocked = false;
         Registry.NotInTutorialScreenTimeModifier = 1;
 
-        // Start of Joshua Cossar's Added Code
         Registry.GameManagerObject.SFXSource.clip = Registry.GameManagerObject.BoilingWater;
         Registry.GameManagerObject.SFXSource.volume = Registry.SFXVolume;
         Registry.GameManagerObject.SFXSource.Play();
         Registry.GameManagerObject.SFXSource.loop = true;
         Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.EggtimerTicking);
-        // End of Joshua Cossar's Added Code
     }
 
     private void Start()
@@ -78,7 +76,16 @@ public class Buns_MiniGameManager : MonoBehaviour
             Registry.BunsMGTutorialShown = true;
             Registry.NotInTutorialScreenTimeModifier = 0;
         }
-
+        if (!MiniGameLocked)
+        {
+            // Start of Joshua Cossar's Added Code
+            Registry.GameManagerObject.SFXSource.clip = Registry.GameManagerObject.BoilingWater;
+            Registry.GameManagerObject.SFXSource.volume = Registry.SFXVolume;
+            Registry.GameManagerObject.SFXSource.Play();
+            Registry.GameManagerObject.SFXSource.loop = true;
+            Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.EggtimerTicking);
+            // End of Joshua Cossar's Added Code
+        }
     }
 
     private void HandleTouch(Vector2 TouchPosition)
