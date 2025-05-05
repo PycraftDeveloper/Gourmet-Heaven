@@ -21,6 +21,11 @@ public class GameManager : MonoBehaviour
     public AudioClip CashRegisterNoise;
     public AudioClip CuttingSound;
     public AudioClip MangoFinish;
+    public AudioClip BoilingWater;
+    public AudioClip EggtimerTicking;
+    public AudioClip EggtimerAlarm;
+    public AudioClip SoupSplash1;
+    public AudioClip SoupSplash2;
     public AudioClip CustomerFinish1;
     public AudioClip CustomerFinish2;
     public AudioClip CustomerFinish3;

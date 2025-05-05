@@ -196,6 +196,17 @@ public class Pho_MiniGameManager : MonoBehaviour
                 CurrentContainerObject.SetActive(false);
                 CurrentContainerObject = null;
 
+                int IngredientSound = Random.Range(0, 2);
+                if (IngredientSound == 0)
+                {
+                    Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.SoupSplash1);
+                }
+                if (IngredientSound == 1)
+                {
+                    Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.SoupSplash2);
+                }
+
+
                 if (CurrentIngredientIndex >= Ingredients.Length)
                 {
                     OnMiniGameWin();

@@ -1691,6 +1691,11 @@ MonoBehaviour:
   CashRegisterNoise: {fileID: 8300000, guid: 284483556436c7d4690f00723f1dae23, type: 3}
   CuttingSound: {fileID: 8300000, guid: 5c88ef67abf676347a17ff9c2db1ddf3, type: 3}
   MangoFinish: {fileID: 8300000, guid: f856476201d24d946b3116ee2b98f99c, type: 3}
+  BoilingWater: {fileID: 8300000, guid: 397759993a2d07747adb526ece4a7405, type: 3}
+  EggtimerTicking: {fileID: 8300000, guid: d68b0e0ec79d9bf4ab58c876da728149, type: 3}
+  EggtimerAlarm: {fileID: 8300000, guid: 3175e67feefd8064d91b934f19e3e838, type: 3}
+  SoupSplash1: {fileID: 8300000, guid: 672a304ecfd0a95498ad64cfccd99ebc, type: 3}
+  SoupSplash2: {fileID: 8300000, guid: f7adc806b27cdca4ebcd4dbf3b304bcc, type: 3}
   CustomerFinish1: {fileID: 8300000, guid: 8159bb52a756d3b4d89ff456cbc197de, type: 3}
   CustomerFinish2: {fileID: 8300000, guid: 8c70e66fe74b3d6458b31d9cb7ea0e7d, type: 3}
   CustomerFinish3: {fileID: 8300000, guid: b08eb2764414142458cfea6868464f14, type: 3}
