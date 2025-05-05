@@ -1688,7 +1688,7 @@ MonoBehaviour:
   bgm_InGame: {fileID: 8300000, guid: ea31f5bef3f7e2343a28677840e2b5ee, type: 3}
   bgm_MainMenu: {fileID: 8300000, guid: 76d4d504df08d9a42b568b3487d975bc, type: 3}
   bgm_MiniGame: {fileID: 8300000, guid: c31feeb70328ca4409ba72fc3dfdc06d, type: 3}
-  CashRegisterNoise: {fileID: 8300000, guid: 284483556436c7d4690f00723f1dae23, type: 3}
+  CashRegisterNoise: {fileID: 8300000, guid: 97d72589f194d5b40998c79a8bc14e60, type: 3}
   CuttingSound: {fileID: 8300000, guid: 5c88ef67abf676347a17ff9c2db1ddf3, type: 3}
   MangoFinish: {fileID: 8300000, guid: f856476201d24d946b3116ee2b98f99c, type: 3}
   BoilingWater: {fileID: 8300000, guid: 397759993a2d07747adb526ece4a7405, type: 3}
