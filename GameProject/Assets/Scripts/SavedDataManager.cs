@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.IO;
 
+// This program is used to store the game's configuration when the game is closed.
+
 [System.Serializable]
 public class GameData
 {
@@ -31,9 +33,9 @@ public class SavedDataManager
         if (File.Exists(SavePath))
         {
             string dataToLoad = "";
-            using (FileStream stream = new FileStream(SavePath, FileMode.Open))
+            using (FileStream stream = new FileStream(SavePath, FileMode.Open)) // Open file
             {
-                using (StreamReader reader = new StreamReader(stream))
+                using (StreamReader reader = new StreamReader(stream)) // Open stream
                 {
                     dataToLoad = reader.ReadToEnd();
                 }
@@ -57,9 +59,9 @@ public class SavedDataManager
 
         string SerialisedGameData = JsonUtility.ToJson(SavedData, true);
 
-        using (FileStream stream = new FileStream(SavePath, FileMode.Create))
+        using (FileStream stream = new FileStream(SavePath, FileMode.Create)) // Open file
         {
-            using (StreamWriter writer = new StreamWriter(stream))
+            using (StreamWriter writer = new StreamWriter(stream)) // Open stream
             {
                 writer.Write(SerialisedGameData);
             }

@@ -4,7 +4,7 @@ using UnityEngine;
 public class EndMenuManagerScript : MonoBehaviour
 {
     private int StoredPlayerScore = Registry.PlayerScore;
-    private int StoredMaxScore = 0;
+    private float StoredMaxScore = 0;
 
     public TextMeshProUGUI ScoreText;
     public TextMeshProUGUI GradeText;

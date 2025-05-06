@@ -1,3 +1,5 @@
+// This program is used to setup the registry uniquely for each of the game levels.
+
 public class LevelCustomiser
 {
     public void SetupLevelOne()
