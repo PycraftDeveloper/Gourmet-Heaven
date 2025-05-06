@@ -18,6 +18,8 @@ public class Customer : CustomerCore
     public GameObject[] OrderPopUpMessages = new GameObject[4];
     public GameObject InstantiatedOrderPopUpMessage;
 
+    private int MealNumber = 0;
+
     public IEnumerator MoveInQueue(Vector2 DestinationPosition)
     {
         Vector2 TargetPosition = CurrentPosition;
@@ -127,25 +129,33 @@ public class Customer : CustomerCore
             Registry.PlayerObject.HoldingMeal = Constants.NOT_HOLDING_MEAL;
 
             Destroy(InstantiatedOrderPopUpMessage);
-            if (Registry.LevelNumber != Constants.LEVEL_ONE)
-            {
-                int[] CustomerSecondMealRange = Constants.CUSTOMER_LEVEL_TWO_SECOND_MEAL_RANGE;
-                bool DoSecondMeal = Random.Range(CustomerSecondMealRange[0], CustomerSecondMealRange[1]) == 0;
 
-                if (DoSecondMeal && CorrectMealServed)
+            int[] CustomerSecondMealRange = Constants.CUSTOMER_LEVEL_TWO_SECOND_MEAL_RANGE;
+            bool DoSecondMeal = Random.Range(CustomerSecondMealRange[0], CustomerSecondMealRange[1]) == 0;
+
+            MealNumber++;
+
+            if (Registry.LevelNumber == Constants.LEVEL_ONE)
+            {
+                DoSecondMeal = false;
+            } else
+            {
+                DoSecondMeal = DoSecondMeal && MealNumber < Constants.LEVEL_TWO_CUSTOMER_MAX_ORDERS;
+            }
+
+            if (DoSecondMeal && CorrectMealServed)
+            {
+                GenerateMeal();
+                Patience = Random.Range(
+            Constants.CUSTOMER_MIN_PATIENCE[Registry.LevelNumber],
+            Constants.CUSTOMER_MAX_PATIENCE[Registry.LevelNumber]);
+                InitialPatience = Patience;
+                MealNumber++;
+
+                if (PatienceMeterAnimator != null && CurrentLocation == Constants.RESTAURANT)
                 {
-                    GenerateMeal();
-                    Patience = Random.Range(
-                Constants.CUSTOMER_MIN_PATIENCE[Registry.LevelNumber],
-                Constants.CUSTOMER_MAX_PATIENCE[Registry.LevelNumber]);
-                    InitialPatience = Patience;
-                }
-                else
-                {
-                    Meal = "";
-                    Patience = 0;
-                    InitialPatience = 0;
-                    PatienceMeter.SetActive(false);
+                    PatienceMeterAnimator.StopPlayback();
+                    PatienceMeterAnimator.Play("PatienceStart", 0, 1.0f - (Patience / InitialPatience));
                 }
             }
             else

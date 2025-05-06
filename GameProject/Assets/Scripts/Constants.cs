@@ -79,5 +79,8 @@ public static class Constants
     public static readonly float BUNS_REACTION_THRESHOLD = 0.8f;
     public static readonly float ACTIVE_EGG_TIMER_DISPLACEMENT = 0.5f;
 
-    public static readonly int[] CUSTOMER_LEVEL_TWO_SECOND_MEAL_RANGE = new int[] { 0, 1 };
+    public static readonly int[] CUSTOMER_LEVEL_TWO_SECOND_MEAL_RANGE = new int[] { 0, 2 };
+
+    public static readonly int LEVEL_ONE_CUSTOMER_MAX_ODRERS = 1;
+    public static readonly int LEVEL_TWO_CUSTOMER_MAX_ORDERS = 2;
 }

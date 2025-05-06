@@ -7,7 +7,7 @@ public class CustomerCore : MonoBehaviour
     public Rigidbody2D _RigidBody2D;
     public Renderer _Renderer;
     public GameObject PatienceMeter;
-    private Animator PatienceMeterAnimator;
+    protected Animator PatienceMeterAnimator;
 
     public RuntimeAnimatorController[] AnimationControllers = new RuntimeAnimatorController[8];
 

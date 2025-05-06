@@ -76,6 +76,7 @@ public class Pho_MiniGameManager : MonoBehaviour
         PhoMiniGameTutorial.SetActive(false);
         MiniGameLocked = false;
         Registry.NotInTutorialScreenTimeModifier = 1;
+        UserInput = true;
     }
 
     private void Start()
