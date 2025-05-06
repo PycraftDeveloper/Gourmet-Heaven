@@ -35,6 +35,7 @@ public class EndMenuManagerScript : MonoBehaviour
         }
 
         int StarScoreID = ((int)((StoredPlayerScore / (float)(StoredMaxScore + 1)) * 5)); // using 'max score' +1 to ensure index always in bounds.
+        StarScoreID = Mathf.Clamp(StarScoreID, 0, StarScores.Length - 1);
         Instantiate(StarScores[StarScoreID], transform);
     }
 
