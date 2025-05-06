@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
+// Game scene - The Kitchen or Restaurant scenes but no others.
+
 public class GameManager : MonoBehaviour
 {
     // This class handles scene changes and the changes to the game state that results from this process.
@@ -74,58 +76,58 @@ public class GameManager : MonoBehaviour
         // end - this section of code was worked on by Joshua Cossar (^)
     }
 
-    private string HandleSceneStack(string sceneName)
+    private string HandleSceneStack(string sceneName) // This is used to navigate the stack to find the previously visited scene, when no scene is defined.
     {
         if (sceneName == "")
         {
-            MenuStack.Pop();
-            sceneName = MenuStack.Pop();
+            MenuStack.Pop(); // Remove current scene from the stack
+            sceneName = MenuStack.Pop(); // Renove the previous scene from the stack and get the scene name.
         }
 
-        MenuStack.Push(sceneName);
+        MenuStack.Push(sceneName); // Add current scene to the stack.
 
         return sceneName;
     }
 
-    public void ResetGameLevel()
+    public void ResetGameLevel() // Used to reset both game levels when the player reaches the main menu or end screen.
     {
         Registry.PlayerScore = 0;
 
         foreach (GameObject _Customer in Registry.Customers)
         {
-            Destroy(_Customer);
+            Destroy(_Customer); // Destroy (and garbage collect) all foreground and background customers in the scene.
         }
-        Registry.Customers.Clear();
+        Registry.Customers.Clear(); // Free up space by removing items from array.
 
-        if (Registry.PlayerObject != null)
+        if (Registry.PlayerObject != null) // Check and destroy (garbage collect) the player.
         {
             Destroy(Registry.PlayerObject.gameObject);
             Registry.PlayerObject = null;
         }
 
-        if (Registry.LevelManagerObject != null)
+        if (Registry.LevelManagerObject != null) // Check and destroy (garbage collect) the level manager.
         {
             Destroy(Registry.LevelManagerObject.gameObject);
             Registry.LevelManagerObject = null;
         }
 
-        if (Registry.JoystickObject != null)
+        if (Registry.JoystickObject != null) // Check and destroy (garbage collect) the joystick.
         {
             Destroy(Registry.JoystickObject.gameObject);
             Registry.JoystickObject = null;
         }
 
-        if (Registry.UIManagerObject != null)
+        if (Registry.UIManagerObject != null) // Check and destroy (garbage collect) the UI manager.
         {
             Destroy(Registry.UIManagerObject.gameObject);
             Registry.UIManagerObject = null;
         }
 
-        Registry.LevelRunTime = 0;
-        Registry.PlayerScore = 0;
+        Registry.LevelRunTime = 0; // Reset level run time
+        Registry.PlayerScore = 0; // Reset player score
     }
 
-    private void EnableLevelObjects(string sceneName)
+    private void EnableLevelObjects(string sceneName) // Used to enable level objects when returning to the game scene.
     {
         if (Registry.JoystickObject != null)
         {
@@ -140,12 +142,12 @@ public class GameManager : MonoBehaviour
             CustomerCore _Customer = CustomerGameObject.GetComponent<CustomerCore>();
             if (_Customer.CurrentLocation == sceneName)
             {
-                CustomerGameObject.SetActive(true);
+                CustomerGameObject.SetActive(true); // Used to set all customers in the scene to be showing.
             }
         }
     }
 
-    private void DisableLevelObjects()
+    private void DisableLevelObjects() // Used to enable level objects when leaving to the game scene.
     {
         if (Registry.JoystickObject != null)
         {
@@ -157,35 +159,35 @@ public class GameManager : MonoBehaviour
         }
         foreach (GameObject CustomerGameObject in Registry.Customers)
         {
-            CustomerGameObject.SetActive(false);
+            CustomerGameObject.SetActive(false); // Used to hide all customers.
         }
     }
 
-    public void AfterSceneChange()
+    public void AfterSceneChange() // Runs from the camera one frame after the scene has changed.
     {
         string sceneName = Registry.CurrentSceneName;
 
-        if (sceneName != Constants.KITCHEN && sceneName != Constants.RESTAURANT)
+        if (sceneName != Constants.KITCHEN && sceneName != Constants.RESTAURANT) // Check if the current scene is NOT the game scene.
         {
-            if (Registry.InGameLevel)
+            if (Registry.InGameLevel) // If not, and was previously, hide all game objects.
             {
                 Registry.InGameLevel = false;
                 DisableLevelObjects();
             }
         }
 
-        if (sceneName == Constants.KITCHEN || sceneName == Constants.RESTAURANT)
+        if (sceneName == Constants.KITCHEN || sceneName == Constants.RESTAURANT) // Check if in a game scene.
         {
-            Registry.InGameLevel = true;
-            EnableLevelObjects(sceneName);
+            Registry.InGameLevel = true; // Allows the level manager object and other level objects to run.
+            EnableLevelObjects(sceneName); // Show the level objects in the game scene.
             if (SFXSource.clip != RestaurantAmbience)
             {
-                SFXSource.clip = RestaurantAmbience;
+                SFXSource.clip = RestaurantAmbience; // Set the sound effect to the right track
             }
-            SFXSource.volume = Registry.SFXVolume;
+            SFXSource.volume = Registry.SFXVolume; // Set the volume
             if (!SFXSource.isPlaying)
             {
-                SFXSource.Play();
+                SFXSource.Play(); // Start playing the sound if it isn't currently playing.
             }
         }
 
@@ -218,15 +220,15 @@ public class GameManager : MonoBehaviour
 
         if (sceneName == Constants.END_MENU)
         {
-            ResetGameLevel();
+            ResetGameLevel(); // When the current scene is the end menu, reset the game (as they cant return to the game scene).
         }
 
-        if (Registry.PlayerObject != null)
+        if (Registry.PlayerObject != null) // Tells the player that the scene has changed.
         {
             Registry.PlayerObject.SceneChanged = true;
         }
 
-        if (Registry.JoystickObject != null)
+        if (Registry.JoystickObject != null) // Instead of telling the object the scene has changed, a dedicated method is called.
         {
             Registry.JoystickObject.OnSceneChanged();
         }
@@ -236,41 +238,43 @@ public class GameManager : MonoBehaviour
             Registry.UIManagerObject.OnSceneChanged();
         }
 
-        for (int i = Registry.Customers.Count - 1; i >= 0; i--)
+        for (int i = Registry.Customers.Count - 1; i >= 0; i--) // Iterate backwards through the customers, to enable support for garbage collection.
         {
-            CustomerCore thisCustomer = Registry.Customers[i].GetComponent<CustomerCore>();
+            CustomerCore thisCustomer = Registry.Customers[i].GetComponent<CustomerCore>(); // Get the customer's customer core, as its shared between foreground and background customers
 
-            if (thisCustomer.DeSpawn)
+            if (thisCustomer.DeSpawn) // If the customer's patience has ran out - so ready to de-spawn
             {
+                // Garbage collect and destroy the customer.
                 Registry.LevelManagerObject.CustomerTableArrangement[thisCustomer.CustomerTablePosition] = null;
                 Registry.Customers.Remove(thisCustomer.gameObject);
                 Destroy(thisCustomer.gameObject);
             }
-            else if (Registry.CurrentSceneName != thisCustomer.CurrentLocation)
+            else if (Registry.CurrentSceneName != thisCustomer.CurrentLocation) // If the customer is not meant to be visible in this scene, hide it
             {
                 Registry.Customers[i].SetActive(false);
             }
         }
     }
 
-    public void QuitGame()
+    public void QuitGame() // Handle what the game should do on exit.
     {
-        savedDataManager.Save();
-        Application.Quit();
+        savedDataManager.Save(); // Save the game configuration.
+        Application.Quit(); // Quit the game.
     }
 
     private void OnApplicationFocus(bool hasFocus)
     {
-        Registry.GameInBackground = !hasFocus;
+        Registry.GameInBackground = !hasFocus; // Determine if the game is in the background.
     }
 
-    public void RenderGameSceneToFrameBuffer()
+    public void RenderGameSceneToFrameBuffer() // Used in the pause menu to create the blurred background.
     {
-        if (Registry.GameInBackground || Application.platform == RuntimePlatform.IPhonePlayer)
-        {
+        if (Registry.GameInBackground || Application.platform == RuntimePlatform.IPhonePlayer) // If the blurred background is not supported or game already in background...
+        { // ... When the game is already in the background, don't try to render the background scene as most platforms don't allow this and it causes graphical issues.
             return;
         }
 
+        // Get the camera, and its viewport
         Camera camera = Camera.main;
 
         int width = (int)(Camera.main.rect.width * Screen.width);
@@ -278,12 +282,15 @@ public class GameManager : MonoBehaviour
         float x_offset = (Screen.width - width) / 2;
         float y_offset = (Screen.height - height) / 2;
 
+        // Create textures the size of the camera's viewport
         FrameTexture = new Texture2D(width, height);
         BlurredFrameTexture = new Texture2D(width, height);
 
+        // Create new render targets, the size of the camera's viewport
         RenderTexture SceneContents = new RenderTexture(Screen.width, Screen.height, 24);
         RenderTexture BlurredSceneContents = new RenderTexture(Screen.width, Screen.height, 24);
 
+        // Get all the gameobjects currently in the scene, so the UI can be hidden.
         GameObject[] AllGameObjects = FindObjectsByType<GameObject>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
         List<GameObject> UI_GameObjects = new List<GameObject>();
         foreach (GameObject gameObject in AllGameObjects)
@@ -295,107 +302,74 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        camera.targetTexture = SceneContents;
-        camera.Render();
+        camera.targetTexture = SceneContents; // Set the camera to render to a render texture
+        camera.Render(); // Render the game scene to the render texture.
 
-        Graphics.SetRenderTarget(SceneContents);
-        FrameTexture.ReadPixels(new Rect(x_offset, y_offset, Screen.width, Screen.height), 0, 0);
-        FrameTexture.Apply();
+        Graphics.SetRenderTarget(SceneContents); // Tell the graphics modulw which texture to use
+        FrameTexture.ReadPixels(new Rect(x_offset, y_offset, Screen.width, Screen.height), 0, 0); // Read the frame buffer's content into a texture
+        FrameTexture.Apply(); // Apply the changes to the texture
 
-        Graphics.Blit(SceneContents, BlurredSceneContents, BlurredMaterial);
+        Graphics.Blit(SceneContents, BlurredSceneContents, BlurredMaterial); // Then render the new texture to the blurred frame buffer, with the blurred material
         Graphics.SetRenderTarget(BlurredSceneContents);
         BlurredFrameTexture.ReadPixels(new Rect(x_offset, y_offset, Screen.width, Screen.height), 0, 0);
         BlurredFrameTexture.Apply();
 
         foreach (GameObject gameObject in UI_GameObjects)
         {
-            gameObject.SetActive(true);
+            gameObject.SetActive(true); // Re-enable the UI so it can be properly setup for the pause menu.
         }
 
-        camera.targetTexture = null;
-        Graphics.SetRenderTarget(null);
+        camera.targetTexture = null; // reset the camera's render target
+        Graphics.SetRenderTarget(null); // reset graphics' render target
     }
 
-    public void ChangeScene(string sceneName = "")
+    public void ChangeScene(string sceneName = "") // Used to change scene, or to go back to previous scene if no argument provided
     {
-        sceneName = HandleSceneStack(sceneName);
+        sceneName = HandleSceneStack(sceneName); // Handles determining the previous scene.
 
         if (sceneName == Constants.KITCHEN || sceneName == Constants.RESTAURANT)
         {
             if (Registry.UIManagerObject != null)
             {
-                Registry.UIManagerObject.gameObject.SetActive(true);
+                Registry.UIManagerObject.gameObject.SetActive(true); // Enable the UI on the scenes it should be on.
             }
         }
         else
         {
             if (SFXSource.clip == RestaurantAmbience)
             {
-                SFXSource.Stop();
+                SFXSource.Stop(); // If not in the game scenes, stop playing associated ambient sounds
             }
 
             if (Registry.UIManagerObject != null)
             {
-                Registry.UIManagerObject.gameObject.SetActive(false);
+                Registry.UIManagerObject.gameObject.SetActive(false); // Hide the UI
             }
 
             if (Registry.InGameLevel)
             {
-                RenderGameSceneToFrameBuffer();
+                RenderGameSceneToFrameBuffer(); // If previously in the game scene, render the blurred background.
             }
         }
+        
+        if (sceneName == Constants.MAIN_MENU)
+        {
+            ResetGameLevel(); // Reset game level when on main menu.
+        }
+        
 
-        if (sceneName == Constants.BUNS_MG)
-        {
-        }
-        else if (sceneName == Constants.CREDITS_MENU)
-        {
-        }
-        else if (sceneName == Constants.KITCHEN)
-        {
-        }
-        else if (sceneName == Constants.LEVEL_SELECTION_MENU)
-        {
-        }
-        else if (sceneName == Constants.MAIN_MENU)
-        {
-            ResetGameLevel();
-        }
-        else if (sceneName == Constants.OPTIONS_MENU)
-        {
-        }
-        else if (sceneName == Constants.PAUSE_MENU)
-        {
-        }
-        else if (sceneName == Constants.PHO_MG)
-        {
-        }
-        else if (sceneName == Constants.RESTAURANT)
-        {
-        }
-        else if (sceneName == Constants.RICE_MG)
-        {
-        }
-        else if (sceneName == Constants.SHOP_MENU)
-        {
-        }
-        else if (sceneName == Constants.SUSHI_MG)
-        {
-        }
-        else if (sceneName == Constants.END_MENU)
-        {
-        }
+        Registry.CurrentSceneName = sceneName; // keep track of the current scene name
 
-        Registry.CurrentSceneName = sceneName;
-
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneName); // Change the scene.
     }
 
     private void Update()
     {
+        // Apply the volume adjustments from the options menu
         musicSource.volume = Registry.MusicVolume;
         SFXSource.volume = Registry.SFXVolume;
 
+        // Automatically switch from game scene to end menu when timer runs out (also handled here).
         if (Registry.LevelRunTime > 0)
         {
             Registry.LevelRunTime -= Time.deltaTime;

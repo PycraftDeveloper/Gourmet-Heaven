@@ -9,9 +9,4 @@ public class BasicRenderPriority : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().sortingOrder = RenderPriority;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
 }
