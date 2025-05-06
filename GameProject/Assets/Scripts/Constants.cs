@@ -66,6 +66,9 @@ public static class Constants
     public const int PLAYER_WALK_DOWN_ANIMATION = 2;
     public const int PLAYER_WALK_SIDE_ANIMATION = 3;
 
+    public const int LEVEL_ONE_MAX_SCORE = 1000;
+    public const int LEVEL_TWO_MAX_SCORE = 1500;
+
     public static readonly float[,] CUSTOMER_SEATS_IN_RESTAURANT = new float[,] {
         { -4.15f,  1.68f }, { -1.87f,  1.68f }, { 0.86f,  1.68f }, { 3.14f,  1.68f }, // top row
         { -4.15f, -2.34f }, { -1.87f, -2.34f }, { 0.86f, -2.34f }, { 3.14f, -2.34f } }; // bottom row
@@ -73,7 +76,7 @@ public static class Constants
     public static readonly float[] PHO_FOOD_ITEMS_SPEED = new float[] { 3.0f, 6.0f };
 
     public static readonly float[] BUNS_TIME_DELAY = new float[] { 5.0f, 10.0f };
-    public static readonly float BUNS_REACTION_THRESHOLD = 0.5f;
+    public static readonly float BUNS_REACTION_THRESHOLD = 0.8f;
     public static readonly float ACTIVE_EGG_TIMER_DISPLACEMENT = 0.5f;
 
     public static readonly int[] CUSTOMER_LEVEL_TWO_SECOND_MEAL_RANGE = new int[] { 0, 1 };

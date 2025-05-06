@@ -90,7 +90,6 @@ public class GameManager : MonoBehaviour
     public void ResetGameLevel()
     {
         Registry.PlayerScore = 0;
-        Registry.MaxScore = 0;
 
         foreach (GameObject _Customer in Registry.Customers)
         {

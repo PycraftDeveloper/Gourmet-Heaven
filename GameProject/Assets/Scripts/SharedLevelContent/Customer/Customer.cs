@@ -103,7 +103,6 @@ public class Customer : CustomerCore
 
         if (RaycastHit != null && RaycastHit.transform == transform)
         {
-            Registry.MaxScore += 100;
             if (Registry.PlayerObject.HoldingMeal == Meal)
             {
                 CorrectMealServed = true;
@@ -320,11 +319,6 @@ public class Customer : CustomerCore
         if (Registry.LevelManagerObject != null)
         {
             Registry.LevelManagerObject.CustomersInScene--;
-        }
-
-        if (CurrentLocation == Constants.RESTAURANT && Meal != "")
-        {
-            Registry.MaxScore += 100;
         }
     }
 }
