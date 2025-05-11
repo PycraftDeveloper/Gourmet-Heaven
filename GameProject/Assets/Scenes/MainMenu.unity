@@ -613,7 +613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &217127766
 RectTransform:
   m_ObjectHideFlags: 0
@@ -847,7 +847,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &267019867
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1078,7 +1078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &433230111
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1633,6 +1633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15330cde20adbda4aa0295cdd6706d10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IntroAnimObject: {fileID: 1649183198}
 --- !u!1 &705537653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,7 +1931,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &893130216
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2156,7 +2157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1145875914
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2254,7 +2255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1211873208
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2502,7 +2503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1276388951
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3061,6 +3062,7 @@ GameObject:
   - component: {fileID: 1649183199}
   - component: {fileID: 1649183201}
   - component: {fileID: 1649183200}
+  - component: {fileID: 1649183202}
   m_Layer: 5
   m_Name: IntroAnimBackground
   m_TagString: Untagged
@@ -3134,6 +3136,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649183198}
   m_CullTransparentMesh: 1
+--- !u!114 &1649183202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649183198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6cef71ae9bb53943a6e2e7ec8fd5527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IntroSequenceItems:
+  - {fileID: 433230110}
+  - {fileID: 1276388950}
+  - {fileID: 1211873207}
+  - {fileID: 1773694380}
+  - {fileID: 893130215}
+  - {fileID: 217127765}
+  - {fileID: 1145875913}
+  - {fileID: 267019866}
+  IsFinished: 0
 --- !u!1 &1708828891
 GameObject:
   m_ObjectHideFlags: 0
@@ -3227,7 +3251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1773694381
 RectTransform:
   m_ObjectHideFlags: 0
