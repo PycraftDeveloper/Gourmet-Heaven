@@ -21,6 +21,7 @@ public static class Registry
 
     // Stores objects by reference for use across the project.
     public static GameManager GameManagerObject = null;
+
     public static LevelManager LevelManagerObject = null;
     public static Player PlayerObject = null;
     public static Joystick JoystickObject = null;
@@ -31,9 +32,12 @@ public static class Registry
 
     // Used to keep track of when to show the tutorial screen in game. (Note: could be saved to disk so presists across restarts).
     public static bool BunsMGTutorialShown = false;
+
     public static bool PhoMGTutorialShown = false;
     public static bool RiceMGTutorialShown = false;
     public static bool SushiMGTutorialShown = false;
 
     public static int NotInTutorialScreenTimeModifier = 1; // Used to stop time passing when reading the tutorial so player not rusheed.
+
+    public static bool IntroSequencePlayed = false;
 }
