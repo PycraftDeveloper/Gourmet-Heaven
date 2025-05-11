@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 94bf220d6f316674fa1bbf90caf9d9d4
+guid: ee76a912035b28b41a5f5f254cc13ac8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8641629480856880463
-    second: FinalPanelSplashArt 1_0
+      213: 7515052721145450374
+    second: IntroSequence _BIG 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,23 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FinalPanelSplashArt 1_0
+      name: IntroSequence _BIG 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 640
-        height: 360
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 1350
+        height: 759
+      alignment: 9
+      pivot: {x: 0.56605333, y: 0.22306837}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f45840f3a3c3de770800000000000000
-      internalID: 8641629480856880463
+      spriteID: 68f053822a4da4860800000000000000
+      internalID: 7515052721145450374
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e0a7b3006adb11041ba1aa4c8a8982ef
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FinalPanelSplashArt 1_0: 8641629480856880463
+      IntroSequence _BIG 1_0: 7515052721145450374
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
