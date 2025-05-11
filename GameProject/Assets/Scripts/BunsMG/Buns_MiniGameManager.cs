@@ -47,6 +47,8 @@ public class Buns_MiniGameManager : MonoBehaviour
     {
         MiniGameLocked = true;
 
+        Registry.BunsMGTutorialShown = true;
+
         ShowMiniGameSucsess();
     }
 
@@ -73,7 +75,6 @@ public class Buns_MiniGameManager : MonoBehaviour
         {
             BunsMiniGameTutorial.SetActive(true);
             MiniGameLocked = true;
-            Registry.BunsMGTutorialShown = true;
             Registry.NotInTutorialScreenTimeModifier = 0;
         }
         if (!MiniGameLocked)
@@ -114,6 +115,7 @@ public class Buns_MiniGameManager : MonoBehaviour
             yield return null;
         }
     }
+
     private void Update()
     {
         if (!MiniGameLocked)

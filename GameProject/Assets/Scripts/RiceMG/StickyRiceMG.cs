@@ -38,7 +38,6 @@ public class SlicedObject : MonoBehaviour
         if (!Registry.RiceMGTutorialShown) // (TJ)
         {
             TutorialCanvas.SetActive(true);
-            Registry.RiceMGTutorialShown = true;
             Registry.NotInTutorialScreenTimeModifier = 0;
             MiniGameTimer.isRunning = false;
         }
@@ -184,6 +183,8 @@ public class SlicedObject : MonoBehaviour
             ShowMessage("Amazing!");
             Debug.Log("Mango Fully Sliced!");
             Registry.PlayerObject.GetComponent<Player>().HoldingMeal = Constants.MANGO_STICKY_RICE;
+
+            Registry.RiceMGTutorialShown = true;
 
             if (countdowntimer != null)
             {

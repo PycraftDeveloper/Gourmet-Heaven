@@ -68,6 +68,8 @@ public class Pho_MiniGameManager : MonoBehaviour
     {
         MiniGameLocked = true;
 
+        Registry.PhoMGTutorialShown = true;
+
         ShowMiniGameSucsess();
     }
 
@@ -88,7 +90,6 @@ public class Pho_MiniGameManager : MonoBehaviour
         {
             PhoMiniGameTutorial.SetActive(true);
             MiniGameLocked = true;
-            Registry.SushiMGTutorialShown = true;
             Registry.NotInTutorialScreenTimeModifier = 0;
         }
     }
@@ -206,7 +207,6 @@ public class Pho_MiniGameManager : MonoBehaviour
                 {
                     Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.SoupSplash2);
                 }
-
 
                 if (CurrentIngredientIndex >= Ingredients.Length)
                 {

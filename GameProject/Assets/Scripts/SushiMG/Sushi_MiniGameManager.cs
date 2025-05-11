@@ -69,6 +69,8 @@ public class Sushi_MiniGameManager : MonoBehaviour
     {
         MiniGameLocked = true;
 
+        Registry.SushiMGTutorialShown = true;
+
         SushiRollingAnimation.SetActive(true);
         Animator SushiRollingAnimator = SushiRollingAnimation.GetComponent<Animator>();
         SushiRollingAnimator.Play("SushiRolling");
@@ -100,7 +102,6 @@ public class Sushi_MiniGameManager : MonoBehaviour
         {
             SushiMiniGameTutorial.SetActive(true);
             MiniGameLocked = true;
-            Registry.SushiMGTutorialShown = true;
             Registry.NotInTutorialScreenTimeModifier = 0;
         }
     }
