@@ -1,91 +1,91 @@
 fileFormatVersion: 2
-guid: 616b1c50f1e141446b3a14f15f351be9
+guid: 93ca4f96c632be142bd6ee52c2d4ea0d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2636464533908925271
-    second: UoN_Icon__logotype_horizontal_Black_0
+      213: 3895572099620309380
+    second: UoN_Icon__logotype_horizontal_White_0
   - first:
-      213: 1343490637013287664
-    second: UoN_Icon__logotype_horizontal_Black_1
+      213: 1711580189153275789
+    second: UoN_Icon__logotype_horizontal_White_1
   - first:
-      213: -7946547108881916873
-    second: UoN_Icon__logotype_horizontal_Black_2
+      213: -3344874358516640500
+    second: UoN_Icon__logotype_horizontal_White_2
   - first:
-      213: 3426533392548695194
-    second: UoN_Icon__logotype_horizontal_Black_3
+      213: 1160316248561599801
+    second: UoN_Icon__logotype_horizontal_White_3
   - first:
-      213: 5443964311375151326
-    second: UoN_Icon__logotype_horizontal_Black_4
+      213: 6986232802864406463
+    second: UoN_Icon__logotype_horizontal_White_4
   - first:
-      213: -3938941594122292478
-    second: UoN_Icon__logotype_horizontal_Black_5
+      213: 8184136816526441872
+    second: UoN_Icon__logotype_horizontal_White_5
   - first:
-      213: 592822803852064046
-    second: UoN_Icon__logotype_horizontal_Black_6
+      213: -4722162860349853572
+    second: UoN_Icon__logotype_horizontal_White_6
   - first:
-      213: -7301590844197795274
-    second: UoN_Icon__logotype_horizontal_Black_7
+      213: 8393133447185657156
+    second: UoN_Icon__logotype_horizontal_White_7
   - first:
-      213: -8779422946330818401
-    second: UoN_Icon__logotype_horizontal_Black_8
+      213: -3469088217553684657
+    second: UoN_Icon__logotype_horizontal_White_8
   - first:
-      213: 7402316245495699586
-    second: UoN_Icon__logotype_horizontal_Black_9
+      213: 8633774260591797326
+    second: UoN_Icon__logotype_horizontal_White_9
   - first:
-      213: -5139472749643178071
-    second: UoN_Icon__logotype_horizontal_Black_10
+      213: 546088797303538872
+    second: UoN_Icon__logotype_horizontal_White_10
   - first:
-      213: -9209592604381875839
-    second: UoN_Icon__logotype_horizontal_Black_11
+      213: 6593054375487392725
+    second: UoN_Icon__logotype_horizontal_White_11
   - first:
-      213: -3319999245425951379
-    second: UoN_Icon__logotype_horizontal_Black_12
+      213: 6465363367849586005
+    second: UoN_Icon__logotype_horizontal_White_12
   - first:
-      213: -4812532934228064493
-    second: UoN_Icon__logotype_horizontal_Black_13
+      213: -6114716925092054051
+    second: UoN_Icon__logotype_horizontal_White_13
   - first:
-      213: -776571400570559432
-    second: UoN_Icon__logotype_horizontal_Black_14
+      213: 3432305362035942467
+    second: UoN_Icon__logotype_horizontal_White_14
   - first:
-      213: 2111402920515211289
-    second: UoN_Icon__logotype_horizontal_Black_15
+      213: -8298150311124835622
+    second: UoN_Icon__logotype_horizontal_White_15
   - first:
-      213: 6624577319707620945
-    second: UoN_Icon__logotype_horizontal_Black_16
+      213: -537587758518533642
+    second: UoN_Icon__logotype_horizontal_White_16
   - first:
-      213: 1393302490515587052
-    second: UoN_Icon__logotype_horizontal_Black_17
+      213: -4233503477954992634
+    second: UoN_Icon__logotype_horizontal_White_17
   - first:
-      213: -1181303951478430571
-    second: UoN_Icon__logotype_horizontal_Black_18
+      213: -1657604528391892204
+    second: UoN_Icon__logotype_horizontal_White_18
   - first:
-      213: -7940558815020581659
-    second: UoN_Icon__logotype_horizontal_Black_19
+      213: -521521926824175940
+    second: UoN_Icon__logotype_horizontal_White_19
   - first:
-      213: -6770574175658614833
-    second: UoN_Icon__logotype_horizontal_Black_20
+      213: -35861824203504788
+    second: UoN_Icon__logotype_horizontal_White_20
   - first:
-      213: -5881514742851533307
-    second: UoN_Icon__logotype_horizontal_Black_21
+      213: -6698091272860786129
+    second: UoN_Icon__logotype_horizontal_White_21
   - first:
-      213: -8159217067005735665
-    second: UoN_Icon__logotype_horizontal_Black_22
+      213: 6813052536632091829
+    second: UoN_Icon__logotype_horizontal_White_22
   - first:
-      213: -5387025499967175258
-    second: UoN_Icon__logotype_horizontal_Black_23
+      213: -6840308986077742094
+    second: UoN_Icon__logotype_horizontal_White_23
   - first:
-      213: -3733429671901865894
-    second: UoN_Icon__logotype_horizontal_Black_24
+      213: -8217924080646338805
+    second: UoN_Icon__logotype_horizontal_White_24
   - first:
-      213: -3878307868558473599
-    second: UoN_Icon__logotype_horizontal_Black_25
+      213: 666623671039746490
+    second: UoN_Icon__logotype_horizontal_White_25
   - first:
-      213: -1584320750335047945
-    second: UoN_Icon__logotype_horizontal_Black_26
+      213: -3413030460765875399
+    second: UoN_Icon__logotype_horizontal_White_26
   - first:
-      213: 5665213929165279059
-    second: UoN_Icon__logotype_horizontal_Black_27
+      213: -3110579496266541264
+    second: UoN_Icon__logotype_horizontal_White_27
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -134,7 +134,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -207,10 +207,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_0
+      name: UoN_Icon__logotype_horizontal_White_0
       rect:
         serializedVersion: 2
-        x: 1495
+        x: 1308
         y: 2799
         width: 671
         height: 646
@@ -222,19 +222,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9a451799975696bd0800000000000000
-      internalID: -2636464533908925271
+      spriteID: 4898aca5f2adf0630800000000000000
+      internalID: 3895572099620309380
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_1
+      name: UoN_Icon__logotype_horizontal_White_1
       rect:
         serializedVersion: 2
-        x: 2265
+        x: 2078
         y: 2799
-        width: 672
+        width: 671
         height: 671
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -244,17 +244,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0f28d32cd9905a210800000000000000
-      internalID: 1343490637013287664
+      spriteID: d8fa31b1d11c0c710800000000000000
+      internalID: 1711580189153275789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_2
+      name: UoN_Icon__logotype_horizontal_White_2
       rect:
         serializedVersion: 2
-        x: 1495
+        x: 1308
         y: 1362
         width: 1390
         height: 1339
@@ -266,19 +266,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 73c9f20d18138b190800000000000000
-      internalID: -7946547108881916873
+      spriteID: c059d4a2e7e9491d0800000000000000
+      internalID: -3344874358516640500
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_3
+      name: UoN_Icon__logotype_horizontal_White_3
       rect:
         serializedVersion: 2
-        x: 3033
+        x: 2846
         y: 2426
-        width: 245
+        width: 244
         height: 275
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -288,17 +288,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a9c01e947fd7d8f20800000000000000
-      internalID: 3426533392548695194
+      spriteID: 935c0aefa754a1010800000000000000
+      internalID: 1160316248561599801
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_4
+      name: UoN_Icon__logotype_horizontal_White_4
       rect:
         serializedVersion: 2
-        x: 3533
+        x: 3345
         y: 2647
         width: 80
         height: 54
@@ -310,19 +310,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ed08b65a2b8dc8b40800000000000000
-      internalID: 5443964311375151326
+      spriteID: fbf1ae438b514f060800000000000000
+      internalID: 6986232802864406463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_5
+      name: UoN_Icon__logotype_horizontal_White_5
       rect:
         serializedVersion: 2
-        x: 4419
+        x: 4232
         y: 2647
-        width: 81
+        width: 80
         height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -332,19 +332,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 20374535d711659c0800000000000000
-      internalID: -3938941594122292478
+      spriteID: 09d314eb215e39170800000000000000
+      internalID: 8184136816526441872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_6
+      name: UoN_Icon__logotype_horizontal_White_6
       rect:
         serializedVersion: 2
-        x: 4519
+        x: 4332
         y: 2431
-        width: 142
+        width: 141
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -354,17 +354,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e257a5ef2312a3800800000000000000
-      internalID: 592822803852064046
+      spriteID: c70fd49c5e1877eb0800000000000000
+      internalID: -4722162860349853572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_7
+      name: UoN_Icon__logotype_horizontal_White_7
       rect:
         serializedVersion: 2
-        x: 5221
+        x: 5033
         y: 2433
         width: 144
         height: 273
@@ -376,17 +376,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 63a885c00d98baa90800000000000000
-      internalID: -7301590844197795274
+      spriteID: 44d63f7c6666a7470800000000000000
+      internalID: 8393133447185657156
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_8
+      name: UoN_Icon__logotype_horizontal_White_8
       rect:
         serializedVersion: 2
-        x: 3299
+        x: 3111
         y: 2433
         width: 212
         height: 202
@@ -398,17 +398,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f98c90f7859392680800000000000000
-      internalID: -8779422946330818401
+      spriteID: f47383a65a25bdfc0800000000000000
+      internalID: -3469088217553684657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_9
+      name: UoN_Icon__logotype_horizontal_White_9
       rect:
         serializedVersion: 2
-        x: 3533
+        x: 3345
         y: 2433
         width: 80
         height: 197
@@ -420,19 +420,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 288dfd7f76f4ab660800000000000000
-      internalID: 7402316245495699586
+      spriteID: e442c7142f351d770800000000000000
+      internalID: 8633774260591797326
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_10
+      name: UoN_Icon__logotype_horizontal_White_10
       rect:
         serializedVersion: 2
-        x: 3625
+        x: 3438
         y: 2433
-        width: 215
+        width: 214
         height: 197
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -442,19 +442,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9afd7b8a3cceca8b0800000000000000
-      internalID: -5139472749643178071
+      spriteID: 8b4091b2ed8149700800000000000000
+      internalID: 546088797303538872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_11
+      name: UoN_Icon__logotype_horizontal_White_11
       rect:
         serializedVersion: 2
-        x: 3833
+        x: 3645
         y: 2425
-        width: 217
+        width: 218
         height: 213
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -464,17 +464,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 181f0c12254f03080800000000000000
-      internalID: -9209592604381875839
+      spriteID: 5dbc2c3e50c3f7b50800000000000000
+      internalID: 6593054375487392725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_12
+      name: UoN_Icon__logotype_horizontal_White_12
       rect:
         serializedVersion: 2
-        x: 4061
+        x: 3873
         y: 2433
         width: 142
         height: 202
@@ -486,17 +486,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d6d32d1c64efce1d0800000000000000
-      internalID: -3319999245425951379
+      spriteID: 55d6f746ab599b950800000000000000
+      internalID: 6465363367849586005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_13
+      name: UoN_Icon__logotype_horizontal_White_13
       rect:
         serializedVersion: 2
-        x: 4203
+        x: 4016
         y: 2426
         width: 199
         height: 212
@@ -508,19 +508,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 317c7715bc2763db0800000000000000
-      internalID: -4812532934228064493
+      spriteID: ddbb1d19a59242ba0800000000000000
+      internalID: -6114716925092054051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_14
+      name: UoN_Icon__logotype_horizontal_White_14
       rect:
         serializedVersion: 2
-        x: 4419
+        x: 4232
         y: 2433
-        width: 81
+        width: 80
         height: 197
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -530,17 +530,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 834a346fc601935f0800000000000000
-      internalID: -776571400570559432
+      spriteID: 34422d8aa8ff1af20800000000000000
+      internalID: 3432305362035942467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_15
+      name: UoN_Icon__logotype_horizontal_White_15
       rect:
         serializedVersion: 2
-        x: 4670
+        x: 4482
         y: 2363
         width: 221
         height: 267
@@ -552,17 +552,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 910180ff4c53d4d10800000000000000
-      internalID: 2111402920515211289
+      spriteID: ad26b9ce14c07dc80800000000000000
+      internalID: -8298150311124835622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_16
+      name: UoN_Icon__logotype_horizontal_White_16
       rect:
         serializedVersion: 2
-        x: 4986
+        x: 4799
         y: 2426
         width: 230
         height: 213
@@ -574,17 +574,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 156384849f93feb50800000000000000
-      internalID: 6624577319707620945
+      spriteID: 6f187e928ca1a88f0800000000000000
+      internalID: -537587758518533642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_17
+      name: UoN_Icon__logotype_horizontal_White_17
       rect:
         serializedVersion: 2
-        x: 3033
+        x: 2846
         y: 2072
         width: 259
         height: 268
@@ -596,193 +596,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cef39dbab31065310800000000000000
-      internalID: 1393302490515587052
+      spriteID: 606ac1154039f35c0800000000000000
+      internalID: -4233503477954992634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_18
+      name: UoN_Icon__logotype_horizontal_White_18
       rect:
         serializedVersion: 2
-        x: 3307
-        y: 2064
-        width: 230
-        height: 214
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 594ec50a05a2b9fe0800000000000000
-      internalID: -1181303951478430571
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_19
-      rect:
-        serializedVersion: 2
-        x: 3551
-        y: 2072
-        width: 143
-        height: 201
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5ecf99024d77dc190800000000000000
-      internalID: -7940558815020581659
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_20
-      rect:
-        serializedVersion: 2
-        x: 3710
-        y: 2069
-        width: 141
-        height: 257
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fcf5f66c8a61a02a0800000000000000
-      internalID: -6770574175658614833
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_21
-      rect:
-        serializedVersion: 2
-        x: 3872
-        y: 2072
-        width: 214
-        height: 268
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5068c13c089a06ea0800000000000000
-      internalID: -5881514742851533307
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_22
-      rect:
-        serializedVersion: 2
-        x: 4098
-        y: 2067
-        width: 214
-        height: 209
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f0d81d39e43a4ce80800000000000000
-      internalID: -8159217067005735665
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_23
-      rect:
-        serializedVersion: 2
-        x: 4326
-        y: 2072
-        width: 346
-        height: 202
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6a54c7679d07d35b0800000000000000
-      internalID: -5387025499967175258
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_24
-      rect:
-        serializedVersion: 2
-        x: 4692
-        y: 2001
-        width: 215
-        height: 274
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a58d2647e71303cc0800000000000000
-      internalID: -3733429671901865894
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_25
-      rect:
-        serializedVersion: 2
-        x: 4911
-        y: 2069
-        width: 141
-        height: 257
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 18648fcaa8b7d2ac0800000000000000
-      internalID: -3878307868558473599
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_26
-      rect:
-        serializedVersion: 2
-        x: 5065
+        x: 3120
         y: 2064
         width: 229
         height: 214
@@ -794,17 +618,193 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7f6cff1fbac530ae0800000000000000
-      internalID: -1584320750335047945
+      spriteID: 4135f1bb6710ff8e0800000000000000
+      internalID: -1657604528391892204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UoN_Icon__logotype_horizontal_Black_27
+      name: UoN_Icon__logotype_horizontal_White_19
       rect:
         serializedVersion: 2
-        x: 5309
+        x: 3364
+        y: 2072
+        width: 142
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb65119129e23c8f0800000000000000
+      internalID: -521521926824175940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UoN_Icon__logotype_horizontal_White_20
+      rect:
+        serializedVersion: 2
+        x: 3522
+        y: 2069
+        width: 142
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c634a536cd7908ff0800000000000000
+      internalID: -35861824203504788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UoN_Icon__logotype_horizontal_White_21
+      rect:
+        serializedVersion: 2
+        x: 3684
+        y: 2072
+        width: 214
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f222dffa9799b03a0800000000000000
+      internalID: -6698091272860786129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UoN_Icon__logotype_horizontal_White_22
+      rect:
+        serializedVersion: 2
+        x: 3911
+        y: 2067
+        width: 213
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b4a70a5f23dc8e50800000000000000
+      internalID: 6813052536632091829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UoN_Icon__logotype_horizontal_White_23
+      rect:
+        serializedVersion: 2
+        x: 4139
+        y: 2072
+        width: 345
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fb7ceaf7375211a0800000000000000
+      internalID: -6840308986077742094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UoN_Icon__logotype_horizontal_White_24
+      rect:
+        serializedVersion: 2
+        x: 4504
+        y: 2001
+        width: 215
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0742fdc69114fd80800000000000000
+      internalID: -8217924080646338805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UoN_Icon__logotype_horizontal_White_25
+      rect:
+        serializedVersion: 2
+        x: 4723
+        y: 2069
+        width: 142
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab1e03762b2504900800000000000000
+      internalID: 666623671039746490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UoN_Icon__logotype_horizontal_White_26
+      rect:
+        serializedVersion: 2
+        x: 4877
+        y: 2064
+        width: 230
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 933567201ea72a0d0800000000000000
+      internalID: -3413030460765875399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UoN_Icon__logotype_horizontal_White_27
+      rect:
+        serializedVersion: 2
+        x: 5121
         y: 2072
         width: 212
         height: 202
@@ -816,8 +816,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 35fcd709d02ee9e40800000000000000
-      internalID: 5665213929165279059
+      spriteID: 0375b6fbd6005d4d0800000000000000
+      internalID: -3110579496266541264
       vertices: []
       indices: 
       edges: []
@@ -833,35 +833,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
-      UoN_Icon__logotype_horizontal_Black_0: -2636464533908925271
-      UoN_Icon__logotype_horizontal_Black_1: 1343490637013287664
-      UoN_Icon__logotype_horizontal_Black_10: -5139472749643178071
-      UoN_Icon__logotype_horizontal_Black_11: -9209592604381875839
-      UoN_Icon__logotype_horizontal_Black_12: -3319999245425951379
-      UoN_Icon__logotype_horizontal_Black_13: -4812532934228064493
-      UoN_Icon__logotype_horizontal_Black_14: -776571400570559432
-      UoN_Icon__logotype_horizontal_Black_15: 2111402920515211289
-      UoN_Icon__logotype_horizontal_Black_16: 6624577319707620945
-      UoN_Icon__logotype_horizontal_Black_17: 1393302490515587052
-      UoN_Icon__logotype_horizontal_Black_18: -1181303951478430571
-      UoN_Icon__logotype_horizontal_Black_19: -7940558815020581659
-      UoN_Icon__logotype_horizontal_Black_2: -7946547108881916873
-      UoN_Icon__logotype_horizontal_Black_20: -6770574175658614833
-      UoN_Icon__logotype_horizontal_Black_21: -5881514742851533307
-      UoN_Icon__logotype_horizontal_Black_22: -8159217067005735665
-      UoN_Icon__logotype_horizontal_Black_23: -5387025499967175258
-      UoN_Icon__logotype_horizontal_Black_24: -3733429671901865894
-      UoN_Icon__logotype_horizontal_Black_25: -3878307868558473599
-      UoN_Icon__logotype_horizontal_Black_26: -1584320750335047945
-      UoN_Icon__logotype_horizontal_Black_27: 5665213929165279059
-      UoN_Icon__logotype_horizontal_Black_3: 3426533392548695194
-      UoN_Icon__logotype_horizontal_Black_4: 5443964311375151326
-      UoN_Icon__logotype_horizontal_Black_5: -3938941594122292478
-      UoN_Icon__logotype_horizontal_Black_6: 592822803852064046
-      UoN_Icon__logotype_horizontal_Black_7: -7301590844197795274
-      UoN_Icon__logotype_horizontal_Black_8: -8779422946330818401
-      UoN_Icon__logotype_horizontal_Black_9: 7402316245495699586
+      UoN_Icon__logotype_horizontal_White_0: 3895572099620309380
+      UoN_Icon__logotype_horizontal_White_1: 1711580189153275789
+      UoN_Icon__logotype_horizontal_White_10: 546088797303538872
+      UoN_Icon__logotype_horizontal_White_11: 6593054375487392725
+      UoN_Icon__logotype_horizontal_White_12: 6465363367849586005
+      UoN_Icon__logotype_horizontal_White_13: -6114716925092054051
+      UoN_Icon__logotype_horizontal_White_14: 3432305362035942467
+      UoN_Icon__logotype_horizontal_White_15: -8298150311124835622
+      UoN_Icon__logotype_horizontal_White_16: -537587758518533642
+      UoN_Icon__logotype_horizontal_White_17: -4233503477954992634
+      UoN_Icon__logotype_horizontal_White_18: -1657604528391892204
+      UoN_Icon__logotype_horizontal_White_19: -521521926824175940
+      UoN_Icon__logotype_horizontal_White_2: -3344874358516640500
+      UoN_Icon__logotype_horizontal_White_20: -35861824203504788
+      UoN_Icon__logotype_horizontal_White_21: -6698091272860786129
+      UoN_Icon__logotype_horizontal_White_22: 6813052536632091829
+      UoN_Icon__logotype_horizontal_White_23: -6840308986077742094
+      UoN_Icon__logotype_horizontal_White_24: -8217924080646338805
+      UoN_Icon__logotype_horizontal_White_25: 666623671039746490
+      UoN_Icon__logotype_horizontal_White_26: -3413030460765875399
+      UoN_Icon__logotype_horizontal_White_27: -3110579496266541264
+      UoN_Icon__logotype_horizontal_White_3: 1160316248561599801
+      UoN_Icon__logotype_horizontal_White_4: 6986232802864406463
+      UoN_Icon__logotype_horizontal_White_5: 8184136816526441872
+      UoN_Icon__logotype_horizontal_White_6: -4722162860349853572
+      UoN_Icon__logotype_horizontal_White_7: 8393133447185657156
+      UoN_Icon__logotype_horizontal_White_8: -3469088217553684657
+      UoN_Icon__logotype_horizontal_White_9: 8633774260591797326
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
