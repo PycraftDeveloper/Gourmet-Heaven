@@ -9,7 +9,7 @@ public class IntroSequenceManager : MonoBehaviour
     public GameObject IntroZoomObject;
     private Image IntroZoomImage;
 
-    public bool IsFinished = false;
+    public bool AnimationSequencePlaying = true;
 
     private void Start()
     {
@@ -18,6 +18,8 @@ public class IntroSequenceManager : MonoBehaviour
 
     public IEnumerator Play()
     {
+        AnimationSequencePlaying = true;
+
         for (int i = 0; i < IntroSequenceItems.Length; i++)
         {
             IntroSequenceItems[i].SetActive(true);
@@ -66,6 +68,6 @@ public class IntroSequenceManager : MonoBehaviour
         IntroZoomObject.transform.localScale = new Vector3(EndZoom, EndZoom, EndZoom);
         IntroZoomObject.transform.localPosition = new Vector2(-187, 593);
 
-        IsFinished = true;
+        AnimationSequencePlaying = false;
     }
 }

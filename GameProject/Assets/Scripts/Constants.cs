@@ -13,6 +13,7 @@ public static class Constants
 
     // Stores the min/max values for customer patience in each level (in seconds).
     public static readonly float[] CUSTOMER_MIN_PATIENCE = new float[] { 40, 35 };
+
     public static readonly float[] CUSTOMER_MAX_PATIENCE = new float[] { 50, 50 };
 
     public const string FACE_SIDE = "side";
@@ -24,6 +25,7 @@ public static class Constants
 
     // Store the scene names
     public const string MAIN_MENU = "MainMenu";
+
     public const string OPTIONS_MENU = "OptionsMenu";
     public const string CREDITS_MENU = "CreditsMenu";
     public const string KITCHEN = "Kitchen";
@@ -39,6 +41,7 @@ public static class Constants
 
     // Store the meals the player can hold.
     public const string PHO = "pho";
+
     public const string SUSHI = "sushi";
     public const string BAO_BUNS = "bao buns";
     public const string MANGO_STICKY_RICE = "mango sticky rice";
@@ -46,23 +49,27 @@ public static class Constants
 
     // Constants for the sushi mini-game, are the same as names in scene.
     public const string SUSHI_MG_RICE = "Ingredient_RiceBall";
+
     public const string SUSHI_MG_SEAWEED = "Ingredient_SeaWeed";
     public const string SUSHI_MG_TUNA = "Ingredient_Tuna";
     public const string SUSHI_MG_WASABI = "Ingredient_Wasabi";
 
     // Constants for the pho mini-game, are the same as names in the scene.
     public const string PHO_MG_POT_NOODLES = "Pot_Noodles";
+
     public const string PHO_MG_POT_BEEF = "Pot_Beef";
     public const string PHO_MG_BOWL_CILLANTRO = "Bowl_Cillantro";
     public const string PHO_MG_BOWL_PARSLEY = "Bowl_Parsley";
 
     // Stores the names of the coroutines the customer can have applied to them.
     public const string NO_COROUTINE = "no coroutine";
+
     public const string MOVE_IN_QUEUE = "move in queue";
     public const string MOVE_INTO_RESTAURANT = "move into restaurant";
 
     // Stores the customer animation states (per customer color)
     public const int CUSTOMER_WALK_SIDE_ANIMATION = 0;
+
     public const int CUSTOMER_IDLE_UP_ANIMATION = 1;
     public const int CUSTOMER_WALK_DOWN_ANIMATION = 2;
     public const int CUSTOMER_IDLE_SIDE_ANIMATION = 3;
@@ -70,12 +77,14 @@ public static class Constants
 
     // Stores the player animation states.
     public const int PLAYER_IDLE_ANIMATION = 0;
+
     public const int PLAYER_WALK_UP_ANIMATION = 1;
     public const int PLAYER_WALK_DOWN_ANIMATION = 2;
     public const int PLAYER_WALK_SIDE_ANIMATION = 3;
 
     // Stores max scores for each level.
     public const int LEVEL_ONE_MAX_SCORE = 1000;
+
     public const int LEVEL_TWO_MAX_SCORE = 1500;
 
     // Stores the positions for each customer in the restaurant scene.
@@ -88,6 +97,7 @@ public static class Constants
 
     // Defines the range (min/max) delay in the buns mini-game (in seconds)
     public static readonly float[] BUNS_TIME_DELAY = new float[] { 5.0f, 10.0f };
+
     public static readonly float BUNS_REACTION_THRESHOLD = 0.8f; // How long (in seconds) the player has to react
     public static readonly float ACTIVE_EGG_TIMER_DISPLACEMENT = 0.5f; // How far the egg timer should be displayed when goes off
 

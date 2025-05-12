@@ -47,19 +47,27 @@ public class MainMenuManagerScript : MonoBehaviour
             Registry.IntroSequencePlayed = true;
         }
 
-        if (IntroAnim.IsFinished)
+        if (IntroAnimCoroutine != null)
         {
-            IntroAnimObject.SetActive(false);
-        }
+            IntroAnimObject.SetActive(true);
+            if (Input.touchCount > 0) // if touch input is used
+            {
+                Registry.GameManagerObject.StopCoroutine(IntroAnimCoroutine);
+                IntroAnimCoroutine = null;
+            }
+            else if (Input.GetMouseButton(0)) // if mouse click is used
+            {
+                Registry.GameManagerObject.StopCoroutine(IntroAnimCoroutine);
+                IntroAnimCoroutine = null;
+            }
 
-        if (Input.touchCount > 0) // if touch input is used
-        {
-            Registry.GameManagerObject.StopCoroutine(IntroAnimCoroutine);
-            IntroAnimObject.SetActive(false);
+            if (IntroAnim.AnimationSequencePlaying == false)
+            {
+                IntroAnimCoroutine = null;
+            }
         }
-        else if (Input.GetMouseButton(0)) // if mouse click is used
+        else
         {
-            Registry.GameManagerObject.StopCoroutine(IntroAnimCoroutine);
             IntroAnimObject.SetActive(false);
         }
     }
