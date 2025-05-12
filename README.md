@@ -52,3 +52,35 @@ In designing the game, ...
 
 ### Art
 In creating the artwork for the game, ...
+
+**References**
+### Fonts
+-----------
+https://www.1001fonts.com/pixel-game-font.html
+
+https://www.1001fonts.com/saikyo-font.html
+
+https://www.1001fonts.com/chinese-rocks-free-font.html
+
+https://www.dafont.com/nuku-nuku.font
+
+### Sounds
+------------
+https://www.youtube.com/watch?v=c9noznqhbH4 (Useful & Popular Anime Sound Effects for Editing)
+
+https://www.youtube.com/watch?v=qXIIcyStWYA (Slice and Dice - Realistic Chopping Sound Effects)
+
+https://youtu.be/AGZXC5LhXnY?si=2wSkGeMDSOEDU8Zw (Barcode scanner beep sound)
+
+https://youtu.be/FLeGEEfMo-4?si=87Awy2xvWz8IhdUR (Small Crowd People Talking Background Noise)
+
+https://www.youtube.com/watch?v=cTQ6jSDCcn8 (Small Water Splash Sound Effects - Royalty Free)
+
+https://youtu.be/T0wyD9r3iHA?si=FQ5RovMEzEJWv6Xw (Egg Timer Sound Effects [FREE])
+
+https://youtu.be/hSWEJuZA18U?si=pcJWbPwR60cJ-YMg (BOILING WATER SOUND EFFECT - FREE)
+
+https://freesound.org/people/deleted_user_2104797/sounds/164467/ (Squelch 10.wav)
+
+
+
