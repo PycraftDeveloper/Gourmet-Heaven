@@ -53,9 +53,9 @@ In designing the game, ...
 ### Art
 In creating the artwork for the game, ...
 
-**References**
+## References
+
 ### Fonts
------------
 https://www.1001fonts.com/pixel-game-font.html
 
 https://www.1001fonts.com/saikyo-font.html
@@ -65,7 +65,6 @@ https://www.1001fonts.com/chinese-rocks-free-font.html
 https://www.dafont.com/nuku-nuku.font
 
 ### Sounds
-------------
 https://www.youtube.com/watch?v=c9noznqhbH4 (Useful & Popular Anime Sound Effects for Editing)
 
 https://www.youtube.com/watch?v=qXIIcyStWYA (Slice and Dice - Realistic Chopping Sound Effects)
