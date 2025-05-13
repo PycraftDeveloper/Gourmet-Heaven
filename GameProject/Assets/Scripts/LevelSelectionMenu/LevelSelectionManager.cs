@@ -35,4 +35,12 @@ public class LevelSelectionMenuManagerScript : MonoBehaviour
     {
         Registry.GameManagerObject.ChangeScene();
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OnBackButtonClick();
+        }
+    }
 }

@@ -13,9 +13,4 @@ public class BackgroundApplier : MonoBehaviour
         // use transparency if you want the blur to appear to 'fade in'
         BackgroundImage.texture = Registry.GameManagerObject.BlurredFrameTexture;
     }
-
-    // Update is called once per frame
-    private void Update()
-    {
-    }
 }
