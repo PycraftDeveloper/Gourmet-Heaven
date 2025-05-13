@@ -58,6 +58,8 @@ You can tap anywhere on-screen during the intro-sequence to skip it and go immed
 
 The game was programmed to only consider single-finger screen touches as the game is also built for the Windows platform which uses the mouse to replace the lack of touch-screen input and a computer can only have one device controlling the mouse at a time.
 
+_Note: On the Android and iOS platforms, you cannot connect a keyboard or mouse and use that instead of the touch input._
+
 ## Credits
 
 **Project manager:** Joshua Cossar

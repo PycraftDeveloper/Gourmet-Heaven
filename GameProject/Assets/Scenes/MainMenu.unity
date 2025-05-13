@@ -1634,6 +1634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IntroAnimObject: {fileID: 1649183198}
+  BackgroundCamera: {fileID: 973253073}
 --- !u!1 &705537653
 GameObject:
   m_ObjectHideFlags: 0

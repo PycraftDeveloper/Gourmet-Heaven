@@ -1,11 +1,11 @@
-using System.Collections;
 using UnityEngine;
 
 public class MainMenuManagerScript : MonoBehaviour
 {
     public GameObject IntroAnimObject;
-    private IntroSequenceManager IntroAnim;
+    public Camera BackgroundCamera;
 
+    private IntroSequenceManager IntroAnim;
     private Coroutine IntroAnimCoroutine;
 
     public void Start()
@@ -69,6 +69,7 @@ public class MainMenuManagerScript : MonoBehaviour
         else
         {
             IntroAnimObject.SetActive(false);
+            BackgroundCamera.backgroundColor = new Color(0, 0, 0, 1);
         }
     }
 }
