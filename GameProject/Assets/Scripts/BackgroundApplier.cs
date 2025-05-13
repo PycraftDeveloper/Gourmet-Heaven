@@ -10,7 +10,7 @@ public class BackgroundApplier : MonoBehaviour
     {
         // use "Registry.GameManagerObject.FrameTexture;" for no blur
         // use "Registry.GameManagerObject.FrameTexture;" for blur
-        // use transparency if you want the blur to appear to 'fade in' :D
+        // use transparency if you want the blur to appear to 'fade in'
         BackgroundImage.texture = Registry.GameManagerObject.BlurredFrameTexture;
     }
 

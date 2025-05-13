@@ -8,17 +8,39 @@ public class IntroSequenceManager : MonoBehaviour
 
     public GameObject IntroZoomObject;
     private Image IntroZoomImage;
+    private Image AnimationBackground;
+    public Camera BackgroundCamera;
 
     public bool AnimationSequencePlaying = true;
 
     private void Start()
     {
         IntroZoomImage = IntroZoomObject.GetComponent<Image>();
+        AnimationBackground = GetComponent<Image>();
     }
 
     public IEnumerator Play()
     {
         AnimationSequencePlaying = true;
+
+        Color StartingColor = new Color(0.1373f, 0.1216f, 0.1255f, 1);
+        Color EndingColor = new Color(0, 0, 0, 1);
+        AnimationBackground.color = StartingColor;
+        BackgroundCamera.backgroundColor = StartingColor;
+
+        float Duration = 0;
+        float TotalDuration = 0.25f;
+
+        while (Duration < TotalDuration)
+        {
+            AnimationBackground.color = Color.Lerp(StartingColor, EndingColor, Duration / TotalDuration);
+            BackgroundCamera.backgroundColor = Color.Lerp(StartingColor, EndingColor, Duration / TotalDuration);
+            Duration += Time.deltaTime;
+            yield return null;
+        }
+
+        AnimationBackground.color = EndingColor;
+        BackgroundCamera.backgroundColor = EndingColor;
 
         for (int i = 0; i < IntroSequenceItems.Length; i++)
         {
@@ -29,8 +51,8 @@ public class IntroSequenceManager : MonoBehaviour
         IntroZoomImage.color = new Color(1, 1, 1, 0.0f);
         IntroZoomObject.SetActive(true);
 
-        float Duration = 0;
-        float TotalDuration = 0.5f;
+        Duration = 0;
+        TotalDuration = 0.5f;
 
         while (Duration < TotalDuration)
         {

@@ -3158,7 +3158,8 @@ MonoBehaviour:
   - {fileID: 1145875913}
   - {fileID: 267019866}
   IntroZoomObject: {fileID: 874861755}
-  IsFinished: 0
+  BackgroundCamera: {fileID: 973253073}
+  AnimationSequencePlaying: 1
 --- !u!1 &1708828891
 GameObject:
   m_ObjectHideFlags: 0
