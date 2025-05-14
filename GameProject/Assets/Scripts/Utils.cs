@@ -1,4 +1,4 @@
-// This program is used to setup the registry uniquely for each of the game levels.
+// This program is used to set-up the registry uniquely for each of the game levels.
 
 public class LevelCustomiser
 {

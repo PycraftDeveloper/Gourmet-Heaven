@@ -67,7 +67,7 @@ public static class Constants
     public const string MOVE_IN_QUEUE = "move in queue";
     public const string MOVE_INTO_RESTAURANT = "move into restaurant";
 
-    // Stores the customer animation states (per customer color)
+    // Stores the customer animation states (per customer colour)
     public const int CUSTOMER_WALK_SIDE_ANIMATION = 0;
 
     public const int CUSTOMER_IDLE_UP_ANIMATION = 1;
@@ -103,6 +103,8 @@ public static class Constants
 
     public static readonly int[] CUSTOMER_LEVEL_TWO_SECOND_MEAL_RANGE = new int[] { 0, 2 }; // Probability of customer ordering a second meal in level two, P(second order) = 0.5
 
-    public static readonly int LEVEL_ONE_CUSTOMER_MAX_ODRERS = 1; // Max number of times customers can order meals in level one
     public static readonly int LEVEL_TWO_CUSTOMER_MAX_ORDERS = 2; // Max number of times customers can order meals in level two.
+
+    public const float MINI_GAME_SPLASH_ART_DURATION = 2.0f; // The time the splash art is displayed for (in seconds)
+    public const float SUSHI_MG_MINI_GAME_TIME = 15.0f; // The time the player has to complete the sushi mini-game (in seconds)
 }

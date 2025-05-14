@@ -28,16 +28,16 @@ public static class Registry
     public static List<GameObject> Customers = new List<GameObject>();
     public static UIManager UIManagerObject = null;
 
-    public static LevelCustomiser LevelCustomiserObject = new LevelCustomiser(); // Used to customise the registry for the diferent game levels
+    public static LevelCustomiser LevelCustomiserObject = new LevelCustomiser(); // Used to customise the registry for the different game levels
 
-    // Used to keep track of when to show the tutorial screen in game. (Note: could be saved to disk so presists across restarts).
+    // Used to keep track of when to show the tutorial screen in game. (Note: could be saved to disk so persists across restarts).
     public static bool BunsMGTutorialShown = false;
 
     public static bool PhoMGTutorialShown = false;
     public static bool RiceMGTutorialShown = false;
     public static bool SushiMGTutorialShown = false;
 
-    public static int NotInTutorialScreenTimeModifier = 1; // Used to stop time passing when reading the tutorial so player not rusheed.
+    public static int NotInTutorialScreenTimeModifier = 1; // Used to stop time passing when reading the tutorial so player not rushed.
 
     public static bool IntroSequencePlayed = false;
 }

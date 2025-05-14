@@ -37,13 +37,13 @@ public class GameManager : MonoBehaviour
 
     private Stack<string> MenuStack = new Stack<string>(); // stores a stack containing all the menus previously visited
 
-    // start - blurred background setup
+    // start - blurred background set-up
     public Texture2D FrameTexture;
 
     public Texture2D BlurredFrameTexture;
 
     public Material BlurredMaterial;
-    // end - blurred background setup
+    // end - blurred background set-up
 
     private SavedDataManager savedDataManager; // used to save/load the game state.
 
@@ -65,9 +65,9 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         savedDataManager = new SavedDataManager();
-        savedDataManager.Load(); // setup the data manager, and load any previous saved data.
+        savedDataManager.Load(); // set-up the data manager, and load any previous saved data.
 
-        MenuStack.Push(Constants.MAIN_MENU); // Pre-fill the menu stack with the initial game setup.
+        MenuStack.Push(Constants.MAIN_MENU); // Pre-fill the menu stack with the initial game set-up.
 
         // start - this section of code was worked on by Joshua Cossar (v)
         musicSource.clip = bgm_MainMenu;
@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
         if (sceneName == "")
         {
             MenuStack.Pop(); // Remove current scene from the stack
-            sceneName = MenuStack.Pop(); // Renove the previous scene from the stack and get the scene name.
+            sceneName = MenuStack.Pop(); // Remove the previous scene from the stack and get the scene name.
         }
 
         MenuStack.Push(sceneName); // Add current scene to the stack.
@@ -290,7 +290,7 @@ public class GameManager : MonoBehaviour
         RenderTexture SceneContents = new RenderTexture(Screen.width, Screen.height, 24);
         RenderTexture BlurredSceneContents = new RenderTexture(Screen.width, Screen.height, 24);
 
-        // Get all the gameobjects currently in the scene, so the UI can be hidden.
+        // Get all the GameObjects currently in the scene, so the UI can be hidden.
         GameObject[] AllGameObjects = FindObjectsByType<GameObject>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
         List<GameObject> UI_GameObjects = new List<GameObject>();
         foreach (GameObject gameObject in AllGameObjects)
@@ -305,7 +305,7 @@ public class GameManager : MonoBehaviour
         camera.targetTexture = SceneContents; // Set the camera to render to a render texture
         camera.Render(); // Render the game scene to the render texture.
 
-        Graphics.SetRenderTarget(SceneContents); // Tell the graphics modulw which texture to use
+        Graphics.SetRenderTarget(SceneContents); // Tell the graphics module which texture to use
         FrameTexture.ReadPixels(new Rect(x_offset, y_offset, Screen.width, Screen.height), 0, 0); // Read the frame buffer's content into a texture
         FrameTexture.Apply(); // Apply the changes to the texture
 
@@ -316,7 +316,7 @@ public class GameManager : MonoBehaviour
 
         foreach (GameObject gameObject in UI_GameObjects)
         {
-            gameObject.SetActive(true); // Re-enable the UI so it can be properly setup for the pause menu.
+            gameObject.SetActive(true); // Re-enable the UI so it can be properly set-up for the pause menu.
         }
 
         camera.targetTexture = null; // reset the camera's render target
@@ -351,12 +351,11 @@ public class GameManager : MonoBehaviour
                 RenderGameSceneToFrameBuffer(); // If previously in the game scene, render the blurred background.
             }
         }
-        
+
         if (sceneName == Constants.MAIN_MENU)
         {
             ResetGameLevel(); // Reset game level when on main menu.
         }
-        
 
         Registry.CurrentSceneName = sceneName; // keep track of the current scene name
 

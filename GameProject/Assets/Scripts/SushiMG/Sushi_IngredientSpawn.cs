@@ -1,44 +1,47 @@
 using UnityEngine;
 
-public class Sushi_IngredientSpawn : MonoBehaviour
+public class Sushi_IngredientSpawn : MonoBehaviour // This script is attached to the areas the player needs to drag the ingredients from
+                                                   // and handles the automatic spawning of the ingredients when the player touches the screen.
 {
-    public GameObject IngredientPrefab;
-    private GameObject SpawnedIngredientObject;
-    private Sushi_Ingredient SpawnedIngredient;
+    public GameObject IngredientPrefab; // The ingredient prtefab to spawn when the player touches the screen.
+    private GameObject SpawnedIngredientObject; // The instance of the ingredient prefab that currently exists.
+    private Sushi_Ingredient SpawnedIngredient; // The Sushi_Ingredient script attached to the spawned ingredient prefab.
 
-    public GameObject MiniGameManagerObject;
-    private Sushi_MiniGameManager SushiMiniGameManager;
+    public GameObject MiniGameManagerObject; // gets a reference to the mini-game manager, as this is needed to control the ingredient spawn interaction.
+    private Sushi_MiniGameManager SushiMiniGameManager; // the mini-game manager script, used to control the mini-game.
 
-    private bool IngredientSpawned = false;
-    public bool IngredientDraggedIntoTargetToggle = false;
+    private bool IngredientSpawned = false; // Used to determine if the SpawnedIngredientObject is null or not.
+    public bool IngredientDraggedIntoTargetToggle = false; // Used as a toggle to determine if the ingredient has been dragged into the target area, used\
+    // to determine the mini-game's next step.
 
-    public bool MiniGameLocked = false;
+    public bool MiniGameLocked = false; // Used to prevent the player from interacting with this section of the mini-game.
 
     private void Start()
     {
         SushiMiniGameManager = MiniGameManagerObject.GetComponent<Sushi_MiniGameManager>();
     }
 
-    private void HandleTouch(Vector2 TouchPosition)
+    private void HandleTouch(Vector2 TouchPosition) // Used to determine where on-screen the player touched, check if the player touched the spawning location
+                                                    // and then also determine if a new ingredient is to be spawned.
     {
         Vector2 WorldPosition = Camera.main.ScreenToWorldPoint(TouchPosition);
         Collider2D RaycastHit = Physics2D.OverlapPoint(WorldPosition);
 
-        if (RaycastHit != null && RaycastHit.transform == transform && !SushiMiniGameManager.IngredientSpawned)
+        if (RaycastHit != null && RaycastHit.transform == transform && !SushiMiniGameManager.IngredientSpawned) // Check if player touched the target spawning location.
         {
             SpawnedIngredientObject = Instantiate(IngredientPrefab, WorldPosition, transform.rotation);
             SpawnedIngredient = SpawnedIngredientObject.GetComponent<Sushi_Ingredient>();
             SpawnedIngredient.SetPosition(TouchPosition);
-            SushiMiniGameManager.IngredientSpawned = true;
+            SushiMiniGameManager.IngredientSpawned = true; // Keep track that an ingredient has been spawned, ensuring the player can't use multiple inputs to try and spawn multiple ingredients at a time
             IngredientSpawned = true;
         }
     }
 
     private void Update()
     {
-        if (MiniGameLocked)
+        if (MiniGameLocked) // check if the mini-game has been locked, in which case prevent any further interactions.
         {
-            if (SpawnedIngredient != null)
+            if (SpawnedIngredient != null) // Reset any spawned ingredients
             {
                 SpawnedIngredient = null;
                 Destroy(SpawnedIngredientObject);
@@ -51,7 +54,7 @@ public class Sushi_IngredientSpawn : MonoBehaviour
             }
             return;
         }
-        if (SpawnedIngredient == null)
+        if (SpawnedIngredient == null) // Check if there is no spawned ingredient yet, and check for events that can spawn it.
         {
             if (Input.touchCount > 0) // if touch input is used
             {
@@ -64,7 +67,7 @@ public class Sushi_IngredientSpawn : MonoBehaviour
                 HandleTouch(Input.mousePosition); // handle position adjustments, using mouse position.
             }
         }
-        else
+        else // otherwise, check if the player is still performing that input, in which case move the ingredient around the screen. Otherwise the ingredient should be considered as dropped.
         {
             if (Input.touchCount > 0) // if touch input is used
             {
@@ -76,13 +79,14 @@ public class Sushi_IngredientSpawn : MonoBehaviour
             {
                 SpawnedIngredient.SetPosition(Input.mousePosition);
             }
-            else
+            else // Consider ingredient dropped
             {
-                if (SpawnedIngredient.InTarget)
+                if (SpawnedIngredient.InTarget) // if dropped into the right place
                 {
-                    IngredientDraggedIntoTargetToggle = true;
+                    IngredientDraggedIntoTargetToggle = true; // Used to indicate this success to the game manager
                 }
 
+                // garbage collect the spawned ingredient - the game manager will automatically handle updates to the way the rolling mat look.
                 SpawnedIngredient = null;
                 Destroy(SpawnedIngredientObject);
 

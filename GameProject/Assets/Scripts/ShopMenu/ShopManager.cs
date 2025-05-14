@@ -9,7 +9,7 @@ public class ShopMenuManagerScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)) // Use the escape key as an alternative to the back button.
         {
             OnBackButtonClick();
         }

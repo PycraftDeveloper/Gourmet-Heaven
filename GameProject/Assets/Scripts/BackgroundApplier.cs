@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BackgroundApplier : MonoBehaviour
+public class BackgroundApplier : MonoBehaviour // This is used to load the blurred background in the options and pause menu.
 {
     public RawImage BackgroundImage;
 

@@ -1,41 +1,41 @@
-using System.Collections.Generic;
+using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public GameObject[] AppliancePopUpMessages = new GameObject[6];
-    public Sprite[] TillPointPopUpSprites = new Sprite[4];
-    public Sprite[] HoldingMealPopUpSprites = new Sprite[4];
+    public GameObject[] AppliancePopUpMessages = new GameObject[6]; // Store the different pop-up game objects the player clicks to perform tasks in the game.
+    public Sprite[] TillPointPopUpSprites = new Sprite[4]; // Store the different sprites for the till-point pop-up messages, so it is easier to see what the customer wants at the till point.
+    public Sprite[] HoldingMealPopUpSprites = new Sprite[4]; // Store the different thought bubbles that show that meal the player is holding.
 
     private Renderer PlayerSprite;
     public GameObject JoystickInputObject;
-    private PlayerInputCircle JoystickInput;
+    private PlayerInputCircle JoystickInput; // Keep a reference to the joystick input so we can use it to move the player.
     private Rigidbody2D PlayerRigidBody;
     public Animator PlayerAnimator;
     public GameObject PlayerHoldingPopUp;
 
-    private List<string> PlacedMeals = new List<string>();
+    public int RenderPriority = 1; // The render priority of the player sprite, used to create the illusion of depth when interacting with customers in the restaurant.
 
-    public int RenderPriority = 1;
+    private Vector2 ScreenDimensions; // Store the screen dimensions to ensure the player can't move off the screen. This is less of an issue now with collisions in both scenes
 
-    private Vector2 ScreenDimensions;
-    private Vector2 SpriteSize;
+    // but still has a purpose.
+    private Vector2 SpriteSize; // Store the size of the player.
 
     public bool SceneChanged = false;
 
-    public string HoldingMeal = Constants.NOT_HOLDING_MEAL;
+    public string HoldingMeal = Constants.NOT_HOLDING_MEAL; // Keep track of any meal the player may be holding. Can hold ONLY ONE meal.
 
     public void SetAnimationState(int state)
     {
-        if (HoldingMeal != Constants.NOT_HOLDING_MEAL)
+        if (HoldingMeal != Constants.NOT_HOLDING_MEAL) // Consider holding meal animations by adding 4 to the animation state.
         {
             state += 4;
         }
         PlayerAnimator.SetInteger("playerState", state);
     }
 
-    private void Awake()
+    private void Awake() // This object persists across scene changes and is managed by the GameManager.
     {
         if (Registry.PlayerObject == null)
         {
@@ -50,16 +50,17 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D Collider)
     {
-        if (Registry.CurrentSceneName == Constants.KITCHEN)
+        if (Registry.CurrentSceneName == Constants.KITCHEN) // If collided with something in the kitchen
         {
             if (Collider.name == "CashRegister_AreaDetector" && AppliancePopUpMessages[0] != null)
             {
                 if (Registry.LevelManagerObject.CacheRegister.GetState())
                 {
-                    if (!AppliancePopUpMessages[0].activeSelf)
+                    if (!AppliancePopUpMessages[0].activeSelf) // Show the till-point interact button when in area hit-box area.
                     {
                         GameObject CustomerObjectAtTill = Registry.LevelManagerObject.CustomerKitchenQueue.Peek();
                         Customer CustomerAtTill = CustomerObjectAtTill.GetComponent<Customer>();
+                        // Change the button icon to match what the customer wants.
                         switch (CustomerAtTill.Meal)
                         {
                             case Constants.PHO:
@@ -79,27 +80,27 @@ public class Player : MonoBehaviour
                                 break;
                         }
                     }
-                    AppliancePopUpMessages[0].SetActive(true);
+                    AppliancePopUpMessages[0].SetActive(true); // Show the till point.
                 }
                 else
                 {
-                    AppliancePopUpMessages[0].SetActive(false);
+                    AppliancePopUpMessages[0].SetActive(false); // Hide the till point.
                 }
             }
-            else if (Collider.name == "ChoppingBoard_AreaDetector" && AppliancePopUpMessages[1] != null)
+            else if (Collider.name == "ChoppingBoard_AreaDetector" && AppliancePopUpMessages[1] != null) // If collided with the chopping board area hit box
             {
-                    if (Registry.LevelManagerObject.ChoppingBoard.GetState())
-                    {
-                        AppliancePopUpMessages[1].SetActive(true);
-                    }
-                    else
-                    {
-                        AppliancePopUpMessages[1].SetActive(false);
-                    }
+                if (Registry.LevelManagerObject.ChoppingBoard.GetState()) // show or hide the button to go to the mango sticky rice mini-game
+                {
+                    AppliancePopUpMessages[1].SetActive(true);
+                }
+                else
+                {
+                    AppliancePopUpMessages[1].SetActive(false);
+                }
             }
-            else if (Collider.name == "CookingPot_AreaDetector" && AppliancePopUpMessages[2] != null)
+            else if (Collider.name == "CookingPot_AreaDetector" && AppliancePopUpMessages[2] != null) // If collided with the cooking pot area hit box
             {
-                if (Registry.LevelManagerObject.CookingPot.GetState())
+                if (Registry.LevelManagerObject.CookingPot.GetState()) // show or hide the button to go to the bao buns mini-game
                 {
                     AppliancePopUpMessages[2].SetActive(true);
                 }
@@ -108,9 +109,9 @@ public class Player : MonoBehaviour
                     AppliancePopUpMessages[2].SetActive(false);
                 }
             }
-            else if (Collider.name == "PhoBowl_AreaDetector" && AppliancePopUpMessages[3] != null)
+            else if (Collider.name == "PhoBowl_AreaDetector" && AppliancePopUpMessages[3] != null) // If collided with the Pho bowl area hit box
             {
-                if (Registry.LevelManagerObject.PhoBowl.GetState())
+                if (Registry.LevelManagerObject.PhoBowl.GetState()) // show or hide the button to go to the Pho mini-game
                 {
                     AppliancePopUpMessages[3].SetActive(true);
                 }
@@ -119,9 +120,9 @@ public class Player : MonoBehaviour
                     AppliancePopUpMessages[3].SetActive(false);
                 }
             }
-            else if (Collider.name == "SushiRollingMat_AreaDetector" && AppliancePopUpMessages[4] != null)
+            else if (Collider.name == "SushiRollingMat_AreaDetector" && AppliancePopUpMessages[4] != null) // If collided with the sushi area hit box
             {
-                if (Registry.LevelManagerObject.SushiRollingMat.GetState())
+                if (Registry.LevelManagerObject.SushiRollingMat.GetState()) // show or hide the button to go to the sushi mini-game
                 {
                     AppliancePopUpMessages[4].SetActive(true);
                 }
@@ -131,7 +132,7 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        else if (Collider.CompareTag("Customer") && Registry.CurrentSceneName == Constants.RESTAURANT)
+        else if (Collider.CompareTag("Customer") && Registry.CurrentSceneName == Constants.RESTAURANT) // If collided with a customer in the restaurant
         {
             CustomerCore customer = Collider.gameObject.GetComponent<CustomerCore>();
 
@@ -140,11 +141,11 @@ public class Player : MonoBehaviour
             float customerY = customer.CurrentPosition.y;
             float customerHeight = Collider.bounds.size.y;
 
-            if (customerY + customerHeight > playerY && customerY > playerY) // top
+            if (customerY + customerHeight > playerY && customerY > playerY) // determine if the player should be rendered on top of the customer
             {
                 PlayerSprite.sortingLayerName = "Player Upper";
             }
-            else if (customerY < playerY + playerHeight) // bottom
+            else if (customerY < playerY + playerHeight) // determine if the player should be rendered below the customer.
             {
                 PlayerSprite.sortingLayerName = "Player & NPCs";
             }
@@ -155,6 +156,7 @@ public class Player : MonoBehaviour
     {
         if (Registry.CurrentSceneName == Constants.KITCHEN)
         {
+            // When no longer in collision with an area hit box, hide the assoctaed button.
             if (Collider.name == "CashRegister_AreaDetector" && AppliancePopUpMessages[0] != null)
             {
                 AppliancePopUpMessages[0].SetActive(false);
@@ -178,7 +180,7 @@ public class Player : MonoBehaviour
         }
         else if (Collider.CompareTag("Customer") && Registry.CurrentSceneName == Constants.RESTAURANT)
         {
-            PlayerSprite.sortingLayerName = "Player & NPCs";
+            PlayerSprite.sortingLayerName = "Player & NPCs"; // If the player is no longer colliding with a customer in the restaurant, reset the player's layer.
         }
     }
 
@@ -194,6 +196,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Get the input from the joystick, and convert that into a movement vector for the player.
         Vector2 JoystickInputMagnitude = JoystickInput.JoystickOffsetMagnitude;
 
         float modified_x_position = JoystickInputMagnitude.x * Constants.PLAYER_MOVEMENT_SPEED * Time.deltaTime;
@@ -204,20 +207,22 @@ public class Player : MonoBehaviour
         float minimum_y = -ScreenDimensions.y + SpriteSize.y;
         float maximum_y = ScreenDimensions.y - SpriteSize.y;
 
+        // Ensure the player isn't allowed to move off the screen.
         proposed_position.x = Mathf.Clamp(proposed_position.x, -ScreenDimensions.x + SpriteSize.x, ScreenDimensions.x - SpriteSize.x);
         proposed_position.y = Mathf.Clamp(proposed_position.y, minimum_y, maximum_y);
 
+        // If the player is aligned in the x-axis for the kitchen/restaurant portal.
         if (proposed_position.x > -4.46 && proposed_position.x < -2.56)
         {
-            if (proposed_position.y == minimum_y && Registry.CurrentSceneName == Constants.KITCHEN)
+            if (proposed_position.y == minimum_y && Registry.CurrentSceneName == Constants.KITCHEN) // if in portal and in kitchen scene
             {
-                Registry.GameManagerObject.ChangeScene(Constants.RESTAURANT);
+                Registry.GameManagerObject.ChangeScene(Constants.RESTAURANT); // go to restaurant and move player
 
-                proposed_position.y = maximum_y - 0.01f;
+                proposed_position.y = maximum_y - 0.01f; // offset slightly to prevent getting stuck in infinite loop.
             }
-            else if (proposed_position.y == maximum_y && Registry.CurrentSceneName == Constants.RESTAURANT)
+            else if (proposed_position.y == maximum_y && Registry.CurrentSceneName == Constants.RESTAURANT) // if in portal and in restaurant scene
             {
-                Registry.GameManagerObject.ChangeScene(Constants.KITCHEN);
+                Registry.GameManagerObject.ChangeScene(Constants.KITCHEN); // go to the kitchen and move player
 
                 proposed_position.y = minimum_y + 0.01f;
             }
@@ -233,7 +238,8 @@ public class Player : MonoBehaviour
         if (SceneChanged)
         {
             SceneChanged = false;
-            Button[] SceneButtons = FindObjectsByType<Button>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+            Button[] SceneButtons = FindObjectsByType<Button>(FindObjectsInactive.Include, FindObjectsSortMode.None); // get all the buttons in the scene, to re-associate the
+            // appliance pop-up messages with the buttons in the scene.
             AppliancePopUpMessages = new GameObject[6];
 
             foreach (Button SceneButton in SceneButtons)
@@ -267,16 +273,16 @@ public class Player : MonoBehaviour
 
         Vector2 JoystickInputMagnitude = JoystickInput.JoystickOffsetMagnitude;
 
-        if (Mathf.Min(JoystickInputMagnitude.x, JoystickInputMagnitude.y) == 0)
+        if (Mathf.Min(JoystickInputMagnitude.x, JoystickInputMagnitude.y) == 0) // if the player isn't moving in the left or right axis
         {
-            SetAnimationState(Constants.PLAYER_IDLE_ANIMATION);
+            SetAnimationState(Constants.PLAYER_IDLE_ANIMATION); // play the idle animation
         }
 
-        if (Mathf.Abs(JoystickInputMagnitude.x) > Mathf.Abs(JoystickInputMagnitude.y))
+        if (Mathf.Abs(JoystickInputMagnitude.x) > Mathf.Abs(JoystickInputMagnitude.y)) // if the player is moving more in the x axis
         {
             if (JoystickInputMagnitude.x != 0)
             {
-                SetAnimationState(Constants.PLAYER_WALK_SIDE_ANIMATION);
+                SetAnimationState(Constants.PLAYER_WALK_SIDE_ANIMATION); // Play the side walk animation, and make the player face in the right direction for travel.
                 if (JoystickInputMagnitude.x > 0)
                 {
                     Vector3 scale = PlayerSprite.transform.localScale;
@@ -297,15 +303,15 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        else
+        else // if moving more in the y axis
         {
-            if (JoystickInputMagnitude.y > 0)
+            if (JoystickInputMagnitude.y > 0) // if walking up to the top of the screen
             {
-                SetAnimationState(Constants.PLAYER_WALK_UP_ANIMATION);
+                SetAnimationState(Constants.PLAYER_WALK_UP_ANIMATION); // Play the up walk animation.
             }
-            else if (JoystickInputMagnitude.y < 0)
+            else if (JoystickInputMagnitude.y < 0) // if walking down to the bottom of the screen
             {
-                SetAnimationState(Constants.PLAYER_WALK_DOWN_ANIMATION);
+                SetAnimationState(Constants.PLAYER_WALK_DOWN_ANIMATION); // Play the walk down animation.
             }
         }
 
@@ -313,12 +319,13 @@ public class Player : MonoBehaviour
         {
             if (AppliancePopUpMessages[5] != null)
             {
-                AppliancePopUpMessages[5].SetActive(HoldingMeal != Constants.NOT_HOLDING_MEAL);
+                AppliancePopUpMessages[5].SetActive(HoldingMeal != Constants.NOT_HOLDING_MEAL); // show/hide the bin pop-up button depending on if the player is holding a meal.
             }
         }
 
-        PlayerHoldingPopUp.SetActive(HoldingMeal != Constants.NOT_HOLDING_MEAL);
+        PlayerHoldingPopUp.SetActive(HoldingMeal != Constants.NOT_HOLDING_MEAL); // show what meal the player is holding when the player is holding a meal.
 
+        // Update the player holding pop-up sprite depending on what meal the player is holding.
         if (HoldingMeal != Constants.NOT_HOLDING_MEAL)
         {
             switch (HoldingMeal)

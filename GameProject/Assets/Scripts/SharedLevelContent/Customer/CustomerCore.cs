@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
+// Note: This class is inherited by both varieties of customer, so any reference to 'customer' here refers to both types of customer.
+
 public class CustomerCore : MonoBehaviour
 {
     public Animator _Animator;
@@ -9,14 +11,14 @@ public class CustomerCore : MonoBehaviour
     public GameObject PatienceMeter;
     protected Animator PatienceMeterAnimator;
 
-    public RuntimeAnimatorController[] AnimationControllers = new RuntimeAnimatorController[8];
+    public RuntimeAnimatorController[] AnimationControllers = new RuntimeAnimatorController[8]; // Stores each of the 8 different styles for the animations.
 
-    public string CurrentLocation = Constants.KITCHEN;
+    public string CurrentLocation = Constants.KITCHEN; // By default the current location is in the kitchen.
 
     public int ModelIndex;
-    public int CustomerTablePosition;
+    public int CustomerTablePosition; // Stores the customer's position in the restaurant (if applicable).
 
-    public bool DeSpawn = false;
+    public bool DeSpawn = false; // Used to determine when the customer can be garbage collected.
 
     public float Patience;
     public float InitialPatience;
@@ -32,7 +34,7 @@ public class CustomerCore : MonoBehaviour
 
     public virtual void Initialise()
     {
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject); // Ensure the customer persists across scene changes. Its lifetime is controlled elsewhere.
 
         _Animator = GetComponent<Animator>();
         _RigidBody2D = GetComponent<Rigidbody2D>();
@@ -43,23 +45,24 @@ public class CustomerCore : MonoBehaviour
             PatienceMeterAnimator = PatienceMeter.GetComponent<Animator>();
         }
 
-        ModelIndex = Random.Range(0, 8);
+        ModelIndex = Random.Range(0, 8); // Randomly pick the styling for the customer from the different varieties.
 
-        _Animator.runtimeAnimatorController = AnimationControllers[ModelIndex];
+        _Animator.runtimeAnimatorController = AnimationControllers[ModelIndex]; // Set the animation controller for the customer to the selected style.
 
         CurrentPosition = transform.position;
     }
 
     protected void FixedUpdate()
     {
-        _RigidBody2D.position = CurrentPosition;
+        _RigidBody2D.position = CurrentPosition; // Ensure the customer's position is updated based on the position set externally.
     }
 
     public virtual void OnEnable()
     {
         if (PatienceMeterAnimator != null && CurrentLocation == Constants.RESTAURANT)
         {
-            PatienceMeterAnimator.Play("PatienceStart", 0, 1.0f - (Patience / InitialPatience));
+            PatienceMeterAnimator.Play("PatienceStart", 0, 1.0f - (Patience / InitialPatience)); // Ensure if the patience meter needs to be displayed that it is,
+            // and that the animation is set to the correct progress based on the current patience level.
         }
     }
 
@@ -67,7 +70,7 @@ public class CustomerCore : MonoBehaviour
     {
         if (PatienceCoroutine != null && Registry.GameManagerObject != null)
         {
-            Registry.GameManagerObject.StopCoroutine(PatienceCoroutine);
+            Registry.GameManagerObject.StopCoroutine(PatienceCoroutine); // Stop the coroutine that manages the patience of the customer.
         }
     }
 
@@ -103,25 +106,25 @@ public class CustomerCore : MonoBehaviour
     {
         if (PatienceMeterAnimator != null)
         {
-            PatienceMeterAnimator.speed = 30.017f / InitialPatience;
+            PatienceMeterAnimator.speed = 30.017f / InitialPatience; // Determine the patience speed based on how much patience the customer has to begin with (randomly generated).
         }
-        while (this != null)
+        while (this != null) // Continue until the customer is garbage collected.
         {
             if (DeSpawn)
             {
-                yield break;
+                yield break; // Stop when the customer is de-spawned.
             }
             if (Registry.CurrentSceneName == Constants.KITCHEN ||
                     Registry.CurrentSceneName == Constants.RESTAURANT ||
                     Registry.CurrentSceneName == Constants.PHO_MG ||
                     Registry.CurrentSceneName == Constants.RICE_MG ||
                     Registry.CurrentSceneName == Constants.SUSHI_MG ||
-                    Registry.CurrentSceneName == Constants.BUNS_MG) // Ensures that customers dont despawn in the scenes where the game
+                    Registry.CurrentSceneName == Constants.BUNS_MG) // Ensures that customers don't de-spawn in the scenes where the game
                                                                     // is supposed to be paused.
             {
                 Patience -= Time.deltaTime * Registry.NotInTutorialScreenTimeModifier;
 
-                if (Patience <= 0)
+                if (Patience <= 0) // Flag for garbage collection.
                 {
                     DeSpawn = true;
 

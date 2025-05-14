@@ -4143,7 +4143,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603600049
   m_SortingLayer: 7
-  m_SortingOrder: 1
+  m_SortingOrder: 999
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -5607,19 +5607,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &468057452221238576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6213745052493878434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc1d030fdb057d1429fb845110b21a1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RenderPriority: 100
 --- !u!212 &858000936787912548
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5685,7 +5672,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2108088932573894898}
   - component: {fileID: 132652353625809765}
-  - component: {fileID: 8565432875618770683}
   m_Layer: 5
   m_Name: Center
   m_TagString: Untagged
@@ -6422,7 +6408,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603600049
   m_SortingLayer: 7
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_FlipX: 0
@@ -6505,7 +6491,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7460475294304994309}
   - component: {fileID: 2746411637204110310}
-  - component: {fileID: 6439099568975016571}
   m_Layer: 5
   m_Name: BackgroundCircle
   m_TagString: Untagged
@@ -6712,7 +6697,6 @@ GameObject:
   - component: {fileID: 2675694418083715604}
   - component: {fileID: 6560170257252890058}
   - component: {fileID: 1655942960544634162}
-  - component: {fileID: 468057452221238576}
   m_Layer: 5
   m_Name: PlayerInput
   m_TagString: Untagged
@@ -6720,19 +6704,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &6439099568975016571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3732787660420000320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc1d030fdb057d1429fb845110b21a1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RenderPriority: 100
 --- !u!483693784 &6557472087718925697
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -6828,7 +6799,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1603600049
   m_SortingLayer: 7
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_FlipX: 0
@@ -7128,19 +7099,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7448093599110531793}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8565432875618770683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1606613075997618536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc1d030fdb057d1429fb845110b21a1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RenderPriority: 999
 --- !u!4 &8874234294113995585
 Transform:
   m_ObjectHideFlags: 0
