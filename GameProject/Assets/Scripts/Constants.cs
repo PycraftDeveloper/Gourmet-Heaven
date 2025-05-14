@@ -107,4 +107,5 @@ public static class Constants
 
     public const float MINI_GAME_SPLASH_ART_DURATION = 2.0f; // The time the splash art is displayed for (in seconds)
     public const float SUSHI_MG_MINI_GAME_TIME = 15.0f; // The time the player has to complete the sushi mini-game (in seconds)
+    public const float PHO_MG_MINI_GAME_TIME = 15.0f; // The time the player has to complete the pho mini-game (in seconds)
 }

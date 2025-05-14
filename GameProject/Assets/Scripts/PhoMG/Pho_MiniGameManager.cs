@@ -3,26 +3,33 @@ using UnityEngine;
 
 public class Pho_MiniGameManager : MonoBehaviour
 {
+    // Store all the prefabs for the ingredients that fall from containers
     public GameObject NoodleIngredientPrefab;
+
     public GameObject BeefIngredientPrefab;
     public GameObject CillantroIngredientPrefab;
     public GameObject ParsleyIngredientPrefab;
 
+    // Store all the containers that hold the ingredients
     public GameObject NoodleContainerObject;
+
     public GameObject BeefContainerObject;
     public GameObject CillantroContainerObject;
     public GameObject ParsleyContainerObject;
 
+    // Store all the different 'in preparation' styles for the pho bowl to switch to as ingredients are added successfully.
     public Sprite[] TargetBowlSprites = new Sprite[5];
+
+    // Store the different varieties for the empty tipped bowl and pan.
     public Sprite[] TippedBowlSprites = new Sprite[2];
 
-    private GameObject CurrentIngredientObject;
-    private Pho_Ingredient CurrentIngredient;
+    private GameObject CurrentIngredientObject; // Stores the currently instantiated ingredient prefab.
+    private Pho_Ingredient CurrentIngredient; // Stores the associated script for the current ingredient instance.
 
-    private GameObject CurrentContainerObject;
+    private GameObject CurrentContainerObject; // Store the currently displayed container object.
     private SpriteRenderer CurrentContainerSpriteRenderer;
 
-    public GameObject TargetBowlObject;
+    public GameObject TargetBowlObject; // Store the pho ingredient target bowl object.
     private Pho_IngredientTarget IngredientTarget;
     private SpriteRenderer IngredientTargetRenderer;
 
@@ -35,11 +42,11 @@ public class Pho_MiniGameManager : MonoBehaviour
     private bool MiniGameLocked = false;
     private bool UserInput = false;
 
-    private int CurrentIngredientIndex = 0;
+    private int CurrentIngredientIndex = 0; // Used to determine which ingredient to show next. Note there is no need to worry about order in this mini-game.
 
-    private float MiniGameTimer = 15;
+    private float MiniGameTimer = Constants.PHO_MG_MINI_GAME_TIME;
 
-    private string[] Ingredients = new string[] {
+    private string[] Ingredients = new string[] { // Store the ingredients needed and the order thhey are to appear.
         Constants.PHO_MG_POT_NOODLES,
         Constants.PHO_MG_POT_BEEF,
         Constants.PHO_MG_BOWL_CILLANTRO,
@@ -64,11 +71,11 @@ public class Pho_MiniGameManager : MonoBehaviour
         Invoke("ReturnToKitchen", 2.0f);
     }
 
-    private void OnMiniGameWin()
+    private void OnMiniGameWin() // Unlike the sushi mini-game there are no animations to be played on completion of this mini-game, so can continue to displaying splash screen.
     {
         MiniGameLocked = true;
 
-        Registry.PhoMGTutorialShown = true;
+        Registry.PhoMGTutorialShown = true; // Prevent the tutorial screen for the mini-game from showing once the player completes a mini-game perfectly.
 
         ShowMiniGameSucsess();
     }
@@ -78,7 +85,7 @@ public class Pho_MiniGameManager : MonoBehaviour
         PhoMiniGameTutorial.SetActive(false);
         MiniGameLocked = false;
         Registry.NotInTutorialScreenTimeModifier = 1;
-        UserInput = true;
+        UserInput = true; // Prevent the mini-game from detecting the 'continue' button as a valid touch input for the first ingredient.
     }
 
     private void Start()
@@ -96,6 +103,7 @@ public class Pho_MiniGameManager : MonoBehaviour
 
     private void SetupIngredientSource()
     {
+        // Set the bowl to be the correct ingredient type.
         if (Ingredients[CurrentIngredientIndex] == Constants.PHO_MG_POT_NOODLES)
         {
             CurrentContainerObject = NoodleContainerObject;
@@ -119,6 +127,7 @@ public class Pho_MiniGameManager : MonoBehaviour
 
     private void SetupIngredientDrop()
     {
+        // Set the dropped ingredient to be the correct type.
         if (Ingredients[CurrentIngredientIndex] == Constants.PHO_MG_POT_NOODLES)
         {
             CurrentIngredientObject = Instantiate(NoodleIngredientPrefab);
@@ -137,9 +146,9 @@ public class Pho_MiniGameManager : MonoBehaviour
         }
         CurrentIngredient = CurrentIngredientObject.GetComponent<Pho_Ingredient>();
         Rigidbody2D CurrentDisplayedIngredientObjectRigidBody = CurrentContainerObject.GetComponent<Rigidbody2D>();
-        CurrentIngredient.transform.position = CurrentDisplayedIngredientObjectRigidBody.position;
+        CurrentIngredient.transform.position = CurrentDisplayedIngredientObjectRigidBody.position; // Spawn the ingredient where the bowl was as the player tapped.
 
-        CurrentContainerSpriteRenderer.sprite = TippedBowlSprites[1];
+        CurrentContainerSpriteRenderer.sprite = TippedBowlSprites[1]; // change the bowl sprite to be the tipped version.
         if (CurrentIngredientIndex < 2)
         {
             CurrentContainerSpriteRenderer.sprite = TippedBowlSprites[0];
@@ -150,6 +159,7 @@ public class Pho_MiniGameManager : MonoBehaviour
     {
         if (!MiniGameLocked)
         {
+            // Update the timer text for the mini-game.
             if (MiniGameTimer < 10)
             {
                 TimerText.text = "00:0" + (int)MiniGameTimer;
@@ -162,9 +172,10 @@ public class Pho_MiniGameManager : MonoBehaviour
 
             if (CurrentContainerObject == null)
             {
-                SetupIngredientSource();
+                SetupIngredientSource(); // Set-up a new ingredient source when there is none displayed currently on-screen.
             }
 
+            // Determine if the conditions are correct for the player to drop an ingredient.
             if (CurrentIngredientObject == null)
             {
                 if (Input.touchCount > 0) // if touch input is used
@@ -185,12 +196,13 @@ public class Pho_MiniGameManager : MonoBehaviour
                 }
                 else
                 {
-                    UserInput = false;
+                    UserInput = false; // Used to prevent the player from pressing and holding to drop multiple ingredients.
                 }
             }
 
-            if (IngredientTarget.IngredientInTargetToggle)
+            if (IngredientTarget.IngredientInTargetToggle) // Determine if the ingredient reached the target - note here that the type of ingredient doesn't matter.
             {
+                // Destroy the ingredient, reset the toggle and prepare the game for the next ingredient.
                 Destroy(CurrentIngredientObject);
                 CurrentIngredientObject = null;
                 CurrentIngredientIndex++;
@@ -198,6 +210,7 @@ public class Pho_MiniGameManager : MonoBehaviour
                 CurrentContainerObject.SetActive(false);
                 CurrentContainerObject = null;
 
+                // This code was worked on by Joshua Cossar (v)
                 int IngredientSound = Random.Range(0, 2);
                 if (IngredientSound == 0)
                 {
@@ -207,19 +220,21 @@ public class Pho_MiniGameManager : MonoBehaviour
                 {
                     Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.SoupSplash2);
                 }
+                // This code was worked on by Joshua Cossar (^)
 
+                // Determine if there are no more ingredients left, in which case the player has won the mini-game
                 if (CurrentIngredientIndex >= Ingredients.Length)
                 {
                     OnMiniGameWin();
                 }
                 else
                 {
-                    IngredientTargetRenderer.sprite = TargetBowlSprites[CurrentIngredientIndex];
+                    IngredientTargetRenderer.sprite = TargetBowlSprites[CurrentIngredientIndex]; // otherwise, update the bowl sprite to show the next ingredient.
                 }
             }
-            else if ((CurrentIngredientObject != null && CurrentIngredient.MissedTarget) || MiniGameTimer <= 0)
+            else if ((CurrentIngredientObject != null && CurrentIngredient.MissedTarget) || MiniGameTimer <= 0) // If the ingredient misses the bowl, or timer runs out...
             {
-                OnMiniGameFailed();
+                OnMiniGameFailed(); // mini game failed.
             }
         }
     }

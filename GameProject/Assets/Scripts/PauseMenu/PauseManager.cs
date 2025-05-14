@@ -22,7 +22,7 @@ public class PauseMenuManagerScript : MonoBehaviour
         Registry.GameManagerObject.QuitGame();
     }
 
-    public void Update()
+    public void Update() // Used to allow keyboard interaction for Windows builds.
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {

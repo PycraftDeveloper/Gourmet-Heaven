@@ -18,7 +18,9 @@ public class LevelSelectionMenuManagerScript : MonoBehaviour
 
     public void OnLevelTwoButtonClick()
     {
-        Camera.main.enabled = false;
+        Camera.main.enabled = false; // Hide the camera to avoid the black frame as current scene unloads and game scene loads.
+        // Could add a loading screen here if the loading took a more significant time. (The camera is never reset to enabled, because the camera is
+        // later destroyed and recreated in the new scene).
         Registry.LevelCustomiserObject.SetupLevelTwo();
         Registry.GameManagerObject.ChangeScene(Constants.KITCHEN);
     }

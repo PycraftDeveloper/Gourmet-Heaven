@@ -11,15 +11,15 @@ public class SlicedObject : MonoBehaviour
     private Vector2[] randomDirections;// to make the cut direction random every time the game is played
 
     private bool[] pointsSliced; // to keep track of how many cuts the player has done
-    private bool isSliced = false; // so the object doesnt slice when playing the game until all cuts have been done
+    private bool isSliced = false; // so the object doesn't slice when playing the game until all cuts have been done
     private bool MiniGameOverLock = false;
 
     private int currentSliceIndex = 0; // to keep track of how many cuts needs to be done
 
     public GameObject arrowPrefab; // allows the arrow prefab to work and shows where the player needs to cut
-    public GameObject arrowHeadPrefab; // Indicates the direction needed for the cut. (TJ)
+    public GameObject arrowHeadPrefab; // Indicates the direction needed for the cut. (Added by: Thomas Jebson)
     private GameObject currentArrow; // shows where the player needs to cut
-    private GameObject currentArrowHead; // stores the instance of the arrow head (TJ)
+    private GameObject currentArrowHead; // stores the instance of the arrow head (Added by: Thomas Jebson)
     public GameObject SlicedRice;
     public GameObject WholeRice;
     public GameObject CutRice;
@@ -27,7 +27,7 @@ public class SlicedObject : MonoBehaviour
     public GameObject MiniGameTimerObject;
     private CountdownTimer MiniGameTimer;
 
-    public GameObject TutorialCanvas; // (TJ)
+    public GameObject TutorialCanvas; // (Added by: Thomas Jebson)
 
     [SerializeField] private CountdownTimer countdowntimer;
 
@@ -35,11 +35,11 @@ public class SlicedObject : MonoBehaviour
     {
         MiniGameTimer = MiniGameTimerObject.GetComponent<CountdownTimer>();
 
-        if (!Registry.RiceMGTutorialShown) // (TJ)
+        if (!Registry.RiceMGTutorialShown) // (Added by: Thomas Jebson) Determine when to display the tutorial (when the player has not yet completed a mini-game successfully)
         {
             TutorialCanvas.SetActive(true);
-            Registry.NotInTutorialScreenTimeModifier = 0;
-            MiniGameTimer.isRunning = false;
+            Registry.NotInTutorialScreenTimeModifier = 0; // Pause the game in the background.
+            MiniGameTimer.isRunning = false; // Stop the mini-game timer from counting down.
         }
         else
         {

@@ -1,6 +1,7 @@
 using UnityEngine;
 
 public class Pho_IngredientSource : MonoBehaviour
+// This class is assigned to the ingredient bowl and moves horizontally back and forth across the screen.
 {
     private Rigidbody2D IngredientRigidBody;
 
@@ -10,17 +11,17 @@ public class Pho_IngredientSource : MonoBehaviour
     {
         IngredientRigidBody = GetComponent<Rigidbody2D>();
 
-        X_Velocity = Random.Range(Constants.PHO_FOOD_ITEMS_SPEED[0], Constants.PHO_FOOD_ITEMS_SPEED[1]);
+        X_Velocity = Random.Range(Constants.PHO_FOOD_ITEMS_SPEED[0], Constants.PHO_FOOD_ITEMS_SPEED[1]); // Generate a random velocity to make mini-game harder
         if (Random.Range(0, 2) == 0)
         {
-            X_Velocity *= -1;
+            X_Velocity *= -1; // Randomise initial direction
         }
         IngredientRigidBody.linearVelocityX = X_Velocity;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (X_Velocity < 0)
+        if (X_Velocity < 0) // Determine which side of the screen the bowl reached so that the velocity can be swapped for a random opposite value.
         {
             X_Velocity = Random.Range(Constants.PHO_FOOD_ITEMS_SPEED[0], Constants.PHO_FOOD_ITEMS_SPEED[1]);
         }

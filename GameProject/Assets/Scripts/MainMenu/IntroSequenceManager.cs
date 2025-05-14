@@ -4,14 +4,15 @@ using UnityEngine.UI;
 
 public class IntroSequenceManager : MonoBehaviour
 {
-    public GameObject[] IntroSequenceItems = new GameObject[8];
+    public GameObject[] IntroSequenceItems = new GameObject[8]; // The 8 different animations for the comic section.
 
-    public GameObject IntroZoomObject;
+    public GameObject IntroZoomObject; // The larger version of the main menu screen (that gets zoomed in)
     private Image IntroZoomImage;
     private Image AnimationBackground;
-    public Camera BackgroundCamera;
+    public Camera BackgroundCamera; // The background camera used to render the letter-box, used to smoothly transition to aspect ratio adjustments.
 
-    public bool AnimationSequencePlaying = true;
+    public bool AnimationSequencePlaying = true; // Used to store if the animation sequence is playing or not (defaults to true to ensure when main menu updates,
+    // it doesn't cause a race condition with the IENumerator).
 
     private void Start()
     {
@@ -23,6 +24,7 @@ public class IntroSequenceManager : MonoBehaviour
     {
         AnimationSequencePlaying = true;
 
+        // 1. Fade to black from splash screen colour
         Color StartingColor = new Color(0.1373f, 0.1216f, 0.1255f, 1);
         Color EndingColor = new Color(0, 0, 0, 1);
         AnimationBackground.color = StartingColor;
@@ -31,7 +33,7 @@ public class IntroSequenceManager : MonoBehaviour
         float Duration = 0;
         float TotalDuration = 0.25f;
 
-        while (Duration < TotalDuration)
+        while (Duration < TotalDuration) // Linear interpolate
         {
             AnimationBackground.color = Color.Lerp(StartingColor, EndingColor, Duration / TotalDuration);
             BackgroundCamera.backgroundColor = Color.Lerp(StartingColor, EndingColor, Duration / TotalDuration);
@@ -42,12 +44,15 @@ public class IntroSequenceManager : MonoBehaviour
         AnimationBackground.color = EndingColor;
         BackgroundCamera.backgroundColor = EndingColor;
 
+        // 2. Show the intro sequence comic items.
+
         for (int i = 0; i < IntroSequenceItems.Length; i++)
         {
             IntroSequenceItems[i].SetActive(true);
-            yield return new WaitForSeconds(1.833f);
+            yield return new WaitForSeconds(1.833f); // wait for animation to complete.
         }
 
+        // 3. Fade to the zoomed out main menu screen (by alpha adjustments).
         IntroZoomImage.color = new Color(1, 1, 1, 0.0f);
         IntroZoomObject.SetActive(true);
 
@@ -63,20 +68,26 @@ public class IntroSequenceManager : MonoBehaviour
 
         IntroZoomImage.color = new Color(1, 1, 1, 1.0f);
 
+        // 4. Hide the intro sequence comic items.
+
         for (int i = 0; i < IntroSequenceItems.Length; i++)
         {
             IntroSequenceItems[i].SetActive(false);
         }
 
+        // 5. Wait before zooming into the main menu to allow art appreciation.
+
         yield return new WaitForSeconds(1);
 
+        // 6. Zoom into the main menu screen.
+
         float StartZoom = 1.0f;
-        float EndZoom = 2.1f;
+        float EndZoom = 2.1f; // Stores by how much the zoomed out version of the main menu is zoomed out.
 
         Duration = 0;
-        TotalDuration = 1.833f;
+        TotalDuration = 1.833f; // Animates the same duration as the comic items.
 
-        while (Duration < TotalDuration)
+        while (Duration < TotalDuration) // Use a circular interpolation to more smoothly zoom in.
         {
             float SmoothStepZoomValue = Mathf.SmoothStep(StartZoom, EndZoom, Duration / TotalDuration);
             IntroZoomObject.transform.localScale = new Vector3(SmoothStepZoomValue, SmoothStepZoomValue, IntroZoomObject.transform.localScale.z);
