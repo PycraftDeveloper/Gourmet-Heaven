@@ -62,15 +62,13 @@ _Note: On the Android and iOS platforms, you cannot connect a keyboard or mouse 
 
 ## Credits
 
-**Project manager:** Joshua Cossar<br>
+**Project manager:** Joshua Cossar
 
-**Lead programmer:** Thomas Jebson<br>
+**Lead programmer:** Thomas Jebson
 
-**Lead designer:** Dawid Galka-Wozniak
-**Design team:** Josh Cossar, Emmie Heane<br>
+**Lead designer:** Dawid Galka-Wozniak **Design team:** Josh Cossar, Emmie Heane
 
-**Lead artist:** Alice Haydon-Grime
-**Art team:** Finlay Thomson, Luna Lin Gao, Theo Carre
+**Lead artist:** Alice Haydon-Grime **Art team:** Finlay Thomson, Luna Lin Gao, Theo Carre
 
 **Background music:** Rose Skillett
 
