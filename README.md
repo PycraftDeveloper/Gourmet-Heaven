@@ -33,7 +33,7 @@ On the iOS operating system, your device must be running iOS version 13.0 or hig
 There are no strictly enforced hardware requirements built into the game, it is also not known how much storage space and memory the application uses on this platform at this time.
 
 ## User Input
-## Windows
+### Windows
 On the Windows platform you can use your mouse cursor in replacement of a touch input device, with:
 Left-clicking - behaving as a finger touching the screen.
 Moving the mouse whilst holding left-click - behaving as a drag style of input.
@@ -49,7 +49,7 @@ You can click anywhere on-screen during the intro-sequence to skip it and go imm
 
 _Note: On the Windows platform, if you have a touch-screen device you can still interact with the game in the same way an Android or iOS would using your finger - although this behavior was not tested due to not having a Window's compatible touch-screen device._
 
-## Android & iOS
+### Android & iOS
 On both Android and iOS your primary input will be the touch screen. Using the touch screen you can:
 Tap the screen with one finger to interact with buttons and other content in the game.
 Tap and hold the screen with one finger to drag some items around, like for example to drag the joystick to move the player, or to drag items around in the sushi mini-game.
