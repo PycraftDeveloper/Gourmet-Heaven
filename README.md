@@ -36,7 +36,7 @@ There are no strictly enforced hardware requirements built into the game, it is 
 ### Windows
 On the Windows platform you can use your mouse cursor in replacement of a touch input device, with:
 * Left-clicking - behaving as a finger touching the screen.
-* Moving the mouse whilst holding left-click - behaving as a drag style of input.
+* Moving the mouse whilst holding left-click - behaving as a touch-drag style of input.
 
 Further to this, you can use the keyboard in addition to the on-screen button arrangement.
 * Pressing the 'Esc' key will return you to the previous menu.
@@ -47,7 +47,7 @@ Further to this, you can use the keyboard in addition to the on-screen button ar
 
 You can click anywhere on-screen during the intro-sequence to skip it and go immediately to the main menu.
 
-_Note: On the Windows platform, if you have a touch-screen device you can still interact with the game in the same way an Android or iOS would using your finger - although this behavior was not tested due to not having a Window's compatible touch-screen device._
+_Note: On the Windows platform, if you have a touch-screen device you can still interact with the game in the same way as Android or iOS versions would using your finger - although this behavior was not tested due to not having a Window's compatible touch-screen device._
 
 ### Android & iOS
 On both Android and iOS your primary input will be the touch screen. Using the touch screen you can:
@@ -62,12 +62,12 @@ _Note: On the Android and iOS platforms, you cannot connect a keyboard or mouse 
 
 ## Credits
 
-**Project manager:** Joshua Cossar
+**Project manager:** Joshua Cossar<br>
 
-**Lead programmer:** Thomas Jebson
+**Lead programmer:** Thomas Jebson<br>
 
 **Lead designer:** Dawid Galka-Wozniak
-**Design team:** Josh Cossar, Emmie Heane
+**Design team:** Josh Cossar, Emmie Heane<br>
 
 **Lead artist:** Alice Haydon-Grime
 **Art team:** Finlay Thomson, Luna Lin Gao, Theo Carre
