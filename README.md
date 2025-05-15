@@ -35,15 +35,15 @@ There are no strictly enforced hardware requirements built into the game, it is 
 ## User Input
 ### Windows
 On the Windows platform you can use your mouse cursor in replacement of a touch input device, with:
-Left-clicking - behaving as a finger touching the screen.
-Moving the mouse whilst holding left-click - behaving as a drag style of input.
+* Left-clicking - behaving as a finger touching the screen.
+* Moving the mouse whilst holding left-click - behaving as a drag style of input.
 
 Further to this, you can use the keyboard in addition to the on-screen button arrangement.
-Pressing the 'Esc' key will return you to the previous menu.
-Pressing the 'W' key will allow you to move the player towards the top of the window in the kitchen and restaurant scenes.
-Pressing the 'S' key will allow you to move the player towards the bottom of the window in the kitchen and restaurant scenes.
-Pressing the 'A' key will allow you to move the player towards the left of the window in the kitchen and restaurant scenes.
-Pressing the 'D' key will allow you to move the player toward the right of the window in the kitchen and restaurant scenes.
+* Pressing the 'Esc' key will return you to the previous menu.
+* Pressing the 'W' key will allow you to move the player towards the top of the window in the kitchen and restaurant scenes.
+* Pressing the 'S' key will allow you to move the player towards the bottom of the window in the kitchen and restaurant scenes.
+* Pressing the 'A' key will allow you to move the player towards the left of the window in the kitchen and restaurant scenes.
+* Pressing the 'D' key will allow you to move the player toward the right of the window in the kitchen and restaurant scenes.
 
 You can click anywhere on-screen during the intro-sequence to skip it and go immediately to the main menu.
 
@@ -51,8 +51,8 @@ _Note: On the Windows platform, if you have a touch-screen device you can still 
 
 ### Android & iOS
 On both Android and iOS your primary input will be the touch screen. Using the touch screen you can:
-Tap the screen with one finger to interact with buttons and other content in the game.
-Tap and hold the screen with one finger to drag some items around, like for example to drag the joystick to move the player, or to drag items around in the sushi mini-game.
+* Tap the screen with one finger to interact with buttons and other content in the game.
+* Tap and hold the screen with one finger to drag some items around, like for example to drag the joystick to move the player, or to drag items around in the sushi mini-game.
 
 You can tap anywhere on-screen during the intro-sequence to skip it and go immediately to the main menu.
 
