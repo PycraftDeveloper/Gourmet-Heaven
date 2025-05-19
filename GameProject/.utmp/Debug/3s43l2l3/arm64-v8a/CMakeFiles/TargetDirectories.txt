@@ -1,8 +1,0 @@
-G:/GroupProject_Y1/GroupProjectY1/GameProject/.utmp/Debug/3s43l2l3/arm64-v8a/CMakeFiles/edit_cache.dir
-G:/GroupProject_Y1/GroupProjectY1/GameProject/.utmp/Debug/3s43l2l3/arm64-v8a/CMakeFiles/rebuild_cache.dir
-G:/GroupProject_Y1/GroupProjectY1/GameProject/.utmp/Debug/3s43l2l3/arm64-v8a/GameActivity/CMakeFiles/game.dir
-G:/GroupProject_Y1/GroupProjectY1/GameProject/.utmp/Debug/3s43l2l3/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
-G:/GroupProject_Y1/GroupProjectY1/GameProject/.utmp/Debug/3s43l2l3/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
-G:/GroupProject_Y1/GroupProjectY1/GameProject/.utmp/Debug/3s43l2l3/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
-G:/GroupProject_Y1/GroupProjectY1/GameProject/.utmp/Debug/3s43l2l3/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
-G:/GroupProject_Y1/GroupProjectY1/GameProject/.utmp/Debug/3s43l2l3/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir
