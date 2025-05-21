@@ -203,29 +203,9 @@ public class Player : MonoBehaviour
 
         Vector3 proposed_position = new Vector3(PlayerRigidBody.position.x + modified_x_position, PlayerRigidBody.position.y + modified_y_position, 0);
 
-        float minimum_y = -ScreenDimensions.y + SpriteSize.y;
+        float minimum_y = (-ScreenDimensions.y * 2) + SpriteSize.y;
         float maximum_y = ScreenDimensions.y - SpriteSize.y;
 
-        // Ensure the player isn't allowed to move off the screen.
-        proposed_position.x = Mathf.Clamp(proposed_position.x, -ScreenDimensions.x + SpriteSize.x, ScreenDimensions.x - SpriteSize.x);
-        proposed_position.y = Mathf.Clamp(proposed_position.y, minimum_y, maximum_y);
-
-        // If the player is aligned in the x-axis for the kitchen/restaurant portal.
-        if (proposed_position.x > -4.46 && proposed_position.x < -2.56)
-        {
-            if (proposed_position.y == minimum_y && Registry.CurrentSceneName == Constants.KITCHEN) // if in portal and in kitchen scene
-            {
-                Registry.GameManagerObject.ChangeScene(Constants.RESTAURANT); // go to restaurant and move player
-
-                proposed_position.y = maximum_y - 0.01f; // offset slightly to prevent getting stuck in infinite loop.
-            }
-            else if (proposed_position.y == maximum_y && Registry.CurrentSceneName == Constants.RESTAURANT) // if in portal and in restaurant scene
-            {
-                Registry.GameManagerObject.ChangeScene(Constants.KITCHEN); // go to the kitchen and move player
-
-                proposed_position.y = minimum_y + 0.01f;
-            }
-        }
         PlayerRigidBody.MovePosition(proposed_position);
         //transform.position = proposed_position;
         PlayerSprite.sortingOrder = RenderPriority;

@@ -38,6 +38,7 @@ public static class Constants
     public const string RICE_MG = "RiceMG";
     public const string SUSHI_MG = "SushiMG";
     public const string END_MENU = "EndMenu";
+    public const string GAME_LEVEL = "GameLevel";
 
     // Store the meals the player can hold.
     public const string PHO = "pho";
