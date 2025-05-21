@@ -3,8 +3,6 @@ Shader "Custom/BlurShader"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _BlurSize ("Blur Size", Range(0.0, 50.0)) = 1.0
-        _SampleRange ("Sample Range", Range(1.0, 50.0)) = 1.0
     }
     SubShader
     {
@@ -32,8 +30,6 @@ Shader "Custom/BlurShader"
 
             sampler2D _MainTex;
             float4 _MainTex_TexelSize;
-            float _BlurSize;
-            float _SampleRange;
 
             v2f vert (appdata_t v)
             {
@@ -48,17 +44,46 @@ Shader "Custom/BlurShader"
                 // 1.77777... = 16:9 aspect ratio
                 float2 texel = float2(1.0 / _ScreenParams.x, 1.0 / _ScreenParams.y); // float2(1.777778, 1.0);
 
-                half4 color = tex2D(_MainTex, i.uv); 
-                int samples = 1;
+                // Centre
+                half4 color = tex2D(_MainTex, i.uv) * 100;
+                int scale = 2;
 
-                for (int x = -floor(_BlurSize * 0.5); x <= floor(_BlurSize * 0.5); x++) {
-                    for (int y = -floor(_BlurSize * 0.5); y <= floor(_BlurSize * 0.5); y++) {
-                        color += tex2D(_MainTex, i.uv + float2(x, y) * texel * _SampleRange);
-                        samples++;
-                    }
-                }
+                // Inner
+                color += tex2D(_MainTex, i.uv + float2(0, scale) * texel) * 85;
+                color += tex2D(_MainTex, i.uv + float2(0, -scale) * texel) * 85;
+                color += tex2D(_MainTex, i.uv + float2(scale, 0) * texel) * 85;
+                color += tex2D(_MainTex, i.uv + float2(-scale, 0) * texel) * 85;
 
-                return color / samples;
+                // Outer
+                color += tex2D(_MainTex, i.uv + float2(scale, scale) * texel) * 76;
+                color += tex2D(_MainTex, i.uv + float2(scale, -scale) * texel) * 76;
+                color += tex2D(_MainTex, i.uv + float2(-scale, scale) * texel) * 76;
+                color += tex2D(_MainTex, i.uv + float2(-scale, -scale) * texel) * 76;
+
+                color += tex2D(_MainTex, i.uv + float2(0, 2 * scale) * texel) * 76;
+                color += tex2D(_MainTex, i.uv + float2(0, -2 * scale) * texel) * 76;
+                color += tex2D(_MainTex, i.uv + float2(2 * scale, 0) * texel) * 76;
+                color += tex2D(_MainTex, i.uv + float2(-2 * scale, 0) * texel) * 76;
+
+                // More Outer
+                color += tex2D(_MainTex, i.uv + float2(2 * scale, 1 * scale) * texel) * 70;
+                color += tex2D(_MainTex, i.uv + float2(1 * scale, 2 * scale) * texel) * 70;
+
+                color += tex2D(_MainTex, i.uv + float2(2 * scale, -1 * scale) * texel) * 70;
+                color += tex2D(_MainTex, i.uv + float2(1 * scale, -2 * scale) * texel) * 70;
+
+                color += tex2D(_MainTex, i.uv + float2(1 * scale, 2 * scale) * texel) * 70;
+                color += tex2D(_MainTex, i.uv + float2(2 * scale, 1 * scale) * texel) * 70;
+
+                color += tex2D(_MainTex, i.uv + float2(1 * scale, -2 * scale) * texel) * 70;
+                color += tex2D(_MainTex, i.uv + float2(2 * scale, -1 * scale) * texel) * 70;
+
+                color += tex2D(_MainTex, i.uv + float2(0, 3 * scale) * texel) * 70;
+                color += tex2D(_MainTex, i.uv + float2(0, -3 * scale) * texel) * 70;
+                color += tex2D(_MainTex, i.uv + float2(3 * scale, 0) * texel) * 70;
+                color += tex2D(_MainTex, i.uv + float2(-3 * scale, 0) * texel) * 70;
+
+                return color / 1888;
             }
             ENDCG
         }
