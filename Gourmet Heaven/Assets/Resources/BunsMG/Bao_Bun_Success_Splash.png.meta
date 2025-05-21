@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 00fae0a801db5444884b5811eec82397
+guid: 72fbb244552ea784fa493c4c4bc7baf2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1485237791132817349
-    second: fireAssetGIF-3_0
+      213: -2795115379053006382
+    second: Bao_Bun_Splash_Art 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fireAssetGIF-3_0
+      name: Bao_Bun_Splash_Art 1_0
       rect:
         serializedVersion: 2
-        x: 180
-        y: 63
-        width: 88
-        height: 25
+        x: 0
+        y: 0
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b38ea8c1910636be0800000000000000
-      internalID: -1485237791132817349
+      spriteID: 2d170553f51c539d0800000000000000
+      internalID: -2795115379053006382
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      fireAssetGIF-3_0: -1485237791132817349
+      Bao_Bun_Splash_Art 1_0: -2795115379053006382
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
