@@ -28,13 +28,11 @@ public static class Constants
 
     public const string OPTIONS_MENU = "OptionsMenu";
     public const string CREDITS_MENU = "CreditsMenu";
-    public const string KITCHEN = "Kitchen";
     public const string SHOP_MENU = "ShopMenu";
     public const string LEVEL_SELECTION_MENU = "LevelSelectionMenu";
     public const string PAUSE_MENU = "PauseMenu";
     public const string BUNS_MG = "BunsMG";
     public const string PHO_MG = "PhoMG";
-    public const string RESTAURANT = "Restaurant";
     public const string RICE_MG = "RiceMG";
     public const string SUSHI_MG = "SushiMG";
     public const string END_MENU = "EndMenu";
@@ -90,8 +88,8 @@ public static class Constants
 
     // Stores the positions for each customer in the restaurant scene.
     public static readonly float[,] CUSTOMER_SEATS_IN_RESTAURANT = new float[,] {
-        { -4.15f,  1.68f }, { -1.87f,  1.68f }, { 0.86f,  1.68f }, { 3.14f,  1.68f }, // top row
-        { -4.15f, -2.34f }, { -1.87f, -2.34f }, { 0.86f, -2.34f }, { 3.14f, -2.34f } }; // bottom row
+        { -4.15f,  -8.32f }, { -1.87f,  -8.32f }, { 0.86f,  -8.32f }, { 3.14f,  -8.32f }, // top row
+        { -4.15f, -12.34f }, { -1.87f, -12.34f }, { 0.86f, -12.34f }, { 3.14f, -12.34f } }; // bottom row
 
     // Defines the range (min/max) pho mini-game items can move in the x-axis, before multiplication by deltaTime
     public static readonly float[] PHO_FOOD_ITEMS_SPEED = new float[] { 3.0f, 6.0f };

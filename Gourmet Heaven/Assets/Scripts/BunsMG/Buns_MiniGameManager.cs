@@ -65,7 +65,7 @@ public class Buns_MiniGameManager : MonoBehaviour
         Registry.GameManagerObject.SFXSource.volume = Registry.SFXVolume;
         Registry.GameManagerObject.SFXSource.Play();
         Registry.GameManagerObject.SFXSource.loop = true;
-        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.EggtimerTicking);
+        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.EggTimerTicking);
         // This code was added by Joshua Cossar (^)
     }
 
@@ -88,7 +88,7 @@ public class Buns_MiniGameManager : MonoBehaviour
             Registry.GameManagerObject.SFXSource.volume = Registry.SFXVolume;
             Registry.GameManagerObject.SFXSource.Play();
             Registry.GameManagerObject.SFXSource.loop = true;
-            Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.EggtimerTicking);
+            Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.EggTimerTicking);
             // End of Joshua Cossar's Added Code
         }
     }
@@ -137,7 +137,7 @@ public class Buns_MiniGameManager : MonoBehaviour
 
                     EggTimerPosition.y += Constants.ACTIVE_EGG_TIMER_DISPLACEMENT; // Displace the egg timer to show the player it has gone off.
 
-                    Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.EggtimerAlarm); // Added by Joshua Cossar
+                    Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.EggTimerAlarm); // Added by Joshua Cossar
                     EggTimerAnimator.SetBool("Alarm", true); // Added by Joshua Cossar
                 }
 

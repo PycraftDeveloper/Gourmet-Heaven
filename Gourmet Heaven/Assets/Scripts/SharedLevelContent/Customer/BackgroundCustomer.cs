@@ -6,12 +6,11 @@ public class BackgroundCustomer : CustomerCore // This class extends the core cu
         base.Awake();
 
         _Animator.SetInteger("customerState", Constants.CUSTOMER_IDLE_SIT_ANIMATION); // Set the animation to idle sit.
-
-        CurrentLocation = Constants.RESTAURANT; // Set the location to restaurant.
     }
 
     private void Update()
     {
+        ManagePatience(); // Call the base class method to manage the patience of the customer.
         _Animator.SetInteger("customerState", Constants.CUSTOMER_IDLE_SIT_ANIMATION); // Keep the customer in the idle sitting animation until they de-spawn.
     }
 }

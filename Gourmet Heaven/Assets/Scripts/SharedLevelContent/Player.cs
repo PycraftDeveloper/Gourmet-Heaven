@@ -49,89 +49,86 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D Collider)
     {
-        if (Registry.CurrentSceneName == Constants.KITCHEN) // If collided with something in the kitchen
+        if (Collider.name == "CashRegister_AreaDetector" && AppliancePopUpMessages[0] != null)
         {
-            if (Collider.name == "CashRegister_AreaDetector" && AppliancePopUpMessages[0] != null)
+            if (Registry.LevelManagerObject.CacheRegister.GetState())
             {
-                if (Registry.LevelManagerObject.CacheRegister.GetState())
+                if (!AppliancePopUpMessages[0].activeSelf) // Show the till-point interact button when in area hit-box area.
                 {
-                    if (!AppliancePopUpMessages[0].activeSelf) // Show the till-point interact button when in area hit-box area.
+                    ForegroundCustomer CustomerAtTill = Registry.LevelManagerObject.CustomerKitchenQueue.Peek();
+                    // Change the button icon to match what the customer wants.
+                    switch (CustomerAtTill.Meal)
                     {
-                        GameObject CustomerObjectAtTill = Registry.LevelManagerObject.CustomerKitchenQueue.Peek();
-                        Customer CustomerAtTill = CustomerObjectAtTill.GetComponent<Customer>();
-                        // Change the button icon to match what the customer wants.
-                        switch (CustomerAtTill.Meal)
-                        {
-                            case Constants.PHO:
-                                AppliancePopUpMessages[0].GetComponent<Image>().sprite = TillPointPopUpSprites[0];
-                                break;
+                        case Constants.PHO:
+                            AppliancePopUpMessages[0].GetComponent<Image>().sprite = TillPointPopUpSprites[0];
+                            break;
 
-                            case Constants.SUSHI:
-                                AppliancePopUpMessages[0].GetComponent<Image>().sprite = TillPointPopUpSprites[1];
-                                break;
+                        case Constants.SUSHI:
+                            AppliancePopUpMessages[0].GetComponent<Image>().sprite = TillPointPopUpSprites[1];
+                            break;
 
-                            case Constants.BAO_BUNS:
-                                AppliancePopUpMessages[0].GetComponent<Image>().sprite = TillPointPopUpSprites[2];
-                                break;
+                        case Constants.BAO_BUNS:
+                            AppliancePopUpMessages[0].GetComponent<Image>().sprite = TillPointPopUpSprites[2];
+                            break;
 
-                            case Constants.MANGO_STICKY_RICE:
-                                AppliancePopUpMessages[0].GetComponent<Image>().sprite = TillPointPopUpSprites[3];
-                                break;
-                        }
+                        case Constants.MANGO_STICKY_RICE:
+                            AppliancePopUpMessages[0].GetComponent<Image>().sprite = TillPointPopUpSprites[3];
+                            break;
                     }
-                    AppliancePopUpMessages[0].SetActive(true); // Show the till point.
                 }
-                else
-                {
-                    AppliancePopUpMessages[0].SetActive(false); // Hide the till point.
-                }
+                AppliancePopUpMessages[0].SetActive(true); // Show the till point.
             }
-            else if (Collider.name == "ChoppingBoard_AreaDetector" && AppliancePopUpMessages[1] != null) // If collided with the chopping board area hit box
+            else
             {
-                if (Registry.LevelManagerObject.ChoppingBoard.GetState()) // show or hide the button to go to the mango sticky rice mini-game
-                {
-                    AppliancePopUpMessages[1].SetActive(true);
-                }
-                else
-                {
-                    AppliancePopUpMessages[1].SetActive(false);
-                }
-            }
-            else if (Collider.name == "CookingPot_AreaDetector" && AppliancePopUpMessages[2] != null) // If collided with the cooking pot area hit box
-            {
-                if (Registry.LevelManagerObject.CookingPot.GetState()) // show or hide the button to go to the bao buns mini-game
-                {
-                    AppliancePopUpMessages[2].SetActive(true);
-                }
-                else
-                {
-                    AppliancePopUpMessages[2].SetActive(false);
-                }
-            }
-            else if (Collider.name == "PhoBowl_AreaDetector" && AppliancePopUpMessages[3] != null) // If collided with the Pho bowl area hit box
-            {
-                if (Registry.LevelManagerObject.PhoBowl.GetState()) // show or hide the button to go to the Pho mini-game
-                {
-                    AppliancePopUpMessages[3].SetActive(true);
-                }
-                else
-                {
-                    AppliancePopUpMessages[3].SetActive(false);
-                }
-            }
-            else if (Collider.name == "SushiRollingMat_AreaDetector" && AppliancePopUpMessages[4] != null) // If collided with the sushi area hit box
-            {
-                if (Registry.LevelManagerObject.SushiRollingMat.GetState()) // show or hide the button to go to the sushi mini-game
-                {
-                    AppliancePopUpMessages[4].SetActive(true);
-                }
-                else
-                {
-                    AppliancePopUpMessages[4].SetActive(false);
-                }
+                AppliancePopUpMessages[0].SetActive(false); // Hide the till point.
             }
         }
-        else if (Collider.CompareTag("Customer") && Registry.CurrentSceneName == Constants.RESTAURANT) // If collided with a customer in the restaurant
+        else if (Collider.name == "ChoppingBoard_AreaDetector" && AppliancePopUpMessages[1] != null) // If collided with the chopping board area hit box
+        {
+            if (Registry.LevelManagerObject.ChoppingBoard.GetState()) // show or hide the button to go to the mango sticky rice mini-game
+            {
+                AppliancePopUpMessages[1].SetActive(true);
+            }
+            else
+            {
+                AppliancePopUpMessages[1].SetActive(false);
+            }
+        }
+        else if (Collider.name == "CookingPot_AreaDetector" && AppliancePopUpMessages[2] != null) // If collided with the cooking pot area hit box
+        {
+            if (Registry.LevelManagerObject.CookingPot.GetState()) // show or hide the button to go to the bao buns mini-game
+            {
+                AppliancePopUpMessages[2].SetActive(true);
+            }
+            else
+            {
+                AppliancePopUpMessages[2].SetActive(false);
+            }
+        }
+        else if (Collider.name == "PhoBowl_AreaDetector" && AppliancePopUpMessages[3] != null) // If collided with the Pho bowl area hit box
+        {
+            if (Registry.LevelManagerObject.PhoBowl.GetState()) // show or hide the button to go to the Pho mini-game
+            {
+                AppliancePopUpMessages[3].SetActive(true);
+            }
+            else
+            {
+                AppliancePopUpMessages[3].SetActive(false);
+            }
+        }
+        else if (Collider.name == "SushiRollingMat_AreaDetector" && AppliancePopUpMessages[4] != null) // If collided with the sushi area hit box
+        {
+            if (Registry.LevelManagerObject.SushiRollingMat.GetState()) // show or hide the button to go to the sushi mini-game
+            {
+                AppliancePopUpMessages[4].SetActive(true);
+            }
+            else
+            {
+                AppliancePopUpMessages[4].SetActive(false);
+            }
+        }
+
+        if (Collider.CompareTag("Customer")) // If collided with a customer in the restaurant
         {
             CustomerCore customer = Collider.gameObject.GetComponent<CustomerCore>();
 
@@ -153,33 +150,36 @@ public class Player : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D Collider)
     {
-        if (Registry.CurrentSceneName == Constants.KITCHEN)
+        // When no longer in collision with an area hit box, hide the assoctaed button.
+        if (Collider.name == "CashRegister_AreaDetector" && AppliancePopUpMessages[0] != null)
         {
-            // When no longer in collision with an area hit box, hide the assoctaed button.
-            if (Collider.name == "CashRegister_AreaDetector" && AppliancePopUpMessages[0] != null)
-            {
-                AppliancePopUpMessages[0].SetActive(false);
-            }
-            else if (Collider.name == "ChoppingBoard_AreaDetector" && AppliancePopUpMessages[1] != null)
-            {
-                AppliancePopUpMessages[1].SetActive(false);
-            }
-            else if (Collider.name == "CookingPot_AreaDetector" && AppliancePopUpMessages[2] != null)
-            {
-                AppliancePopUpMessages[2].SetActive(false);
-            }
-            else if (Collider.name == "PhoBowl_AreaDetector" && AppliancePopUpMessages[3] != null)
-            {
-                AppliancePopUpMessages[3].SetActive(false);
-            }
-            else if (Collider.name == "SushiRollingMat_AreaDetector" && AppliancePopUpMessages[4] != null)
-            {
-                AppliancePopUpMessages[4].SetActive(false);
-            }
+            AppliancePopUpMessages[0].SetActive(false);
+            return;
         }
-        else if (Collider.CompareTag("Customer") && Registry.CurrentSceneName == Constants.RESTAURANT)
+        if (Collider.name == "ChoppingBoard_AreaDetector" && AppliancePopUpMessages[1] != null)
+        {
+            AppliancePopUpMessages[1].SetActive(false);
+            return;
+        }
+        if (Collider.name == "CookingPot_AreaDetector" && AppliancePopUpMessages[2] != null)
+        {
+            AppliancePopUpMessages[2].SetActive(false);
+            return;
+        }
+        if (Collider.name == "PhoBowl_AreaDetector" && AppliancePopUpMessages[3] != null)
+        {
+            AppliancePopUpMessages[3].SetActive(false);
+            return;
+        }
+        if (Collider.name == "SushiRollingMat_AreaDetector" && AppliancePopUpMessages[4] != null)
+        {
+            AppliancePopUpMessages[4].SetActive(false);
+            return;
+        }
+        if (Collider.CompareTag("Customer"))
         {
             PlayerSprite.sortingLayerName = "Player & NPCs"; // If the player is no longer colliding with a customer in the restaurant, reset the player's layer.
+            return;
         }
     }
 
@@ -294,12 +294,9 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Registry.CurrentSceneName == Constants.KITCHEN)
+        if (AppliancePopUpMessages[5] != null)
         {
-            if (AppliancePopUpMessages[5] != null)
-            {
-                AppliancePopUpMessages[5].SetActive(HoldingMeal != Constants.NOT_HOLDING_MEAL); // show/hide the bin pop-up button depending on if the player is holding a meal.
-            }
+            AppliancePopUpMessages[5].SetActive(HoldingMeal != Constants.NOT_HOLDING_MEAL); // show/hide the bin pop-up button depending on if the player is holding a meal.
         }
 
         PlayerHoldingPopUp.SetActive(HoldingMeal != Constants.NOT_HOLDING_MEAL); // show what meal the player is holding when the player is holding a meal.

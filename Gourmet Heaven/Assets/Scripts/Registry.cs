@@ -8,7 +8,6 @@ public static class Registry
 
     public static string JoystickScreenPosition = Constants.LEFT;
 
-    public static bool InGameLevel = false; // Used in the game level objects to control when to update
     public static bool GameInBackground = false; // Used to determine when to render the pause menu blurred background
 
     public static int LevelNumber = Constants.LEVEL_ONE; // Stores the level number for the currently played game level
@@ -25,7 +24,8 @@ public static class Registry
     public static LevelManager LevelManagerObject = null;
     public static Player PlayerObject = null;
     public static Joystick JoystickObject = null;
-    public static List<GameObject> Customers = new List<GameObject>();
+    public static List<ForegroundCustomer> ForegroundCustomers = new List<ForegroundCustomer>();
+    public static List<BackgroundCustomer> BackgroundCustomers = new List<BackgroundCustomer>();
     public static UIManager UIManagerObject = null;
 
     public static LevelCustomiser LevelCustomiserObject = new LevelCustomiser(); // Used to customise the registry for the different game levels

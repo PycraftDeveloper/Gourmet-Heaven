@@ -22,7 +22,7 @@ public class LevelSelectionMenuManagerScript : MonoBehaviour
         // Could add a loading screen here if the loading took a more significant time. (The camera is never reset to enabled, because the camera is
         // later destroyed and recreated in the new scene).
         Registry.LevelCustomiserObject.SetupLevelTwo();
-        Registry.GameManagerObject.ChangeScene(Constants.KITCHEN);
+        Registry.GameManagerObject.ChangeScene(Constants.GAME_LEVEL);
     }
 
     public void OnContinueButtonClick()
@@ -30,7 +30,7 @@ public class LevelSelectionMenuManagerScript : MonoBehaviour
         Camera.main.enabled = false;
         TutorialCanvas.gameObject.SetActive(false);
         Registry.LevelCustomiserObject.SetupLevelOne();
-        Registry.GameManagerObject.ChangeScene(Constants.KITCHEN);
+        Registry.GameManagerObject.ChangeScene(Constants.GAME_LEVEL);
     }
 
     public void OnBackButtonClick()

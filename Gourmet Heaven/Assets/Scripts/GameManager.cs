@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour
     public AudioClip CuttingSound;
     public AudioClip MangoFinish;
     public AudioClip BoilingWater;
-    public AudioClip EggtimerTicking;
-    public AudioClip EggtimerAlarm;
+    public AudioClip EggTimerTicking;
+    public AudioClip EggTimerAlarm;
     public AudioClip SoupSplash1;
     public AudioClip SoupSplash2;
     public AudioClip SushiSound;
@@ -93,11 +93,17 @@ public class GameManager : MonoBehaviour
     {
         Registry.PlayerScore = 0;
 
-        foreach (GameObject _Customer in Registry.Customers)
+        foreach (ForegroundCustomer Customer in Registry.ForegroundCustomers)
         {
-            Destroy(_Customer); // Destroy (and garbage collect) all foreground and background customers in the scene.
+            Destroy(Customer.gameObject); // Destroy (and garbage collect) all foreground and background customers in the scene.
         }
-        Registry.Customers.Clear(); // Free up space by removing items from array.
+        Registry.ForegroundCustomers.Clear(); // Free up space by removing items from array.
+
+        foreach (BackgroundCustomer Customer in Registry.BackgroundCustomers)
+        {
+            Destroy(Customer.gameObject); // Destroy (and garbage collect) all foreground and background customers in the scene.
+        }
+        Registry.BackgroundCustomers.Clear(); // Free up space by removing items from array.
 
         if (Registry.PlayerObject != null) // Check and destroy (garbage collect) the player.
         {
@@ -127,39 +133,69 @@ public class GameManager : MonoBehaviour
         Registry.PlayerScore = 0; // Reset player score
     }
 
-    private void EnableLevelObjects(string sceneName) // Used to enable level objects when returning to the game scene.
+    private void DisableGameLevelContents()
     {
-        if (Registry.JoystickObject != null)
+        foreach (ForegroundCustomer Customer in Registry.ForegroundCustomers)
         {
-            Registry.JoystickObject.gameObject.SetActive(true);
+            Customer.gameObject.SetActive(false); // Enable all foreground customers in the scene.
         }
+
+        foreach (BackgroundCustomer Customer in Registry.BackgroundCustomers)
+        {
+            Customer.gameObject.SetActive(false); // Enable all background customers in the scene.
+        }
+
         if (Registry.PlayerObject != null)
         {
-            Registry.PlayerObject.gameObject.SetActive(true);
+            Registry.PlayerObject.gameObject.SetActive(false); // Enable the player object in the scene.
         }
-        foreach (GameObject CustomerGameObject in Registry.Customers)
+
+        if (Registry.LevelManagerObject != null)
         {
-            CustomerCore _Customer = CustomerGameObject.GetComponent<CustomerCore>();
-            if (_Customer.CurrentLocation == sceneName)
-            {
-                CustomerGameObject.SetActive(true); // Used to set all customers in the scene to be showing.
-            }
+            Registry.LevelManagerObject.gameObject.SetActive(false); // Enable the level manager object in the scene.
+        }
+
+        if (Registry.JoystickObject != null)
+        {
+            Registry.JoystickObject.gameObject.SetActive(false); // Enable the joystick object in the scene.
+        }
+
+        if (Registry.UIManagerObject != null)
+        {
+            Registry.UIManagerObject.gameObject.SetActive(false); // Enable the UI manager object in the scene.
         }
     }
 
-    private void DisableLevelObjects() // Used to enable level objects when leaving to the game scene.
+    private void EnableGameLevelContents()
     {
-        if (Registry.JoystickObject != null)
+        foreach (ForegroundCustomer Customer in Registry.ForegroundCustomers)
         {
-            Registry.JoystickObject.gameObject.SetActive(false);
+            Customer.gameObject.SetActive(true); // Enable all foreground customers in the scene.
         }
-        if (Registry.PlayerObject != null)
+
+        foreach (BackgroundCustomer Customer in Registry.BackgroundCustomers)
         {
-            Registry.PlayerObject.gameObject.SetActive(false);
+            Customer.gameObject.SetActive(true); // Enable all background customers in the scene.
         }
-        foreach (GameObject CustomerGameObject in Registry.Customers)
+
+        if (Registry.PlayerObject != null) // Check and destroy (garbage collect) the player.
         {
-            CustomerGameObject.SetActive(false); // Used to hide all customers.
+            Registry.PlayerObject.gameObject.SetActive(true); // Enable the player object in the scene.
+        }
+
+        if (Registry.LevelManagerObject != null) // Check and destroy (garbage collect) the level manager.
+        {
+            Registry.LevelManagerObject.gameObject.SetActive(true); // Enable the level manager object in the scene.
+        }
+
+        if (Registry.JoystickObject != null) // Check and destroy (garbage collect) the joystick.
+        {
+            Registry.JoystickObject.gameObject.SetActive(true); // Enable the joystick object in the scene.
+        }
+
+        if (Registry.UIManagerObject != null) // Check and destroy (garbage collect) the UI manager.
+        {
+            Registry.UIManagerObject.gameObject.SetActive(true); // Enable the UI manager object in the scene.
         }
     }
 
@@ -167,19 +203,8 @@ public class GameManager : MonoBehaviour
     {
         string sceneName = Registry.CurrentSceneName;
 
-        if (sceneName != Constants.KITCHEN && sceneName != Constants.RESTAURANT) // Check if the current scene is NOT the game scene.
+        if (sceneName == Constants.GAME_LEVEL) // Check if in a game scene.
         {
-            if (Registry.InGameLevel) // If not, and was previously, hide all game objects.
-            {
-                Registry.InGameLevel = false;
-                DisableLevelObjects();
-            }
-        }
-
-        if (sceneName == Constants.KITCHEN || sceneName == Constants.RESTAURANT) // Check if in a game scene.
-        {
-            Registry.InGameLevel = true; // Allows the level manager object and other level objects to run.
-            EnableLevelObjects(sceneName); // Show the level objects in the game scene.
             if (SFXSource.clip != RestaurantAmbience)
             {
                 SFXSource.clip = RestaurantAmbience; // Set the sound effect to the right track
@@ -189,18 +214,21 @@ public class GameManager : MonoBehaviour
             {
                 SFXSource.Play(); // Start playing the sound if it isn't currently playing.
             }
-        }
 
-        // start - this section of code was worked on by Joshua Cossar (v)
-        if (sceneName == Constants.KITCHEN)
-        {
             if (musicSource.clip != bgm_InGame)
             {
                 musicSource.clip = bgm_InGame;
                 musicSource.volume = Registry.MusicVolume;
                 musicSource.Play();
             }
+
+            EnableGameLevelContents(); // Enable the game level contents.
         }
+        else
+        {
+            DisableGameLevelContents(); // Disable the game level contents.
+        }
+
         if (sceneName == Constants.MAIN_MENU)
         {
             if (musicSource.clip != bgm_MainMenu)
@@ -228,31 +256,9 @@ public class GameManager : MonoBehaviour
             Registry.PlayerObject.SceneChanged = true;
         }
 
-        if (Registry.JoystickObject != null) // Instead of telling the object the scene has changed, a dedicated method is called.
-        {
-            Registry.JoystickObject.OnSceneChanged();
-        }
-
         if (Registry.UIManagerObject != null)
         {
             Registry.UIManagerObject.OnSceneChanged();
-        }
-
-        for (int i = Registry.Customers.Count - 1; i >= 0; i--) // Iterate backwards through the customers, to enable support for garbage collection.
-        {
-            CustomerCore thisCustomer = Registry.Customers[i].GetComponent<CustomerCore>(); // Get the customer's customer core, as its shared between foreground and background customers
-
-            if (thisCustomer.DeSpawn) // If the customer's patience has ran out - so ready to de-spawn
-            {
-                // Garbage collect and destroy the customer.
-                Registry.LevelManagerObject.CustomerTableArrangement[thisCustomer.CustomerTablePosition] = null;
-                Registry.Customers.Remove(thisCustomer.gameObject);
-                Destroy(thisCustomer.gameObject);
-            }
-            else if (Registry.CurrentSceneName != thisCustomer.CurrentLocation) // If the customer is not meant to be visible in this scene, hide it
-            {
-                Registry.Customers[i].SetActive(false);
-            }
         }
     }
 
@@ -327,7 +333,7 @@ public class GameManager : MonoBehaviour
     {
         sceneName = HandleSceneStack(sceneName); // Handles determining the previous scene.
 
-        if (sceneName == Constants.KITCHEN || sceneName == Constants.RESTAURANT)
+        if (sceneName == Constants.GAME_LEVEL)
         {
             if (Registry.UIManagerObject != null)
             {
@@ -346,7 +352,7 @@ public class GameManager : MonoBehaviour
                 Registry.UIManagerObject.gameObject.SetActive(false); // Hide the UI
             }
 
-            if (Registry.InGameLevel)
+            if (Registry.CurrentSceneName == Constants.GAME_LEVEL)
             {
                 RenderGameSceneToFrameBuffer(); // If previously in the game scene, render the blurred background.
             }

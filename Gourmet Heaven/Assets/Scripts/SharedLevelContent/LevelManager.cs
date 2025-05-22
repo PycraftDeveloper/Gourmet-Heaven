@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -69,7 +70,7 @@ public class LevelManager : MonoBehaviour
     private float NextCustomerSpawnTime = 0; // Stores the values the 'CustomerSpawnTimer' needs to reach before a new customer is spawned (UNLESS there are no customers in the kitchen).
     public int CustomersInScene = 0; // Stores a running total of the number of customers currently in the game.
 
-    public Queue<GameObject> CustomerKitchenQueue = new Queue<GameObject>(); // Stores the order customers are arranged in the Kitchen queue.
+    public Queue<ForegroundCustomer> CustomerKitchenQueue = new Queue<ForegroundCustomer>(); // Stores the order customers are arranged in the Kitchen queue.
     public GameObject[] CustomerTableArrangement = new GameObject[8]; // Stores the seating positions and where customers are currently seated in the restaurant scene.
 
     private bool ReturnToGameToggle = true; // Used to trigger a unique event when the player returns to the game scenes (Kitchen/Restaurant) from another menu, like the pause menu.
@@ -93,7 +94,7 @@ public class LevelManager : MonoBehaviour
         int NumberOfBackgroundCustomers = Random.Range(0, Mathf.Min(MaxQuantity, FreeSpaces)); // Randomly generate n background customers up to the limit where there are no free spaces left.
         for (int i = 0; i < NumberOfBackgroundCustomers; i++)
         {
-            GameObject NewBackgroundCustomer = Instantiate(BackgroundCustomerPrefab, transform.position, transform.rotation);
+            GameObject NewBackgroundCustomer = Instantiate(BackgroundCustomerPrefab, CustomerSpawningLocation, transform.rotation);
 
             bool Seated = false;
             while (!Seated) // Search through all the seats in the restaurant until there is one available.
@@ -111,9 +112,8 @@ public class LevelManager : MonoBehaviour
                         _BackgroundCustomer.transform.localScale = CustomerScale;
                     }
                     _BackgroundCustomer.CustomerTablePosition = PositionIndex;
-                    Registry.Customers.Add(NewBackgroundCustomer); // Add the background customer to the centralised tracking system.
+                    Registry.BackgroundCustomers.Add(_BackgroundCustomer); // Add the background customer to the centralised tracking system.
                     _BackgroundCustomer.SetupCustomerCoreForRestaurant(PositionIndex); // Set-up the background customer for the restaurant.
-                    NewBackgroundCustomer.SetActive(false); // By default, don't show the new customer until the scene is changed (so the customers don't pop in when player is in scene)
                     Seated = true;
                 }
             }
@@ -131,26 +131,31 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        CinemachineCamera GameLevelCinemachineCamera = FindFirstObjectByType<CinemachineCamera>(); // Find the Cinemachine camera in the scene.
+        if (GameLevelCinemachineCamera != null && Registry.PlayerObject != null)
+        {
+            CameraTarget CinemachineCameraTarget = new CameraTarget(); // Get the camera target from the Cinemachine camera.
+            CinemachineCameraTarget.TrackingTarget = Registry.PlayerObject.transform; // Set the camera target to the player object.
+            GameLevelCinemachineCamera.Target = CinemachineCameraTarget;
+        }
     }
 
     public void HandleOrderCollection() // Runs when the player collects an order from the customer standing at the cache machine.
     {
-        for (int i = 0; i < Registry.Customers.Count; i++) // Iterate over all the customers.
+        for (int i = 0; i < Registry.ForegroundCustomers.Count; i++) // Iterate over all the customers.
         {
-            Customer _Customer = Registry.Customers[i].GetComponent<Customer>();
+            ForegroundCustomer _Customer = Registry.ForegroundCustomers[i];
             if (_Customer != null)
             {
-                if (_Customer.CurrentLocation == Constants.KITCHEN)
+                if (_Customer.CurrentPosition.x == 0.5f) // If the customer is in the correct location and is in the position in the queue at the till point.
                 {
-                    if (_Customer.CurrentPosition.x == 0.5f) // If the customer is in the correct location and is in the position in the queue at the till point.
-                    {
-                        CustomerKitchenQueue.Dequeue(); // Remove the first customer from the queue.
-                        _Customer.MealPlaced = true;
-                        _Customer.SetCoroutine(_Customer.MoveIntoRestaurant(), Constants.MOVE_INTO_RESTAURANT); // Set-up the customer to move down out of the kitchen scene.
-                        Invoke("UpdateQueuePositions", 1.5f); // Once the customer has left the scene, update the positions for the other customers in the queue.
-                        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.CashRegisterNoise); // added by Joshua Cossar
-                        return; // Early exit the loop.
-                    }
+                    CustomerKitchenQueue.Dequeue(); // Remove the first customer from the queue.
+                    _Customer.MealPlaced = true;
+                    _Customer.SetCoroutine(_Customer.MoveIntoRestaurant(), Constants.MOVE_INTO_RESTAURANT); // Set-up the customer to move down out of the kitchen scene.
+                    Invoke("UpdateQueuePositions", 1.5f); // Once the customer has left the scene, update the positions for the other customers in the queue.
+                    Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.CashRegisterNoise); // added by Joshua Cossar
+                    return; // Early exit the loop.
                 }
             }
         }
@@ -201,11 +206,10 @@ public class LevelManager : MonoBehaviour
         float spacing = 1.5f; // How far the customers should be spaced.
         int index = 0;
 
-        foreach (GameObject CustomerObject in CustomerKitchenQueue) // Iterate over each of the customers.
+        foreach (ForegroundCustomer CustomerObject in CustomerKitchenQueue) // Iterate over each of the customers.
         {
-            Customer customer = CustomerObject.GetComponent<Customer>();
             Vector2 DestinationPosition = new Vector2(0.5f + spacing * index, -3.61f); // Update the destination position
-            customer.SetCoroutine(customer.MoveInQueue(DestinationPosition), Constants.MOVE_IN_QUEUE); // Start the coroutine that will move the customers in the background.
+            CustomerObject.SetCoroutine(CustomerObject.MoveInQueue(DestinationPosition), Constants.MOVE_IN_QUEUE); // Start the coroutine that will move the customers in the background.
             index++;
         }
     }
@@ -213,13 +217,6 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Registry.InGameLevel == false) // Ensure the level manager does not run when not in a game scene.
-        {
-            Registry.GameTimeDelta = 0;
-            ReturnToGameToggle = true;
-            return;
-        }
-
         UIScoreText.text = Registry.PlayerScore.ToString(); // Update the score text in the UI.
 
         // Reset all the appliance states (so they can be enabled later, or left disabled).
@@ -244,9 +241,9 @@ public class LevelManager : MonoBehaviour
 
         CustomerSpawnTimer += Registry.GameTimeDelta;
 
-        for (int i = 0; i < Registry.Customers.Count; i++) // iterate over each of the customers in the game scene, used to determine appliance states
+        for (int i = 0; i < Registry.ForegroundCustomers.Count; i++) // iterate over each of the customers in the game scene, used to determine appliance states
         {
-            Customer thisCustomer = Registry.Customers[i].GetComponent<Customer>();
+            ForegroundCustomer thisCustomer = Registry.ForegroundCustomers[i];
 
             if (thisCustomer == null)
             {
@@ -275,18 +272,11 @@ public class LevelManager : MonoBehaviour
                 }
             }
 
-            if (Registry.CurrentSceneName == Constants.KITCHEN)
+            if (thisCustomer.CurrentPosition.x == 0.5f && thisCustomer.CurrentPosition.y == -3.61f && CustomersInScene - CustomerKitchenQueue.Count < 8) // Check if the customer is in
+                                                                                                                                                         // the kitchen scene, and that it is waiting at the till point.
             {
-                if (thisCustomer.CurrentPosition.x == 0.5f && thisCustomer.CurrentPosition.y == -3.61f && CustomersInScene - CustomerKitchenQueue.Count < 8) // Check if the customer is in
-                                                                                                                                                             // the kitchen scene, and that it is waiting at the till point.
-                {
-                    thisCustomer.SetAnimationState(Constants.CUSTOMER_IDLE_UP_ANIMATION); // Set the customer to idle facing the till point.
-                    CacheRegister.SetState(true); // 'activate' the till point tile
-                }
-            }
-            else if (thisCustomer.CurrentLocation == Constants.RESTAURANT)
-            {
-                thisCustomer.SetAnimationState(Constants.CUSTOMER_IDLE_SIT_ANIMATION); // If the customer is in the restaurant, set the animation to idle sit.
+                thisCustomer.SetAnimationState(Constants.CUSTOMER_IDLE_UP_ANIMATION); // Set the customer to idle facing the till point.
+                CacheRegister.SetState(true); // 'activate' the till point tile
             }
         }
 
@@ -308,12 +298,9 @@ public class LevelManager : MonoBehaviour
             {
                 // Spawn and set-up a new customer for the kitchen queue.
                 GameObject NewCustomer = Instantiate(CustomerPrefab, CustomerSpawningLocation, transform.rotation);
-                if (Registry.CurrentSceneName != Constants.KITCHEN) // If the player is not in the kitchen queue, set the customer to be hidden so isn't visible in the restaurant.
-                {
-                    NewCustomer.SetActive(false);
-                }
-                CustomerKitchenQueue.Enqueue(NewCustomer);
-                Registry.Customers.Add(NewCustomer);
+                ForegroundCustomer NewForegroundCustomer = NewCustomer.GetComponent<ForegroundCustomer>();
+                CustomerKitchenQueue.Enqueue(NewForegroundCustomer);
+                Registry.ForegroundCustomers.Add(NewForegroundCustomer);
                 UpdateQueuePositions();
                 CustomersInScene++;
             }
@@ -329,7 +316,7 @@ public class LevelManager : MonoBehaviour
 
     private void OnApplicationFocus(bool focus) // Pause the game when the user puts the game in the background. ONLY when in built version of the game
     {
-        if (!focus && !Application.isEditor && Registry.InGameLevel) // if NOT in focus
+        if (!focus && !Application.isEditor) // if NOT in focus
         {
             Registry.GameManagerObject.RenderGameSceneToFrameBuffer(); // needs to be called immediately
             Registry.GameManagerObject.ChangeScene(Constants.PAUSE_MENU); // Go to the Pause Menu scene.

@@ -22,21 +22,15 @@ public class Joystick : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        OnSceneChanged(); // Ensure the joystick is correctly positioned when the scene starts.
-    }
-
-    public void OnSceneChanged() // Called by the game-manager to ensure the joystick is correctly positioned after it has been re-created. (for example if there
-                                 // have been changes to the options menu.
+    private void Update()
     {
         if (Registry.JoystickScreenPosition == Constants.LEFT)
         {
-            transform.position = LeftPosition;
+            transform.localPosition = LeftPosition;
         }
         else
         {
-            transform.position = RightPosition;
+            transform.localPosition = RightPosition;
         }
     }
 }

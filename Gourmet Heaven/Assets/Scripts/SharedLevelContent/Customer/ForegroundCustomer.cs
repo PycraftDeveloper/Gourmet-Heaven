@@ -1,10 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
-public class Customer : CustomerCore // This class extends the customer core behaviour for customers that are interactable by the end user.
+public class ForegroundCustomer : CustomerCore // This class extends the customer core behaviour for customers that are interactable by the end user.
 {
     public IEnumerator CustomerCoroutine = null; // Store the currently running coroutine for the customer.
-    private MonoBehaviour GameManagerMono; // Store the game manager's MonoBehaviour.
 
     public string Meal; // Store the meal the customer wants.
     public string CustomerCoroutineDescription = Constants.NO_COROUTINE; // Store the description of the currently running coroutine.
@@ -22,6 +21,8 @@ public class Customer : CustomerCore // This class extends the customer core beh
 
     private int MealNumber = 0; // Used to determine how many meals the customer has ordered.
 
+    public Animator PatienceMeterAnimator;
+
     public IEnumerator MoveInQueue(Vector2 DestinationPosition) // Used to ensure the customers move correctly in the kitchen queue.
     {
         Vector2 TargetPosition = CurrentPosition;
@@ -30,8 +31,8 @@ public class Customer : CustomerCore // This class extends the customer core beh
         {
             SetAnimationState(Constants.CUSTOMER_WALK_SIDE_ANIMATION); // Start the customer walking sideways.
 
-            while (CurrentPosition.x - (Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime) > DestinationPosition.x && Registry.InGameLevel == true && gameObject != null) // Move the customer in the x axis until their
-                                                                                                                                                                           // next update puts them too far, and also stop updating if the context changes.
+            while (CurrentPosition.x - (Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime) > DestinationPosition.x && gameObject != null) // Move the customer in the x axis until their
+                                                                                                                                           // next update puts them too far, and also stop updating if the context changes.
             {
                 CurrentPosition.x -= Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime; // Move the player linearly using a constant movement speed.
                 yield return null;
@@ -49,20 +50,15 @@ public class Customer : CustomerCore // This class extends the customer core beh
     public IEnumerator MoveIntoRestaurant() // Used to give the illusion of customers walking out the bottom of the Kitchen, into the restaurant.
     {
         SetAnimationState(Constants.CUSTOMER_WALK_DOWN_ANIMATION); // Set the animation to walking.
-        while (CurrentLocation == Constants.KITCHEN && gameObject != null) // Whilst the player is in the same scene, and the customer hasn't been deleted
-                                                                           // which is mainly used for stopping execution through the editor and handling errors there.
+        while (gameObject != null && CurrentPosition.y > -6.31) // Whilst the player is in the same scene, and the customer hasn't been deleted
+                                                                // which is mainly used for stopping execution through the editor and handling errors there.
         {
             CurrentPosition = new Vector2(
                 CurrentPosition.x,
                 CurrentPosition.y - Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime); // move the customer down the scene.
-
-            if (CurrentPosition.y < -6.31 || Registry.InGameLevel == false) // When the customer is no longer visible in the
-                                                                            // kitchen, break out the while loop s it can be set up in the restaurant.
-            {
-                CurrentLocation = Constants.RESTAURANT;
-            }
             yield return null;
         }
+        CurrentPosition.y = -6.31f; // Set the customer to be at the bottom of the kitchen scene.
         PlaceIntoRestaurant(); // Set the customer up in the restaurant.
     }
 
@@ -77,11 +73,15 @@ public class Customer : CustomerCore // This class extends the customer core beh
             if (CustomerTableArrangement[PositionIndex] == null || CustomerTableArrangement[PositionIndex].GetComponent<BackgroundCustomer>()) // Ensure the table is empty - or a background customer is sat there
                                                                                                                                                // They can be overridden by more important customers.
             {
-                if (CustomerTableArrangement[PositionIndex] != null && CustomerTableArrangement[PositionIndex].GetComponent<BackgroundCustomer>()) // If the seat is occupied by a background customer, remove them.
+                if (CustomerTableArrangement[PositionIndex] != null) // If the seat is occupied by a background customer, remove them.
                 {
-                    Registry.Customers.Remove(CustomerTableArrangement[PositionIndex]);
-                    Destroy(CustomerTableArrangement[PositionIndex]);
-                    CustomerTableArrangement[PositionIndex] = null;
+                    BackgroundCustomer BackgroundCustomer = CustomerTableArrangement[PositionIndex].GetComponent<BackgroundCustomer>();
+                    if (BackgroundCustomer)
+                    {
+                        Registry.BackgroundCustomers.Remove(BackgroundCustomer);
+                        Destroy(CustomerTableArrangement[PositionIndex]);
+                        CustomerTableArrangement[PositionIndex] = null;
+                    }
                 }
                 if (PositionIndex % 2 == 0) // If the customer is sat on left side of the table, flip their scale to ensure they face towards the table.
                 {
@@ -93,11 +93,6 @@ public class Customer : CustomerCore // This class extends the customer core beh
                 SetupCustomerCoreForRestaurant(PositionIndex); // Set up the customer core for the restaurant.
                 Seated = true; // Stop the while loop now a seat has been found.
             }
-        }
-        if (Registry.CurrentSceneName != Constants.RESTAURANT) // In this situation, we want to hide the customer from the kitchen scene (where the player is) until
-                                                               // the player goes into the restaurant scene.
-        {
-            gameObject.SetActive(false);
         }
     }
 
@@ -160,7 +155,7 @@ public class Customer : CustomerCore // This class extends the customer core beh
                 InitialPatience = Patience;
                 MealNumber++;
 
-                if (PatienceMeterAnimator != null && CurrentLocation == Constants.RESTAURANT) // Also reset the patience meter.
+                if (PatienceMeterAnimator != null) // Also reset the patience meter.
                 {
                     PatienceMeterAnimator.StopPlayback();
                     PatienceMeterAnimator.Play("PatienceStart", 0, 1.0f - (Patience / InitialPatience));
@@ -178,7 +173,8 @@ public class Customer : CustomerCore // This class extends the customer core beh
 
     private void Update()
     {
-        if (CurrentLocation == Constants.RESTAURANT && InstantiatedOrderPopUpMessage != null && Registry.PlayerObject.HoldingMeal != Constants.NOT_HOLDING_MEAL)
+        ManagePatience(); // Call the base class function to manage the customer's patience.
+        if (InstantiatedOrderPopUpMessage != null && Registry.PlayerObject.HoldingMeal != Constants.NOT_HOLDING_MEAL)
         {
             // If the player is trying to serve customers in the restaurant, and is within the customer's hit box (see below).
             if (Input.touchCount > 0) // if touch input is used
@@ -202,7 +198,6 @@ public class Customer : CustomerCore // This class extends the customer core beh
     protected override void Awake()
     {
         base.Awake();
-        GameManagerMono = Registry.GameManagerObject.GetComponent<MonoBehaviour>();
 
         GenerateMeal();
         SetAnimationState(Constants.CUSTOMER_WALK_SIDE_ANIMATION); // Customers spawn into the kitchen and immediately need to walk in the queue.
@@ -212,7 +207,7 @@ public class Customer : CustomerCore // This class extends the customer core beh
     {
         if (collision.tag == "Player")
         {
-            if (CurrentLocation == Constants.RESTAURANT && InstantiatedOrderPopUpMessage == null && DeSpawn == false) // If the customer is not set to de-spawn, and is in the restaurant, and not yet been inetracted with
+            if (InstantiatedOrderPopUpMessage == null && DeSpawn == false) // If the customer is not set to de-spawn, and is in the restaurant, and not yet been inetracted with
             {
                 //Vector2 PopUpPosition = CurrentPosition;
                 //PopUpPosition.y += 0.3f + _Renderer.bounds.size.y / 2.0f;
@@ -273,7 +268,7 @@ public class Customer : CustomerCore // This class extends the customer core beh
     {
         if (description == Constants.NO_COROUTINE)
         {
-            GameManagerMono.StopCoroutine(CustomerCoroutine);
+            Registry.GameManagerObject.StopCoroutine(CustomerCoroutine);
             CustomerCoroutine = null;
             CustomerCoroutineDescription = Constants.NO_COROUTINE;
         }
@@ -288,20 +283,20 @@ public class Customer : CustomerCore // This class extends the customer core beh
         }
         else if (description == Constants.MOVE_INTO_RESTAURANT && CustomerCoroutineDescription == Constants.MOVE_IN_QUEUE)
         {
-            GameManagerMono.StopCoroutine(CustomerCoroutine);
+            Registry.GameManagerObject.StopCoroutine(CustomerCoroutine);
             CustomerCoroutine = coroutine;
             CustomerCoroutineDescription = description;
         }
         else if (description == Constants.MOVE_IN_QUEUE && CustomerCoroutineDescription == Constants.MOVE_IN_QUEUE)
         {
-            GameManagerMono.StopCoroutine(CustomerCoroutine);
+            Registry.GameManagerObject.StopCoroutine(CustomerCoroutine);
             CustomerCoroutine = coroutine;
         }
         if (_Renderer == null)
         {
             _Renderer = GetComponent<Renderer>();
         }
-        GameManagerMono.StartCoroutine(CustomerCoroutine);
+        Registry.GameManagerObject.StartCoroutine(CustomerCoroutine);
     }
 
     private void GenerateMeal() // Generate a new random meal for the customer.
@@ -327,17 +322,8 @@ public class Customer : CustomerCore // This class extends the customer core beh
         }
     }
 
-    public override void OnEnable()
+    protected void OnDestroy()
     {
-        base.OnEnable();
-
-        SetAnimationState(CustomerAnimationState); // Automatically re-set the customer's animation to ensure it's playing when the player enters the scene.
-    }
-
-    protected override void OnDestroy()
-    {
-        base.OnDestroy();
-
         if (Registry.LevelManagerObject != null)
         {
             Registry.LevelManagerObject.CustomersInScene--; // Ensure that when the customer is destroyed, the number of customer's in the game scenes is reduced.

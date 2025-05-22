@@ -51,7 +51,7 @@ public class EndMenuManagerScript : MonoBehaviour
         {
             Registry.LevelCustomiserObject.SetupLevelTwo();
         }
-        Registry.GameManagerObject.ChangeScene(Constants.KITCHEN);
+        Registry.GameManagerObject.ChangeScene(Constants.GAME_LEVEL);
     }
 
     // The remainder of these functions are not used, but would allow the player to go back to the main menu or quit the game from the end menu.
