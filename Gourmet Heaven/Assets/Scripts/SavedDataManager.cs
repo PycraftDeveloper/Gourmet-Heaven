@@ -11,6 +11,13 @@ public class GameData
 
     public float MusicVolume = 0.8f;
     public float SFXVolume = 0.8f;
+
+    public bool GameTutorialShown = false;
+
+    public bool BunsMGTutorialShown = false;
+    public bool PhoMGTutorialShown = false;
+    public bool RiceMGTutorialShown = false;
+    public bool SushiMGTutorialShown = false;
 }
 
 public class SavedDataManager
@@ -42,8 +49,16 @@ public class SavedDataManager
             }
             LoadedData = JsonUtility.FromJson<GameData>(dataToLoad);
             Registry.JoystickScreenPosition = LoadedData.JoystickScreenPosition;
+
             Registry.MusicVolume = LoadedData.MusicVolume;
             Registry.SFXVolume = LoadedData.SFXVolume;
+
+            Registry.GameTutorialShown = LoadedData.GameTutorialShown;
+
+            Registry.BunsMGTutorialShown = LoadedData.BunsMGTutorialShown;
+            Registry.PhoMGTutorialShown = LoadedData.PhoMGTutorialShown;
+            Registry.RiceMGTutorialShown = LoadedData.RiceMGTutorialShown;
+            Registry.SushiMGTutorialShown = LoadedData.SushiMGTutorialShown;
         }
     }
 
@@ -53,9 +68,18 @@ public class SavedDataManager
         Directory.CreateDirectory(SaveFileLocation);
 
         GameData SavedData = new GameData();
+
         SavedData.JoystickScreenPosition = Registry.JoystickScreenPosition;
+
         SavedData.MusicVolume = Registry.MusicVolume;
         SavedData.SFXVolume = Registry.SFXVolume;
+
+        SavedData.GameTutorialShown = Registry.GameTutorialShown;
+
+        SavedData.BunsMGTutorialShown = Registry.BunsMGTutorialShown;
+        SavedData.PhoMGTutorialShown = Registry.PhoMGTutorialShown;
+        SavedData.RiceMGTutorialShown = Registry.RiceMGTutorialShown;
+        SavedData.SushiMGTutorialShown = Registry.SushiMGTutorialShown;
 
         string SerialisedGameData = JsonUtility.ToJson(SavedData, true);
 

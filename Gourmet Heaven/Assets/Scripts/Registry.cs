@@ -37,6 +37,8 @@ public static class Registry
     public static bool RiceMGTutorialShown = false;
     public static bool SushiMGTutorialShown = false;
 
+    public static bool GameTutorialShown = false; // Used to determine if the game tutorial has been shown.
+
     public static int NotInTutorialScreenTimeModifier = 1; // Used to stop time passing when reading the tutorial so player not rushed.
 
     public static bool IntroSequencePlayed = false;

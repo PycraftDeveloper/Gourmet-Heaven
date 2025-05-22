@@ -38,6 +38,8 @@ public class EndMenuManagerScript : MonoBehaviour
         int StarScoreID = ((int)((StoredPlayerScore / (float)(StoredMaxScore + 1)) * 5)); // using 'max score' +1 to ensure index always in bounds.
         StarScoreID = Mathf.Clamp(StarScoreID, 0, StarScores.Length - 1); // Clamp the score to the range of 0 to 4, to account for current score being allowed to be higher than max score.
         Instantiate(StarScores[StarScoreID], transform); // Display the player's number of stars awarded for the game.
+
+        Registry.GameTutorialShown = true; // Set the game tutorial to be shown, so it doesn't show again when the player goes back to the level selection menu.
     }
 
     public void OnPlayAgainButtonClick() // Used to restart the game by going back to the level the player was previously playing.
