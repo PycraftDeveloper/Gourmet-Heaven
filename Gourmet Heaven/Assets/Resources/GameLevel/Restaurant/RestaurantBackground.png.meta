@@ -158,6 +158,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
       Restaurant_LayoutBIG_0: -8914859880118385744
   mipmapLimitGroupName: 
