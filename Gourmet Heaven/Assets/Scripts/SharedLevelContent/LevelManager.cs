@@ -148,7 +148,7 @@ public class LevelManager : MonoBehaviour
             ForegroundCustomer _Customer = Registry.ForegroundCustomers[i];
             if (_Customer != null)
             {
-                if (_Customer.CurrentPosition.x == 0.5f) // If the customer is in the correct location and is in the position in the queue at the till point.
+                if (_Customer.CurrentPosition.x == 0.5f && _Customer.CurrentPosition.y == -3.61f) // If the customer is in the correct location and is in the position in the queue at the till point.
                 {
                     CustomerKitchenQueue.Dequeue(); // Remove the first customer from the queue.
                     _Customer.MealPlaced = true;

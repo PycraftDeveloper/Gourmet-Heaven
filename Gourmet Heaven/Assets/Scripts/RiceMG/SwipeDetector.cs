@@ -30,7 +30,7 @@ public class SwipeDetector : MonoBehaviour
             }
             else
             {
-                Debug.Log("Swipe too short!");
+                //Debug.Log("Swipe too short!");
             }
         }
     }

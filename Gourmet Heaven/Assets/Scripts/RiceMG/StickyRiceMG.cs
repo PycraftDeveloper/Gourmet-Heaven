@@ -126,7 +126,7 @@ public class SlicedObject : MonoBehaviour
 
         if (slicePoints.Length < 2 || pointsSliced[currentSliceIndex])
         {
-            Debug.LogError("Invalid slice points!");
+            //Debug.LogError("Invalid slice points!");
             return;
         }
 
@@ -181,7 +181,7 @@ public class SlicedObject : MonoBehaviour
             isSliced = true;
             Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.MangoFinish); // Added by Joshua Cossar
             ShowMessage("Amazing!");
-            Debug.Log("Mango Fully Sliced!");
+            //Debug.Log("Mango Fully Sliced!");
             Registry.PlayerObject.GetComponent<Player>().HoldingMeal = Constants.MANGO_STICKY_RICE;
 
             Registry.RiceMGTutorialShown = true;
