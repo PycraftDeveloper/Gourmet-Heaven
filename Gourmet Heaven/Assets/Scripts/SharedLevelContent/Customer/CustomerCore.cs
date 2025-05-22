@@ -14,6 +14,7 @@ public class CustomerCore : MonoBehaviour
 
     public int ModelIndex;
     public int CustomerTablePosition; // Stores the customer's position in the restaurant (if applicable).
+    public bool CustomerSeated = false; // Used to determine if the customer is seated in the restaurant or not.
 
     public bool DeSpawn = false; // Used to determine when the customer can be garbage collected.
 
@@ -75,22 +76,28 @@ public class CustomerCore : MonoBehaviour
 
     protected void ManagePatience()
     {
-        Patience -= Time.deltaTime * Registry.NotInTutorialScreenTimeModifier;
-
-        if (Patience <= 0) // Flag for garbage collection.
+        if (CustomerSeated)
         {
-            DeSpawn = true;
+            Patience -= Time.deltaTime * Registry.NotInTutorialScreenTimeModifier;
+
+            if (Patience <= 0) // Flag for garbage collection.
+            {
+                DeSpawn = true;
+            }
         }
     }
 
     protected void ManagePatience(Animator PatienceMeterAnimator)
     {
-        PatienceMeterAnimator.speed = 30.017f / InitialPatience; // Determine the patience speed based on how much patience the customer has to begin with (randomly generated).
-        Patience -= Time.deltaTime * Registry.NotInTutorialScreenTimeModifier;
-
-        if (Patience <= 0) // Flag for garbage collection.
+        if (CustomerSeated)
         {
-            DeSpawn = true;
+            PatienceMeterAnimator.speed = 30.017f / InitialPatience; // Determine the patience speed based on how much patience the customer has to begin with (randomly generated).
+            Patience -= Time.deltaTime * Registry.NotInTutorialScreenTimeModifier;
+
+            if (Patience <= 0) // Flag for garbage collection.
+            {
+                DeSpawn = true;
+            }
         }
     }
 }

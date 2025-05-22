@@ -6,6 +6,8 @@ public class BackgroundCustomer : CustomerCore // This class extends the core cu
         base.Awake();
 
         _Animator.SetInteger("customerState", Constants.CUSTOMER_IDLE_SIT_ANIMATION); // Set the animation to idle sit.
+
+        CustomerSeated = true;
     }
 
     private void Update()

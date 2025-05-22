@@ -92,6 +92,7 @@ public class ForegroundCustomer : CustomerCore // This class extends the custome
                 SetAnimationState(Constants.CUSTOMER_IDLE_SIT_ANIMATION); // Ensure that when placed into the restaurant, the customer is in the sitting animation
                 SetupCustomerCoreForRestaurant(PositionIndex); // Set up the customer core for the restaurant.
                 Seated = true; // Stop the while loop now a seat has been found.
+                CustomerSeated = true; // Set the customer to be seated in the restaurant.
             }
         }
     }
