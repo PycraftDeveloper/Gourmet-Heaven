@@ -139,6 +139,16 @@ public class LevelManager : MonoBehaviour
             CinemachineCameraTarget.TrackingTarget = Registry.PlayerObject.transform; // Set the camera target to the player object.
             GameLevelCinemachineCamera.Target = CinemachineCameraTarget;
         }
+
+        Canvas[] UICanvases = FindObjectsByType<Canvas>(FindObjectsInactive.Include, FindObjectsSortMode.None); // Find the UI canvas in the scene.
+        foreach (Canvas UICanvas in UICanvases)
+        {
+            if (UICanvas.gameObject.name == "PopUpCanvas") // Find the Game UI canvas.
+            {
+                UICanvas.worldCamera = Camera.main; // Set the camera for the UI canvas to the main camera.
+                break;
+            }
+        }
     }
 
     public void HandleOrderCollection() // Runs when the player collects an order from the customer standing at the cache machine.

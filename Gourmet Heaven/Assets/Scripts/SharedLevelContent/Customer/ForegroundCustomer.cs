@@ -10,8 +10,6 @@ public class ForegroundCustomer : CustomerCore // This class extends the custome
 
     public Vector2 CurrentVelocity = Vector2.zero; // Store the current velocity of the customer, used in moving them in the kitchen queue.
 
-    private int CustomerAnimationState; // Store the current animation state of the customer.
-
     public bool MealPlaced = false; // Determine if the customer has placed their meal with the player or not.
 
     public GameObject[] OrderPopUpMessages = new GameObject[4]; // Stores a list of all the different 'meal thought bubbles' prefabs the player can have
@@ -253,15 +251,6 @@ public class ForegroundCustomer : CustomerCore // This class extends the custome
         if (InstantiatedOrderPopUpMessage != null)
         {
             Destroy(InstantiatedOrderPopUpMessage); // When the player leaves the customer's hit box, hide the pop-up message.
-        }
-    }
-
-    public void SetAnimationState(int StateNumber)
-    {
-        if (_Animator != null) // Set and keep track of the customer's animation state.
-        {
-            CustomerAnimationState = StateNumber;
-            _Animator.SetInteger("customerState", CustomerAnimationState);
         }
     }
 

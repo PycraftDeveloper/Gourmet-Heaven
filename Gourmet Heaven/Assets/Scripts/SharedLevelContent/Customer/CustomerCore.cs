@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 // Note: This class is inherited by both varieties of customer, so any reference to 'customer' here refers to both types of customer.
@@ -14,8 +13,9 @@ public class CustomerCore : MonoBehaviour
 
     public int ModelIndex;
     public int CustomerTablePosition; // Stores the customer's position in the restaurant (if applicable).
-    public bool CustomerSeated = false; // Used to determine if the customer is seated in the restaurant or not.
+    private int CustomerAnimationState; // Store the current animation state of the customer.
 
+    public bool CustomerSeated = false; // Used to determine if the customer is seated in the restaurant or not.
     public bool DeSpawn = false; // Used to determine when the customer can be garbage collected.
 
     public float Patience;
@@ -71,6 +71,23 @@ public class CustomerCore : MonoBehaviour
         if (PatienceMeter != null)
         {
             PatienceMeter.SetActive(true);
+        }
+    }
+
+    public void SetAnimationState(int StateNumber)
+    {
+        if (_Animator != null) // Set and keep track of the customer's animation state.
+        {
+            CustomerAnimationState = StateNumber;
+            _Animator.SetInteger("customerState", CustomerAnimationState);
+        }
+    }
+
+    protected void OnEnable()
+    {
+        if (_Animator != null)
+        {
+            _Animator.SetInteger("customerState", CustomerAnimationState);
         }
     }
 
