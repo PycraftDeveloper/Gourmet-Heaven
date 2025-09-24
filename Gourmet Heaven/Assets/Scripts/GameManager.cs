@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
+using UnityEngine.UIElements;
 
 // Game scene - The Kitchen or Restaurant scenes but no others.
 
@@ -135,14 +137,14 @@ public class GameManager : MonoBehaviour
 
     private void DisableGameLevelContents()
     {
-        foreach (ForegroundCustomer Customer in Registry.ForegroundCustomers)
+        for (int i = Registry.ForegroundCustomers.Count - 1; i >= 0; i--)
         {
-            Customer.gameObject.SetActive(false); // Enable all foreground customers in the scene.
+            Registry.ForegroundCustomers[i].gameObject.SetActive(false);
         }
 
-        foreach (BackgroundCustomer Customer in Registry.BackgroundCustomers)
+        for (int i = Registry.BackgroundCustomers.Count - 1; i >= 0; i--)
         {
-            Customer.gameObject.SetActive(false); // Enable all background customers in the scene.
+            Registry.BackgroundCustomers[i].gameObject.SetActive(false);
         }
 
         if (Registry.PlayerObject != null)

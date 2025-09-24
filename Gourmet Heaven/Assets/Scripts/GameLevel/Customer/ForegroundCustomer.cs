@@ -1,3 +1,4 @@
+using NUnit.Framework.Internal.Filters;
 using System.Collections;
 using UnityEngine;
 
@@ -170,9 +171,10 @@ public class ForegroundCustomer : CustomerCore // This class extends the custome
         }
     }
 
-    private void Update()
+    protected override void Update()
     {
-        ManagePatience(); // Call the base class function to manage the customer's patience.
+        base.Update(); // Call the base class update method to manage patience.
+
         if (InstantiatedOrderPopUpMessage != null && Registry.PlayerObject.HoldingMeal != Constants.NOT_HOLDING_MEAL)
         {
             // If the player is trying to serve customers in the restaurant, and is within the customer's hit box (see below).
@@ -198,8 +200,28 @@ public class ForegroundCustomer : CustomerCore // This class extends the custome
     {
         base.Awake();
 
+        IsForegroundCustomer = true; // Set the customer to be a foreground customer.
+
         GenerateMeal();
         SetAnimationState(Constants.CUSTOMER_WALK_SIDE_ANIMATION); // Customers spawn into the kitchen and immediately need to walk in the queue.
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+
+        if (PatienceMeterAnimator == null)
+        {
+            if (PatienceMeter == null)
+            {
+                Debug.LogError("Patience meter not assigned in the inspector for customer prefab.");
+                return;
+            }
+            PatienceMeterAnimator = PatienceMeter.GetComponent<Animator>();
+        }
+
+        PatienceMeterAnimator.StopPlayback();
+        PatienceMeterAnimator.Play("PatienceStart", 0, 1.0f - (Patience / InitialPatience));
     }
 
     private void OnTriggerStay2D(Collider2D collision)

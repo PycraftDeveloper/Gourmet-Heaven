@@ -10,9 +10,10 @@ public class BackgroundCustomer : CustomerCore // This class extends the core cu
         CustomerSeated = true;
     }
 
-    private void Update()
+    protected override void Update()
     {
-        ManagePatience(); // Call the base class method to manage the patience of the customer.
+        base.Update();
+
         _Animator.SetInteger("customerState", Constants.CUSTOMER_IDLE_SIT_ANIMATION); // Keep the customer in the idle sitting animation until they de-spawn.
     }
 }

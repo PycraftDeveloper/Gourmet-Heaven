@@ -17,11 +17,14 @@ public class CustomerCore : MonoBehaviour
 
     public bool CustomerSeated = false; // Used to determine if the customer is seated in the restaurant or not.
     public bool DeSpawn = false; // Used to determine when the customer can be garbage collected.
+    public bool IsForegroundCustomer = false; // Used to determine if the customer is a foreground or background customer.
 
     public float Patience;
     public float InitialPatience;
 
     public Vector2 CurrentPosition;
+
+    public float DisableTime;
 
     protected virtual void Awake()
     {
@@ -83,11 +86,59 @@ public class CustomerCore : MonoBehaviour
         }
     }
 
-    protected void OnEnable()
+    protected virtual void OnEnable()
     {
+        Patience -= Time.time - DisableTime;
+
         if (_Animator != null)
         {
             _Animator.SetInteger("customerState", CustomerAnimationState);
+        }
+    }
+
+    protected virtual void OnDisable()
+    {
+        DisableTime = Time.time; // Record the time the customer was disabled.
+
+        if (DeSpawn)
+        {
+            if (IsForegroundCustomer)
+            {
+                Registry.ForegroundCustomers.Remove(gameObject.GetComponent<ForegroundCustomer>());
+            }
+            else
+            {
+                Registry.BackgroundCustomers.Remove(gameObject.GetComponent<BackgroundCustomer>());
+            }
+
+            if (CustomerSeated)
+            {
+                Registry.LevelManagerObject.CustomerTableArrangement[CustomerTablePosition] = null; // Free up the seating position in the restaurant.
+            }
+
+            Destroy(gameObject); // If the customer is flagged for garbage collection, destroy it when it is disabled.
+        }
+    }
+
+    public void GarbageCollectCustomer()
+    {
+        if (!_Renderer.isVisible)
+        {
+            if (IsForegroundCustomer)
+            {
+                Registry.ForegroundCustomers.Remove(gameObject.GetComponent<ForegroundCustomer>());
+            }
+            else
+            {
+                Registry.BackgroundCustomers.Remove(gameObject.GetComponent<BackgroundCustomer>());
+            }
+
+            if (CustomerSeated)
+            {
+                Registry.LevelManagerObject.CustomerTableArrangement[CustomerTablePosition] = null; // Free up the seating position in the restaurant.
+            }
+
+            Destroy(gameObject); // If the customer is flagged for garbage collection, destroy it when it is disabled.
         }
     }
 
@@ -115,6 +166,16 @@ public class CustomerCore : MonoBehaviour
             {
                 DeSpawn = true;
             }
+        }
+    }
+
+    protected virtual void Update()
+    {
+        ManagePatience();
+
+        if (DeSpawn)
+        {
+            GarbageCollectCustomer();
         }
     }
 }

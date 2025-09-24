@@ -290,7 +290,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if (CustomerKitchenQueue.Count == 0 || CustomerSpawnTimer > NextCustomerSpawnTime) // If there are no customers waiting to be served, or it's time to spawn a new customer in the queue.
+        if (Registry.PlayerObject.transform.position.y > -2.4 && (CustomerKitchenQueue.Count == 0 || CustomerSpawnTimer > NextCustomerSpawnTime)) // If there are no customers waiting to be served, or it's time to spawn a new customer in the queue.
         {
             if (CustomerKitchenQueue.Count == 0)
             {
