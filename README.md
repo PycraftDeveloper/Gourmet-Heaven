@@ -5,7 +5,9 @@
 
 # Gourmet Heaven
 
-Gourmet Heaven is an Asian inspired cooking game.
+Gourmet Heaven is an Asian inspired cooking game made using Unity 6000.0.39f1 for Android/IpadOS/Windows.
+
+**NOTE: The `main` branch contains code with additional changes made since the assignment submission. For the submitted version of the game please use the `SUBMITTED-VERSION` branch or the release with the same name here: 'https://github.com/PycraftDeveloper/Gourmet-Heaven/releases'**
 
 ## Setup
 ### Windows
