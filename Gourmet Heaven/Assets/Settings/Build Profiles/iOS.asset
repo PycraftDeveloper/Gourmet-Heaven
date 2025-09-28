@@ -39,10 +39,6 @@ MonoBehaviour:
   - m_enabled: 1
     m_path: Assets/Scenes/SushiMG.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/Restaurant.unity
-  - m_enabled: 1
-    m_path: Assets/Scenes/Kitchen.unity
-  - m_enabled: 1
     m_path: Assets/Scenes/PauseMenu.unity
   - m_enabled: 1
     m_path: Assets/Scenes/EndMenu.unity
