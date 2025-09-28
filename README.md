@@ -7,6 +7,8 @@
 
 Gourmet Heaven is an Asian inspired cooking game.
 
+**This is the original version of the game that was submitted to complete the `Group Game Project: Fundamentals` University of Northampton assignment.**
+
 ## Setup
 ### Windows
 On the Windows operating system, you need to just double click the "gourmet heaven.exe" to start the game.
