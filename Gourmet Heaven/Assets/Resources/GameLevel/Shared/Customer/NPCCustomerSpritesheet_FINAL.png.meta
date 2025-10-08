@@ -359,6 +359,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -2177,6 +2190,7 @@ TextureImporter:
       NPCOrangeWalkSide1: -6648403291116568289
       NPCOrangeWalkSide2: -3921848125105795066
       NPCOrangeWalkSide3: 819138554523980434
+      NPCPinkIdleSide1: -365073628716854185
       NPCPinkIdleSide2: -8409142790251348942
       NPCPinkIdleUp1: -189342786083650304
       NPCPinkIdleUp2: -5426264194069664530
