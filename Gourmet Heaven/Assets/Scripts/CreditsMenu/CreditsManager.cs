@@ -4,6 +4,7 @@ public class CreditsMenuManagerScript : MonoBehaviour
 {
     public void OnBackButtonClicked()
     {
+        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.ButtonClickSound);
         Registry.GameManagerObject.ChangeScene();
     }
 

@@ -4,21 +4,25 @@ public class PauseMenuManagerScript : MonoBehaviour
 {
     public void OnResumeButtonClick()
     {
+        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.ButtonClickSound);
         Registry.GameManagerObject.ChangeScene();
     }
 
     public void OnOptionsButtonClick()
     {
+        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.ButtonClickSound);
         Registry.GameManagerObject.ChangeScene(Constants.OPTIONS_MENU);
     }
 
     public void OnMainMenuButtonClick()
     {
+        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.ButtonClickSound);
         Registry.GameManagerObject.ChangeScene(Constants.MAIN_MENU);
     }
 
     public void OnQuitButtonClick()
     {
+        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.ButtonClickSound);
         Registry.GameManagerObject.QuitGame();
     }
 
@@ -26,7 +30,7 @@ public class PauseMenuManagerScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            OnResumeButtonClick();
+            Registry.GameManagerObject.ChangeScene();
         }
     }
 }

@@ -17,6 +17,8 @@ public class UIManager : MonoBehaviour // This class controls the buttons and be
 
     public void OnPauseButtonClick()
     {
+        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.ButtonClickSound);
+        Registry.GameManagerObject.ChangeScene();
         Registry.GameManagerObject.ChangeScene(Constants.PAUSE_MENU);
     }
 

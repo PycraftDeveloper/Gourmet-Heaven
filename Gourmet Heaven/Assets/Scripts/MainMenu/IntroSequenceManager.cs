@@ -101,6 +101,17 @@ public class IntroSequenceManager : MonoBehaviour
         IntroZoomObject.transform.localScale = new Vector3(EndZoom, EndZoom, EndZoom);
         IntroZoomObject.transform.localPosition = new Vector2(-187, 593);
 
+        AnimationBackground.color = new Color(0, 0, 0, 0);
+
+        Duration = 0;
+        TotalDuration = 0.5f;
+        while (Duration < TotalDuration)
+        {
+            IntroZoomImage.color = new Color(1, 1, 1, 1.0f - (Duration / TotalDuration));
+            Duration += Time.deltaTime;
+            yield return null;
+        }
+
         AnimationSequencePlaying = false;
     }
 }

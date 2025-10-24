@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     [Header("AudioSources")]
     [SerializeField] private AudioSource musicSource;
 
+    [SerializeField] private AudioSource GameMusicSource;
+
     [SerializeField] public AudioSource SFXSource;
 
     [Header("AudioClips")]
@@ -35,6 +37,7 @@ public class GameManager : MonoBehaviour
     public AudioClip CustomerFinish2;
     public AudioClip CustomerFinish3;
     public AudioClip RestaurantAmbience;
+    public AudioClip ButtonClickSound;
     // end - this section of code was worked on by Joshua Cossar (^)
 
     private Stack<string> MenuStack = new Stack<string>(); // stores a stack containing all the menus previously visited
@@ -67,7 +70,7 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         savedDataManager = new SavedDataManager();
-        savedDataManager.Load(); // set-up the data manager, and load any previous saved data.
+        //savedDataManager.Load(); // set-up the data manager, and load any previous saved data.
 
         MenuStack.Push(Constants.MAIN_MENU); // Pre-fill the menu stack with the initial game set-up.
 
@@ -93,6 +96,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetGameLevel() // Used to reset both game levels when the player reaches the main menu or end screen.
     {
+        GameMusicSource.Stop();
         Registry.PlayerScore = 0;
 
         foreach (ForegroundCustomer Customer in Registry.ForegroundCustomers)
@@ -217,17 +221,24 @@ public class GameManager : MonoBehaviour
                 SFXSource.Play(); // Start playing the sound if it isn't currently playing.
             }
 
-            if (musicSource.clip != bgm_InGame)
+            musicSource.Stop(); // Stop other music source.
+
+            if (GameMusicSource.clip != bgm_InGame)
             {
-                musicSource.clip = bgm_InGame;
-                musicSource.volume = Registry.MusicVolume;
-                musicSource.Play();
+                GameMusicSource.clip = bgm_InGame;
+                GameMusicSource.volume = Registry.MusicVolume;
+                GameMusicSource.Play();
+            }
+            else
+            {
+                GameMusicSource.UnPause();
             }
 
             EnableGameLevelContents(); // Enable the game level contents.
         }
         else
         {
+            GameMusicSource.Pause();
             DisableGameLevelContents(); // Disable the game level contents.
         }
 
@@ -375,6 +386,7 @@ public class GameManager : MonoBehaviour
         // Apply the volume adjustments from the options menu
         musicSource.volume = Registry.MusicVolume;
         SFXSource.volume = Registry.SFXVolume;
+        GameMusicSource.volume = Registry.MusicVolume;
 
         // Automatically switch from game scene to end menu when timer runs out (also handled here).
         if (Registry.LevelRunTime > 0)
