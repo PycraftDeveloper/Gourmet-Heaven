@@ -33,8 +33,6 @@ public class CustomerCore : MonoBehaviour
 
     public virtual void Initialise()
     {
-        DontDestroyOnLoad(gameObject); // Ensure the customer persists across scene changes. Its lifetime is controlled elsewhere.
-
         _Animator = GetComponent<Animator>();
         _RigidBody2D = GetComponent<Rigidbody2D>();
         _Renderer = GetComponent<Renderer>();

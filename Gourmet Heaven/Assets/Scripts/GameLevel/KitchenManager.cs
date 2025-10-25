@@ -10,22 +10,54 @@ public class KitchenManager : MonoBehaviour
     // Allow the pop-ups to act as buttons, transitioning to the associated mini-game
     public void OnChoppingBoardPopUpButtonClick()
     {
-        Registry.GameManagerObject.ChangeScene(Constants.RICE_MG);
+        if (!Registry.RiceMGTutorialShown)
+        {
+            Registry.RiceMGTutorialShown = true;
+            Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.RICE_MG_TUTORIAL_MENU);
+        }
+        else
+        {
+            Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.RICE_MG_MENU);
+        }
     }
 
     public void OnCookingPotPopUpButtonClick()
     {
-        Registry.GameManagerObject.ChangeScene(Constants.BUNS_MG);
+        if (!Registry.BunsMGTutorialShown)
+        {
+            Registry.BunsMGTutorialShown = true;
+            Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.BUNS_MG_TUTORIAL_MENU);
+        }
+        else
+        {
+            Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.BUNS_MG_MENU);
+        }
     }
 
     public void OnPhoBowlPopUpButtonClick()
     {
-        Registry.GameManagerObject.ChangeScene(Constants.PHO_MG);
+        if (!Registry.PhoMGTutorialShown)
+        {
+            Registry.PhoMGTutorialShown = true;
+            Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.PHO_MG_TUTORIAL_MENU);
+        }
+        else
+        {
+            Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.PHO_MG_MENU);
+        }
     }
 
     public void OnRollingMatPopUpButtonClick()
     {
-        Registry.GameManagerObject.ChangeScene(Constants.SUSHI_MG);
+        if (!Registry.SushiMGTutorialShown)
+        {
+            Registry.SushiMGTutorialShown = true;
+            Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.SUSHI_MG_TUTORIAL_MENU);
+        }
+        else
+        {
+            Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.SUSHI_MG_MENU);
+        }
     }
 
     // Allow the player to click on the bin's pop-up to remove the meal from the player's hands.

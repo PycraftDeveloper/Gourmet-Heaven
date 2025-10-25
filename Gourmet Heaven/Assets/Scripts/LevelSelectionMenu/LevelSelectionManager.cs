@@ -2,64 +2,52 @@ using UnityEngine;
 
 public class LevelSelectionMenuManagerScript : MonoBehaviour
 {
-    public Canvas TutorialCanvas;
-    public Canvas LevelSelectCanvas;
+    public Canvas MenuCanvas;
 
-    private void Start()
+    public void Start()
     {
-        LevelSelectCanvas.gameObject.SetActive(true);
+        MenuCanvas.worldCamera = Camera.main;
     }
 
     public void OnLevelOneButtonClick()
     {
-        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.ButtonClickSound);
         Registry.LevelCustomiserObject.SetupLevelOne();
+        Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.ButtonClickSound);
         if (!Registry.GameTutorialShown)
         {
-            LevelSelectCanvas.gameObject.SetActive(false);
-            TutorialCanvas.gameObject.SetActive(true);
+            Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.GAME_TUTORIAL_MENU);
         }
         else
         {
-            Camera.main.enabled = false;
-            Registry.GameManagerObject.ChangeScene(Constants.GAME_LEVEL);
+            Registry.CoreGameInfrastructureObject.ChangeScene(Constants.GAME_SCENE);
         }
     }
 
     public void OnLevelTwoButtonClick()
     {
-        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.ButtonClickSound);
         Registry.LevelCustomiserObject.SetupLevelTwo();
+        Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.ButtonClickSound);
         if (!Registry.GameTutorialShown)
         {
-            LevelSelectCanvas.gameObject.SetActive(false);
-            TutorialCanvas.gameObject.SetActive(true);
+            Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.GAME_TUTORIAL_MENU);
         }
         else
         {
-            Camera.main.enabled = false;
-            Registry.GameManagerObject.ChangeScene(Constants.GAME_LEVEL);
+            Registry.CoreGameInfrastructureObject.ChangeScene(Constants.GAME_SCENE);
         }
-    }
-
-    public void OnContinueButtonClick()
-    {
-        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.ButtonClickSound);
-        Camera.main.enabled = false;
-        Registry.GameManagerObject.ChangeScene(Constants.GAME_LEVEL);
     }
 
     public void OnBackButtonClick()
     {
-        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.ButtonClickSound);
-        Registry.GameManagerObject.ChangeScene();
+        Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.ButtonClickSound);
+        Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.PREVIOUS_MENU);
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Registry.GameManagerObject.ChangeScene();
+            Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.PREVIOUS_MENU);
         }
     }
 }

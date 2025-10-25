@@ -11,6 +11,11 @@ TagManager:
   - PhoBowlPopUp
   - RollingMatPopUp
   - BinPopUp
+  - Undefined
+  - PhoBorderLeft
+  - PhoBorderRight
+  - PhoBorder
+  - PhoFallingIngredient
   layers:
   - Default
   - TransparentFX

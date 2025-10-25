@@ -4,22 +4,15 @@ public class UIManager : MonoBehaviour // This class controls the buttons and be
 {
     private void Awake() // This object is also set to persist between scene changes and is managed instead in the GameManager.
     {
-        if (Registry.UIManagerObject == null)
-        {
-            DontDestroyOnLoad(gameObject);
-            Registry.UIManagerObject = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Registry.UIManagerObject = this;
     }
 
     public void OnPauseButtonClick()
     {
-        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.ButtonClickSound);
-        Registry.GameManagerObject.ChangeScene();
-        Registry.GameManagerObject.ChangeScene(Constants.PAUSE_MENU);
+        Registry.GamePaused = true;
+        Registry.CoreGameInfrastructureObject.RenderGameSceneToFrameBuffer();
+        Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.ButtonClickSound);
+        Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.PAUSE_MENU);
     }
 
     public void OnSceneChanged() // Ensure that the canvas uses the correct world camera when the scenes change (as the camera for the previous scene is destroyed).

@@ -23,20 +23,27 @@ public static class Constants
     public const string LEFT = "Left";
     public const string RIGHT = "Right";
 
-    // Store the scene names
-    public const string MAIN_MENU = "MainMenu";
+    public const string MAIN_MENU = "main menu";
+    public const string SETTINGS_MENU = "settings menu";
+    public const string CREDITS_MENU = "credits menu";
+    public const string SHOP_MENU = "shop menu";
+    public const string LEVEL_SELECTION_MENU = "level selection menu";
+    public const string PAUSE_MENU = "pause menu";
+    public const string BUNS_MG_MENU = "buns mini-game";
+    public const string PHO_MG_MENU = "pho mini-game";
+    public const string RICE_MG_MENU = "rice mini-game";
+    public const string SUSHI_MG_MENU = "sushi mini-game";
+    public const string BUNS_MG_TUTORIAL_MENU = "buns mini-game tutorial";
+    public const string PHO_MG_TUTORIAL_MENU = "pho mini-game tutorial";
+    public const string RICE_MG_TUTORIAL_MENU = "rice mini-game tutorial";
+    public const string SUSHI_MG_TUTORIAL_MENU = "sushi mini-game tutorial";
+    public const string END_MENU = "end menu";
+    public const string INTRO_SEQU_ANIM_MENU = "intro sequ anim menu";
+    public const string PREVIOUS_MENU = "previous menu";
+    public const string GAME_TUTORIAL_MENU = "game tutorial menu";
 
-    public const string OPTIONS_MENU = "OptionsMenu";
-    public const string CREDITS_MENU = "CreditsMenu";
-    public const string SHOP_MENU = "ShopMenu";
-    public const string LEVEL_SELECTION_MENU = "LevelSelectionMenu";
-    public const string PAUSE_MENU = "PauseMenu";
-    public const string BUNS_MG = "BunsMG";
-    public const string PHO_MG = "PhoMG";
-    public const string RICE_MG = "RiceMG";
-    public const string SUSHI_MG = "SushiMG";
-    public const string END_MENU = "EndMenu";
-    public const string GAME_LEVEL = "GameLevel";
+    public const string GAME_SCENE = "Game";
+    public const string MENU_SCENE = "Menu";
 
     // Store the meals the player can hold.
     public const string PHO = "pho";

@@ -27,31 +27,23 @@ public class SlicedObject : MonoBehaviour
     public GameObject MiniGameTimerObject;
     private CountdownTimer MiniGameTimer;
 
-    public GameObject TutorialCanvas; // (Added by: Thomas Jebson)
+    public Canvas MenuCanvas;
 
     [SerializeField] private CountdownTimer countdowntimer;
 
     private void Start()
     {
+        MenuCanvas.worldCamera = Camera.main;
+        MenuCanvas.sortingLayerName = "UI";
+
         MiniGameTimer = MiniGameTimerObject.GetComponent<CountdownTimer>();
 
-        if (!Registry.RiceMGTutorialShown) // (Added by: Thomas Jebson) Determine when to display the tutorial (when the player has not yet completed a mini-game successfully)
-        {
-            TutorialCanvas.SetActive(true);
-            Registry.NotInTutorialScreenTimeModifier = 0; // Pause the game in the background.
-            MiniGameTimer.isRunning = false; // Stop the mini-game timer from counting down.
-        }
-        else
-        {
-            StartMinigame();
-        }
+        StartMinigame();
     }
 
     public void StartMinigame()
     {
         MiniGameTimer.isRunning = true;
-        Registry.NotInTutorialScreenTimeModifier = 1;
-        TutorialCanvas.SetActive(false);
 
         CountdownTimer countdownTimer = Object.FindFirstObjectByType<CountdownTimer>();
 
@@ -179,7 +171,7 @@ public class SlicedObject : MonoBehaviour
         if (currentSliceIndex >= slicePoints.Length - 2)
         {
             isSliced = true;
-            Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.MangoFinish); // Added by Joshua Cossar
+            Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.MangoFinish); // Added by Joshua Cossar
             ShowMessage("Amazing!");
             //Debug.Log("Mango Fully Sliced!");
             Registry.PlayerObject.GetComponent<Player>().HoldingMeal = Constants.MANGO_STICKY_RICE;
@@ -240,6 +232,6 @@ public class SlicedObject : MonoBehaviour
 
     private void ReturnToKitchen()
     {
-        Registry.GameManagerObject.ChangeScene();
+        Registry.CoreGameInfrastructureObject.CloseMenu();
     }
 }

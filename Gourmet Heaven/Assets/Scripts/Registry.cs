@@ -19,7 +19,7 @@ public static class Registry
     public static float LevelRunTime = 0; // Stores how many seconds the game has been running for (in seconds).
 
     // Stores objects by reference for use across the project.
-    public static GameManager GameManagerObject = null;
+    public static CoreGameInfrastructure CoreGameInfrastructureObject = null;
 
     public static LevelManager LevelManagerObject = null;
     public static Player PlayerObject = null;
@@ -42,4 +42,6 @@ public static class Registry
     public static int NotInTutorialScreenTimeModifier = 1; // Used to stop time passing when reading the tutorial so player not rushed.
 
     public static bool IntroSequencePlayed = false;
+
+    public static bool GamePaused = false;
 }

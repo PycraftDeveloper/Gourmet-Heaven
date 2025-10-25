@@ -13,7 +13,7 @@ public class Buns_MiniGameManager : MonoBehaviour
     public GameObject MiniGameFailedPopUp;
     public GameObject MiniGameWinPopUp;
 
-    public GameObject BunsMiniGameTutorial;
+    public Canvas MenuCanvas;
 
     private Animator EggTimerAnimator; // Store the animator for the egg timer object.
 
@@ -28,7 +28,7 @@ public class Buns_MiniGameManager : MonoBehaviour
 
     private void ReturnToKitchen()
     {
-        Registry.GameManagerObject.ChangeScene();
+        Registry.CoreGameInfrastructureObject.CloseMenu();
     }
 
     private void OnMiniGameFailed()
@@ -54,41 +54,23 @@ public class Buns_MiniGameManager : MonoBehaviour
         ShowMiniGameSucsess();
     }
 
-    public void OnContinueButtonClicked()
-    {
-        BunsMiniGameTutorial.SetActive(false);
-        MiniGameLocked = false;
-        Registry.NotInTutorialScreenTimeModifier = 1;
-
-        // This code was added by Joshua Cossar (v)
-        Registry.GameManagerObject.SFXSource.clip = Registry.GameManagerObject.BoilingWater;
-        Registry.GameManagerObject.SFXSource.volume = Registry.SFXVolume;
-        Registry.GameManagerObject.SFXSource.Play();
-        Registry.GameManagerObject.SFXSource.loop = true;
-        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.EggTimerTicking);
-        // This code was added by Joshua Cossar (^)
-    }
-
     private void Start()
     {
+        MenuCanvas.worldCamera = Camera.main;
+        MenuCanvas.sortingLayerName = "UI";
+
         TargetMiniGameDuration = Random.Range(Constants.BUNS_TIME_DELAY[0], Constants.BUNS_TIME_DELAY[1]); // generate a random time the player needs to wait for.
 
         EggTimerAnimator = EggTimerObject.GetComponent<Animator>();
 
-        if (!Registry.BunsMGTutorialShown)
-        {
-            BunsMiniGameTutorial.SetActive(true);
-            MiniGameLocked = true;
-            Registry.NotInTutorialScreenTimeModifier = 0;
-        }
         if (!MiniGameLocked)
         {
             // Start of Joshua Cossar's Added Code
-            Registry.GameManagerObject.SFXSource.clip = Registry.GameManagerObject.BoilingWater;
-            Registry.GameManagerObject.SFXSource.volume = Registry.SFXVolume;
-            Registry.GameManagerObject.SFXSource.Play();
-            Registry.GameManagerObject.SFXSource.loop = true;
-            Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.EggTimerTicking);
+            Registry.CoreGameInfrastructureObject.SFXSource.clip = Registry.CoreGameInfrastructureObject.BoilingWater;
+            Registry.CoreGameInfrastructureObject.SFXSource.volume = Registry.SFXVolume;
+            Registry.CoreGameInfrastructureObject.SFXSource.Play();
+            Registry.CoreGameInfrastructureObject.SFXSource.loop = true;
+            Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.EggTimerTicking);
             // End of Joshua Cossar's Added Code
         }
     }
@@ -103,7 +85,7 @@ public class Buns_MiniGameManager : MonoBehaviour
         {
             IsHobOn = false;
             // Start of Joshua Cossar's Added Code
-            Registry.GameManagerObject.SFXSource.Stop();
+            Registry.CoreGameInfrastructureObject.SFXSource.Stop();
             // End of Joshua Cossar's Added Code
         }
     }
@@ -137,7 +119,7 @@ public class Buns_MiniGameManager : MonoBehaviour
 
                     EggTimerPosition.y += Constants.ACTIVE_EGG_TIMER_DISPLACEMENT; // Displace the egg timer to show the player it has gone off.
 
-                    Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.EggTimerAlarm); // Added by Joshua Cossar
+                    Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.EggTimerAlarm); // Added by Joshua Cossar
                     EggTimerAnimator.SetBool("Alarm", true); // Added by Joshua Cossar
                 }
 

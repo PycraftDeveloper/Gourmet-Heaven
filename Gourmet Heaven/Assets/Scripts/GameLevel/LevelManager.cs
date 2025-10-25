@@ -122,15 +122,7 @@ public class LevelManager : MonoBehaviour
 
     private void Awake() // This program ensures that at any time there is a maximum of one scene manager in the game, as they aren't destroyed when changing scenes.
     {
-        if (Registry.LevelManagerObject == null)
-        {
-            DontDestroyOnLoad(gameObject);
-            Registry.LevelManagerObject = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Registry.LevelManagerObject = this;
 
         CinemachineCamera GameLevelCinemachineCamera = FindFirstObjectByType<CinemachineCamera>(); // Find the Cinemachine camera in the scene.
         if (GameLevelCinemachineCamera != null && Registry.PlayerObject != null)
@@ -164,7 +156,7 @@ public class LevelManager : MonoBehaviour
                     _Customer.MealPlaced = true;
                     _Customer.SetCoroutine(_Customer.MoveIntoRestaurant(), Constants.MOVE_INTO_RESTAURANT); // Set-up the customer to move down out of the kitchen scene.
                     Invoke("UpdateQueuePositions", 1.5f); // Once the customer has left the scene, update the positions for the other customers in the queue.
-                    Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.CashRegisterNoise); // added by Joshua Cossar
+                    Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.CashRegisterNoise); // added by Joshua Cossar
                     return; // Early exit the loop.
                 }
             }
@@ -316,20 +308,32 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape)) // Pause the game when the user its the back button.
+        if (Input.GetKeyDown(KeyCode.Escape) && !Registry.GamePaused) // Pause the game when the user its the back button.
         {
-            Registry.GameManagerObject.ChangeScene(Constants.PAUSE_MENU); // Go to the Pause Menu scene.
+            Registry.GamePaused = true;
+            Registry.CoreGameInfrastructureObject.RenderGameSceneToFrameBuffer();
+            Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.PAUSE_MENU); // Go to the Pause Menu scene.
         }
 
         HandleApplianceState();
+
+        if (Registry.LevelRunTime > 0)
+        {
+            Registry.LevelRunTime -= Time.deltaTime;
+            if (Registry.LevelRunTime <= 0)
+            {
+                Registry.CoreGameInfrastructureObject.ChangeScene(Constants.MENU_SCENE);
+                Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.END_MENU);
+            }
+        }
     }
 
     private void OnApplicationFocus(bool focus) // Pause the game when the user puts the game in the background. ONLY when in built version of the game
     {
         if (!focus && !Application.isEditor) // if NOT in focus
         {
-            Registry.GameManagerObject.RenderGameSceneToFrameBuffer(); // needs to be called immediately
-            Registry.GameManagerObject.ChangeScene(Constants.PAUSE_MENU); // Go to the Pause Menu scene.
+            Registry.CoreGameInfrastructureObject.RenderGameSceneToFrameBuffer(); // needs to be called immediately
+            Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.PAUSE_MENU); // Go to the Pause Menu scene.
         }
     }
 }

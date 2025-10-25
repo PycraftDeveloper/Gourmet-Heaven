@@ -2,17 +2,24 @@ using UnityEngine;
 
 public class ShopMenuManagerScript : MonoBehaviour
 {
+    public Canvas MenuCanvas;
+
+    public void Start()
+    {
+        MenuCanvas.worldCamera = Camera.main;
+    }
+
     public void OnBackButtonClick()
     {
-        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.ButtonClickSound);
-        Registry.GameManagerObject.ChangeScene();
+        Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.ButtonClickSound);
+        Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.PREVIOUS_MENU);
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) // Use the escape key as an alternative to the back button.
         {
-            Registry.GameManagerObject.ChangeScene();
+            Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.PREVIOUS_MENU);
         }
     }
 }

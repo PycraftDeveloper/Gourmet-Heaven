@@ -36,15 +36,7 @@ public class Player : MonoBehaviour
 
     private void Awake() // This object persists across scene changes and is managed by the GameManager.
     {
-        if (Registry.PlayerObject == null)
-        {
-            DontDestroyOnLoad(gameObject);
-            Registry.PlayerObject = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Registry.PlayerObject = this;
     }
 
     private void OnTriggerStay2D(Collider2D Collider)

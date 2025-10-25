@@ -112,15 +112,15 @@ public class ForegroundCustomer : CustomerCore // This class extends the custome
                 int CustomerSound = Random.Range(0, 3);
                 if (CustomerSound == 0)
                 {
-                    Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.CustomerFinish1);
+                    Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.CustomerFinish1);
                 }
                 if (CustomerSound == 1)
                 {
-                    Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.CustomerFinish2);
+                    Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.CustomerFinish2);
                 }
                 if (CustomerSound == 2)
                 {
-                    Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.CustomerFinish3);
+                    Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.CustomerFinish3);
                 }
                 // end - this section of code was worked on by Joshua Cossar
                 Registry.PlayerScore += 100; // Award the player with points for serving the customer.
@@ -280,7 +280,7 @@ public class ForegroundCustomer : CustomerCore // This class extends the custome
     {
         if (description == Constants.NO_COROUTINE)
         {
-            Registry.GameManagerObject.StopCoroutine(CustomerCoroutine);
+            Registry.CoreGameInfrastructureObject.StopCoroutine(CustomerCoroutine);
             CustomerCoroutine = null;
             CustomerCoroutineDescription = Constants.NO_COROUTINE;
         }
@@ -295,20 +295,20 @@ public class ForegroundCustomer : CustomerCore // This class extends the custome
         }
         else if (description == Constants.MOVE_INTO_RESTAURANT && CustomerCoroutineDescription == Constants.MOVE_IN_QUEUE)
         {
-            Registry.GameManagerObject.StopCoroutine(CustomerCoroutine);
+            Registry.CoreGameInfrastructureObject.StopCoroutine(CustomerCoroutine);
             CustomerCoroutine = coroutine;
             CustomerCoroutineDescription = description;
         }
         else if (description == Constants.MOVE_IN_QUEUE && CustomerCoroutineDescription == Constants.MOVE_IN_QUEUE)
         {
-            Registry.GameManagerObject.StopCoroutine(CustomerCoroutine);
+            Registry.CoreGameInfrastructureObject.StopCoroutine(CustomerCoroutine);
             CustomerCoroutine = coroutine;
         }
         if (_Renderer == null)
         {
             _Renderer = GetComponent<Renderer>();
         }
-        Registry.GameManagerObject.StartCoroutine(CustomerCoroutine);
+        Registry.CoreGameInfrastructureObject.StartCoroutine(CustomerCoroutine);
     }
 
     private void GenerateMeal() // Generate a new random meal for the customer.

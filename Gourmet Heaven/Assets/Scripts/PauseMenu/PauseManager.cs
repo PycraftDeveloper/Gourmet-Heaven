@@ -2,35 +2,46 @@ using UnityEngine;
 
 public class PauseMenuManagerScript : MonoBehaviour
 {
-    public void OnResumeButtonClick()
+    public Canvas MenuCanvas;
+
+    public void Start()
     {
-        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.ButtonClickSound);
-        Registry.GameManagerObject.ChangeScene();
+        MenuCanvas.worldCamera = Camera.main;
+        MenuCanvas.sortingLayerName = "UI";
     }
 
-    public void OnOptionsButtonClick()
+    public void OnResumeButtonClick()
     {
-        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.ButtonClickSound);
-        Registry.GameManagerObject.ChangeScene(Constants.OPTIONS_MENU);
+        Registry.GamePaused = false;
+        Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.ButtonClickSound);
+        Registry.CoreGameInfrastructureObject.CloseMenu();
+    }
+
+    public void OnSettingsButtonClick()
+    {
+        Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.ButtonClickSound);
+        Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.SETTINGS_MENU);
     }
 
     public void OnMainMenuButtonClick()
     {
-        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.ButtonClickSound);
-        Registry.GameManagerObject.ChangeScene(Constants.MAIN_MENU);
+        Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.ButtonClickSound);
+        Registry.CoreGameInfrastructureObject.ChangeScene(Constants.MENU_SCENE);
+        Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.MAIN_MENU);
     }
 
     public void OnQuitButtonClick()
     {
-        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.ButtonClickSound);
-        Registry.GameManagerObject.QuitGame();
+        Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.ButtonClickSound);
+        Registry.CoreGameInfrastructureObject.QuitGame();
     }
 
     public void Update() // Used to allow keyboard interaction for Windows builds.
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Registry.GameManagerObject.ChangeScene();
+            Registry.GamePaused = false;
+            Registry.CoreGameInfrastructureObject.CloseMenu();
         }
     }
 }

@@ -21,15 +21,17 @@ public class Pho_IngredientSource : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (X_Velocity < 0) // Determine which side of the screen the bowl reached so that the velocity can be swapped for a random opposite value.
+        if (collision.gameObject.CompareTag("PhoBorderLeft"))
         {
             X_Velocity = Random.Range(Constants.PHO_FOOD_ITEMS_SPEED[0], Constants.PHO_FOOD_ITEMS_SPEED[1]);
+            IngredientRigidBody.MovePosition(IngredientRigidBody.position + new Vector2(0.1f, 0f));
+            IngredientRigidBody.linearVelocityX = X_Velocity;
         }
-        else
+        else if (collision.gameObject.CompareTag("PhoBorderRight"))
         {
             X_Velocity = -Random.Range(Constants.PHO_FOOD_ITEMS_SPEED[0], Constants.PHO_FOOD_ITEMS_SPEED[1]);
+            IngredientRigidBody.MovePosition(IngredientRigidBody.position + new Vector2(-0.1f, 0f));
+            IngredientRigidBody.linearVelocityX = X_Velocity;
         }
-
-        IngredientRigidBody.linearVelocityX = X_Velocity;
     }
 }

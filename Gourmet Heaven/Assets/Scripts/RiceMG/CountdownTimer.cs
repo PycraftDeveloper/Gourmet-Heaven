@@ -17,7 +17,7 @@ public class CountdownTimer : MonoBehaviour
 
     private void ReturnToKitchen()
     {
-        Registry.GameManagerObject.ChangeScene();
+        Registry.CoreGameInfrastructureObject.CloseMenu();
     }
 
     private void Update()

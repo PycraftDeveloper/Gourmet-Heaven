@@ -11,6 +11,6 @@ public class BackgroundApplier : MonoBehaviour // This is used to load the blurr
         // use "Registry.GameManagerObject.FrameTexture;" for no blur
         // use "Registry.GameManagerObject.FrameTexture;" for blur
         // use transparency if you want the blur to appear to 'fade in'
-        BackgroundImage.texture = Registry.GameManagerObject.BlurredFrameTexture;
+        BackgroundImage.texture = Registry.CoreGameInfrastructureObject.BlurredFrameTexture;
     }
 }

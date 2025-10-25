@@ -11,8 +11,12 @@ public class EndMenuManagerScript : MonoBehaviour
 
     public GameObject[] StarScores = new GameObject[5]; // Stores the prefabs for the individual star arrangements for the 1, 2, 3, 4 and 5 star scores.
 
+    public Canvas MenuCanvas;
+
     public void Start()
     {
+        MenuCanvas.worldCamera = Camera.main;
+
         // Determine the max score based on the level.
         StoredMaxScore = Constants.LEVEL_ONE_MAX_SCORE;
         if (Registry.LevelNumber == Constants.LEVEL_TWO)
@@ -44,8 +48,7 @@ public class EndMenuManagerScript : MonoBehaviour
 
     public void OnPlayAgainButtonClick() // Used to restart the game by going back to the level the player was previously playing.
     {
-        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.ButtonClickSound);
-        Registry.GameManagerObject.ResetGameLevel();
+        Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.ButtonClickSound);
         if (Registry.LevelNumber == Constants.LEVEL_ONE)
         {
             Registry.LevelCustomiserObject.SetupLevelOne();
@@ -54,19 +57,19 @@ public class EndMenuManagerScript : MonoBehaviour
         {
             Registry.LevelCustomiserObject.SetupLevelTwo();
         }
-        Registry.GameManagerObject.ChangeScene(Constants.GAME_LEVEL);
+        Registry.CoreGameInfrastructureObject.ChangeScene(Constants.GAME_SCENE);
     }
 
     // The remainder of these functions are not used, but would allow the player to go back to the main menu or quit the game from the end menu.
     public void OnMainMenuButtonClick()
     {
-        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.ButtonClickSound);
-        Registry.GameManagerObject.ChangeScene(Constants.MAIN_MENU);
+        Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.ButtonClickSound);
+        Registry.CoreGameInfrastructureObject.ChangeScene(Constants.MAIN_MENU);
     }
 
     public void OnQuitButtonClick()
     {
-        Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.ButtonClickSound);
-        Registry.GameManagerObject.QuitGame();
+        Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.ButtonClickSound);
+        Registry.CoreGameInfrastructureObject.QuitGame();
     }
 }

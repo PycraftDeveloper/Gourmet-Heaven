@@ -7,6 +7,14 @@ public class Pho_IngredientTarget : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        IngredientInTargetToggle = true; // Determine if anything (in this case the only candidate is a falling ingredient) has entered the target area.
+        if (collision.gameObject.CompareTag("PhoFallingIngredient"))
+        {
+            Debug.Log("Ingredient entered target area.");
+            IngredientInTargetToggle = true; // Determine if anything (in this case the only candidate is a falling ingredient) has entered the target area.
+        }
+        else
+        {
+            Debug.Log($"Non-ingredient object entered target area. '{collision.gameObject.tag}'");
+        }
     }
 }

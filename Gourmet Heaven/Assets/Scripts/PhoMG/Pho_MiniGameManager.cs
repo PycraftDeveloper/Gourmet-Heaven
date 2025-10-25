@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pho_MiniGameManager : MonoBehaviour
 {
@@ -27,20 +28,21 @@ public class Pho_MiniGameManager : MonoBehaviour
     private Pho_Ingredient CurrentIngredient; // Stores the associated script for the current ingredient instance.
 
     private GameObject CurrentContainerObject; // Store the currently displayed container object.
-    private SpriteRenderer CurrentContainerSpriteRenderer;
+    private Image CurrentContainerImage;
 
     public GameObject TargetBowlObject; // Store the pho ingredient target bowl object.
     private Pho_IngredientTarget IngredientTarget;
-    private SpriteRenderer IngredientTargetRenderer;
+    private Image IngredientTargetImage;
 
     public GameObject MiniGameFailedPopUp;
     public GameObject MiniGameWinPopUp;
-    public GameObject PhoMiniGameTutorial;
+    public Canvas BackgroundMenuCanvas;
+    public Canvas ForegroundMenuCanvas;
 
     public TextMeshProUGUI TimerText;
 
     private bool MiniGameLocked = false;
-    private bool UserInput = false;
+    private bool UserInput = true;
 
     private int CurrentIngredientIndex = 0; // Used to determine which ingredient to show next. Note there is no need to worry about order in this mini-game.
 
@@ -54,7 +56,7 @@ public class Pho_MiniGameManager : MonoBehaviour
 
     private void ReturnToKitchen()
     {
-        Registry.GameManagerObject.ChangeScene();
+        Registry.CoreGameInfrastructureObject.CloseMenu();
     }
 
     private void OnMiniGameFailed()
@@ -80,25 +82,16 @@ public class Pho_MiniGameManager : MonoBehaviour
         ShowMiniGameSucsess();
     }
 
-    public void OnContinueButtonClicked()
-    {
-        PhoMiniGameTutorial.SetActive(false);
-        MiniGameLocked = false;
-        Registry.NotInTutorialScreenTimeModifier = 1;
-        UserInput = true; // Prevent the mini-game from detecting the 'continue' button as a valid touch input for the first ingredient.
-    }
-
     private void Start()
     {
-        IngredientTarget = TargetBowlObject.GetComponent<Pho_IngredientTarget>();
-        IngredientTargetRenderer = TargetBowlObject.GetComponent<SpriteRenderer>();
+        BackgroundMenuCanvas.worldCamera = Camera.main;
+        BackgroundMenuCanvas.sortingLayerName = "UI";
 
-        if (!Registry.PhoMGTutorialShown)
-        {
-            PhoMiniGameTutorial.SetActive(true);
-            MiniGameLocked = true;
-            Registry.NotInTutorialScreenTimeModifier = 0;
-        }
+        ForegroundMenuCanvas.worldCamera = Camera.main;
+        ForegroundMenuCanvas.sortingLayerName = "UI";
+
+        IngredientTarget = TargetBowlObject.GetComponent<Pho_IngredientTarget>();
+        IngredientTargetImage = TargetBowlObject.GetComponent<Image>();
     }
 
     private void SetupIngredientSource()
@@ -120,7 +113,7 @@ public class Pho_MiniGameManager : MonoBehaviour
         {
             CurrentContainerObject = ParsleyContainerObject;
         }
-        CurrentContainerSpriteRenderer = CurrentContainerObject.GetComponent<SpriteRenderer>();
+        CurrentContainerImage = CurrentContainerObject.GetComponent<Image>();
 
         CurrentContainerObject.SetActive(true);
     }
@@ -148,10 +141,10 @@ public class Pho_MiniGameManager : MonoBehaviour
         Rigidbody2D CurrentDisplayedIngredientObjectRigidBody = CurrentContainerObject.GetComponent<Rigidbody2D>();
         CurrentIngredient.transform.position = CurrentDisplayedIngredientObjectRigidBody.position; // Spawn the ingredient where the bowl was as the player tapped.
 
-        CurrentContainerSpriteRenderer.sprite = TippedBowlSprites[1]; // change the bowl sprite to be the tipped version.
+        CurrentContainerImage.sprite = TippedBowlSprites[1]; // change the bowl sprite to be the tipped version.
         if (CurrentIngredientIndex < 2)
         {
-            CurrentContainerSpriteRenderer.sprite = TippedBowlSprites[0];
+            CurrentContainerImage.sprite = TippedBowlSprites[0];
         }
     }
 
@@ -214,11 +207,11 @@ public class Pho_MiniGameManager : MonoBehaviour
                 int IngredientSound = Random.Range(0, 2);
                 if (IngredientSound == 0)
                 {
-                    Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.SoupSplash1);
+                    Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.SoupSplash1);
                 }
                 if (IngredientSound == 1)
                 {
-                    Registry.GameManagerObject.SFXSource.PlayOneShot(Registry.GameManagerObject.SoupSplash2);
+                    Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.SoupSplash2);
                 }
                 // This code was worked on by Joshua Cossar (^)
 
@@ -229,7 +222,7 @@ public class Pho_MiniGameManager : MonoBehaviour
                 }
                 else
                 {
-                    IngredientTargetRenderer.sprite = TargetBowlSprites[CurrentIngredientIndex]; // otherwise, update the bowl sprite to show the next ingredient.
+                    IngredientTargetImage.sprite = TargetBowlSprites[CurrentIngredientIndex]; // otherwise, update the bowl sprite to show the next ingredient.
                 }
             }
             else if ((CurrentIngredientObject != null && CurrentIngredient.MissedTarget) || MiniGameTimer <= 0) // If the ingredient misses the bowl, or timer runs out...
