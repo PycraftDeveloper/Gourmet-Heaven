@@ -9,19 +9,6 @@ public class Joystick : MonoBehaviour
 
     public Vector2 RightPosition;
 
-    private void Awake() // Ensure the joystick persists across scene changes.
-    {
-        if (Registry.JoystickObject == null)
-        {
-            DontDestroyOnLoad(gameObject);
-            Registry.JoystickObject = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     private void Update()
     {
         if (Registry.JoystickScreenPosition == Constants.LEFT)

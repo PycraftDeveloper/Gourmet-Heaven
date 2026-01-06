@@ -220,8 +220,11 @@ public class ForegroundCustomer : CustomerCore // This class extends the custome
             PatienceMeterAnimator = PatienceMeter.GetComponent<Animator>();
         }
 
-        PatienceMeterAnimator.StopPlayback();
-        PatienceMeterAnimator.Play("PatienceStart", 0, 1.0f - (Patience / InitialPatience));
+        if (PatienceMeterAnimator.isActiveAndEnabled)
+        {
+            PatienceMeterAnimator.StopPlayback();
+            PatienceMeterAnimator.Play("PatienceStart", 0, 1.0f - (Patience / InitialPatience));
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)

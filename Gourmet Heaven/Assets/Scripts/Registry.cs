@@ -23,8 +23,9 @@ public static class Registry
 
     public static LevelManager LevelManagerObject = null;
     public static Player PlayerObject = null;
-    public static Joystick JoystickObject = null;
+
     public static List<ForegroundCustomer> ForegroundCustomers = new List<ForegroundCustomer>();
+
     public static List<BackgroundCustomer> BackgroundCustomers = new List<BackgroundCustomer>();
     public static UIManager UIManagerObject = null;
 

@@ -48,6 +48,7 @@ public class EndMenuManagerScript : MonoBehaviour
 
     public void OnPlayAgainButtonClick() // Used to restart the game by going back to the level the player was previously playing.
     {
+        Registry.PlayerScore = 0;
         Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.ButtonClickSound);
         if (Registry.LevelNumber == Constants.LEVEL_ONE)
         {

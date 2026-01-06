@@ -93,11 +93,14 @@ public class SlicedObject : MonoBehaviour
         if (currentSliceIndex >= slicePoints.Length - 1) return;
 
         Vector3 start = slicePoints[currentSliceIndex].position;
+        start.z = 0; // Ensure the arrow is on the correct plane
         Vector3 end = slicePoints[currentSliceIndex + 1].position;
+        end.z = 0; // Ensure the arrow is on the correct plane
         Vector3 direction = end - start;
 
         // Instantiate arrow at the middle between the two points
         Vector3 midPoint = (start + end) / 2f;
+
         currentArrow = Instantiate(arrowPrefab, midPoint, Quaternion.identity);
         currentArrowHead = Instantiate(arrowHeadPrefab, end, Quaternion.identity); // (TJ)
 

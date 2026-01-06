@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class CameraAdjust : MonoBehaviour
 {
+    private void Start()
+    {
+        Adjust();
+    }
+
     public void Adjust()
     {
         float targetaspect = 16.0f / 9.0f;

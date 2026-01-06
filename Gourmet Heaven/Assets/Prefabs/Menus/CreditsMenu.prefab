@@ -4977,7 +4977,7 @@ MonoBehaviour:
   m_text: "Project manager: Joshua Cossar\n\nLead programmer: Thomas Jebson\n\nLead
     designer: Dawid Galka-Wozniak\n\nDesign team: Josh Cossar, Emmie Heane\n\nLead
     artist: Alice Haydon-Grime\n\nArt team: Finlay Thomson, Luna Lin Gao, \nTheo
-    Carre\n\nBackground music: Rose Skillett"
+    Carre"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 314a1e66930e8514a86b345e91071b4a, type: 2}
   m_sharedMaterial: {fileID: -6766621083084359742, guid: 314a1e66930e8514a86b345e91071b4a, type: 2}
@@ -5012,7 +5012,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

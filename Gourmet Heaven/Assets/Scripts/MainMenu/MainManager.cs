@@ -7,6 +7,7 @@ public class MainMenuManagerScript : MonoBehaviour
     public void Start()
     {
         MenuCanvas.worldCamera = Camera.main;
+        Registry.PlayerScore = 0;
     }
 
     public void OnPlayButtonClick()
