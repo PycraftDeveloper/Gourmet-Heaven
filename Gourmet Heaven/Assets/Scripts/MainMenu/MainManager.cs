@@ -4,8 +4,16 @@ public class MainMenuManagerScript : MonoBehaviour
 {
     public Canvas MenuCanvas;
 
+    public AudioClip BackgroundMusic;
+
     public void Start()
     {
+        if (Registry.CoreGameInfrastructureObject.musicSource.clip != BackgroundMusic)
+        {
+            Registry.CoreGameInfrastructureObject.musicSource.clip = BackgroundMusic;
+            Registry.CoreGameInfrastructureObject.musicSource.loop = true;
+            Registry.CoreGameInfrastructureObject.musicSource.Play();
+        }
         MenuCanvas.worldCamera = Camera.main;
         Registry.PlayerScore = 0;
     }

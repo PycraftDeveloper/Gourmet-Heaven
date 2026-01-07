@@ -58,6 +58,8 @@ public class LevelManager : MonoBehaviour
     public TextMeshProUGUI UIScoreText;
     public TextMeshProUGUI UIDayText;
 
+    public AudioClip BackgroundMusic;
+
     // Below are the two tile-maps that create the illusion of depth. ONLY the CacheRegister is in the 'AboveApplianceTileMap'.
     public Tilemap AboveApplianceTileMap;
 
@@ -77,6 +79,13 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        if (Registry.CoreGameInfrastructureObject.GameMusicSource.clip != BackgroundMusic)
+        {
+            Registry.CoreGameInfrastructureObject.GameMusicSource.clip = BackgroundMusic;
+            Registry.CoreGameInfrastructureObject.GameMusicSource.loop = true;
+            Registry.CoreGameInfrastructureObject.GameMusicSource.Play();
+        }
+
         UIDayText.text = (Registry.LevelNumber + 1).ToString();
     }
 
@@ -308,7 +317,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && !Registry.GamePaused) // Pause the game when the user its the back button.
+        if (Input.GetKeyDown(KeyCode.Escape) && !Registry.GamePaused && !Registry.InMiniGame) // Pause the game when the user its the back button.
         {
             Registry.GamePaused = true;
             Registry.CoreGameInfrastructureObject.RenderGameSceneToFrameBuffer();
@@ -330,7 +339,7 @@ public class LevelManager : MonoBehaviour
 
     private void OnApplicationFocus(bool focus) // Pause the game when the user puts the game in the background. ONLY when in built version of the game
     {
-        if (!focus && !Application.isEditor) // if NOT in focus
+        if (!focus && !Application.isEditor && !Registry.InMiniGame) // if NOT in focus
         {
             Registry.CoreGameInfrastructureObject.RenderGameSceneToFrameBuffer(); // needs to be called immediately
             Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.PAUSE_MENU); // Go to the Pause Menu scene.

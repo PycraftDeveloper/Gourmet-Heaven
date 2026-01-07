@@ -27,12 +27,24 @@ public class SlicedObject : MonoBehaviour
     public GameObject MiniGameTimerObject;
     private CountdownTimer MiniGameTimer;
 
+    public AudioClip BackgroundMusic;
+
     public Canvas MenuCanvas;
 
     [SerializeField] private CountdownTimer countdowntimer;
 
     private void Start()
     {
+        if (Registry.CoreGameInfrastructureObject.musicSource.clip != BackgroundMusic)
+        {
+            Registry.CoreGameInfrastructureObject.musicSource.clip = BackgroundMusic;
+            Registry.CoreGameInfrastructureObject.musicSource.loop = false;
+            Registry.CoreGameInfrastructureObject.musicSource.Play();
+        }
+
+        Registry.CoreGameInfrastructureObject.GameMusicSource.Pause();
+        Registry.InMiniGame = true;
+
         MenuCanvas.worldCamera = Camera.main;
         MenuCanvas.sortingLayerName = "UI";
 
@@ -230,11 +242,15 @@ public class SlicedObject : MonoBehaviour
             SuccessSplashArt.gameObject.SetActive(true);
         }
 
+        Registry.CoreGameInfrastructureObject.GameMusicSource.UnPause();
+        Registry.CoreGameInfrastructureObject.musicSource.Stop();
+
         Invoke("ReturnToKitchen", 2f); // return to kitchen
     }
 
     private void ReturnToKitchen()
     {
+        Registry.InMiniGame = false;
         Registry.CoreGameInfrastructureObject.CloseMenu();
     }
 }

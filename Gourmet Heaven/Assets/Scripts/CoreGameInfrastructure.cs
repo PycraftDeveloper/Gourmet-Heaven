@@ -16,9 +16,9 @@ public class CoreGameInfrastructure : MonoBehaviour
 
     // start - this section of code was worked on by Joshua Cossar (v)
     [Header("AudioSources")]
-    [SerializeField] private AudioSource musicSource;
+    [SerializeField] public AudioSource musicSource;
 
-    [SerializeField] private AudioSource GameMusicSource;
+    [SerializeField] public AudioSource GameMusicSource;
 
     [SerializeField] public AudioSource SFXSource;
 
@@ -95,6 +95,9 @@ public class CoreGameInfrastructure : MonoBehaviour
 
     private void Start()
     {
+        savedDataManager = new SavedDataManager();
+        savedDataManager.Load();
+
         Application.targetFrameRate = Mathf.Max(60, (int)Screen.currentResolution.refreshRateRatio.value);
         Registry.CoreGameInfrastructureObject.ChangeMenu(Constants.MAIN_MENU);
         ChangeMenu(Constants.INTRO_SEQU_ANIM_MENU, false);
@@ -111,6 +114,10 @@ public class CoreGameInfrastructure : MonoBehaviour
                 NextMenuName = "";
             }
         }
+
+        musicSource.volume = Registry.MusicVolume;
+        GameMusicSource.volume = Registry.MusicVolume;
+        SFXSource.volume = Registry.SFXVolume;
     }
 
     public void CloseMenu()
@@ -236,6 +243,7 @@ public class CoreGameInfrastructure : MonoBehaviour
 
     public void QuitGame()
     {
+        savedDataManager.Save();
         Application.Quit();
 
 #if UNITY_EDITOR

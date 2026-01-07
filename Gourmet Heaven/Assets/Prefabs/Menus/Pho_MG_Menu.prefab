@@ -254,6 +254,7 @@ MonoBehaviour:
   MiniGameWinPopUp: {fileID: 489083413214352696}
   BackgroundMenuCanvas: {fileID: 8105840283446535147}
   ForegroundMenuCanvas: {fileID: 8230792548627871252}
+  BackgroundMusic: {fileID: 8300000, guid: 917533896520aea4eaf77086553f50e9, type: 3}
   TimerText: {fileID: 65578335396715507}
 --- !u!1 &1722990794654777619
 GameObject:

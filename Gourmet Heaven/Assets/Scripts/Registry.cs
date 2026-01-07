@@ -9,6 +9,7 @@ public static class Registry
     public static string JoystickScreenPosition = Constants.LEFT;
 
     public static bool GameInBackground = false; // Used to determine when to render the pause menu blurred background
+    public static bool InMiniGame = false;
 
     public static int LevelNumber = Constants.LEVEL_ONE; // Stores the level number for the currently played game level
     public static int PlayerScore = 0;

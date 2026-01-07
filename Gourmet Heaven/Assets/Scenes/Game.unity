@@ -6916,6 +6916,7 @@ MonoBehaviour:
     Active: {fileID: 11400000, guid: fa475746bc0f9cd47afe26668a43220d, type: 2}
   UIScoreText: {fileID: 62526256}
   UIDayText: {fileID: 1613137622}
+  BackgroundMusic: {fileID: 8300000, guid: f8482208382ba35408d44cdb3839ca76, type: 3}
   AboveApplianceTileMap: {fileID: 1825809209}
   BehindApplianceTileMap: {fileID: 1687446634}
   CustomersInScene: 0

@@ -17,6 +17,8 @@ public class Buns_MiniGameManager : MonoBehaviour
 
     private Animator EggTimerAnimator; // Store the animator for the egg timer object.
 
+    public AudioClip BackgroundMusic;
+
     private float CurrentMiniGameDuration = 0; // Store how long the mini-game has been running for.
     private float TargetMiniGameDuration; // Stores the random amount of time the player needs to wait for (between 5 and 15 seconds).
 
@@ -28,6 +30,7 @@ public class Buns_MiniGameManager : MonoBehaviour
 
     private void ReturnToKitchen()
     {
+        Registry.InMiniGame = false;
         Registry.CoreGameInfrastructureObject.CloseMenu();
     }
 
@@ -35,6 +38,8 @@ public class Buns_MiniGameManager : MonoBehaviour
     {
         MiniGameLocked = true;
         MiniGameFailedPopUp.SetActive(true);
+        Registry.CoreGameInfrastructureObject.GameMusicSource.UnPause();
+        Registry.CoreGameInfrastructureObject.musicSource.Stop();
         Invoke("ReturnToKitchen", 2);
     }
 
@@ -42,6 +47,8 @@ public class Buns_MiniGameManager : MonoBehaviour
     {
         MiniGameWinPopUp.SetActive(true);
         Registry.PlayerObject.GetComponent<Player>().HoldingMeal = Constants.BAO_BUNS;
+        Registry.CoreGameInfrastructureObject.GameMusicSource.UnPause();
+        Registry.CoreGameInfrastructureObject.musicSource.Stop();
         Invoke("ReturnToKitchen", 2);
     }
 
@@ -56,6 +63,16 @@ public class Buns_MiniGameManager : MonoBehaviour
 
     private void Start()
     {
+        if (Registry.CoreGameInfrastructureObject.musicSource.clip != BackgroundMusic)
+        {
+            Registry.CoreGameInfrastructureObject.musicSource.clip = BackgroundMusic;
+            Registry.CoreGameInfrastructureObject.musicSource.loop = false;
+            Registry.CoreGameInfrastructureObject.musicSource.Play();
+        }
+
+        Registry.CoreGameInfrastructureObject.GameMusicSource.Pause();
+        Registry.InMiniGame = true;
+
         MenuCanvas.worldCamera = Camera.main;
         MenuCanvas.sortingLayerName = "UI";
 

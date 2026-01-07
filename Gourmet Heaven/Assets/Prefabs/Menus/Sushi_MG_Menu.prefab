@@ -1132,6 +1132,7 @@ MonoBehaviour:
   SushiRollingAnimation: {fileID: 5244321434295308452}
   TimerText: {fileID: 1710339725199090591}
   IngredientSpawned: 0
+  BackgroundMusic: {fileID: 8300000, guid: 917533896520aea4eaf77086553f50e9, type: 3}
 --- !u!1 &3932800317626103859
 GameObject:
   m_ObjectHideFlags: 0

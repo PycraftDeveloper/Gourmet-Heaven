@@ -39,6 +39,8 @@ public class Pho_MiniGameManager : MonoBehaviour
     public Canvas BackgroundMenuCanvas;
     public Canvas ForegroundMenuCanvas;
 
+    public AudioClip BackgroundMusic;
+
     public TextMeshProUGUI TimerText;
 
     private bool MiniGameLocked = false;
@@ -56,6 +58,7 @@ public class Pho_MiniGameManager : MonoBehaviour
 
     private void ReturnToKitchen()
     {
+        Registry.InMiniGame = false;
         Registry.CoreGameInfrastructureObject.CloseMenu();
     }
 
@@ -63,12 +66,16 @@ public class Pho_MiniGameManager : MonoBehaviour
     {
         MiniGameLocked = true;
         MiniGameFailedPopUp.SetActive(true);
+        Registry.CoreGameInfrastructureObject.GameMusicSource.UnPause();
+        Registry.CoreGameInfrastructureObject.musicSource.Stop();
         Invoke("ReturnToKitchen", 2f);
     }
 
     private void ShowMiniGameSucsess()
     {
         MiniGameWinPopUp.SetActive(true);
+        Registry.CoreGameInfrastructureObject.GameMusicSource.UnPause();
+        Registry.CoreGameInfrastructureObject.musicSource.Stop();
         Registry.PlayerObject.GetComponent<Player>().HoldingMeal = Constants.PHO;
         Invoke("ReturnToKitchen", 2.0f);
     }
@@ -84,6 +91,16 @@ public class Pho_MiniGameManager : MonoBehaviour
 
     private void Start()
     {
+        if (Registry.CoreGameInfrastructureObject.musicSource.clip != BackgroundMusic)
+        {
+            Registry.CoreGameInfrastructureObject.musicSource.clip = BackgroundMusic;
+            Registry.CoreGameInfrastructureObject.musicSource.loop = false;
+            Registry.CoreGameInfrastructureObject.musicSource.Play();
+        }
+
+        Registry.CoreGameInfrastructureObject.GameMusicSource.Pause();
+        Registry.InMiniGame = true;
+
         BackgroundMenuCanvas.worldCamera = Camera.main;
         BackgroundMenuCanvas.sortingLayerName = "UI";
 

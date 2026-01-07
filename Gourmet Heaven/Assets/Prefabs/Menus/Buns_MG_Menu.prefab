@@ -684,6 +684,7 @@ MonoBehaviour:
   MiniGameFailedPopUp: {fileID: 5483140437403557219}
   MiniGameWinPopUp: {fileID: 7958477995402984235}
   MenuCanvas: {fileID: 2663838270645954765}
+  BackgroundMusic: {fileID: 8300000, guid: 917533896520aea4eaf77086553f50e9, type: 3}
 --- !u!1 &4568010404011745539
 GameObject:
   m_ObjectHideFlags: 0

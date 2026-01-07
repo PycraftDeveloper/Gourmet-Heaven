@@ -35,6 +35,8 @@ public class CountdownTimer : MonoBehaviour
             remainingTime = 0;
             timerText.color = Color.red;
             minigamefailedText.gameObject.SetActive(true);
+            Registry.CoreGameInfrastructureObject.GameMusicSource.UnPause();
+            Registry.CoreGameInfrastructureObject.musicSource.Stop();
             Invoke("ReturnToKitchen", 2f);
             StopTimer(); // Force the timer to stop this from being called multiple times.
         }

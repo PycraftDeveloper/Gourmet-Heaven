@@ -14,5 +14,7 @@ public class GameTutorialManager : MonoBehaviour
         Registry.CoreGameInfrastructureObject.SFXSource.PlayOneShot(Registry.CoreGameInfrastructureObject.ButtonClickSound);
         Camera.main.enabled = false;
         Registry.CoreGameInfrastructureObject.ChangeScene(Constants.GAME_SCENE);
+
+        Registry.CoreGameInfrastructureObject.musicSource.Stop();
     }
 }

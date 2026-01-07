@@ -21,29 +21,9 @@ MonoBehaviour:
   m_OverrideGlobalSceneList: 1
   m_Scenes:
   - m_enabled: 1
-    m_path: Assets/Scenes/MainMenu.unity
+    m_path: Assets/Scenes/Menu.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/LevelSelectionMenu.unity
-  - m_enabled: 1
-    m_path: Assets/Scenes/CreditsMenu.unity
-  - m_enabled: 1
-    m_path: Assets/Scenes/OptionsMenu.unity
-  - m_enabled: 1
-    m_path: Assets/Scenes/ShopMenu.unity
-  - m_enabled: 1
-    m_path: Assets/Scenes/BunsMG.unity
-  - m_enabled: 1
-    m_path: Assets/Scenes/PhoMG.unity
-  - m_enabled: 1
-    m_path: Assets/Scenes/RiceMG.unity
-  - m_enabled: 1
-    m_path: Assets/Scenes/SushiMG.unity
-  - m_enabled: 1
-    m_path: Assets/Scenes/PauseMenu.unity
-  - m_enabled: 1
-    m_path: Assets/Scenes/EndMenu.unity
-  - m_enabled: 1
-    m_path: Assets/Scenes/GameLevel.unity
+    m_path: Assets/Scenes/Game.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings: []

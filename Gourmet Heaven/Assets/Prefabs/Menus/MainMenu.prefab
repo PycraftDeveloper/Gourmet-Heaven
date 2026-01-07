@@ -1512,3 +1512,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuCanvas: {fileID: 4418156798915817991}
+  BackgroundMusic: {fileID: 8300000, guid: 76d4d504df08d9a42b568b3487d975bc, type: 3}

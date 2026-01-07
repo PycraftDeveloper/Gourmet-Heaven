@@ -150,6 +150,7 @@ MonoBehaviour:
   CutRice: {fileID: 6582933751801946172}
   SuccessSplashArt: {fileID: 2685755768660223677}
   MiniGameTimerObject: {fileID: 7927236878379746659}
+  BackgroundMusic: {fileID: 8300000, guid: 917533896520aea4eaf77086553f50e9, type: 3}
   MenuCanvas: {fileID: 9014619696235075207}
   countdowntimer: {fileID: 2121108578615480939}
 --- !u!1 &1353707373217983129

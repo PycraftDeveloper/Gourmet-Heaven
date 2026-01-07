@@ -56,8 +56,11 @@ public class Sushi_MiniGameManager : MonoBehaviour // Used to manage the startin
 
     private float MiniGameTimer = Constants.SUSHI_MG_MINI_GAME_TIME; // how many seconds the mini-game has left to run for.
 
+    public AudioClip BackgroundMusic;
+
     private void ReturnToKitchen()
     {
+        Registry.InMiniGame = false;
         Registry.CoreGameInfrastructureObject.CloseMenu();
     }
 
@@ -67,6 +70,8 @@ public class Sushi_MiniGameManager : MonoBehaviour // Used to manage the startin
         SushiRollingAnimation.SetActive(false);
         MiniGameLocked = true; // prevent any additional interactions with the mini-game
         MiniGameFailedPopUp.SetActive(true); // show failed splash art
+        Registry.CoreGameInfrastructureObject.GameMusicSource.UnPause();
+        Registry.CoreGameInfrastructureObject.musicSource.Stop();
         Invoke("ReturnToKitchen", Constants.MINI_GAME_SPLASH_ART_DURATION); // return to the kitchen after 2 seconds (allows time for the player to see the failed splash art)
     }
 
@@ -76,6 +81,8 @@ public class Sushi_MiniGameManager : MonoBehaviour // Used to manage the startin
         SushiRollingAnimation.SetActive(false);
         MiniGameWinPopUp.SetActive(true); // show success splash art
         Registry.PlayerObject.GetComponent<Player>().HoldingMeal = Constants.SUSHI; // set the player's current meal to sushi
+        Registry.CoreGameInfrastructureObject.GameMusicSource.UnPause();
+        Registry.CoreGameInfrastructureObject.musicSource.Stop();
         Invoke("ReturnToKitchen", Constants.MINI_GAME_SPLASH_ART_DURATION); // return to the kitchen after 2 seconds (allows time for the player to see the success splash art)
     }
 
@@ -101,6 +108,16 @@ public class Sushi_MiniGameManager : MonoBehaviour // Used to manage the startin
 
     private void Start()
     {
+        if (Registry.CoreGameInfrastructureObject.musicSource.clip != BackgroundMusic)
+        {
+            Registry.CoreGameInfrastructureObject.musicSource.clip = BackgroundMusic;
+            Registry.CoreGameInfrastructureObject.musicSource.loop = false;
+            Registry.CoreGameInfrastructureObject.musicSource.Play();
+        }
+
+        Registry.CoreGameInfrastructureObject.GameMusicSource.Pause();
+        Registry.InMiniGame = true;
+
         MenuCanvas.worldCamera = Camera.main;
         MenuCanvas.sortingLayerName = "UI";
 
