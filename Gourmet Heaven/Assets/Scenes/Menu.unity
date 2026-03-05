@@ -568,8 +568,8 @@ MonoBehaviour:
   BoilingWater: {fileID: 8300000, guid: 397759993a2d07747adb526ece4a7405, type: 3}
   EggTimerTicking: {fileID: 0}
   EggTimerAlarm: {fileID: 0}
-  SoupSplash1: {fileID: 8300000, guid: 672a304ecfd0a95498ad64cfccd99ebc, type: 3}
-  SoupSplash2: {fileID: 8300000, guid: f7adc806b27cdca4ebcd4dbf3b304bcc, type: 3}
+  SoupSplash1: {fileID: 8300000, guid: 8026185e2f425bd4ea7949606d373969, type: 3}
+  SoupSplash2: {fileID: 8300000, guid: 2a7fdd3db3cf61b4e9876024f07e10ef, type: 3}
   SushiSound: {fileID: 8300000, guid: bd2b9160a31209b4f8a44b5573970c27, type: 3}
   CustomerFinish1: {fileID: 8300000, guid: 8159bb52a756d3b4d89ff456cbc197de, type: 3}
   CustomerFinish2: {fileID: 8300000, guid: 8c70e66fe74b3d6458b31d9cb7ea0e7d, type: 3}

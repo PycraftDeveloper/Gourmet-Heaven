@@ -30,7 +30,7 @@ public class ForegroundCustomer : CustomerCore // This class extends the custome
         {
             SetAnimationState(Constants.CUSTOMER_WALK_SIDE_ANIMATION); // Start the customer walking sideways.
 
-            while (CurrentPosition.x - (Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime) > DestinationPosition.x && gameObject != null) // Move the customer in the x axis until their
+            while (gameObject != null && CurrentPosition.x - (Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime) > DestinationPosition.x) // Move the customer in the x axis until their
                                                                                                                                            // next update puts them too far, and also stop updating if the context changes.
             {
                 CurrentPosition.x -= Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime; // Move the player linearly using a constant movement speed.

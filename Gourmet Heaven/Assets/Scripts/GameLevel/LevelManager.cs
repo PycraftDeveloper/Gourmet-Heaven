@@ -79,12 +79,15 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        Registry.CoreGameInfrastructureObject.musicSource.Stop();
+
         if (Registry.CoreGameInfrastructureObject.GameMusicSource.clip != BackgroundMusic)
         {
             Registry.CoreGameInfrastructureObject.GameMusicSource.clip = BackgroundMusic;
             Registry.CoreGameInfrastructureObject.GameMusicSource.loop = true;
-            Registry.CoreGameInfrastructureObject.GameMusicSource.Play();
         }
+
+        Registry.CoreGameInfrastructureObject.GameMusicSource.Play();
 
         UIDayText.text = (Registry.LevelNumber + 1).ToString();
     }

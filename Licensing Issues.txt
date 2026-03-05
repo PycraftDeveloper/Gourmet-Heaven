@@ -1,0 +1,6 @@
+REMOVE THE FOLLOWING
+====================
+
+SAIKYO-faux Japanese font
+
+Game continues playing main menu music in game level!
