@@ -1,6 +1,6 @@
 <div align="center">
 
-  ![Gourmet Heaven logo](https://github.com/user-attachments/assets/3c4d1d82-a489-4f87-bffe-0e74491ac19d)
+  ![Gourmet Heaven logo](https://github.com/user-attachments/assets/36981994-e354-4314-af6e-dc73a81f2977)
 </div>
 
 # Gourmet Heaven
@@ -64,46 +64,32 @@ _Note: On the Android and iOS platforms, you cannot connect a keyboard or mouse 
 
 ## Credits
 
-**Project manager:** Joshua Cossar
-
-**Lead programmer:** Thomas Jebson
-
-**Lead designer:** Dawid Galka-Wozniak **Design team:** Josh Cossar, Emmie Heane
-
-**Lead artist:** Alice Haydon-Grime **Art team:** Finlay Thomson, Luna Lin Gao, Theo Carre
-
-**Background music:** Rose Skillett
+**Project manager:** Joshua Cossar </br>
+**Lead programmer:** Thomas Jebson </br>
+**Lead designer:** Dawid Galka-Wozniak **Design team:** Josh Cossar, Emmie Heane </br>
+**Lead artist:** Alice Haydon-Grime **Art team:** Finlay Thomson, Luna Lin Gao, Theo Carre </br>
+**Background music:** Rose Skillett </br>
 
 ## References
 ### Fonts
-* https://www.1001fonts.com/pixel-game-font.html
 
 * https://www.1001fonts.com/saikyo-font.html
-
 * https://www.1001fonts.com/chinese-rocks-free-font.html
-
 * https://www.dafont.com/nuku-nuku.font
 
 ### Sounds
+
 * https://www.youtube.com/watch?v=c9noznqhbH4 (Useful & Popular Anime Sound Effects for Editing)
-
 * https://www.youtube.com/watch?v=qXIIcyStWYA (Slice and Dice - Realistic Chopping Sound Effects)
-
 * https://youtu.be/AGZXC5LhXnY?si=2wSkGeMDSOEDU8Zw (Barcode scanner beep sound)
-
 * https://youtu.be/FLeGEEfMo-4?si=87Awy2xvWz8IhdUR (Small Crowd People Talking Background Noise)
-
 * https://www.youtube.com/watch?v=cTQ6jSDCcn8 (Small Water Splash Sound Effects - Royalty Free)
-
 * https://youtu.be/T0wyD9r3iHA?si=FQ5RovMEzEJWv6Xw (Egg Timer Sound Effects [FREE])
-
 * https://youtu.be/hSWEJuZA18U?si=pcJWbPwR60cJ-YMg (BOILING WATER SOUND EFFECT - FREE)
-
 * https://freesound.org/people/deleted_user_2104797/sounds/164467/ (Squelch 10.wav)
 
 ### Additional Helpful Content
+
 * https://youtu.be/_JM0g9jzOk0?si=ZsMXk_rl2BtbzuWQ (Used by Emmie to help order particles in layers.)
-
 * https://www.youtube.com/watch?v=POq1i8FyRyQ (Used by Emmie to create the timer for the Mango Sticky Rice Mini-Game.)
-
 * https://www.youtube.com/watch?v=XtQMytORBmM (Used by Thomas to get an initial understanding of Unity.)
