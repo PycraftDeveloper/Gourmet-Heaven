@@ -8,6 +8,8 @@ public class MainMenuManagerScript : MonoBehaviour
 
     public void Start()
     {
+        Destroy(Registry.CoreGameInfrastructureObject.BlurredFrameTexture);
+
         Registry.CoreGameInfrastructureObject.GameMusicSource.Stop();
 
         if (Registry.CoreGameInfrastructureObject.musicSource.clip != BackgroundMusic)
