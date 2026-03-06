@@ -73,7 +73,6 @@ _Note: On the Android and iOS platforms, you cannot connect a keyboard or mouse 
 ## References
 ### Fonts
 
-* https://www.1001fonts.com/saikyo-font.html
 * https://www.1001fonts.com/chinese-rocks-free-font.html
 * https://www.dafont.com/nuku-nuku.font
 
