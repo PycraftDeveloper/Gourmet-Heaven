@@ -33,7 +33,10 @@ public class ForegroundCustomer : CustomerCore // This class extends the custome
             while (gameObject != null && CurrentPosition.x - (Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime) > DestinationPosition.x) // Move the customer in the x axis until their
                                                                                                                                            // next update puts them too far, and also stop updating if the context changes.
             {
-                CurrentPosition.x -= Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime; // Move the player linearly using a constant movement speed.
+                if (!Registry.GamePaused)
+                {
+                    CurrentPosition.x -= Constants.CUSTOMER_MOVEMENT_SPEED * Time.deltaTime; // Move the player linearly using a constant movement speed.
+                }
                 yield return null;
             }
 

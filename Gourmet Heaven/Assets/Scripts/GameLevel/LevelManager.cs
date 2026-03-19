@@ -231,6 +231,11 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (Registry.GamePaused)
+        {
+            return;
+        }
+
         UIScoreText.text = Registry.PlayerScore.ToString(); // Update the score text in the UI.
 
         // Reset all the appliance states (so they can be enabled later, or left disabled).

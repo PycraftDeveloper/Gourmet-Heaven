@@ -198,7 +198,10 @@ public class Player : MonoBehaviour
         float minimum_y = (-ScreenDimensions.y * 2) + SpriteSize.y;
         float maximum_y = ScreenDimensions.y - SpriteSize.y;
 
-        PlayerRigidBody.MovePosition(proposed_position);
+        if (!Registry.GamePaused)
+        {
+            PlayerRigidBody.MovePosition(proposed_position);
+        }
         //transform.position = proposed_position;
         PlayerSprite.sortingOrder = RenderPriority;
     }

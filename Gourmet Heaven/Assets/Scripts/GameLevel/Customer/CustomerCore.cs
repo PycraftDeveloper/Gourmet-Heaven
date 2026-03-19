@@ -155,7 +155,7 @@ public class CustomerCore : MonoBehaviour
 
     protected void ManagePatience(Animator PatienceMeterAnimator)
     {
-        if (CustomerSeated)
+        if (CustomerSeated && !Registry.GamePaused)
         {
             PatienceMeterAnimator.speed = 30.017f / InitialPatience; // Determine the patience speed based on how much patience the customer has to begin with (randomly generated).
             Patience -= Time.deltaTime * Registry.NotInTutorialScreenTimeModifier;
