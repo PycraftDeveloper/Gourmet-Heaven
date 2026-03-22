@@ -112,8 +112,9 @@ public class Sushi_MiniGameManager : MonoBehaviour // Used to manage the startin
         {
             Registry.CoreGameInfrastructureObject.musicSource.clip = BackgroundMusic;
             Registry.CoreGameInfrastructureObject.musicSource.loop = false;
-            Registry.CoreGameInfrastructureObject.musicSource.Play();
         }
+
+        Registry.CoreGameInfrastructureObject.musicSource.Play();
 
         Registry.CoreGameInfrastructureObject.GameMusicSource.Pause();
         Registry.InMiniGame = true;

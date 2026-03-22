@@ -67,8 +67,9 @@ public class Buns_MiniGameManager : MonoBehaviour
         {
             Registry.CoreGameInfrastructureObject.musicSource.clip = BackgroundMusic;
             Registry.CoreGameInfrastructureObject.musicSource.loop = false;
-            Registry.CoreGameInfrastructureObject.musicSource.Play();
         }
+
+        Registry.CoreGameInfrastructureObject.musicSource.Play();
 
         Registry.CoreGameInfrastructureObject.GameMusicSource.Pause();
         Registry.InMiniGame = true;

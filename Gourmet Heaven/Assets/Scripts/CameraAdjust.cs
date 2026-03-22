@@ -9,37 +9,28 @@ public class CameraAdjust : MonoBehaviour
 
     public void Adjust()
     {
-        float targetaspect = 16.0f / 9.0f;
+        float targetAspect = 16f / 9f;
 
-        float windowaspect = (float)Screen.width / (float)Screen.height;
+        Rect safe = Screen.safeArea;
 
-        float scaleheight = windowaspect / targetaspect;
+        float windowAspect = safe.width / safe.height;
+        float scaleHeight = windowAspect / targetAspect;
 
-        Camera camera = GetComponent<Camera>();
+        Camera cam = GetComponent<Camera>();
 
-        if (scaleheight < 1.0f)
+        if (scaleHeight < 1.0f)
         {
-            Rect rect = camera.rect;
+            float height = scaleHeight;
+            float y = (1.0f - height) / 2.0f;
 
-            rect.width = 1.0f;
-            rect.height = scaleheight;
-            rect.x = 0;
-            rect.y = (1.0f - scaleheight) / 2.0f;
-
-            camera.rect = rect;
+            cam.rect = new Rect(0, y, 1, height);
         }
         else
         {
-            float scalewidth = 1.0f / scaleheight;
+            float width = 1.0f / scaleHeight;
+            float x = (1.0f - width) / 2.0f;
 
-            Rect rect = camera.rect;
-
-            rect.width = scalewidth;
-            rect.height = 1.0f;
-            rect.x = (1.0f - scalewidth) / 2.0f;
-            rect.y = 0;
-
-            camera.rect = rect;
+            cam.rect = new Rect(x, 0, width, 1);
         }
     }
 }
