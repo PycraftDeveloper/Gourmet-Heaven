@@ -576,6 +576,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -920,6 +921,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1056,6 +1058,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1192,6 +1195,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1512,4 +1516,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuCanvas: {fileID: 4418156798915817991}
+  LevelSelectionMenuPrefab: {fileID: 35857472891740990, guid: aee47eb2da5093e46a086ba40371463e, type: 3}
+  ShopMenuPrefab: {fileID: 8860819454731842317, guid: 157feec38af169145904b8d9cbdcf6f5, type: 3}
+  SettingsMenuPrefab: {fileID: 5359835227935049102, guid: 9e175d722a6608a42851ed418ac75c43, type: 3}
+  CreditsMenuPrefab: {fileID: 5059524997635029324, guid: 31f60c0ba47627c409e0659700a6b16c, type: 3}
   BackgroundMusic: {fileID: 8300000, guid: 76d4d504df08d9a42b568b3487d975bc, type: 3}
