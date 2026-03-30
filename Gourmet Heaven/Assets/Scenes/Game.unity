@@ -6491,6 +6491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ee70fac261f2b649b980100e84a6ec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PauseMenuPrefab: {fileID: 8600645802944895650, guid: b31aa16cb66b7fe438f3e644d0c42dda, type: 3}
 --- !u!114 &1320739971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6990,6 +6991,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  PauseMenuPrefab: {fileID: 0}
 --- !u!4 &1432080515
 Transform:
   m_ObjectHideFlags: 0

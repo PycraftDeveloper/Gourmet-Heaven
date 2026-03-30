@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour // This class controls the buttons and behaviour of the UI for the game.
 {
+    [Header("Navigable Menus")]
+    public GameObject PauseMenuPrefab;
+
     private void Awake() // This object is also set to persist between scene changes and is managed instead in the GameManager.
+
     {
         Registry.UIManagerObject = this;
     }
@@ -12,7 +16,7 @@ public class UIManager : MonoBehaviour // This class controls the buttons and be
         Registry.GamePaused = true;
         Registry.CGI.RenderGameSceneToFrameBuffer();
         Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
-        Registry.CGI.ChangeMenu(Constants.PAUSE_MENU);
+        Instantiate(PauseMenuPrefab);
     }
 
     public void OnSceneChanged() // Ensure that the canvas uses the correct world camera when the scenes change (as the camera for the previous scene is destroyed).

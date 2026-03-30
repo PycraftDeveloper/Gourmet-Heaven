@@ -562,6 +562,7 @@ MonoBehaviour:
   ButtonClickSound: {fileID: 8300000, guid: 0dd23dd4b6a11b54f92fdd620fc94da3, type: 3}
   ClickVolume: 1
   ClickPitchRange: 0.15
+  IntroSequenceMenuPrefab: {fileID: 8302476738363852932, guid: e551747ced7004441995354ec264352c, type: 3}
   bgm_InGame: {fileID: 8300000, guid: f8482208382ba35408d44cdb3839ca76, type: 3}
   bgm_MainMenu: {fileID: 8300000, guid: 76d4d504df08d9a42b568b3487d975bc, type: 3}
   bgm_MiniGame: {fileID: 8300000, guid: 917533896520aea4eaf77086553f50e9, type: 3}
@@ -581,7 +582,6 @@ MonoBehaviour:
   FrameTexture: {fileID: 0}
   BlurredFrameTexture: {fileID: 0}
   BlurredMaterial: {fileID: 2100000, guid: 92f2222756e8e534c8b66d92176d225b, type: 2}
-  MainMenuPrefab: {fileID: 9062835803825983157, guid: 3daf69857a72b904fa2b83ca33bf9f93, type: 3}
   IntroSequAnimPrefab: {fileID: 8302476738363852932, guid: e551747ced7004441995354ec264352c, type: 3}
   CreditsMenuPrefab: {fileID: 5059524997635029324, guid: 31f60c0ba47627c409e0659700a6b16c, type: 3}
   SettingsMenuPrefab: {fileID: 5359835227935049102, guid: 9e175d722a6608a42851ed418ac75c43, type: 3}

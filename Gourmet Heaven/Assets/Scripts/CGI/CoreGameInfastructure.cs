@@ -8,14 +8,9 @@ using UnityEditor;
 
 #endif
 
-// Game scene - The Kitchen or Restaurant scenes but no others.
-
 public class CoreGameInfastructure : MonoBehaviour
 {
-    // This class handles scene changes and the changes to the game state that results from this process.
-
-    // start - this section of code was worked on by Joshua Cossar (v)
-    [Header("AudioSources")]
+    [Header("Audio Sources")]
     [SerializeField] public AudioSource musicSource;
 
     [SerializeField] public AudioSource GameMusicSource;
@@ -28,7 +23,10 @@ public class CoreGameInfastructure : MonoBehaviour
     [Range(0.0f, 1.0f)] public float ClickVolume;
     [Range(0.0f, 0.15f)] public float ClickPitchRange;
 
-    [Header("AudioClips")]
+    [Header("Navigable Menus")]
+    public GameObject IntroSequenceMenuPrefab;
+
+    [Header("Audio Clips")]
     public AudioClip bgm_InGame;
 
     public AudioClip bgm_MainMenu;
@@ -48,27 +46,17 @@ public class CoreGameInfastructure : MonoBehaviour
     public AudioClip CustomerFinish3;
     public AudioClip RestaurantAmbience;
 
-    // end - this section of code was worked on by Joshua Cossar (^)
+    private Stack<string> MenuStack = new Stack<string>();
 
-    private Stack<string> MenuStack = new Stack<string>(); // stores a stack containing all the menus previously visited
+    [Header("Blurred Background")]
+    [HideInInspector] public Texture2D FrameTexture;
 
-    // start - blurred background set-up
-    public Texture2D FrameTexture;
-
-    public Texture2D BlurredFrameTexture;
-
+    [HideInInspector] public Texture2D BlurredFrameTexture;
     public Material BlurredMaterial;
-    // end - blurred background set-up
 
     private SavedDataManager savedDataManager;
 
-    public GameObject IntroSequAnimPrefab;
-    public GameObject CreditsMenuPrefab;
-    public GameObject SettingsMenuPrefab;
-    public GameObject ShopMenuPrefab;
-    public GameObject LevelSelectionMenuPrefab;
     public GameObject GameTutorialMenuPrefab;
-    public GameObject PauseMenuPrefab;
     public GameObject EndMenuPrefab;
     public GameObject Sushi_MG_MenuPrefab;
     public GameObject Sushi_MG_TutorialMenuPrefab;
@@ -104,7 +92,7 @@ public class CoreGameInfastructure : MonoBehaviour
         savedDataManager.Load();
 
         Application.targetFrameRate = Mathf.Max(60, (int)Screen.currentResolution.refreshRateRatio.value);
-        ChangeMenu(Constants.INTRO_SEQU_ANIM_MENU, false);
+        Instantiate(IntroSequenceMenuPrefab);
     }
 
     private void Update()
@@ -165,21 +153,9 @@ public class CoreGameInfastructure : MonoBehaviour
 
     public GameObject MenuFinder(string NewMenu)
     {
-        if (NewMenu == Constants.INTRO_SEQU_ANIM_MENU)
-        {
-            return Instantiate(IntroSequAnimPrefab);
-        }
-        else if (NewMenu == Constants.SETTINGS_MENU)
-        {
-            return Instantiate(SettingsMenuPrefab);
-        }
-        else if (NewMenu == Constants.GAME_TUTORIAL_MENU)
+        if (NewMenu == Constants.GAME_TUTORIAL_MENU)
         {
             return Instantiate(GameTutorialMenuPrefab);
-        }
-        else if (NewMenu == Constants.PAUSE_MENU)
-        {
-            return Instantiate(PauseMenuPrefab);
         }
         else if (NewMenu == Constants.END_MENU)
         {
@@ -230,12 +206,6 @@ public class CoreGameInfastructure : MonoBehaviour
         {
             NextMenuName = NewMenu;
             return;
-        }
-
-        if (NewMenu == Constants.PREVIOUS_MENU)
-        {
-            MenuStack.Pop(); // Remove current menu from stack
-            NewMenu = MenuStack.Pop();
         }
 
         if (ClosePrevious && CurrentMenu != null)

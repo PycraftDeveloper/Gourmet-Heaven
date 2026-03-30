@@ -23,9 +23,6 @@ public static class Constants
     public const string LEFT = "Left";
     public const string RIGHT = "Right";
 
-    public const string MAIN_MENU = "main menu";
-    public const string SETTINGS_MENU = "settings menu";
-    public const string PAUSE_MENU = "pause menu";
     public const string BUNS_MG_MENU = "buns mini-game";
     public const string PHO_MG_MENU = "pho mini-game";
     public const string RICE_MG_MENU = "rice mini-game";
@@ -35,8 +32,6 @@ public static class Constants
     public const string RICE_MG_TUTORIAL_MENU = "rice mini-game tutorial";
     public const string SUSHI_MG_TUTORIAL_MENU = "sushi mini-game tutorial";
     public const string END_MENU = "end menu";
-    public const string INTRO_SEQU_ANIM_MENU = "intro sequ anim menu";
-    public const string PREVIOUS_MENU = "previous menu";
     public const string GAME_TUTORIAL_MENU = "game tutorial menu";
 
     public const string GAME_SCENE = "Game";

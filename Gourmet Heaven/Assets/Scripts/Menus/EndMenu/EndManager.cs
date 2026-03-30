@@ -65,7 +65,7 @@ public class EndMenuManagerScript : MonoBehaviour
     public void OnMainMenuButtonClick()
     {
         Registry.CGI.PlayClickSound();
-        Registry.CGI.ChangeScene(Constants.MAIN_MENU);
+        Registry.CGI.ChangeScene(Constants.MENU_SCENE);
     }
 
     public void OnQuitButtonClick()
