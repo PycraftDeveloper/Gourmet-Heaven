@@ -137,7 +137,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 1603600049
-  m_SortingOrder: 32767
+  m_SortingOrder: 32762
   m_TargetDisplay: 0
 --- !u!114 &2536388007491003845
 MonoBehaviour:
@@ -6079,4 +6079,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuCanvas: {fileID: 7460669782758868346}
-  BackgroundImage: {fileID: 0}
+  BackgroundImage: {fileID: 6436738216273998582}
+  SettingsMenuPrefab: {fileID: 5359835227935049102, guid: 9e175d722a6608a42851ed418ac75c43, type: 3}

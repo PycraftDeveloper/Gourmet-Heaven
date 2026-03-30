@@ -17,9 +17,6 @@ public class SettingsMenuManagerScript : MonoBehaviour
     public Slider MusicSlider;
     private TextMeshProUGUI PlayerControlsSwitchButtonText;
 
-    [Header("Navigable Menus")]
-    public GameObject MainMenuPrefab;
-
     public void Start() // Set the starting values for the settings to what the game currently has set.
     {
         MenuCanvas.worldCamera = Camera.main;
@@ -37,7 +34,7 @@ public class SettingsMenuManagerScript : MonoBehaviour
 
     public void OnSwitchControllerPositionButtonClicked() // Change the joystick position, the code will later determine what this change means.
     {
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
+        Registry.CGI.PlayClickSound();
         if (Registry.JoystickScreenPosition == Constants.LEFT)
         {
             Registry.JoystickScreenPosition = Constants.RIGHT;
@@ -50,8 +47,7 @@ public class SettingsMenuManagerScript : MonoBehaviour
 
     public void OnBackButtonClicked()
     {
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
-        Instantiate(MainMenuPrefab);
+        Registry.CGI.PlayClickSound();
         Destroy(gameObject);
     }
 
@@ -63,7 +59,6 @@ public class SettingsMenuManagerScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Instantiate(MainMenuPrefab);
             Destroy(gameObject);
         }
     }

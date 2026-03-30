@@ -44,4 +44,6 @@ public static class Registry
     public static bool IntroSequencePlayed = false;
 
     public static bool GamePaused = false;
+
+    public static bool InGame = false;
 }

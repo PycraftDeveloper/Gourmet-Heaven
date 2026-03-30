@@ -30,39 +30,36 @@ public class MainMenuManagerScript : MonoBehaviour
 
         MenuCanvas.worldCamera = Camera.main;
         Registry.PlayerScore = 0;
+        Registry.InGame = false;
     }
 
     public void OnPlayButtonClick()
     {
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
+        Registry.CGI.PlayClickSound();
         Instantiate(LevelSelectionMenuPrefab);
-        Destroy(gameObject);
     }
 
     public void OnShopButtonClick()
     {
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
+        Registry.CGI.PlayClickSound();
         Instantiate(ShopMenuPrefab);
-        Destroy(gameObject);
     }
 
     public void OnSettingsButtonClick()
     {
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
+        Registry.CGI.PlayClickSound();
+        Registry.CGI.RenderGameSceneToFrameBuffer();
         Instantiate(SettingsMenuPrefab);
-        Destroy(gameObject);
     }
 
     public void OnCreditsButtonClick()
     {
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
+        Registry.CGI.PlayClickSound();
         Instantiate(CreditsMenuPrefab);
-        Destroy(gameObject);
     }
 
     public void OnQuitButtonClick()
     {
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
         Registry.CGI.QuitGame();
     }
 }

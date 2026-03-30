@@ -77,6 +77,9 @@ public class LevelManager : MonoBehaviour
 
     private bool ReturnToGameToggle = true; // Used to trigger a unique event when the player returns to the game scenes (Kitchen/Restaurant) from another menu, like the pause menu.
 
+    [Header("Navigable Menus")]
+    public GameObject PauseMenuPrefab;
+
     private void Start()
     {
         Registry.CGI.musicSource.Stop();
@@ -329,7 +332,7 @@ public class LevelManager : MonoBehaviour
         {
             Registry.GamePaused = true;
             Registry.CGI.RenderGameSceneToFrameBuffer();
-            Registry.CGI.ChangeMenu(Constants.PAUSE_MENU); // Go to the Pause Menu scene.
+            Instantiate(PauseMenuPrefab);
         }
 
         HandleApplianceState();
@@ -350,7 +353,7 @@ public class LevelManager : MonoBehaviour
         if (!focus && !Application.isEditor && !Registry.InMiniGame) // if NOT in focus
         {
             Registry.CGI.RenderGameSceneToFrameBuffer(); // needs to be called immediately
-            Registry.CGI.ChangeMenu(Constants.PAUSE_MENU); // Go to the Pause Menu scene.
+            Instantiate(PauseMenuPrefab);
         }
     }
 }

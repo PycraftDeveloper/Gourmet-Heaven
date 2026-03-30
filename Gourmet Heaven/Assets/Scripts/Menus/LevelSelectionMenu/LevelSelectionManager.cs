@@ -5,9 +5,6 @@ public class LevelSelectionMenuManagerScript : MonoBehaviour
     [Header("UI")]
     public Canvas MenuCanvas;
 
-    [Header("Navigable Menus")]
-    public GameObject MainMenuPrefab;
-
     public void Start()
     {
         MenuCanvas.worldCamera = Camera.main;
@@ -17,7 +14,8 @@ public class LevelSelectionMenuManagerScript : MonoBehaviour
     {
         Registry.CGI.SetupLevelOne();
 
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
+        Registry.CGI.PlayClickSound();
+        Registry.InGame = true;
         if (!Registry.GameTutorialShown)
         {
             Registry.CGI.ChangeMenu(Constants.GAME_TUTORIAL_MENU);
@@ -32,7 +30,8 @@ public class LevelSelectionMenuManagerScript : MonoBehaviour
     {
         Registry.CGI.SetupLevelTwo();
 
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
+        Registry.CGI.PlayClickSound();
+        Registry.InGame = true;
         if (!Registry.GameTutorialShown)
         {
             Registry.CGI.ChangeMenu(Constants.GAME_TUTORIAL_MENU);
@@ -45,8 +44,7 @@ public class LevelSelectionMenuManagerScript : MonoBehaviour
 
     public void OnBackButtonClick()
     {
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
-        Instantiate(MainMenuPrefab);
+        Registry.CGI.PlayClickSound();
         Destroy(gameObject);
     }
 
@@ -54,7 +52,6 @@ public class LevelSelectionMenuManagerScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Instantiate(MainMenuPrefab);
             Destroy(gameObject);
         }
     }

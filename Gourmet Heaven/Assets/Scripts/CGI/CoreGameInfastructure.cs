@@ -22,6 +22,12 @@ public class CoreGameInfastructure : MonoBehaviour
 
     [SerializeField] public AudioSource SFXSource;
 
+    [Header("Click Sound")]
+    public AudioClip ButtonClickSound;
+
+    [Range(0.0f, 1.0f)] public float ClickVolume;
+    [Range(0.0f, 0.15f)] public float ClickPitchRange;
+
     [Header("AudioClips")]
     public AudioClip bgm_InGame;
 
@@ -41,7 +47,7 @@ public class CoreGameInfastructure : MonoBehaviour
     public AudioClip CustomerFinish2;
     public AudioClip CustomerFinish3;
     public AudioClip RestaurantAmbience;
-    public AudioClip ButtonClickSound;
+
     // end - this section of code was worked on by Joshua Cossar (^)
 
     private Stack<string> MenuStack = new Stack<string>(); // stores a stack containing all the menus previously visited
@@ -56,7 +62,6 @@ public class CoreGameInfastructure : MonoBehaviour
 
     private SavedDataManager savedDataManager;
 
-    public GameObject MainMenuPrefab;
     public GameObject IntroSequAnimPrefab;
     public GameObject CreditsMenuPrefab;
     public GameObject SettingsMenuPrefab;
@@ -99,7 +104,6 @@ public class CoreGameInfastructure : MonoBehaviour
         savedDataManager.Load();
 
         Application.targetFrameRate = Mathf.Max(60, (int)Screen.currentResolution.refreshRateRatio.value);
-        ChangeMenu(Constants.MAIN_MENU);
         ChangeMenu(Constants.INTRO_SEQU_ANIM_MENU, false);
     }
 
@@ -118,6 +122,25 @@ public class CoreGameInfastructure : MonoBehaviour
         musicSource.volume = Registry.MusicVolume;
         GameMusicSource.volume = Registry.MusicVolume;
         SFXSource.volume = Registry.SFXVolume;
+    }
+
+    public void Play_SFX_ExtendedOneShot(AudioClip Audio, float Volume, float StereoPan = 0.0f, float Pitch = 1.0f)
+    {
+        GameObject NewAudioSource = new GameObject("SFX_ExtendedOneShot");
+        AudioSource ExtendedAudioSourceComponent = NewAudioSource.AddComponent<AudioSource>();
+        ExtendedOneShot ExtendedOneShotComponent = NewAudioSource.AddComponent<ExtendedOneShot>();
+        ExtendedAudioSourceComponent.clip = Audio;
+        ExtendedAudioSourceComponent.volume = Volume;
+        ExtendedAudioSourceComponent.panStereo = StereoPan;
+        ExtendedAudioSourceComponent.pitch = Pitch;
+        ExtendedAudioSourceComponent.Play();
+        ExtendedOneShotComponent.Lifetime = Audio.length;
+        NewAudioSource.transform.parent = SFXSource.transform;
+    }
+
+    public void PlayClickSound()
+    {
+        Play_SFX_ExtendedOneShot(ButtonClickSound, Registry.SFXVolume * ClickVolume, Pitch: Random.Range(1.0f - ClickPitchRange, 1.0f + ClickPitchRange));
     }
 
     public void CloseMenu()
@@ -142,11 +165,7 @@ public class CoreGameInfastructure : MonoBehaviour
 
     public GameObject MenuFinder(string NewMenu)
     {
-        if (NewMenu == Constants.MAIN_MENU)
-        {
-            return Instantiate(MainMenuPrefab);
-        }
-        else if (NewMenu == Constants.INTRO_SEQU_ANIM_MENU)
+        if (NewMenu == Constants.INTRO_SEQU_ANIM_MENU)
         {
             return Instantiate(IntroSequAnimPrefab);
         }
@@ -278,14 +297,17 @@ public class CoreGameInfastructure : MonoBehaviour
         RenderTexture BlurredSceneContents = new RenderTexture(Screen.width, Screen.height, 24);
 
         // Get all the GameObjects currently in the scene, so the UI can be hidden.
-        GameObject[] AllGameObjects = FindObjectsByType<GameObject>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
         List<GameObject> UI_GameObjects = new List<GameObject>();
-        foreach (GameObject gameObject in AllGameObjects)
+        if (Registry.InGame)
         {
-            if (gameObject.layer == LayerMask.NameToLayer("UI"))
+            GameObject[] AllGameObjects = FindObjectsByType<GameObject>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+            foreach (GameObject gameObject in AllGameObjects)
             {
-                UI_GameObjects.Add(gameObject);
-                gameObject.SetActive(false);
+                if (gameObject.layer == LayerMask.NameToLayer("UI"))
+                {
+                    UI_GameObjects.Add(gameObject);
+                    gameObject.SetActive(false);
+                }
             }
         }
 
@@ -301,9 +323,12 @@ public class CoreGameInfastructure : MonoBehaviour
         BlurredFrameTexture.ReadPixels(new Rect(x_offset, y_offset, Screen.width, Screen.height), 0, 0);
         BlurredFrameTexture.Apply();
 
-        foreach (GameObject gameObject in UI_GameObjects)
+        if (Registry.InGame)
         {
-            gameObject.SetActive(true); // Re-enable the UI so it can be properly set-up for the pause menu.
+            foreach (GameObject gameObject in UI_GameObjects)
+            {
+                gameObject.SetActive(true); // Re-enable the UI so it can be properly set-up for the pause menu.
+            }
         }
 
         camera.targetTexture = null; // reset the camera's render target

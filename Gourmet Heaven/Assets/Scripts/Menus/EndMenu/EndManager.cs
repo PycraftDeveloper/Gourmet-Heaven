@@ -49,7 +49,7 @@ public class EndMenuManagerScript : MonoBehaviour
     public void OnPlayAgainButtonClick() // Used to restart the game by going back to the level the player was previously playing.
     {
         Registry.PlayerScore = 0;
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
+        Registry.CGI.PlayClickSound();
         if (Registry.LevelNumber == Constants.LEVEL_ONE)
         {
             Registry.CGI.SetupLevelOne();
@@ -64,13 +64,12 @@ public class EndMenuManagerScript : MonoBehaviour
     // The remainder of these functions are not used, but would allow the player to go back to the main menu or quit the game from the end menu.
     public void OnMainMenuButtonClick()
     {
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
+        Registry.CGI.PlayClickSound();
         Registry.CGI.ChangeScene(Constants.MAIN_MENU);
     }
 
     public void OnQuitButtonClick()
     {
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
         Registry.CGI.QuitGame();
     }
 }

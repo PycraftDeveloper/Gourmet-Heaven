@@ -6091,9 +6091,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1603600049
+  m_SortingLayer: 7
+  m_SortingOrder: 32767
   m_MaskInteraction: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -6209,11 +6209,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuCanvas: {fileID: 3678399617291339837}
-  BackgroundImage: {fileID: 0}
+  BackgroundImage: {fileID: 4871495647233693033}
   PlayerControlsSwitchButton: {fileID: 354270911898897062}
   SFXSlider: {fileID: 6435211052380112840}
   MusicSlider: {fileID: 1273882471602687115}
-  MainMenuPrefab: {fileID: 9062835803825983157, guid: 3daf69857a72b904fa2b83ca33bf9f93, type: 3}
 --- !u!1 &6649218394787953280
 GameObject:
   m_ObjectHideFlags: 0

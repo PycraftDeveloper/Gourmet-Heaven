@@ -9,6 +9,9 @@ public class PauseMenuManagerScript : MonoBehaviour
     [Header("Background")]
     public RawImage BackgroundImage;
 
+    [Header("Navigable Menus")]
+    public GameObject SettingsMenuPrefab;
+
     public void Start()
     {
         MenuCanvas.worldCamera = Camera.main;
@@ -23,26 +26,24 @@ public class PauseMenuManagerScript : MonoBehaviour
     public void OnResumeButtonClick()
     {
         Registry.GamePaused = false;
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
-        Registry.CGI.CloseMenu();
+        Registry.CGI.PlayClickSound();
+        Destroy(gameObject);
     }
 
     public void OnSettingsButtonClick()
     {
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
-        Registry.CGI.ChangeMenu(Constants.SETTINGS_MENU);
+        Registry.CGI.PlayClickSound();
+        Instantiate(SettingsMenuPrefab);
     }
 
     public void OnMainMenuButtonClick()
     {
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
+        Registry.CGI.PlayClickSound();
         Registry.CGI.ChangeScene(Constants.MENU_SCENE);
-        Registry.CGI.ChangeMenu(Constants.MAIN_MENU);
     }
 
     public void OnQuitButtonClick()
     {
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
         Registry.CGI.QuitGame();
     }
 
@@ -51,7 +52,7 @@ public class PauseMenuManagerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Registry.GamePaused = false;
-            Registry.CGI.CloseMenu();
+            Destroy(gameObject);
         }
     }
 }

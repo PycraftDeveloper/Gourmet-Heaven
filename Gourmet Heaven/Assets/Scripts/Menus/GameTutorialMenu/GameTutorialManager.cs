@@ -11,7 +11,7 @@ public class GameTutorialManager : MonoBehaviour
 
     public void OnContinueButtonClick()
     {
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
+        Registry.CGI.PlayClickSound();
         Camera.main.enabled = false;
         Registry.CGI.ChangeScene(Constants.GAME_SCENE);
 

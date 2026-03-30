@@ -6,9 +6,6 @@ public class CreditsMenuManagerScript : MonoBehaviour
     [Header("UI")]
     public Canvas MenuCanvas;
 
-    [Header("Navigable Menus")]
-    public GameObject MainMenuPrefab;
-
     public void Start()
     {
         MenuCanvas.worldCamera = Camera.main;
@@ -16,8 +13,7 @@ public class CreditsMenuManagerScript : MonoBehaviour
 
     public void OnBackButtonClicked()
     {
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
-        Instantiate(MainMenuPrefab);
+        Registry.CGI.PlayClickSound();
         Destroy(gameObject);
     }
 
@@ -25,7 +21,7 @@ public class CreditsMenuManagerScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            OnBackButtonClicked();
+            Destroy(gameObject);
         }
     }
 }
