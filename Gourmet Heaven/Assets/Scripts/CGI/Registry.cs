@@ -46,4 +46,5 @@ public static class Registry
     public static bool GamePaused = false;
 
     public static bool InGame = false;
+    public static bool InTutorial = false;
 }

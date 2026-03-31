@@ -93,6 +93,8 @@ public class LevelManager : MonoBehaviour
         Registry.CGI.GameMusicSource.Play();
 
         UIDayText.text = (Registry.LevelNumber + 1).ToString();
+
+        Registry.GamePaused = false;
     }
 
     private void GenerateBackgroundCustomers(int MaxQuantity) // Used to generate random numbers of background customers for the restaurant scene.
@@ -180,12 +182,6 @@ public class LevelManager : MonoBehaviour
 
     private void HandleApplianceState() // This ensures the appliances correctly change to show if they are interactable or not.
     {
-        if (AboveApplianceTileMap == null)
-        {
-            AssociateApplianceTilemap(); // Ensure that the appliance tile map has been assigned.
-            return;
-        }
-
         // Manage the states for each of the appliances in the scene.
         CacheRegister.ManageState(AboveApplianceTileMap);
         ChoppingBoard.ManageState(BehindApplianceTileMap);
@@ -193,29 +189,6 @@ public class LevelManager : MonoBehaviour
         PhoBowl.ManageState(BehindApplianceTileMap);
         SushiRollingMat.ManageState(BehindApplianceTileMap);
         Bin.ManageState(BehindApplianceTileMap);
-    }
-
-    private void AssociateApplianceTilemap() // Ensure that the level manager has the correct tile maps assigned to it when in the kitchen scenes for the appliances.
-    {
-        Tilemap[] tilemaps = FindObjectsByType<Tilemap>(FindObjectsInactive.Include, FindObjectsSortMode.None); // Iterate over all the tile maps in the scene.
-
-        foreach (Tilemap tilemap in tilemaps)
-        {
-            if (tilemap.gameObject.name == "MiscAboveTilemap") // Find based on name
-            {
-                AboveApplianceTileMap = tilemap.GetComponent<Tilemap>();
-            }
-            else if (tilemap.gameObject.name == "MiscBehindTilemap")
-            {
-                BehindApplianceTileMap = tilemap.GetComponent<Tilemap>();
-            }
-
-            if (AboveApplianceTileMap != null && BehindApplianceTileMap != null)
-            {
-                break;
-            }
-        }
-        UpdateQueuePositions(); // Ensure the customers are correctly positioned when the scene is changed.
     }
 
     private void UpdateQueuePositions()
@@ -234,15 +207,12 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Registry.GamePaused)
+        if (!(Registry.InTutorial || Registry.GamePaused))
         {
-            return;
+            Registry.GameTimeDelta = Time.deltaTime;
         }
 
-        UIScoreText.text = Registry.PlayerScore.ToString(); // Update the score text in the UI.
-
-        // Reset all the appliance states (so they can be enabled later, or left disabled).
-        // Note these set states ensure the appliances are not interactable when the player is holding a meal.
+        UIScoreText.text = Registry.PlayerScore.ToString();
         CacheRegister.SetState(false);
         ChoppingBoard.SetState(false);
         CookingPot.SetState(false);
@@ -252,14 +222,6 @@ public class LevelManager : MonoBehaviour
 
         // Allows the bin to always be available when the player is holding a meal, and does NOT take into account internally if the player is holding a meal.
         Bin.SetState(Registry.PlayerObject.HoldingMeal != Constants.NOT_HOLDING_MEAL, false);
-
-        if (ReturnToGameToggle)
-        {
-            AssociateApplianceTilemap(); // If this is the first frame back after the scene has returned to a game scene.
-        }
-        Registry.GameTimeDelta = Time.deltaTime * Registry.NotInTutorialScreenTimeModifier; // Update the time delta used by the game. This allows for time to 'freeze' when in a tutorial
-        // or when not in the game scenes.
-        ReturnToGameToggle = false; // Set the toggle to false so it doesn't run again until the scene changes.
 
         CustomerSpawnTimer += Registry.GameTimeDelta;
 
@@ -297,8 +259,8 @@ public class LevelManager : MonoBehaviour
             if (thisCustomer.CurrentPosition.x == 0.5f && thisCustomer.CurrentPosition.y == -3.61f && CustomersInScene - CustomerKitchenQueue.Count < 8) // Check if the customer is in
                                                                                                                                                          // the kitchen scene, and that it is waiting at the till point.
             {
-                thisCustomer.SetAnimationState(Constants.CUSTOMER_IDLE_UP_ANIMATION); // Set the customer to idle facing the till point.
-                CacheRegister.SetState(true); // 'activate' the till point tile
+                thisCustomer.SetAnimationState(Constants.CUSTOMER_IDLE_UP_ANIMATION);
+                CacheRegister.SetState(true);
             }
         }
 
@@ -306,11 +268,11 @@ public class LevelManager : MonoBehaviour
         {
             if (CustomerKitchenQueue.Count == 0)
             {
-                GenerateBackgroundCustomers(9); // If there are no customers in the queue, ensure all the tables in the restaurant are filled with background customers.
+                GenerateBackgroundCustomers(9);
             }
             else
             {
-                GenerateBackgroundCustomers(Random.Range(2, 6)); // If there are customers in the queue, randomly generate between 2 and 6 background customers.
+                GenerateBackgroundCustomers(Random.Range(2, 6));
             }
 
             NextCustomerSpawnTime = Random.Range(Constants.CUSTOMER_MIN_SPAWN_RATE[Registry.LevelNumber], Constants.CUSTOMER_MAX_SPAWN_RATE[Registry.LevelNumber]); // Reset the customer spawn timer.
@@ -328,7 +290,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && !Registry.GamePaused && !Registry.InMiniGame) // Pause the game when the user its the back button.
+        if (Input.GetKeyDown(KeyCode.Escape) && !Registry.GamePaused && !Registry.InMiniGame)
         {
             Registry.GamePaused = true;
             Registry.CGI.RenderGameSceneToFrameBuffer();
