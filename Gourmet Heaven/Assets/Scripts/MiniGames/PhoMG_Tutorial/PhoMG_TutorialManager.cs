@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class PhoMG_TutorialManager : MonoBehaviour
 {
+    [Header("UI")]
     public Canvas MenuCanvas;
+
+    [Header("Navigable Menus")]
+    public GameObject Pho_MG_Menu;
 
     public void Start()
     {
@@ -12,6 +16,7 @@ public class PhoMG_TutorialManager : MonoBehaviour
 
     public void OnContinueButtonClicked()
     {
-        Registry.CGI.ChangeMenu(Constants.PHO_MG_MENU);
+        Instantiate(Pho_MG_Menu);
+        Destroy(this.gameObject);
     }
 }

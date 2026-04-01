@@ -4299,6 +4299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 397728066}
+  - component: {fileID: 397728067}
   m_Layer: 0
   m_Name: KitchenLocation
   m_TagString: Untagged
@@ -4326,6 +4327,26 @@ Transform:
   - {fileID: 213314091}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &397728067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397728065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02cbc887c8a48db478ea5c59ae13139c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rice_MG_TutorialMenu: {fileID: 419071929603388415, guid: 53000451ff168b24cbb1a155c842fe26, type: 3}
+  Buns_MG_TutorialMenu: {fileID: 1216675718378227251, guid: d634972bbefc85a45a0e634562e5d2f3, type: 3}
+  Pho_MG_TutorialMenu: {fileID: 40824314503778006, guid: 6b6884b0255d9884c885b687d11c22a4, type: 3}
+  Sushi_MG_TutorialMenu: {fileID: 6400634155402165527, guid: 42ad5da4197c664498bb11573834f47e, type: 3}
+  Rice_MG_Menu: {fileID: 482874259583637289, guid: 06098c545803ea64c8db5c44b26469be, type: 3}
+  Buns_MG_Menu: {fileID: 4409874896792580960, guid: e3d20c948fb85904497e09351e701880, type: 3}
+  Pho_MG_Menu: {fileID: 1305677654761715817, guid: 931ccafd53f0ea94dbcd49ea287dd5d4, type: 3}
+  Sushi_MG_Menu: {fileID: 3632262828036524158, guid: 92cf1ed188fecc544a95f1081f317bc8, type: 3}
 --- !u!1 &680713608
 GameObject:
   m_ObjectHideFlags: 0
@@ -6371,7 +6392,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1338971753}
+      - m_Target: {fileID: 397728067}
         m_TargetAssemblyTypeName: KitchenManager, Assembly-CSharp
         m_MethodName: OnPhoBowlPopUpButtonClick
         m_Mode: 1
@@ -6659,7 +6680,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1338971753}
+      - m_Target: {fileID: 397728067}
         m_TargetAssemblyTypeName: KitchenManager, Assembly-CSharp
         m_MethodName: OnBinPopUpButtonClick
         m_Mode: 1
@@ -6721,7 +6742,6 @@ GameObject:
   - component: {fileID: 1338971756}
   - component: {fileID: 1338971755}
   - component: {fileID: 1338971754}
-  - component: {fileID: 1338971753}
   m_Layer: 5
   m_Name: PopUpCanvas
   m_TagString: Untagged
@@ -6729,18 +6749,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1338971753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1338971752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02cbc887c8a48db478ea5c59ae13139c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1338971754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6991,7 +6999,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  PauseMenuPrefab: {fileID: 0}
+  PauseMenuPrefab: {fileID: 8600645802944895650, guid: b31aa16cb66b7fe438f3e644d0c42dda, type: 3}
 --- !u!4 &1432080515
 Transform:
   m_ObjectHideFlags: 0
@@ -8169,7 +8177,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1338971753}
+      - m_Target: {fileID: 397728067}
         m_TargetAssemblyTypeName: KitchenManager, Assembly-CSharp
         m_MethodName: OnCachierPopUpButtonClick
         m_Mode: 1
@@ -11356,7 +11364,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1338971753}
+      - m_Target: {fileID: 397728067}
         m_TargetAssemblyTypeName: KitchenManager, Assembly-CSharp
         m_MethodName: OnCookingPotPopUpButtonClick
         m_Mode: 1
@@ -11488,7 +11496,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1338971753}
+      - m_Target: {fileID: 397728067}
         m_TargetAssemblyTypeName: KitchenManager, Assembly-CSharp
         m_MethodName: OnRollingMatPopUpButtonClick
         m_Mode: 1
@@ -12664,7 +12672,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1338971753}
+      - m_Target: {fileID: 397728067}
         m_TargetAssemblyTypeName: KitchenManager, Assembly-CSharp
         m_MethodName: OnChoppingBoardPopUpButtonClick
         m_Mode: 1

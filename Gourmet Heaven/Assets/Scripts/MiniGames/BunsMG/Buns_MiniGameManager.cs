@@ -31,7 +31,7 @@ public class Buns_MiniGameManager : MonoBehaviour
     private void ReturnToKitchen()
     {
         Registry.InMiniGame = false;
-        Registry.CGI.CloseMenu();
+        Destroy(this.gameObject);
     }
 
     private void OnMiniGameFailed()
@@ -46,17 +46,16 @@ public class Buns_MiniGameManager : MonoBehaviour
     private void ShowMiniGameSucsess()
     {
         MiniGameWinPopUp.SetActive(true);
-        Registry.PlayerObject.GetComponent<Player>().HoldingMeal = Constants.BAO_BUNS;
+        Registry.PlayerObject.HoldingMeal = Constants.BAO_BUNS;
         Registry.CGI.GameMusicSource.UnPause();
         Registry.CGI.musicSource.Stop();
+        Registry.BunsMGTutorialShown = true;
         Invoke("ReturnToKitchen", 2);
     }
 
     private void OnMiniGameWin()
     {
         MiniGameLocked = true;
-
-        Registry.BunsMGTutorialShown = true;
 
         ShowMiniGameSucsess();
     }

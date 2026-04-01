@@ -59,7 +59,7 @@ public class Pho_MiniGameManager : MonoBehaviour
     private void ReturnToKitchen()
     {
         Registry.InMiniGame = false;
-        Registry.CGI.CloseMenu();
+        Destroy(this.gameObject);
     }
 
     private void OnMiniGameFailed()
@@ -76,15 +76,14 @@ public class Pho_MiniGameManager : MonoBehaviour
         MiniGameWinPopUp.SetActive(true);
         Registry.CGI.GameMusicSource.UnPause();
         Registry.CGI.musicSource.Stop();
-        Registry.PlayerObject.GetComponent<Player>().HoldingMeal = Constants.PHO;
+        Registry.PlayerObject.HoldingMeal = Constants.PHO;
+        Registry.PhoMGTutorialShown = true;
         Invoke("ReturnToKitchen", 2.0f);
     }
 
     private void OnMiniGameWin() // Unlike the sushi mini-game there are no animations to be played on completion of this mini-game, so can continue to displaying splash screen.
     {
         MiniGameLocked = true;
-
-        Registry.PhoMGTutorialShown = true; // Prevent the tutorial screen for the mini-game from showing once the player completes a mini-game perfectly.
 
         ShowMiniGameSucsess();
     }

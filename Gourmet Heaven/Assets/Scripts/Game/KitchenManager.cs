@@ -2,6 +2,20 @@ using UnityEngine;
 
 public class KitchenManager : MonoBehaviour
 {
+    [Header("Navigable Menus - Mini Game Tutorials")]
+    public GameObject Rice_MG_TutorialMenu;
+
+    public GameObject Buns_MG_TutorialMenu;
+    public GameObject Pho_MG_TutorialMenu;
+    public GameObject Sushi_MG_TutorialMenu;
+
+    [Header("Navigable Menus - Mini Games")]
+    public GameObject Rice_MG_Menu;
+
+    public GameObject Buns_MG_Menu;
+    public GameObject Pho_MG_Menu;
+    public GameObject Sushi_MG_Menu;
+
     public void OnCachierPopUpButtonClick() // Collect the customer's order when the customer is served at the till point
     {
         Registry.LevelManagerObject.HandleOrderCollection();
@@ -13,11 +27,11 @@ public class KitchenManager : MonoBehaviour
         if (!Registry.RiceMGTutorialShown)
         {
             Registry.RiceMGTutorialShown = true;
-            Registry.CGI.ChangeMenu(Constants.RICE_MG_TUTORIAL_MENU);
+            Instantiate(Rice_MG_TutorialMenu);
         }
         else
         {
-            Registry.CGI.ChangeMenu(Constants.RICE_MG_MENU);
+            Instantiate(Rice_MG_Menu);
         }
     }
 
@@ -25,12 +39,11 @@ public class KitchenManager : MonoBehaviour
     {
         if (!Registry.BunsMGTutorialShown)
         {
-            Registry.BunsMGTutorialShown = true;
-            Registry.CGI.ChangeMenu(Constants.BUNS_MG_TUTORIAL_MENU);
+            Instantiate(Buns_MG_TutorialMenu);
         }
         else
         {
-            Registry.CGI.ChangeMenu(Constants.BUNS_MG_MENU);
+            Instantiate(Buns_MG_Menu);
         }
     }
 
@@ -38,12 +51,11 @@ public class KitchenManager : MonoBehaviour
     {
         if (!Registry.PhoMGTutorialShown)
         {
-            Registry.PhoMGTutorialShown = true;
-            Registry.CGI.ChangeMenu(Constants.PHO_MG_TUTORIAL_MENU);
+            Instantiate(Pho_MG_TutorialMenu);
         }
         else
         {
-            Registry.CGI.ChangeMenu(Constants.PHO_MG_MENU);
+            Instantiate(Pho_MG_Menu);
         }
     }
 
@@ -51,12 +63,11 @@ public class KitchenManager : MonoBehaviour
     {
         if (!Registry.SushiMGTutorialShown)
         {
-            Registry.SushiMGTutorialShown = true;
-            Registry.CGI.ChangeMenu(Constants.SUSHI_MG_TUTORIAL_MENU);
+            Instantiate(Sushi_MG_TutorialMenu);
         }
         else
         {
-            Registry.CGI.ChangeMenu(Constants.SUSHI_MG_MENU);
+            Instantiate(Sushi_MG_Menu);
         }
     }
 

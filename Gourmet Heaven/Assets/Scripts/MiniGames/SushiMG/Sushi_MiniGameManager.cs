@@ -61,7 +61,7 @@ public class Sushi_MiniGameManager : MonoBehaviour // Used to manage the startin
     private void ReturnToKitchen()
     {
         Registry.InMiniGame = false;
-        Registry.CGI.CloseMenu();
+        Destroy(this.gameObject);
     }
 
     private void OnMiniGameFailed() // Called immediately after the mini-game has failed to show the splash art.
@@ -80,17 +80,16 @@ public class Sushi_MiniGameManager : MonoBehaviour // Used to manage the startin
         TimerText.gameObject.SetActive(false);
         SushiRollingAnimation.SetActive(false);
         MiniGameWinPopUp.SetActive(true); // show success splash art
-        Registry.PlayerObject.GetComponent<Player>().HoldingMeal = Constants.SUSHI; // set the player's current meal to sushi
+        Registry.PlayerObject.HoldingMeal = Constants.SUSHI; // set the player's current meal to sushi
         Registry.CGI.GameMusicSource.UnPause();
         Registry.CGI.musicSource.Stop();
+        Registry.SushiMGTutorialShown = true;
         Invoke("ReturnToKitchen", Constants.MINI_GAME_SPLASH_ART_DURATION); // return to the kitchen after 2 seconds (allows time for the player to see the success splash art)
     }
 
     private void OnMiniGameWin() // Called immediately after the mini-game has been won to allow the animation to play and to lock the scene before progressing to the splash art
     {
         MiniGameLocked = true;
-
-        Registry.SushiMGTutorialShown = true; // Only hide the tutorial once the player has completed the game successfully.
 
         SushiRollingAnimation.SetActive(true); // Show the rolling animation
         Animator SushiRollingAnimator = SushiRollingAnimation.GetComponent<Animator>();

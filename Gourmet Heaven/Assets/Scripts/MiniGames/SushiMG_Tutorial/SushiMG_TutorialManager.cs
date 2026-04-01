@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class SushiMG_TutorialManager : MonoBehaviour
 {
+    [Header("UI")]
     public Canvas MenuCanvas;
+
+    [Header("Navigable Menus")]
+    public GameObject Sushi_MG_Menu;
 
     public void Start()
     {
@@ -12,6 +16,7 @@ public class SushiMG_TutorialManager : MonoBehaviour
 
     public void OnContinueButtonClicked()
     {
-        Registry.CGI.ChangeMenu(Constants.SUSHI_MG_MENU);
+        Instantiate(Sushi_MG_Menu);
+        Destroy(this.gameObject);
     }
 }

@@ -182,7 +182,7 @@ public class SlicedObject : MonoBehaviour
             Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.MangoFinish);
             ShowMessage("Amazing!");
 
-            Registry.PlayerObject.GetComponent<Player>().HoldingMeal = Constants.MANGO_STICKY_RICE;
+            Registry.PlayerObject.HoldingMeal = Constants.MANGO_STICKY_RICE;
 
             Registry.RiceMGTutorialShown = true;
 
@@ -227,10 +227,7 @@ public class SlicedObject : MonoBehaviour
 
     private void ShowSplashArt()
     {
-        if (SuccessSplashArt != null)
-        {
-            SuccessSplashArt.gameObject.SetActive(true);
-        }
+        SuccessSplashArt.gameObject.SetActive(true);
 
         Registry.CGI.GameMusicSource.UnPause();
         Registry.CGI.musicSource.Stop();
@@ -241,6 +238,6 @@ public class SlicedObject : MonoBehaviour
     private void ReturnToKitchen()
     {
         Registry.InMiniGame = false;
-        Registry.CGI.CloseMenu();
+        Destroy(this.gameObject);
     }
 }

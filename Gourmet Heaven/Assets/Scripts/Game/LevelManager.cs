@@ -75,8 +75,6 @@ public class LevelManager : MonoBehaviour
     public Queue<ForegroundCustomer> CustomerKitchenQueue = new Queue<ForegroundCustomer>(); // Stores the order customers are arranged in the Kitchen queue.
     public GameObject[] CustomerTableArrangement = new GameObject[8]; // Stores the seating positions and where customers are currently seated in the restaurant scene.
 
-    private bool ReturnToGameToggle = true; // Used to trigger a unique event when the player returns to the game scenes (Kitchen/Restaurant) from another menu, like the pause menu.
-
     [Header("Navigable Menus")]
     public GameObject PauseMenuPrefab;
 
@@ -299,14 +297,11 @@ public class LevelManager : MonoBehaviour
 
         HandleApplianceState();
 
-        if (Registry.LevelRunTime > 0)
+        Registry.LevelRunTime -= Registry.GameTimeDelta;
+        if (Registry.LevelRunTime <= 0)
         {
-            Registry.LevelRunTime -= Time.deltaTime;
-            if (Registry.LevelRunTime <= 0)
-            {
-                Registry.CGI.ChangeScene(Constants.MENU_SCENE);
-                Registry.CGI.ChangeMenu(Constants.END_MENU);
-            }
+            Registry.CGI.ChangeScene(Constants.MENU_SCENE);
+            Registry.CGI.ChangeMenu(Constants.END_MENU);
         }
     }
 

@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class RiceMG_TutorialManager : MonoBehaviour
 {
+    [Header("UI")]
     public Canvas MenuCanvas;
+
+    [Header("Navigable Menus")]
+    public GameObject Rice_MG_Menu;
 
     public void Start()
     {
@@ -12,6 +16,7 @@ public class RiceMG_TutorialManager : MonoBehaviour
 
     public void OnContinueButtonClicked()
     {
-        Registry.CGI.ChangeMenu(Constants.RICE_MG_MENU);
+        Instantiate(Rice_MG_Menu);
+        Destroy(this.gameObject);
     }
 }
