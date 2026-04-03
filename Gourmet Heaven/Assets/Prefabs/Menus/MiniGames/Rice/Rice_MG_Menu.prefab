@@ -140,6 +140,8 @@ MonoBehaviour:
   feedbackText: {fileID: 1632056004471895887}
   arrowPrefab: {fileID: 3449853850600514551, guid: 9c1864dd64ccc494fb62212b133c401e, type: 3}
   arrowHeadPrefab: {fileID: 6212936951455998423, guid: 8fa341e2a51120d4c840b30d291e7483, type: 3}
+  currentArrow: {fileID: 0}
+  currentArrowHead: {fileID: 0}
   SlicedRice: {fileID: 2583257845384523384}
   WholeRice: {fileID: 8251751149020012177}
   CutRice: {fileID: 6582933751801946172}
@@ -156,7 +158,6 @@ MonoBehaviour:
   - {fileID: 5043588672083329583}
   - {fileID: 3313244612546423136}
   SuccessSplashArt: {fileID: 2685755768660223677}
-  FailSplashArt: {fileID: 0}
   BackgroundMusic: {fileID: 8300000, guid: 917533896520aea4eaf77086553f50e9, type: 3}
 --- !u!1 &1353707373217983129
 GameObject:
@@ -2332,6 +2333,8 @@ MonoBehaviour:
   delayTime: 2
   SplashArtFail: {fileID: 8783281572734373654}
   isRunning: 1
+  Root: {fileID: 482874259583637289}
+  SliceManager: {fileID: 3028533309646981193}
 --- !u!1 &8251751149020012177
 GameObject:
   m_ObjectHideFlags: 0

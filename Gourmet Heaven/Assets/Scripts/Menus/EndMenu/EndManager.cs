@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndMenuManagerScript : MonoBehaviour
 {
@@ -58,14 +59,14 @@ public class EndMenuManagerScript : MonoBehaviour
         {
             Registry.CGI.SetupLevelTwo();
         }
-        Registry.CGI.ChangeScene(Constants.GAME_SCENE);
+        SceneManager.LoadScene(Constants.GAME_SCENE);
     }
 
     // The remainder of these functions are not used, but would allow the player to go back to the main menu or quit the game from the end menu.
     public void OnMainMenuButtonClick()
     {
         Registry.CGI.PlayClickSound();
-        Registry.CGI.ChangeScene(Constants.MENU_SCENE);
+        SceneManager.LoadScene(Constants.GAME_SCENE);
     }
 
     public void OnQuitButtonClick()

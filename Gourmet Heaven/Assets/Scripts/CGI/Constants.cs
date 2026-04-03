@@ -23,19 +23,9 @@ public static class Constants
     public const string LEFT = "Left";
     public const string RIGHT = "Right";
 
-    public const string BUNS_MG_MENU = "buns mini-game";
-    public const string PHO_MG_MENU = "pho mini-game";
-    public const string RICE_MG_MENU = "rice mini-game";
-    public const string SUSHI_MG_MENU = "sushi mini-game";
-    public const string BUNS_MG_TUTORIAL_MENU = "buns mini-game tutorial";
-    public const string PHO_MG_TUTORIAL_MENU = "pho mini-game tutorial";
-    public const string RICE_MG_TUTORIAL_MENU = "rice mini-game tutorial";
-    public const string SUSHI_MG_TUTORIAL_MENU = "sushi mini-game tutorial";
-    public const string END_MENU = "end menu";
-    public const string GAME_TUTORIAL_MENU = "game tutorial menu";
-
     public const string GAME_SCENE = "Game";
     public const string MENU_SCENE = "Menu";
+    public const string GAME_OVER_SCENE = "GameOver";
 
     // Store the meals the player can hold.
     public const string PHO = "pho";

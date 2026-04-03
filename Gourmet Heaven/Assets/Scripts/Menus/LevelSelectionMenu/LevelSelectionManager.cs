@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelSelectionMenuManagerScript : MonoBehaviour
 {
     [Header("UI")]
     public Canvas MenuCanvas;
+
+    [Header("Navigable Menus")]
+    public GameObject GameTutorialMenuPrefab;
 
     public void Start()
     {
@@ -18,11 +22,12 @@ public class LevelSelectionMenuManagerScript : MonoBehaviour
         Registry.InGame = true;
         if (!Registry.GameTutorialShown)
         {
-            Registry.CGI.ChangeMenu(Constants.GAME_TUTORIAL_MENU);
+            Instantiate(GameTutorialMenuPrefab);
+            Destroy(this.gameObject);
         }
         else
         {
-            Registry.CGI.ChangeScene(Constants.GAME_SCENE);
+            SceneManager.LoadScene(Constants.GAME_SCENE);
         }
     }
 
@@ -34,11 +39,12 @@ public class LevelSelectionMenuManagerScript : MonoBehaviour
         Registry.InGame = true;
         if (!Registry.GameTutorialShown)
         {
-            Registry.CGI.ChangeMenu(Constants.GAME_TUTORIAL_MENU);
+            Instantiate(GameTutorialMenuPrefab);
+            Destroy(this.gameObject);
         }
         else
         {
-            Registry.CGI.ChangeScene(Constants.GAME_SCENE);
+            SceneManager.LoadScene(Constants.GAME_SCENE);
         }
     }
 

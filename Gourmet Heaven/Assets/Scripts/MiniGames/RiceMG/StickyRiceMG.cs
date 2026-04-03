@@ -8,8 +8,8 @@ public class SlicedObject : MonoBehaviour
 
     public GameObject arrowPrefab;
     public GameObject arrowHeadPrefab;
-    private GameObject currentArrow;
-    private GameObject currentArrowHead;
+    [HideInInspector] public GameObject currentArrow;
+    [HideInInspector] public GameObject currentArrowHead;
     public GameObject SlicedRice;
     public GameObject WholeRice;
     public GameObject CutRice;
@@ -29,8 +29,6 @@ public class SlicedObject : MonoBehaviour
 
     [Header("End menus")]
     public GameObject SuccessSplashArt;
-
-    public GameObject FailSplashArt;
 
     [Header("Music")]
     public AudioClip BackgroundMusic;
@@ -227,6 +225,9 @@ public class SlicedObject : MonoBehaviour
 
     private void ShowSplashArt()
     {
+        Destroy(currentArrow);
+        Destroy(currentArrowHead);
+
         SuccessSplashArt.gameObject.SetActive(true);
 
         Registry.CGI.GameMusicSource.UnPause();

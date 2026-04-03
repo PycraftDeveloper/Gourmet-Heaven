@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 #if UNITY_EDITOR
 
@@ -23,9 +22,6 @@ public class CoreGameInfastructure : MonoBehaviour
     [Range(0.0f, 1.0f)] public float ClickVolume;
     [Range(0.0f, 0.15f)] public float ClickPitchRange;
 
-    [Header("Navigable Menus")]
-    public GameObject IntroSequenceMenuPrefab;
-
     [Header("Audio Clips")]
     public AudioClip bgm_InGame;
 
@@ -46,8 +42,6 @@ public class CoreGameInfastructure : MonoBehaviour
     public AudioClip CustomerFinish3;
     public AudioClip RestaurantAmbience;
 
-    private Stack<string> MenuStack = new Stack<string>();
-
     [Header("Blurred Background")]
     [HideInInspector] public Texture2D FrameTexture;
 
@@ -56,22 +50,8 @@ public class CoreGameInfastructure : MonoBehaviour
 
     private SavedDataManager savedDataManager;
 
-    public GameObject GameTutorialMenuPrefab;
-    public GameObject EndMenuPrefab;
-    public GameObject Sushi_MG_MenuPrefab;
-    public GameObject Sushi_MG_TutorialMenuPrefab;
-    public GameObject Buns_MG_MenuPrefab;
-    public GameObject Buns_MG_TutorialMenuPrefab;
-    public GameObject Pho_MG_MenuPrefab;
-    public GameObject Pho_MG_TutorialMenuPrefab;
-    public GameObject Rice_MG_MenuPrefab;
-    public GameObject Rice_MG_TutorialMenuPrefab;
-
-    private GameObject CurrentMenu;
-
-    private bool SceneChanging = false;
-    private string NextSceneName = "";
-    private string NextMenuName = "";
+    [Header("Navigable Menus")]
+    public GameObject IntroSequenceMenuPrefab;
 
     private void Awake()
     {
@@ -97,16 +77,6 @@ public class CoreGameInfastructure : MonoBehaviour
 
     private void Update()
     {
-        if (SceneChanging && SceneManager.GetActiveScene().name == NextSceneName)
-        {
-            SceneChanging = false;
-            if (NextMenuName != "")
-            {
-                ChangeMenu(NextMenuName);
-                NextMenuName = "";
-            }
-        }
-
         musicSource.volume = Registry.MusicVolume;
         GameMusicSource.volume = Registry.MusicVolume;
         SFXSource.volume = Registry.SFXVolume;
@@ -131,14 +101,6 @@ public class CoreGameInfastructure : MonoBehaviour
         Play_SFX_ExtendedOneShot(ButtonClickSound, Registry.SFXVolume * ClickVolume, Pitch: Random.Range(1.0f - ClickPitchRange, 1.0f + ClickPitchRange));
     }
 
-    public void CloseMenu()
-    {
-        if (CurrentMenu != null)
-        {
-            Destroy(CurrentMenu);
-        }
-    }
-
     public void SetupLevelOne()
     {
         Registry.LevelRunTime = Constants.LEVEL_ONE_DURATION;
@@ -149,85 +111,6 @@ public class CoreGameInfastructure : MonoBehaviour
     {
         Registry.LevelRunTime = Constants.LEVEL_TWO_DURATION;
         Registry.LevelNumber = Constants.LEVEL_TWO;
-    }
-
-    public GameObject MenuFinder(string NewMenu)
-    {
-        if (NewMenu == Constants.GAME_TUTORIAL_MENU)
-        {
-            return Instantiate(GameTutorialMenuPrefab);
-        }
-        else if (NewMenu == Constants.END_MENU)
-        {
-            return Instantiate(EndMenuPrefab);
-        }
-        else if (NewMenu == Constants.SUSHI_MG_MENU)
-        {
-            return Instantiate(Sushi_MG_MenuPrefab);
-        }
-        else if (NewMenu == Constants.SUSHI_MG_TUTORIAL_MENU)
-        {
-            return Instantiate(Sushi_MG_TutorialMenuPrefab);
-        }
-        else if (NewMenu == Constants.BUNS_MG_MENU)
-        {
-            return Instantiate(Buns_MG_MenuPrefab);
-        }
-        else if (NewMenu == Constants.BUNS_MG_TUTORIAL_MENU)
-        {
-            return Instantiate(Buns_MG_TutorialMenuPrefab);
-        }
-        else if (NewMenu == Constants.PHO_MG_MENU)
-        {
-            return Instantiate(Pho_MG_MenuPrefab);
-        }
-        else if (NewMenu == Constants.PHO_MG_TUTORIAL_MENU)
-        {
-            return Instantiate(Pho_MG_TutorialMenuPrefab);
-        }
-        else if (NewMenu == Constants.RICE_MG_MENU)
-        {
-            return Instantiate(Rice_MG_MenuPrefab);
-        }
-        else if (NewMenu == Constants.RICE_MG_TUTORIAL_MENU)
-        {
-            return Instantiate(Rice_MG_TutorialMenuPrefab);
-        }
-        else
-        {
-            Debug.LogError("Menu not found: " + NewMenu);
-            return null;
-        }
-    }
-
-    public void ChangeMenu(string NewMenu, bool ClosePrevious = true)
-    {
-        if (SceneChanging)
-        {
-            NextMenuName = NewMenu;
-            return;
-        }
-
-        if (ClosePrevious && CurrentMenu != null)
-        {
-            Destroy(CurrentMenu);
-        }
-
-        GameObject NewMenuInstance = MenuFinder(NewMenu);
-
-        if (ClosePrevious)
-        {
-            MenuStack.Push(NewMenu);
-            CurrentMenu = NewMenuInstance;
-        }
-    }
-
-    public void ChangeScene(string NewScene)
-    {
-        SceneChanging = true;
-        NextSceneName = NewScene;
-        SceneManager.LoadScene(NewScene);
-        CloseMenu();
     }
 
     public void QuitGame()

@@ -3,6 +3,7 @@ using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Appliance // This class is used to switch the icons for the mini-games between IDLE and ACTIVATED states.
@@ -300,8 +301,7 @@ public class LevelManager : MonoBehaviour
         Registry.LevelRunTime -= Registry.GameTimeDelta;
         if (Registry.LevelRunTime <= 0)
         {
-            Registry.CGI.ChangeScene(Constants.MENU_SCENE);
-            Registry.CGI.ChangeMenu(Constants.END_MENU);
+            SceneManager.LoadScene(Constants.GAME_OVER_SCENE);
         }
     }
 

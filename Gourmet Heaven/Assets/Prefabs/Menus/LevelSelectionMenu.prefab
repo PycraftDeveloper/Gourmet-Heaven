@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuCanvas: {fileID: 9100318039211754999}
-  MainMenuPrefab: {fileID: 9062835803825983157, guid: 3daf69857a72b904fa2b83ca33bf9f93, type: 3}
+  GameTutorialMenuPrefab: {fileID: 4548466070277655102, guid: 2926e9f1356546746ac9b7eb0bea651b, type: 3}
 --- !u!1 &683224375590835872
 GameObject:
   m_ObjectHideFlags: 0

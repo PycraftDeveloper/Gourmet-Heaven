@@ -15,9 +15,13 @@ public class CountdownTimer : MonoBehaviour
 
     public bool isRunning = true;
 
+    public GameObject Root;
+
+    public SlicedObject SliceManager;
+
     private void ReturnToKitchen()
     {
-        Registry.CGI.CloseMenu();
+        Destroy(Root);
     }
 
     private void Update()
@@ -31,6 +35,15 @@ public class CountdownTimer : MonoBehaviour
         }
         else if (remainingTime <= 0) // Mini-game failed condition
         {
+            if (SliceManager.currentArrow != null)
+            {
+                Destroy(SliceManager.currentArrow);
+            }
+            
+            if (SliceManager.currentArrowHead != null) {
+                Destroy(SliceManager.currentArrowHead);
+            }
+
             SplashArtFail.gameObject.SetActive(true);
             remainingTime = 0;
             timerText.color = Color.red;

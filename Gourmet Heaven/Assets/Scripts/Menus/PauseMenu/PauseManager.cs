@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseMenuManagerScript : MonoBehaviour
@@ -39,7 +40,7 @@ public class PauseMenuManagerScript : MonoBehaviour
     public void OnMainMenuButtonClick()
     {
         Registry.CGI.PlayClickSound();
-        Registry.CGI.ChangeScene(Constants.MENU_SCENE);
+        SceneManager.LoadScene(Constants.MENU_SCENE);
     }
 
     public void OnQuitButtonClick()

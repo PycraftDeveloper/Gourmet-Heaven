@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameTutorialManager : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class GameTutorialManager : MonoBehaviour
     {
         Registry.CGI.PlayClickSound();
         Camera.main.enabled = false;
-        Registry.CGI.ChangeScene(Constants.GAME_SCENE);
+
+        SceneManager.LoadScene(Constants.GAME_SCENE);
 
         Registry.CGI.musicSource.Stop();
     }
