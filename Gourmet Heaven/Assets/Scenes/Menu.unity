@@ -562,7 +562,6 @@ MonoBehaviour:
   ButtonClickSound: {fileID: 8300000, guid: 0dd23dd4b6a11b54f92fdd620fc94da3, type: 3}
   ClickVolume: 1
   ClickPitchRange: 0.15
-  IntroSequenceMenuPrefab: {fileID: 8302476738363852932, guid: e551747ced7004441995354ec264352c, type: 3}
   bgm_InGame: {fileID: 8300000, guid: f8482208382ba35408d44cdb3839ca76, type: 3}
   bgm_MainMenu: {fileID: 8300000, guid: 76d4d504df08d9a42b568b3487d975bc, type: 3}
   bgm_MiniGame: {fileID: 8300000, guid: 917533896520aea4eaf77086553f50e9, type: 3}
@@ -570,8 +569,8 @@ MonoBehaviour:
   CuttingSound: {fileID: 8300000, guid: 5c88ef67abf676347a17ff9c2db1ddf3, type: 3}
   MangoFinish: {fileID: 8300000, guid: f856476201d24d946b3116ee2b98f99c, type: 3}
   BoilingWater: {fileID: 8300000, guid: 397759993a2d07747adb526ece4a7405, type: 3}
-  EggTimerTicking: {fileID: 0}
-  EggTimerAlarm: {fileID: 0}
+  EggTimerTicking: {fileID: 8300000, guid: d68b0e0ec79d9bf4ab58c876da728149, type: 3}
+  EggTimerAlarm: {fileID: 8300000, guid: 3175e67feefd8064d91b934f19e3e838, type: 3}
   SoupSplash1: {fileID: 8300000, guid: 8026185e2f425bd4ea7949606d373969, type: 3}
   SoupSplash2: {fileID: 8300000, guid: 2a7fdd3db3cf61b4e9876024f07e10ef, type: 3}
   SushiSound: {fileID: 8300000, guid: bd2b9160a31209b4f8a44b5573970c27, type: 3}
@@ -582,22 +581,7 @@ MonoBehaviour:
   FrameTexture: {fileID: 0}
   BlurredFrameTexture: {fileID: 0}
   BlurredMaterial: {fileID: 2100000, guid: 92f2222756e8e534c8b66d92176d225b, type: 2}
-  IntroSequAnimPrefab: {fileID: 8302476738363852932, guid: e551747ced7004441995354ec264352c, type: 3}
-  CreditsMenuPrefab: {fileID: 5059524997635029324, guid: 31f60c0ba47627c409e0659700a6b16c, type: 3}
-  SettingsMenuPrefab: {fileID: 5359835227935049102, guid: 9e175d722a6608a42851ed418ac75c43, type: 3}
-  ShopMenuPrefab: {fileID: 8860819454731842317, guid: 157feec38af169145904b8d9cbdcf6f5, type: 3}
-  LevelSelectionMenuPrefab: {fileID: 35857472891740990, guid: aee47eb2da5093e46a086ba40371463e, type: 3}
-  GameTutorialMenuPrefab: {fileID: 4548466070277655102, guid: 2926e9f1356546746ac9b7eb0bea651b, type: 3}
-  PauseMenuPrefab: {fileID: 8600645802944895650, guid: b31aa16cb66b7fe438f3e644d0c42dda, type: 3}
-  EndMenuPrefab: {fileID: 1723774158349833621, guid: 7fac22664c367d74f9b3598fe9b8f09c, type: 3}
-  Sushi_MG_MenuPrefab: {fileID: 3632262828036524158, guid: 92cf1ed188fecc544a95f1081f317bc8, type: 3}
-  Sushi_MG_TutorialMenuPrefab: {fileID: 6400634155402165527, guid: 42ad5da4197c664498bb11573834f47e, type: 3}
-  Buns_MG_MenuPrefab: {fileID: 4409874896792580960, guid: e3d20c948fb85904497e09351e701880, type: 3}
-  Buns_MG_TutorialMenuPrefab: {fileID: 1216675718378227251, guid: d634972bbefc85a45a0e634562e5d2f3, type: 3}
-  Pho_MG_MenuPrefab: {fileID: 1305677654761715817, guid: 931ccafd53f0ea94dbcd49ea287dd5d4, type: 3}
-  Pho_MG_TutorialMenuPrefab: {fileID: 40824314503778006, guid: 6b6884b0255d9884c885b687d11c22a4, type: 3}
-  Rice_MG_MenuPrefab: {fileID: 482874259583637289, guid: 06098c545803ea64c8db5c44b26469be, type: 3}
-  Rice_MG_TutorialMenuPrefab: {fileID: 419071929603388415, guid: 53000451ff168b24cbb1a155c842fe26, type: 3}
+  IntroSequenceMenuPrefab: {fileID: 8302476738363852932, guid: e551747ced7004441995354ec264352c, type: 3}
 --- !u!4 &1336106223
 Transform:
   m_ObjectHideFlags: 0
