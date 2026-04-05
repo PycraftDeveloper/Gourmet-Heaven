@@ -254,8 +254,17 @@ MonoBehaviour:
   MiniGameWinPopUp: {fileID: 489083413214352696}
   BackgroundMenuCanvas: {fileID: 8105840283446535147}
   ForegroundMenuCanvas: {fileID: 8230792548627871252}
-  BackgroundMusic: {fileID: 8300000, guid: 917533896520aea4eaf77086553f50e9, type: 3}
   TimerText: {fileID: 65578335396715507}
+  BackgroundMusic: {fileID: 8300000, guid: 917533896520aea4eaf77086553f50e9, type: 3}
+  SoupSplashes:
+  - _AudioClip: {fileID: 8300000, guid: 8026185e2f425bd4ea7949606d373969, type: 3}
+    Volume: 1
+    StereoPan: 0
+    PitchRange: 0.15
+  - _AudioClip: {fileID: 8300000, guid: 2a7fdd3db3cf61b4e9876024f07e10ef, type: 3}
+    Volume: 1
+    StereoPan: 0
+    PitchRange: 0.15
 --- !u!1 &1722990794654777619
 GameObject:
   m_ObjectHideFlags: 0

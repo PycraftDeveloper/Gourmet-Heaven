@@ -20,7 +20,7 @@ public static class Registry
     public static float LevelRunTime = 0; // Stores how many seconds the game has been running for (in seconds).
 
     // Stores objects by reference for use across the project.
-    public static CoreGameInfastructure CGI = null;
+    public static CoreGameInfrastructure CGI = null;
 
     public static LevelManager LevelManagerObject = null;
     public static Player PlayerObject = null;

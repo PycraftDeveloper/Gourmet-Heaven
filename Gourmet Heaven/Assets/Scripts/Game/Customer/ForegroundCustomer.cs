@@ -21,6 +21,9 @@ public class ForegroundCustomer : CustomerCore
 
     public Animator PatienceMeterAnimator;
 
+    [Header("SFX")]
+    public OneShotSetup[] CustomerFinishSounds;
+
     public IEnumerator MoveInQueue(Vector2 DestinationPosition)
     {
         Vector2 TargetPosition = CurrentPosition;
@@ -106,20 +109,9 @@ public class ForegroundCustomer : CustomerCore
         {
             if (Registry.PlayerObject.HoldingMeal == Meal) // If the player is holding the correct meal
             {
+                Registry.CGI.PlayExtendedOneShot(CustomerFinishSounds[Random.Range(0, CustomerFinishSounds.Length)]);
+
                 CorrectMealServed = true;
-                int CustomerSound = Random.Range(0, 3);
-                if (CustomerSound == 0)
-                {
-                    Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.CustomerFinish1);
-                }
-                if (CustomerSound == 1)
-                {
-                    Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.CustomerFinish2);
-                }
-                if (CustomerSound == 2)
-                {
-                    Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.CustomerFinish3);
-                }
                 Registry.PlayerScore += 100;
             }
 

@@ -20,13 +20,14 @@ public class MainMenuManagerScript : MonoBehaviour
         Destroy(Registry.CGI.BlurredFrameTexture);
 
         Registry.CGI.GameMusicSource.Stop();
+        Registry.CGI.RestaurantAmbienceSource.Stop();
 
-        if (Registry.CGI.musicSource.clip != BackgroundMusic)
+        if (!Registry.CGI.MenuMusicSource.isPlaying)
         {
-            Registry.CGI.musicSource.clip = BackgroundMusic;
-            Registry.CGI.musicSource.loop = true;
+            Registry.CGI.MenuMusicSource.clip = BackgroundMusic;
+            Registry.CGI.MenuMusicSource.loop = true;
+            Registry.CGI.MenuMusicSource.Play();
         }
-        Registry.CGI.musicSource.Play();
 
         MenuCanvas.worldCamera = Camera.main;
         Registry.PlayerScore = 0;

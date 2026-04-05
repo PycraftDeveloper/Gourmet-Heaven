@@ -39,8 +39,6 @@ public class Pho_MiniGameManager : MonoBehaviour
     public Canvas BackgroundMenuCanvas;
     public Canvas ForegroundMenuCanvas;
 
-    public AudioClip BackgroundMusic;
-
     public TextMeshProUGUI TimerText;
 
     private bool MiniGameLocked = false;
@@ -56,6 +54,12 @@ public class Pho_MiniGameManager : MonoBehaviour
         Constants.PHO_MG_BOWL_CILLANTRO,
         Constants.PHO_MG_BOWL_PARSLEY };
 
+    [Header("Music")]
+    public AudioClip BackgroundMusic;
+
+    [Header("SFX")]
+    public OneShotSetup[] SoupSplashes;
+
     private void ReturnToKitchen()
     {
         Registry.InMiniGame = false;
@@ -67,7 +71,8 @@ public class Pho_MiniGameManager : MonoBehaviour
         MiniGameLocked = true;
         MiniGameFailedPopUp.SetActive(true);
         Registry.CGI.GameMusicSource.UnPause();
-        Registry.CGI.musicSource.Stop();
+        Registry.CGI.RestaurantAmbienceSource.UnPause();
+        Registry.CGI.MiniGameMusicSource.Stop();
         Invoke("ReturnToKitchen", 2f);
     }
 
@@ -75,7 +80,8 @@ public class Pho_MiniGameManager : MonoBehaviour
     {
         MiniGameWinPopUp.SetActive(true);
         Registry.CGI.GameMusicSource.UnPause();
-        Registry.CGI.musicSource.Stop();
+        Registry.CGI.RestaurantAmbienceSource.UnPause();
+        Registry.CGI.MiniGameMusicSource.Stop();
         Registry.PlayerObject.HoldingMeal = Constants.PHO;
         Registry.PhoMGTutorialShown = true;
         Invoke("ReturnToKitchen", 2.0f);
@@ -90,15 +96,12 @@ public class Pho_MiniGameManager : MonoBehaviour
 
     private void Start()
     {
-        if (Registry.CGI.musicSource.clip != BackgroundMusic)
-        {
-            Registry.CGI.musicSource.clip = BackgroundMusic;
-            Registry.CGI.musicSource.loop = false;
-        }
-
-        Registry.CGI.musicSource.Play();
+        Registry.CGI.MiniGameMusicSource.clip = BackgroundMusic;
+        Registry.CGI.MiniGameMusicSource.loop = false;
+        Registry.CGI.MiniGameMusicSource.Play();
 
         Registry.CGI.GameMusicSource.Pause();
+        Registry.CGI.RestaurantAmbienceSource.Pause();
         Registry.InMiniGame = true;
 
         BackgroundMenuCanvas.worldCamera = Camera.main;
@@ -220,17 +223,7 @@ public class Pho_MiniGameManager : MonoBehaviour
                 CurrentContainerObject.SetActive(false);
                 CurrentContainerObject = null;
 
-                // This code was worked on by Joshua Cossar (v)
-                int IngredientSound = Random.Range(0, 2);
-                if (IngredientSound == 0)
-                {
-                    Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.SoupSplash1);
-                }
-                if (IngredientSound == 1)
-                {
-                    Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.SoupSplash2);
-                }
-                // This code was worked on by Joshua Cossar (^)
+                Registry.CGI.PlayExtendedOneShot(SoupSplashes[Random.Range(0, SoupSplashes.Length)]);
 
                 // Determine if there are no more ingredients left, in which case the player has won the mini-game
                 if (CurrentIngredientIndex >= Ingredients.Length)

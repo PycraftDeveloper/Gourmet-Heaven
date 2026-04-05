@@ -33,16 +33,17 @@ public class SlicedObject : MonoBehaviour
     [Header("Music")]
     public AudioClip BackgroundMusic;
 
+    [Header("SFX")]
+    public OneShotSetup MangoFinish;
+
     private void Start()
     {
-        if (Registry.CGI.musicSource.clip != BackgroundMusic)
-        {
-            Registry.CGI.musicSource.clip = BackgroundMusic;
-            Registry.CGI.musicSource.loop = false;
-            Registry.CGI.musicSource.Play();
-        }
+        Registry.CGI.MiniGameMusicSource.clip = BackgroundMusic;
+        Registry.CGI.MiniGameMusicSource.loop = false;
+        Registry.CGI.MiniGameMusicSource.Play();
 
         Registry.CGI.GameMusicSource.Pause();
+        Registry.CGI.RestaurantAmbienceSource.Pause();
         Registry.InMiniGame = true;
 
         MenuCanvas.worldCamera = Camera.main;
@@ -177,7 +178,7 @@ public class SlicedObject : MonoBehaviour
         if (currentSliceIndex >= slicePoints.Length - 2)
         {
             isSliced = true;
-            Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.MangoFinish);
+            Registry.CGI.PlayExtendedOneShot(MangoFinish);
             ShowMessage("Amazing!");
 
             Registry.PlayerObject.HoldingMeal = Constants.MANGO_STICKY_RICE;
@@ -231,7 +232,8 @@ public class SlicedObject : MonoBehaviour
         SuccessSplashArt.gameObject.SetActive(true);
 
         Registry.CGI.GameMusicSource.UnPause();
-        Registry.CGI.musicSource.Stop();
+        Registry.CGI.RestaurantAmbienceSource.UnPause();
+        Registry.CGI.MiniGameMusicSource.Stop();
 
         Invoke("ReturnToKitchen", 2f);
     }

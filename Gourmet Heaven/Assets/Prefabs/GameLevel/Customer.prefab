@@ -40,6 +40,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7976739132196399641
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -58,6 +59,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -79,9 +82,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1010043357
   m_SortingLayer: 3
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -6647777187704238582, guid: 4743ef32eeff0c6458e050daebeb5617, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -91,7 +96,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &3860932109438660341
 Rigidbody2D:
@@ -259,13 +263,15 @@ MonoBehaviour:
   - {fileID: 9100000, guid: d5978eeb42eaadc409259d037286f7e0, type: 2}
   - {fileID: 9100000, guid: 8629191d7e63f114b9d112d188687341, type: 2}
   - {fileID: 9100000, guid: e0a6a39d4f20f424c94abfbf0d9e5948, type: 2}
-  CurrentLocation: Kitchen
   ModelIndex: 0
   CustomerTablePosition: 0
+  CustomerSeated: 0
   DeSpawn: 0
+  IsForegroundCustomer: 0
   Patience: 0
   InitialPatience: 0
   CurrentPosition: {x: 0, y: 0}
+  DisableTime: 0
   Meal: 
   CustomerCoroutineDescription: no coroutine
   CurrentVelocity: {x: 0, y: 0}
@@ -276,7 +282,21 @@ MonoBehaviour:
   - {fileID: 2361841914185397145, guid: bfb41b3291b96584b958b2f4f1fd71ed, type: 3}
   - {fileID: 7120538908375451996, guid: 59263200d6e880f4fb8e1c6354528083, type: 3}
   - {fileID: 0}
-  InstantiatedOrderPopUpMessages: {fileID: 0}
+  InstantiatedOrderPopUpMessage: {fileID: 0}
+  PatienceMeterAnimator: {fileID: 0}
+  CustomerFinishSounds:
+  - _AudioClip: {fileID: 8300000, guid: 8159bb52a756d3b4d89ff456cbc197de, type: 3}
+    Volume: 1
+    StereoPan: 0
+    PitchRange: 0.15
+  - _AudioClip: {fileID: 8300000, guid: 8c70e66fe74b3d6458b31d9cb7ea0e7d, type: 3}
+    Volume: 1
+    StereoPan: 0
+    PitchRange: 0.15
+  - _AudioClip: {fileID: 8300000, guid: b08eb2764414142458cfea6868464f14, type: 3}
+    Volume: 1
+    StereoPan: 0
+    PitchRange: 0.15
 --- !u!1 &1796619327384016279
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,6 +332,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &543923630407016187
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -330,6 +351,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -351,9 +374,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1603600049
   m_SortingLayer: 7
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 6132273597890454778, guid: 7c4e41796afb4bb438f892a5d483a328, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -363,7 +388,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &8566498302845467049
 Animator:

@@ -159,6 +159,11 @@ MonoBehaviour:
   - {fileID: 3313244612546423136}
   SuccessSplashArt: {fileID: 2685755768660223677}
   BackgroundMusic: {fileID: 8300000, guid: 917533896520aea4eaf77086553f50e9, type: 3}
+  MangoFinish:
+    _AudioClip: {fileID: 8300000, guid: bd2b9160a31209b4f8a44b5573970c27, type: 3}
+    Volume: 1
+    StereoPan: 0
+    PitchRange: 0.15
 --- !u!1 &1353707373217983129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,6 +1253,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSwipeDistance: 50
   SlicedObject: {fileID: 3028533309646981193}
+  CuttingSound:
+    _AudioClip: {fileID: 8300000, guid: 5c88ef67abf676347a17ff9c2db1ddf3, type: 3}
+    Volume: 1
+    StereoPan: 0
+    PitchRange: 0.15
 --- !u!1 &4283633469268774858
 GameObject:
   m_ObjectHideFlags: 0

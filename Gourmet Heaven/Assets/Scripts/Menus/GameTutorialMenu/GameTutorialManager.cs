@@ -16,7 +16,5 @@ public class GameTutorialManager : MonoBehaviour
         Camera.main.enabled = false;
 
         SceneManager.LoadScene(Constants.GAME_SCENE);
-
-        Registry.CGI.musicSource.Stop();
     }
 }

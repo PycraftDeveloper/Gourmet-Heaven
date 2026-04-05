@@ -26,8 +26,8 @@ public class Player : MonoBehaviour
     public string HoldingMeal = Constants.NOT_HOLDING_MEAL; // Keep track of any meal the player may be holding. Can hold ONLY ONE meal.
 
     [Header("Sounds - Restaurant Ambient")]
-    public AudioSource RestaurantAmbientPlayer;
     public AudioClip RestaurantAmbient;
+
     [Range(0.0f, 1.0f)] public float RestaurantAmbientVolume = 0.5f;
 
     public void SetAnimationState(int state)
@@ -189,10 +189,10 @@ public class Player : MonoBehaviour
         SpriteSize = new Vector2(PlayerSprite.bounds.size.x / 2.0f, PlayerSprite.bounds.size.y / 2.0f);
         PlayerRigidBody = GetComponent<Rigidbody2D>();
 
-        RestaurantAmbientPlayer.clip = RestaurantAmbient;
-        RestaurantAmbientPlayer.volume = 0.0f;
-        RestaurantAmbientPlayer.loop = true;
-        RestaurantAmbientPlayer.Play();
+        Registry.CGI.RestaurantAmbienceSource.clip = RestaurantAmbient;
+        Registry.CGI.RestaurantAmbienceSource.volume = 0.0f;
+        Registry.CGI.RestaurantAmbienceSource.loop = true;
+        Registry.CGI.RestaurantAmbienceSource.Play();
     }
 
     private void FixedUpdate()
@@ -329,6 +329,6 @@ public class Player : MonoBehaviour
             }
         }
 
-        RestaurantAmbientPlayer.volume = Registry.SFXVolume * RestaurantAmbientVolume * Mathf.SmoothStep(0.0f, 1.0f, (Mathf.Abs(transform.position.y - 2.44f)/7.99f));
+        Registry.CGI.RestaurantAmbienceSource.volume = Registry.SFXVolume * RestaurantAmbientVolume * Mathf.SmoothStep(0.0f, 1.0f, (Mathf.Abs(transform.position.y - 2.44f) / 7.99f));
     }
 }

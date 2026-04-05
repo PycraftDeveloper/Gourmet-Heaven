@@ -4,6 +4,7 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 [System.Serializable]
 public class Appliance // This class is used to switch the icons for the mini-games between IDLE and ACTIVATED states.
@@ -59,8 +60,6 @@ public class LevelManager : MonoBehaviour
     public TextMeshProUGUI UIScoreText;
     public TextMeshProUGUI UIDayText;
 
-    public AudioClip BackgroundMusic;
-
     // Below are the two tile-maps that create the illusion of depth. ONLY the CacheRegister is in the 'AboveApplianceTileMap'.
     public Tilemap AboveApplianceTileMap;
 
@@ -79,9 +78,15 @@ public class LevelManager : MonoBehaviour
     [Header("Navigable Menus")]
     public GameObject PauseMenuPrefab;
 
+    [Header("Music")]
+    public AudioClip BackgroundMusic;
+
+    [Header("SFX - Cash Register")]
+    public OneShotSetup CashRegisterNoise;
+
     private void Start()
     {
-        Registry.CGI.musicSource.Stop();
+        Registry.CGI.MenuMusicSource.Stop();
 
         if (Registry.CGI.GameMusicSource.clip != BackgroundMusic)
         {
@@ -172,7 +177,7 @@ public class LevelManager : MonoBehaviour
                     _Customer.MealPlaced = true;
                     _Customer.SetCoroutine(_Customer.MoveIntoRestaurant(), Constants.MOVE_INTO_RESTAURANT); // Set-up the customer to move down out of the kitchen scene.
                     Invoke("UpdateQueuePositions", 1.5f); // Once the customer has left the scene, update the positions for the other customers in the queue.
-                    Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.CashRegisterNoise); // added by Joshua Cossar
+                    Registry.CGI.PlayExtendedOneShot(CashRegisterNoise); // added by Joshua Cossar
                     return; // Early exit the loop.
                 }
             }

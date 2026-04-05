@@ -39,8 +39,9 @@ public class CountdownTimer : MonoBehaviour
             {
                 Destroy(SliceManager.currentArrow);
             }
-            
-            if (SliceManager.currentArrowHead != null) {
+
+            if (SliceManager.currentArrowHead != null)
+            {
                 Destroy(SliceManager.currentArrowHead);
             }
 
@@ -49,7 +50,8 @@ public class CountdownTimer : MonoBehaviour
             timerText.color = Color.red;
             minigamefailedText.gameObject.SetActive(true);
             Registry.CGI.GameMusicSource.UnPause();
-            Registry.CGI.musicSource.Stop();
+            Registry.CGI.RestaurantAmbienceSource.UnPause();
+            Registry.CGI.MiniGameMusicSource.Stop();
             Invoke("ReturnToKitchen", 2f);
             StopTimer(); // Force the timer to stop this from being called multiple times.
         }

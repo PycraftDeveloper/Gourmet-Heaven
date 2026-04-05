@@ -137,7 +137,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &2496896306521695628
+--- !u!1 &2212365312537146035
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,28 +145,28 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7012427716184302960}
-  - component: {fileID: 2952437756344705897}
-  - component: {fileID: 4681259035541061185}
-  - component: {fileID: 4235720713628998231}
+  - component: {fileID: 7417257630826169482}
+  - component: {fileID: 6157924055922659066}
+  - component: {fileID: 2183350103079080270}
+  - component: {fileID: 3271789771874848190}
   m_Layer: 5
-  m_Name: HobKnobInteract
+  m_Name: NewHobKnobInteract
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &7012427716184302960
+--- !u!224 &7417257630826169482
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2496896306521695628}
+  m_GameObject: {fileID: 2212365312537146035}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2303580057616771884}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
@@ -175,26 +175,26 @@ RectTransform:
   m_AnchoredPosition: {x: 499.1, y: -435}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2952437756344705897
+--- !u!222 &6157924055922659066
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2496896306521695628}
+  m_GameObject: {fileID: 2212365312537146035}
   m_CullTransparentMesh: 1
---- !u!114 &4681259035541061185
+--- !u!114 &2183350103079080270
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2496896306521695628}
+  m_GameObject: {fileID: 2212365312537146035}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -213,42 +213,62 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!58 &4235720713628998231
-CircleCollider2D:
+--- !u!114 &3271789771874848190
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2496896306521695628}
+  m_GameObject: {fileID: 2212365312537146035}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 63.7
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2183350103079080270}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1298825400178055938}
+        m_TargetAssemblyTypeName: Buns_MiniGameManager, Assembly-CSharp
+        m_MethodName: HandleTouch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2533500448511972598
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,11 +702,22 @@ MonoBehaviour:
   HandPointerObject: {fileID: 3724519208700729221}
   FireIndicatorObject: {fileID: 4568010404011745539}
   EggTimerObject: {fileID: 7983282833556270260}
-  HobKnobObject: {fileID: 2496896306521695628}
+  HobKnobObject: {fileID: 2212365312537146035}
   MiniGameFailedPopUp: {fileID: 5483140437403557219}
   MiniGameWinPopUp: {fileID: 7958477995402984235}
   MenuCanvas: {fileID: 2663838270645954765}
   BackgroundMusic: {fileID: 8300000, guid: 917533896520aea4eaf77086553f50e9, type: 3}
+  BoilingWater: {fileID: 8300000, guid: 397759993a2d07747adb526ece4a7405, type: 3}
+  EggTimerTicking:
+    _AudioClip: {fileID: 8300000, guid: d68b0e0ec79d9bf4ab58c876da728149, type: 3}
+    Volume: 1
+    StereoPan: 0
+    PitchRange: 0
+  EggTimerAlarm:
+    _AudioClip: {fileID: 8300000, guid: 3175e67feefd8064d91b934f19e3e838, type: 3}
+    Volume: 1
+    StereoPan: 0
+    PitchRange: 0
 --- !u!1 &4568010404011745539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,7 +1178,7 @@ RectTransform:
   - {fileID: 3013018616443088206}
   - {fileID: 1203309983955592519}
   - {fileID: 5924496339423415341}
-  - {fileID: 7012427716184302960}
+  - {fileID: 7417257630826169482}
   - {fileID: 6061131595751904164}
   - {fileID: 4697819005356533883}
   m_Father: {fileID: 7412372648341963833}

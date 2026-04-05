@@ -17,8 +17,6 @@ public class Buns_MiniGameManager : MonoBehaviour
 
     private Animator EggTimerAnimator; // Store the animator for the egg timer object.
 
-    public AudioClip BackgroundMusic;
-
     private float CurrentMiniGameDuration = 0; // Store how long the mini-game has been running for.
     private float TargetMiniGameDuration; // Stores the random amount of time the player needs to wait for (between 5 and 15 seconds).
 
@@ -27,6 +25,16 @@ public class Buns_MiniGameManager : MonoBehaviour
     private bool IsHobOn = true; // Used to determine if the mini-game has been won or not.
 
     private Vector3 EggTimerPosition = new Vector3(-3.53f, -0.1f, 100); // Store the position of the egg timer object on-screen.
+
+    [Header("Music")]
+    public AudioClip BackgroundMusic;
+
+    [Header("SFX")]
+    public AudioClip BoilingWater;
+
+    public OneShotSetup EggTimerTicking;
+    public OneShotSetup EggTimerAlarm;
+    private GameObject EggTimerTickingExtendedOneShotObject;
 
     private void ReturnToKitchen()
     {
@@ -39,7 +47,12 @@ public class Buns_MiniGameManager : MonoBehaviour
         MiniGameLocked = true;
         MiniGameFailedPopUp.SetActive(true);
         Registry.CGI.GameMusicSource.UnPause();
-        Registry.CGI.musicSource.Stop();
+        Registry.CGI.RestaurantAmbienceSource.UnPause();
+        Registry.CGI.MiniGameMusicSource.Stop();
+        if (EggTimerTickingExtendedOneShotObject != null)
+        {
+            Destroy(EggTimerTickingExtendedOneShotObject);
+        }
         Invoke("ReturnToKitchen", 2);
     }
 
@@ -48,7 +61,12 @@ public class Buns_MiniGameManager : MonoBehaviour
         MiniGameWinPopUp.SetActive(true);
         Registry.PlayerObject.HoldingMeal = Constants.BAO_BUNS;
         Registry.CGI.GameMusicSource.UnPause();
-        Registry.CGI.musicSource.Stop();
+        Registry.CGI.RestaurantAmbienceSource.UnPause();
+        Registry.CGI.MiniGameMusicSource.Stop();
+        if (EggTimerTickingExtendedOneShotObject != null)
+        {
+            Destroy(EggTimerTickingExtendedOneShotObject);
+        }
         Registry.BunsMGTutorialShown = true;
         Invoke("ReturnToKitchen", 2);
     }
@@ -62,15 +80,12 @@ public class Buns_MiniGameManager : MonoBehaviour
 
     private void Start()
     {
-        if (Registry.CGI.musicSource.clip != BackgroundMusic)
-        {
-            Registry.CGI.musicSource.clip = BackgroundMusic;
-            Registry.CGI.musicSource.loop = false;
-        }
-
-        Registry.CGI.musicSource.Play();
+        Registry.CGI.MiniGameMusicSource.clip = BackgroundMusic;
+        Registry.CGI.MiniGameMusicSource.loop = false;
+        Registry.CGI.MiniGameMusicSource.Play();
 
         Registry.CGI.GameMusicSource.Pause();
+        Registry.CGI.RestaurantAmbienceSource.Pause();
         Registry.InMiniGame = true;
 
         MenuCanvas.worldCamera = Camera.main;
@@ -83,28 +98,21 @@ public class Buns_MiniGameManager : MonoBehaviour
         if (!MiniGameLocked)
         {
             // Start of Joshua Cossar's Added Code
-            Registry.CGI.SFXSource.clip = Registry.CGI.BoilingWater;
+            Registry.CGI.SFXSource.clip = BoilingWater;
             Registry.CGI.SFXSource.volume = Registry.SFXVolume;
             Registry.CGI.SFXSource.Play();
             Registry.CGI.SFXSource.loop = true;
-            Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.EggTimerTicking);
+            EggTimerTickingExtendedOneShotObject = Registry.CGI.PlayExtendedOneShot(EggTimerTicking);
             // End of Joshua Cossar's Added Code
         }
     }
 
-    private void HandleTouch(Vector2 TouchPosition) // Get the position on-screen the player interacted with, and determine if that interaction was intended to hit the oven
-                                                    // dial to turn the hob off.
+    public void HandleTouch()
     {
-        Vector2 WorldPosition = Camera.main.ScreenToWorldPoint(TouchPosition);
-        Collider2D RaycastHit = Physics2D.OverlapPoint(WorldPosition);
-
-        if (RaycastHit != null && RaycastHit.transform == HobKnobObject.transform)
-        {
-            IsHobOn = false;
-            // Start of Joshua Cossar's Added Code
-            Registry.CGI.SFXSource.Stop();
-            // End of Joshua Cossar's Added Code
-        }
+        IsHobOn = false;
+        // Start of Joshua Cossar's Added Code
+        Registry.CGI.SFXSource.Stop();
+        // End of Joshua Cossar's Added Code
     }
 
     private IEnumerator RotateHobKnob(GameObject HobKnob) // Used to rotate the hob dial to the off-position when interacted with.
@@ -136,7 +144,7 @@ public class Buns_MiniGameManager : MonoBehaviour
 
                     EggTimerPosition.y += Constants.ACTIVE_EGG_TIMER_DISPLACEMENT; // Displace the egg timer to show the player it has gone off.
 
-                    Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.EggTimerAlarm); // Added by Joshua Cossar
+                    Registry.CGI.PlayExtendedOneShot(EggTimerAlarm); // Added by Joshua Cossar
                     EggTimerAnimator.SetBool("Alarm", true); // Added by Joshua Cossar
                 }
 
@@ -160,18 +168,6 @@ public class Buns_MiniGameManager : MonoBehaviour
             else if (!IsHobOn)
             {
                 OnMiniGameFailed(); // If the player turns the hob off prematurely, the mini-game is failed.
-            }
-
-            // Determine if the player has interacted with the hob dial to turn it off.
-            if (Input.touchCount > 0) // if touch input is used
-            {
-                UnityEngine.Touch touch = Input.GetTouch(0); // get the first finger (only guaranteed input)
-
-                HandleTouch(touch.position); // handle position adjustments, using finger position on-screen.
-            }
-            else if (Input.GetMouseButton(0)) // if mouse click is used
-            {
-                HandleTouch(Input.mousePosition); // handle position adjustments, using mouse position.
             }
 
             EggTimerObject.transform.position = EggTimerPosition; // Position the egg timer on-screen.

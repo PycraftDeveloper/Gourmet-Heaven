@@ -11,6 +11,9 @@ public class SwipeDetector : MonoBehaviour
 
     public SlicedObject SlicedObject; // reference to the slicing object script
 
+    [Header("SFX")]
+    public OneShotSetup CuttingSound;
+
     // detects when the slicing starts when the mouse click is down or if the players finger is touching the slice points and if the distance of the swipe is long enough
     private void Update()
     {
@@ -26,7 +29,7 @@ public class SwipeDetector : MonoBehaviour
             if (swipeDistance >= minSwipeDistance)
             {
                 SlicedObject.TrySlice(swipeStart, swipeEnd);
-                Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.CuttingSound); // added by Joshua Cossar
+                Registry.CGI.PlayExtendedOneShot(CuttingSound);
             }
             else
             {

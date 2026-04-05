@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour // This class controls the buttons and be
     {
         Registry.GamePaused = true;
         Registry.CGI.RenderGameSceneToFrameBuffer();
-        Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.ButtonClickSound);
+        Registry.CGI.PlayClickSound();
         Instantiate(PauseMenuPrefab);
     }
 

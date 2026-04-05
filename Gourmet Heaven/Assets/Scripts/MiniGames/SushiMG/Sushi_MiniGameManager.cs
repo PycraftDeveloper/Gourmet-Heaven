@@ -56,7 +56,11 @@ public class Sushi_MiniGameManager : MonoBehaviour // Used to manage the startin
 
     private float MiniGameTimer = Constants.SUSHI_MG_MINI_GAME_TIME; // how many seconds the mini-game has left to run for.
 
+    [Header("Music")]
     public AudioClip BackgroundMusic;
+
+    [Header("SFX")]
+    public OneShotSetup SushiSound;
 
     private void ReturnToKitchen()
     {
@@ -71,7 +75,8 @@ public class Sushi_MiniGameManager : MonoBehaviour // Used to manage the startin
         MiniGameLocked = true; // prevent any additional interactions with the mini-game
         MiniGameFailedPopUp.SetActive(true); // show failed splash art
         Registry.CGI.GameMusicSource.UnPause();
-        Registry.CGI.musicSource.Stop();
+        Registry.CGI.RestaurantAmbienceSource.UnPause();
+        Registry.CGI.MiniGameMusicSource.Stop();
         Invoke("ReturnToKitchen", Constants.MINI_GAME_SPLASH_ART_DURATION); // return to the kitchen after 2 seconds (allows time for the player to see the failed splash art)
     }
 
@@ -82,7 +87,8 @@ public class Sushi_MiniGameManager : MonoBehaviour // Used to manage the startin
         MiniGameWinPopUp.SetActive(true); // show success splash art
         Registry.PlayerObject.HoldingMeal = Constants.SUSHI; // set the player's current meal to sushi
         Registry.CGI.GameMusicSource.UnPause();
-        Registry.CGI.musicSource.Stop();
+        Registry.CGI.RestaurantAmbienceSource.UnPause();
+        Registry.CGI.MiniGameMusicSource.Stop();
         Registry.SushiMGTutorialShown = true;
         Invoke("ReturnToKitchen", Constants.MINI_GAME_SPLASH_ART_DURATION); // return to the kitchen after 2 seconds (allows time for the player to see the success splash art)
     }
@@ -107,15 +113,12 @@ public class Sushi_MiniGameManager : MonoBehaviour // Used to manage the startin
 
     private void Start()
     {
-        if (Registry.CGI.musicSource.clip != BackgroundMusic)
-        {
-            Registry.CGI.musicSource.clip = BackgroundMusic;
-            Registry.CGI.musicSource.loop = false;
-        }
-
-        Registry.CGI.musicSource.Play();
+        Registry.CGI.MiniGameMusicSource.clip = BackgroundMusic;
+        Registry.CGI.MiniGameMusicSource.loop = false;
+        Registry.CGI.MiniGameMusicSource.Play();
 
         Registry.CGI.GameMusicSource.Pause();
+        Registry.CGI.RestaurantAmbienceSource.Pause();
         Registry.InMiniGame = true;
 
         MenuCanvas.worldCamera = Camera.main;
@@ -155,7 +158,7 @@ public class Sushi_MiniGameManager : MonoBehaviour // Used to manage the startin
                 CurrentIngredientOrder[IngredientIndex] = Constants.SUSHI_MG_RICE; // add the rice to the player's ingredient order
                 IngredientListChanged = true; // trigger the game to check if this is the correct next ingredient
                 IngredientIndex++; // increment the index to the next ingredient
-                Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.SushiSound); // Added by Joshua Cossar
+                Registry.CGI.PlayExtendedOneShot(SushiSound); // Added by Joshua Cossar
             }
 
             if (SeaweedIngredientSpawn.IngredientDraggedIntoTargetToggle) // check if the player has dragged seaweed into the target area
@@ -165,7 +168,7 @@ public class Sushi_MiniGameManager : MonoBehaviour // Used to manage the startin
                 CurrentIngredientOrder[IngredientIndex] = Constants.SUSHI_MG_SEAWEED;
                 IngredientListChanged = true;
                 IngredientIndex++;
-                Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.SushiSound); // Added by Joshua Cossar
+                Registry.CGI.PlayExtendedOneShot(SushiSound); // Added by Joshua Cossar
             }
 
             if (WasabiIngredientSpawn.IngredientDraggedIntoTargetToggle) // check if the player has dragged wasabi into the target area
@@ -175,7 +178,7 @@ public class Sushi_MiniGameManager : MonoBehaviour // Used to manage the startin
                 CurrentIngredientOrder[IngredientIndex] = Constants.SUSHI_MG_WASABI;
                 IngredientListChanged = true;
                 IngredientIndex++;
-                Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.SushiSound); // Added by Joshua Cossar
+                Registry.CGI.PlayExtendedOneShot(SushiSound); // Added by Joshua Cossar
             }
 
             if (TunaIngredientSpawn.IngredientDraggedIntoTargetToggle) // check if the player has dragged (any) tuna into the target area
@@ -192,7 +195,7 @@ public class Sushi_MiniGameManager : MonoBehaviour // Used to manage the startin
                 CurrentIngredientOrder[IngredientIndex] = Constants.SUSHI_MG_TUNA;
                 IngredientListChanged = true;
                 IngredientIndex++;
-                Registry.CGI.SFXSource.PlayOneShot(Registry.CGI.SushiSound); // Added by Joshua Cossar
+                Registry.CGI.PlayExtendedOneShot(SushiSound); // Added by Joshua Cossar
             }
 
             if (IngredientListChanged) // Check if the player's ingredient list has changed.

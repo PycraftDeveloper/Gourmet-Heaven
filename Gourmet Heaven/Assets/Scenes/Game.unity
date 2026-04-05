@@ -6986,7 +6986,6 @@ MonoBehaviour:
     Active: {fileID: 11400000, guid: fa475746bc0f9cd47afe26668a43220d, type: 2}
   UIScoreText: {fileID: 62526256}
   UIDayText: {fileID: 1613137622}
-  BackgroundMusic: {fileID: 8300000, guid: f8482208382ba35408d44cdb3839ca76, type: 3}
   AboveApplianceTileMap: {fileID: 1825809209}
   BehindApplianceTileMap: {fileID: 1687446634}
   CustomersInScene: 0
@@ -7000,6 +6999,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   PauseMenuPrefab: {fileID: 8600645802944895650, guid: b31aa16cb66b7fe438f3e644d0c42dda, type: 3}
+  BackgroundMusic: {fileID: 8300000, guid: f8482208382ba35408d44cdb3839ca76, type: 3}
+  CashRegisterNoise:
+    _AudioClip: {fileID: 8300000, guid: 97d72589f194d5b40998c79a8bc14e60, type: 3}
+    Volume: 1
+    StereoPan: 0
+    PitchRange: 0.15
 --- !u!4 &1432080515
 Transform:
   m_ObjectHideFlags: 0
@@ -11789,7 +11794,6 @@ MonoBehaviour:
   RenderPriority: 1
   SceneChanged: 0
   HoldingMeal: not holding meal
-  RestaurantAmbientPlayer: {fileID: 1999955913}
   RestaurantAmbient: {fileID: 8300000, guid: ad78b4a184b0b464b8fa54a5538fee71, type: 3}
   RestaurantAmbientVolume: 1
 --- !u!212 &1999955911

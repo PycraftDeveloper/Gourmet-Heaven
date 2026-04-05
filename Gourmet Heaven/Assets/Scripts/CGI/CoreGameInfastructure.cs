@@ -7,46 +7,25 @@ using UnityEditor;
 
 #endif
 
-public class CoreGameInfastructure : MonoBehaviour
+public class CoreGameInfrastructure : MonoBehaviour
 {
     [Header("Audio Sources")]
-    [SerializeField] public AudioSource musicSource;
+    public AudioSource MenuMusicSource;
 
-    [SerializeField] public AudioSource GameMusicSource;
+    public AudioSource GameMusicSource;
+    public AudioSource MiniGameMusicSource;
+    public AudioSource RestaurantAmbienceSource;
+    public AudioSource SFXSource;
 
-    [SerializeField] public AudioSource SFXSource;
-
-    [Header("Click Sound")]
-    public AudioClip ButtonClickSound;
-
-    [Range(0.0f, 1.0f)] public float ClickVolume;
-    [Range(0.0f, 0.15f)] public float ClickPitchRange;
-
-    [Header("Audio Clips")]
-    public AudioClip bgm_InGame;
-
-    public AudioClip bgm_MainMenu;
-    public AudioClip bgm_MiniGame;
-
-    public AudioClip CashRegisterNoise;
-    public AudioClip CuttingSound;
-    public AudioClip MangoFinish;
-    public AudioClip BoilingWater;
-    public AudioClip EggTimerTicking;
-    public AudioClip EggTimerAlarm;
-    public AudioClip SoupSplash1;
-    public AudioClip SoupSplash2;
-    public AudioClip SushiSound;
-    public AudioClip CustomerFinish1;
-    public AudioClip CustomerFinish2;
-    public AudioClip CustomerFinish3;
-    public AudioClip RestaurantAmbience;
+    [Header("SFX")]
+    public OneShotSetup ButtonClickSound;
 
     [Header("Blurred Background")]
+    public Material BlurredMaterial;
+
     [HideInInspector] public Texture2D FrameTexture;
 
     [HideInInspector] public Texture2D BlurredFrameTexture;
-    public Material BlurredMaterial;
 
     private SavedDataManager savedDataManager;
 
@@ -77,28 +56,31 @@ public class CoreGameInfastructure : MonoBehaviour
 
     private void Update()
     {
-        musicSource.volume = Registry.MusicVolume;
+        MenuMusicSource.volume = Registry.MusicVolume;
         GameMusicSource.volume = Registry.MusicVolume;
+        MiniGameMusicSource.volume = Registry.MusicVolume;
         SFXSource.volume = Registry.SFXVolume;
-    }
-
-    public void Play_SFX_ExtendedOneShot(AudioClip Audio, float Volume, float StereoPan = 0.0f, float Pitch = 1.0f)
-    {
-        GameObject NewAudioSource = new GameObject("SFX_ExtendedOneShot");
-        AudioSource ExtendedAudioSourceComponent = NewAudioSource.AddComponent<AudioSource>();
-        ExtendedOneShot ExtendedOneShotComponent = NewAudioSource.AddComponent<ExtendedOneShot>();
-        ExtendedAudioSourceComponent.clip = Audio;
-        ExtendedAudioSourceComponent.volume = Volume;
-        ExtendedAudioSourceComponent.panStereo = StereoPan;
-        ExtendedAudioSourceComponent.pitch = Pitch;
-        ExtendedAudioSourceComponent.Play();
-        ExtendedOneShotComponent.Lifetime = Audio.length;
-        NewAudioSource.transform.parent = SFXSource.transform;
+        // Restaurant DELIBERATELY ignored here!
     }
 
     public void PlayClickSound()
     {
-        Play_SFX_ExtendedOneShot(ButtonClickSound, Registry.SFXVolume * ClickVolume, Pitch: Random.Range(1.0f - ClickPitchRange, 1.0f + ClickPitchRange));
+        PlayExtendedOneShot(ButtonClickSound);
+    }
+
+    public GameObject PlayExtendedOneShot(OneShotSetup Setup)
+    {
+        GameObject NewAudioSource = new GameObject("SFX_ExtendedOneShot");
+        AudioSource ExtendedAudioSourceComponent = NewAudioSource.AddComponent<AudioSource>();
+        ExtendedOneShot ExtendedOneShotComponent = NewAudioSource.AddComponent<ExtendedOneShot>();
+        ExtendedAudioSourceComponent.clip = Setup._AudioClip;
+        ExtendedAudioSourceComponent.volume = Registry.SFXVolume * Setup.Volume;
+        ExtendedAudioSourceComponent.panStereo = Setup.StereoPan;
+        ExtendedAudioSourceComponent.pitch = Random.Range(1.0f - Setup.PitchRange, 1.0f + Setup.PitchRange);
+        ExtendedAudioSourceComponent.Play();
+        ExtendedOneShotComponent.Lifetime = Setup._AudioClip.length;
+        NewAudioSource.transform.parent = SFXSource.transform;
+        return NewAudioSource;
     }
 
     public void SetupLevelOne()
@@ -187,4 +169,13 @@ public class CoreGameInfastructure : MonoBehaviour
         camera.targetTexture = null; // reset the camera's render target
         Graphics.SetRenderTarget(null); // reset graphics' render target
     }
+}
+
+[System.Serializable]
+public class OneShotSetup
+{
+    public AudioClip _AudioClip;
+    [Range(0.0f, 1.0f)] public float Volume = 1.0f;
+    [Range(-1.0f, 1.0f)] public float StereoPan = 0.0f;
+    [Range(0.0f, 0.15f)] public float PitchRange = 0.15f;
 }
